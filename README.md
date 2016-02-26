@@ -1,19 +1,4 @@
-#![Gulp Starter](src/images/gulp-starter-logo.png)
-
-Gulp Starter is a delicious blend of tasks and build tools poured into [Gulp](http://gulpjs.com/) to form a full-featured modern asset pipeline. It can be used as-is as a static site builder, or can be configured and integrated into your own development environment and site or app structure. 
-
-[![Build Status](https://travis-ci.org/vigetlabs/gulp-starter.svg?branch=static-server)](https://travis-ci.org/vigetlabs/gulp-starter)
-
-```bash
-git clone https://github.com/vigetlabs/gulp-starter.git MyApp
-cd MyApp
-npm install
-npm run gulp
-```
-
-**Demo compiled with gulp-starter:** http://vigetlabs.github.io/gulp-starter/
-
-(view files on [gh-pages](https://github.com/vigetlabs/gulp-starter/tree/gh-pages) branch)
+# NACAC
 
 ## Features
 - **CSS:** [Sass](http://sass-lang.com/) (indented, scss, or both)
