@@ -1,15 +1,15 @@
 {
-  "name": "gulp-starter",
-  "version": "2.1.5",
+  "name": "nacac",
+  "version": "0.0.1",
   "description": "A full featured configurable gulp asset pipeline and static site builder",
   "engines": {
     "node": "0.12.2",
     "npm": "2.7.4"
   },
-  "homepage": "http://code.viget.com/gulp-starter/",
+  "homepage": "http://code.viget.com/nacac/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/vigetlabs/gulp-starter.git"
+    "url": "git://github.com/brightfind/nacac.git"
   },
   "scripts": {
     "deploy": "gulp deploy",
