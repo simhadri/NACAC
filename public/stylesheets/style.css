@@ -163,6 +163,10 @@ table {
 td, th {
   padding: 0; }
 
+body {
+  font-size: 10px;
+  font-family: "acumin-pro",sans-serif; }
+
 /*
  * CSS Page Transitions
  * Don't forget to add vendor prefixes!

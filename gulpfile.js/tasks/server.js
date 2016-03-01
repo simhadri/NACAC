@@ -26,7 +26,7 @@ var serverTask = function() {
     .use('/', express.static(settings.root, settings.staticOptions))
     .listen(settings.port)
 
-  gutil.log('production server started on ' + gutil.colors.green(url))
+  gutil.log('production server started on ' + gutil.colors.green(url + '/site/'))
   open(url)
 }
 
