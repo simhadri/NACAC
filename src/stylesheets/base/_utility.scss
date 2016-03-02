@@ -1,0 +1,32 @@
+nav.utility-nav {
+	border-bottom: 1px solid $white;
+	color: $white;
+	a{
+		color: $white;
+	}
+	ul {
+		list-style: none;
+		float: left;
+		margin-bottom: 0;
+		li {
+			float: left;
+			padding: 1rem;
+		}
+	}
+	.utility-nav__list {
+		width: 50%;
+	}
+	.utility-nav__social {
+		width: 25%;
+	}
+	.utility-nav__search {
+		float: left;
+		width: 25%;
+		text-align: right;
+		padding: 1rem;
+		input{
+			background-color: transparent;
+			border:1px solid $white;
+		}
+	}
+}

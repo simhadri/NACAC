@@ -21,6 +21,10 @@ CSS3 GRADIENTS
 BOX SIZING
 *********************/
 /* @include box-sizing(border-box); */
+/*********************
+RETINA DISPLAY
+*********************/
+/* @include background-image-retina(logo, png, 200px, 100px); */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -163,24 +167,69 @@ table {
 td, th {
   padding: 0; }
 
-body {
-  font-size: 10px;
+body, html {
   font-family: "acumin-pro",sans-serif; }
 
-/*
- * CSS Page Transitions
- * Don't forget to add vendor prefixes!
- */
-main {
-  visibility: hidden; }
+nav.primary-nav ul.primary-nav__list {
+  list-style: none; }
 
-img {
-  float: left;
-  visibility: hidden;
-  margin: 0 18px 18px 0; }
+nav.utility-nav {
+  border-bottom: 1px solid #FFFFFF;
+  color: #FFFFFF; }
+  nav.utility-nav a {
+    color: #FFFFFF; }
+  nav.utility-nav ul {
+    list-style: none;
+    float: left;
+    margin-bottom: 0; }
+    nav.utility-nav ul li {
+      float: left;
+      padding: 1rem; }
+  nav.utility-nav .utility-nav__list {
+    width: 50%; }
+  nav.utility-nav .utility-nav__social {
+    width: 25%; }
+  nav.utility-nav .utility-nav__search {
+    float: left;
+    width: 25%;
+    text-align: right;
+    padding: 1rem; }
+    nav.utility-nav .utility-nav__search input {
+      background-color: transparent;
+      border: 1px solid #FFFFFF; }
 
-.bounceIn, .fadeIn {
-  visibility: visible; }
+.hero__wrapper {
+  height: 30rem;
+  padding: 10rem; }
+
+.hero__background-image {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1; }
+  .hero__background-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%; }
+
+.hero__content {
+  text-align: center;
+  color: #FFFFFF; }
+  .hero__content .hero__subtitle {
+    font-family: "merriweather",serif;
+    font-style: italic; }
+  .hero__content .hero__title {
+    font-family: "acumin-pro-condensed",sans-serif;
+    font-size: 3.8rem;
+    font-weight: bold;
+    text-transform: uppercase; }
 
 /*
  * CSS Page Transitions
