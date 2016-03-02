@@ -1,0 +1,42 @@
+.hero__wrapper{
+	height: 30rem;
+	padding:10rem;
+}
+.hero__background-image {
+	position: fixed;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	z-index: -1;
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		min-width: 50%;
+		min-height: 50%;
+	}
+}
+.hero__content{
+	text-align: center;
+	color: $white;
+	.hero__subtitle{
+		font-family: "merriweather",serif;
+		font-style: italic;
+	}
+	.hero__title{
+		font-family: "acumin-pro-condensed",sans-serif;
+		font-size: 3.8rem;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	.hero__text{
+
+	}
+	.hero__cta-button{
+
+	}
+}

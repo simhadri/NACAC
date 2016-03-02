@@ -1,8 +1,16 @@
+// MODULES
 @import 'modules/breakpoints';
 @import 'modules/functions';
 @import 'modules/mixins';
 @import 'modules/normalize';
+
+// BOOTSTRAP
+//@import 'bootstrap/buttons';
+
+// BASE
 @import 'base/typography';
 @import 'base/colors';
 @import 'base/nav';
+@import 'base/utility';
+@import 'base/hero';
 @import 'base/main';
