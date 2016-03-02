@@ -7,7 +7,7 @@
   "tasks": {
     "browserSync": {
       "server": {
-        "baseDir": "public/site"
+        "baseDir": "public"
       }
     },
 
@@ -40,7 +40,7 @@
         "collapseWhitespace": true
       },
       "extensions": ["html", "json"],
-      "excludeFolders": ["layouts", "shared", "macros", "data"]
+      "excludeFolders": ["_layouts", "_shared", "_components", "macros", "data"]
     },
 
     "images": {
