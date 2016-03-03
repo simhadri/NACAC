@@ -24,9 +24,6 @@ nav.utility-nav {
 		width: 25%;
 		text-align: right;
 		padding: 1rem;
-		input{
-			background-color: transparent;
-			border:1px solid $white;
-		}
+		position:relative;
 	}
 }
