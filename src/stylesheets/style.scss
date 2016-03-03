@@ -1,6 +1,6 @@
 // MODULES
+@import 'modules/variables';
 @import 'modules/breakpoints';
-@import 'modules/functions';
 @import 'modules/mixins';
 @import 'modules/normalize';
 
@@ -9,8 +9,8 @@
 
 // BASE
 @import 'base/typography';
-@import 'base/colors';
-@import 'base/nav';
+@import 'base/buttons';
+@import 'base/navigation';
 @import 'base/utility';
 @import 'base/hero';
 @import 'base/main';

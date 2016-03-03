@@ -1,6 +1,6 @@
 .hero__wrapper{
-	height: 30rem;
-	padding:10rem;
+	height: 40rem;
+	padding:15rem 0;
 }
 .hero__background-image {
 	position: fixed;
@@ -29,7 +29,8 @@
 	}
 	.hero__title{
 		font-family: "acumin-pro-condensed",sans-serif;
-		font-size: 3.8rem;
+		font-size: 4.8rem;
+		margin: 1.6rem 0;
 		font-weight: bold;
 		text-transform: uppercase;
 	}
@@ -37,6 +38,6 @@
 
 	}
 	.hero__cta-button{
-
+		margin:1.6rem;
 	}
 }
