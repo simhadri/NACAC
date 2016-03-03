@@ -1,10 +1,32 @@
-$light-grey: lightgrey;
-$dark-grey: #555;
-$red: #e53339;
-
-$vigetNavy: #092f40;
-$vigetOrange: #f26d21;
-$vigetBlue: #1496bb;
-
-$facebookBlue: #3b5998;
-$twitterBlue: #4099ff;
+.btn{
+    display: inline-block;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    @include prefix('user-select', none, webkit moz ms);
+    border: 1px solid transparent;
+    padding: 1rem 1.2rem;
+    font-size: 1.6rem;
+    border-radius: 0.25rem;
+	@include transition(all 0.2s ease-in);
+	font-family: $condensed;
+	text-transform: uppercase;
+}
+.btn-mega {
+    padding: 1.8rem 1.6rem;
+    font-size: 2rem;
+    border-radius: 0.3rem;
+}
+.btn.btn-default {
+    border: 1px solid white;
+    color: white;
+    border-radius: 0;
+    &:hover{
+    	// gradient transtitions dont work well 
+    	border-color:$nacac-orange;
+    	@include css-gradient($lighter-orange,$nacac-orange)
+    }
+}

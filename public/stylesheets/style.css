@@ -1,10 +1,5 @@
 /******************************************************************
 
-Functions
-
-******************************************************************/
-/******************************************************************
-
 Mixins
 
 Based on: Bones - github.com/eddiemachado/bones
@@ -167,8 +162,46 @@ table {
 td, th {
   padding: 0; }
 
-body, html {
-  font-family: "acumin-pro",sans-serif; }
+html {
+  font-size: 10px; }
+
+body {
+  font-size: 1.4rem;
+  font-family: "acumin-pro", sans-serif; }
+
+.btn {
+  display: inline-block;
+  font-weight: normal;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 1rem 1.2rem;
+  font-size: 1.6rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in;
+  font-family: "acumin-pro-condensed", sans-serif;
+  text-transform: uppercase; }
+
+.btn-mega {
+  padding: 1.8rem 1.6rem;
+  font-size: 2rem;
+  border-radius: 0.3rem; }
+
+.btn.btn-default {
+  border: 1px solid white;
+  color: white;
+  border-radius: 0; }
+  .btn.btn-default:hover {
+    border-color: #f28800;
+    background-color: #f28800;
+    background-image: linear-gradient(to bottom, #ffa211, #f28800); }
 
 nav.primary-nav ul.primary-nav__list {
   list-style: none; }
@@ -199,8 +232,8 @@ nav.utility-nav {
       border: 1px solid #FFFFFF; }
 
 .hero__wrapper {
-  height: 30rem;
-  padding: 10rem; }
+  height: 40rem;
+  padding: 15rem 0; }
 
 .hero__background-image {
   position: fixed;
@@ -227,9 +260,12 @@ nav.utility-nav {
     font-style: italic; }
   .hero__content .hero__title {
     font-family: "acumin-pro-condensed",sans-serif;
-    font-size: 3.8rem;
+    font-size: 4.8rem;
+    margin: 1.6rem 0;
     font-weight: bold;
     text-transform: uppercase; }
+  .hero__content .hero__cta-button {
+    margin: 1.6rem; }
 
 /*
  * CSS Page Transitions
