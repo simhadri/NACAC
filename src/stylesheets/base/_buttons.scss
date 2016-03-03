@@ -1,24 +1,16 @@
 .btn{
-    display: inline-block;
-    font-weight: normal;
-    line-height: 1.25;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    @include prefix('user-select', none, webkit moz ms);
-    border: 1px solid transparent;
     padding: 1rem 1.2rem;
     font-size: 1.6rem;
     border-radius: 0.25rem;
-	@include transition(all 0.2s ease-in);
-	font-family: $condensed;
-	text-transform: uppercase;
+    @include transition(all 0.2s ease-in);
+    font-family: $condensed;
+    text-transform: uppercase;
 }
 .btn-mega {
     padding: 1.8rem 1.6rem;
     font-size: 2rem;
     border-radius: 0.3rem;
+    min-width: 15rem;
 }
 .btn.btn-default {
     border: 1px solid white;
