@@ -44,9 +44,9 @@ $(window).scroll(function() {
 				// todo: hardcoded times, should be done after transition ends
 				if (searchInput.value !== '') {
 					setTimeout(function() {
-						morphSearch.addClass('hideInput');
+						morphSearch.addClass('morphsearch--hideInput');
 						setTimeout(function() {
-							morphSearch.removeClass('hideInput');
+							morphSearch.removeClass('morphsearch--hideInput');
 							searchInput.value = '';
 						}, 300);
 					}, 500);
