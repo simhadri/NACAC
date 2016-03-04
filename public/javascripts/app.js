@@ -26,21 +26,22 @@ webpackJsonp([0,1],[
 		(0, _vendorJquery214MinJs2['default'])('main').addClass("fadeIn");
 		var bLazy = new Blazy();
 	});
-	var popImg = function popImg() {
-		(0, _vendorJquery214MinJs2['default'])('img').each(function () {
-			var imagePos = (0, _vendorJquery214MinJs2['default'])(this).offset().top;
+	// var popImg = function() {
+	// 	$('img').each(function() {
+	// 		var imagePos = $(this).offset().top;
 	
-			var topOfWindow = (0, _vendorJquery214MinJs2['default'])(window).scrollTop();
-			var heightOfWindow = (0, _vendorJquery214MinJs2['default'])(window).height();
-			if (imagePos < topOfWindow + heightOfWindow) {
-				(0, _vendorJquery214MinJs2['default'])(this).addClass("bounceIn");
-			}
-		});
-	};
-	popImg();
-	(0, _vendorJquery214MinJs2['default'])(window).scroll(function () {
-		popImg();
-	});
+	// 		var topOfWindow = $(window).scrollTop();
+	// 		var heightOfWindow = $(window).height();
+	// 		if (imagePos < topOfWindow + heightOfWindow) {
+	// 			$(this).addClass("bounceIn");
+	// 		}
+	
+	// 	});
+	// }
+	// popImg();
+	// $(window).scroll(function() {
+	// 	popImg();
+	// });
 	(function () {
 		var morphSearch = (0, _vendorJquery214MinJs2['default'])('.morphsearch'),
 		    searchInput = (0, _vendorJquery214MinJs2['default'])('input.morphsearch__input'),
@@ -93,6 +94,20 @@ webpackJsonp([0,1],[
 		(0, _vendorJquery214MinJs2['default'])('button[type="submit"]').on('click', function (ev) {
 			ev.preventDefault();
 		});
+	
+		(0, _vendorJquery214MinJs2['default'])(window).scroll(function () {
+			checkIfNavShouldStick();
+		});
+		function checkIfNavShouldStick() {
+			var heroHeight = (0, _vendorJquery214MinJs2['default'])('.hero__wrapper').height() + (0, _vendorJquery214MinJs2['default'])('.utility-nav').height() + 70;
+			console.log(heroHeight);
+			var bodyTop = (0, _vendorJquery214MinJs2['default'])('body').scrollTop();
+			if (bodyTop >= heroHeight) {
+				(0, _vendorJquery214MinJs2['default'])('.primary-nav').addClass('primary-nav--sticky');
+			} else {
+				(0, _vendorJquery214MinJs2['default'])('.primary-nav').removeClass('primary-nav--sticky');
+			}
+		};
 	})();
 
 /***/ },

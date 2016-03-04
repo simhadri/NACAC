@@ -1,95 +1,10 @@
-// nav.primary-nav{
-// 	// position:relative;
-// 	// overflow:hidden;
-// 	// &:before,&:after{
-// 	// 	content:"";
-// 	// 	width:20%;
-// 	// 	background-color: $white_translucent;
-// 	// 	height:6rem;
-// 	// 	position:absolute;
-// 	// 	z-index: 0;
-// 	// }
-// 	// &:before{
-// 	// 	left:0rem;
-// 	// 	top:0;
-// 	// }
-// 	// &:after{
-// 	// 	right:0rem;
-		
-// 	// 	top:0;
-// 	// }
-// 	overflow:hidden;
-
-// 	li{
-// 		width:10%;
-// 		display: table-cell;
-// 		vertical-align: middle;	
-// 		// img{
-// 		// 	height: 4rem;
-// 		// 	padding-top: 0.4rem;
-// 		// 	opacity: 0.8;
-// 		// }
-// 	}
-// 	.primary-nav__logo{
-// 		// background-color: transparent;
-// 		width:20%;
-// 		text-align: center;
-// 		// overflow:hidden;
-// 		img {
-// 		    height: 3.6rem;
-// 		    padding: 0;
-// 		    opacity: 0.7;
-// 		    margin: 0;
-// 		}
-// 		border-right: 1px solid $white;
-// 	}
-// 	.primary-nav__list{
-// 		list-style: none;
-// 		font-size: 1.8rem;
-// 		position:relative;
-// 	//overflow:hidden;
-// 	&:before,&:after{
-// 		content:"";
-// 		width:50%;
-// 		background-color: $white_translucent;
-// 		height:100%;
-// 		position:absolute;
-// 		z-index: 0;
-// 	}
-// 	&:before{
-// 		left:-50%;
-// 		top:0;
-// 	}
-// 	&:after{
-// 		right:-50%;
-		
-// 		top:0;
-// 	}
-// 		.primary-nav__item{
-// 			//padding:1rem 0.5rem;
-// 			//float: left;
-// 			padding: 0.8rem 1rem;
-// 			background-color: $white_translucent;
-// 			line-height: 1;
-// 			a{
-// 				color: $black_translucent;
-// 				font-family: $condensed;
-// 				text-transform: uppercase;
-// 				font-weight: bold;
-// 			}
-// 		}
-// 	}
-// 	//li:nth-last-child(n+7), li:nth-last-child(n+7) ~ li { }
-
-// }
-
 nav.primary-nav{
 	overflow:hidden;
+	height: 7rem;
 	li{
 		width:10%;
 		display: table-cell;
 		vertical-align: middle;
-		font-size:1.2rem;
 	}
 	.primary-nav__logo{
 		background-color: transparent;
@@ -112,6 +27,9 @@ nav.primary-nav{
 			position: absolute;
 			top: 50%;
 			left: 50%;
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			 margin-top: -2rem;
+			}
 				
 			
 			
@@ -119,8 +37,8 @@ nav.primary-nav{
 	}
 	.primary-nav__list{
 		list-style: none;
-		font-size: 1.8rem;
 		position:relative;
+		height: 7rem;
 		&:before,&:after{
 			content:"";
 			width:50%;
@@ -141,12 +59,33 @@ nav.primary-nav{
 			padding: 0.8rem;
 			background-color: $white_translucent;
 			line-height: 1;
+			height: 7rem;
 			a{
 				color: $black_translucent;
-				font-family: $condensed;
+				font-family: $sans;
 				text-transform: uppercase;
 				font-weight: bold;
+				font-size: 1.6rem;
 			}
 		}
 	}
+}
+
+// STICKIFICATION
+nav.primary-nav--sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: visible;
+    left:50%;
+    z-index: 1;
+    @include break(min, $screen-sm-min) {
+			margin-left: -#{$container-sm-half};
+		}
+		@include break(min, $screen-md-min) {
+			margin-left: -#{$container-md-half};
+		}
+		@include break(min, $screen-lg-min) {
+			margin-left: -#{$container-lg-half};
+		}
 }

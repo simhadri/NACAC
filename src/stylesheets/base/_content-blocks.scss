@@ -1,6 +1,94 @@
-.half-block{
-
+.content-block__row {
+	@extend .clearfix;
 }
-.half-block__image{
 
+
+// Color Blocks
+.color-block {
+	color: $white;
+	.color-block__image {
+		width: 100%;
+		position: absolute;
+		z-index: -1;
+	}
+	p.color-block__feature {
+		@include uppercase;
+		font-weight: 200;
+		padding-left: 2rem;
+		position:relative;
+		&:before{
+			font-family: FontAwesome;
+			content:"\f073";
+
+			position:absolute;
+			// top:0;
+			left:0;
+		}
+	}
+	h2.color-block__title {
+		@include uppercase;
+		font-family: $condensed;
+		font-size: 4rem;
+		margin: 2rem 0;
+	}
+	p.color-block__info {
+		font-family: $serif;
+		font-style: italic;
+		margin-bottom: 2rem;
+	}
+	p.color-block__text {
+		font-size: 1.8rem;
+		font-weight: 200;
+	}
+}
+
+.color-block-half {
+	width: 50%;
+	float: left;
+	position: relative;
+	min-height: 40rem;
+	overflow: hidden;
+	&:nth-child(odd) .color-block__content{
+		float:right;		
+	}
+	.color-block__content {
+		padding: 3rem;
+
+		@include break(min, $screen-sm-min) {
+			width: $container-sm-half;
+		}
+		@include break(min, $screen-md-min) {
+			width: $container-md-half;
+		}
+		@include break(min, $screen-lg-min) {
+			width: $container-lg-half;
+		}
+	}
+}
+
+@include break(max, $screen-sm-max) {
+	.color-block-half {
+		width: 100%;
+		float: none;
+	}
+}
+
+@include break(min, $screen-md-min) {}
+
+@include break(min, $screen-lg-min) {}
+
+
+// Card-block
+.flexbox .content-block__row {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.flexbox .card-block {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
 }
