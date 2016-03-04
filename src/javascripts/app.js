@@ -7,23 +7,23 @@ import $ from 'vendor/jquery-2.1.4.min.js';
 $(document).ready(function() {
 	$('main').addClass("fadeIn");
 	var bLazy = new Blazy();
-})
-var popImg = function() {
-	$('img').each(function() {
-		var imagePos = $(this).offset().top;
-
-		var topOfWindow = $(window).scrollTop();
-		var heightOfWindow = $(window).height();
-		if (imagePos < topOfWindow + heightOfWindow) {
-			$(this).addClass("bounceIn");
-		}
-
-	});
-}
-popImg();
-$(window).scroll(function() {
-	popImg();
 });
+// var popImg = function() {
+// 	$('img').each(function() {
+// 		var imagePos = $(this).offset().top;
+
+// 		var topOfWindow = $(window).scrollTop();
+// 		var heightOfWindow = $(window).height();
+// 		if (imagePos < topOfWindow + heightOfWindow) {
+// 			$(this).addClass("bounceIn");
+// 		}
+
+// 	});
+// }
+// popImg();
+// $(window).scroll(function() {
+// 	popImg();
+// });
 (function() {
 	var morphSearch = $('.morphsearch'),
 		searchInput = $('input.morphsearch__input'),
@@ -74,4 +74,21 @@ $(window).scroll(function() {
 
 	/***** for demo purposes only: don't allow to submit the form *****/
 	$('button[type="submit"]').on('click', function(ev) { ev.preventDefault(); });
+
+	$( window ).scroll(function() {
+	  checkIfNavShouldStick();
+	});
+	function checkIfNavShouldStick(){
+	 	var heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height() + 70;
+	 	console.log(heroHeight)
+		var bodyTop = $('body').scrollTop();
+		if(bodyTop >= heroHeight){
+			$('.primary-nav').addClass('primary-nav--sticky')
+		} else{
+			$('.primary-nav').removeClass('primary-nav--sticky')
+		}
+	 };
+
+
+
 })();

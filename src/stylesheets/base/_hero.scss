@@ -1,6 +1,6 @@
 .hero__wrapper{
 	height: 55rem;
-	padding:15rem 0;
+	
 }
 .hero__background-image {
 	position: fixed;
@@ -23,6 +23,7 @@
 .hero__content{
 	text-align: center;
 	color: $white;
+	padding:15rem 0;
 	.hero__subtitle{
 		font-family: "merriweather",serif;
 		font-style: italic;

@@ -5,6 +5,10 @@ $serif: "merriweather",serif;
 $sans: "acumin-pro",sans-serif;
 $condensed: "acumin-pro-condensed",sans-serif;
 
+@mixin uppercase{
+	text-transform: uppercase;
+};
+
 // **********
 // COLORS
 // **********
@@ -13,11 +17,33 @@ $off_white: #c2c2c2;
 $black: #000000;
 
 // NACAC Colors
-$nacac-orange: #f28800;
 $white_translucent: rgba(255,255,255,0.8);
 $black_translucent: rgba(0,0,0,0.6);
+$nacac-orange: #f28800;
 $lighter-orange:#ffa211;
+$nacac_burgundy:#A9383A;
+$nacac_grey:#9EA7AE;
+
+$nacac_bg-blue-grey: #F2F2F2;
+$nacac_bg-light-grey:#ECF0F3;
+
+$nacac_blue: #2480C4;
+$nacac_light-blue:#6AAEE6;
+$nacac_border-blue:#8BD4EB;
 
 // Social Colors
 $facebookBlue: #3b5998;
 $twitterBlue: #4099ff;
+
+
+
+
+// Some math to get container size then base blocks off them
+// Its half the container size at each media query
+$container-sm-half:37.5rem;
+$container-md-half:48.5rem;
+$container-lg-half:58.5rem;
+
+$container-sm:75rem;
+$container-md:97rem;
+$container-lg:117rem;
