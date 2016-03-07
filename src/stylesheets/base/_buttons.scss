@@ -6,12 +6,7 @@
     font-family: $condensed;
     text-transform: uppercase;
 }
-.btn-mega {
-    padding: 1.8rem 1.6rem;
-    font-size: 2rem;
-    border-radius: 0.3rem;
-    min-width: 15rem;
-}
+
 .btn.btn-default {
     border: 1px solid white;
     color: white;
@@ -21,4 +16,18 @@
     	border-color:$nacac-orange;
     	@include css-gradient($lighter-orange,$nacac-orange)
     }
+}
+
+.btn--mega {
+    padding: 1.8rem 1.6rem;
+    font-size: 2rem;
+    border-radius: 0.3rem;
+    min-width: 15rem;
+}
+
+.btn--clear {
+    border: 1px solid white;
+    color: white;
+    border-radius: 0;
+    background-color: transparent;
 }

@@ -4,6 +4,7 @@
 $serif: "merriweather",serif;
 $sans: "acumin-pro",sans-serif;
 $condensed: "acumin-pro-condensed",sans-serif;
+$icons:FontAwesome;
 
 @mixin uppercase{
 	text-transform: uppercase;
@@ -16,6 +17,9 @@ $white: #FFFFFF;
 $off_white: #c2c2c2;
 $black: #000000;
 
+// Text colors
+$text_slate:#374049;
+
 // NACAC Colors
 $white_translucent: rgba(255,255,255,0.8);
 $black_translucent: rgba(0,0,0,0.6);
@@ -24,8 +28,8 @@ $lighter-orange:#ffa211;
 $nacac_burgundy:#A9383A;
 $nacac_grey:#9EA7AE;
 
-$nacac_bg-blue-grey: #F2F2F2;
-$nacac_bg-light-grey:#ECF0F3;
+$nacac_bg-light-grey: #F2F2F2;
+$nacac_bg-blue-grey:#ECF0F3;
 
 $nacac_blue: #2480C4;
 $nacac_light-blue:#6AAEE6;
