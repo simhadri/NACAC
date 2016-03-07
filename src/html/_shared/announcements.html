@@ -1,0 +1,26 @@
+<article class="article__row article--lightgrey announcements">
+	<div class="announcement__header">
+			<div class="container">
+				<p><i class="fa fa-bullhorn"></i>Announcements</p>
+			</div>
+		</div>
+	<div class="container">
+		<section class="announcements__row row">
+			<div class="col-md-7 listing__block">
+				<header class="article__header">
+					<h2>Get Involved</h2>
+				</header>
+
+				{% include '_components/listing_entry.html'%}
+
+			</div>
+			<div class="col-md-5 calendar__block">
+				<header class="article__header">
+					<h2>Upcoming</h2>
+				</header>
+				{% include '_components/calendar_entry.html'%}
+				
+			</div>
+		</section>
+	</div>
+</article>

@@ -1,7 +1,7 @@
+@import 'bootstrap/mixins';
 .content-block__row {
-	@extend .clearfix;
+	@include clearfix;
 }
-
 
 // Color Blocks
 .color-block {
@@ -15,14 +15,12 @@
 		@include uppercase;
 		font-weight: 200;
 		padding-left: 2rem;
-		position:relative;
-		&:before{
+		position: relative;
+		&:before {
 			font-family: FontAwesome;
-			content:"\f073";
-
-			position:absolute;
-			// top:0;
-			left:0;
+			content: "\f073";
+			position: absolute;
+			left: 0;
 		}
 	}
 	h2.color-block__title {
@@ -42,18 +40,17 @@
 	}
 }
 
-.color-block-half {
+.color-block--half {
 	width: 50%;
 	float: left;
 	position: relative;
-	min-height: 40rem;
+	min-height: 36rem;
 	overflow: hidden;
-	&:nth-child(odd) .color-block__content{
-		float:right;		
+	&:nth-child(odd) .color-block__content {
+		float: right;
 	}
 	.color-block__content {
 		padding: 3rem;
-
 		@include break(min, $screen-sm-min) {
 			width: $container-sm-half;
 		}
@@ -67,7 +64,7 @@
 }
 
 @include break(max, $screen-sm-max) {
-	.color-block-half {
+	.color-block--half {
 		width: 100%;
 		float: none;
 	}
@@ -77,18 +74,81 @@
 
 @include break(min, $screen-lg-min) {}
 
-
 // Card-block
-.flexbox .content-block__row {
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+.flexbox__row {
+	display: flex;
 }
-.flexbox .card-block {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+
+.flexbox__column {
+	display: flex;
+	flex-direction: column;
+}
+
+.card-block {
+	background-color: $nacac_grey;
+	margin: 2rem 1rem;
+	padding: 0;
+	color: $white;
+	-webkit-transform: translateZ(0);
+	-webkit-transform: translateY(0);
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	cursor: pointer;
+	&:hover {
+		position: relative;
+		box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+		@include prefix(animation-name, floating, webkit);
+		@include prefix(animation-duration, 3s, webkit);
+		@include prefix(animation-iteration-count, infinite, webkit);
+		@include prefix(animation-timing-function, ease-in-out, webkit);
+		@include keyframes(floating) {
+			from {
+				transform: translate(0, 0px);
+			}
+			65% {
+				transform: translate(0, -6px);
+			}
+			to {
+				transform: translate(0, 0px);
+			}
+		}
+		img {}
+	}
+}
+
+.card-block__header {
+	position: relative;
+	height: 18rem;
+	overflow: hidden;
+	img {
+		transition: all .4s ease-in-out;
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		@include prefix(filter, brightness(80%), webkit);
+		&:hover {
+			@include prefix(filter, brightness(100%), webkit);
+		}
+	}
+	h3 {
+		font-family: $condensed;
+		position: absolute;
+		font-weight: bold;
+		@include uppercase;
+		z-index: 2;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.card-block__text {
+	flex: 1;
+	padding: 2rem;
+	p {
+		font-weight: 100;
+	}
+}
+
+.card-block__footer {
+	padding: 0 2rem 2rem;
 }

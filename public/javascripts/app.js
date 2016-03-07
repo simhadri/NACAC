@@ -21,7 +21,9 @@ webpackJsonp([0,1],[
 	//import CountUp from 'vendor/countUp.js';
 	
 	// modules scripts
-	//import 'modules/main.nav.js';
+	
+	__webpack_require__(4);
+	
 	(0, _vendorJquery214MinJs2['default'])(document).ready(function () {
 		(0, _vendorJquery214MinJs2['default'])('main').addClass("fadeIn");
 		var bLazy = new Blazy();
@@ -2021,6 +2023,119 @@ webpackJsonp([0,1],[
 	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, {}))
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _vendorJquery214MinJs = __webpack_require__(2);
+	
+	var _vendorJquery214MinJs2 = _interopRequireDefault(_vendorJquery214MinJs);
+	
+	(function () {
+		'use strict';
+		var navTrigger = (0, _vendorJquery214MinJs2['default'])('.nav-trigger'),
+		    primaryNav = (0, _vendorJquery214MinJs2['default'])('.primary-nav'),
+		    body = (0, _vendorJquery214MinJs2['default'])('body'),
+		    navScreen = (0, _vendorJquery214MinJs2['default'])('.nav-screen'),
+		    toplevelChildrenOfPrimaryNav = primaryNav.children('li'),
+		    goBackButton = (0, _vendorJquery214MinJs2['default'])('.go-back'),
+		    navItemLinks = (0, _vendorJquery214MinJs2['default'])('.has-children'),
+		    mobileUtilityBarButtons = (0, _vendorJquery214MinJs2['default'])('.mobile-utility-bar-buttons');
+	
+		var openNav = function openNav() {
+			body.addClass('body--freeze');
+			primaryNav.addClass('nav-is-visible');
+			navTrigger.addClass('morphStateX');
+			navScreen.removeClass('nav-screen--off').addClass('nav-screen--on');
+			(0, _vendorJquery214MinJs2['default'])('.morphStateX').on("click", function () {
+				closeNav();
+			});
+		};
+		var closeNav = function closeNav() {
+			body.removeClass('body--freeze');
+			primaryNav.removeClass('nav-is-visible');
+			navTrigger.removeClass('morphStateX');
+			navScreen.removeClass('nav-screen--on').addClass('nav-screen--off');
+			navTrigger.on("click", function () {
+				openNav();
+			});
+		};
+		var closeSubNav = function closeSubNav() {
+			(0, _vendorJquery214MinJs2['default'])('.nav__menu--visible').removeClass('nav__menu--visible');
+			(0, _vendorJquery214MinJs2['default'])('.selected').removeClass('selected');
+			(0, _vendorJquery214MinJs2['default'])('.primary-nav').addClass('nav__menu--visible');
+		};
+		var openSubNav = function openSubNav(selected) {
+			(0, _vendorJquery214MinJs2['default'])('.selected').removeClass('selected');
+			(0, _vendorJquery214MinJs2['default'])('.nav__menu--visible').removeClass('nav__menu--visible');
+			selected.parent().addClass('selected');
+			selected.next().addClass('nav__menu--visible');
+		};
+	
+		function hasChildrenActions() {
+			if ((0, _vendorJquery214MinJs2['default'])(this).attr('href') === "#") {
+				if (!(0, _vendorJquery214MinJs2['default'])(this).parent().hasClass('selected')) {
+					bfSelect((0, _vendorJquery214MinJs2['default'])(this));
+				} else {
+					bfDeselect();
+				}
+			}
+		}
+	
+		function removeSelected() {
+			toplevelChildrenOfPrimaryNav.removeClass('selected');
+		}
+	
+		function bfDeselect() {
+			removeSelected();
+			removeVisibleMenuLevel();
+			restoreTopLevelVisibility();
+		}
+	
+		function restoreTopLevelVisibility() {
+			primaryNav.addClass('nav__menu--visible');
+		}
+	
+		function removeVisibleMenuLevel() {
+			(0, _vendorJquery214MinJs2['default'])('.nav__menu--visible').removeClass('nav__menu--visible');
+		}
+	
+		function bfSelect(theSelection) {
+			removeSelected();
+			removeVisibleMenuLevel();
+			theSelection.parent('.has-children').addClass('selected').children('.nav-interior').addClass('nav__menu--visible');
+		}
+	
+		function clickAnywhereToCloseEverything(event) {
+			if (!(0, _vendorJquery214MinJs2['default'])(event.target).closest('.primary-nav').length) {
+				closeSubNav();
+			}
+		}
+		body.click(clickAnywhereToCloseEverything);
+		navTrigger.on("click", function () {
+			openNav();
+		});
+		navScreen.on("click", function () {
+			closeNav();
+		});
+		navItemLinks.on("click", function (event) {
+			event.preventDefault();
+			var selected = (0, _vendorJquery214MinJs2['default'])(this);
+			if (selected.parent().hasClass('selected') === true) {
+				closeSubNav();
+			} else {
+				openSubNav(selected);
+			}
+		});
+		goBackButton.on("click", function () {
+			closeSubNav();
+		});
+	})();
 
 /***/ }
 ]);
