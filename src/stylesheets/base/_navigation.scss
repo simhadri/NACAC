@@ -33,34 +33,11 @@ nav.primary-nav {
 			}
 		}
 	}
-	// .this-is-dum {
-	// 	position: relative;
-	// 	height: 100%;
-	// 	width: 100%;
-	// 	content: "";
-	// 	&:before,
-	// 	&:after {
-	// 		content: "";
-	// 		width: 50%;
-	// 		background-color: $white_translucent;
-	// 		height: 100%;
-	// 		position: absolute;
-	// 		z-index: 0;
-	// 	}
-	// 	&:before {
-	// 		left: -50%;
-	// 		top: 0;
-	// 	}
-	// 	&:after {
-	// 		right: -50%;
-	// 		top: 0;
-	// 	}
-	// }
 	.primary-nav__list {
 		list-style: none;
 		position: relative;
 		height: 7rem;
-		box-shadow: 980px 0 0 0px rgba(255,255,255,0.8), -980px 0 0 0px rgba(255,255,255,0.8);;
+		box-shadow: 780px 0 0 0px rgba(255,255,255,0.8), -780px 0 0 0px rgba(255,255,255,0.8);;
 		// &:before,&:after{
 		// 	content:"";
 		// 	width:50%;
@@ -455,7 +432,6 @@ nav.primary-nav--sticky {
 	/*end nav*/
 	.has-children {
 		position: relative;
-		//border-bottom-color: $green;
 		&:first-child {
 			width: 100%;
 		}

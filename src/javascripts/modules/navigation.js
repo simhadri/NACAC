@@ -101,4 +101,18 @@ import $ from '../vendor/jquery-2.1.4.min.js';
 	goBackButton.on("click", function() {
 		closeSubNav();
 	});
+	// function for nav depending
+	// on where you are on the page
+	function navScrollDependencies() {
+		var heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height();
+		var bodyTop = $('body').scrollTop();
+		if (bodyTop >= heroHeight) {
+			$('.primary-nav').addClass('primary-nav--sticky')
+		} else {
+			$('.primary-nav').removeClass('primary-nav--sticky')
+		}
+	};
+	$(window).scroll(function() {
+		navScrollDependencies();
+	});
 })();

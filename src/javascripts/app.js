@@ -1,8 +1,12 @@
-// vendor scirpts
+// *********************
+//    Vendor scirpts
+// *********************
 import $ from 'vendor/jquery-2.1.4.min.js';
 //import CountUp from 'vendor/countUp.js';
 
-// modules scripts
+// *********************
+//    Modules scripts
+// *********************
 import 'modules/navigation.js';
 
 
@@ -27,6 +31,7 @@ $(document).ready(function() {
 // 	popImg();
 // });
 (function() {
+	'use strict';
 	var morphSearch = $('.morphsearch'),
 		searchInput = $('input.morphsearch__input'),
 		seachInputWrapper = $('.utility-nav__search'),
@@ -64,6 +69,7 @@ $(document).ready(function() {
 	// events
 	searchInput.on('focus', toggleSearch);
 	ctrlClose.on('click', toggleSearch);
+	
 	// esc key closes search overlay
 	// keyboard navigation events
 	document.addEventListener('keydown', function(ev) {
@@ -72,25 +78,4 @@ $(document).ready(function() {
 			toggleSearch(ev);
 		}
 	});
-
-
-	/***** for demo purposes only: don't allow to submit the form *****/
-	$('button[type="submit"]').on('click', function(ev) { ev.preventDefault(); });
-
-	$( window ).scroll(function() {
-	  checkIfNavShouldStick();
-	});
-	function checkIfNavShouldStick(){
-	 	var heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height() + 70;
-	 	console.log(heroHeight)
-		var bodyTop = $('body').scrollTop();
-		if(bodyTop >= heroHeight){
-			$('.primary-nav').addClass('primary-nav--sticky')
-		} else{
-			$('.primary-nav').removeClass('primary-nav--sticky')
-		}
-	 };
-
-
-
 })();

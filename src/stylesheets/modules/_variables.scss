@@ -10,6 +10,27 @@ $icons:FontAwesome;
 	text-transform: uppercase;
 };
 
+@mixin serif-italic{
+	font-family: $serif;
+    font-style: italic;
+}
+
+@mixin condensed-uppercase-bold{
+	font-family: $condensed;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+@mixin sans-light{
+	font-family: $sans;
+	font-weight: 200;
+}
+
+@mixin sans-uppercase-normal{
+	font-family: $sans;
+	text-transform: uppercase;
+	font-weight: 400;
+}
 // **********
 // COLORS
 // **********
@@ -27,6 +48,7 @@ $nacac-orange: #f28800;
 $lighter-orange:#ffa211;
 $nacac_burgundy:#A9383A;
 $nacac_grey:#9EA7AE;
+$nacac_medium_grey:#8A8A8A;
 
 $nacac_bg-light-grey: #F2F2F2;
 $nacac_bg-blue-grey:#ECF0F3;
@@ -34,6 +56,7 @@ $nacac_bg-blue-grey:#ECF0F3;
 $nacac_blue: #2480C4;
 $nacac_light-blue:#6AAEE6;
 $nacac_border-blue:#8BD4EB;
+$nacac_border-grey:#BDBDBD;
 
 // Social Colors
 $facebookBlue: #3b5998;
