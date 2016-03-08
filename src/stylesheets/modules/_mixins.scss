@@ -27,6 +27,21 @@ USAGE: @include transition(all 0.2s ease-in-out);
 }
 
 /*********************
+BS Cllearfix
+*********************/
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+/*********************
 CSS3 GRADIENTS
 *********************/
 

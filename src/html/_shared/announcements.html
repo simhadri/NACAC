@@ -5,7 +5,7 @@
 			</div>
 		</div>
 	<div class="container">
-		<section class="announcements__row row">
+		<section class="announcement__row row">
 			<div class="col-md-7 listing__block">
 				<header class="article__header">
 					<h2>Get Involved</h2>
@@ -13,13 +13,23 @@
 
 				{% include '_components/listing_entry.html'%}
 
+				{% include '_components/listing_entry.html'%}
+
+				{% include '_components/listing_entry.html'%}
+
 			</div>
 			<div class="col-md-5 calendar__block">
 				<header class="article__header">
-					<h2>Upcoming</h2>
+					<h2>Upcoming Training</h2>
 				</header>
+				
+				{% include '_components/calendar_entry.html'%}
+
+				{% include '_components/calendar_entry.html'%}
+
 				{% include '_components/calendar_entry.html'%}
 				
+				<a href="#" class="btn btn--nacac-blue">View Full Calendar</a>
 			</div>
 		</section>
 	</div>

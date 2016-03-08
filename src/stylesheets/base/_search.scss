@@ -4,22 +4,25 @@
 }
 .morphsearch {
 	width: 20rem;
-	min-height: 4rem;
+	height: 4rem;
 	position: absolute;
 	z-index: 10000;
-	top: 0;
+	top: 0.3rem;
 	right: 5rem;
+	border:1px solid;
+	border-color: #eee;
 	@include prefix(transform-origin, 100% 0,webkit);
-	@include prefix(transition-property, 'min-height, width, top, right',webkit);
+	@include prefix(transition-property, 'height, width, top, right, border-color',webkit);
 	@include prefix(transition-duration, 0.5s,webkit);
 	@include prefix(transition-timing-function, cubic-bezier(0.7,0,0.3,1),webkit);
 }
 
 .morphsearch--open {
 	width: 400%;
-	min-height: 24rem;
+	height: 24rem;
 	top: 0;
 	right: 0;
+	border-color: transparent;
 	.morphsearch__input {
 		font-size: 5em;
 	}

@@ -1,0 +1,87 @@
+.announcement__header {
+	border-bottom: 1px solid $nacac_border-grey;
+	color: $nacac_medium_grey;
+	p{
+	    display: inline-block;
+	    padding: 1.8rem 2rem;
+	    border-left: 1px solid $nacac_border-grey;
+	    border-right: 1px solid $nacac_border-grey;
+	    font-size: 1.4rem;
+	    font-weight: 100;
+	    margin:0;
+	    text-transform: uppercase;
+	}
+	i{
+		margin-left: -0.4rem;
+		margin-right: 0.4rem;
+		@include prefix(transform, rotate(-20deg),webkit);
+	}
+}
+.announcement__row{
+	h2{
+		text-align: left;
+	}
+}
+.listing__block{
+	position: relative;
+	&:after{
+		content: "";
+		top: 11.5rem;
+		position: absolute;
+		right: 1rem;
+		height: calc(100% - 11.5rem);
+		width: 1px;
+		background-color: $nacac_border-grey;
+	}
+}
+.listing__entry , .calendar__content{
+	margin-bottom: 3rem;
+	h3{
+		font-weight: bold;
+	}
+	a{	
+		@include sans-uppercase-normal;	
+		position: relative;
+		&:after{
+			content:"";
+			position: absolute;
+			top: 0.5rem;
+			right: -1.4rem;
+			width: 0; 
+			height: 0; 
+			border-top: 0.6rem solid transparent;
+			border-bottom: 0.6rem solid transparent;
+			border-left: 0.6rem solid;
+		}
+	}
+}
+.calendar__entry{
+	@include clearfix;
+}
+.calendar__content{
+	float: right;
+	width: calc(100% - 12rem);
+}
+.calendar__date{
+	@include sans-uppercase-normal;
+	color: $white;
+	float:left;
+	text-align: center;
+	margin-top: 1.8rem;
+	width:10rem;
+	height:10rem;
+	background-color: $nacac_burgundy;
+	border-radius: 100%;
+	.calendar__day{
+		padding-bottom: 0.4rem;
+		margin:0 auto;
+		margin-top: 1rem;
+		border-bottom: 1px solid;
+		width: 5rem;
+		font-size: 2.8rem;
+	}
+	.calendar__month{
+		margin-top: 0.4rem;
+		font-weight: 200;
+	}
+}

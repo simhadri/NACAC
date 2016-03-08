@@ -9,7 +9,9 @@ webpackJsonp([0,1],[
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// vendor scirpts
+	// *********************
+	//    Vendor scirpts
+	// *********************
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -20,7 +22,9 @@ webpackJsonp([0,1],[
 	
 	//import CountUp from 'vendor/countUp.js';
 	
-	// modules scripts
+	// *********************
+	//    Modules scripts
+	// *********************
 	
 	__webpack_require__(4);
 	
@@ -45,6 +49,7 @@ webpackJsonp([0,1],[
 	// 	popImg();
 	// });
 	(function () {
+		'use strict';
 		var morphSearch = (0, _vendorJquery214MinJs2['default'])('.morphsearch'),
 		    searchInput = (0, _vendorJquery214MinJs2['default'])('input.morphsearch__input'),
 		    seachInputWrapper = (0, _vendorJquery214MinJs2['default'])('.utility-nav__search'),
@@ -83,6 +88,7 @@ webpackJsonp([0,1],[
 		// events
 		searchInput.on('focus', toggleSearch);
 		ctrlClose.on('click', toggleSearch);
+	
 		// esc key closes search overlay
 		// keyboard navigation events
 		document.addEventListener('keydown', function (ev) {
@@ -91,25 +97,6 @@ webpackJsonp([0,1],[
 				toggleSearch(ev);
 			}
 		});
-	
-		/***** for demo purposes only: don't allow to submit the form *****/
-		(0, _vendorJquery214MinJs2['default'])('button[type="submit"]').on('click', function (ev) {
-			ev.preventDefault();
-		});
-	
-		(0, _vendorJquery214MinJs2['default'])(window).scroll(function () {
-			checkIfNavShouldStick();
-		});
-		function checkIfNavShouldStick() {
-			var heroHeight = (0, _vendorJquery214MinJs2['default'])('.hero__wrapper').height() + (0, _vendorJquery214MinJs2['default'])('.utility-nav').height() + 70;
-			console.log(heroHeight);
-			var bodyTop = (0, _vendorJquery214MinJs2['default'])('body').scrollTop();
-			if (bodyTop >= heroHeight) {
-				(0, _vendorJquery214MinJs2['default'])('.primary-nav').addClass('primary-nav--sticky');
-			} else {
-				(0, _vendorJquery214MinJs2['default'])('.primary-nav').removeClass('primary-nav--sticky');
-			}
-		};
 	})();
 
 /***/ },
@@ -2134,6 +2121,20 @@ webpackJsonp([0,1],[
 		});
 		goBackButton.on("click", function () {
 			closeSubNav();
+		});
+		// function for nav depending
+		// on where you are on the page
+		function navScrollDependencies() {
+			var heroHeight = (0, _vendorJquery214MinJs2['default'])('.hero__wrapper').height() + (0, _vendorJquery214MinJs2['default'])('.utility-nav').height();
+			var bodyTop = (0, _vendorJquery214MinJs2['default'])('body').scrollTop();
+			if (bodyTop >= heroHeight) {
+				(0, _vendorJquery214MinJs2['default'])('.primary-nav').addClass('primary-nav--sticky');
+			} else {
+				(0, _vendorJquery214MinJs2['default'])('.primary-nav').removeClass('primary-nav--sticky');
+			}
+		};
+		(0, _vendorJquery214MinJs2['default'])(window).scroll(function () {
+			navScrollDependencies();
 		});
 	})();
 

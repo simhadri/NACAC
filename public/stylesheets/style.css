@@ -9,6 +9,9 @@ Based on: Bones - github.com/eddiemachado/bones
 USAGE: @include transition(all 0.2s ease-in-out);
 */
 /*********************
+BS Cllearfix
+*********************/
+/*********************
 CSS3 GRADIENTS
 *********************/
 /* @include css-gradient(#dfdfdf,#f8f8f8); */
@@ -179,28 +182,30 @@ html {
   font-size: 10px; }
 
 body {
-  font-size: 1.4rem;
-  font-family: "acumin-pro", sans-serif; }
+  font-size: 1.6rem;
+  font-family: "acumin-pro", sans-serif;
+  font-weight: 200; }
 
 .btn {
-  padding: 1rem 1.2rem;
+  padding: 1rem 2rem;
   font-size: 1.6rem;
   border-radius: 0.25rem;
   transition: all 0.2s ease-in;
-  font-family: "acumin-pro-condensed", sans-serif;
-  text-transform: uppercase; }
+  font-family: "acumin-pro", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400; }
 
 .btn.btn-default {
   border: 1px solid white;
   color: white;
-  border-radius: 0; }
+  border-radius: 0;
+  background-color: transparent; }
   .btn.btn-default:hover {
     border-color: #f28800;
-    background-color: #f28800;
-    background-image: linear-gradient(to bottom, #ffa211, #f28800); }
+    background-color: #f28800; }
 
 .btn--mega {
-  padding: 1.8rem 1.6rem;
+  padding: 1.8rem 3rem;
   font-size: 2rem;
   border-radius: 0.3rem;
   min-width: 15rem; }
@@ -210,6 +215,17 @@ body {
   color: white;
   border-radius: 0;
   background-color: transparent; }
+  .btn--clear:hover {
+    border-color: #f28800;
+    background-color: #f28800;
+    color: white; }
+
+.btn--nacac-blue {
+  background-color: #2480C4;
+  border: transparent;
+  color: white; }
+  .btn--nacac-blue:hover {
+    color: white; }
 
 nav.primary-nav {
   height: 7rem; }
@@ -240,7 +256,7 @@ nav.primary-nav {
     list-style: none;
     position: relative;
     height: 7rem;
-    box-shadow: 980px 0 0 0px rgba(255, 255, 255, 0.8), -980px 0 0 0px rgba(255, 255, 255, 0.8); }
+    box-shadow: 780px 0 0 0px rgba(255, 255, 255, 0.8), -780px 0 0 0px rgba(255, 255, 255, 0.8); }
     nav.primary-nav .primary-nav__list .primary-nav__item {
       padding: 0.8rem;
       background-color: rgba(255, 255, 255, 0.8);
@@ -767,23 +783,26 @@ nav.primary-nav--sticky {
 
 .morphsearch {
   width: 20rem;
-  min-height: 4rem;
+  height: 4rem;
   position: absolute;
   z-index: 10000;
-  top: 0;
+  top: 0.3rem;
   right: 5rem;
+  border: 1px solid;
+  border-color: #eee;
   -webkit-transform-origin: 100% 0;
   -ms-transform-origin: 100% 0;
       transform-origin: 100% 0;
-  transition-property: "min-height, width, top, right";
+  transition-property: "height, width, top, right, border-color";
   transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
 
 .morphsearch--open {
   width: 400%;
-  min-height: 24rem;
+  height: 24rem;
   top: 0;
-  right: 0; }
+  right: 0;
+  border-color: transparent; }
   .morphsearch--open .morphsearch__input {
     font-size: 5em; }
 
@@ -1010,8 +1029,9 @@ nav.utility-nav {
       position: absolute;
       left: 0; }
   .color-block h2.color-block__title {
-    text-transform: uppercase;
     font-family: "acumin-pro-condensed", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
     font-size: 4rem;
     margin: 2rem 0; }
   .color-block p.color-block__info {
@@ -1119,9 +1139,9 @@ nav.utility-nav {
       filter: brightness(100%); }
   .card-block__header h3 {
     font-family: "acumin-pro-condensed", sans-serif;
-    position: absolute;
     font-weight: bold;
     text-transform: uppercase;
+    position: absolute;
     z-index: 2;
     width: 100%;
     text-align: center; }
@@ -1162,14 +1182,14 @@ nav.utility-nav {
   color: #FFFFFF;
   padding: 15rem 0; }
   .hero__content .hero__subtitle {
-    font-family: "merriweather",serif;
+    font-family: "merriweather", serif;
     font-style: italic; }
   .hero__content .hero__title {
-    font-family: "acumin-pro-condensed",sans-serif;
-    font-size: 4.8rem;
-    margin: 1.6rem 0;
+    font-family: "acumin-pro-condensed", sans-serif;
     font-weight: bold;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-size: 4.8rem;
+    margin: 1.6rem 0; }
   .hero__content .hero__btn {
     margin: 1.6rem; }
 
@@ -1210,5 +1230,92 @@ main {
     display: block;
     margin: auto;
     margin-bottom: 1rem; }
+
+.announcement__header {
+  border-bottom: 1px solid #BDBDBD;
+  color: #8A8A8A; }
+  .announcement__header p {
+    display: inline-block;
+    padding: 1.8rem 2rem;
+    border-left: 1px solid #BDBDBD;
+    border-right: 1px solid #BDBDBD;
+    font-size: 1.4rem;
+    font-weight: 100;
+    margin: 0;
+    text-transform: uppercase; }
+  .announcement__header i {
+    margin-left: -0.4rem;
+    margin-right: 0.4rem;
+    -webkit-transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+        transform: rotate(-20deg); }
+
+.announcement__row h2 {
+  text-align: left; }
+
+.listing__block {
+  position: relative; }
+  .listing__block:after {
+    content: "";
+    top: 11.5rem;
+    position: absolute;
+    right: 1rem;
+    height: calc(100% - 11.5rem);
+    width: 1px;
+    background-color: #BDBDBD; }
+
+.listing__entry, .calendar__content {
+  margin-bottom: 3rem; }
+  .listing__entry h3, .calendar__content h3 {
+    font-weight: bold; }
+  .listing__entry a, .calendar__content a {
+    font-family: "acumin-pro", sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    position: relative; }
+    .listing__entry a:after, .calendar__content a:after {
+      content: "";
+      position: absolute;
+      top: 0.5rem;
+      right: -1.4rem;
+      width: 0;
+      height: 0;
+      border-top: 0.6rem solid transparent;
+      border-bottom: 0.6rem solid transparent;
+      border-left: 0.6rem solid; }
+
+.calendar__entry:before, .calendar__entry:after {
+  content: " ";
+  display: table; }
+
+.calendar__entry:after {
+  clear: both; }
+
+.calendar__content {
+  float: right;
+  width: calc(100% - 12rem); }
+
+.calendar__date {
+  font-family: "acumin-pro", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #FFFFFF;
+  float: left;
+  text-align: center;
+  margin-top: 1.8rem;
+  width: 10rem;
+  height: 10rem;
+  background-color: #A9383A;
+  border-radius: 100%; }
+  .calendar__date .calendar__day {
+    padding-bottom: 0.4rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+    border-bottom: 1px solid;
+    width: 5rem;
+    font-size: 2.8rem; }
+  .calendar__date .calendar__month {
+    margin-top: 0.4rem;
+    font-weight: 200; }
 
 /*# sourceMappingURL=style.css.map */

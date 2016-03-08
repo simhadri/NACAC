@@ -1,4 +1,4 @@
-@import 'bootstrap/mixins';
+
 .content-block__row {
 	@include clearfix;
 }
@@ -24,14 +24,12 @@
 		}
 	}
 	h2.color-block__title {
-		@include uppercase;
-		font-family: $condensed;
+		@include condensed-uppercase-bold;
 		font-size: 4rem;
 		margin: 2rem 0;
 	}
 	p.color-block__info {
-		font-family: $serif;
-		font-style: italic;
+		@include serif-italic;
 		margin-bottom: 2rem;
 	}
 	p.color-block__text {
@@ -131,10 +129,8 @@
 		}
 	}
 	h3 {
-		font-family: $condensed;
+		@include condensed-uppercase-bold;
 		position: absolute;
-		font-weight: bold;
-		@include uppercase;
 		z-index: 2;
 		width: 100%;
 		text-align: center;
