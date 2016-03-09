@@ -73,15 +73,6 @@
 @include break(min, $screen-lg-min) {}
 
 // Card-block
-.flexbox__row {
-	display: flex;
-}
-
-.flexbox__column {
-	display: flex;
-	flex-direction: column;
-}
-
 .card-block {
 	background-color: $nacac_grey;
 	margin: 2rem 1rem;

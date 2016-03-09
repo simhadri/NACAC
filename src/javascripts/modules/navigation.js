@@ -1,8 +1,10 @@
 import $ from '../vendor/jquery-2.1.4.min.js';
+import Screen from 'modules/screen.js';
 
 (function() {
 	'use strict';
-	var navTrigger = $('.nav-trigger'),
+	var screenOverlay = new Screen();
+	var navTrigger = $('.primary-nav__trigger'),
 		primaryNav = $('.primary-nav'),
 		body = $('body'),
 		navScreen = $('.nav-screen'),
@@ -13,32 +15,32 @@ import $ from '../vendor/jquery-2.1.4.min.js';
 
 	var openNav = function() {
 		body.addClass('body--freeze');
-		primaryNav.addClass('nav-is-visible');
+		primaryNav.addClass('primary-nav--open');
 		navTrigger.addClass('morphStateX');
-		navScreen.removeClass('nav-screen--off').addClass('nav-screen--on');
+		screenOverlay.turnScreenOn();
 		$('.morphStateX').on("click", function() {
 			closeNav();
 		});
 	}
 	var closeNav = function() {
 		body.removeClass('body--freeze');
-		primaryNav.removeClass('nav-is-visible');
+		primaryNav.removeClass('primary-nav--open');
 		navTrigger.removeClass('morphStateX');
-		navScreen.removeClass('nav-screen--on').addClass('nav-screen--off');
+		screenOverlay.turnScreenOff();
 		navTrigger.on("click", function() {
 			openNav();
 		});
 	}
 	var closeSubNav = function() {
-		$('.nav__menu--visible').removeClass('nav__menu--visible');
-		$('.selected').removeClass('selected');
-		$('.primary-nav').addClass('nav__menu--visible');
+		// $('.nav__menu--visible').removeClass('nav__menu--visible');
+		// $('.selected').removeClass('selected');
+		// $('.primary-nav').addClass('nav__menu--visible');
 	}
 	var openSubNav = function(selected) {
-		$('.selected').removeClass('selected');
-		$('.nav__menu--visible').removeClass('nav__menu--visible');
-		selected.parent().addClass('selected');
-		selected.next().addClass('nav__menu--visible');
+		// $('.selected').removeClass('selected');
+		// $('.nav__menu--visible').removeClass('nav__menu--visible');
+		// selected.parent().addClass('selected');
+		// selected.next().addClass('nav__menu--visible');
 	}
 
 	function hasChildrenActions() {
@@ -85,9 +87,7 @@ import $ from '../vendor/jquery-2.1.4.min.js';
 	navTrigger.on("click", function() {
 		openNav();
 	});
-	navScreen.on("click", function() {
-		closeNav();
-	});
+
 	navItemLinks.on("click", function(event) {
 		event.preventDefault();
 		var selected = $(this);

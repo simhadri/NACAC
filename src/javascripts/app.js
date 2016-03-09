@@ -8,30 +8,16 @@ import $ from 'vendor/jquery-2.1.4.min.js';
 //    Modules scripts
 // *********************
 import 'modules/navigation.js';
+import Screen from 'modules/screen.js';
 
 
 $(document).ready(function() {
 	$('main').addClass("fadeIn");
 	var bLazy = new Blazy();
 });
-// var popImg = function() {
-// 	$('img').each(function() {
-// 		var imagePos = $(this).offset().top;
-
-// 		var topOfWindow = $(window).scrollTop();
-// 		var heightOfWindow = $(window).height();
-// 		if (imagePos < topOfWindow + heightOfWindow) {
-// 			$(this).addClass("bounceIn");
-// 		}
-
-// 	});
-// }
-// popImg();
-// $(window).scroll(function() {
-// 	popImg();
-// });
 (function() {
 	'use strict';
+	var screenOverlay = new Screen();
 	var morphSearch = $('.morphsearch'),
 		searchInput = $('input.morphsearch__input'),
 		seachInputWrapper = $('.utility-nav__search'),
@@ -47,6 +33,7 @@ $(document).ready(function() {
 				morphSearch.removeClass('morphsearch--open');
 				seachInputWrapper.removeClass('utility-nav__search--on');
 
+				screenOverlay.turnScreenOff();
 				// trick to hide input text once the search overlay closes 
 				// todo: hardcoded times, should be done after transition ends
 				if (searchInput.value !== '') {
@@ -58,11 +45,11 @@ $(document).ready(function() {
 						}, 300);
 					}, 500);
 				}
-
 				searchInput.blur();
 			} else {
 				morphSearch.addClass('morphsearch--open');
 				seachInputWrapper.addClass('utility-nav__search--on');
+				screenOverlay.turnScreenOn();
 			}
 			isOpen = !isOpen;
 		};
