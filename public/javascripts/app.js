@@ -28,28 +28,17 @@ webpackJsonp([0,1],[
 	
 	__webpack_require__(4);
 	
+	var _modulesScreenJs = __webpack_require__(5);
+	
+	var _modulesScreenJs2 = _interopRequireDefault(_modulesScreenJs);
+	
 	(0, _vendorJquery214MinJs2['default'])(document).ready(function () {
 		(0, _vendorJquery214MinJs2['default'])('main').addClass("fadeIn");
 		var bLazy = new Blazy();
 	});
-	// var popImg = function() {
-	// 	$('img').each(function() {
-	// 		var imagePos = $(this).offset().top;
-	
-	// 		var topOfWindow = $(window).scrollTop();
-	// 		var heightOfWindow = $(window).height();
-	// 		if (imagePos < topOfWindow + heightOfWindow) {
-	// 			$(this).addClass("bounceIn");
-	// 		}
-	
-	// 	});
-	// }
-	// popImg();
-	// $(window).scroll(function() {
-	// 	popImg();
-	// });
 	(function () {
 		'use strict';
+		var screenOverlay = new _modulesScreenJs2['default']();
 		var morphSearch = (0, _vendorJquery214MinJs2['default'])('.morphsearch'),
 		    searchInput = (0, _vendorJquery214MinJs2['default'])('input.morphsearch__input'),
 		    seachInputWrapper = (0, _vendorJquery214MinJs2['default'])('.utility-nav__search'),
@@ -66,6 +55,7 @@ webpackJsonp([0,1],[
 				morphSearch.removeClass('morphsearch--open');
 				seachInputWrapper.removeClass('utility-nav__search--on');
 	
+				screenOverlay.turnScreenOff();
 				// trick to hide input text once the search overlay closes
 				// todo: hardcoded times, should be done after transition ends
 				if (searchInput.value !== '') {
@@ -77,11 +67,11 @@ webpackJsonp([0,1],[
 						}, 300);
 					}, 500);
 				}
-	
 				searchInput.blur();
 			} else {
 				morphSearch.addClass('morphsearch--open');
 				seachInputWrapper.addClass('utility-nav__search--on');
+				screenOverlay.turnScreenOn();
 			}
 			isOpen = !isOpen;
 		};
@@ -2023,9 +2013,14 @@ webpackJsonp([0,1],[
 	
 	var _vendorJquery214MinJs2 = _interopRequireDefault(_vendorJquery214MinJs);
 	
+	var _modulesScreenJs = __webpack_require__(5);
+	
+	var _modulesScreenJs2 = _interopRequireDefault(_modulesScreenJs);
+	
 	(function () {
 		'use strict';
-		var navTrigger = (0, _vendorJquery214MinJs2['default'])('.nav-trigger'),
+		var screenOverlay = new _modulesScreenJs2['default']();
+		var navTrigger = (0, _vendorJquery214MinJs2['default'])('.primary-nav__trigger'),
 		    primaryNav = (0, _vendorJquery214MinJs2['default'])('.primary-nav'),
 		    body = (0, _vendorJquery214MinJs2['default'])('body'),
 		    navScreen = (0, _vendorJquery214MinJs2['default'])('.nav-screen'),
@@ -2036,32 +2031,32 @@ webpackJsonp([0,1],[
 	
 		var openNav = function openNav() {
 			body.addClass('body--freeze');
-			primaryNav.addClass('nav-is-visible');
+			primaryNav.addClass('primary-nav--open');
 			navTrigger.addClass('morphStateX');
-			navScreen.removeClass('nav-screen--off').addClass('nav-screen--on');
+			screenOverlay.turnScreenOn();
 			(0, _vendorJquery214MinJs2['default'])('.morphStateX').on("click", function () {
 				closeNav();
 			});
 		};
 		var closeNav = function closeNav() {
 			body.removeClass('body--freeze');
-			primaryNav.removeClass('nav-is-visible');
+			primaryNav.removeClass('primary-nav--open');
 			navTrigger.removeClass('morphStateX');
-			navScreen.removeClass('nav-screen--on').addClass('nav-screen--off');
+			screenOverlay.turnScreenOff();
 			navTrigger.on("click", function () {
 				openNav();
 			});
 		};
 		var closeSubNav = function closeSubNav() {
-			(0, _vendorJquery214MinJs2['default'])('.nav__menu--visible').removeClass('nav__menu--visible');
-			(0, _vendorJquery214MinJs2['default'])('.selected').removeClass('selected');
-			(0, _vendorJquery214MinJs2['default'])('.primary-nav').addClass('nav__menu--visible');
+			// $('.nav__menu--visible').removeClass('nav__menu--visible');
+			// $('.selected').removeClass('selected');
+			// $('.primary-nav').addClass('nav__menu--visible');
 		};
 		var openSubNav = function openSubNav(selected) {
-			(0, _vendorJquery214MinJs2['default'])('.selected').removeClass('selected');
-			(0, _vendorJquery214MinJs2['default'])('.nav__menu--visible').removeClass('nav__menu--visible');
-			selected.parent().addClass('selected');
-			selected.next().addClass('nav__menu--visible');
+			// $('.selected').removeClass('selected');
+			// $('.nav__menu--visible').removeClass('nav__menu--visible');
+			// selected.parent().addClass('selected');
+			// selected.next().addClass('nav__menu--visible');
 		};
 	
 		function hasChildrenActions() {
@@ -2107,9 +2102,7 @@ webpackJsonp([0,1],[
 		navTrigger.on("click", function () {
 			openNav();
 		});
-		navScreen.on("click", function () {
-			closeNav();
-		});
+	
 		navItemLinks.on("click", function (event) {
 			event.preventDefault();
 			var selected = (0, _vendorJquery214MinJs2['default'])(this);
@@ -2137,6 +2130,23 @@ webpackJsonp([0,1],[
 			navScrollDependencies();
 		});
 	})();
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	var Screen = function Screen() {
+	    var screenOverlay = document.getElementsByClassName('screen__overlay')[0];
+	    this.turnScreenOn = function () {
+	        screenOverlay.classList.add('screen__overlay--on');
+	    };
+	    this.turnScreenOff = function () {
+	        screenOverlay.classList.remove('screen__overlay--on');
+	    };
+	};
+	module.exports = Screen;
 
 /***/ }
 ]);
