@@ -10,39 +10,105 @@ import Screen from 'modules/screen.js';
 		navScreen = $('.nav-screen'),
 		toplevelChildrenOfPrimaryNav = primaryNav.children('li'),
 		goBackButton = $('.go-back'),
-		navItemLinks = $('.has-children'),
+		navItemLinks = $('.primary-nav--children'),
 		mobileUtilityBarButtons = $('.mobile-utility-bar-buttons');
 
-	var openNav = function() {
+	var openMobileNav = function() {
 		body.addClass('body--freeze');
 		primaryNav.addClass('primary-nav--open');
 		navTrigger.addClass('morphStateX');
 		screenOverlay.turnScreenOn();
 		$('.morphStateX').on("click", function() {
-			closeNav();
+			closeMobileNav();
 		});
 	}
-	var closeNav = function() {
+	var closeMobileNav = function() {
 		body.removeClass('body--freeze');
 		primaryNav.removeClass('primary-nav--open');
 		navTrigger.removeClass('morphStateX');
 		screenOverlay.turnScreenOff();
 		navTrigger.on("click", function() {
-			openNav();
+			openMobileNav();
 		});
 	}
-	var closeSubNav = function() {
-		// $('.nav__menu--visible').removeClass('nav__menu--visible');
-		// $('.selected').removeClass('selected');
-		// $('.primary-nav').addClass('nav__menu--visible');
+	var closeNavInterior = function() {
+		$('.nav__menu--visible').removeClass('nav__menu--visible');
+		$('.selected').removeClass('selected');
+		$('.primary-nav').addClass('nav__menu--visible');
 	}
-	var openSubNav = function(selected) {
-		// $('.selected').removeClass('selected');
-		// $('.nav__menu--visible').removeClass('nav__menu--visible');
-		// selected.parent().addClass('selected');
-		// selected.next().addClass('nav__menu--visible');
-	}
+	var openNavInterior = function(selected) {
+		$('.selected').removeClass('selected');
+		$('.nav__menu--visible').removeClass('nav__menu--visible');
+		let selectedId = selected.attr('data-id');
+		$.ajax({
+			url: '/javascripts/data/interiorNavData_' + selectedId + '.json',
+			dataType: 'json',
+			cache:true,
+			success: function(data){
+				console.log(data);
+				selected.next().empty();
+				for (let i = 0; i < data.length; i++) {
+					console.log(data[i].interiorTitle);
+					if(data[i].interiorLink !== null && typeof data[i].interiorLink === 'string'){
+						selected.next().append(
+						'<li>'+
+							'<h3><a href="'+data[i].interiorLink+'">'+data[i].interiorTitle+'</a></h3>'+
+						'</li>'
+						);
+					}
+					if(data[i].interiorLink !== null && typeof data[i].interiorLink === 'object'){
+						selected.next().append(
+						'<li>'+
+							'<h3>'+data[i].interiorTitle+'</h3>'+
+							'<ul id="interior__links_'+i+'" class="interior__links"></ul>'+
+						'</li>'
+						);
+						for (let n = 0; n < data[i].interiorLink.length; n++) {
+							$('#interior__links_'+[i]).append(
+								'<a href='+data[i].interiorLink[n].linkHref+'>'+data[i].interiorLink[n].linkName+'</a>'
+							);
+						}
+					}
 
+					// selected.next().append(
+					// 	'<li>'+
+					// 		'<h3>'+data[i].interiorTitle+'</h3>'+
+					// 		'<ul id="interior__links_'+i+'" class="interior__links"></ul>'+
+					// 	'</li>'
+					// 	);
+					// 	for (let n = 0; n < data[i].interiorLink.length; n++) {
+					// 		$('#interior__links_'+[i]).append(
+					// 			'<a href='+data[i].interiorLink[n].linkHref+'>'+data[i].interiorLink[n].linkName+'</a>'
+					// 		);
+					// 	}
+					//if (data.interiorList[i].interiorTitle === 'feature'){
+						// selected.next().append(
+						// '<li>'+
+						// 	'<h3>'+data.interiorList[i].featuredContent.featureTitle+'</h3>'+
+						// 	'<img src="'+data.interiorList[i].featuredContent.featureImage+'"/>'+
+						// 	'<p>'+data.interiorList[i].featuredContent.featureText+'</p>'+
+						// '</li>'
+						// );
+					//}else{
+						// selected.next().append(
+						// '<li>'+
+						// 	'<h3>'+data.interiorList[i].interiorTitle+'</h3>'+
+						// 	'<ul id="interior__links_'+i+'" class="interior__links"></ul>'+
+						// '</li>'
+						// );
+						// for (let n = 0; n < data.interiorList[i].interiorLink.length; n++) {
+						// 	$('#interior__links_'+[i]).append(
+						// 		'<a href='+data.interiorList[i].interiorLink[n].linkHref+'>'+data.interiorList[i].interiorLink[n].linkName+'</a>'
+						// 	);
+						// }
+					// }
+				}
+
+			}
+		})
+		selected.parent().addClass('selected');
+		selected.next().addClass('nav__menu--visible');
+	}
 	function hasChildrenActions() {
 		if ($(this).attr('href') === "#") {
 			if (!$(this).parent().hasClass('selected')) {
@@ -74,32 +140,32 @@ import Screen from 'modules/screen.js';
 	function bfSelect(theSelection) {
 		removeSelected();
 		removeVisibleMenuLevel();
-		theSelection.parent('.has-children').addClass('selected').children('.nav-interior').addClass('nav__menu--visible');
+		theSelection.parent('.primary-nav--children').addClass('selected').children('.nav-interior').addClass('nav__menu--visible');
 	}
 
 	function clickAnywhereToCloseEverything(event) {
 		if (!$(event.target).closest('.primary-nav').length) {
-			closeSubNav();
+			closeNavInterior();
 
 		}
 	}
 	body.click(clickAnywhereToCloseEverything);
 	navTrigger.on("click", function() {
-		openNav();
+		openMobileNav();
 	});
 
 	navItemLinks.on("click", function(event) {
 		event.preventDefault();
 		var selected = $(this);
 		if (selected.parent().hasClass('selected') === true) {
-			closeSubNav();
+			closeNavInterior();
 		} else {
-			openSubNav(selected);
+			openNavInterior(selected);
 		}
 
 	});
 	goBackButton.on("click", function() {
-		closeSubNav();
+		closeNavInterior();
 	});
 	// function for nav depending
 	// on where you are on the page
@@ -107,12 +173,13 @@ import Screen from 'modules/screen.js';
 		var heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height();
 		var bodyTop = $('body').scrollTop();
 		if (bodyTop >= heroHeight) {
-			$('.primary-nav').addClass('primary-nav--sticky')
+			$('.primary-nav').addClass('primary-nav--sticky primary-nav--down')
 		} else {
-			$('.primary-nav').removeClass('primary-nav--sticky')
+			$('.primary-nav').removeClass('primary-nav--sticky primary-nav--down').addClass('primary-nav--up')
 		}
 	};
 	$(window).scroll(function() {
+		console.log($('.primary-nav__interior').offset().top)
 		navScrollDependencies();
 	});
 })();

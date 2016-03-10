@@ -55,35 +55,37 @@
 		position: relative;
 		height: 7rem;
 		box-shadow: 780px 0 0 0px rgba(255,255,255,0.8), -780px 0 0 0px rgba(255,255,255,0.8);
-		.primary-nav__item {
-			padding: 0.8rem;
-			background-color: $white_translucent;
-			line-height: 1;
-			height: 7rem;
-			a {
-				color: $black_translucent;
-				font-family: $sans;
-				text-transform: uppercase;
-				font-weight: bold;
-				font-size: 1.6rem;
-				position: relative;
-				&.has-children:after {
-					font-family: $icons;
-					//content: "\f078";
-					display: inline-block;
-					//width: 1em;
-					position: absolute;
-					//right: 1em;
-				}
+		.primary-nav__interior{
+			h3{
+				@include sans-uppercase-normal;
+				font-size: 1.8rem;
 			}
-			&.selected {
-				background: $white;
-				color: red;
-				a.has-children:after {
-					font: $icons;
-					//content: "\f00d";
-				}
+		}
+		
+	}
+	.primary-nav__item {
+		padding: 0.8rem;
+		background-color: $white_translucent;
+		line-height: 1;
+		height: 7rem;
+		> a {
+			color: $black_translucent;
+			font-family: $sans;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 1.6rem;
+			position: relative;
+			&.has-children:after {
+				font-family: $icons;
+				//content: "\f078";
+				display: inline-block;
+				//width: 1em;
+				position: absolute;
+				//right: 1em;
 			}
+		}
+		.interior__links a{
+			display:block;
 		}
 	}
 }
@@ -257,34 +259,48 @@
 			/*end a*/
 		}
 		li.selected {
-			background: $white;
-			color: red;
+			border-bottom: 0.8rem solid $nacac_blue;
+			padding-bottom: 0;
+			@include prefix(transition, 300ms, webkit moz ms o);
 			&.has-children:after {
 				content: "\f12a";
 			}
 		}
-		.selected > .primary-nav__interior {
-			@include prefix(transform, scale(1, 1), webkit moz ms o);
-			z-index: 9;
+		// .selected > .primary-nav__interior {
+		// 	@include prefix(transform, scale(1, 1), webkit moz ms o);
+		// }
+		&.primary-nav--up{
+			.primary-nav__interior{
+				top:inherit;
+				bottom:7rem;
+				@include prefix(transform-origin, bottom, webkit moz ms o);
+			}
+			.selected > .primary-nav__interior {
+				@include prefix(transform, scale(1, 1), webkit moz ms o);
+			}
+		}
+		&.primary-nav--down{
+			.primary-nav__interior{
+				top:7rem;
+				bottom: inherit;
+				@include prefix(transform-origin, top, webkit moz ms o);
+			}
+			.selected > .primary-nav__interior {
+				@include prefix(transform, scale(1, 1), webkit moz ms o);
+			}
 		}
 		.primary-nav__interior {
 			position: absolute;
 			width: 100%;
 			left: 0;
-			top: 7rem;
-			z-index: 1;
 			background: $white;
 			padding: 2em 0;
 			text-align: left;
 			color: #333;
-			position: absolute;
-			left: 0;
-			display: flex;
 			overflow: hidden;
+			@include zone-index( 'base',0);
 			@include prefix(transform, scale(1, 0), webkit moz ms o);
-			@include prefix(transform-origin, 0 0, webkit moz ms o);
 			@include prefix(transition, 300ms, webkit moz ms o);
-			z-index: 8;
 			&:after {
 				clear: both;
 				content: "";
@@ -292,16 +308,11 @@
 			}
 			> li {
 				float: left;
-				width: 33%;
+				width: 33.333%;
 				margin: 0;
 				padding: 0 2em;
-				border-right: 1px solid #e80;
 				img {
 					width: 100%;
-				}
-				&:nth-child(3n+1),
-				&:last-child {
-					border-right: none;
 				}
 				p {
 					width: auto;
@@ -341,15 +352,6 @@
 				/*end ul*/
 			}
 			/*end li*/
-			.nav-item {
-				display: inline-block;
-				border-bottom: none;
-				padding: 0;
-				height: auto;
-				line-height: 2;
-				text-align: left;
-			}
-			/*end nav-item*/
 		}
 		/*end nav interior*/
 	}

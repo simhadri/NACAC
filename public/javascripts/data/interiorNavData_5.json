@@ -1,0 +1,47 @@
+[{
+	"interiorTitle": "Core Values",
+	"interiorLink": [{
+		"linkName": "Ethics",
+		"linkHref": "#"
+	}, {
+		"linkName": "Statement of Principles of Good Practice",
+		"linkHref": "#"
+	}]
+}, {
+	"interiorTitle": "Legistative",
+	"interiorLink": [{
+		"linkName": "What to Talk About with Your Legistator",
+		"linkHref": "#"
+	}, {
+		"linkName": "Legislative Action Center",
+		"linkHref": "#"
+	}, {
+		"linkName": "State Legislative Portal",
+		"linkHref": "#"
+	}, {
+		"linkName": "Industry Issues",
+		"linkHref": "#"
+	}]
+}, {
+	"interiorTitle": "Initiatives",
+	"interiorLink": [{
+		"linkName": "Reach Higher Challenge",
+		"linkHref": "#"
+	}, {
+		"linkName": "Support NACAC: The Imagine Fund",
+		"linkHref": "#"
+	}, {
+		"linkName": "Step by Step: College Awareness and Planning for Families, Counselors and Communities",
+		"linkHref": "#"
+	}, {
+		"linkName": "Fund for the Future",
+		"linkHref": "#"
+	}]
+}, {
+	"interiorTitle": "feature",
+	"featuredContent": {
+		"featureTitle": "Featured Content",
+		"featureImage": "http://placehold.it/300x150",
+		"featureText": "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Nulla Pulvinar Mauris Sed Aliquet. Adipiscing Nulla Pulvinar Mauris Sed Aliquet"
+	}
+}]
