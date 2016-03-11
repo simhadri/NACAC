@@ -7,7 +7,7 @@
 .color-block {
 	color: $white;
 	.color-block__image {
-		width: 100%;
+		width: auto;
 		position: absolute;
 		z-index: -1;
 	}
