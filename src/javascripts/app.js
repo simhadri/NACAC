@@ -17,8 +17,8 @@ $(document).ready(function() {
 });
 (function() {
 	'use strict';
-	var screenOverlay = new Screen();
-	var morphSearch = $('.morphsearch'),
+	var screenOverlay = new Screen(),
+		morphSearch = $('.morphsearch'),
 		searchInput = $('input.morphsearch__input'),
 		seachInputWrapper = $('.utility-nav__search'),
 		ctrlClose = $('span.morphsearch__close'),
