@@ -251,8 +251,8 @@ body {
   font-weight: 200; }
 
 .btn {
-  padding: 1rem 2rem;
-  font-size: 1.6rem;
+  padding: 1.6rem 2.4rem;
+  font-size: 1.4rem;
   border-radius: 0.25rem;
   transition: all 0.2s ease-in;
   font-family: "acumin-pro", sans-serif;
@@ -1232,7 +1232,8 @@ main {
   width: 100%;
   border-radius: 50%;
   padding: 1rem;
-  margin-top: 3rem; }
+  margin-top: 3rem;
+  max-width: 30rem; }
 
 .focus-testimonial__content .article__header {
   text-align: left; }
@@ -1242,5 +1243,30 @@ main {
 
 .focus-testimonial__content .btn {
   margin: 2rem 0; }
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+@media (max-width: 991px) {
+  .focus-testimonials {
+    background-color: transparent; } }
+
+/*
+██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
+██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
+██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
+														  
+*/
+@media (min-width: 992px) {
+  .focus-testimonials {
+    background-color: transparent; } }
 
 /*# sourceMappingURL=style.css.map */

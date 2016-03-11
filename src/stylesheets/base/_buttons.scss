@@ -1,48 +1,48 @@
-.btn{
-    padding: 1rem 2rem;
-    font-size: 1.6rem;
-    border-radius: 0.25rem;
-    @include transition(all 0.2s ease-in);
-    @include sans-uppercase-normal;
+.btn {
+	padding: 1.6rem 2.4rem;
+	font-size: 1.4rem;
+	border-radius: 0.25rem;
+	@include transition(all 0.2s ease-in);
+	@include sans-uppercase-normal;
 }
 
 .btn.btn-default {
-    border: 1px solid white;
-    color: white;
-    border-radius: 0;
-    background-color: transparent;
-    &:hover{
-    	// gradient transtitions dont work well 
-    	border-color:$nacac-orange;
-    	background-color: $nacac-orange;
-    }
+	border: 1px solid white;
+	color: white;
+	border-radius: 0;
+	background-color: transparent;
+	&:hover {
+		// gradient transtitions dont work well 
+		border-color: $nacac-orange;
+		background-color: $nacac-orange;
+	}
 }
 
 .btn--mega {
-    padding: 1.8rem 3rem;
-    font-size: 2rem;
-    border-radius: 0.3rem;
-    min-width: 15rem;
+	padding: 1.8rem 3rem;
+	font-size: 2rem;
+	border-radius: 0.3rem;
+	min-width: 15rem;
 }
 
 .btn--clear {
-    border: 1px solid white;
-    color: white;
-    border-radius: 0;
-    background-color: transparent;
-    &:hover{
-        border-color:$nacac-orange;
-        background-color: $nacac-orange;
-        color: white;
-    }
+	border: 1px solid white;
+	color: white;
+	border-radius: 0;
+	background-color: transparent;
+	&:hover {
+		border-color: $nacac-orange;
+		background-color: $nacac-orange;
+		color: white;
+	}
 }
 
 .btn--nacac-blue {
-    background-color: $nacac_blue;
-    border:transparent;
-    color: white;
-    &:hover{
-        // background-color: $nacac-orange;
-        color: white;
-    }
+	background-color: $nacac_blue;
+	border: transparent;
+	color: white;
+	&:hover {
+		// background-color: $nacac-orange;
+		color: white;
+	}
 }
