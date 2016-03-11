@@ -260,7 +260,7 @@
 ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     													  
 */
 
-@include break(min, $screen-sm-min) {
+@include break(min, $screen-md-min) {
 	.main-nav .logo {
 		margin-top: 2.6rem;
 	}

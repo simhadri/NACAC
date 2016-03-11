@@ -2127,7 +2127,6 @@ webpackJsonp([0,1],[
 			var heroHeight = (0, _vendorJquery214MinJs2['default'])('.hero__wrapper').height() + (0, _vendorJquery214MinJs2['default'])('.utility-nav').height();
 			var bodyTop = (0, _vendorJquery214MinJs2['default'])('body').scrollTop();
 			var navToTopOffset = (0, _vendorJquery214MinJs2['default'])('.primary-nav__interior').offset().top - bodyTop;
-	
 			if (bodyTop >= heroHeight) {
 				//if nav hits top -> STICK
 				primaryNav.removeClass('primary-nav--up').addClass('primary-nav--sticky primary-nav--down');
@@ -2152,7 +2151,6 @@ webpackJsonp([0,1],[
 				openMobileNav();
 			}
 		});
-	
 		navItemLinks.on("click", function (event) {
 			event.preventDefault();
 			var selected = (0, _vendorJquery214MinJs2['default'])(this);
@@ -2162,11 +2160,6 @@ webpackJsonp([0,1],[
 				openNavInterior(selected);
 			}
 		});
-		goBackButton.on("click", function () {
-			closeNavInterior();
-		});
-		// function for nav depending
-		// on where you are on the page
 	
 		navScrollDependencies();
 		(0, _vendorJquery214MinJs2['default'])(window).scroll(function () {

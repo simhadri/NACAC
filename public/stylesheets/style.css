@@ -489,7 +489,7 @@ body {
 ██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
 ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     													  
 */
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .main-nav .logo {
     margin-top: 2.6rem; }
   .selected {
@@ -943,7 +943,13 @@ nav.utility-nav {
 @media (max-width: 991px) {
   .color-block--half {
     width: 100%;
-    float: none; } }
+    float: none; }
+  .color-block {
+    color: #FFFFFF; }
+    .color-block .color-block__image {
+      width: 100%;
+      position: absolute;
+      z-index: -1; } }
 
 .card-block {
   background-color: #9EA7AE;
@@ -1221,5 +1227,20 @@ main {
   .calendar__date .calendar__month {
     margin-top: 0.4rem;
     font-weight: 200; }
+
+.focus-testimonial__image img {
+  width: 100%;
+  border-radius: 50%;
+  padding: 1rem;
+  margin-top: 3rem; }
+
+.focus-testimonial__content .article__header {
+  text-align: left; }
+  .focus-testimonial__content .article__header p {
+    max-width: inherit;
+    margin: 0; }
+
+.focus-testimonial__content .btn {
+  margin: 2rem 0; }
 
 /*# sourceMappingURL=style.css.map */

@@ -130,7 +130,6 @@ import Screen from 'modules/screen.js';
 		var heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height();
 		var bodyTop = $('body').scrollTop();
 		var navToTopOffset = $('.primary-nav__interior').offset().top - bodyTop;
-
 		if ( bodyTop >= heroHeight ) {
 			//if nav hits top -> STICK
 			primaryNav.removeClass('primary-nav--up').addClass('primary-nav--sticky primary-nav--down');
@@ -156,7 +155,6 @@ import Screen from 'modules/screen.js';
 		}
 		
 	});
-
 	navItemLinks.on("click", function(event) {
 		event.preventDefault();
 		var selected = $(this);
@@ -167,11 +165,6 @@ import Screen from 'modules/screen.js';
 		}
 
 	});
-	goBackButton.on("click", function() {
-		closeNavInterior();
-	});
-	// function for nav depending
-	// on where you are on the page
 	
 	navScrollDependencies();
 	$(window).scroll(function() {
