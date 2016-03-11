@@ -1,4 +1,6 @@
+// VENDOR
 import $ from '../vendor/jquery-2.1.4.min.js';
+// MODULES
 import Screen from 'modules/screen.js';
 
 (function() {
@@ -6,6 +8,7 @@ import Screen from 'modules/screen.js';
 	var screenOverlay = new Screen();
 	var navTrigger = $('.primary-nav__trigger'),
 		primaryNav = $('.primary-nav'),
+		primaryNavItem = $('.primary-nav__item'),
 		body = $('body'),
 		navScreen = $('.nav-screen'),
 		toplevelChildrenOfPrimaryNav = primaryNav.children('li'),
@@ -16,17 +19,14 @@ import Screen from 'modules/screen.js';
 	var openMobileNav = function() {
 		body.addClass('body--freeze');
 		primaryNav.addClass('primary-nav--open');
-		navTrigger.addClass('morphStateX');
-		screenOverlay.turnScreenOn();
-		$('.morphStateX').on("click", function() {
-			closeMobileNav();
-		});
+		$('.trigger__icon').addClass('trigger--x');
+		// screenOverlay.turnScreenOn();
 	}
 	var closeMobileNav = function() {
 		body.removeClass('body--freeze');
 		primaryNav.removeClass('primary-nav--open');
-		navTrigger.removeClass('morphStateX');
-		screenOverlay.turnScreenOff();
+		navTrigger.removeClass('trigger--x');
+		// screenOverlay.turnScreenOff();
 		navTrigger.on("click", function() {
 			openMobileNav();
 		});
@@ -34,7 +34,7 @@ import Screen from 'modules/screen.js';
 	var closeNavInterior = function() {
 		$('.nav__menu--visible').removeClass('nav__menu--visible');
 		$('.selected').removeClass('selected');
-		$('.primary-nav').addClass('nav__menu--visible');
+		primaryNav.addClass('nav__menu--visible');
 	}
 	var openNavInterior = function(selected) {
 		$('.selected').removeClass('selected');
@@ -43,65 +43,40 @@ import Screen from 'modules/screen.js';
 		$.ajax({
 			url: '/javascripts/data/interiorNavData_' + selectedId + '.json',
 			dataType: 'json',
-			cache:true,
-			success: function(data){
-				console.log(data);
+			cache: true,
+			success: function(data) {
 				selected.next().empty();
 				for (let i = 0; i < data.length; i++) {
-					console.log(data[i].interiorTitle);
-					if(data[i].interiorLink !== null && typeof data[i].interiorLink === 'string'){
+					if (data[i].interiorLink !== null && typeof data[i].interiorLink === 'string') {
+						selected.next().append(
+							'<li>' +
+							'<h3><a href="' + data[i].interiorLink + '">' + data[i].interiorTitle + '</a></h3>' +
+							'</li>'
+						);
+					}
+					if (data[i].interiorTitle == 'feature' && !data[i].interiorLink){
 						selected.next().append(
 						'<li>'+
-							'<h3><a href="'+data[i].interiorLink+'">'+data[i].interiorTitle+'</a></h3>'+
+							'<h3>'+data[i].featuredContent.featureTitle+'</h3>'+
+							'<img src="'+data[i].featuredContent.featureImage+'"/>'+
+							'<p>'+data[i].featuredContent.featureText+'</p>'+
 						'</li>'
 						);
 					}
-					if(data[i].interiorLink !== null && typeof data[i].interiorLink === 'object'){
+					if (data[i].interiorLink !== null && typeof data[i].interiorLink === 'object') {		
 						selected.next().append(
-						'<li>'+
-							'<h3>'+data[i].interiorTitle+'</h3>'+
-							'<ul id="interior__links_'+i+'" class="interior__links"></ul>'+
-						'</li>'
+							'<li>' +
+							'<h3>' + data[i].interiorTitle + '</h3>' +
+							'<ul id="interior__links_' + i + '" class="interior__links"></ul>' +
+							'</li>'
 						);
 						for (let n = 0; n < data[i].interiorLink.length; n++) {
-							$('#interior__links_'+[i]).append(
-								'<a href='+data[i].interiorLink[n].linkHref+'>'+data[i].interiorLink[n].linkName+'</a>'
+							$('#interior__links_' + [i]).append(
+								'<a href=' + data[i].interiorLink[n].linkHref + '>' + data[i].interiorLink[n].linkName + '</a>'
 							);
 						}
-					}
 
-					// selected.next().append(
-					// 	'<li>'+
-					// 		'<h3>'+data[i].interiorTitle+'</h3>'+
-					// 		'<ul id="interior__links_'+i+'" class="interior__links"></ul>'+
-					// 	'</li>'
-					// 	);
-					// 	for (let n = 0; n < data[i].interiorLink.length; n++) {
-					// 		$('#interior__links_'+[i]).append(
-					// 			'<a href='+data[i].interiorLink[n].linkHref+'>'+data[i].interiorLink[n].linkName+'</a>'
-					// 		);
-					// 	}
-					//if (data.interiorList[i].interiorTitle === 'feature'){
-						// selected.next().append(
-						// '<li>'+
-						// 	'<h3>'+data.interiorList[i].featuredContent.featureTitle+'</h3>'+
-						// 	'<img src="'+data.interiorList[i].featuredContent.featureImage+'"/>'+
-						// 	'<p>'+data.interiorList[i].featuredContent.featureText+'</p>'+
-						// '</li>'
-						// );
-					//}else{
-						// selected.next().append(
-						// '<li>'+
-						// 	'<h3>'+data.interiorList[i].interiorTitle+'</h3>'+
-						// 	'<ul id="interior__links_'+i+'" class="interior__links"></ul>'+
-						// '</li>'
-						// );
-						// for (let n = 0; n < data.interiorList[i].interiorLink.length; n++) {
-						// 	$('#interior__links_'+[i]).append(
-						// 		'<a href='+data.interiorList[i].interiorLink[n].linkHref+'>'+data.interiorList[i].interiorLink[n].linkName+'</a>'
-						// 	);
-						// }
-					// }
+					}
 				}
 
 			}
@@ -109,6 +84,7 @@ import Screen from 'modules/screen.js';
 		selected.parent().addClass('selected');
 		selected.next().addClass('nav__menu--visible');
 	}
+
 	function hasChildrenActions() {
 		if ($(this).attr('href') === "#") {
 			if (!$(this).parent().hasClass('selected')) {
@@ -149,11 +125,36 @@ import Screen from 'modules/screen.js';
 
 		}
 	}
+
+	function navScrollDependencies() {
+		var heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height();
+		var bodyTop = $('body').scrollTop();
+		var navToTopOffset = $('.primary-nav__interior').offset().top - bodyTop;
+		if ( bodyTop >= heroHeight ) {
+			//if nav hits top -> STICK
+			primaryNav.removeClass('primary-nav--up').addClass('primary-nav--sticky primary-nav--down');
+		} else {
+			// else -> UNSTICK
+			primaryNav.removeClass('primary-nav--sticky primary-nav--down').addClass('primary-nav--up');
+		} 
+		if( primaryNav.hasClass('primary-nav--up') && navToTopOffset <= 400 ){
+			// else if nav gets to close to top of screen, close
+			primaryNavItem.removeClass('selected');
+			primaryNav.removeClass('primary-nav--up').addClass('primary-nav--down');
+		}
+	}
+
 	body.click(clickAnywhereToCloseEverything);
 	navTrigger.on("click", function() {
-		openMobileNav();
+		console.log($('.trigger__icon').hasClass('trigger--x'))
+		if ($('.trigger__icon').hasClass('trigger--x')){
+			console.log("close")
+			closeMobileNav();
+		}else{
+			openMobileNav();
+		}
+		
 	});
-
 	navItemLinks.on("click", function(event) {
 		event.preventDefault();
 		var selected = $(this);
@@ -164,22 +165,31 @@ import Screen from 'modules/screen.js';
 		}
 
 	});
-	goBackButton.on("click", function() {
-		closeNavInterior();
-	});
-	// function for nav depending
-	// on where you are on the page
-	function navScrollDependencies() {
-		var heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height();
-		var bodyTop = $('body').scrollTop();
-		if (bodyTop >= heroHeight) {
-			$('.primary-nav').addClass('primary-nav--sticky primary-nav--down')
-		} else {
-			$('.primary-nav').removeClass('primary-nav--sticky primary-nav--down').addClass('primary-nav--up')
-		}
-	};
+	
+	navScrollDependencies();
 	$(window).scroll(function() {
-		console.log($('.primary-nav__interior').offset().top)
 		navScrollDependencies();
 	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 })();
