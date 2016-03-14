@@ -253,7 +253,7 @@ body {
 .btn {
   padding: 1.6rem 2.4rem;
   font-size: 1.4rem;
-  border-radius: 0.25rem;
+  border-radius: 0;
   transition: all 0.2s ease-in;
   font-family: "acumin-pro", sans-serif;
   text-transform: uppercase;
@@ -1121,6 +1121,8 @@ main {
     display: block;
     margin: auto;
     margin-bottom: 1rem; }
+  .article__header .btn {
+    margin: 2rem 0; }
 
 .flexbox__row {
   display: -webkit-flex;
@@ -1241,8 +1243,34 @@ main {
     max-width: inherit;
     margin: 0; }
 
-.focus-testimonial__content .btn {
-  margin: 2rem 0; }
+.testimonial-block__quote {
+  position: relative;
+  padding: 0 3rem; }
+  .testimonial-block__quote:before, .testimonial-block__quote:after {
+    font-family: FontAwesome;
+    position: absolute;
+    color: #9EA7AE;
+    opacity: 0.3;
+    font-size: 2.8rem; }
+  .testimonial-block__quote:before {
+    content: "\f10d";
+    left: 0;
+    top: -1.2rem; }
+  .testimonial-block__quote:after {
+    content: "\f10e";
+    right: 0;
+    bottom: -1.2rem; }
+
+.testimonial-block__footer img {
+  border-radius: 50%;
+  float: left;
+  height: 8rem;
+  width: 8rem;
+  margin-right: 1rem; }
+
+.testimonial-block__footer h3 {
+  margin-top: 3rem;
+  color: #474280; }
 
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
@@ -1268,5 +1296,9 @@ main {
 @media (min-width: 992px) {
   .focus-testimonials {
     background-color: transparent; } }
+
+footer.primary-footer {
+  background-color: #2480C4;
+  color: #FFFFFF; }
 
 /*# sourceMappingURL=style.css.map */
