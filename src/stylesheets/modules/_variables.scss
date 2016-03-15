@@ -1,9 +1,9 @@
 // **********
 // TYPOGRAPHY
 // **********
-$serif: "merriweather",serif;
-$sans: "acumin-pro",sans-serif;
-$condensed: "acumin-pro-condensed",sans-serif;
+$serif: "Merriweather",serif;
+$sans: "Istok Web",sans-serif;
+$condensed: "Oswald", sans-serif;
 $icons:FontAwesome;
 
 @mixin uppercase{
@@ -17,19 +17,18 @@ $icons:FontAwesome;
 
 @mixin condensed-uppercase-bold{
 	font-family: $condensed;
-    font-weight: bold;
     text-transform: uppercase;
 }
 
 @mixin sans-light{
 	font-family: $sans;
-	font-weight: 200;
+	font-weight: 400;
 }
 
 @mixin sans-uppercase-normal{
 	font-family: $sans;
 	text-transform: uppercase;
-	font-weight: 400;
+	font-weight: 700;
 }
 // **********
 // COLORS
@@ -55,6 +54,7 @@ $nacac_bg-light-grey: #F2F2F2;
 $nacac_bg-blue-grey:#ECF0F3;
 $nacac_nav_only_grey: #5A5A5A;
 
+$nacac_light-blue:#67AEE7;
 $nacac_blue: #2480C4;
 $nacac_link_hover: #1483C5;
 $nacac_light-blue:#6AAEE6;

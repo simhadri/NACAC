@@ -1,4 +1,20 @@
+![NACAC](http://logo.clearbit.com/nacacnet.org)
+
 # NACAC Repository
+
+## General Info
+
+Welcome to the NACAC Repo! There are a total of 3 sites; each is located in the following subdirectories:
+
+- Main Site ```/main```
+- College Fair Site ```/fair```
+- National Conference Site ```/conference```
+
+### Assets
+[Wire Fames](http://a12upd.axshare.com/#p=nacacnet_org_home__desktop_)
+[Site Map](http://yj8lu1.axshare.com/#p=nacac_proposed_sitemap)
+[Prototypes](https://projects.invisionapp.com/share/JS68XQ798#/screens)
+[Style Tiles](https://projects.invisionapp.com/boards/7ZU742J5QEH9/)
 
 ## Process and Conventions
 

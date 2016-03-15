@@ -1,4 +1,39 @@
-footer.primary-footer{
+footer.footer{
 	background-color: $nacac_blue;
 	color: $white;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	ul{
+		list-style: none;
+		a{
+			color:$white;
+		}
+	}
+	.footer__logo{
+		width: 16rem;
+		margin-top: 1.4rem;
+	}
+	.footer__contact-list{}
+	.footer__callout{
+		border-left:1px solid $nacac_border-blue;
+	}
+	hr{
+		border-top:1px solid $nacac_border-blue;
+	}
+	.footer__utility{
+		text-align: center;
+		ul{
+			display: inline-block;
+		}
+		li{
+			float: left;
+			padding:1rem;
+		}
+	}
+	.footer__legal{
+		li{
+			float: left;
+			padding:1rem;
+		}
+	}
 }

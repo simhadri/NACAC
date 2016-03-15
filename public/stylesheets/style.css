@@ -247,8 +247,8 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "acumin-pro", sans-serif;
-  font-weight: 200; }
+  font-family: "Istok Web", sans-serif;
+  font-weight: 400; }
 
 a:hover {
   color: #1483C5; }
@@ -258,9 +258,9 @@ a:hover {
   font-size: 1.4rem;
   border-radius: 0;
   transition: all 0.2s ease-in;
-  font-family: "acumin-pro", sans-serif;
+  font-family: "Istok Web", sans-serif;
   text-transform: uppercase;
-  font-weight: 400; }
+  font-weight: 700; }
 
 .btn.btn-default {
   border: 1px solid white;
@@ -388,9 +388,9 @@ a:hover {
     height: 7rem;
     box-shadow: 780px 0 0 0px rgba(255, 255, 255, 0.8), -780px 0 0 0px rgba(255, 255, 255, 0.8); }
     .primary-nav .primary-nav__list .primary-nav__interior h3 {
-      font-family: "acumin-pro", sans-serif;
+      font-family: "Istok Web", sans-serif;
       text-transform: uppercase;
-      font-weight: 400;
+      font-weight: 700;
       font-size: 1.8rem; }
   .primary-nav .primary-nav__item {
     padding: 0.8rem;
@@ -399,7 +399,7 @@ a:hover {
     height: 7rem; }
     .primary-nav .primary-nav__item > a {
       color: rgba(0, 0, 0, 0.6);
-      font-family: "acumin-pro", sans-serif;
+      font-family: "Istok Web", sans-serif;
       text-transform: uppercase;
       font-weight: bold;
       font-size: 1.6rem;
@@ -634,12 +634,12 @@ a:hover {
   /*end primary-nav*/ }
 
 .morphsearch {
-  width: 20rem;
-  height: 3.4rem;
+  width: calc(100% - 2rem);
+  height: 3.2rem;
   position: absolute;
   z-index: 10000;
-  top: 0.6rem;
-  right: 5rem;
+  top: 0.8rem;
+  right: 1rem;
   border: 1px solid;
   border-color: #eee;
   -webkit-transform-origin: 100% 0;
@@ -681,7 +681,7 @@ a:hover {
   border: none;
   background: transparent;
   font-size: 0.8em;
-  font-family: "acumin-pro", sans-serif;
+  font-family: "Istok Web", sans-serif;
   transition: font-size 0.5s cubic-bezier(0.7, 0, 0.3, 1);
   border: none; }
   .morphsearch__input::-ms-clear {
@@ -916,13 +916,12 @@ nav.utility-nav {
       position: absolute;
       left: 0; }
   .color-block h2.color-block__title {
-    font-family: "acumin-pro-condensed", sans-serif;
-    font-weight: bold;
+    font-family: "Oswald", sans-serif;
     text-transform: uppercase;
     font-size: 4rem;
     margin: 2rem 0; }
   .color-block p.color-block__info {
-    font-family: "merriweather", serif;
+    font-family: "Merriweather", serif;
     font-style: italic;
     margin-bottom: 2rem; }
   .color-block p.color-block__text {
@@ -1018,8 +1017,7 @@ nav.utility-nav {
       -webkit-filter: brightness(100%);
       filter: brightness(100%); }
   .card-block__header h3 {
-    font-family: "acumin-pro-condensed", sans-serif;
-    font-weight: bold;
+    font-family: "Oswald", sans-serif;
     text-transform: uppercase;
     position: absolute;
     z-index: 2;
@@ -1064,11 +1062,10 @@ nav.utility-nav {
   color: #FFFFFF;
   padding: 15rem 0; }
   .hero__content .hero__subtitle {
-    font-family: "merriweather", serif;
+    font-family: "Merriweather", serif;
     font-style: italic; }
   .hero__content .hero__title {
-    font-family: "acumin-pro-condensed", sans-serif;
-    font-weight: bold;
+    font-family: "Oswald", sans-serif;
     text-transform: uppercase;
     font-size: 4.8rem;
     margin: 1.6rem 0;
@@ -1133,7 +1130,7 @@ main {
 .article__header {
   text-align: center; }
   .article__header h2 {
-    font-family: "acumin-pro-condensed", sans-serif;
+    font-family: "Oswald", sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     margin: 4rem 0 2rem 0;
@@ -1206,9 +1203,9 @@ main {
     font-weight: bold; }
   .listing__entry a,
   .calendar__content a {
-    font-family: "acumin-pro", sans-serif;
+    font-family: "Istok Web", sans-serif;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 700;
     position: relative; }
     .listing__entry a:after,
     .calendar__content a:after {
@@ -1234,9 +1231,9 @@ main {
   width: calc(100% - 12rem); }
 
 .calendar__date {
-  font-family: "acumin-pro", sans-serif;
+  font-family: "Istok Web", sans-serif;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 700;
   color: #FFFFFF;
   float: left;
   text-align: center;
@@ -1323,8 +1320,31 @@ main {
   .focus-testimonials {
     background-color: transparent; } }
 
-footer.primary-footer {
+footer.footer {
   background-color: #2480C4;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+  footer.footer ul {
+    list-style: none; }
+    footer.footer ul a {
+      color: #FFFFFF; }
+  footer.footer .footer__logo {
+    width: 16rem;
+    margin-top: 1.4rem; }
+  footer.footer .footer__callout {
+    border-left: 1px solid #8BD4EB; }
+  footer.footer hr {
+    border-top: 1px solid #8BD4EB; }
+  footer.footer .footer__utility {
+    text-align: center; }
+    footer.footer .footer__utility ul {
+      display: inline-block; }
+    footer.footer .footer__utility li {
+      float: left;
+      padding: 1rem; }
+  footer.footer .footer__legal li {
+    float: left;
+    padding: 1rem; }
 
 /*# sourceMappingURL=style.css.map */
