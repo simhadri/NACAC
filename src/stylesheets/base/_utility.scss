@@ -19,8 +19,12 @@ nav.utility-nav {
 	}
 	.utility-nav__social {
 		width: 25%;
-		opacity: 0.6;
 		font-size: 2rem;
+		border-right: 1px solid $white;
+		li{
+			float: right;
+			opacity: 0.6;
+		}
 	}
 	.utility-nav__search {
 		float: left;
