@@ -3,12 +3,12 @@
 	//position:static !important;
 }
 .morphsearch {
-	width: 20rem;
-	height: 3.4rem;
-	position: absolute;
-	z-index: 10000;
-	top: 0.6rem;
-	right: 5rem;
+	width: calc(100% - 2rem);
+    height: 3.2rem;
+    position: absolute;
+    z-index: 10000;
+    top: 0.8rem;
+    right: 1rem;
 	border:1px solid;
 	border-color: #eee;
 	@include prefix(transform-origin, 100% 0,webkit);
