@@ -15,17 +15,40 @@
 			margin:0;
 		}
 	}
-	.btn{
-		margin:2rem 0;
-	}
-	
-	// 
 }
 .testimonial-block__quote{
-	
+	position:relative;
+	padding:0 3rem;
+	&:before, &:after{
+		font-family: $icons;
+		position:absolute;
+		color:$nacac_grey;
+		opacity:0.3;
+		font-size: 2.8rem;
+	}
+	&:before{	
+		content:"\f10d";
+		left:0;
+		top: -1.2rem;
+	}
+	&:after{
+		content:"\f10e";
+		right:0;
+		bottom:-1.2rem;
+	}
 }
 .testimonial-block__footer{
-	
+	img{
+		border-radius: 50%;
+		float: left;
+		height: 8rem;
+		width: 8rem;
+		margin-right: 1rem;
+	}	
+	h3{
+		margin-top: 3rem;
+		color: $nacac_purple;
+	}
 }
 .testimonial-block__name{
 	
