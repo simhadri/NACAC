@@ -47,32 +47,32 @@ import Screen from 'modules/screen.js';
 			success: function(data) {
 				selected.next().empty();
 				for (let i = 0; i < data.length; i++) {
-					if (data[i].interiorLink !== null && typeof data[i].interiorLink === 'string') {
+					if (data[i].content !== null && typeof data[i].content === 'string') {
 						selected.next().append(
 							'<li>' +
-							'<h3><a href="' + data[i].interiorLink + '">' + data[i].interiorTitle + '</a></h3>' +
+							'<h3><a href="' + data[i].content + '">' + data[i].title + '</a></h3>' +
 							'</li>'
 						);
 					}
-					if (data[i].interiorTitle == 'feature' && !data[i].interiorLink){
+					if (data[i].title == 'feature' && typeof data[i].content != 'string'){
 						selected.next().append(
 						'<li>'+
-							'<h3>'+data[i].featuredContent.featureTitle+'</h3>'+
-							'<img src="'+data[i].featuredContent.featureImage+'"/>'+
-							'<p>'+data[i].featuredContent.featureText+'</p>'+
+							'<h3>'+data[i].content.featureTitle+'</h3>'+
+							'<img src="'+data[i].content.featureImage+'"/>'+
+							'<p>'+data[i].content.featureText+'</p>'+
 						'</li>'
 						);
 					}
-					if (data[i].interiorLink !== null && typeof data[i].interiorLink === 'object') {		
+					if (data[i].content !== null && typeof data[i].content === 'object') {		
 						selected.next().append(
 							'<li>' +
-							'<h3>' + data[i].interiorTitle + '</h3>' +
+							'<h3>' + data[i].title + '</h3>' +
 							'<ul id="interior__links_' + i + '" class="interior__links"></ul>' +
 							'</li>'
 						);
-						for (let n = 0; n < data[i].interiorLink.length; n++) {
+						for (let n = 0; n < data[i].content.length; n++) {
 							$('#interior__links_' + [i]).append(
-								'<a href=' + data[i].interiorLink[n].linkHref + '>' + data[i].interiorLink[n].linkName + '</a>'
+								'<a href=' + data[i].content[n].linkHref + '>' + data[i].content[n].linkName + '</a>'
 							);
 						}
 

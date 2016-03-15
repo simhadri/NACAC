@@ -1,39 +1,39 @@
 [
 	{
-		"interiorTitle": "Career Development",
-		"interiorLink": "#"
+		"title": "Career Development",
+		"content": "#"
 	}, {
-		"interiorTitle": "College Admission / Application Process",
-		"interiorLink": "#"
+		"title": "College Admission / Application Process",
+		"content": "#"
 	}, {
-		"interiorTitle": "College Preparation",
-		"interiorLink": "#"
+		"title": "College Preparation",
+		"content": "#"
 	}, {
-		"interiorTitle": "Financing College",
-		"interiorLink": "#"
+		"title": "Financing College",
+		"content": "#"
 	}, {
-		"interiorTitle": "Professional Ethics",
-		"interiorLink": "#"
+		"title": "Professional Ethics",
+		"content": "#"
 	}, {
-		"interiorTitle": "Recruiting",
-		"interiorLink": "#"
+		"title": "Recruiting",
+		"content": "#"
 	}, {
-		"interiorTitle": "International",
-		"interiorLink": "#"
+		"title": "International",
+		"content": "#"
 	}, {
-		"interiorTitle": "Non Traditional",
-		"interiorLink": "#"
+		"title": "Non Traditional",
+		"content": "#"
 	}, {
-		"interiorTitle": "Transfer",
-		"interiorLink": "#"
+		"title": "Transfer",
+		"content": "#"
 	}, {
-		"interiorTitle": "Underserved",
-		"interiorLink": "#"
+		"title": "Underserved",
+		"content": "#"
 	}, {
-		"interiorTitle": "Undocumented Students",
-		"interiorLink": "#"
+		"title": "Undocumented Students",
+		"content": "#"
 	}, {
-		"interiorTitle": "Veterans",
-		"interiorLink": "#"
+		"title": "Veterans",
+		"content": "#"
 	}
 ]
