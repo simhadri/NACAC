@@ -2041,7 +2041,7 @@ webpackJsonp([0,1],[
 		};
 		var closeMobileNav = function closeMobileNav() {
 			body.removeClass('body--freeze');
-			primaryNav.removeClass('primary-nav--open');
+			//primaryNav.removeClass('primary-nav--open');
 			navTrigger.removeClass('trigger--x');
 			// screenOverlay.turnScreenOff();
 			navTrigger.on("click", function () {
@@ -2049,13 +2049,13 @@ webpackJsonp([0,1],[
 			});
 		};
 		var closeNavInterior = function closeNavInterior() {
-			(0, _vendorJquery214MinJs2['default'])('.nav__menu--visible').removeClass('nav__menu--visible');
+	
 			(0, _vendorJquery214MinJs2['default'])('.selected').removeClass('selected');
-			primaryNav.addClass('nav__menu--visible');
 		};
 		var openNavInterior = function openNavInterior(selected) {
 			(0, _vendorJquery214MinJs2['default'])('.selected').removeClass('selected');
-			(0, _vendorJquery214MinJs2['default'])('.nav__menu--visible').removeClass('nav__menu--visible');
+	
+			primaryNav.addClass('primary-nav--open');
 			var selectedId = selected.attr('data-id');
 			_vendorJquery214MinJs2['default'].ajax({
 				url: '/javascripts/data/interiorNavData_' + selectedId + '.json',
@@ -2065,13 +2065,13 @@ webpackJsonp([0,1],[
 					selected.next().empty();
 					for (var i = 0; i < data.length; i++) {
 						if (data[i].content !== null && typeof data[i].content === 'string') {
-							selected.next().append('<li>' + '<h3><a href="' + data[i].content + '">' + data[i].title + '</a></h3>' + '</li>');
+							selected.next().append('<li>' + '<h4><a href="' + data[i].content + '">' + data[i].title + '</a></h4>' + '</li>');
 						}
 						if (data[i].title == 'feature' && typeof data[i].content != 'string') {
-							selected.next().append('<li>' + '<h3>' + data[i].content.featureTitle + '</h3>' + '<img src="' + data[i].content.featureImage + '"/>' + '<p>' + data[i].content.featureText + '</p>' + '</li>');
+							selected.next().append('<li>' + '<h4>' + data[i].content.featureTitle + '</h4>' + '<img src="' + data[i].content.featureImage + '"/>' + '<p>' + data[i].content.featureText + '</p>' + '</li>');
 						}
 						if (data[i].content !== null && typeof data[i].content === 'object') {
-							selected.next().append('<li>' + '<h3>' + data[i].title + '</h3>' + '<ul id="interior__links_' + i + '" class="interior__links"></ul>' + '</li>');
+							selected.next().append('<li>' + '<h4>' + data[i].title + '</h4>' + '<ul id="interior__links_' + i + '" class="interior__links"></ul>' + '</li>');
 							for (var n = 0; n < data[i].content.length; n++) {
 								(0, _vendorJquery214MinJs2['default'])('#interior__links_' + [i]).append('<a href=' + data[i].content[n].linkHref + '>' + data[i].content[n].linkName + '</a>');
 							}
@@ -2079,7 +2079,10 @@ webpackJsonp([0,1],[
 					}
 				}
 			});
-			selected.parent().addClass('selected');
+			setTimeout(function () {
+				selected.parent().addClass('selected');
+			}, 300);
+	
 			selected.next().addClass('nav__menu--visible');
 		};
 	
@@ -2099,21 +2102,12 @@ webpackJsonp([0,1],[
 	
 		function bfDeselect() {
 			removeSelected();
-			removeVisibleMenuLevel();
-			restoreTopLevelVisibility();
-		}
-	
-		function restoreTopLevelVisibility() {
-			primaryNav.addClass('nav__menu--visible');
-		}
-	
-		function removeVisibleMenuLevel() {
-			(0, _vendorJquery214MinJs2['default'])('.nav__menu--visible').removeClass('nav__menu--visible');
 		}
 	
 		function bfSelect(theSelection) {
 			removeSelected();
-			removeVisibleMenuLevel();
+	
+			//primaryNav.addClass('primary-nav-open');
 			theSelection.parent('.primary-nav--children').addClass('selected').children('.nav-interior').addClass('nav__menu--visible');
 		}
 	
@@ -2124,21 +2118,18 @@ webpackJsonp([0,1],[
 		}
 	
 		function navScrollDependencies() {
+			var utilityHeight = (0, _vendorJquery214MinJs2['default'])('.utility-nav').height();
 			var heroHeight = (0, _vendorJquery214MinJs2['default'])('.hero__wrapper').height() + (0, _vendorJquery214MinJs2['default'])('.utility-nav').height();
 			var bodyTop = (0, _vendorJquery214MinJs2['default'])('body').scrollTop();
 			var navToTopOffset = (0, _vendorJquery214MinJs2['default'])('.primary-nav__interior').offset().top - bodyTop;
-			if (bodyTop >= heroHeight) {
+			if (bodyTop >= utilityHeight) {
+				console.log('sticky');
+				primaryNav.addClass('primary-nav--sticky');
 				//if nav hits top -> STICK
-				primaryNav.removeClass('primary-nav--up').addClass('primary-nav--sticky primary-nav--down');
+				// primaryNav.removeClass('primary-nav--up').addClass('primary-nav--sticky primary-nav--down');
 			} else {
-				// else -> UNSTICK
-				primaryNav.removeClass('primary-nav--sticky primary-nav--down').addClass('primary-nav--up');
-			}
-			if (primaryNav.hasClass('primary-nav--up') && navToTopOffset <= 400) {
-				// else if nav gets to close to top of screen, close
-				primaryNavItem.removeClass('selected');
-				primaryNav.removeClass('primary-nav--up').addClass('primary-nav--down');
-			}
+					primaryNav.removeClass('primary-nav--sticky primary-nav--up').addClass('primary-nav--down');
+				}
 		}
 	
 		body.click(clickAnywhereToCloseEverything);

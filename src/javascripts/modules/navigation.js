@@ -24,7 +24,7 @@ import Screen from 'modules/screen.js';
 	}
 	var closeMobileNav = function() {
 		body.removeClass('body--freeze');
-		primaryNav.removeClass('primary-nav--open');
+		//primaryNav.removeClass('primary-nav--open');
 		navTrigger.removeClass('trigger--x');
 		// screenOverlay.turnScreenOff();
 		navTrigger.on("click", function() {
@@ -32,13 +32,14 @@ import Screen from 'modules/screen.js';
 		});
 	}
 	var closeNavInterior = function() {
-		$('.nav__menu--visible').removeClass('nav__menu--visible');
+		
 		$('.selected').removeClass('selected');
-		primaryNav.addClass('nav__menu--visible');
+		
 	}
 	var openNavInterior = function(selected) {
 		$('.selected').removeClass('selected');
-		$('.nav__menu--visible').removeClass('nav__menu--visible');
+		
+		primaryNav.addClass('primary-nav--open');
 		let selectedId = selected.attr('data-id');
 		$.ajax({
 			url: '/javascripts/data/interiorNavData_' + selectedId + '.json',
@@ -50,14 +51,14 @@ import Screen from 'modules/screen.js';
 					if (data[i].content !== null && typeof data[i].content === 'string') {
 						selected.next().append(
 							'<li>' +
-							'<h3><a href="' + data[i].content + '">' + data[i].title + '</a></h3>' +
+							'<h4><a href="' + data[i].content + '">' + data[i].title + '</a></h4>' +
 							'</li>'
 						);
 					}
 					if (data[i].title == 'feature' && typeof data[i].content != 'string'){
 						selected.next().append(
 						'<li>'+
-							'<h3>'+data[i].content.featureTitle+'</h3>'+
+							'<h4>'+data[i].content.featureTitle+'</h4>'+
 							'<img src="'+data[i].content.featureImage+'"/>'+
 							'<p>'+data[i].content.featureText+'</p>'+
 						'</li>'
@@ -66,7 +67,7 @@ import Screen from 'modules/screen.js';
 					if (data[i].content !== null && typeof data[i].content === 'object') {		
 						selected.next().append(
 							'<li>' +
-							'<h3>' + data[i].title + '</h3>' +
+							'<h4>' + data[i].title + '</h4>' +
 							'<ul id="interior__links_' + i + '" class="interior__links"></ul>' +
 							'</li>'
 						);
@@ -81,7 +82,10 @@ import Screen from 'modules/screen.js';
 
 			}
 		})
-		selected.parent().addClass('selected');
+		setTimeout(function(){
+			selected.parent().addClass('selected');	
+		},300)
+		
 		selected.next().addClass('nav__menu--visible');
 	}
 
@@ -101,21 +105,14 @@ import Screen from 'modules/screen.js';
 
 	function bfDeselect() {
 		removeSelected();
-		removeVisibleMenuLevel();
-		restoreTopLevelVisibility();
-	}
-
-	function restoreTopLevelVisibility() {
-		primaryNav.addClass('nav__menu--visible');
-	}
-
-	function removeVisibleMenuLevel() {
-		$('.nav__menu--visible').removeClass('nav__menu--visible');
+		
+		
 	}
 
 	function bfSelect(theSelection) {
 		removeSelected();
-		removeVisibleMenuLevel();
+		
+		//primaryNav.addClass('primary-nav-open');
 		theSelection.parent('.primary-nav--children').addClass('selected').children('.nav-interior').addClass('nav__menu--visible');
 	}
 
@@ -127,20 +124,17 @@ import Screen from 'modules/screen.js';
 	}
 
 	function navScrollDependencies() {
+		var utilityHeight = $('.utility-nav').height();
 		var heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height();
 		var bodyTop = $('body').scrollTop();
 		var navToTopOffset = $('.primary-nav__interior').offset().top - bodyTop;
-		if ( bodyTop >= heroHeight ) {
+		if ( bodyTop >= utilityHeight ) {
+			console.log('sticky')
+			primaryNav.addClass('primary-nav--sticky');
 			//if nav hits top -> STICK
-			primaryNav.removeClass('primary-nav--up').addClass('primary-nav--sticky primary-nav--down');
-		} else {
-			// else -> UNSTICK
-			primaryNav.removeClass('primary-nav--sticky primary-nav--down').addClass('primary-nav--up');
-		} 
-		if( primaryNav.hasClass('primary-nav--up') && navToTopOffset <= 400 ){
-			// else if nav gets to close to top of screen, close
-			primaryNavItem.removeClass('selected');
-			primaryNav.removeClass('primary-nav--up').addClass('primary-nav--down');
+			// primaryNav.removeClass('primary-nav--up').addClass('primary-nav--sticky primary-nav--down');
+		}else{
+			primaryNav.removeClass('primary-nav--sticky primary-nav--up').addClass('primary-nav--down');
 		}
 	}
 

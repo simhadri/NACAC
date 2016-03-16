@@ -1,10 +1,113 @@
-html{
-	font-size: 10px;
+html {
+    font-family: $sans;
+    font-size: 10px;
+    -webkit-font-smoothing: antialiased;
 }
-body{
-	font-size: 1.6rem;
-	@include sans-light;
+
+body {
+    color: $text_slate;
+    font-size: 1.6rem;
 }
-a:hover{
-	color:$nacac_link_hover;
+
+p {
+    line-height: 2.3rem;
 }
+
+
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $condensed;
+    font-weight: 400;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    line-height: 1.5rem;
+}
+
+h1 {
+    font-size: 5.656rem;
+    line-height: 7rem;
+    margin-top: 3rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 4.242rem;
+    line-height: 4.5rem;
+    margin-top: 3rem;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: $sans;
+    font-size: 2.828rem;
+    line-height: 3rem;
+    margin-top: 3rem;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 1.414rem;
+    font-family: $sans;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: 0.707rem;
+    font-family: $sans;
+    font-weight: 700;
+}
+
+h6 {
+    font-size: 0.4713333333333333rem;
+    font-family: $sans;
+    font-weight: 700;
+}
+
+[class*="__byline"] {
+    font-family: $serif;
+    font-size: 2rem;
+}
+
+.hero__byline {
+    font-size: 2.75rem;
+}
+
+[class*="__byline"] + h1 {
+    margin-top: 0;
+}
+
+
+/* Tables */
+
+table {
+    margin-top: 1.5rem;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+table td,
+table th {
+    padding: 0;
+    line-height: 33px;
+}
+
+
+/* Code blocks */
+
+code {
+    vertical-align: bottom;
+}
+
+/* ul and ol */
+
+ul{
+	padding:0;
+	margin:0;
+}
+
