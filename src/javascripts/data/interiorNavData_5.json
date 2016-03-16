@@ -1,6 +1,6 @@
 [{
-	"interiorTitle": "Core Values",
-	"interiorLink": [{
+	"title": "Core Values",
+	"content": [{
 		"linkName": "Ethics",
 		"linkHref": "#"
 	}, {
@@ -8,8 +8,8 @@
 		"linkHref": "#"
 	}]
 }, {
-	"interiorTitle": "Legistative",
-	"interiorLink": [{
+	"title": "Legistative",
+	"content": [{
 		"linkName": "What to Talk About with Your Legistator",
 		"linkHref": "#"
 	}, {
@@ -23,8 +23,8 @@
 		"linkHref": "#"
 	}]
 }, {
-	"interiorTitle": "Initiatives",
-	"interiorLink": [{
+	"title": "Initiatives",
+	"content": [{
 		"linkName": "Reach Higher Challenge",
 		"linkHref": "#"
 	}, {
@@ -38,8 +38,8 @@
 		"linkHref": "#"
 	}]
 }, {
-	"interiorTitle": "feature",
-	"featuredContent": {
+	"title": "feature",
+	"content": {
 		"featureTitle": "Featured Content",
 		"featureImage": "http://placehold.it/300x150",
 		"featureText": "Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Nulla Pulvinar Mauris Sed Aliquet. Adipiscing Nulla Pulvinar Mauris Sed Aliquet"

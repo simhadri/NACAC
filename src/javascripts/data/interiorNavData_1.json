@@ -1,30 +1,30 @@
 [
 	{
-		"interiorTitle": "About Overview",
-		"interiorLink": "#about"
+		"title": "About Overview",
+		"content": "#about"
 	},
 	{
-		"interiorTitle": "Affiliates",
-		"interiorLink": "#"
-	},
-
-	{
-		"interiorTitle": "Awards",
-		"interiorLink": "#"
+		"title": "Affiliates",
+		"content": "#"
 	},
 
 	{
-		"interiorTitle": "History",
-		"interiorLink": "#"
+		"title": "Awards",
+		"content": "#"
 	},
 
 	{
-		"interiorTitle": "National Committees",
-		"interiorLink": "#"
+		"title": "History",
+		"content": "#"
 	},
 
 	{
-		"interiorTitle": "Special Interest Groups",
-		"interiorLink": "#"
+		"title": "National Committees",
+		"content": "#"
+	},
+
+	{
+		"title": "Special Interest Groups",
+		"content": "#"
 	}
 ]

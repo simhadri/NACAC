@@ -1,26 +1,26 @@
 [
 	{
-		"interiorTitle": "Career Development",
-		"interiorLink": "#"
+		"title": "Career Development",
+		"content": "#"
 	}, {
-		"interiorTitle": "Membership Overview",
-		"interiorLink": "#"
+		"title": "Membership Overview",
+		"content": "#"
 	}, {
-		"interiorTitle": "Benefits",
-		"interiorLink": "#"
+		"title": "Benefits",
+		"content": "#"
 	}, {
-		"interiorTitle": "Directory",
-		"interiorLink": "#"
+		"title": "Directory",
+		"content": "#"
 	},
 
 	{
-		"interiorTitle": "Member Spotlight",
-		"interiorLink": "#"
+		"title": "Member Spotlight",
+		"content": "#"
 	},
 
 	{
-		"interiorTitle": "NACAC Exchange",
-		"interiorLink": "#"
+		"title": "NACAC Exchange",
+		"content": "#"
 	}
 
 ]

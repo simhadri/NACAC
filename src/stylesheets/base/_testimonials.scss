@@ -12,7 +12,6 @@
 		text-align: left;
 		p{
 			max-width: inherit;
-			margin:0;
 		}
 	}
 }
@@ -45,9 +44,9 @@
 		width: 8rem;
 		margin-right: 1rem;
 	}	
-	h3{
-		margin-top: 3rem;
+	p{
 		color: $nacac_purple;
+
 	}
 }
 .testimonial-block__name{

@@ -2,13 +2,7 @@
 
 # NACAC Repository
 
-## General Info
-
-Welcome to the NACAC Repo! There are a total of 3 sites; each is located in the following subdirectories:
-
-- Main Site ```/main```
-- College Fair Site ```/fair```
-- National Conference Site ```/conference```
+Welcome to the NACAC Repo! There are a total of 3 sites; Main, Conferences and Fairs
 
 ### Assets
 [Wire Fames](http://a12upd.axshare.com/#p=nacacnet_org_home__desktop_)
@@ -21,8 +15,27 @@ Welcome to the NACAC Repo! There are a total of 3 sites; each is located in the 
 ### HTML 
 
 High level pages are layouts. This includes:
-- Main Site
-- 
+- Main Site ```/main```
+- College Fair Site ```/fair```
+- National Conference Site ```/conference```
+
+With in each layout are 'shared' markup, this includes:
+- Head
+- Hero
+- Footer
+- Etc.
+
+WIth in the shared markup are components, this can include:
+- Card & Blocks
+- Search
+- Entries
+
+Here is the file structure of a simple page:
+- html/
+  - _layouts/
+  - _shared/
+  - _components/
+  
 ### Features
 - **CSS:** [Sass](http://sass-lang.com/) (indented, scss, or both)
   - Libsass (node-sass) for super fast compiles

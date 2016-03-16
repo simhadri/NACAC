@@ -38,40 +38,20 @@ main {
 
 // Articles
 .article__row {
+	padding-top: 3rem;
 	padding-bottom: 3rem;
 }
 
 .article--white {
 	background-color: $white;
-	h2 {
-		color: $text_slate;
-	}
 }
 
 .article--lightgrey {
 	background-color: $nacac_bg-light-grey;
-	h2 {
-		color: $text_slate;
-	}
 }
 
 .article__header {
 	text-align: center;
-	h2 {
-		font-family: $condensed;
-		font-weight: bold;
-		@include uppercase;
-		margin: 4rem 0 2rem 0;
-		font-size: 5rem;
-	}
-	p {
-		max-width: 70rem;
-		line-height: 1.8;
-		display: block;
-		margin: auto;
-		margin-bottom: 1rem;
-	}
-	
 	.btn{
 		margin:2rem 0;
 	}
