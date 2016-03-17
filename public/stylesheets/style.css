@@ -590,13 +590,13 @@ a.btn {
     height: auto;
     width: 100%;
     overflow: visible;
+    z-index: 21;
     transition: 400ms all ease-in-out;
+    -webkit-transform: translateY(55rem);
+        -ms-transform: translateY(55rem);
+            transform: translateY(55rem);
     /*end nav interior*/ }
     .primary-nav.primary-nav--up {
-      -webkit-transform: translateY(-55rem);
-          -ms-transform: translateY(-55rem);
-              transform: translateY(-55rem); }
-    .primary-nav.primary-nav--down {
       -webkit-transform: translateY(0);
           -ms-transform: translateY(0);
               transform: translateY(0); }
@@ -689,8 +689,11 @@ a.btn {
         width: 25%;
         margin: 0;
         padding: 0 2em;
+        min-height: 4rem;
         /*nested*/
         /*end ul*/ }
+        .primary-nav .primary-nav__interior > li h4 {
+          margin: 0; }
         .primary-nav .primary-nav__interior > li img {
           width: 100%; }
         .primary-nav .primary-nav__interior > li p {

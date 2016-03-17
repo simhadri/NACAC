@@ -1,26 +1,32 @@
 [
 	{
-		"title": "Career Development",
-		"content": "#"
-	}, {
-		"title": "Membership Overview",
-		"content": "#"
-	}, {
-		"title": "Benefits",
-		"content": "#"
-	}, {
-		"title": "Directory",
-		"content": "#"
+		"name":"NACAC Exchange",
+		"type":"link",
+		"content":"/index.html"
 	},
-
 	{
-		"title": "Member Spotlight",
-		"content": "#"
+		"name":"Membership Overview",
+		"type":"link",
+		"content":"#"
 	},
-
 	{
-		"title": "NACAC Exchange",
-		"content": "#"
+		"name":"Benefits",
+		"type":"link",
+		"content":"#"
+	},
+	{
+		"name":"Directory",
+		"type":"link",
+		"content":"#"
+	},
+	{
+		"name":"Member Spotlight",
+		"type":"link",
+		"content":"#"
+	},
+	{
+		"name":"NACAC Exchange",
+		"type":"link",
+		"content":"#"
 	}
-
 ]

@@ -269,16 +269,18 @@
 		height: auto;
 		width: 100%;
 		overflow: visible;
+		@include zone-index('page',1)
 		transition: 400ms all ease-in-out;
-		
+		transform: translateY(55rem);
 		// LETS GET WEIRD
 		&.primary-nav--up{
 			// bottom:55rem;
-			transform: translateY(-55rem);
+			transform: translateY(0);
+			//top: 5rem;
 		}
 		&.primary-nav--down{
 			// bottom:55rem;
-			transform: translateY(0);
+			// transform: translateY(0);
 		}
 		&.primary-nav--sticky {
 			position: fixed;
@@ -394,6 +396,10 @@
 				width: 25%;
 				margin: 0;
 				padding: 0 2em;
+				min-height:4rem;
+				h4{
+					margin:0;
+				}
 				img {
 					width: 100%;
 				}
