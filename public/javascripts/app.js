@@ -2078,7 +2078,7 @@ webpackJsonp([0,1],[
 			});
 			setTimeout(function () {
 				selected.parent().addClass('selected');
-			}, 300);
+			}, 200);
 	
 			selected.next().addClass('nav__menu--visible');
 		};
@@ -2109,24 +2109,22 @@ webpackJsonp([0,1],[
 		}
 	
 		function navScrollDependencies(event) {
-			// ??NEED A IF FOR EACH SCENARIO!!!!!!!!!
 			var utilityHeight = (0, _vendorJquery214MinJs2['default'])('.utility-nav').height(),
 			    heroHeight = (0, _vendorJquery214MinJs2['default'])('.hero__wrapper').height() + (0, _vendorJquery214MinJs2['default'])('.utility-nav').height(),
 			    bodyTop = (0, _vendorJquery214MinJs2['default'])('body').scrollTop(),
 			    navToTopOffset = (0, _vendorJquery214MinJs2['default'])('.primary-nav__interior').offset().top - bodyTop;
+			// If past than util nav and animation fired
 			if (bodyTop >= utilityHeight && primaryNav.hasClass('primary-nav--up')) {
-				console.log('up');
-				primaryNav.addClass('primary-nav--up');
-				primaryNav.addClass('primary-nav--sticky');
+				primaryNav.addClass('primary-nav--up primary-nav--sticky');
 			}
+			// If past than util nav and animation NOT fired
 			if (bodyTop >= heroHeight && !primaryNav.hasClass('primary-nav--up')) {
-				console.log('up');
-				primaryNav.addClass('primary-nav--up');
-				primaryNav.addClass('primary-nav--sticky');
+				primaryNav.addClass('primary-nav--up primary-nav--sticky');
 			}
-			// else{
-			// 	primaryNav.removeClass('primary-nav--sticky');
-			// }
+			// If NOT past util nav, unstick
+			if (bodyTop <= utilityHeight) {
+				primaryNav.removeClass('primary-nav--sticky');
+			}
 		}
 	
 		navTrigger.on("click", function () {
