@@ -18,13 +18,14 @@ import Screen from 'modules/screen.js';
 
 	var openMobileNav = function() {
 		body.addClass('body--freeze');
-		// primaryNav.addClass('primary-nav--open');
+		primaryNav.addClass('primary-nav--open');
 		$('.trigger__icon').addClass('trigger--x');
 	}
 	var closeMobileNav = function() {
 		body.removeClass('body--freeze');
-		navTrigger.removeClass('trigger--x');
-		navTrigger.on("click", function() {
+		$('.trigger__icon').removeClass('trigger--x');
+		primaryNav.removeClass('primary-nav--open');
+		$('.trigger__icon').on("click", function() {
 			openMobileNav();
 		});
 	}
@@ -93,6 +94,13 @@ import Screen from 'modules/screen.js';
 				removeSelected();
 			}
 		}
+	}
+	function restoreTopLevelVisibility() {
+		primaryNav.addClass('nav__menu--visible');
+	}
+
+	function removeVisibleMenuLevel() {
+		$('.nav__menu--visible').removeClass('nav__menu--visible');
 	}
 
 	function removeSelected() {

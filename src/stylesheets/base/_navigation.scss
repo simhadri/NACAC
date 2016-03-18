@@ -183,6 +183,9 @@
 		transition: all 0.33s;
 		color: $white;
 		border: 1px solid;
+		&:hover{
+			color:$white;
+		}
 	}
 	.primary-nav {
 		height: auto;
