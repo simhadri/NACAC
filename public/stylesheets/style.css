@@ -525,6 +525,8 @@ a.btn {
     transition: all 0.33s;
     color: #FFFFFF;
     border: 1px solid; }
+    .primary-nav__trigger:hover {
+      color: #FFFFFF; }
   .primary-nav {
     height: auto;
     background: rgba(255, 255, 255, 0.925);
@@ -787,6 +789,20 @@ a.btn {
 .morphsearch__submit:focus {
   outline: none; }
 
+.morphsearch:before {
+  background: transparent url(../images/magnifier.svg) no-repeat center center;
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  display: block;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  opacity: 1; }
+
+.morphsearch--open:before {
+  opacity: 0; }
+
 .morphsearch__submit, .morphsearch:after {
   position: absolute;
   width: 8rem;
@@ -888,8 +904,8 @@ a.btn {
 
 .morphsearch--open .morphsearch__submit {
   font-size: 4em;
-  width: 50px;
-  height: 50px; }
+  width: 7rem;
+  height: 7rem; }
 
 nav.utility-nav {
   border-bottom: 1px solid #FFFFFF;
@@ -939,15 +955,19 @@ nav.utility-nav {
     position: fixed;
     width: 100%;
     height: 8rem;
+    font-size: 1.4rem;
     z-index: 22; }
     nav.utility-nav ul {
       position: absolute;
       list-style: none;
       bottom: 0; }
       nav.utility-nav ul li {
-        padding: 1rem 0.4rem; }
+        padding: 0 0.4rem;
+        height: auto; }
     nav.utility-nav .utility-nav__list {
-      width: 100%; }
+      width: calc(100% - 3rem);
+      height: auto;
+      margin: 1rem 0; }
     nav.utility-nav .utility-nav__social {
       display: none; }
     nav.utility-nav .utility-nav__search {

@@ -18,13 +18,14 @@ import Screen from 'modules/screen.js';
 
 	var openMobileNav = function() {
 		body.addClass('body--freeze');
-		// primaryNav.addClass('primary-nav--open');
+		primaryNav.addClass('primary-nav--open');
 		$('.trigger__icon').addClass('trigger--x');
 	}
 	var closeMobileNav = function() {
 		body.removeClass('body--freeze');
-		navTrigger.removeClass('trigger--x');
-		navTrigger.on("click", function() {
+		$('.trigger__icon').removeClass('trigger--x');
+		primaryNav.removeClass('primary-nav--open');
+		$('.trigger__icon').on("click", function() {
 			openMobileNav();
 		});
 	}
@@ -80,7 +81,7 @@ import Screen from 'modules/screen.js';
 		})
 		setTimeout(function(){
 			selected.parent().addClass('selected');	
-		},300)
+		},200)
 		
 		selected.next().addClass('nav__menu--visible');
 	}
@@ -93,6 +94,13 @@ import Screen from 'modules/screen.js';
 				removeSelected();
 			}
 		}
+	}
+	function restoreTopLevelVisibility() {
+		primaryNav.addClass('nav__menu--visible');
+	}
+
+	function removeVisibleMenuLevel() {
+		$('.nav__menu--visible').removeClass('nav__menu--visible');
 	}
 
 	function removeSelected() {
@@ -112,24 +120,22 @@ import Screen from 'modules/screen.js';
 	}
 
 	function navScrollDependencies(event) {
-		// ??NEED A IF FOR EACH SCENARIO!!!!!!!!!
 		var utilityHeight = $('.utility-nav').height(),
 			heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height(),
 			bodyTop = $('body').scrollTop(),
 			navToTopOffset = $('.primary-nav__interior').offset().top - bodyTop;
+		// If past than util nav and animation fired
 		if ( bodyTop >= utilityHeight && primaryNav.hasClass('primary-nav--up')) {
-			console.log('up')
-			primaryNav.addClass('primary-nav--up');
-			primaryNav.addClass('primary-nav--sticky');
+			primaryNav.addClass('primary-nav--up primary-nav--sticky');
 		}
+		// If past than util nav and animation NOT fired
 		if ( bodyTop >= heroHeight && !primaryNav.hasClass('primary-nav--up')) {
-			console.log('up')
-			primaryNav.addClass('primary-nav--up');
-			primaryNav.addClass('primary-nav--sticky');
+			primaryNav.addClass('primary-nav--up primary-nav--sticky');
 		}
-		// else{
-		// 	primaryNav.removeClass('primary-nav--sticky');
-		// }
+		// If NOT past util nav, unstick
+		if ( bodyTop <= utilityHeight) {
+			primaryNav.removeClass('primary-nav--sticky');
+		}
 	}
 
 	
