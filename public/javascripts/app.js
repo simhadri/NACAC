@@ -2127,7 +2127,7 @@ webpackJsonp([0,1],[
 			}
 			// If past than util nav and animation NOT fired
 			if (bodyTop >= heroHeight && !primaryNav.hasClass('primary-nav--up')) {
-				primaryNav.addClass('primary-nav--up primary-nav--sticky');
+				primaryNav.addClass('primary-nav--up primary-nav--sticky no-transitions');
 			}
 			// If NOT past util nav, unstick
 			if (bodyTop <= utilityHeight) {

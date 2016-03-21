@@ -596,7 +596,6 @@ a.btn {
     width: 100%;
     overflow: visible;
     z-index: 21;
-    transition: 400ms all ease-in-out;
     -webkit-transform: translateY(55rem);
         -ms-transform: translateY(55rem);
             transform: translateY(55rem);
@@ -604,7 +603,8 @@ a.btn {
     .primary-nav.primary-nav--up {
       -webkit-transform: translateY(0);
           -ms-transform: translateY(0);
-              transform: translateY(0); }
+              transform: translateY(0);
+      transition: 400ms all ease-in-out; }
     .primary-nav.primary-nav--sticky {
       position: fixed;
       top: 0;
@@ -1223,6 +1223,9 @@ nav.utility-nav {
   pointer-events: none;
   transition: opacity 0.5s;
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
+
+.no-transitions {
+  transition: none !important; }
 
 body.body--freeze {
   overflow: hidden; }
