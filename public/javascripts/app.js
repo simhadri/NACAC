@@ -12,37 +12,34 @@ webpackJsonp([0,1],[
 	// *********************
 	//    Vendor scirpts
 	// *********************
-	'use strict';
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	var _vendorJquery214MinJs = __webpack_require__(2);
-	
-	var _vendorJquery214MinJs2 = _interopRequireDefault(_vendorJquery214MinJs);
-	
+	// import $ from 'vendor/jquery-2.1.4.min.js';
 	//import CountUp from 'vendor/countUp.js';
 	
 	// *********************
 	//    Modules scripts
 	// *********************
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
 	__webpack_require__(4);
+	
+	__webpack_require__(6);
 	
 	var _modulesScreenJs = __webpack_require__(5);
 	
 	var _modulesScreenJs2 = _interopRequireDefault(_modulesScreenJs);
 	
-	(0, _vendorJquery214MinJs2['default'])(document).ready(function () {
-		(0, _vendorJquery214MinJs2['default'])('main').addClass("fadeIn");
-		var bLazy = new Blazy();
+	$(document).ready(function () {
+		$('main').addClass("fadeIn");
 	});
 	(function () {
 		'use strict';
 		var screenOverlay = new _modulesScreenJs2['default'](),
-		    morphSearch = (0, _vendorJquery214MinJs2['default'])('.morphsearch'),
-		    searchInput = (0, _vendorJquery214MinJs2['default'])('input.morphsearch__input'),
-		    seachInputWrapper = (0, _vendorJquery214MinJs2['default'])('.utility-nav__search'),
-		    ctrlClose = (0, _vendorJquery214MinJs2['default'])('span.morphsearch__close'),
+		    morphSearch = $('.morphsearch'),
+		    searchInput = $('input.morphsearch__input'),
+		    seachInputWrapper = $('.utility-nav__search'),
+		    ctrlClose = $('span.morphsearch__close'),
 		    isOpen = false,
 		   
 		// show/hide search area
@@ -2127,7 +2124,7 @@ webpackJsonp([0,1],[
 			}
 			// If past than util nav and animation NOT fired
 			if (bodyTop >= heroHeight && !primaryNav.hasClass('primary-nav--up')) {
-				primaryNav.addClass('primary-nav--up primary-nav--sticky');
+				primaryNav.addClass('primary-nav--up primary-nav--sticky no-transitions');
 			}
 			// If NOT past util nav, unstick
 			if (bodyTop <= utilityHeight) {
@@ -2178,6 +2175,31 @@ webpackJsonp([0,1],[
 	    };
 	};
 	module.exports = Screen;
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	$(function () {
+		var bLazy = new Blazy({
+			//breakpoints use max-width
+			//don't always trump other loading factors
+			breakpoints: [{ width: 640, src: 'data-src-sm' }
+			//{width: 767, src: 'data-src-sm'}
+			],
+			success: function success(element) {
+				setTimeout(function () {
+					// We want to remove the loader gif now.
+					// First we find the parent container
+					// then we remove the "loading" class which holds the loader image
+					var parent = element.parentNode;
+					parent.className = parent.className.replace(/\bloading\b/, '');
+				}, 2000);
+			}
+		});
+	});
 
 /***/ }
 ]);

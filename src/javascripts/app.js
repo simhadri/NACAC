@@ -1,19 +1,19 @@
 // *********************
 //    Vendor scirpts
 // *********************
-import $ from 'vendor/jquery-2.1.4.min.js';
+// import $ from 'vendor/jquery-2.1.4.min.js';
 //import CountUp from 'vendor/countUp.js';
 
 // *********************
 //    Modules scripts
 // *********************
 import 'modules/navigation.js';
+import 'modules/blazy_settings';
 import Screen from 'modules/screen.js';
 
 
 $(document).ready(function() {
 	$('main').addClass("fadeIn");
-	var bLazy = new Blazy();
 });
 (function() {
 	'use strict';
