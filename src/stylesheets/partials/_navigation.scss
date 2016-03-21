@@ -131,7 +131,6 @@
 		}
 	}
 	.primary-nav__item {
-		padding: 0.8rem;
 		background-color: $white_translucent;
 		line-height: 1;
 		height: 7rem;
@@ -140,18 +139,10 @@
 			font-family: $sans;
 			text-transform: uppercase;
 			font-weight: bold;
-			// font-size: 1.6rem;
+			display: block;
 			position: relative;
 			&:hover {
 				color: $nacac_link_hover;
-			}
-			&.has-children:after {
-				font-family: $icons;
-				//content: "\f078";
-				display: inline-block;
-				//width: 1em;
-				position: absolute;
-				//right: 1em;
 			}
 		}
 		.interior__links a {
@@ -223,6 +214,18 @@
 			overflow: auto;
 			overflow-x: hidden;
 			li.primary-nav__item {
+				padding: 1.6rem 1.44rem;
+				position: relative;
+				a.primary-nav--children:after {
+					    position: absolute;
+						right: 0;
+						top: -0.2rem;
+						height: 2rem;
+						width: 3rem;
+						content: "+";
+						font-size: 2.8rem;
+						text-align: center;
+				}
 				height: auto;
 				border-bottom: 1px solid $nacac_border-grey;
 				.primary-nav__interior {
@@ -230,9 +233,14 @@
 					transition: max-height 0.33s ease-in-out;
 					overflow: hidden;
 				}
-				&.selected .primary-nav__interior {
-					max-height: 500px;
-					transition: max-height 0.33s ease-in-out;
+				&.selected {
+					a.primary-nav--children:after{
+						content:"-";
+					}
+					.primary-nav__interior {
+						max-height: 500px;
+						transition: max-height 0.33s ease-in-out;
+					}
 				}
 			}
 		}
