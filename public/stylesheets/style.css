@@ -762,7 +762,8 @@ a.btn {
 
 .morphsearch--open .morphsearch__form {
   width: 80%;
-  height: 16rem;
+  height: 12rem;
+  top: 7rem;
   -webkit-transform: translate3d(0, 3em, 0);
           transform: translate3d(0, 3em, 0); }
 
@@ -806,7 +807,8 @@ a.btn {
 .morphsearch--open:before {
   opacity: 0; }
 
-.morphsearch__submit, .morphsearch:after {
+.morphsearch__submit,
+.morphsearch:after {
   position: absolute;
   width: 8rem;
   height: 8rem;
@@ -909,6 +911,39 @@ a.btn {
   font-size: 4em;
   width: 7rem;
   height: 7rem; }
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+@media (max-width: 991px) {
+  .morphsearch {
+    height: 4.2rem;
+    top: 0.2rem;
+    right: 1rem;
+    border: none; }
+    .morphsearch:before {
+      width: 3rem;
+      height: 3rem;
+      display: block;
+      position: absolute;
+      right: 1.5rem;
+      top: 0.5rem; }
+  .morphsearch--open {
+    width: 24rem; }
+    .morphsearch--open .morphsearch__form {
+      width: 32rem;
+      -webkit-transform: translate3d(0, 3em, 0);
+      transform: translate3d(0, 3em, 0); }
+    .morphsearch--open .morphsearch__input {
+      font-size: 2em; }
+    .morphsearch--open .morphsearch__submit {
+      width: 5rem;
+      height: 5rem; } }
 
 nav.utility-nav {
   border-bottom: 1px solid #FFFFFF;
@@ -1098,17 +1133,21 @@ nav.utility-nav {
 .card-block__header {
   position: relative;
   height: 18rem;
-  overflow: hidden; }
+  overflow: hidden;
+  display: table;
+  text-align: center;
+  width: 100%; }
   .card-block__header h2 {
     display: table-cell;
     vertical-align: middle;
     height: 18rem;
-    width: 100%;
-    text-align: center;
     margin: 0;
-    color: #FFFFFF; }
+    color: #FFFFFF;
+    font-size: 3.8rem;
+    line-height: 4.2rem; }
   .card-block__header img {
     top: 0;
+    left: 0;
     transition: all .4s ease-in-out;
     position: absolute;
     z-index: -1;
@@ -1176,7 +1215,7 @@ nav.utility-nav {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 30;
+  z-index: 10;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
@@ -1230,7 +1269,12 @@ main {
   .flexbox__row {
     display: block; }
   .flexbox__column {
-    display: block; } }
+    display: block; }
+  .article__row a.btn {
+    max-width: 30rem;
+    margin: auto;
+    display: block;
+    white-space: normal; } }
 
 .announcement__header {
   border-bottom: 1px solid #BDBDBD;
@@ -1372,7 +1416,9 @@ main {
 */
 @media (max-width: 991px) {
   .focus-testimonials {
-    background-color: transparent; } }
+    background-color: transparent; }
+  .testimonial-block {
+    padding-bottom: 2rem; } }
 
 /*
 ██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
