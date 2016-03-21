@@ -398,7 +398,8 @@ a.btn {
   transition: opacity 0.3s linear; }
 
 .primary-nav__trigger {
-  display: none; }
+  display: none;
+  cursor: pointer; }
   @media (max-width: 991px) {
     .primary-nav__trigger {
       display: inline-block; } }
@@ -413,8 +414,7 @@ a.btn {
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
         transform: rotate(0deg);
-    transition: .5s ease-in-out;
-    cursor: pointer; }
+    transition: .5s ease-in-out; }
     .primary-nav__trigger .trigger__icon span {
       display: block;
       position: absolute;
@@ -561,14 +561,17 @@ a.btn {
       overflow: auto;
       overflow-x: hidden; }
       .primary-nav ul.primary-nav__list li.primary-nav__item {
-        display: block;
         height: auto;
-        overflow: hidden;
-        background-color: transparent; }
+        border-bottom: 1px solid #BDBDBD; }
+        .primary-nav ul.primary-nav__list li.primary-nav__item .primary-nav__interior {
+          max-height: 0;
+          transition: max-height 0.33s ease-in-out;
+          overflow: hidden; }
+        .primary-nav ul.primary-nav__list li.primary-nav__item.selected .primary-nav__interior {
+          max-height: 500px;
+          transition: max-height 0.33s ease-in-out; }
     .primary-nav .visible-menu-level > li {
-      margin-left: 0 !important; }
-    .primary-nav .primary-nav__interior {
-      transition: all 0.33s cubic-bezier(0, 0.68, 0.44, 0.99); } }
+      margin-left: 0 !important; } }
 
 /*
 ██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
@@ -1396,6 +1399,8 @@ footer.footer {
   footer.footer .footer__logo {
     width: 16rem;
     margin-top: 1.4rem; }
+  footer.footer .footer__contact-list a {
+    color: #FFFFFF; }
   footer.footer .footer__callout {
     border-left: 1px solid #8BD4EB; }
   footer.footer hr {

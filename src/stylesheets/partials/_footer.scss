@@ -13,7 +13,11 @@ footer.footer{
 		width: 16rem;
 		margin-top: 1.4rem;
 	}
-	.footer__contact-list{}
+	.footer__contact-list{
+		a{
+			color:$white;
+		}
+	}
 	.footer__callout{
 		border-left:1px solid $nacac_border-blue;
 	}
