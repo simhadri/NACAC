@@ -1,7 +1,15 @@
-nav.utility-nav {
+.utility-nav {
 	border-bottom: 1px solid $white;
 	color: $white;
 	height: 5rem;
+	width: 100%;
+    position: fixed;
+    top: 0;
+    @include zone-index(overlay, 1);
+    transition: 400ms all ease-in-out;
+    &.utility-nav--scrolled{
+    	background-color: $nacac_blue;
+    }
 	a {
 		color: $white;
 		font-weight: 100;
@@ -51,7 +59,7 @@ nav.utility-nav {
 */
 
 @include break(max, $screen-sm-max) {
-	nav.utility-nav {
+	.utility-nav {
 		background-color: $nacac_blue;
 		position: fixed;
 		width: 100%;

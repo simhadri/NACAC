@@ -68,7 +68,16 @@ h6 {
     font-family: $sans;
     font-weight: 700;
 }
-
+h1, h2 {
+    // letter-spacing: 1px;
+        font-size: 200%;
+}
+h3 {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: inherit;
+}
 [class*="__byline"] {
     font-family: $serif;
     font-size: 2rem;

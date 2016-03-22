@@ -1,5 +1,3 @@
-// VENDOR
-import $ from '../vendor/jquery-2.1.4.min.js';
 // MODULES
 import Screen from 'modules/screen.js';
 
@@ -14,7 +12,8 @@ import Screen from 'modules/screen.js';
 		toplevelChildrenOfPrimaryNav = primaryNav.children('li'),
 		goBackButton = $('.go-back'),
 		navItemLinks = $('.primary-nav--children'),
-		mobileUtilityBarButtons = $('.mobile-utility-bar-buttons');
+		mobileUtilityBarButtons = $('.mobile-utility-bar-buttons'),
+		browserViewport = $(window).height() - 70;
 
 	var openMobileNav = function() {
 		body.addClass('body--freeze');
@@ -34,8 +33,6 @@ import Screen from 'modules/screen.js';
 	}
 	var openNavInterior = function(selected) {
 		$('.selected').removeClass('selected');
-		
-		// primaryNav.addClass('primary-nav--open');
 		let selectedId = selected.attr('data-id');
 		$.ajax({
 			url: '/javascripts/data/interiorNavData_' + selectedId + '.json',
@@ -44,7 +41,6 @@ import Screen from 'modules/screen.js';
 			success: function(data) {
 				selected.next().empty();
 				for (let i = 0; i < data.length; i++) {
-					console.log(data[i].type)
 					if (data[i].type !== null && data[i].type === 'link') {
 						selected.next().append(
 							'<li>' +
@@ -52,11 +48,11 @@ import Screen from 'modules/screen.js';
 							'</li>'
 						);
 					}
-					if (data[i].type !== null && data[i].type === 'link_set') {		
+					if (data[i].type !== null && data[i].type === 'link_set') {
 						selected.next().append(
 							'<li>' +
-								'<h4>' + data[i].name + '</h4>' +
-								'<ul id="interior__links_' + i + '" class="interior__links"></ul>' +
+							'<h4>' + data[i].name + '</h4>' +
+							'<ul id="interior__links_' + i + '" class="interior__links"></ul>' +
 							'</li>'
 						);
 						for (let n = 0; n < data[i].content.length; n++) {
@@ -66,12 +62,12 @@ import Screen from 'modules/screen.js';
 						}
 
 					}
-					if (data[i].type !== null && data[i].type === 'feature'){
+					if (data[i].type !== null && data[i].type === 'feature') {
 						selected.next().append(
-							'<li>'+
-								'<h4>'+data[i].name+'</h4>'+
-								'<img src="'+data[i].content.url+'"/>'+
-								'<p>'+data[i].content.text+'</p>'+
+							'<li class="nav__feature">' +
+							'<h4>' + data[i].name + '</h4>' +
+							'<img src="' + data[i].content.url + '"/>' +
+							'<p>' + data[i].content.text + '</p>' +
 							'</li>'
 						);
 					}
@@ -79,10 +75,10 @@ import Screen from 'modules/screen.js';
 
 			}
 		})
-		setTimeout(function(){
-			selected.parent().addClass('selected');	
-		},200)
-		
+		setTimeout(function() {
+			selected.parent().addClass('selected');
+		}, 200)
+
 		selected.next().addClass('nav__menu--visible');
 	}
 
@@ -95,6 +91,7 @@ import Screen from 'modules/screen.js';
 			}
 		}
 	}
+
 	function restoreTopLevelVisibility() {
 		primaryNav.addClass('nav__menu--visible');
 	}
@@ -125,41 +122,56 @@ import Screen from 'modules/screen.js';
 			bodyTop = $('body').scrollTop(),
 			navToTopOffset = $('.primary-nav__interior').offset().top - bodyTop;
 		// If past than util nav and animation fired
-		if ( bodyTop >= utilityHeight && primaryNav.hasClass('primary-nav--up')) {
+		if (bodyTop >= utilityHeight && primaryNav.hasClass('primary-nav--up')) {
 			primaryNav.addClass('primary-nav--up primary-nav--sticky');
+			$('body').css({ 'padding-top': '70px' })
 		}
 		// If past than util nav and animation NOT fired
-		if ( bodyTop >= heroHeight && !primaryNav.hasClass('primary-nav--up')) {
+		if (bodyTop >= browserViewport - utilityHeight && !primaryNav.hasClass('primary-nav--up')) {
 			primaryNav.addClass('primary-nav--up primary-nav--sticky no-transitions');
+			$('body').css({ 'padding-top': '70px' })
 		}
-		// If NOT past util nav, unstick
-		if ( bodyTop <= utilityHeight) {
-			primaryNav.removeClass('primary-nav--sticky');
+		//If NOT past util nav, unstick
+		if (bodyTop >= 10) {
+			$('.utility-nav').addClass('utility-nav--scrolled');
 		}
 	}
 
-	
 	navTrigger.on("click", function() {
-		console.log($('.trigger__icon').hasClass('trigger--x'))
-		if ($('.trigger__icon').hasClass('trigger--x')){
-			console.log("close")
+		if ($('.trigger__icon').hasClass('trigger--x')) {
 			closeMobileNav();
-		}else{
+		} else {
 			openMobileNav();
 		}
-		
+
 	});
+
 	navItemLinks.on("click", function(event) {
 		event.preventDefault();
 		var selected = $(this);
 		if (selected.parent().hasClass('selected') === true) {
 			closeNavInterior();
 		} else {
+			$('body').css({ 'padding-top': '70px' })
+			primaryNav.addClass('primary-nav--up primary-nav--sticky');
 			openNavInterior(selected);
-			primaryNav.addClass('primary-nav--up');
+			
+
 		}
 
 	});
+
+	// LETS GERT DANGEROUS
+	console.log(browserViewport)
+	// $('.hero__wrapper').css({'height': browserViewport+'px'});
+
+	// primaryNav.css({
+	// 	'-webkit-transform': 'translateY('+browserViewport+'px)',
+	//     '-ms-transform': 'translateY('+browserViewport+'px)',
+	//     'transform': 'translateY('+browserViewport+'px)',
+	// })
+	$('<style>' +
+		'.hero__wrapper{height: ' + browserViewport + 'px;}.primary-nav{-webkit-transform:translateY(' + browserViewport + 'px);-ms-transform:translateY(' + browserViewport + 'px);transform:translateY(' + browserViewport + 'px);}' + '}</style>').appendTo('head');
 
 	body.click(clickAnywhereToCloseEverything);
 	navScrollDependencies();

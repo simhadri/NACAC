@@ -11,8 +11,6 @@
 		z-index: -1;
 	}
 	p.color-block__feature {
-		// @include uppercase;
-		// font-weight: 200;
 		padding-left: 2rem;
 		position: relative;
 		&:before {
@@ -23,17 +21,11 @@
 		}
 	}
 	h2.color-block__title {
-		@include condensed-uppercase-bold;
-		// font-size: 4rem;
-		// margin: 2rem 0;
+		//@include condensed-uppercase-bold;
 	}
 	p.color-block__info {
-		// @include serif-italic;
-		// margin-bottom: 2rem;
 	}
 	p.color-block__text {
-		// font-size: 1.8rem;
-		// font-weight: 200;
 	}
 }
 
@@ -119,13 +111,14 @@
 	display: table;
     text-align: center;
     width: 100%;
+    padding: 0 1rem;
 	h2 {
 		display: table-cell;
 		vertical-align: middle;
 		height:18rem;
 		margin:0;
 		color:$white;
-		font-size: 3.8rem;
+		font-size: 1.5em;
 		line-height: 4.2rem;
 	}
 	img {

@@ -7,7 +7,7 @@
 	width: calc(100% - 2rem);
 	height: 3.2rem;
 	position: absolute;
-	z-index: 10000;
+	// @include zone-index(overlay, 1);
 	top: 0.8rem;
 	right: 1rem;
 	border: 1px solid;
