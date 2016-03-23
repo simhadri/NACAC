@@ -8,7 +8,7 @@
     @include zone-index(overlay, 1);
     transition: 400ms all ease-in-out;
     &.utility-nav--scrolled{
-    	background-color: $nacac_blue;
+    	background-color: $nacac_light-blue;
     }
 	a {
 		color: $white;
