@@ -966,7 +966,7 @@ a.btn {
   z-index: 31;
   transition: 400ms all ease-in-out; }
   .utility-nav.utility-nav--scrolled {
-    background-color: #2480C4; }
+    background-color: #6AAEE6; }
   .utility-nav a {
     color: #FFFFFF;
     font-weight: 100;
@@ -1070,6 +1070,10 @@ a.btn {
       content: "\f073";
       position: absolute;
       left: 0; }
+  .color-block.color-block--blue {
+    background-color: #6AAEE6; }
+  .color-block.color-block--grey {
+    background-color: #ECF0F3; }
 
 .color-block--half {
   width: 50%;
@@ -1457,7 +1461,7 @@ main {
     background-color: transparent; } }
 
 footer.footer {
-  background-color: #2480C4;
+  background-color: #6AAEE6;
   color: #FFFFFF;
   padding-top: 3rem;
   padding-bottom: 3rem; }

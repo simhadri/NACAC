@@ -20,6 +20,12 @@
 			left: 0;
 		}
 	}
+	&.color-block--blue{
+		background-color: $nacac_light-blue;
+	}
+	&.color-block--grey{
+		background-color: $nacac_bg-blue-grey;
+	}
 	h2.color-block__title {
 		//@include condensed-uppercase-bold;
 	}
