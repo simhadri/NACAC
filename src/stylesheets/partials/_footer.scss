@@ -11,14 +11,16 @@ footer.footer{
 	}
 	.footer__logo{
 		width: 16rem;
-		margin-top: 1.4rem;
+		margin-top: 3rem;
 	}
 	.footer__contact-list{
+		padding-right: 3.4rem;
 		a{
 			color:$white;
 		}
 	}
 	.footer__callout{
+		padding-left: 3.4rem;
 		border-left:1px solid $nacac_border-blue;
 	}
 	hr{
@@ -35,6 +37,10 @@ footer.footer{
 		}
 	}
 	.footer__legal{
+		text-align: center;
+		ul{
+			display:inline-block;
+		}
 		li{
 			float: left;
 			padding:1rem;

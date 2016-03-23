@@ -1073,7 +1073,7 @@ a.btn {
   .color-block.color-block--blue {
     background-color: #6AAEE6; }
   .color-block.color-block--grey {
-    background-color: #ECF0F3; }
+    background-color: #c2cdd6; }
 
 .color-block--half {
   width: 50%;
@@ -1383,12 +1383,13 @@ main {
   background-color: #A9383A;
   border-radius: 100%; }
   .calendar__date .calendar__day {
-    padding-bottom: 0.4rem;
+    padding-bottom: 1.2rem;
     margin: 0 auto;
-    margin-top: 1rem;
+    margin-top: 2.4rem;
+    margin-bottom: 0.6rem;
     border-bottom: 1px solid;
     width: 5rem;
-    font-size: 2.8rem; }
+    font-size: 4.4rem; }
   .calendar__date .calendar__month {
     margin-top: 0.4rem;
     font-weight: 200; }
@@ -1418,20 +1419,25 @@ main {
     content: "\f10d";
     left: 0;
     top: -1.2rem; }
-  .testimonial-block__quote:after {
-    content: "\f10e";
-    right: 0;
-    bottom: -1.2rem; }
 
-.testimonial-block__footer img {
-  border-radius: 50%;
-  float: left;
-  height: 8rem;
-  width: 8rem;
-  margin-right: 1rem; }
+.testimonial-block__footer {
+  padding-left: 2.2rem; }
+  .testimonial-block__footer img {
+    border-radius: 50%;
+    float: left;
+    height: 8rem;
+    width: 8rem;
+    margin-right: 1rem;
+    margin-top: -1rem; }
 
-.testimonial-block__footer p {
-  color: #474280; }
+.testimonial-block__name {
+  color: #474280;
+  font-size: 2.4rem;
+  margin-top: 2.4rem;
+  margin-bottom: 0.8rem; }
+
+.testimonial-block__title {
+  margin-top: 0.8rem; }
 
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
@@ -1471,10 +1477,13 @@ footer.footer {
       color: #FFFFFF; }
   footer.footer .footer__logo {
     width: 16rem;
-    margin-top: 1.4rem; }
-  footer.footer .footer__contact-list a {
-    color: #FFFFFF; }
+    margin-top: 3rem; }
+  footer.footer .footer__contact-list {
+    padding-right: 3.4rem; }
+    footer.footer .footer__contact-list a {
+      color: #FFFFFF; }
   footer.footer .footer__callout {
+    padding-left: 3.4rem;
     border-left: 1px solid #8BD4EB; }
   footer.footer hr {
     border-top: 1px solid #8BD4EB; }
@@ -1485,8 +1494,12 @@ footer.footer {
     footer.footer .footer__utility li {
       float: left;
       padding: 1rem; }
-  footer.footer .footer__legal li {
-    float: left;
-    padding: 1rem; }
+  footer.footer .footer__legal {
+    text-align: center; }
+    footer.footer .footer__legal ul {
+      display: inline-block; }
+    footer.footer .footer__legal li {
+      float: left;
+      padding: 1rem; }
 
 /*# sourceMappingURL=style.css.map */
