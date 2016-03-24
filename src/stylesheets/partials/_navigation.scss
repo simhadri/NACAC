@@ -22,7 +22,7 @@
 	.trigger__icon {
 		width: 1.6rem;
 		height: 1.2rem;
-		margin-top: 0.6rem;
+		margin-top: 0.4rem;
 		position: relative;
 		float: right;
 		-webkit-transform: rotate(0deg);
@@ -36,7 +36,8 @@
 		span {
 			display: block;
 			position: absolute;
-			height: 1px;
+			height: 0.2rem;
+			border-radius: 0.1rem;
 			width: 100%;
 			background: $white;
 			opacity: 1;

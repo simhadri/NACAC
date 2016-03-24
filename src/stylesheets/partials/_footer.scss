@@ -2,7 +2,7 @@ footer.footer {
 	background-color: $nacac_light-blue;
 	color: $white;
 	padding-top: 3rem;
-	padding-bottom: 3rem;
+	padding-bottom: 2rem;
 	ul {
 		list-style: none;
 		a {
@@ -10,8 +10,11 @@ footer.footer {
 		}
 	}
 	.footer__logo {
-		width: 16rem;
-		margin-top: 3rem;
+		img{
+			width: 18rem;
+			margin:0 auto;
+			// margin-top: 3rem;
+		}
 	}
 	.footer__contact-list {
 		a {
@@ -20,6 +23,7 @@ footer.footer {
 	}
 	hr {
 		border-top: 1px solid $nacac_border-blue;
+		margin: 3rem 0;
 	}
 	.footer__utility {
 		text-align: center;
