@@ -417,7 +417,7 @@ a.btn {
   .primary-nav__trigger .trigger__icon {
     width: 1.6rem;
     height: 1.2rem;
-    margin-top: 0.6rem;
+    margin-top: 0.4rem;
     position: relative;
     float: right;
     -webkit-transform: rotate(0deg);
@@ -427,7 +427,8 @@ a.btn {
     .primary-nav__trigger .trigger__icon span {
       display: block;
       position: absolute;
-      height: 1px;
+      height: 0.2rem;
+      border-radius: 0.1rem;
       width: 100%;
       background: #FFFFFF;
       opacity: 1;
@@ -808,8 +809,8 @@ a.btn {
   outline: none; }
 
 .morphsearch:before {
-  background: transparent url(../images/magnifier.svg) no-repeat center center;
-  content: "";
+  font-family: FontAwesome;
+  content: "\f002";
   width: 2rem;
   height: 2rem;
   display: block;
@@ -839,15 +840,16 @@ a.btn {
           transform-origin: 50% 50%;
   opacity: 0;
   -webkit-transform: translate3d(-3rem, -50%, 0) scale3d(0, 0, 1);
-  transform: translate3d(-3rem, -50%, 0) scale3d(0, 0, 1); }
+  transform: translate3d(-3rem, -50%, 0) scale3d(0, 0, 1);
+  -webkit-transform: translate3d(-3rem, -50%, 0) scale3d(0, 0, 1);
+          transform: translate3d(-3rem, -50%, 0) scale3d(0, 0, 1); }
 
 .morphsearch--open .morphsearch__submit {
   pointer-events: auto;
   opacity: 1;
   -webkit-transform: translate3d(-3rem, -50%, 0) scale3d(1, 1, 1);
   transform: translate3d(-3rem, -50%, 0) scale3d(1, 1, 1);
-  transition: opacity 0.3s, -webkit-transform 0.3s;
-  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s;
   transition-delay: 0.5s; }
 
 .morphsearch__close {
@@ -869,15 +871,15 @@ a.btn {
   pointer-events: auto;
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
-  transition: opacity 0.3s, -webkit-transform 0.3s;
-  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s;
   transition-delay: 0.5s; }
 
 .morphsearch__close::before,
 .morphsearch__close::after {
   content: '';
   position: absolute;
-  width: .1rem;
+  width: 0.2rem;
+  border-radius: 0.2rem;
   height: 100%;
   top: 0;
   left: 50%;
@@ -915,6 +917,7 @@ a.btn {
   overflow: visible;
   /* this breaks the transition of the children in FF: https://bugzilla.mozilla.org/show_bug.cgi?id=625289 */
   pointer-events: auto;
+  transition: opacity 0.3s 0.5s;
   transition: opacity 0.3s 0.5s; }
 
 .morphsearch--open .morphsearch__input {
@@ -1591,18 +1594,19 @@ footer.footer {
   background-color: #6AAEE6;
   color: #FFFFFF;
   padding-top: 3rem;
-  padding-bottom: 3rem; }
+  padding-bottom: 2rem; }
   footer.footer ul {
     list-style: none; }
     footer.footer ul a {
       color: #FFFFFF; }
-  footer.footer .footer__logo {
-    width: 16rem;
-    margin-top: 3rem; }
+  footer.footer .footer__logo img {
+    width: 18rem;
+    margin: 0 auto; }
   footer.footer .footer__contact-list a {
     color: #FFFFFF; }
   footer.footer hr {
-    border-top: 1px solid #8BD4EB; }
+    border-top: 1px solid #8BD4EB;
+    margin: 3rem 0; }
   footer.footer .footer__utility {
     text-align: center; }
     footer.footer .footer__utility ul {
