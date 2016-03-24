@@ -87,6 +87,7 @@
 
 .primary-nav {
 	height: 7rem;
+	transform:translateY(calc(100vh - 7rem));
 	li {
 		width: 10%;
 		display: table-cell;
@@ -218,7 +219,7 @@
 				 	&.primary-nav--children:after {
 						position: absolute;
 						right: 1rem;
-						top: 1rem;
+						top: 1.2rem;
 						height: 3rem;
 						width: 3rem;
 						content: "+";
@@ -227,10 +228,10 @@
 					}
 				}
 				height: auto;
-				border-bottom: 1px solid $nacac_border-grey;
+				border-bottom: 1px solid $nacac_nav-mixed-grey;
 				.primary-nav__interior {
 					max-height: 0;
-					transition: max-height 0.33s ease-in-out;
+					transition: max-height 600ms ease-in-out;
 					overflow: hidden;
 				}
 				&.selected {
@@ -239,7 +240,7 @@
 					}
 					.primary-nav__interior {
 						max-height: 90rem;
-						transition: max-height 0.33s ease-in-out;
+						transition: max-height 600ms ease-in-out;
 					}
 				}
 			}

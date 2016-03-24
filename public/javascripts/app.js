@@ -22,9 +22,9 @@ webpackJsonp([0,1],[
 	
 	__webpack_require__(2);
 	
-	__webpack_require__(4);
-	
 	__webpack_require__(5);
+	
+	__webpack_require__(6);
 	
 	// SUPER LAME FADE IN
 	$(document).ready(function () {
@@ -44,9 +44,14 @@ webpackJsonp([0,1],[
 	
 	var _modulesScreenJs2 = _interopRequireDefault(_modulesScreenJs);
 	
+	var _modulesHeadStyleJs = __webpack_require__(4);
+	
+	var _modulesHeadStyleJs2 = _interopRequireDefault(_modulesHeadStyleJs);
+	
 	(function () {
 		'use strict';
 		var screenOverlay = new _modulesScreenJs2['default'](),
+		    headStyle = new _modulesHeadStyleJs2['default'](),
 		    navTrigger = $('.primary-nav__trigger'),
 		    primaryNav = $('.primary-nav'),
 		    primaryNavItem = $('.primary-nav__item'),
@@ -157,6 +162,8 @@ webpackJsonp([0,1],[
 			//If NOT past util nav, unstick
 			if (bodyTop >= 10) {
 				$('.utility-nav').addClass('utility-nav--scrolled');
+			} else {
+				$('.utility-nav').removeClass('utility-nav--scrolled');
 			}
 		}
 	
@@ -179,17 +186,6 @@ webpackJsonp([0,1],[
 				openNavInterior(selected);
 			}
 		});
-	
-		// LETS GERT DANGEROUS
-		console.log(browserViewport);
-		// $('.hero__wrapper').css({'height': browserViewport+'px'});
-	
-		// primaryNav.css({
-		// 	'-webkit-transform': 'translateY('+browserViewport+'px)',
-		//     '-ms-transform': 'translateY('+browserViewport+'px)',
-		//     'transform': 'translateY('+browserViewport+'px)',
-		// })
-		$('<style>' + '.hero__wrapper{height: ' + browserViewport + 'px;}.primary-nav{-webkit-transform:translateY(' + browserViewport + 'px);-ms-transform:translateY(' + browserViewport + 'px);transform:translateY(' + browserViewport + 'px);}' + '}</style>').appendTo('head');
 	
 		body.click(clickAnywhereToCloseEverything);
 		navScrollDependencies();
@@ -217,6 +213,39 @@ webpackJsonp([0,1],[
 
 /***/ },
 /* 4 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	var headStyle = function headStyle() {
+		var head = document.getElementsByTagName('head')[0];
+		this.addRules = function (rules) {
+			var css = '',
+			    head = document.head || document.getElementsByTagName('head')[0],
+			    style = document.createElement('style');
+	
+			for (var property in rules) {
+				if (rules.hasOwnProperty(property)) {
+					var css = css + property + '{' + rules[property] + '}';
+				}
+			}
+			style.type = 'text/css';
+			style.setAttribute('id', 'customHeadStyle');
+			if (style.styleSheet) {
+				style.styleSheet.cssText = css;
+			} else {
+				style.appendChild(document.createTextNode(css));
+			}
+			head.appendChild(style);
+		}, this.removeRules = function () {
+			var customHeadStyle = document.getElementById('customHeadStyle');
+			customHeadStyle.remove();
+		};
+	};
+	module.exports = headStyle;
+
+/***/ },
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -280,7 +309,7 @@ webpackJsonp([0,1],[
 	})();
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports) {
 
 	'use strict';

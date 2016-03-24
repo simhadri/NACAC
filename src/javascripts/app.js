@@ -9,7 +9,7 @@
 // *********************
 import 'modules/navigation';
 import 'modules/search';
-import 'modules/blazy_settings';
+import 'modules/blazySettings';
 
 // SUPER LAME FADE IN
 $(document).ready(function() {

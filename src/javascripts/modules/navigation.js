@@ -1,9 +1,10 @@
 // MODULES
 import Screen from 'modules/screen.js';
-
+import HeadStyle from 'modules/headStyle.js';
 (function() {
 	'use strict';
 	var screenOverlay = new Screen(),
+		headStyle = new HeadStyle(),
 		navTrigger = $('.primary-nav__trigger'),
 		primaryNav = $('.primary-nav'),
 		primaryNavItem = $('.primary-nav__item'),
@@ -134,6 +135,8 @@ import Screen from 'modules/screen.js';
 		//If NOT past util nav, unstick
 		if (bodyTop >= 10) {
 			$('.utility-nav').addClass('utility-nav--scrolled');
+		} else{
+			$('.utility-nav').removeClass('utility-nav--scrolled');
 		}
 	}
 
@@ -155,24 +158,10 @@ import Screen from 'modules/screen.js';
 			$('body').css({ 'padding-top': '70px' })
 			primaryNav.addClass('primary-nav--up primary-nav--sticky');
 			openNavInterior(selected);
-			
-
 		}
 
 	});
-
-	// LETS GERT DANGEROUS
-	console.log(browserViewport)
-	// $('.hero__wrapper').css({'height': browserViewport+'px'});
-
-	// primaryNav.css({
-	// 	'-webkit-transform': 'translateY('+browserViewport+'px)',
-	//     '-ms-transform': 'translateY('+browserViewport+'px)',
-	//     'transform': 'translateY('+browserViewport+'px)',
-	// })
-	$('<style>' +
-		'.hero__wrapper{height: ' + browserViewport + 'px;}.primary-nav{-webkit-transform:translateY(' + browserViewport + 'px);-ms-transform:translateY(' + browserViewport + 'px);transform:translateY(' + browserViewport + 'px);}' + '}</style>').appendTo('head');
-
+	
 	body.click(clickAnywhereToCloseEverything);
 	navScrollDependencies();
 	$(window).scroll(function() {

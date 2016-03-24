@@ -24,19 +24,6 @@
 	}
 }
 
-.listing__block {
-	position: relative;
-	&:after {
-		content: "";
-		top: 11.5rem;
-		position: absolute;
-		right: 1rem;
-		height: calc(100% - 11.5rem);
-		width: 1px;
-		background-color: $nacac_border-grey;
-	}
-}
-
 .listing__entry,
 .calendar__content {
 	margin-bottom: 3rem;
@@ -91,5 +78,64 @@
 	.calendar__month {
 		margin-top: 0.4rem;
 		font-weight: 200;
+	}
+}
+
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+
+@include break(max, $screen-sm-max) {
+	.calendar__date {
+		width: 8rem;
+		height: 8rem;
+		.calendar__day {
+			padding-bottom: 0.8rem;
+			margin: 0 auto;
+			margin-top: 1.6rem;
+			margin-bottom: 0.6rem;
+			border-bottom: 1px solid;
+			width: 5rem;
+			font-size: 3.8rem;
+		}
+		.calendar__month {
+			margin-top: 0.4rem;
+			font-weight: 200;
+		}
+	}
+	.calendar__content {
+		width: calc(100% - 10rem);
+	}
+}
+
+
+/*
+██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
+██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
+██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
+														  
+*/
+
+@include break(min, $screen-md-min) {
+	.listing__block {
+		position: relative;
+		&:after {
+			content: "";
+			top: 11.5rem;
+			position: absolute;
+			right: 1rem;
+			height: calc(100% - 11.5rem);
+			width: 1px;
+			background-color: $nacac_border-grey;
+		}
 	}
 }
