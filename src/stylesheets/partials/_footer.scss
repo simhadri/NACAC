@@ -1,49 +1,93 @@
-footer.footer{
+footer.footer {
 	background-color: $nacac_light-blue;
 	color: $white;
 	padding-top: 3rem;
 	padding-bottom: 3rem;
-	ul{
+	ul {
 		list-style: none;
-		a{
-			color:$white;
+		a {
+			color: $white;
 		}
 	}
-	.footer__logo{
+	.footer__logo {
 		width: 16rem;
 		margin-top: 3rem;
 	}
-	.footer__contact-list{
-		padding-right: 3.4rem;
-		a{
-			color:$white;
+	.footer__contact-list {
+		a {
+			color: $white;
 		}
 	}
-	.footer__callout{
-		padding-left: 3.4rem;
-		border-left:1px solid $nacac_border-blue;
+	hr {
+		border-top: 1px solid $nacac_border-blue;
 	}
-	hr{
-		border-top:1px solid $nacac_border-blue;
-	}
-	.footer__utility{
+	.footer__utility {
 		text-align: center;
-		ul{
+		ul {
 			display: inline-block;
 		}
-		li{
+		li {
 			float: left;
-			padding:1rem;
+			padding: 1rem;
 		}
 	}
-	.footer__legal{
+	.footer__legal {
 		text-align: center;
-		ul{
-			display:inline-block;
+		ul {
+			display: inline-block;
 		}
-		li{
+		li {
 			float: left;
-			padding:1rem;
+			padding: 1rem;
+		}
+	}
+}
+
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+
+@include break(max, $screen-sm-max) {
+	footer.footer {
+		text-align: center;
+		.footer__legal li {
+			display: inherit;
+			float: none;
+		}
+		.footer__logo {
+			margin: auto;
+		}
+	}
+}
+
+
+/*
+██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
+██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
+██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
+														  
+*/
+
+@include break(min, $screen-md-min) {
+	footer.footer {
+		.footer__contact-list {
+			padding-right: 3.4rem;
+		}
+		.footer__callout {
+			padding-left: 3.4rem;
+			border-left: 1px solid $nacac_border-blue;
+		}
+		.footer__logo {
+			margin-top: 3rem;
 		}
 	}
 }

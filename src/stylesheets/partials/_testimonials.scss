@@ -62,11 +62,15 @@
 */
 
 @include break(max, $screen-sm-max) {
-	.focus-testimonials{
-		background-color: transparent;
+	.focus-testimonial__image{
+		margin: auto;
+		width: 28rem;
 	}
 	.testimonial-block {
 	    padding-bottom: 2rem;
+	}
+	.focus-testimonial__content .article__header{
+		text-align: center;
 	}
 }
 
