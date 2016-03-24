@@ -740,7 +740,17 @@ a.btn {
           .primary-nav .primary-nav__interior > li ul.primary-nav__interior li {
             float: none;
             width: 100%;
-            margin-top: 0; } }
+            margin-top: 0; }
+  .main__interior .primary-nav {
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    background-color: #6AAEE6;
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    overflow: visible;
+    z-index: 21; } }
 
 .morphsearch {
   width: calc(100% - 2rem);
@@ -1070,6 +1080,10 @@ a.btn {
 ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
 														  
 */
+@media (min-width: 992px) {
+  .main__interior .utility-nav {
+    background-color: #6AAEE6; } }
+
 .content-block__row:before, .content-block__row:after {
   content: " ";
   display: table; }
@@ -1320,6 +1334,9 @@ body.body--freeze {
 
 main {
   visibility: hidden; }
+  main.main__interior {
+    padding-top: 7rem;
+    margin-top: 5rem; }
 
 .bounceIn,
 .fadeIn {

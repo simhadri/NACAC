@@ -152,12 +152,12 @@ webpackJsonp([0,1],[
 			// If past than util nav and animation fired
 			if (bodyTop >= utilityHeight && primaryNav.hasClass('primary-nav--up')) {
 				primaryNav.addClass('primary-nav--up primary-nav--sticky');
-				$('body').css({ 'padding-top': '70px' });
+				$('main').css({ 'padding-top': '7rem' });
 			}
 			// If past than util nav and animation NOT fired
 			if (bodyTop >= browserViewport - utilityHeight && !primaryNav.hasClass('primary-nav--up')) {
 				primaryNav.addClass('primary-nav--up primary-nav--sticky no-transitions');
-				$('body').css({ 'padding-top': '70px' });
+				$('main').css({ 'padding-top': '7rem' });
 			}
 			//If NOT past util nav, unstick
 			if (bodyTop >= 10) {
@@ -181,7 +181,7 @@ webpackJsonp([0,1],[
 			if (selected.parent().hasClass('selected') === true) {
 				closeNavInterior();
 			} else {
-				$('body').css({ 'padding-top': '70px' });
+				$('main').css({ 'padding-top': '7rem' });
 				primaryNav.addClass('primary-nav--up primary-nav--sticky');
 				openNavInterior(selected);
 			}
