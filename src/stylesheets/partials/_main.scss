@@ -17,11 +17,13 @@
 	@include prefix(transition, opacity 0.5s, webkit);
 	@include prefix(transition-timing-function, cubic-bezier(0.7, 0, 0.3, 1), webkit);
 }
+
 @include break(min, $screen-sm-min) {
-	.no-transitions{
+	.no-transitions {
 		@include prefix(transition, none !important, webkit moz ms o);
 	}
 }
+
 body.body--freeze {
 	overflow: hidden;
 }
@@ -33,10 +35,10 @@ body.body--freeze {
 // Main
 main {
 	visibility: hidden;
-	&.main__interior{
-	padding-top: 7rem;
-	margin-top: 5rem;
-}
+	&.main__interior {
+		padding-top: 7rem;
+		margin-top: 5rem;
+	}
 }
 
 .bounceIn,
@@ -77,6 +79,49 @@ main {
 	display: flex;
 	flex-direction: column;
 }
+
+// Backgrounds
+.background--orange {
+	background-color: $nacac-orange;
+	color: $white;
+	&:hover{
+		color:$white;
+	}
+}
+
+.background--blue {
+	background-color: $nacac_blue;
+	color: $white;
+	&:hover{
+		color:$white;
+	}
+}
+
+.background--burgundy {
+	background-color: $nacac_burgundy;
+	color: $white;
+	&:hover{
+		color:$white;
+	}
+}
+
+.background--purple {
+	background-color: $nacac_purple;
+	color: $white;
+	&:hover{
+		color:$white;
+	}
+}
+
+.background--green {
+	background-color: $nacac_green;
+	color: $white;
+	&:hover{
+		color:$white;
+	}
+}
+
+
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
@@ -90,7 +135,7 @@ main {
 	html {
 		// font-size: 8px;
 	}
-	.container{
+	.container {
 		padding-left: 4rem;
 		padding-right: 4rem;
 	}
@@ -107,6 +152,8 @@ main {
 		white-space: normal;
 	}
 }
+
+
 /*
 ██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
 ██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
@@ -116,6 +163,5 @@ main {
 ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
 														  
 */
-@include break(min, $screen-md-min) {
 
-}
+@include break(min, $screen-md-min) {}
