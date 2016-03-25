@@ -1,10 +1,16 @@
 <article class="article__row article--white">
 	<div class="container">
-		<div class="col-sm-4">
-			{% include './_components/search-filter.html'%}
-		</div>
-		<div class="col-sm-8">
-			{% include './_components/search-filter.html'%}
+		<ol class="breadcrumb">
+			<li><a href="#">Home</a></li>
+			<li class="active">Search Results</li>
+		</ol>
+		<div class="row">
+			<div class="col-sm-4">
+				{% include './_components/search-filter.html'%}
+			</div>
+			<div class="col-sm-8">
+				{% include './_components/search-results.html'%}
+			</div>
 		</div>
 	</div>
 </article>

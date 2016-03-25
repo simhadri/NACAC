@@ -752,6 +752,62 @@ a.btn {
     overflow: visible;
     z-index: 21; } }
 
+.search-display__select {
+  width: 25rem;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  display: inline;
+  position: relative; }
+  .search-display__select:after {
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black; }
+
+.utility-nav {
+  border-bottom: 1px solid #DEDEDE;
+  color: #FFFFFF;
+  height: 5rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 31;
+  transition: 400ms all ease-in-out; }
+  .utility-nav.utility-nav--scrolled {
+    background-color: #6AAEE6; }
+  .utility-nav a {
+    color: #FFFFFF;
+    font-weight: 100;
+    display: table-cell;
+    vertical-align: middle; }
+  .utility-nav ul {
+    list-style: none;
+    float: left;
+    margin-bottom: 0; }
+    .utility-nav ul li {
+      float: left;
+      padding: 1rem;
+      height: 5rem;
+      display: table; }
+  .utility-nav .utility-nav__list {
+    width: 50%; }
+  .utility-nav .utility-nav__social {
+    width: 25%;
+    font-size: 2rem;
+    border-right: 1px solid #DEDEDE; }
+    .utility-nav .utility-nav__social li {
+      float: right;
+      opacity: 0.6; }
+  .utility-nav .utility-nav__search {
+    float: left;
+    width: 25%;
+    text-align: right;
+    padding: 1rem;
+    position: relative; }
+
 .morphsearch {
   width: calc(100% - 2rem);
   height: 3.2rem;
@@ -948,80 +1004,6 @@ a.btn {
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 */
 @media (max-width: 991px) {
-  .morphsearch {
-    height: 4.2rem;
-    top: 0.2rem;
-    right: 1rem;
-    border: none; }
-    .morphsearch:before {
-      width: 3rem;
-      height: 3rem;
-      display: block;
-      position: absolute;
-      right: 1.5rem;
-      top: 0.5rem; }
-  .morphsearch--open {
-    width: 24rem; }
-    .morphsearch--open .morphsearch__form {
-      width: 32rem;
-      -webkit-transform: translate3d(0, 3em, 0);
-      transform: translate3d(0, 3em, 0); }
-    .morphsearch--open .morphsearch__input {
-      font-size: 2em; }
-    .morphsearch--open .morphsearch__submit {
-      width: 5rem;
-      height: 5rem; } }
-
-.utility-nav {
-  border-bottom: 1px solid #DEDEDE;
-  color: #FFFFFF;
-  height: 5rem;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 31;
-  transition: 400ms all ease-in-out; }
-  .utility-nav.utility-nav--scrolled {
-    background-color: #6AAEE6; }
-  .utility-nav a {
-    color: #FFFFFF;
-    font-weight: 100;
-    display: table-cell;
-    vertical-align: middle; }
-  .utility-nav ul {
-    list-style: none;
-    float: left;
-    margin-bottom: 0; }
-    .utility-nav ul li {
-      float: left;
-      padding: 1rem;
-      height: 5rem;
-      display: table; }
-  .utility-nav .utility-nav__list {
-    width: 50%; }
-  .utility-nav .utility-nav__social {
-    width: 25%;
-    font-size: 2rem;
-    border-right: 1px solid #DEDEDE; }
-    .utility-nav .utility-nav__social li {
-      float: right;
-      opacity: 0.6; }
-  .utility-nav .utility-nav__search {
-    float: left;
-    width: 25%;
-    text-align: right;
-    padding: 1rem;
-    position: relative; }
-
-/*
-██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
-██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
-██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
-██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
-██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
-╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
-*/
-@media (max-width: 991px) {
   .utility-nav {
     background-color: #2480C4;
     position: fixed;
@@ -1069,7 +1051,30 @@ a.btn {
       padding: 1rem;
       position: absolute;
       right: 9rem;
-      top: 0.8rem; } }
+      top: 0.8rem; }
+  .morphsearch {
+    height: 4.2rem;
+    top: 0.2rem;
+    right: 1rem;
+    border: none; }
+    .morphsearch:before {
+      width: 3rem;
+      height: 3rem;
+      display: block;
+      position: absolute;
+      right: 1.5rem;
+      top: 0.5rem; }
+  .morphsearch--open {
+    width: 24rem; }
+    .morphsearch--open .morphsearch__form {
+      width: 32rem;
+      -webkit-transform: translate3d(0, 3em, 0);
+      transform: translate3d(0, 3em, 0); }
+    .morphsearch--open .morphsearch__input {
+      font-size: 2em; }
+    .morphsearch--open .morphsearch__submit {
+      width: 5rem;
+      height: 5rem; } }
 
 /*
 ██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
