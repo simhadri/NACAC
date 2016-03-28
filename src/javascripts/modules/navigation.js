@@ -1,10 +1,8 @@
 // MODULES
-import Screen from 'modules/screen.js';
 import HeadStyle from 'modules/headStyle.js';
 (function() {
 	'use strict';
-	var screenOverlay = new Screen(),
-		headStyle = new HeadStyle(),
+	var headStyle = new HeadStyle(),
 		navTrigger = $('.primary-nav__trigger'),
 		primaryNav = $('.primary-nav'),
 		primaryNavItem = $('.primary-nav__item'),

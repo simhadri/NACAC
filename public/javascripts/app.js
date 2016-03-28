@@ -40,18 +40,13 @@ webpackJsonp([0,1],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _modulesScreenJs = __webpack_require__(3);
-	
-	var _modulesScreenJs2 = _interopRequireDefault(_modulesScreenJs);
-	
 	var _modulesHeadStyleJs = __webpack_require__(4);
 	
 	var _modulesHeadStyleJs2 = _interopRequireDefault(_modulesHeadStyleJs);
 	
 	(function () {
 		'use strict';
-		var screenOverlay = new _modulesScreenJs2['default'](),
-		    headStyle = new _modulesHeadStyleJs2['default'](),
+		var headStyle = new _modulesHeadStyleJs2['default'](),
 		    navTrigger = $('.primary-nav__trigger'),
 		    primaryNav = $('.primary-nav'),
 		    primaryNavItem = $('.primary-nav__item'),
@@ -201,13 +196,17 @@ webpackJsonp([0,1],[
 	'use strict';
 	
 	var Screen = function Screen() {
-	    var screenOverlay = document.getElementsByClassName('screen__overlay')[0];
-	    this.turnScreenOn = function () {
-	        screenOverlay.classList.add('screen__overlay--on');
-	    };
-	    this.turnScreenOff = function () {
-	        screenOverlay.classList.remove('screen__overlay--on');
-	    };
+		var screenOverlay = document.createElement('div');
+		var mainElement = document.getElementById('main');
+		mainElement.appendChild(screenOverlay);
+		screenOverlay.setAttribute('id', 'screen__overlay');
+		screenOverlay.setAttribute('class', 'screen__overlay');
+		this.turnScreenOn = function () {
+			screenOverlay.classList.add('screen__overlay--on');
+		};
+		this.turnScreenOff = function () {
+			screenOverlay.classList.remove('screen__overlay--on');
+		};
 	};
 	module.exports = Screen;
 
