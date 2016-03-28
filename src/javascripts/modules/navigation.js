@@ -12,7 +12,8 @@ import HeadStyle from 'modules/headStyle.js';
 		goBackButton = $('.go-back'),
 		navItemLinks = $('.primary-nav--children'),
 		mobileUtilityBarButtons = $('.mobile-utility-bar-buttons'),
-		browserViewport = $(window).height() - 70;
+		browserViewport = $(window).height() - 70,
+		filterOpen = $('.btn__filter-menu');
 
 	var openMobileNav = function() {
 		body.addClass('body--freeze');
@@ -138,6 +139,15 @@ import HeadStyle from 'modules/headStyle.js';
 		}
 	}
 
+	function openSearchFilterNav(){
+		body.addClass('body--freeze');
+		$('.search-filter__menu').addClass('search-filter__menu--open');
+	}
+	function closeSearchFilterNav(){
+		body.removeClass('body--freeze');
+		$('.search-filter__menu').removeClass('search-filter__menu--open');
+	}
+
 	navTrigger.on("click", function() {
 		if ($('.trigger__icon').hasClass('trigger--x')) {
 			closeMobileNav();
@@ -145,6 +155,14 @@ import HeadStyle from 'modules/headStyle.js';
 			openMobileNav();
 		}
 
+	});
+
+	filterOpen.on("click", function() {
+		openSearchFilterNav();
+	});
+
+	$('.search-filter__close').on('click',function(){
+		closeSearchFilterNav();
 	});
 
 	navItemLinks.on("click", function(event) {
