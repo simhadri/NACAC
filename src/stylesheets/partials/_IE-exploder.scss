@@ -1,0 +1,9 @@
+// IE 10 & 11
+@media (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+	.primary-nav .primary-nav__logo svg {
+
+		top: 0;
+		left: 50%;
+	}
+}

@@ -771,13 +771,13 @@ a.btn {
   .search-results__utility > span {
     float: left; }
 
-.search-results.pagination {
+.search-results__pagination {
   float: right; }
-  .search-results.pagination .pagination--selected {
+  .search-results__pagination .pagination--selected {
     font-weight: bold;
     color: #374049;
     pointer-events: none; }
-  .search-results.pagination.pagination--bottom {
+  .search-results__pagination.pagination--bottom {
     margin: 1rem 0; }
 
 .search-results__select {
@@ -1947,5 +1947,10 @@ footer.footer {
     border-left: 1px solid #8BD4EB; }
   footer.footer .footer__logo {
     margin-top: 3rem; } }
+
+@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .primary-nav .primary-nav__logo svg {
+    top: 0;
+    left: 50%; } }
 
 /*# sourceMappingURL=style.css.map */

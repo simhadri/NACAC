@@ -22,7 +22,7 @@ webpackJsonp([0,1],[
 	
 	__webpack_require__(2);
 	
-	__webpack_require__(5);
+	__webpack_require__(4);
 	
 	__webpack_require__(6);
 	
@@ -40,7 +40,7 @@ webpackJsonp([0,1],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _modulesHeadStyleJs = __webpack_require__(4);
+	var _modulesHeadStyleJs = __webpack_require__(3);
 	
 	var _modulesHeadStyleJs2 = _interopRequireDefault(_modulesHeadStyleJs);
 	
@@ -213,27 +213,6 @@ webpackJsonp([0,1],[
 
 	'use strict';
 	
-	var Screen = function Screen() {
-		var screenOverlay = document.createElement('div');
-		var mainElement = document.getElementById('main');
-		mainElement.appendChild(screenOverlay);
-		screenOverlay.setAttribute('id', 'screen__overlay');
-		screenOverlay.setAttribute('class', 'screen__overlay');
-		this.turnScreenOn = function () {
-			screenOverlay.classList.add('screen__overlay--on');
-		};
-		this.turnScreenOff = function () {
-			screenOverlay.classList.remove('screen__overlay--on');
-		};
-	};
-	module.exports = Screen;
-
-/***/ },
-/* 4 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
 	var headStyle = function headStyle() {
 		var head = document.getElementsByTagName('head')[0];
 		this.addRules = function (rules) {
@@ -262,14 +241,14 @@ webpackJsonp([0,1],[
 	module.exports = headStyle;
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _modulesScreenJs = __webpack_require__(3);
+	var _modulesScreenJs = __webpack_require__(5);
 	
 	var _modulesScreenJs2 = _interopRequireDefault(_modulesScreenJs);
 	
@@ -324,6 +303,27 @@ webpackJsonp([0,1],[
 			}
 		});
 	})();
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	var Screen = function Screen() {
+		var screenOverlay = document.createElement('div');
+		var mainElement = document.getElementById('main');
+		mainElement.appendChild(screenOverlay);
+		screenOverlay.setAttribute('id', 'screen__overlay');
+		screenOverlay.setAttribute('class', 'screen__overlay');
+		this.turnScreenOn = function () {
+			screenOverlay.classList.add('screen__overlay--on');
+		};
+		this.turnScreenOff = function () {
+			screenOverlay.classList.remove('screen__overlay--on');
+		};
+	};
+	module.exports = Screen;
 
 /***/ },
 /* 6 */
