@@ -1949,8 +1949,14 @@ footer.footer {
     margin-top: 3rem; } }
 
 @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .primary-nav .primary-nav__logo svg {
-    top: 0;
-    left: 50%; } }
+  .utility-nav {
+    background-color: #6AAEE6; }
+  .primary-nav {
+    top: 5rem;
+    position: fixed; }
+    .primary-nav .primary-nav__logo svg {
+      top: 12px; }
+  .flexbox__column {
+    display: block; } }
 
 /*# sourceMappingURL=style.css.map */

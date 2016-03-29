@@ -115,8 +115,45 @@ import HeadStyle from 'modules/headStyle.js';
 
 		}
 	}
+	
+	var throttle = function(func, wait, options) {
+		var now = Date.now || function() {
+		return new Date().getTime();
+	};
+		var context, args, result;
+		var timeout = null;
+		var previous = 0;
+		if (!options) options = {};
+		var later = function() {
+			previous = options.leading === false ? 0 : now();
+			timeout = null;
+			result = func.apply(context, args);
+			if (!timeout) context = args = null;
+		};
+		return function() {
+			if (!previous && options.leading === false) previous = now();
+			var remaining = wait - (now() - previous);
+			context = this;
+			args = arguments;
+			if (remaining <= 0 || remaining > wait) {
+				if (timeout) {
+					clearTimeout(timeout);
+					timeout = null;
+				}
+				previous = now();
+				result = func.apply(context, args);
+				if (!timeout) context = args = null;
+			} else if (!timeout && options.trailing !== false) {
+				timeout = setTimeout(later, remaining);
+			}
+			return result;
+		};
+	};
 
 	function navScrollDependencies(event) {
+		var gate = false;
+		///$(window).scroll(function() {
+		console.log('log')
 		var utilityHeight = $('.utility-nav').height(),
 			heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height(),
 			bodyTop = $('body').scrollTop(),
@@ -134,16 +171,21 @@ import HeadStyle from 'modules/headStyle.js';
 		//If NOT past util nav, unstick
 		if (bodyTop >= 10) {
 			$('.utility-nav').addClass('utility-nav--scrolled');
-		} else{
+		} else {
 			$('.utility-nav').removeClass('utility-nav--scrolled');
 		}
+		//});
 	}
+	var throttled = throttle(navScrollDependencies, 1000);
+	$(window).scroll(throttled);
+	//window.setTimeout(navScrollDependencies, 1000);
 
-	function openSearchFilterNav(){
+	function openSearchFilterNav() {
 		body.addClass('body--freeze');
 		$('.search-filter__menu').addClass('search-filter__menu--open');
 	}
-	function closeSearchFilterNav(){
+
+	function closeSearchFilterNav() {
 		body.removeClass('body--freeze');
 		$('.search-filter__menu').removeClass('search-filter__menu--open');
 	}
@@ -161,7 +203,7 @@ import HeadStyle from 'modules/headStyle.js';
 		openSearchFilterNav();
 	});
 
-	$('.search-filter__close').on('click',function(){
+	$('.search-filter__close').on('click', function() {
 		closeSearchFilterNav();
 	});
 
@@ -177,10 +219,8 @@ import HeadStyle from 'modules/headStyle.js';
 		}
 
 	});
-	
+
 	body.click(clickAnywhereToCloseEverything);
-	navScrollDependencies();
-	$(window).scroll(function() {
-		navScrollDependencies();
-	});
+
+
 })();
