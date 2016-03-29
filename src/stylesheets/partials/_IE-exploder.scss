@@ -1,0 +1,17 @@
+// IE 10 & 11
+@media (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+	.utility-nav {
+		background-color: $nacac_light-blue;
+	}
+	.primary-nav {
+		top: 5rem;
+		position: fixed;
+		.primary-nav__logo svg {
+			top: 12px;
+		}
+	}
+	.flexbox__column{
+		display: block;
+	}
+}

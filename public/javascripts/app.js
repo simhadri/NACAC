@@ -22,7 +22,7 @@ webpackJsonp([0,1],[
 	
 	__webpack_require__(2);
 	
-	__webpack_require__(5);
+	__webpack_require__(4);
 	
 	__webpack_require__(6);
 	
@@ -40,18 +40,13 @@ webpackJsonp([0,1],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _modulesScreenJs = __webpack_require__(3);
-	
-	var _modulesScreenJs2 = _interopRequireDefault(_modulesScreenJs);
-	
-	var _modulesHeadStyleJs = __webpack_require__(4);
+	var _modulesHeadStyleJs = __webpack_require__(3);
 	
 	var _modulesHeadStyleJs2 = _interopRequireDefault(_modulesHeadStyleJs);
 	
 	(function () {
 		'use strict';
-		var screenOverlay = new _modulesScreenJs2['default'](),
-		    headStyle = new _modulesHeadStyleJs2['default'](),
+		var headStyle = new _modulesHeadStyleJs2['default'](),
 		    navTrigger = $('.primary-nav__trigger'),
 		    primaryNav = $('.primary-nav'),
 		    primaryNavItem = $('.primary-nav__item'),
@@ -61,7 +56,8 @@ webpackJsonp([0,1],[
 		    goBackButton = $('.go-back'),
 		    navItemLinks = $('.primary-nav--children'),
 		    mobileUtilityBarButtons = $('.mobile-utility-bar-buttons'),
-		    browserViewport = $(window).height() - 70;
+		    browserViewport = $(window).height() - 70,
+		    filterOpen = $('.btn__filter-menu');
 	
 		var openMobileNav = function openMobileNav() {
 			body.addClass('body--freeze');
@@ -144,7 +140,45 @@ webpackJsonp([0,1],[
 			}
 		}
 	
+		// Shameless Stolen from Underscore
+		// Throttles the function so its not
+		// fired 1000x on scroll
+		var throttle = function throttle(func, wait, options) {
+			var now = Date.now || function () {
+				return new Date().getTime();
+			};
+			var context, args, result;
+			var timeout = null;
+			var previous = 0;
+			if (!options) options = {};
+			var later = function later() {
+				previous = options.leading === false ? 0 : now();
+				timeout = null;
+				result = func.apply(context, args);
+				if (!timeout) context = args = null;
+			};
+			return function () {
+				if (!previous && options.leading === false) previous = now();
+				var remaining = wait - (now() - previous);
+				context = this;
+				args = arguments;
+				if (remaining <= 0 || remaining > wait) {
+					if (timeout) {
+						clearTimeout(timeout);
+						timeout = null;
+					}
+					previous = now();
+					result = func.apply(context, args);
+					if (!timeout) context = args = null;
+				} else if (!timeout && options.trailing !== false) {
+					timeout = setTimeout(later, remaining);
+				}
+				return result;
+			};
+		};
+	
 		function navScrollDependencies(event) {
+			var gate = false;
 			var utilityHeight = $('.utility-nav').height(),
 			    heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height(),
 			    bodyTop = $('body').scrollTop(),
@@ -166,6 +200,19 @@ webpackJsonp([0,1],[
 				$('.utility-nav').removeClass('utility-nav--scrolled');
 			}
 		}
+		var throttled = throttle(navScrollDependencies, 100);
+		$(window).scroll(throttled);
+		//window.setTimeout(navScrollDependencies, 1000);
+	
+		function openSearchFilterNav() {
+			body.addClass('body--freeze');
+			$('.search-filter__menu').addClass('search-filter__menu--open');
+		}
+	
+		function closeSearchFilterNav() {
+			body.removeClass('body--freeze');
+			$('.search-filter__menu').removeClass('search-filter__menu--open');
+		}
 	
 		navTrigger.on("click", function () {
 			if ($('.trigger__icon').hasClass('trigger--x')) {
@@ -173,6 +220,14 @@ webpackJsonp([0,1],[
 			} else {
 				openMobileNav();
 			}
+		});
+	
+		filterOpen.on("click", function () {
+			openSearchFilterNav();
+		});
+	
+		$('.search-filter__close').on('click', function () {
+			closeSearchFilterNav();
 		});
 	
 		navItemLinks.on("click", function (event) {
@@ -188,31 +243,10 @@ webpackJsonp([0,1],[
 		});
 	
 		body.click(clickAnywhereToCloseEverything);
-		navScrollDependencies();
-		$(window).scroll(function () {
-			navScrollDependencies();
-		});
 	})();
 
 /***/ },
 /* 3 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	var Screen = function Screen() {
-	    var screenOverlay = document.getElementsByClassName('screen__overlay')[0];
-	    this.turnScreenOn = function () {
-	        screenOverlay.classList.add('screen__overlay--on');
-	    };
-	    this.turnScreenOff = function () {
-	        screenOverlay.classList.remove('screen__overlay--on');
-	    };
-	};
-	module.exports = Screen;
-
-/***/ },
-/* 4 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -245,14 +279,14 @@ webpackJsonp([0,1],[
 	module.exports = headStyle;
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _modulesScreenJs = __webpack_require__(3);
+	var _modulesScreenJs = __webpack_require__(5);
 	
 	var _modulesScreenJs2 = _interopRequireDefault(_modulesScreenJs);
 	
@@ -307,6 +341,27 @@ webpackJsonp([0,1],[
 			}
 		});
 	})();
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	var Screen = function Screen() {
+		var screenOverlay = document.createElement('div');
+		var mainElement = document.getElementById('main');
+		mainElement.appendChild(screenOverlay);
+		screenOverlay.setAttribute('id', 'screen__overlay');
+		screenOverlay.setAttribute('class', 'screen__overlay');
+		this.turnScreenOn = function () {
+			screenOverlay.classList.add('screen__overlay--on');
+		};
+		this.turnScreenOff = function () {
+			screenOverlay.classList.remove('screen__overlay--on');
+		};
+	};
+	module.exports = Screen;
 
 /***/ },
 /* 6 */

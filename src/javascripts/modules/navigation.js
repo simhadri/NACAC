@@ -1,10 +1,8 @@
 // MODULES
-import Screen from 'modules/screen.js';
 import HeadStyle from 'modules/headStyle.js';
 (function() {
 	'use strict';
-	var screenOverlay = new Screen(),
-		headStyle = new HeadStyle(),
+	var headStyle = new HeadStyle(),
 		navTrigger = $('.primary-nav__trigger'),
 		primaryNav = $('.primary-nav'),
 		primaryNavItem = $('.primary-nav__item'),
@@ -14,7 +12,8 @@ import HeadStyle from 'modules/headStyle.js';
 		goBackButton = $('.go-back'),
 		navItemLinks = $('.primary-nav--children'),
 		mobileUtilityBarButtons = $('.mobile-utility-bar-buttons'),
-		browserViewport = $(window).height() - 70;
+		browserViewport = $(window).height() - 70,
+		filterOpen = $('.btn__filter-menu');
 
 	var openMobileNav = function() {
 		body.addClass('body--freeze');
@@ -117,7 +116,45 @@ import HeadStyle from 'modules/headStyle.js';
 		}
 	}
 
+	// Shameless Stolen from Underscore
+	// Throttles the function so its not 
+	// fired 1000x on scroll
+	var throttle = function(func, wait, options) {
+		var now = Date.now || function() {
+			return new Date().getTime();
+		};
+		var context, args, result;
+		var timeout = null;
+		var previous = 0;
+		if (!options) options = {};
+		var later = function() {
+			previous = options.leading === false ? 0 : now();
+			timeout = null;
+			result = func.apply(context, args);
+			if (!timeout) context = args = null;
+		};
+		return function() {
+			if (!previous && options.leading === false) previous = now();
+			var remaining = wait - (now() - previous);
+			context = this;
+			args = arguments;
+			if (remaining <= 0 || remaining > wait) {
+				if (timeout) {
+					clearTimeout(timeout);
+					timeout = null;
+				}
+				previous = now();
+				result = func.apply(context, args);
+				if (!timeout) context = args = null;
+			} else if (!timeout && options.trailing !== false) {
+				timeout = setTimeout(later, remaining);
+			}
+			return result;
+		};
+	};
+
 	function navScrollDependencies(event) {
+		var gate = false;
 		var utilityHeight = $('.utility-nav').height(),
 			heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height(),
 			bodyTop = $('body').scrollTop(),
@@ -135,9 +172,22 @@ import HeadStyle from 'modules/headStyle.js';
 		//If NOT past util nav, unstick
 		if (bodyTop >= 10) {
 			$('.utility-nav').addClass('utility-nav--scrolled');
-		} else{
+		} else {
 			$('.utility-nav').removeClass('utility-nav--scrolled');
 		}
+	}
+	var throttled = throttle(navScrollDependencies, 100);
+	$(window).scroll(throttled);
+	//window.setTimeout(navScrollDependencies, 1000);
+
+	function openSearchFilterNav() {
+		body.addClass('body--freeze');
+		$('.search-filter__menu').addClass('search-filter__menu--open');
+	}
+
+	function closeSearchFilterNav() {
+		body.removeClass('body--freeze');
+		$('.search-filter__menu').removeClass('search-filter__menu--open');
 	}
 
 	navTrigger.on("click", function() {
@@ -147,6 +197,14 @@ import HeadStyle from 'modules/headStyle.js';
 			openMobileNav();
 		}
 
+	});
+
+	filterOpen.on("click", function() {
+		openSearchFilterNav();
+	});
+
+	$('.search-filter__close').on('click', function() {
+		closeSearchFilterNav();
 	});
 
 	navItemLinks.on("click", function(event) {
@@ -161,10 +219,7 @@ import HeadStyle from 'modules/headStyle.js';
 		}
 
 	});
-	
+
 	body.click(clickAnywhereToCloseEverything);
-	navScrollDependencies();
-	$(window).scroll(function() {
-		navScrollDependencies();
-	});
+	
 })();
