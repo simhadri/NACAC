@@ -115,11 +115,14 @@ import HeadStyle from 'modules/headStyle.js';
 
 		}
 	}
-	
+
+	// Shameless Stolen from Underscore
+	// Throttles the function so its not 
+	// fired 1000x on scroll
 	var throttle = function(func, wait, options) {
 		var now = Date.now || function() {
-		return new Date().getTime();
-	};
+			return new Date().getTime();
+		};
 		var context, args, result;
 		var timeout = null;
 		var previous = 0;
@@ -152,8 +155,6 @@ import HeadStyle from 'modules/headStyle.js';
 
 	function navScrollDependencies(event) {
 		var gate = false;
-		///$(window).scroll(function() {
-		console.log('log')
 		var utilityHeight = $('.utility-nav').height(),
 			heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height(),
 			bodyTop = $('body').scrollTop(),
@@ -174,9 +175,8 @@ import HeadStyle from 'modules/headStyle.js';
 		} else {
 			$('.utility-nav').removeClass('utility-nav--scrolled');
 		}
-		//});
 	}
-	var throttled = throttle(navScrollDependencies, 1000);
+	var throttled = throttle(navScrollDependencies, 100);
 	$(window).scroll(throttled);
 	//window.setTimeout(navScrollDependencies, 1000);
 
@@ -221,6 +221,5 @@ import HeadStyle from 'modules/headStyle.js';
 	});
 
 	body.click(clickAnywhereToCloseEverything);
-
-
+	
 })();
