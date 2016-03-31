@@ -22,6 +22,20 @@
 }
 .hero__wrapper{
 	height: calc(100vh - 7rem);
+	position:relative;
+	.hero__breadcrumb{
+		position: absolute;
+		top:8rem;
+		left:10%;
+		&.breadcrumb {
+			a{
+				color:$nacac_light-blue;
+			}
+			> .active {
+		    color: $white;
+		}
+		}
+	}
 }
 .hero__content {
 	margin: auto;
@@ -60,7 +74,8 @@
 		align-items: center;
 		.hero__content {
 			padding: 15rem 0;
-			width: auto;
+			// width: auto;
+				width: 80%;
 		}
 	}
 }

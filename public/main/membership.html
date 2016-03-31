@@ -17,8 +17,7 @@
 </head>
 <body>
 	
-<main class="animated main__interior search__template" id="main">
-
+<main class="animated" id="main" class="main__interior membership__template">
 <nav class="utility-nav">
 	<div class="container">
 		<span class="mobile-nav__logo visible-sm visible-xs">
@@ -135,16 +134,24 @@
 </nav>
 
 
+<div class="hero__wrapper">
+	<ol class="hero__breadcrumb breadcrumb">
+		<li><a href="#">Home</a></li>
+		<li class="active">Membership</li>
+	</ol>
+	<div class="hero__background-image">
+		<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+         data-src="/images/main/interior_hero_banner.jpg" alt="">
+	</div>
+	<div class="hero__content">
+		<h1 class="hero__title">Membership Overview</h1>
+		<h3 class="hero__text">Get involved in the counceling and admission community and stay up-to-date on the industry trends. NACAC proudly offers our members the trianing., networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</h3>
+		<a href="" class="hero__btn btn btn-default btn--mega">Apply Now</a>
+	</div>
+</div>
+
 <article class="article__row article--white">
 	<div class="container">
-		<ol class="breadcrumb">
-			<li><a href="#">Home</a></li>
-			<li class="active">Search Results</li>
-		</ol>
-		<header class="search-results__header">
-			<h1>Search Results</h1>
-			<p>Showing 1-10 of 320 Results</p>
-		</header>
 		<div class="row">
 			<div class="col-sm-4">
 				<div class="search-filters">
@@ -229,6 +236,10 @@
 </div>
 			</div>
 			<div class="col-sm-8">
+				<header class="search-results__header">
+					<h1>Search Results</h1>
+					<p>Showing 1-10 of 320 Results</p>
+				</header>
 				<nav class="search-results__utility">
 	<span>Sort By:
 		<select class="form-control search-results__select">
@@ -434,9 +445,7 @@
 	</div>
 </footer>
 
-
 </main>
-
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<!--<script>window.jQuery || document.write('<script src="javascripts/jquery.js"><\/script>')</script>-->
@@ -444,6 +453,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.5.2/blazy.min.js"></script>
 	<script src="/javascripts/app.js"></script>
 	
+
+
 </body>
 
 </html>
