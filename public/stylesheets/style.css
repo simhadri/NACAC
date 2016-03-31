@@ -1481,7 +1481,16 @@ a.btn {
   width: 50vw; }
 
 .hero__wrapper {
-  height: calc(100vh - 7rem); }
+  height: calc(100vh - 7rem);
+  position: relative; }
+  .hero__wrapper .hero__breadcrumb {
+    position: absolute;
+    top: 8rem;
+    left: 10%; }
+    .hero__wrapper .hero__breadcrumb.breadcrumb a {
+      color: #6AAEE6; }
+    .hero__wrapper .hero__breadcrumb.breadcrumb > .active {
+      color: #FFFFFF; }
 
 .hero__content {
   margin: auto;
@@ -1511,7 +1520,7 @@ a.btn {
   align-items: center; }
   .flexbox .hero__wrapper .hero__content {
     padding: 15rem 0;
-    width: auto; }
+    width: 80%; }
 
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
