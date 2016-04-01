@@ -24,6 +24,8 @@ webpackJsonp([0,1],[
 	
 	__webpack_require__(4);
 	
+	__webpack_require__(8);
+	
 	__webpack_require__(6);
 	
 	// SUPER LAME FADE IN
@@ -140,7 +142,7 @@ webpackJsonp([0,1],[
 			}
 		}
 	
-		// Shameless Stolen from Underscore
+		// Shamelessly Stolen from Underscore
 		// Throttles the function so its not
 		// fired 1000x on scroll
 		var throttle = function throttle(func, wait, options) {
@@ -387,6 +389,52 @@ webpackJsonp([0,1],[
 			}
 		});
 	});
+
+/***/ },
+/* 7 */,
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _modulesGetIdChangeClass = __webpack_require__(10);
+	
+	var _modulesGetIdChangeClass2 = _interopRequireDefault(_modulesGetIdChangeClass);
+	
+	var getIdChangeClass = new _modulesGetIdChangeClass2['default']();
+	//getClassByDataAttr.hideSelectedId('main', 'animated');
+	$('.tab__button').on("click", function () {
+		var tab_selected = $(this).attr('data-tab-selected');
+		console.log('hey');
+		$('.tab__content').removeClass('tab__content--active');
+		getIdChangeClass.addClassToId('tab__content--active', tab_selected);
+	});
+	// getIdChangeClass.removeClassFromId('animated', 'main');
+	// getIdChangeClass.addClassToId('barf', 'main');
+
+/***/ },
+/* 9 */,
+/* 10 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	var GetIdChangeClass = function GetIdChangeClass() {
+		this.removeClassFromId = function (className, dataAttr) {
+			var elm = document.getElementById(dataAttr);
+			if (elm) {
+				elm.classList.remove(className);
+			}
+		}, this.addClassToId = function (className, dataAttr) {
+			var elm = document.getElementById(dataAttr);
+			if (elm) {
+				elm.classList.add(className);
+			}
+		};
+	};
+	module.exports = GetIdChangeClass;
 
 /***/ }
 ]);

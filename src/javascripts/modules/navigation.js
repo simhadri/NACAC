@@ -116,7 +116,7 @@ import HeadStyle from 'modules/headStyle.js';
 		}
 	}
 
-	// Shameless Stolen from Underscore
+	// Shamelessly Stolen from Underscore
 	// Throttles the function so its not 
 	// fired 1000x on scroll
 	var throttle = function(func, wait, options) {

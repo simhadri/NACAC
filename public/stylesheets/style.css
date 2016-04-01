@@ -399,6 +399,11 @@ a.btn {
   .btn--nacac-blue:hover {
     color: white; }
 
+.btn--centered {
+  max-width: 21rem;
+  margin: 0 auto;
+  display: block; }
+
 .primary-nav__screen--off {
   visibility: hidden;
   opacity: 0;
@@ -504,14 +509,16 @@ a.btn {
   .primary-nav .primary-nav__item {
     background-color: rgba(255, 255, 255, 0.8);
     line-height: 1;
-    height: 7rem; }
+    height: 7rem;
+    text-align: center; }
     .primary-nav .primary-nav__item > a {
       color: rgba(0, 0, 0, 0.6);
       font-family: "Istok Web", sans-serif;
       text-transform: uppercase;
       font-weight: bold;
-      display: block;
-      position: relative; }
+      display: inline-block;
+      position: relative;
+      text-align: left; }
       .primary-nav .primary-nav__item > a:hover {
         color: #1483C5; }
     .primary-nav .primary-nav__item .interior__links a {
@@ -1590,8 +1597,12 @@ main {
   visibility: visible; }
 
 .article__row {
-  padding-top: 3rem;
-  padding-bottom: 3rem; }
+  padding-top: 3.6rem;
+  padding-bottom: 3.6rem; }
+  .article__row.content__row {
+    padding-top: 0; }
+  .article__row.article--top-border {
+    border-top: 1px solid #D6D6D6; }
 
 .article--white {
   background-color: #FFFFFF; }
@@ -1602,10 +1613,16 @@ main {
 .article--bluegrey {
   background-color: #ECF0F3; }
 
-.article__header {
+.article__header, .section__header {
   text-align: center; }
-  .article__header .btn {
+  .article__header .btn, .section__header .btn {
     margin: 2rem 0; }
+
+.section__row {
+  border-bottom: 1px solid #D6D6D6;
+  padding-bottom: 3.6rem; }
+  .section__row:last-child {
+    border-bottom: none; }
 
 .flexbox__row {
   display: -webkit-flex;
@@ -1890,6 +1907,52 @@ main {
   .focus-testimonials {
     background-color: transparent; } }
 
+nav.tabs__navigation {
+  width: 100%; }
+
+.tab__button {
+  cursor: pointer;
+  display: table-cell;
+  height: 6rem;
+  vertical-align: middle;
+  padding: 0 2rem;
+  margin: 0;
+  transition: all 300ms ease-in;
+  font-family: "Istok Web", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: 'Istok Web', sans-serif;
+  font-weight: 700;
+  background-color: #6AAEE6; }
+
+.tab__stage {
+  position: relative; }
+  .tab__stage .tab__content {
+    position: absolute;
+    opacity: 0;
+    transition: all 300ms ease-in; }
+    .tab__stage .tab__content.tab__content--active {
+      opacity: 1;
+      transition: all 300ms ease-in;
+      transition-delay: 300ms; }
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+/*
+██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
+██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
+██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
+														  
+*/
 footer.footer {
   background-color: #6AAEE6;
   color: #FFFFFF;

@@ -1,0 +1,56 @@
+nav.tabs__navigation {
+	width: 100%;
+}
+
+.tab__button {
+	cursor: pointer;
+	display: table-cell;
+	height: 6rem;
+	vertical-align: middle;
+	padding: 0 2rem;
+	margin: 0;
+	@include transition(all 300ms ease-in);
+	@include sans-uppercase-normal;
+	font-family: 'Istok Web', sans-serif;
+	font-weight: 700;
+	background-color: $nacac_light-blue;
+}
+
+.tab__stage {
+	position: relative;
+	.tab__content {
+		position: absolute;
+		opacity: 0;
+		@include transition(all 300ms ease-in);
+		&.tab__content--active {
+			opacity: 1;
+			@include transition(all 300ms ease-in);
+			transition-delay:300ms;
+		}
+	}
+}
+
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+
+@include break(max, $screen-sm-max) {}
+
+
+/*
+██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
+██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
+██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
+														  
+*/
+
+@include break(min, $screen-md-min) {}
