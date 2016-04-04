@@ -24,9 +24,9 @@ webpackJsonp([0,1],[
 	
 	__webpack_require__(4);
 	
-	__webpack_require__(8);
-	
 	__webpack_require__(6);
+	
+	__webpack_require__(8);
 	
 	// SUPER LAME FADE IN
 	$(document).ready(function () {
@@ -367,6 +367,48 @@ webpackJsonp([0,1],[
 
 /***/ },
 /* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _modulesGetIdChangeClass = __webpack_require__(7);
+	
+	var _modulesGetIdChangeClass2 = _interopRequireDefault(_modulesGetIdChangeClass);
+	
+	var getIdChangeClass = new _modulesGetIdChangeClass2['default']();
+	$('.tab__button').on("click", function () {
+		var tab_selected = $(this).attr('data-tab-selected');
+		$('.tab__button').removeClass('tab__button--active');
+		$(this).addClass('tab__button--active');
+		$('.tab__content').removeClass('tab__content--active');
+		getIdChangeClass.addClassToId('tab__content--active', tab_selected);
+	});
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	var GetIdChangeClass = function GetIdChangeClass() {
+		this.removeClassFromId = function (className, dataAttr) {
+			var elm = document.getElementById(dataAttr);
+			if (elm) {
+				elm.classList.remove(className);
+			}
+		}, this.addClassToId = function (className, dataAttr) {
+			var elm = document.getElementById(dataAttr);
+			if (elm) {
+				elm.classList.add(className);
+			}
+		};
+	};
+	module.exports = GetIdChangeClass;
+
+/***/ },
+/* 8 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -389,52 +431,6 @@ webpackJsonp([0,1],[
 			}
 		});
 	});
-
-/***/ },
-/* 7 */,
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	var _modulesGetIdChangeClass = __webpack_require__(10);
-	
-	var _modulesGetIdChangeClass2 = _interopRequireDefault(_modulesGetIdChangeClass);
-	
-	var getIdChangeClass = new _modulesGetIdChangeClass2['default']();
-	//getClassByDataAttr.hideSelectedId('main', 'animated');
-	$('.tab__button').on("click", function () {
-		var tab_selected = $(this).attr('data-tab-selected');
-		console.log('hey');
-		$('.tab__content').removeClass('tab__content--active');
-		getIdChangeClass.addClassToId('tab__content--active', tab_selected);
-	});
-	// getIdChangeClass.removeClassFromId('animated', 'main');
-	// getIdChangeClass.addClassToId('barf', 'main');
-
-/***/ },
-/* 9 */,
-/* 10 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	var GetIdChangeClass = function GetIdChangeClass() {
-		this.removeClassFromId = function (className, dataAttr) {
-			var elm = document.getElementById(dataAttr);
-			if (elm) {
-				elm.classList.remove(className);
-			}
-		}, this.addClassToId = function (className, dataAttr) {
-			var elm = document.getElementById(dataAttr);
-			if (elm) {
-				elm.classList.add(className);
-			}
-		};
-	};
-	module.exports = GetIdChangeClass;
 
 /***/ }
 ]);
