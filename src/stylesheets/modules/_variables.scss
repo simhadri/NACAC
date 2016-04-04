@@ -50,6 +50,7 @@ $lighter-orange:#ffa211;
 $nacac_blue: #2480C4;
 $nacac_link_hover: #1483C5;
 $nacac_light-blue:#6AAEE6;
+$nacac_lighter-blue:#B4D6F1;
 $nacac_border-blue:#8BD4EB;
 
 
@@ -78,7 +79,9 @@ $facebookBlue: #3b5998;
 $twitterBlue: #4099ff;
 
 
-
+// Padding/Margins
+$content-padding:3.6rem;
+$p-padding-bottom: 2rem;
 
 // Some math to get container size then base blocks off them
 // Its half the container size at each media query

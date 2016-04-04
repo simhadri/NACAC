@@ -48,8 +48,14 @@ main {
 
 // Articles
 .article__row {
-	padding-top: 3rem;
-	padding-bottom: 3rem;
+	padding-top: $content-padding;
+	padding-bottom: $content-padding;
+	&.content__row{
+		padding-top: 0;
+	}
+	&.article--top-border{
+		border-top: 1px solid $nacac_border-lightgrey;
+	}
 }
 
 .article--white {
@@ -64,12 +70,20 @@ main {
 	background-color: $nacac_bg-blue-grey;
 }
 
-.article__header {
+.article__header, .section__header {
 	text-align: center;
 	.btn {
 		margin: 2rem 0;
 	}
 }
+.section__row{
+	border-bottom: 1px solid $nacac_border-lightgrey;
+	padding-bottom: $content-padding;
+	&:last-child{
+		border-bottom: none;
+	}
+}
+
 
 .flexbox__row {
 	display: flex;

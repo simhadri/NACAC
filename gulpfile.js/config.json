@@ -40,7 +40,7 @@
         "collapseWhitespace": true
       },
       "extensions": ["html", "json"],
-      "excludeFolders": ["_layouts", "_shared", "_components", "macros", "data"]
+      "excludeFolders": ["_layouts", "_shared", "_components", "_content", "macros", "data"]
     },
 
     "images": {

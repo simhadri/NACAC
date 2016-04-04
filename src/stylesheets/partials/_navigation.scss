@@ -135,13 +135,15 @@
 		background-color: $white_translucent;
 		line-height: 1;
 		height: 7rem;
+		text-align: center;
 		> a {
 			color: $black_translucent;
 			font-family: $sans;
 			text-transform: uppercase;
 			font-weight: bold;
-			display: block;
+			display: inline-block;
 			position: relative;
+			text-align: left;
 			&:hover {
 				color: $nacac_link_hover;
 			}
