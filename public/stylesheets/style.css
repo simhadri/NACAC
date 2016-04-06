@@ -527,6 +527,28 @@ a.btn {
       display: block;
       margin: 1rem 0; }
 
+.aside-navigation h2 {
+  font-family: "Istok Web", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 1rem;
+  color: #6AAEE6;
+  font-size: 2rem; }
+
+.aside-navigation .aside-navigation__button {
+  display: block;
+  padding: 1rem;
+  color: #374049;
+  font-family: "Istok Web", sans-serif;
+  font-weight: 400;
+  cursor: pointer; }
+  .aside-navigation .aside-navigation__button:hover {
+    color: #2480C4; }
+  .aside-navigation .aside-navigation__button.aside-navigation__button--active {
+    background-color: #6AAEE6;
+    color: #FFFFFF;
+    border-radius: 0.4rem; }
+
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
@@ -1469,6 +1491,49 @@ a.btn {
 .card-block__footer {
   padding: 0 2rem 2rem; }
 
+.member-block {
+  margin: 4rem 0; }
+  .member-block > img {
+    border-radius: 50%;
+    max-width: 16rem;
+    margin: 1rem auto;
+    display: block; }
+  .member-block .member-block__profile--icon {
+    border: 1px solid #474280; }
+  .member-block .member-block__header {
+    border-bottom: 1px solid #D6D6D6; }
+    .member-block .member-block__header span {
+      border-right: 1px solid #D6D6D6;
+      display: inline-block;
+      padding: 1rem; }
+  .member-block .member-block__title {
+    font-family: "Merriweather", serif;
+    font-style: italic;
+    margin: 0; }
+  .member-block .member-block__name {
+    margin: 1rem 0; }
+  .member-block .member-block__content {
+    padding: 0 2rem; }
+  .member-block .member-block__footer {
+    padding: 2rem; }
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+/*
+██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
+██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
+██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
+														  
+*/
 .hero__background-image {
   position: fixed;
   top: -50%;
@@ -1668,6 +1733,9 @@ main {
   color: #FFFFFF; }
   .background--green:hover {
     color: #FFFFFF; }
+
+.background--grey {
+  background-color: #F2F2F2; }
 
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
@@ -1909,7 +1977,7 @@ main {
   .focus-testimonials {
     background-color: transparent; } }
 
-nav.tabs__navigation {
+nav.tab__navigation {
   display: table;
   width: 100%;
   overflow-x: auto; }
@@ -1941,6 +2009,11 @@ nav.tabs__navigation {
 
 .tab__stage {
   position: relative; }
+  .tab__stage:before, .tab__stage:after {
+    content: " ";
+    display: table; }
+  .tab__stage:after {
+    clear: both; }
   .tab__stage .tab__content {
     border-top: 0.1rem solid #FFFFFF;
     width: 100%;

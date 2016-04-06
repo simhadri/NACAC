@@ -1,53 +1,74 @@
-
-{% extends '_layouts/main-application.html' %}
-
-{% block content %}
+ {% extends '_layouts/main-application.html' %}
+ {% block content %}
 <main class="animated" id="main" class="main__interior membership__template">
-{% include './_shared/utility.html'%}
-
-{% include './_shared/navigation.html'%}
-
-{% include './_shared/interior-hero.html'%}
-
-<article class="article__row content__row article--white">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4">
-				{% include './_components/interior-navigation-sidebar.html'%}
-			</div>
-			<div class="col-sm-8">
-				<section class="card-block__row section__row">
-					<header class="section__header">
-						<h2>Membership Benefits</h2>
-						<p>Get involved in the counseling and admission community and stay up-to-date on the industry trends. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</p>
-					</header>
-					<div class="flexbox__row row">
-						<div class="flexbox__column card-block col-md-4">{% include './_components/card-block-no-button.html'%}</div>
-						<div class="flexbox__column card-block col-md-4">{% include './_components/card-block-no-button-alt.html'%}</div>
-						<div class="flexbox__column card-block col-md-4">{% include './_components/card-block-no-button.html'%}</div>
-					</div>
-					<a href="#" class="btn btn--nacac-blue btn--centered">Become a Member</a>
-				</section>
-				<section class="section__row">
-					<header class="section__header">
-						<h2>Membership Benefits</h2>
-						<p>Get involved in the counseling and admission community and stay up-to-date on the industry trends. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</p>
-					</header>
-					{% include './_components/tab-block.html' %}
-				</section>
+	{% include './_shared/utility.html'%}
+	{% include './_shared/navigation.html'%}
+	{% include './_shared/interior-hero.html'%}
+	<article class="article__row content__row article--white">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					{% include './_shared/aside-navigation.html'%}
+				</div>
+				<div class="col-sm-9">
+					<section class="card-block__row section__row">
+						<header class="section__header">
+							<h2>Membership Benefits</h2>
+							<p>Get involved in the counseling and admission community and stay up-to-date on the industry trends. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</p>
+						</header>
+						<div class="flexbox__row row">
+							<div class="flexbox__column card-block col-md-4">{% include './_components/card-block-no-button.html'%}</div>
+							<div class="flexbox__column card-block col-md-4">{% include './_components/card-block-no-button-alt.html'%}</div>
+							<div class="flexbox__column card-block col-md-4">{% include './_components/card-block-no-button.html'%}</div>
+						</div>
+						<a href="#" class="btn btn--nacac-blue btn--centered">Become a Member</a>
+					</section>
+					<section class="section__row">
+						<header class="section__header">
+							<h2>Membership Benefits</h2>
+							<p>Get involved in the counseling and admission community and stay up-to-date on the industry trends. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</p>
+						</header>
+						{% include './_components/tab-block.html' %}
+					</section>
+					<section class="section__row">
+						<div class="row">
+							<div class="col-sm-6">
+								{% set backgroundColor = 'background--grey' %}
+								{% include './_components/member-block.html' %}
+							</div>
+							<div class="col-sm-6">
+								{% set backgroundColor = '' %}
+								{% include './_components/member-block.html' %}
+							</div>
+						</div>
+					</section>
+					<section class="section__row">
+						<header class="section__header">
+							<h2>Membership Benefits</h2>
+						</header>
+						<div class="row">
+							<div class="col-sm-4">
+								{% set number = 1200 %}
+								{% include './_components/number-block.html' %}
+							</div>
+							<div class="col-sm-4">
+								{% set number = 1200 %}
+								{% include './_components/number-block.html' %}
+							</div>
+							<div class="col-sm-4">
+								{% set number = 1200 %}
+								{% include './_components/number-block.html' %}
+							</div>
+						</div>
+					</section>
+				</div>
 			</div>
 		</div>
-	</div>
-</article>
-
-{% set addedClassNames = 'article--top-border' %}
-{% include './_components/full-block-row.html' %}
-
-{% include './_shared/footer.html'%}
+	</article>
+	{% set addedClassNames = 'article--top-border' %}
+	{% include './_components/full-block-row.html' %}
+	{% include './_shared/footer.html'%}
 </main>
 {% endblock %}
-
 {% block javascript %}
-
 {% endblock %}
-
