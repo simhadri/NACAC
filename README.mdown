@@ -43,7 +43,7 @@ Within the shared markup are components, this can include:
 My logic; however flawed adheres to the following: 
 
 - Components are small; repeatable bits of HTML. They can be repeated multiple times in a page. They should not have *ANY* includes. This would include a card block or a search entry.
-- Shared includes repeated code but not more than once on a page. These are more unique at the page level, but not at the site level. For example ```navigation``` should only appear once, but on several pages.
+- Shared includes repeated code but not more than once on a page. These are more unique at the page level, but not at the site level. For example navigation should only appear once per page, but on several pages within a site.
 - Site folders have the pages within the site such as ```conference/search.html``` or ```fair/index.html```
 - Layouts have the master pages of each site
 
