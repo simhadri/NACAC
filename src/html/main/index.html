@@ -13,9 +13,64 @@
 
 {% include './_shared/card-block-row.html'%}
 
-{% include './_shared/announcements.html'%}
+<article class="article__row article--lightgrey announcements">
+	<div class="announcement__header">
+			<div class="container">
+				<p><i class="fa fa-bullhorn"></i>Announcements</p>
+			</div>
+		</div>
+	<div class="container">
+		<section class="announcement__row row">
+			<div class="col-md-7 listing__block">
+				<header class="article__header">
+					<h2>Get Involved</h2>
+				</header>
 
-{% include './_shared/testimonials.html'%}
+				{% include '_components/listing_entry.html'%}
+
+				{% include '_components/listing_entry.html'%}
+
+				{% include '_components/listing_entry.html'%}
+
+			</div>
+			<div class="col-md-5 calendar__block">
+				<header class="article__header">
+					<h2>Upcoming Training</h2>
+				</header>
+				
+				{% include '_components/calendar_entry.html'%}
+
+				{% include '_components/calendar_entry.html'%}
+
+				{% include '_components/calendar_entry.html'%}
+				
+				<a href="#" class="btn btn--nacac-blue">View Full Calendar</a>
+			</div>
+		</section>
+	</div>
+</article>
+
+{% include './_components/focus-testimonial.html' %}
+
+<article class="article__row article--bluegrey">
+	<div class="container">
+		<div class="article__header">
+			<h2>Member Stories</h2>
+		</div>
+		<div class="article__row row">
+			<div class="col-sm-4 testimonial-block">
+				{% include './_components/testimonial-block.html' %}
+			</div>
+			<div class="col-sm-4 testimonial-block">
+				{% include './_components/testimonial-block.html' %}
+			</div>
+			<div class="col-sm-4 testimonial-block">
+				{% include './_components/testimonial-block.html' %}
+			</div>
+			
+		</div>
+	</div>
+</article>
 
 {% include './_components/full-block-row.html'%}
 

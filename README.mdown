@@ -2,7 +2,7 @@
 
 # NACAC Repository
 
-Welcome to the NACAC Repo! There are a total of 3 sites; Main, Conferences and Fairs
+Welcome to the NACAC Repository! There are a total of 3 sites; Main, Conferences and Fairs
 
 ### Assets
 [Wire Fames](http://a12upd.axshare.com/#p=nacacnet_org_home__desktop_)
@@ -14,27 +14,39 @@ Welcome to the NACAC Repo! There are a total of 3 sites; Main, Conferences and F
 
 ### HTML 
 
-High level pages are layouts. This includes:
+It cause quite a headache having 3 sites in one repo, and all 3 sites are very similar and share components, so here we are.
+
+High level pages are in ```_layouts/```; this includes:
+- Main Site ```/main-application.html```
+- College Fair Site ```/fair-application.html```
+- National Conference Site ```/conference-application.html```
+
+Next; each Page within layout such as ```/main/index.html```, ```/main/search.html```, etc. these are in the following folders:
 - Main Site ```/main```
 - College Fair Site ```/fair```
 - National Conference Site ```/conference```
 
-With in each layout are 'shared' markup, this includes:
+These files have basic includes of shared markup, static markup and components. Within each layout are 'shared' markup, this includes:
 - Head
 - Hero
+- Navigation
 - Footer
 - Etc.
 
-WIth in the shared markup are components, this can include:
+Within the shared markup are components, this can include:
 - Card & Blocks
-- Search
-- Entries
+- Search entries
+- Calendar entries
 
-Here is the file structure of a simple page:
-- html/
-  - _layouts/
-  - _shared/
-  - _components/
+> There is a blurred line between what is a component and what is shared.
+
+My logic; however flawed adheres to the following: 
+
+- Components are small; repeatable bits of HTML. They can be repeated multiple times in a page. They should not have *ANY* includes. This would include a card block or a search entry.
+- Shared includes repeated code but not more than once on a page. These are more unique at the page level, but not at the site level. For example ```navigation``` should only appear once, but on several pages.
+- Site folders have the pages within the site such as ```conference/search.html``` or ```fair/index.html```
+- Layouts have the master pages of each site
+
   
 ### Features
 - **CSS:** [Sass](http://sass-lang.com/) (indented, scss, or both)
@@ -68,7 +80,7 @@ Here is the file structure of a simple page:
 
 ## Basic Usage
 
-Make sure Node 0.12.x is installed. I recommend using [NVM](https://github.com/creationix/nvm) to manage versions.
+Make sure Node is installed. THis was developed using node -v 5.0.0
 
 ### Install Dependencies
 ```
@@ -95,14 +107,7 @@ npm run gulp production
 ### Configuration
 Directory and top level settings are convienently exposed in `gulpfile.js/config.json`. All task configuration objects have `src` and `dest` directories specfied. These are relative to `root.src` and `root.dest` respectively. Each configuration also has an extensions array. This is used for file watching, and file deleting/replacing. 
 
-If there is a feature you do not wish to use on your project, simply delete the configuration, and the task will be skipped. 
-
-### Run JavaScript Tests
-```
-npm run test
-```
-Test files located in `__tests__` folders are picked up and run using
-[Karma](http://karma-runner.github.io/0.12/index.html), [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), and [Sinon](http://sinonjs.org/). The test script right now first compiles a production build, and then, if successful runs Karma. This is nice when using something like [Travis CI](https://travis-ci.org/vigetlabs/gulp-starter) in that if an error occurs during the build step, Travis alerts me that it failed. To pass, the files have to compile properly AND pass the JS tests.
+If there is a feature you do not wish to use on your project, simply delete the configuration, and the task will be skipped.
 
 ### Build production-ready files
 ```
@@ -125,7 +130,7 @@ gulpfile.js/tasks/webpackProduction
 ```
 Modular ES6 with [Babel](http://babeljs.io/) and [Webpack](http://webpack.github.io/)
 
-I've included various examples of generating mulitple files, async module loading and splitting out shared dependences to show the power of Webpack. Adjust the webpack config (`.gulpfile.js/config/webpack`) to fit your project. For smaller one-pagers, you'll probably want to skip the async stuff, and just compile a single bundle.
+Adjust the webpack config (`.gulpfile.js/config/webpack`) for the project.
 
 There are a couple of webpack options exposed in the top-level `gulpfile.js/config.json` file.
 
@@ -135,6 +140,10 @@ There are a couple of webpack options exposed in the top-level `gulpfile.js/conf
 
 If you want to mess with the specifics of the webpack config, check out `gulpfile.js/lib/webpack-multi-config.js`.
 
+Vendor script go in the ```javascript/vendor/``` folder and are bundled via webpack.
+
+unbundled javascript files are for files what just need to be copied over, not bundled. This is used it bundling vendor scripts causes errors. On this project ```interdimentional.js``` is a vendor script, but when budled, it cause errors.
+
 ### CSS
 ```
 gulpfile.js/tasks/css
@@ -143,7 +152,10 @@ Your Sass gets run through Autoprefixer, so don't prefix! The examples use the i
 
 ## BEM
 
-The BEM approach ensures that everyone who participates in the development of a website works with a single codebase and speaks the same language. Using proper naming will prepare you for the changes in design of the website.
+The BEM approach ensures that everyone who participates in the development of a website works with a single codebase and speaks the same language. Using proper naming will prepare you for the changes in design of the website. This project uses the following naming conventions:
+
+```block-name__element-name--modifier```
+```primary-nav__logo--sticky```
 
 ### Block
 
