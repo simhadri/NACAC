@@ -20,19 +20,17 @@
 			left: 0;
 		}
 	}
-	&.color-block--blue{
+	&.color-block--blue {
 		background-color: $nacac_light-blue;
 	}
-	&.color-block--grey{
+	&.color-block--grey {
 		background-color: $nacac_light-grey;
 	}
 	h2.color-block__title {
 		//@include condensed-uppercase-bold;
 	}
-	p.color-block__info {
-	}
-	p.color-block__text {
-	}
+	p.color-block__info {}
+	p.color-block__text {}
 }
 
 .color-block--half {
@@ -68,7 +66,7 @@
 		.color-block__image {
 			width: 100%;
 			position: absolute;
-			@include zone-index(negative,1);
+			@include zone-index(negative, 1);
 		}
 	}
 }
@@ -115,20 +113,20 @@
 	height: 18rem;
 	overflow: hidden;
 	display: table;
-    text-align: center;
-    width: 100%;
-    padding: 0 1rem;
+	text-align: center;
+	width: 100%;
+	padding: 0 1rem;
 	h2 {
 		display: table-cell;
 		vertical-align: middle;
-		height:18rem;
-		margin:0;
-		color:$white;
+		height: 18rem;
+		margin: 0;
+		color: $white;
 		font-size: 1.5em;
 		line-height: 4.2rem;
 	}
 	img {
-		top:0;
+		top: 0;
 		left: 0;
 		transition: all .4s ease-in-out;
 		position: absolute;
@@ -152,3 +150,63 @@
 .card-block__footer {
 	padding: 0 2rem 2rem;
 }
+
+.member-block {
+	margin: 4rem 0;
+	> img {
+		border-radius: 50%;
+		max-width: 16rem;
+		margin: 1rem auto;
+		display: block;
+	}
+	.member-block__profile--image {}
+	.member-block__profile--icon {
+		border: 1px solid $nacac_purple;
+	}
+	.member-block__header {
+		border-bottom: 1px solid $nacac_border-lightgrey;
+		span {
+			border-right: 1px solid $nacac_border-lightgrey;
+			display: inline-block;
+			padding: 1rem;
+		}
+	}
+	.member-block__title {
+		@include serif-italic;
+		margin: 0;
+	}
+	.member-block__name {
+		margin: 1rem 0;
+	}
+	.member-block__content {
+		padding:0 2rem;
+	}
+	.member-block__footer{
+		padding:2rem;
+	}
+}
+
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+
+@include break(max, $screen-sm-max) {}
+
+
+/*
+██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
+██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
+██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
+														  
+*/
+
+@include break(min, $screen-md-min) {}

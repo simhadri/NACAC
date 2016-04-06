@@ -1,4 +1,4 @@
-nav.tabs__navigation {
+nav.tab__navigation {
 	display:table;
 	width: 100%;
 	overflow-x: auto;
@@ -32,6 +32,7 @@ nav.tabs__navigation {
 
 .tab__stage {
 	position: relative;
+	@include clearfix;
 	.tab__content {
 		border-top: 0.1rem solid $white;
 		width: 100%;
