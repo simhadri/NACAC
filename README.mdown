@@ -69,7 +69,7 @@ My logic; however flawed adheres to the following:
   - Source Maps
 - **Production Builds:**
   - JS and CSS are uglified and minified
-  - All filneames are revisioned with an md5 hash, a `rev-manifest.json` file is genrearted and all asset references are updated in html, css, and js
+  - All filneames are revisioned with an md5 hash, a `rev-manifest.json` file is generated and all asset references are updated in html, css, and js
   - File size reporting
   - Local production sever for testing
 - **Testing:**
@@ -105,7 +105,7 @@ npm run gulp production
 ```
 
 ### Configuration
-Directory and top level settings are convienently exposed in `gulpfile.js/config.json`. All task configuration objects have `src` and `dest` directories specfied. These are relative to `root.src` and `root.dest` respectively. Each configuration also has an extensions array. This is used for file watching, and file deleting/replacing. 
+Directory and top level settings are conveniently exposed in `gulpfile.js/config.json`. All task configuration objects have `src` and `dest` directories specfied. These are relative to `root.src` and `root.dest` respectively. Each configuration also has an extensions array. This is used for file watching, and file deleting/replacing. 
 
 If there is a feature you do not wish to use on your project, simply delete the configuration, and the task will be skipped.
 
@@ -114,7 +114,7 @@ If there is a feature you do not wish to use on your project, simply delete the 
 npm run production
 ```
 
-This will compile revisioned and compressed files to `./public`. To build production files and preview them localy, run 
+This will compile revisions and compressed files to `./public`. To build production files and preview them locally, run 
 
 ```
 npm run demo
@@ -142,7 +142,7 @@ If you want to mess with the specifics of the webpack config, check out `gulpfil
 
 Vendor script go in the ```javascript/vendor/``` folder and are bundled via webpack.
 
-unbundled javascript files are for files what just need to be copied over, not bundled. This is used it bundling vendor scripts causes errors. On this project ```interdimentional.js``` is a vendor script, but when budled, it cause errors.
+Unbundled javascript files are for files what just need to be copied over, not bundled. This is used it bundling vendor scripts causes errors. On this project ```interdimentional.js``` is a vendor script, but when budled, it cause errors.
 
 ### CSS
 ```
@@ -185,6 +185,19 @@ Flags on blocks or elements. Use them to change appearance, behavior or state.
 ```
 gulpfile.js/tasks/html
 ```
-Robust templating with [Nunjucks](https://mozilla.github.io/nunjucks/). Nunjucks is nearly identical in syntax to Twig (PHP), and replaces Swig (and Twig-like js templating language), which is no longer maintained.
+Robust templating with [Nunjucks](https://mozilla.github.io/nunjucks/). Nunjucks is nearly identical in syntax to Twig (PHP), and replaces Swig (and Twig-like js templating language), which is no longer maintained. I have only a few times where I use variables for adding a class and not making a whole new component. Let say I need a top border on one component on a page but not on another, instead of making a new component i just pass a class of ```component--border-top``` to the include:
+
+```
+{% set addedClassNames = 'article--top-border' %}
+{% include './_components/full-block-row.html' %}
+```
+
+In the component, I need to add:
+
+```
+<article class="article__row article--white {{ addedClassNames }}">
+  ...
+</article>
+```
 
 A global data file is set up at [src/html/data/global.json](src/html/data/global.json), is read in by the `html` task, and exposes the propertiesto your html templates. See [social-icons-font.html](src/html/shared/social-icons-font.
