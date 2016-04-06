@@ -183,7 +183,7 @@ webpackJsonp([0,1],[
 			var gate = false;
 			var utilityHeight = $('.utility-nav').height(),
 			    heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height(),
-			    bodyTop = $('body').scrollTop(),
+			    bodyTop = $(window).scrollTop(),
 			    navToTopOffset = $('.primary-nav__interior').offset().top - bodyTop;
 			// If past than util nav and animation fired
 			if (bodyTop >= utilityHeight && primaryNav.hasClass('primary-nav--up')) {
