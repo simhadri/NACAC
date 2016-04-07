@@ -1399,17 +1399,6 @@ a.btn {
       .color-block--half .color-block__content {
         width: 58.5rem; } }
 
-@media (max-width: 991px) {
-  .color-block--half {
-    width: 100%;
-    float: none; }
-  .color-block {
-    color: #FFFFFF; }
-    .color-block .color-block__image {
-      width: 100%;
-      position: absolute;
-      z-index: -1; } }
-
 .card-block {
   background-color: #9EA7AE;
   margin: 2rem 1rem;
@@ -1517,6 +1506,31 @@ a.btn {
   .member-block .member-block__footer {
     padding: 2rem; }
 
+.number-block {
+  text-align: center; }
+  .number-block .number-block__numerals {
+    color: #f28800;
+    font-size: 7rem;
+    margin: 3rem;
+    font-family: "Oswald", sans-serif;
+    position: relative; }
+    .number-block .number-block__numerals:after {
+      content: "";
+      width: 12rem;
+      height: 12rem;
+      border: 2px dotted #ffa211;
+      position: absolute;
+      margin: 0 auto;
+      display: block;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      margin-left: -6rem;
+      margin-top: -6rem; }
+  .number-block .number-block-block__text p {
+    font-size: 2.4rem;
+    line-height: 2.8rem; }
+
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
@@ -1525,6 +1539,17 @@ a.btn {
 ██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 */
+@media (max-width: 991px) {
+  .color-block--half {
+    width: 100%;
+    float: none; }
+  .color-block {
+    color: #FFFFFF; }
+    .color-block .color-block__image {
+      width: 100%;
+      position: absolute;
+      z-index: -1; } }
+
 /*
 ██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
 ██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
@@ -1684,10 +1709,18 @@ main {
   text-align: center; }
   .article__header .btn, .section__header .btn {
     margin: 2rem 0; }
+  .article__header p, .section__header p {
+    padding-top: 2rem;
+    padding-bottom: 2rem; }
 
 .section__row {
   border-bottom: 1px solid #D6D6D6;
   padding-bottom: 3.6rem; }
+  .section__row:before, .section__row:after {
+    content: " ";
+    display: table; }
+  .section__row:after {
+    clear: both; }
   .section__row:last-child {
     border-bottom: none; }
 

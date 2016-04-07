@@ -75,8 +75,13 @@ main {
 	.btn {
 		margin: 2rem 0;
 	}
+	p{
+		padding-top: $p-spacing;
+		padding-bottom: $p-spacing;
+	}
 }
 .section__row{
+	@include clearfix;
 	border-bottom: 1px solid $nacac_border-lightgrey;
 	padding-bottom: $content-padding;
 	&:last-child{
