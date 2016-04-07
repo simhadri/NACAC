@@ -56,25 +56,6 @@
 	}
 }
 
-@include break(max, $screen-sm-max) {
-	.color-block--half {
-		width: 100%;
-		float: none;
-	}
-	.color-block {
-		color: $white;
-		.color-block__image {
-			width: 100%;
-			position: absolute;
-			@include zone-index(negative, 1);
-		}
-	}
-}
-
-@include break(min, $screen-md-min) {}
-
-@include break(min, $screen-lg-min) {}
-
 // Card-block
 .card-block {
 	background-color: $nacac_grey;
@@ -186,7 +167,34 @@
 	}
 }
 
-
+.number-block{
+	text-align: center;
+	.number-block__numerals {
+		color: $nacac_orange;
+		font-size: 7rem;
+		margin:3rem;
+		font-family: $condensed;
+		position: relative;
+		&:after{
+			content: "";
+			width: 12rem;
+			height: 12rem;
+			border: 2px dotted $lighter-orange;
+			position: absolute;
+			margin: 0 auto;
+			display: block;
+			border-radius: 50%;
+			top: 50%;
+			left: 50%;
+			margin-left: -6rem;
+			margin-top: -6rem;
+		}
+	}
+	.number-block-block__text p{
+		font-size: 2.4rem;
+		line-height: 2.8rem;
+	}
+}
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
@@ -196,7 +204,20 @@
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 */
 
-@include break(max, $screen-sm-max) {}
+@include break(max, $screen-sm-max) {
+	.color-block--half {
+		width: 100%;
+		float: none;
+	}
+	.color-block {
+		color: $white;
+		.color-block__image {
+			width: 100%;
+			position: absolute;
+			@include zone-index(negative, 1);
+		}
+	}
+}
 
 
 /*

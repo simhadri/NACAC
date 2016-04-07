@@ -16,7 +16,8 @@
       "dest": "javascripts",
       "extractSharedJs": true,
       "entries": {
-        "app": ["./app.js"]
+        "app": ["./app.js"],
+        "numberCount": ["./numberCount.js"]
       },
       "extensions": ["js"]
     },
