@@ -44,7 +44,7 @@ import HeadStyle from 'modules/headStyle.js';
 					if (data[i].type !== null && data[i].type === 'link') {
 						selected.next().append(
 							'<li>' +
-							'<h4><a href="' + data[i].content + '">' + data[i].name + '</a></h4>' +
+							'<a href="' + data[i].content + '">' + data[i].name + '</a>' +
 							'</li>'
 						);
 					}
@@ -57,7 +57,7 @@ import HeadStyle from 'modules/headStyle.js';
 						);
 						for (let n = 0; n < data[i].content.length; n++) {
 							$('#interior__links_' + [i]).append(
-								'<a href=' + data[i].content[n].url + '>' + data[i].content[n].text + '</a>'
+								'<li><a href=' + data[i].content[n].url + '>' + data[i].content[n].text + '</a></li>'
 							);
 						}
 
@@ -161,12 +161,14 @@ import HeadStyle from 'modules/headStyle.js';
 			navToTopOffset = $('.primary-nav__interior').offset().top - bodyTop;
 		// If past than util nav and animation fired
 		if (bodyTop >= utilityHeight && primaryNav.hasClass('primary-nav--up')) {
-			primaryNav.removeAttr('style').addClass('primary-nav--up primary-nav--sticky');
+			headStyle.removeRules();
+			primaryNav.addClass('primary-nav--up primary-nav--sticky');
 			$('main').css({ 'padding-top': '7rem' })
 		}
 		// If past than util nav and animation NOT fired
 		if (bodyTop >= browserViewport - utilityHeight && !primaryNav.hasClass('primary-nav--up')) {
-			primaryNav.removeAttr('style').addClass('primary-nav--up primary-nav--sticky no-transitions');
+			headStyle.removeRules();
+			primaryNav.addClass('primary-nav--up primary-nav--sticky no-transitions');
 			$('main').css({ 'padding-top': '7rem' })
 		}
 		//If NOT past util nav, unstick
@@ -211,19 +213,10 @@ import HeadStyle from 'modules/headStyle.js';
 		event.preventDefault();
 		var selected = $(this);
 		if ($(window).scrollTop() > 0 && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')) {
-			console.log('doit!')
-			
 			var place = $(window).scrollTop() + 50 + 'px';
-			primaryNav.css({
-				'transform': 'translateY('+place+')',
-				'transition': 'all 300ms ease-in-out'
-			});
+			headStyle.addRules({'.primary-nav':'transform: translateY('+place+');transition: all 300ms ease-in-out'});
 			setTimeout(function() {
-				primaryNav.css({
-					'position': 'fixed',
-					'transform': 'translateY(-2rem)',
-					'transition': 'none'
-				});
+				headStyle.addRules({'.primary-nav':'position: fixed;transform: translateY(-2rem);transition: none'});
 				$('main').css({ 'padding-top': '7rem' })
 			}, 360)
 			openNavInterior(selected);
