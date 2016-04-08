@@ -88,12 +88,12 @@ webpackJsonp([0,2],[
 					selected.next().empty();
 					for (var i = 0; i < data.length; i++) {
 						if (data[i].type !== null && data[i].type === 'link') {
-							selected.next().append('<li>' + '<h4><a href="' + data[i].content + '">' + data[i].name + '</a></h4>' + '</li>');
+							selected.next().append('<li>' + '<a href="' + data[i].content + '">' + data[i].name + '</a>' + '</li>');
 						}
 						if (data[i].type !== null && data[i].type === 'link_set') {
 							selected.next().append('<li>' + '<h4>' + data[i].name + '</h4>' + '<ul id="interior__links_' + i + '" class="interior__links"></ul>' + '</li>');
 							for (var n = 0; n < data[i].content.length; n++) {
-								$('#interior__links_' + [i]).append('<a href=' + data[i].content[n].url + '>' + data[i].content[n].text + '</a>');
+								$('#interior__links_' + [i]).append('<li><a href=' + data[i].content[n].url + '>' + data[i].content[n].text + '</a></li>');
 							}
 						}
 						if (data[i].type !== null && data[i].type === 'feature') {
@@ -187,11 +187,13 @@ webpackJsonp([0,2],[
 			    navToTopOffset = $('.primary-nav__interior').offset().top - bodyTop;
 			// If past than util nav and animation fired
 			if (bodyTop >= utilityHeight && primaryNav.hasClass('primary-nav--up')) {
+				headStyle.removeRules();
 				primaryNav.addClass('primary-nav--up primary-nav--sticky');
 				$('main').css({ 'padding-top': '7rem' });
 			}
 			// If past than util nav and animation NOT fired
 			if (bodyTop >= browserViewport - utilityHeight && !primaryNav.hasClass('primary-nav--up')) {
+				headStyle.removeRules();
 				primaryNav.addClass('primary-nav--up primary-nav--sticky no-transitions');
 				$('main').css({ 'padding-top': '7rem' });
 			}
@@ -235,7 +237,15 @@ webpackJsonp([0,2],[
 		navItemLinks.on("click", function (event) {
 			event.preventDefault();
 			var selected = $(this);
-			if (selected.parent().hasClass('selected') === true) {
+			if ($(window).scrollTop() > 0 && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')) {
+				var place = $(window).scrollTop() + 50 + 'px';
+				headStyle.addRules({ '.primary-nav': 'transform: translateY(' + place + ');transition: all 300ms ease-in-out' });
+				setTimeout(function () {
+					headStyle.addRules({ '.primary-nav': 'position: fixed;transform: translateY(-2rem);transition: none' });
+					$('main').css({ 'padding-top': '7rem' });
+				}, 360);
+				openNavInterior(selected);
+			} else if (selected.parent().hasClass('selected') === true) {
 				closeNavInterior();
 			} else {
 				$('main').css({ 'padding-top': '7rem' });
@@ -243,7 +253,7 @@ webpackJsonp([0,2],[
 				openNavInterior(selected);
 			}
 		});
-	
+		navScrollDependencies;
 		body.click(clickAnywhereToCloseEverything);
 	})();
 
@@ -266,7 +276,7 @@ webpackJsonp([0,2],[
 				}
 			}
 			style.type = 'text/css';
-			style.setAttribute('id', 'customHeadStyle');
+			style.setAttribute('class', 'customHeadStyle');
 			if (style.styleSheet) {
 				style.styleSheet.cssText = css;
 			} else {
@@ -274,8 +284,12 @@ webpackJsonp([0,2],[
 			}
 			head.appendChild(style);
 		}, this.removeRules = function () {
-			var customHeadStyle = document.getElementById('customHeadStyle');
-			customHeadStyle.remove();
+			if (document.getElementsByClassName('customHeadStyle')) {
+				var customHeadStyle = document.getElementsByClassName('customHeadStyle');
+				for (var i = 0; i < customHeadStyle.length; i++) {
+					customHeadStyle[i].outerHTML = '';
+				}
+			}
 		};
 	};
 	module.exports = headStyle;

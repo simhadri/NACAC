@@ -89,7 +89,8 @@
 .primary-nav {
 	height: 7rem;
 	transform: translateY(calc(100vh - 7rem));
-	li {
+	.primary-nav__item,
+	.primary-nav__logo {
 		width: 10%;
 		display: table-cell;
 		vertical-align: middle;
@@ -121,10 +122,16 @@
 		}
 	}
 	.primary-nav__list {
+		>li {
+			width: 10%;
+			display: table-cell;
+			vertical-align: middle;
+		}
 		list-style: none;
 		position: relative;
 		height: 7rem;
-		box-shadow: 780px 0 0 0px $white_translucent, -780px 0 0 0px $white_translucent;
+		box-shadow: 780px 0 0 0px $white_translucent,
+		-780px 0 0 0px $white_translucent;
 		.primary-nav__interior {
 			h3 {
 				@include sans-uppercase-normal;
@@ -149,35 +156,35 @@
 			}
 		}
 		.interior__links a {
-			display: block;
-			margin: 1rem 0;
+			display: inline-block;
 		}
 	}
 }
 
-.aside-navigation{
-	h2{
+.aside-navigation {
+	h2 {
 		@include sans-uppercase-normal;
 		padding: 1rem;
 		color: $nacac_light-blue;
 		font-size: 2rem;
 	}
-	.aside-navigation__button{
-		display:block;
+	.aside-navigation__button {
+		display: block;
 		padding: 1rem;
 		color: $text_slate;
 		@include sans-light;
-		cursor:pointer;
-		&:hover{
+		cursor: pointer;
+		&:hover {
 			color: $nacac_blue;
 		}
-		&.aside-navigation__button--active{
+		&.aside-navigation__button--active {
 			background-color: $nacac_light-blue;
-			color:$white;
+			color: $white;
 			border-radius: 0.4rem;
 		}
 	}
 }
+
 
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
@@ -187,6 +194,7 @@
 ██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 */
+
 @include break(max, $screen-sm-max) {
 	.primary-nav__trigger {
 		display: inline-block;
@@ -222,14 +230,16 @@
 			padding-left: 0;
 			padding-right: 0;
 		}
-		li {
-			width: 100%;
-			display: block;
-		}
 		.primary-nav__logo {
 			display: none;
 		}
 		ul.primary-nav__list {
+			>li,
+			a {
+				width: 100%;
+				display: block;
+				text-align: left;
+			}
 			box-shadow: none;
 			height: calc(100vh - 7rem);
 			width: 100vw;
@@ -312,17 +322,9 @@
 		width: 100%;
 		overflow: visible;
 		@include zone-index(base, 0);
-		//transform: translateY(55rem);
-		// LETS GET WEIRD
 		&.primary-nav--up {
-			// bottom:55rem;
 			transform: translateY(5rem);
 			transition: 400ms all ease-in-out;
-			//top: 5rem;
-		}
-		&.primary-nav--down {
-			// bottom:55rem;
-			// transform: translateY(0);
 		}
 		&.primary-nav--sticky {
 			position: fixed;
@@ -351,10 +353,6 @@
 			width: auto;
 			background: transparent;
 			overflow: visible;
-			a {
-				border-bottom: none;
-				transition: .33s color 0.33s;
-			}
 		}
 		>li {
 			margin: 0;
@@ -362,46 +360,18 @@
 			padding: 0 .5em;
 			text-align: center;
 			display: inline-block;
-			&.mobile-utility-bar-buttons {
-				display: none;
-			}
-			>a {
-				/* main navigation buttons style */
-				position: relative;
-				display: inline-block;
-				padding: 1em;
-				overflow: visible;
-				border-bottom: none;
-				color: $white;
-				transition: color 0.3s, box-shadow 0.3s;
-				&:hover {
-					color: orange;
-				}
-				&.has-children {
-					padding-right: 2.8rem;
-					&:after {
-						position: absolute;
-						right: 0.5rem;
-						font-family: Ionicons;
-						content: "\f123";
-					}
-				}
-			}
 		}
 		li.selected {
-			border-bottom: 0.8rem solid $nacac_blue;
-			padding-bottom: 0;
+			background-color: $white;
+			color: $nacac_light-blue;
 			@include prefix(transition, 300ms, webkit moz ms o);
-			&.has-children:after {
-				content: "\f12a";
-			}
 		}
 		.primary-nav__interior {
-			box-shadow: 780px 0 0 0px $white_translucent, -780px 0 0 0px $white_translucent;
+			box-shadow: 780px 0 0 0px $white, -780px 0 0 0px $white;
 			position: absolute;
 			width: 100%;
 			left: 0;
-			background: $white_translucent;
+			background: $white;
 			padding: 2em 0;
 			text-align: left;
 			color: #333;
@@ -420,8 +390,26 @@
 				margin: 0;
 				padding: 0 2em;
 				min-height: 4rem;
-				h4 {
-					margin: 0;
+				a {
+					color: $text_slate;
+					position: relative;
+					&:hover {
+						color: $nacac_blue;
+						&:after {
+							width: 100%;
+						}
+					}
+					&:after {
+						content: '';
+						display: block;
+						position: absolute;
+						bottom: 3px;
+						width: 0%;
+						left: 0px;
+						height: 1px;
+						transition: 0.35s ease;
+						background: $nacac_blue;
+					}
 				}
 				img {
 					width: 100%;

@@ -11,7 +11,7 @@ var headStyle = function() {
 			}
 		}
 		style.type = 'text/css';
-		style.setAttribute('id', 'customHeadStyle')
+		style.setAttribute('class', 'customHeadStyle')
 		if (style.styleSheet) {
 			style.styleSheet.cssText = css;
 		} else {
@@ -20,8 +20,13 @@ var headStyle = function() {
 		head.appendChild(style);
 	},
 	this.removeRules = function() {
-		var customHeadStyle = document.getElementById('customHeadStyle');
-		customHeadStyle.remove();
+		if(document.getElementsByClassName('customHeadStyle')){
+			var customHeadStyle = document.getElementsByClassName('customHeadStyle');
+			for (var i = 0; i < customHeadStyle.length; i++) {
+				customHeadStyle[i].outerHTML = '';
+			}
+		}
+		
 	}
 }
 module.exports = headStyle;
