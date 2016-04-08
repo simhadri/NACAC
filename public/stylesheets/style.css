@@ -1485,10 +1485,10 @@ a.btn {
   .member-block > img {
     border-radius: 50%;
     max-width: 16rem;
-    margin: 1rem auto;
+    margin: 4rem auto;
     display: block; }
   .member-block .member-block__profile--icon {
-    border: 1px solid #474280; }
+    border: 0.3rem solid #474280; }
   .member-block .member-block__header {
     border-bottom: 1px solid #D6D6D6; }
     .member-block .member-block__header span {
@@ -1502,9 +1502,9 @@ a.btn {
   .member-block .member-block__name {
     margin: 1rem 0; }
   .member-block .member-block__content {
-    padding: 0 2rem; }
+    padding: 0 4rem; }
   .member-block .member-block__footer {
-    padding: 2rem; }
+    padding: 4rem; }
 
 .number-block {
   text-align: center; }
@@ -1740,35 +1740,42 @@ main {
 .background--orange {
   background-color: #f28800;
   color: #FFFFFF; }
-  .background--orange:hover {
+  .background--orange a:hover {
     color: #FFFFFF; }
+
+.background--light-blue {
+  background-color: #6AAEE6;
+  color: #FFFFFF; }
 
 .background--blue {
   background-color: #2480C4;
   color: #FFFFFF; }
-  .background--blue:hover {
+  .background--blue a:hover {
     color: #FFFFFF; }
 
 .background--burgundy {
   background-color: #A9383A;
   color: #FFFFFF; }
-  .background--burgundy:hover {
+  .background--burgundy a:hover {
     color: #FFFFFF; }
 
 .background--purple {
   background-color: #474280;
   color: #FFFFFF; }
-  .background--purple:hover {
+  .background--purple a:hover {
     color: #FFFFFF; }
 
 .background--green {
   background-color: #0D7352;
   color: #FFFFFF; }
-  .background--green:hover {
+  .background--green a:hover {
     color: #FFFFFF; }
 
-.background--grey {
+.background--light-grey {
   background-color: #F2F2F2; }
+
+.background--grey {
+  background-color: #c2cdd6; }
 
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
@@ -2080,10 +2087,15 @@ nav.tab__navigation {
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 */
 @media (max-width: 991px) {
-  nav.tabs__navigation {
+  nav.tab__navigation {
     display: block;
     width: 100%;
-    overflow-x: auto; } }
+    overflow-x: auto; }
+  .tab__stage .tab__content {
+    padding: 2rem; }
+    .tab__stage .tab__content aside {
+      position: static;
+      margin: 1rem auto; } }
 
 /*
 ██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 

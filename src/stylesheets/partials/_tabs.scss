@@ -75,11 +75,20 @@ nav.tab__navigation {
 */
 
 @include break(max, $screen-sm-max) {
-	nav.tabs__navigation {
+	nav.tab__navigation {
 		display:block;
 		width: 100%;
 		overflow-x: auto;
-}
+	}
+	.tab__stage{
+		 .tab__content{
+		 	padding: 2rem;
+		 	aside {
+		 		position: static;
+		 		margin: 1rem auto;
+		 	}
+		 } 
+	}
 }
 
 

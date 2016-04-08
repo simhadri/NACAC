@@ -9,7 +9,14 @@
 
 {% include './_shared/hero.html'%}
 
-{% include './_shared/color-block-row.html'%}
+<div class="content-block__row">
+	{% set backgroundColor = 'background--grey' %}
+	{% include './_components/color-block-half.html'%}
+	
+	{% set backgroundColor = 'background--light-blue' %}
+	{% include './_components/color-block-half.html'%}
+
+</div>
 
 {% include './_shared/card-block-row.html'%}
 
@@ -58,13 +65,13 @@
 			<h2>Member Stories</h2>
 		</div>
 		<div class="article__row row">
-			<div class="col-sm-4 testimonial-block">
+			<div class="col-md-4 testimonial-block">
 				{% include './_components/testimonial-block.html' %}
 			</div>
-			<div class="col-sm-4 testimonial-block">
+			<div class="col-md-4 testimonial-block">
 				{% include './_components/testimonial-block.html' %}
 			</div>
-			<div class="col-sm-4 testimonial-block">
+			<div class="col-md-4 testimonial-block">
 				{% include './_components/testimonial-block.html' %}
 			</div>
 		</div>

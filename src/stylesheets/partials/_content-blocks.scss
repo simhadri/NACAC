@@ -137,12 +137,12 @@
 	> img {
 		border-radius: 50%;
 		max-width: 16rem;
-		margin: 1rem auto;
+		margin: 4rem auto;
 		display: block;
 	}
 	.member-block__profile--image {}
 	.member-block__profile--icon {
-		border: 1px solid $nacac_purple;
+		border: 0.3rem solid $nacac_purple;
 	}
 	.member-block__header {
 		border-bottom: 1px solid $nacac_border-lightgrey;
@@ -160,10 +160,10 @@
 		margin: 1rem 0;
 	}
 	.member-block__content {
-		padding:0 2rem;
+		padding:0 4rem;
 	}
 	.member-block__footer{
-		padding:2rem;
+		padding:4rem;
 	}
 }
 

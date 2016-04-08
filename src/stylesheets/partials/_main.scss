@@ -103,15 +103,20 @@ main {
 .background--orange {
 	background-color: $nacac-orange;
 	color: $white;
-	&:hover {
+	a:hover {
 		color: $white;
 	}
+}
+
+.background--light-blue {
+	background-color: $nacac_light-blue;
+	color: $white;
 }
 
 .background--blue {
 	background-color: $nacac_blue;
 	color: $white;
-	&:hover {
+	a:hover {
 		color: $white;
 	}
 }
@@ -119,7 +124,7 @@ main {
 .background--burgundy {
 	background-color: $nacac_burgundy;
 	color: $white;
-	&:hover {
+	a:hover {
 		color: $white;
 	}
 }
@@ -127,7 +132,7 @@ main {
 .background--purple {
 	background-color: $nacac_purple;
 	color: $white;
-	&:hover {
+	a:hover {
 		color: $white;
 	}
 }
@@ -135,13 +140,17 @@ main {
 .background--green {
 	background-color: $nacac_green;
 	color: $white;
-	&:hover {
+	a:hover {
 		color: $white;
 	}
 }
 
-.background--grey {
+.background--light-grey {
 	background-color: $nacac_bg-light-grey;
+}
+
+.background--grey {
+	background-color: $nacac_light-grey;
 }
 
 
