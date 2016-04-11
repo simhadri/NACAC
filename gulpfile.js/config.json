@@ -17,6 +17,7 @@
       "extractSharedJs": true,
       "entries": {
         "app": ["./app.js"],
+        "interior": ["./interior.js"],
         "numberCount": ["./numberCount.js"]
       },
       "extensions": ["js"]

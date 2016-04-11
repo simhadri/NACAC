@@ -14,13 +14,13 @@
 	background: rgba(0, 0, 0, 0.75);
 	opacity: 0;
 	pointer-events: none;
-	@include prefix(transition, opacity 0.5s, webkit);
+	transition: $transition--opacity;
 	@include prefix(transition-timing-function, cubic-bezier(0.7, 0, 0.3, 1), webkit);
 }
 
 @include break(min, $screen-sm-min) {
 	.no-transitions {
-		@include prefix(transition, none !important, webkit moz ms o);
+		transition: none !important;
 	}
 }
 
@@ -35,7 +35,7 @@ body.body--freeze {
 // Main
 main {
 	visibility: hidden;
-	&.main__interior {
+	&.hero--none{
 		padding-top: 7rem;
 		margin-top: 5rem;
 	}

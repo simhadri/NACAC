@@ -1,16 +1,24 @@
  {% extends '_layouts/main-application.html' %}
  {% block content %}
-<main class="animated" id="main" class="main__interior membership__template">
+
+<main class="animated" id="main" class="membership__template">
+	
 	{% include './_shared/utility.html'%}
+
+	{% set navType = "primary-nav--inanimate" %}
 	{% include './_shared/navigation.html'%}
+
+	{% include './_components/breadcrumb.html' %}
+
 	{% include './_shared/interior-hero.html'%}
+	
 	<article class="article__row content__row article--white">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-lg-3 col-md-4">
 					{% include './_shared/aside-navigation.html'%}
 				</div>
-				<div class="col-sm-9">
+				<div class="col-lg-9 col-md-8">
 					<section class="card-block__row section__row">
 						<header class="section__header">
 							<h2>Membership Benefits</h2>
@@ -91,5 +99,6 @@
 </main>
 {% endblock %}
 {% block javascript %}
+<script src="/javascripts/interior.js"></script>
 <script src="/javascripts/numberCount.js"></script>
 {% endblock %}

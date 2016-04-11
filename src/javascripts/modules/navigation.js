@@ -1,5 +1,6 @@
 // MODULES
 import HeadStyle from 'modules/headStyle.js';
+import Throttled from 'modules/throttled.js';
 (function() {
 	'use strict';
 	var headStyle = new HeadStyle(),
@@ -116,45 +117,7 @@ import HeadStyle from 'modules/headStyle.js';
 		}
 	}
 
-	// Shamelessly Stolen from Underscore
-	// Throttles the function so its not 
-	// fired 1000x on scroll
-	var throttle = function(func, wait, options) {
-		var now = Date.now || function() {
-			return new Date().getTime();
-		};
-		var context, args, result;
-		var timeout = null;
-		var previous = 0;
-		if (!options) options = {};
-		var later = function() {
-			previous = options.leading === false ? 0 : now();
-			timeout = null;
-			result = func.apply(context, args);
-			if (!timeout) context = args = null;
-		};
-		return function() {
-			if (!previous && options.leading === false) previous = now();
-			var remaining = wait - (now() - previous);
-			context = this;
-			args = arguments;
-			if (remaining <= 0 || remaining > wait) {
-				if (timeout) {
-					clearTimeout(timeout);
-					timeout = null;
-				}
-				previous = now();
-				result = func.apply(context, args);
-				if (!timeout) context = args = null;
-			} else if (!timeout && options.trailing !== false) {
-				timeout = setTimeout(later, remaining);
-			}
-			return result;
-		};
-	};
-
 	function navScrollDependencies(event) {
-		var gate = false;
 		var utilityHeight = $('.utility-nav').height(),
 			heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height(),
 			bodyTop = $(window).scrollTop(),
@@ -178,9 +141,6 @@ import HeadStyle from 'modules/headStyle.js';
 			$('.utility-nav').removeClass('utility-nav--scrolled');
 		}
 	}
-	var throttled = throttle(navScrollDependencies, 100);
-	$(window).scroll(throttled);
-	//window.setTimeout(navScrollDependencies, 1000);
 
 	function openSearchFilterNav() {
 		body.addClass('body--freeze');
@@ -229,6 +189,7 @@ import HeadStyle from 'modules/headStyle.js';
 		}
 	});
 	navScrollDependencies;
+	$(window).scroll(Throttled(navScrollDependencies, 100));
 	body.click(clickAnywhereToCloseEverything);
 
 })();

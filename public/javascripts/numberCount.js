@@ -1,20 +1,14 @@
-webpackJsonp([1,2],[
-/* 0 */
+webpackJsonp([2],{
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(9);
+	module.exports = __webpack_require__(11);
 
 
 /***/ },
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */
+
+/***/ 11:
 /***/ function(module, exports, __webpack_require__) {
 
 	// *********************
@@ -24,7 +18,7 @@ webpackJsonp([1,2],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _vendorCountUpJs = __webpack_require__(10);
+	var _vendorCountUpJs = __webpack_require__(12);
 	
 	var _vendorCountUpJs2 = _interopRequireDefault(_vendorCountUpJs);
 	
@@ -32,7 +26,7 @@ webpackJsonp([1,2],[
 	//    Module scirpts
 	// *********************
 	
-	var _modulesThrottledJs = __webpack_require__(11);
+	var _modulesThrottledJs = __webpack_require__(5);
 	
 	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
 	
@@ -47,7 +41,8 @@ webpackJsonp([1,2],[
 	$(window).scroll((0, _modulesThrottledJs2['default'])(countCard, 100));
 
 /***/ },
-/* 10 */
+
+/***/ 12:
 /***/ function(module, exports) {
 
 	/*
@@ -251,47 +246,7 @@ webpackJsonp([1,2],[
 	// with optional callback:
 	// numAnim.start(someMethodToCallOnComplete);
 
-/***/ },
-/* 11 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	var Throttled = function Throttled(func, wait, options) {
-		var now = Date.now || function () {
-			return new Date().getTime();
-		};
-		var context, args, result;
-		var timeout = null;
-		var previous = 0;
-		if (!options) options = {};
-		var later = function later() {
-			previous = options.leading === false ? 0 : now();
-			timeout = null;
-			result = func.apply(context, args);
-			if (!timeout) context = args = null;
-		};
-		return function () {
-			if (!previous && options.leading === false) previous = now();
-			var remaining = wait - (now() - previous);
-			context = this;
-			args = arguments;
-			if (remaining <= 0 || remaining > wait) {
-				if (timeout) {
-					clearTimeout(timeout);
-					timeout = null;
-				}
-				previous = now();
-				result = func.apply(context, args);
-				if (!timeout) context = args = null;
-			} else if (!timeout && options.trailing !== false) {
-				timeout = setTimeout(later, remaining);
-			}
-			return result;
-		};
-	};
-	module.exports = Throttled;
-
 /***/ }
-]);
+
+});
 //# sourceMappingURL=numberCount.js.map

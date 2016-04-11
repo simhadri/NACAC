@@ -6,8 +6,11 @@
 	position: fixed;
 	top: 0;
 	@include zone-index(overlay, 1);
-	@include prefix(transition, 400ms all ease-in-out, webkit);
+	transition: $transition--all;
 	&.utility-nav--scrolled {
+		background-color: $nacac_light-blue;
+	}
+	.hero--none & {
 		background-color: $nacac_light-blue;
 	}
 	a {
