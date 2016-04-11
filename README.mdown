@@ -5,10 +5,11 @@
 Welcome to the NACAC Repository! There are a total of 3 sites; Main, Conferences and Fairs
 
 ### Assets
-[Wire Fames](http://a12upd.axshare.com/#p=nacacnet_org_home__desktop_)
-[Site Map](http://yj8lu1.axshare.com/#p=nacac_proposed_sitemap)
-[Prototypes](https://projects.invisionapp.com/share/JS68XQ798#/screens)
-[Style Tiles](https://projects.invisionapp.com/boards/7ZU742J5QEH9/)
+
+- [Wire Fames](http://a12upd.axshare.com/#p=nacacnet_org_home__desktop_)
+- [Site Map](http://yj8lu1.axshare.com/#p=nacac_proposed_sitemap)
+- [Prototypes](https://projects.invisionapp.com/share/JS68XQ798#/screens)
+- [Style Tiles](https://projects.invisionapp.com/boards/7ZU742J5QEH9/)
 
 ### Features
 - **CSS:** [Sass](http://sass-lang.com/) (indented, scss, or both)
