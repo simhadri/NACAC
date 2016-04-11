@@ -161,35 +161,6 @@
 	}
 }
 
-.aside-navigation {
-	h2 {
-		@include sans-uppercase-normal;
-		padding: 1rem;
-		color: $nacac_light-blue;
-		font-size: 2rem;
-	}
-	.aside-navigation__button {
-		display: block;
-		padding: 1rem;
-		color: $text_slate;
-		@include sans-light;
-		cursor: pointer;
-		&:hover {
-			color: $nacac_blue;
-		}
-		&.aside-navigation__button--active {
-			background-color: $nacac_light-blue;
-			color: $white;
-			border-radius: 0.4rem;
-		}
-	}
-	&.aside-navigation--sticky{
-		position: fixed;
-		top: 12rem;
-	}
-}
-
-
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝

@@ -531,32 +531,6 @@ a.btn {
     .primary-nav .primary-nav__item .interior__links a {
       display: inline-block; }
 
-.aside-navigation h2 {
-  font-family: "Istok Web", sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding: 1rem;
-  color: #6AAEE6;
-  font-size: 2rem; }
-
-.aside-navigation .aside-navigation__button {
-  display: block;
-  padding: 1rem;
-  color: #374049;
-  font-family: "Istok Web", sans-serif;
-  font-weight: 400;
-  cursor: pointer; }
-  .aside-navigation .aside-navigation__button:hover {
-    color: #2480C4; }
-  .aside-navigation .aside-navigation__button.aside-navigation__button--active {
-    background-color: #6AAEE6;
-    color: #FFFFFF;
-    border-radius: 0.4rem; }
-
-.aside-navigation.aside-navigation--sticky {
-  position: fixed;
-  top: 12rem; }
-
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
@@ -790,6 +764,52 @@ a.btn {
     left: 0;
     overflow: visible;
     z-index: 21; } }
+
+.aside-navigation {
+  width: 100%; }
+  .aside-navigation h2 {
+    font-family: "Istok Web", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 1rem;
+    color: #6AAEE6;
+    font-size: 2rem; }
+  .aside-navigation .aside-navigation__button {
+    display: block;
+    padding: 1rem;
+    color: #374049;
+    font-family: "Istok Web", sans-serif;
+    font-weight: 400;
+    cursor: pointer; }
+    .aside-navigation .aside-navigation__button:hover {
+      color: #2480C4; }
+    .aside-navigation .aside-navigation__button.aside-navigation__button--active {
+      background-color: #6AAEE6;
+      color: #FFFFFF;
+      border-radius: 0.4rem; }
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+/*
+██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
+██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
+██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
+														  
+*/
+@media (min-width: 992px) {
+  .aside-navigation.aside-navigation--sticky {
+    position: fixed;
+    top: 12rem;
+    width: inherit; } }
 
 .search-results__header h1 {
   text-transform: none; }

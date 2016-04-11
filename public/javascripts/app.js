@@ -20,15 +20,15 @@ webpackJsonp([0],[
 	// *********************
 	'use strict';
 	
-	__webpack_require__(8);
-	
 	__webpack_require__(2);
 	
-	__webpack_require__(4);
+	__webpack_require__(3);
 	
 	__webpack_require__(6);
 	
-	__webpack_require__(12);
+	__webpack_require__(8);
+	
+	__webpack_require__(10);
 	
 	// SUPER LAME FADE IN
 	$(document).ready(function () {
@@ -37,6 +37,31 @@ webpackJsonp([0],[
 
 /***/ },
 /* 2 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	$(function () {
+		var bLazy = new Blazy({
+			//breakpoints use max-width
+			//don't always trump other loading factors
+			breakpoints: [{ width: 640, src: 'data-src-sm' }
+			//{width: 767, src: 'data-src-sm'}
+			],
+			success: function success(element) {
+				setTimeout(function () {
+					// We want to remove the loader gif now.
+					// First we find the parent container
+					// then we remove the "loading" class which holds the loader image
+					var parent = element.parentNode;
+					parent.className = parent.className.replace(/\bloading\b/, '');
+				}, 2000);
+			}
+		});
+	});
+
+/***/ },
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// MODULES
@@ -44,11 +69,11 @@ webpackJsonp([0],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _modulesHeadStyleJs = __webpack_require__(3);
+	var _modulesHeadStyleJs = __webpack_require__(4);
 	
 	var _modulesHeadStyleJs2 = _interopRequireDefault(_modulesHeadStyleJs);
 	
-	var _modulesThrottledJs = __webpack_require__(11);
+	var _modulesThrottledJs = __webpack_require__(5);
 	
 	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
 	
@@ -224,7 +249,7 @@ webpackJsonp([0],[
 	})();
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -261,14 +286,15 @@ webpackJsonp([0],[
 	module.exports = headStyle;
 
 /***/ },
-/* 4 */
+/* 5 */,
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _modulesScreenJs = __webpack_require__(5);
+	var _modulesScreenJs = __webpack_require__(7);
 	
 	var _modulesScreenJs2 = _interopRequireDefault(_modulesScreenJs);
 	
@@ -325,7 +351,7 @@ webpackJsonp([0],[
 	})();
 
 /***/ },
-/* 5 */
+/* 7 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -346,14 +372,14 @@ webpackJsonp([0],[
 	module.exports = Screen;
 
 /***/ },
-/* 6 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _modulesGetIdChangeClass = __webpack_require__(7);
+	var _modulesGetIdChangeClass = __webpack_require__(9);
 	
 	var _modulesGetIdChangeClass2 = _interopRequireDefault(_modulesGetIdChangeClass);
 	
@@ -367,7 +393,7 @@ webpackJsonp([0],[
 	});
 
 /***/ },
-/* 7 */
+/* 9 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -388,35 +414,7 @@ webpackJsonp([0],[
 	module.exports = GetIdChangeClass;
 
 /***/ },
-/* 8 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	$(function () {
-		var bLazy = new Blazy({
-			//breakpoints use max-width
-			//don't always trump other loading factors
-			breakpoints: [{ width: 640, src: 'data-src-sm' }
-			//{width: 767, src: 'data-src-sm'}
-			],
-			success: function success(element) {
-				setTimeout(function () {
-					// We want to remove the loader gif now.
-					// First we find the parent container
-					// then we remove the "loading" class which holds the loader image
-					var parent = element.parentNode;
-					parent.className = parent.className.replace(/\bloading\b/, '');
-				}, 2000);
-			}
-		});
-	});
-
-/***/ },
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// MODULES
@@ -424,21 +422,14 @@ webpackJsonp([0],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _modulesThrottledJs = __webpack_require__(11);
+	var _modulesThrottledJs = __webpack_require__(5);
 	
 	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
 	
 	(function () {
-		//$(window).scroll(Throttled(console.log('fire'), 100));
 		var asideNavigation = function asideNavigation() {
-			// var asideNavigation = ;
 			var bottomOfNavigation = $(window).scrollTop() + 120;
-			console.log(bottomOfNavigation);
 			var asideNavigationLocation = $('.aside-navigation').offset().top;
-			console.log(asideNavigationLocation);
-			// if ($('.aside-navigation').hasClass('aside-navigation--sticky')) {
-			// 	asideNavigationLocation = 0;
-			// }
 			if (bottomOfNavigation > 610) {
 				console.log('stick');
 				$('.aside-navigation').addClass('aside-navigation--sticky');
@@ -446,8 +437,12 @@ webpackJsonp([0],[
 			if (bottomOfNavigation < 610) {
 				$('.aside-navigation').removeClass('aside-navigation--sticky');
 			}
+			// THIS IS DUMB!
+			var asideNavigationContainer = $(".aside-navigation").parent().parent();
+			var asideNavigationHeight = $(".aside-navigation").height();
+			console.log(asideNavigationContainer.height() + " and height is " + asideNavigationHeight);
 		};
-		$(window).scroll((0, _modulesThrottledJs2['default'])(asideNavigation, 200));
+		$(window).scroll((0, _modulesThrottledJs2['default'])(asideNavigation, 100));
 	})();
 
 /***/ }
