@@ -156,8 +156,11 @@ Your Sass gets run through Autoprefixer, so don't prefix! The examples use the i
 
 The BEM approach ensures that everyone who participates in the development of a website works with a single codebase and speaks the same language. Using proper naming will prepare you for the changes in design of the website. This project uses the following naming conventions:
 
-```block-name__element-name--modifier```
-```primary-nav__logo--sticky```
+
+``` css
+block-name__element-name--modifier
+primary-nav__logo--sticky
+```
 
 ### Block
 
