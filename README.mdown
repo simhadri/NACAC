@@ -10,44 +10,6 @@ Welcome to the NACAC Repository! There are a total of 3 sites; Main, Conferences
 [Prototypes](https://projects.invisionapp.com/share/JS68XQ798#/screens)
 [Style Tiles](https://projects.invisionapp.com/boards/7ZU742J5QEH9/)
 
-## Process and Conventions
-
-### HTML 
-
-It cause quite a headache having 3 sites in one repo, and all 3 sites are very similar and share components, so here we are.
-
-High level pages are in ```_layouts/```; this includes:
-- Main Site ```/main-application.html```
-- College Fair Site ```/fair-application.html```
-- National Conference Site ```/conference-application.html```
-
-Next; each Page within layout such as ```/main/index.html```, ```/main/search.html```, etc. these are in the following folders:
-- Main Site ```/main```
-- College Fair Site ```/fair```
-- National Conference Site ```/conference```
-
-These files have basic includes of shared markup, static markup and components. Within each layout are 'shared' markup, this includes:
-- Head
-- Hero
-- Navigation
-- Footer
-- Etc.
-
-Within the shared markup are components, this can include:
-- Card & Blocks
-- Search entries
-- Calendar entries
-
-> There is a blurred line between what is a component and what is shared.
-
-My logic; however flawed adheres to the following: 
-
-- Components are small; repeatable bits of HTML. They can be repeated multiple times in a page. They should not have *ANY* includes. This would include a card block or a search entry.
-- Shared includes repeated code but not more than once on a page. These are more unique at the page level, but not at the site level. For example navigation should only appear once per page, but on several pages within a site.
-- Site folders have the pages within the site such as ```conference/search.html``` or ```fair/index.html```
-- Layouts have the master pages of each site
-
-  
 ### Features
 - **CSS:** [Sass](http://sass-lang.com/) (indented, scss, or both)
   - Libsass (node-sass) for super fast compiles
@@ -77,6 +39,43 @@ My logic; however flawed adheres to the following:
   - Travis CI integration
 - **Deployment:**
   - Quickly deploy `public` folder to gh-pages (`gulp deploy` task)
+
+## Process and Conventions
+
+### HTML Templates
+
+It caused quite a headache having 3 sites in one repo, and all 3 sites are very similar and share components, so it should save more headaches down the road; anyways here we are.
+
+High level pages are in ```_layouts/```; this includes:
+- Main Site ```/main-application.html```
+- College Fair Site ```/fair-application.html```
+- National Conference Site ```/conference-application.html```
+
+Next; each Page within layout such as ```/main/index.html```, ```/main/search.html```, etc. these are in the following folders:
+- Main Site ```/main```
+- College Fair Site ```/fair```
+- National Conference Site ```/conference```
+
+These files have basic includes of ```_shared``` markup, static markup and components. These may contain components, but should only appear once per page. Within each layout are 'shared' markup, this includes:
+- Head
+- Hero
+- Navigation
+- Footer
+- Etc.
+
+Within the shared markup are components, this can include:
+- Card & Blocks
+- Search entries
+- Calendar entries
+
+> There is a blurred line between what is a component and what is shared.
+
+My logic; however flawed adheres to the following: 
+
+- Components are small; repeatable bits of HTML. They can be repeated multiple times in a page. They should not have *ANY* includes. This would include a card block or a search entry.
+- Shared includes repeated code but not more than once on a page. These are more unique at the page level, but not at the site level. For example navigation should only appear once per page, but on several pages within a site.
+- Site folders have the pages within the site such as ```conference/search.html``` or ```fair/index.html```
+- Layouts have the master pages of each site
 
 ## Basic Usage
 
@@ -130,6 +129,8 @@ gulpfile.js/tasks/webpackProduction
 ```
 Modular ES6 with [Babel](http://babeljs.io/) and [Webpack](http://webpack.github.io/)
 
+If you need to add a new task, add your ```taskName.js``` to the tasks folder, then add the task to ```tasks/default.js``` in the ```gulpSequence()``` function.
+
 Adjust the webpack config (`.gulpfile.js/config/webpack`) for the project.
 
 There are a couple of webpack options exposed in the top-level `gulpfile.js/config.json` file.
@@ -148,7 +149,7 @@ Unbundled javascript files are for files what just need to be copied over, not b
 ```
 gulpfile.js/tasks/css
 ```
-Your Sass gets run through Autoprefixer, so don't prefix! The examples use the indented `.sass` syntax, but use whichever you prefer.
+Your Sass gets run through Autoprefixer, so don't prefix! The examples use the indented `.sass` syntax, but use whichever you prefer...I still use a prefix mixin.
 
 ## BEM
 

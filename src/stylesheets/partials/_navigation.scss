@@ -1,13 +1,13 @@
 .primary-nav__screen--off {
 	visibility: hidden;
 	opacity: 0;
-	transition: visibility 0s 0.3s, opacity 0.3s linear;
+	transition: visibility 0s 0.3s, $transition--opacity;
 }
 
 .primary-nav__screen--on {
 	visibility: visible;
 	opacity: 0.8;
-	transition: opacity 0.3s linear;
+	transition: $transition--opacity;
 }
 
 .primary-nav__trigger {
@@ -178,7 +178,7 @@
 		top: 1rem;
 		right: 1rem;
 		padding: 0.8rem;
-		transition: all 0.33s;
+		transition: $transition--all;
 		color: $white;
 		border: 1px solid;
 		&:hover {
@@ -190,7 +190,7 @@
 		background: rgba(255, 255, 255, 0.925);
 		border-left: 1px solid $nacac_light-grey;
 		@include prefix(transform, translateZ(0) translateX(100%), webkit ms);
-		transition: all 0.33s cubic-bezier(0, 0.68, 0.44, 0.99);
+		transition: $transition--all;
 		@include zone-index(base, 1);
 		position: fixed;
 		top: 8rem;
@@ -299,9 +299,9 @@
 		@include zone-index(base, 0);
 		&.primary-nav--up {
 			transform: translateY(5rem);
-			transition: 400ms all ease-in-out;
+			transition: $transition--all;
 		}
-		&.primary-nav--sticky, &.navigation--inanimate {
+		&.primary-nav--sticky, &.primary-nav--inanimate {
 			position: fixed;
 			top: 0;
 			left: 0;
@@ -309,9 +309,18 @@
 			@include zone-index(page, 1);
 			background: $nacac_nav_only_grey;
 		}
-		&.navigation--inanimate{
+		&.primary-nav--inanimate{
 			transform: translateY(5rem);
 			transition:none;
+		}
+		&.primary-nav--inanimate-blue{
+			transform: none;
+			background-color: $nacac_light-blue;
+			position: fixed;
+			top: 5rem;
+			left: 0;
+			overflow: visible;
+			@include zone-index(page, 1);
 		}
 		.primary-nav__interior {
 			top: 7rem;
@@ -343,7 +352,7 @@
 		li.selected {
 			background-color: $white;
 			color: $nacac_light-blue;
-			@include prefix(transition, 300ms, webkit moz ms o);
+			transition: $transition--all;
 		}
 		.primary-nav__interior {
 			box-shadow: 780px 0 0 0px $white, -780px 0 0 0px $white;
@@ -357,7 +366,7 @@
 			overflow: hidden;
 			@include zone-index( 'base', 0);
 			@include prefix(transform, scale(1, 0), webkit moz ms o);
-			@include prefix(transition, 300ms, webkit moz ms o);
+			transition: $transition--all;
 			&:after {
 				clear: both;
 				content: "";

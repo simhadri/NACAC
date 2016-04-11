@@ -349,7 +349,7 @@ a.btn {
   padding: 1.6rem 2.4rem;
   font-size: 1.4rem;
   border-radius: 0;
-  transition: all 0.2s ease-in;
+  transition: all 300ms ease-in-out;
   font-family: "Istok Web", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -547,7 +547,7 @@ a.btn {
     top: 1rem;
     right: 1rem;
     padding: 0.8rem;
-    transition: all 0.33s;
+    transition: all 300ms ease-in-out;
     color: #FFFFFF;
     border: 1px solid; }
     .primary-nav__trigger:hover {
@@ -559,7 +559,7 @@ a.btn {
     -webkit-transform: translateZ(0) translateX(100%);
     -ms-transform: translateZ(0) translateX(100%);
     transform: translateZ(0) translateX(100%);
-    transition: all 0.33s cubic-bezier(0, 0.68, 0.44, 0.99);
+    transition: all 300ms ease-in-out;
     z-index: 11;
     position: fixed;
     top: 8rem;
@@ -645,19 +645,29 @@ a.btn {
       -webkit-transform: translateY(5rem);
           -ms-transform: translateY(5rem);
               transform: translateY(5rem);
-      transition: 400ms all ease-in-out; }
-    .primary-nav.primary-nav--sticky, .primary-nav.navigation--inanimate {
+      transition: all 300ms ease-in-out; }
+    .primary-nav.primary-nav--sticky, .primary-nav.primary-nav--inanimate {
       position: fixed;
       top: 0;
       left: 0;
       overflow: visible;
       z-index: 21;
       background: #5A5A5A; }
-    .primary-nav.navigation--inanimate {
+    .primary-nav.primary-nav--inanimate {
       -webkit-transform: translateY(5rem);
           -ms-transform: translateY(5rem);
               transform: translateY(5rem);
       transition: none; }
+    .primary-nav.primary-nav--inanimate-blue {
+      -webkit-transform: none;
+          -ms-transform: none;
+              transform: none;
+      background-color: #6AAEE6;
+      position: fixed;
+      top: 5rem;
+      left: 0;
+      overflow: visible;
+      z-index: 21; }
     .primary-nav .primary-nav__interior {
       top: 7rem;
       bottom: inherit;
@@ -687,7 +697,7 @@ a.btn {
     .primary-nav li.selected {
       background-color: #FFFFFF;
       color: #6AAEE6;
-      transition: 300ms; }
+      transition: all 300ms ease-in-out; }
     .primary-nav .primary-nav__interior {
       box-shadow: 780px 0 0 0px #FFFFFF, -780px 0 0 0px #FFFFFF;
       position: absolute;
@@ -702,7 +712,7 @@ a.btn {
       -webkit-transform: scale(1, 0);
       -ms-transform: scale(1, 0);
       transform: scale(1, 0);
-      transition: 300ms; }
+      transition: all 300ms ease-in-out; }
       .primary-nav .primary-nav__interior:after {
         clear: both;
         content: "";
@@ -1065,8 +1075,10 @@ a.btn {
   position: fixed;
   top: 0;
   z-index: 31;
-  transition: 400ms all ease-in-out; }
+  transition: all 300ms ease-in-out; }
   .utility-nav.utility-nav--scrolled {
+    background-color: #6AAEE6; }
+  .hero--none .utility-nav {
     background-color: #6AAEE6; }
   .utility-nav a {
     color: #FFFFFF;
@@ -1432,7 +1444,7 @@ a.btn {
   color: #FFFFFF;
   -webkit-transform: translateZ(0);
   -webkit-transform: translateY(0);
-  transition: all .4s ease-in-out;
+  transition: all 300ms ease-in-out;
   cursor: pointer; }
   .card-block:hover {
     position: relative;
@@ -1487,7 +1499,7 @@ a.btn {
   .card-block__header img {
     top: 0;
     left: 0;
-    transition: all .4s ease-in-out;
+    transition: all 300ms ease-in-out;
     position: absolute;
     z-index: -1;
     width: 100%;
@@ -1747,7 +1759,7 @@ a.btn {
   background: rgba(0, 0, 0, 0.75);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.5s;
+  transition: opacity 0.3s linear;
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
 
 @media (min-width: 768px) {
@@ -1762,7 +1774,7 @@ body.body--freeze {
 
 main {
   visibility: hidden; }
-  main.main__interior {
+  main.hero--none {
     padding-top: 7rem;
     margin-top: 5rem; }
 

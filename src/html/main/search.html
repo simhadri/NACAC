@@ -2,10 +2,11 @@
 {% extends '_layouts/main-application.html' %}
 
 {% block content %}
-<main class="animated main__interior search__template" id="main">
+<main class="animated search__template hero--none" id="main">
 
 {% include './_shared/utility.html'%}
 
+{% set navType = "primary-nav--inanimate-blue" %}
 {% include './_shared/navigation.html'%}
 
 <article class="article__row article--white">

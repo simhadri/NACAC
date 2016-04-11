@@ -28,8 +28,6 @@ webpackJsonp([0],[
 	
 	__webpack_require__(8);
 	
-	__webpack_require__(10);
-	
 	// SUPER LAME FADE IN
 	$(document).ready(function () {
 		$('main').addClass("fadeIn");
@@ -373,77 +371,18 @@ webpackJsonp([0],[
 
 /***/ },
 /* 8 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	'use strict';
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	var _modulesGetIdChangeClass = __webpack_require__(9);
-	
-	var _modulesGetIdChangeClass2 = _interopRequireDefault(_modulesGetIdChangeClass);
-	
-	var getIdChangeClass = new _modulesGetIdChangeClass2['default']();
-	$('.tab__button').on("click", function () {
+	var changeTab = function changeTab() {
 		var tab_selected = $(this).attr('data-tab-selected');
 		$('.tab__button').removeClass('tab__button--active');
 		$(this).addClass('tab__button--active');
 		$('.tab__content').removeClass('tab__content--active');
-		getIdChangeClass.addClassToId('tab__content--active', tab_selected);
-	});
-
-/***/ },
-/* 9 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	var GetIdChangeClass = function GetIdChangeClass() {
-		this.removeClassFromId = function (className, dataAttr) {
-			var elm = document.getElementById(dataAttr);
-			if (elm) {
-				elm.classList.remove(className);
-			}
-		}, this.addClassToId = function (className, dataAttr) {
-			var elm = document.getElementById(dataAttr);
-			if (elm) {
-				elm.classList.add(className);
-			}
-		};
+		$('#' + tab_selected).addClass('tab__content--active');
 	};
-	module.exports = GetIdChangeClass;
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// MODULES
-	'use strict';
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	var _modulesThrottledJs = __webpack_require__(5);
-	
-	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
-	
-	(function () {
-		var asideNavigation = function asideNavigation() {
-			var bottomOfNavigation = $(window).scrollTop() + 120;
-			var asideNavigationLocation = $('.aside-navigation').offset().top;
-			if (bottomOfNavigation > 610) {
-				console.log('stick');
-				$('.aside-navigation').addClass('aside-navigation--sticky');
-			}
-			if (bottomOfNavigation < 610) {
-				$('.aside-navigation').removeClass('aside-navigation--sticky');
-			}
-			// THIS IS DUMB!
-			var asideNavigationContainer = $(".aside-navigation").parent().parent();
-			var asideNavigationHeight = $(".aside-navigation").height();
-			console.log(asideNavigationContainer.height() + " and height is " + asideNavigationHeight);
-		};
-		$(window).scroll((0, _modulesThrottledJs2['default'])(asideNavigation, 100));
-	})();
+	$('.tab__button').on("click", changeTab);
 
 /***/ }
 ]);

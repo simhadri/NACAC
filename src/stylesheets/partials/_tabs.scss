@@ -26,7 +26,7 @@ nav.tab__navigation {
 		background-color: $nacac_lighter-blue;
 		color: $nacac_light-blue;
 		border-top: 0.4rem solid rgba($white, 0.3);
-		@include transition(all 300ms ease-in-out);
+		transition: $transition--all;
 	}
 }
 
@@ -42,10 +42,10 @@ nav.tab__navigation {
 		float: left;
 		display:none;
 		min-height: 15rem;
-		@include transition(all 300ms ease-in-out);
+		transition: $transition--all;
 		&.tab__content--active {
 			display:block;
-			@include transition(all 300ms ease-in-out);
+			transition: $transition--all;
 			transition-delay: 300ms;
 		}
 		aside{

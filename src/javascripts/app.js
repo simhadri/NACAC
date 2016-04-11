@@ -11,9 +11,6 @@ import 'modules/blazySettings';
 import 'modules/navigation';
 import 'modules/search';
 import 'modules/tabs';
-import 'modules/aside-navigation';
-
-
 
 // SUPER LAME FADE IN
 $(document).ready(function() {
