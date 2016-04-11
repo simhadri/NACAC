@@ -1,4 +1,4 @@
-webpackJsonp([0,2],[
+webpackJsonp([0],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -20,13 +20,15 @@ webpackJsonp([0,2],[
 	// *********************
 	'use strict';
 	
+	__webpack_require__(8);
+	
 	__webpack_require__(2);
 	
 	__webpack_require__(4);
 	
 	__webpack_require__(6);
 	
-	__webpack_require__(8);
+	__webpack_require__(12);
 	
 	// SUPER LAME FADE IN
 	$(document).ready(function () {
@@ -45,6 +47,10 @@ webpackJsonp([0,2],[
 	var _modulesHeadStyleJs = __webpack_require__(3);
 	
 	var _modulesHeadStyleJs2 = _interopRequireDefault(_modulesHeadStyleJs);
+	
+	var _modulesThrottledJs = __webpack_require__(11);
+	
+	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
 	
 	(function () {
 		'use strict';
@@ -142,45 +148,7 @@ webpackJsonp([0,2],[
 			}
 		}
 	
-		// Shamelessly Stolen from Underscore
-		// Throttles the function so its not
-		// fired 1000x on scroll
-		var throttle = function throttle(func, wait, options) {
-			var now = Date.now || function () {
-				return new Date().getTime();
-			};
-			var context, args, result;
-			var timeout = null;
-			var previous = 0;
-			if (!options) options = {};
-			var later = function later() {
-				previous = options.leading === false ? 0 : now();
-				timeout = null;
-				result = func.apply(context, args);
-				if (!timeout) context = args = null;
-			};
-			return function () {
-				if (!previous && options.leading === false) previous = now();
-				var remaining = wait - (now() - previous);
-				context = this;
-				args = arguments;
-				if (remaining <= 0 || remaining > wait) {
-					if (timeout) {
-						clearTimeout(timeout);
-						timeout = null;
-					}
-					previous = now();
-					result = func.apply(context, args);
-					if (!timeout) context = args = null;
-				} else if (!timeout && options.trailing !== false) {
-					timeout = setTimeout(later, remaining);
-				}
-				return result;
-			};
-		};
-	
 		function navScrollDependencies(event) {
-			var gate = false;
 			var utilityHeight = $('.utility-nav').height(),
 			    heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height(),
 			    bodyTop = $(window).scrollTop(),
@@ -204,9 +172,6 @@ webpackJsonp([0,2],[
 				$('.utility-nav').removeClass('utility-nav--scrolled');
 			}
 		}
-		var throttled = throttle(navScrollDependencies, 100);
-		$(window).scroll(throttled);
-		//window.setTimeout(navScrollDependencies, 1000);
 	
 		function openSearchFilterNav() {
 			body.addClass('body--freeze');
@@ -254,6 +219,7 @@ webpackJsonp([0,2],[
 			}
 		});
 		navScrollDependencies;
+		$(window).scroll((0, _modulesThrottledJs2['default'])(navScrollDependencies, 100));
 		body.click(clickAnywhereToCloseEverything);
 	})();
 
@@ -445,6 +411,44 @@ webpackJsonp([0,2],[
 			}
 		});
 	});
+
+/***/ },
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// MODULES
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _modulesThrottledJs = __webpack_require__(11);
+	
+	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
+	
+	(function () {
+		//$(window).scroll(Throttled(console.log('fire'), 100));
+		var asideNavigation = function asideNavigation() {
+			// var asideNavigation = ;
+			var bottomOfNavigation = $(window).scrollTop() + 120;
+			console.log(bottomOfNavigation);
+			var asideNavigationLocation = $('.aside-navigation').offset().top;
+			console.log(asideNavigationLocation);
+			// if ($('.aside-navigation').hasClass('aside-navigation--sticky')) {
+			// 	asideNavigationLocation = 0;
+			// }
+			if (bottomOfNavigation > 610) {
+				console.log('stick');
+				$('.aside-navigation').addClass('aside-navigation--sticky');
+			}
+			if (bottomOfNavigation < 610) {
+				$('.aside-navigation').removeClass('aside-navigation--sticky');
+			}
+		};
+		$(window).scroll((0, _modulesThrottledJs2['default'])(asideNavigation, 200));
+	})();
 
 /***/ }
 ]);

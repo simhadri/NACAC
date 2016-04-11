@@ -553,6 +553,10 @@ a.btn {
     color: #FFFFFF;
     border-radius: 0.4rem; }
 
+.aside-navigation.aside-navigation--sticky {
+  position: fixed;
+  top: 12rem; }
+
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
@@ -668,13 +672,18 @@ a.btn {
           -ms-transform: translateY(5rem);
               transform: translateY(5rem);
       transition: 400ms all ease-in-out; }
-    .primary-nav.primary-nav--sticky {
+    .primary-nav.primary-nav--sticky, .primary-nav.navigation--inanimate {
       position: fixed;
       top: 0;
       left: 0;
       overflow: visible;
       z-index: 21;
       background: #5A5A5A; }
+    .primary-nav.navigation--inanimate {
+      -webkit-transform: translateY(5rem);
+          -ms-transform: translateY(5rem);
+              transform: translateY(5rem);
+      transition: none; }
     .primary-nav .primary-nav__interior {
       top: 7rem;
       bottom: inherit;
@@ -831,7 +840,8 @@ a.btn {
     display: inline-block;
     border-right: 1px solid #D6D6D6;
     padding: 1rem;
-    margin: 0 1rem; }
+    margin: 0 1rem;
+    line-height: 3rem; }
   .selected-filters .btn__filter {
     padding: 0 1rem;
     min-height: 3rem;
@@ -841,7 +851,7 @@ a.btn {
     font-size: 1.2rem;
     margin-right: 1rem;
     position: relative;
-    border-radius: 0.3rem;
+    border-radius: 2rem;
     display: inline-block; }
     .selected-filters .btn__filter:after {
       position: absolute;
@@ -1592,6 +1602,7 @@ a.btn {
   text-align: center;
   color: #FFFFFF; }
   .hero__content .hero__title {
+    font-size: 360%;
     position: relative; }
     .hero__content .hero__title:after {
       content: "";
@@ -1606,6 +1617,62 @@ a.btn {
   .hero__content .hero__btn {
     margin: 1.6rem; }
 
+.interior-hero__background-image {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1; }
+  .interior-hero__background-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%; }
+
+.interior-hero__breadcrumb {
+  margin-top: 12rem;
+  padding-top: 2rem; }
+  .interior-hero__breadcrumb .breadcrumb a {
+    color: #6AAEE6; }
+  .interior-hero__breadcrumb .breadcrumb > .active {
+    color: #FFFFFF; }
+
+.interior-hero__content {
+  width: 50vw; }
+
+.interior-hero__wrapper {
+  min-height: 30rem;
+  margin-bottom: 6rem;
+  position: relative; }
+
+.interior-hero__content {
+  margin: auto;
+  text-align: center;
+  color: #FFFFFF; }
+  .interior-hero__content .interior-hero__title {
+    font-size: 360%;
+    position: relative;
+    margin: 0; }
+    .interior-hero__content .interior-hero__title:after {
+      content: "";
+      width: calc(100% - 40rem);
+      height: 0;
+      position: absolute;
+      bottom: -1.6rem;
+      left: 20rem;
+      border-top: 1px solid #FFFFFF;
+      display: block;
+      margin: auto; }
+  .interior-hero__content .interior-hero__text {
+    font-size: 1.8rem; }
+  .interior-hero__content .interior-hero__btn {
+    margin: 1.6rem; }
+
 .flexbox .hero__wrapper {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1614,8 +1681,7 @@ a.btn {
   -ms-flex-align: center;
   align-items: center; }
   .flexbox .hero__wrapper .hero__content {
-    padding: 15rem 0;
-    width: 80%; }
+    width: 50%; }
 
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗

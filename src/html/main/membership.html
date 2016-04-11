@@ -1,9 +1,17 @@
  {% extends '_layouts/main-application.html' %}
  {% block content %}
+
 <main class="animated" id="main" class="main__interior membership__template">
+	
 	{% include './_shared/utility.html'%}
+
+	{% set navType = "navigation--inanimate" %}
 	{% include './_shared/navigation.html'%}
+
+	{% include './_components/breadcrumb.html' %}
+
 	{% include './_shared/interior-hero.html'%}
+	
 	<article class="article__row content__row article--white">
 		<div class="container">
 			<div class="row">

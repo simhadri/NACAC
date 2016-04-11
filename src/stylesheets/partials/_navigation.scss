@@ -183,6 +183,10 @@
 			border-radius: 0.4rem;
 		}
 	}
+	&.aside-navigation--sticky{
+		position: fixed;
+		top: 12rem;
+	}
 }
 
 
@@ -326,13 +330,17 @@
 			transform: translateY(5rem);
 			transition: 400ms all ease-in-out;
 		}
-		&.primary-nav--sticky {
+		&.primary-nav--sticky, &.navigation--inanimate {
 			position: fixed;
 			top: 0;
 			left: 0;
 			overflow: visible;
 			@include zone-index(page, 1);
 			background: $nacac_nav_only_grey;
+		}
+		&.navigation--inanimate{
+			transform: translateY(5rem);
+			transition:none;
 		}
 		.primary-nav__interior {
 			top: 7rem;
