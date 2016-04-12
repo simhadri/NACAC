@@ -36,11 +36,6 @@
         ]
     },
     {
-        "name":"NACAC Exchange",
-        "type":"link",
-        "content":"/index.html"
-    },
-    {
         "name":"Initiatives",
         "type":"link_set",
         "content":[

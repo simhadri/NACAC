@@ -20,23 +20,25 @@
 .hero__content {
 	width: 50vw;
 }
-.hero__wrapper{
+
+.hero__wrapper {
 	height: calc(100vh - 7rem);
-	position:relative;
-	.hero__breadcrumb{
+	position: relative;
+	.hero__breadcrumb {
 		position: absolute;
-		top:8rem;
-		left:10%;
+		top: 8rem;
+		left: 10%;
 		&.breadcrumb {
-			a{
-				color:$nacac_light-blue;
+			a {
+				color: $nacac_light-blue;
 			}
 			> .active {
-		    color: $white;
-		}
+				color: $white;
+			}
 		}
 	}
 }
+
 .hero__content {
 	margin: auto;
 	text-align: center;
@@ -63,19 +65,10 @@
 	}
 }
 
-// ---------------------------------------------
-// ---------------------------------------------
-// ---------------------------------------------
-// ---------------------------------------------
-// ---------------------------------------------
+
 // ---------------------------------------------
 // INTERIOR HERO
 // ---------------------------------------------
-// ---------------------------------------------
-// ---------------------------------------------
-// ---------------------------------------------
-// ---------------------------------------------
-
 
 .interior-hero__background-image {
 	position: fixed;
@@ -96,27 +89,29 @@
 	}
 }
 
-.interior-hero__breadcrumb{
-		margin-top: 12rem;
-		padding-top:2rem;
-		.breadcrumb {
-			a{
-				color:$nacac_light-blue;
-			}
-			> .active {
-		    color: $white;
+.interior-hero__breadcrumb {
+	margin-top: 6rem;
+	padding-top: 2rem;
+	.breadcrumb {
+		a {
+			color: $nacac_light-blue;
 		}
+		> .active {
+			color: $white;
 		}
 	}
+}
 
 .interior-hero__content {
 	width: 50vw;
 }
-.interior-hero__wrapper{
+
+.interior-hero__wrapper {
 	min-height: 30rem;
 	margin-bottom: 6rem;
-	position:relative;
+	position: relative;
 }
+
 .interior-hero__content {
 	margin: auto;
 	text-align: center;
@@ -125,7 +120,7 @@
 	.interior-hero__title {
 		font-size: 360%;
 		position: relative;
-		margin:0;
+		margin: 0;
 		&:after {
 			content: "";
 			width: calc(100% - 40rem);
@@ -157,10 +152,11 @@
 		-ms-flex-align: center;
 		align-items: center;
 		.hero__content {
-				width: 50%;
+			width: 50%;
 		}
 	}
 }
+
 
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
