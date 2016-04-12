@@ -506,7 +506,6 @@ a.btn {
     height: 7rem;
     box-shadow: 780px 0 0 0px rgba(255, 255, 255, 0.8), -780px 0 0 0px rgba(255, 255, 255, 0.8); }
     .primary-nav .primary-nav__list > li {
-      width: 10%;
       display: table-cell;
       vertical-align: middle; }
     .primary-nav .primary-nav__list .primary-nav__interior h3 {
@@ -687,7 +686,8 @@ a.btn {
       height: auto;
       width: auto;
       background: transparent;
-      overflow: visible; }
+      overflow: visible;
+      list-style: none; }
     .primary-nav > li {
       margin: 0;
       color: #FFFFFF;
@@ -723,9 +723,14 @@ a.btn {
         margin: 0;
         padding: 0 2em;
         min-height: 4rem; }
+        .primary-nav .primary-nav__interior > li h4 {
+          font-size: 1.8rem;
+          margin-top: 0.6rem;
+          margin-bottom: 1rem; }
         .primary-nav .primary-nav__interior > li a {
           color: #374049;
-          position: relative; }
+          position: relative;
+          line-height: 1.4; }
           .primary-nav .primary-nav__interior > li a:hover {
             color: #2480C4; }
             .primary-nav .primary-nav__interior > li a:hover:after {
@@ -734,7 +739,7 @@ a.btn {
             content: '';
             display: block;
             position: absolute;
-            bottom: 3px;
+            bottom: 0;
             width: 0%;
             left: 0px;
             height: 1px;
@@ -759,7 +764,8 @@ a.btn {
           top: 0;
           max-width: 20rem;
           margin: 0;
-          padding: 0; }
+          padding: 0;
+          list-style: none; }
           .primary-nav .primary-nav__interior > li ul.primary-nav__interior li {
             float: none;
             width: 100%;
@@ -1413,7 +1419,7 @@ a.btn {
 
 .color-block {
   color: #FFFFFF; }
-  .color-block .color-block__image {
+  .color-block img.color-block__image {
     width: 100%;
     position: absolute;
     z-index: -1; }

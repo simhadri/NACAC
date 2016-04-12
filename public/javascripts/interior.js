@@ -36,7 +36,9 @@ webpackJsonp([1],{
 	(function () {
 		var asideNavigation = function asideNavigation() {
 			var asideNavigation = $(".aside-navigation"),
-			    bottomOfNavigation = $(window).scrollTop() + 180,
+			   
+			// Includes 180px utility nav + breadcrumb height offset; These are fixed
+			bottomOfNavigation = $(window).scrollTop() + 180,
 			    asideNavigationContainer = asideNavigation.parent().parent(),
 			    asideNavigationHeight = asideNavigation.height(),
 			    asideNavigationLocation = asideNavigation.offset().top,

@@ -123,7 +123,7 @@
 	}
 	.primary-nav__list {
 		>li {
-			width: 10%;
+			// width: 10%;
 			display: table-cell;
 			vertical-align: middle;
 		}
@@ -341,6 +341,7 @@
 			width: auto;
 			background: transparent;
 			overflow: visible;
+			list-style: none;
 		}
 		>li {
 			margin: 0;
@@ -378,9 +379,15 @@
 				margin: 0;
 				padding: 0 2em;
 				min-height: 4rem;
+				h4{
+					font-size: 1.8rem;
+					margin-top:0.6rem;
+					margin-bottom: 1rem;
+				}
 				a {
 					color: $text_slate;
 					position: relative;
+					line-height: 1.4;
 					&:hover {
 						color: $nacac_blue;
 						&:after {
@@ -391,7 +398,7 @@
 						content: '';
 						display: block;
 						position: absolute;
-						bottom: 3px;
+						bottom: 0;
 						width: 0%;
 						left: 0px;
 						height: 1px;
@@ -425,6 +432,7 @@
 					max-width: 20rem;
 					margin: 0;
 					padding: 0;
+					list-style: none;
 					li {
 						float: none;
 						width: 100%;

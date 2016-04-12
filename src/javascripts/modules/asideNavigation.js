@@ -3,6 +3,7 @@ import Throttled from 'modules/throttled.js';
 (function() {
 	var asideNavigation = function() {
 		var asideNavigation = $(".aside-navigation"),
+			// Includes 180px utility nav + breadcrumb height offset; These are fixed
 			bottomOfNavigation = $(window).scrollTop() + 180,
 			asideNavigationContainer = asideNavigation.parent().parent(),
 			asideNavigationHeight = asideNavigation.height(),
