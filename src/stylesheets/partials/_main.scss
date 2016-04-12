@@ -32,12 +32,18 @@ body.body--freeze {
 	opacity: 1;
 }
 
-// Main
+// Main Templates
 main {
 	visibility: hidden;
 	&.hero--none{
 		padding-top: 7rem;
 		margin-top: 5rem;
+	}
+	&.interior__template{
+		padding-top: 7rem;
+	}
+	&.main--scrolled{
+		padding-top: 7rem;
 	}
 }
 

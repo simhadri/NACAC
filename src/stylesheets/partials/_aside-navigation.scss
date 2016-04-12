@@ -1,6 +1,12 @@
+.aside-navigation__column {
+	// height: 100%;
+	// float: none;
+	// display: block;
+	@include clearfix;
+}
 
 .aside-navigation {
-	width:100%;
+	width: 100%;
 	h2 {
 		@include sans-uppercase-normal;
 		padding: 1rem;
@@ -24,6 +30,7 @@
 	}
 }
 
+
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
@@ -33,9 +40,7 @@
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 */
 
-@include break(max, $screen-sm-max) {
-	
-}
+@include break(max, $screen-sm-max) {}
 
 
 /*
@@ -49,9 +54,17 @@
 */
 
 @include break(min, $screen-md-min) {
-	.aside-navigation.aside-navigation--sticky{
-		position: fixed;
-		top: 12rem;
-		width:inherit;
+	.aside-navigation {
+		opacity:1;
+		transition: $transition--opacity;
+		&.aside-navigation--sticky {
+			position: fixed;
+			top: 12rem;
+			width: 26.4rem;
+		}
+		&.aside-navigation--hide {
+			opacity: 0;
+			transition: opacity 100ms ease;
+					}
 	}
 }

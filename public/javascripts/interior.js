@@ -35,19 +35,26 @@ webpackJsonp([1],{
 	
 	(function () {
 		var asideNavigation = function asideNavigation() {
-			var bottomOfNavigation = $(window).scrollTop() + 120;
-			var asideNavigationLocation = $('.aside-navigation').offset().top;
-			if (bottomOfNavigation > 610) {
-				console.log('stick');
+			var asideNavigation = $(".aside-navigation"),
+			    bottomOfNavigation = $(window).scrollTop() + 180,
+			    asideNavigationContainer = asideNavigation.parent().parent(),
+			    asideNavigationHeight = asideNavigation.height(),
+			    asideNavigationLocation = asideNavigation.offset().top,
+			    offsetOfFirstArticle = $('.article__row:first-child').offset();
+			console.log(offsetOfFirstArticle);
+	
+			if (bottomOfNavigation > $(".interior-hero__wrapper").height()) {
 				$('.aside-navigation').addClass('aside-navigation--sticky');
 			}
 			if (bottomOfNavigation < 610) {
 				$('.aside-navigation').removeClass('aside-navigation--sticky');
 			}
 			// THIS IS DUMB!
-			var asideNavigationContainer = $(".aside-navigation").parent().parent();
-			var asideNavigationHeight = $(".aside-navigation").height();
-			console.log(asideNavigationContainer.height() + " and height is " + asideNavigationHeight);
+			if (asideNavigationContainer.height() < asideNavigationLocation) {
+				$('.aside-navigation').addClass("aside-navigation--hide");
+			} else {
+				$('.aside-navigation').removeClass("aside-navigation--hide");
+			}
 		};
 		$(window).scroll((0, _modulesThrottledJs2['default'])(asideNavigation, 100));
 	})();
