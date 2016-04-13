@@ -24,7 +24,7 @@ webpackJsonp([0],[
 	
 	__webpack_require__(3);
 	
-	__webpack_require__(6);
+	__webpack_require__(7);
 	
 	__webpack_require__(8);
 	
@@ -75,7 +75,7 @@ webpackJsonp([0],[
 	
 	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
 	
-	var _modulesScreenJs = __webpack_require__(7);
+	var _modulesScreenJs = __webpack_require__(6);
 	
 	var _modulesScreenJs2 = _interopRequireDefault(_modulesScreenJs);
 	
@@ -292,13 +292,47 @@ webpackJsonp([0],[
 /***/ },
 /* 5 */,
 /* 6 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	var Screen = function Screen() {
+		this.turnScreenOn = function (modifier) {
+			if (!document.getElementById('screen__overlay')) {
+				(function () {
+					var screenOverlay = document.createElement('div'),
+					    mainElement = document.getElementById('main');
+					mainElement.appendChild(screenOverlay);
+					screenOverlay.setAttribute('id', 'screen__overlay');
+					screenOverlay.setAttribute('class', 'screen__overlay');
+					setTimeout(function () {
+						screenOverlay.classList.add('screen__overlay--on');
+						if (modifier) {
+							screenOverlay.classList.add('screen__overlay--' + modifier);
+						}
+					}, 10);
+				})();
+			}
+		};
+		this.turnScreenOff = function () {
+			var screenOverlay = document.getElementById('screen__overlay');
+			screenOverlay.classList.remove('screen__overlay--on');
+			setTimeout(function () {
+				screenOverlay.outerHTML = '';
+			}, 400);
+		};
+	};
+	module.exports = Screen;
+
+/***/ },
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _modulesScreenJs = __webpack_require__(7);
+	var _modulesScreenJs = __webpack_require__(6);
 	
 	var _modulesScreenJs2 = _interopRequireDefault(_modulesScreenJs);
 	
@@ -353,37 +387,6 @@ webpackJsonp([0],[
 			}
 		});
 	})();
-
-/***/ },
-/* 7 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	var Screen = function Screen() {
-	
-		this.turnScreenOn = function (modifier) {
-			var screenOverlay = document.createElement('div');
-			var mainElement = document.getElementById('main');
-			mainElement.appendChild(screenOverlay);
-			screenOverlay.setAttribute('id', 'screen__overlay');
-			screenOverlay.setAttribute('class', 'screen__overlay');
-			setTimeout(function () {
-				screenOverlay.classList.add('screen__overlay--on');
-				if (modifier) {
-					screenOverlay.classList.add('screen__overlay--' + modifier);
-				}
-			}, 10);
-		};
-		this.turnScreenOff = function () {
-			var screenOverlay = document.getElementById('screen__overlay');
-			screenOverlay.classList.remove('screen__overlay--on');
-			setTimeout(function () {
-				screenOverlay.outerHTML = '';
-			}, 400);
-		};
-	};
-	module.exports = Screen;
 
 /***/ },
 /* 8 */

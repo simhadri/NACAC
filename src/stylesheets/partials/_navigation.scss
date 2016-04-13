@@ -285,7 +285,6 @@
 	}
 	.selected {
 		background: $white;
-		color: purple;
 	}
 	.nav-header-buttons {
 		display: none;
@@ -350,9 +349,13 @@
 			text-align: center;
 			display: inline-block;
 		}
-		li.selected {
+		> li.selected {
 			background-color: $white;
-			color: $nacac_light-blue;
+			pointer-events: none;
+			> a{
+				color: $nacac_light-blue;
+			}
+			
 			transition: $transition--all;
 		}
 		.primary-nav__interior {
@@ -372,6 +375,11 @@
 				clear: both;
 				content: "";
 				display: table;
+			}
+			.interior__links{
+				li{
+					margin-bottom: 1rem;
+				}
 			}
 			> li {
 				float: left;

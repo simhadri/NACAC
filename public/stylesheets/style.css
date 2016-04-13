@@ -629,8 +629,7 @@ a.btn {
   .main-nav .logo {
     margin-top: 2.6rem; }
   .selected {
-    background: #FFFFFF;
-    color: purple; }
+    background: #FFFFFF; }
   .nav-header-buttons {
     display: none; }
   .primary-nav {
@@ -694,10 +693,12 @@ a.btn {
       padding: 0 .5em;
       text-align: center;
       display: inline-block; }
-    .primary-nav li.selected {
+    .primary-nav > li.selected {
       background-color: #FFFFFF;
-      color: #6AAEE6;
+      pointer-events: none;
       transition: all 300ms ease-in-out; }
+      .primary-nav > li.selected > a {
+        color: #6AAEE6; }
     .primary-nav .primary-nav__interior {
       box-shadow: 780px 0 0 0px #FFFFFF, -780px 0 0 0px #FFFFFF;
       position: absolute;
@@ -717,6 +718,8 @@ a.btn {
         clear: both;
         content: "";
         display: table; }
+      .primary-nav .primary-nav__interior .interior__links li {
+        margin-bottom: 1rem; }
       .primary-nav .primary-nav__interior > li {
         float: left;
         width: 25%;
