@@ -24,7 +24,7 @@ webpackJsonp([0],[
 	
 	__webpack_require__(3);
 	
-	__webpack_require__(6);
+	__webpack_require__(7);
 	
 	__webpack_require__(8);
 	
@@ -75,14 +75,18 @@ webpackJsonp([0],[
 	
 	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
 	
+	var _modulesScreenJs = __webpack_require__(6);
+	
+	var _modulesScreenJs2 = _interopRequireDefault(_modulesScreenJs);
+	
 	(function () {
 		'use strict';
 		var headStyle = new _modulesHeadStyleJs2['default'](),
+		    screen = new _modulesScreenJs2['default'](),
 		    navTrigger = $('.primary-nav__trigger'),
 		    primaryNav = $('.primary-nav'),
 		    primaryNavItem = $('.primary-nav__item'),
 		    body = $('body'),
-		    navScreen = $('.nav-screen'),
 		    toplevelChildrenOfPrimaryNav = primaryNav.children('li'),
 		    goBackButton = $('.go-back'),
 		    navItemLinks = $('.primary-nav--children'),
@@ -105,9 +109,13 @@ webpackJsonp([0],[
 		};
 		var closeNavInterior = function closeNavInterior() {
 			$('.selected').removeClass('selected');
+			body.off('click', clickAnywhereToCloseEverything);
+			screen.turnScreenOff();
 		};
 		var openNavInterior = function openNavInterior(selected) {
 			$('.selected').removeClass('selected');
+			screen.turnScreenOn('soft');
+			body.on('click', clickAnywhereToCloseEverything);
 			var selectedId = selected.attr('data-id');
 			$.ajax({
 				url: '/javascripts/data/interiorNavData_' + selectedId + '.json',
@@ -243,7 +251,6 @@ webpackJsonp([0],[
 		});
 		navScrollDependencies;
 		$(window).scroll((0, _modulesThrottledJs2['default'])(navScrollDependencies, 100));
-		body.click(clickAnywhereToCloseEverything);
 	})();
 
 /***/ },
@@ -286,13 +293,47 @@ webpackJsonp([0],[
 /***/ },
 /* 5 */,
 /* 6 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	var Screen = function Screen() {
+		this.turnScreenOn = function (modifier) {
+			if (!document.getElementById('screen__overlay')) {
+				(function () {
+					var screenOverlay = document.createElement('div'),
+					    mainElement = document.getElementById('main');
+					mainElement.appendChild(screenOverlay);
+					screenOverlay.setAttribute('id', 'screen__overlay');
+					screenOverlay.setAttribute('class', 'screen__overlay');
+					setTimeout(function () {
+						screenOverlay.classList.add('screen__overlay--on');
+						if (modifier) {
+							screenOverlay.classList.add('screen__overlay--' + modifier);
+						}
+					}, 10);
+				})();
+			}
+		};
+		this.turnScreenOff = function () {
+			var screenOverlay = document.getElementById('screen__overlay');
+			screenOverlay.classList.remove('screen__overlay--on');
+			setTimeout(function () {
+				screenOverlay.outerHTML = '';
+			}, 400);
+		};
+	};
+	module.exports = Screen;
+
+/***/ },
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _modulesScreenJs = __webpack_require__(7);
+	var _modulesScreenJs = __webpack_require__(6);
 	
 	var _modulesScreenJs2 = _interopRequireDefault(_modulesScreenJs);
 	
@@ -330,7 +371,7 @@ webpackJsonp([0],[
 			} else {
 				morphSearch.addClass('morphsearch--open');
 				seachInputWrapper.addClass('utility-nav__search--on');
-				screenOverlay.turnScreenOn();
+				screenOverlay.turnScreenOn('hard');
 			}
 			isOpen = !isOpen;
 		};
@@ -347,27 +388,6 @@ webpackJsonp([0],[
 			}
 		});
 	})();
-
-/***/ },
-/* 7 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	var Screen = function Screen() {
-		var screenOverlay = document.createElement('div');
-		var mainElement = document.getElementById('main');
-		mainElement.appendChild(screenOverlay);
-		screenOverlay.setAttribute('id', 'screen__overlay');
-		screenOverlay.setAttribute('class', 'screen__overlay');
-		this.turnScreenOn = function () {
-			screenOverlay.classList.add('screen__overlay--on');
-		};
-		this.turnScreenOff = function () {
-			screenOverlay.classList.remove('screen__overlay--on');
-		};
-	};
-	module.exports = Screen;
 
 /***/ },
 /* 8 */

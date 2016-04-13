@@ -93,24 +93,26 @@
 
 @include break(max, $screen-sm-max) {
 	.calendar__date {
-		width: 8rem;
-		height: 8rem;
+		width: 6rem;
+		height: 6rem;
+		margin-top: 3rem;
 		.calendar__day {
-			padding-bottom: 0.8rem;
+			padding-bottom: 0.2rem;
 			margin: 0 auto;
-			margin-top: 1.6rem;
-			margin-bottom: 0.6rem;
+			margin-top: 0.4rem;
+			margin-bottom: 0.2rem;
 			border-bottom: 1px solid;
-			width: 5rem;
-			font-size: 3.8rem;
+			width: 4rem;
+			font-size: 2.4rem;
 		}
 		.calendar__month {
 			margin-top: 0.4rem;
 			font-weight: 200;
+			font-size: 1.4rem;
 		}
 	}
 	.calendar__content {
-		width: calc(100% - 10rem);
+		width: calc(100% - 7rem);
 	}
 }
 
