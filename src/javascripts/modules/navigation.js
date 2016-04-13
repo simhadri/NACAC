@@ -1,14 +1,15 @@
 // MODULES
 import HeadStyle from 'modules/headStyle.js';
 import Throttled from 'modules/throttled.js';
+import Screen from 'modules/screen.js';
 (function() {
 	'use strict';
 	var headStyle = new HeadStyle(),
+		screen = new Screen(),
 		navTrigger = $('.primary-nav__trigger'),
 		primaryNav = $('.primary-nav'),
 		primaryNavItem = $('.primary-nav__item'),
 		body = $('body'),
-		navScreen = $('.nav-screen'),
 		toplevelChildrenOfPrimaryNav = primaryNav.children('li'),
 		goBackButton = $('.go-back'),
 		navItemLinks = $('.primary-nav--children'),
@@ -31,9 +32,11 @@ import Throttled from 'modules/throttled.js';
 	}
 	var closeNavInterior = function() {
 		$('.selected').removeClass('selected');
+		screen.turnScreenOff();
 	}
 	var openNavInterior = function(selected) {
 		$('.selected').removeClass('selected');
+		screen.turnScreenOn('soft');
 		let selectedId = selected.attr('data-id');
 		$.ajax({
 			url: '/javascripts/data/interiorNavData_' + selectedId + '.json',
@@ -78,7 +81,7 @@ import Throttled from 'modules/throttled.js';
 		})
 		setTimeout(function() {
 			selected.parent().addClass('selected');
-		}, 200)
+		}, 200);
 
 		selected.next().addClass('nav__menu--visible');
 	}

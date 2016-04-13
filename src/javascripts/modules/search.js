@@ -32,7 +32,7 @@ import Screen from 'modules/screen.js';
 			} else {
 				morphSearch.addClass('morphsearch--open');
 				seachInputWrapper.addClass('utility-nav__search--on');
-				screenOverlay.turnScreenOn();
+				screenOverlay.turnScreenOn('hard');
 			}
 			isOpen = !isOpen;
 		};

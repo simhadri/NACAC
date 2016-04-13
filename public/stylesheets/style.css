@@ -1772,14 +1772,19 @@ a.btn {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 30;
+  z-index: 10;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.75);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s linear;
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
+  .screen__overlay.screen__overlay--soft {
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.33); }
+  .screen__overlay.screen__overlay--hard {
+    z-index: 30;
+    background: rgba(0, 0, 0, 0.8); }
 
 @media (min-width: 768px) {
   .no-transitions {
@@ -1822,11 +1827,14 @@ main {
 .article--bluegrey {
   background-color: #ECF0F3; }
 
-.article__header, .section__header {
+.article__header,
+.section__header {
   text-align: center; }
-  .article__header .btn, .section__header .btn {
+  .article__header .btn,
+  .section__header .btn {
     margin: 2rem 0; }
-  .article__header p, .section__header p {
+  .article__header p,
+  .section__header p {
     padding-top: 2rem;
     padding-bottom: 2rem; }
 
