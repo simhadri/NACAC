@@ -32,11 +32,13 @@ import Screen from 'modules/screen.js';
 	}
 	var closeNavInterior = function() {
 		$('.selected').removeClass('selected');
+		body.off('click',clickAnywhereToCloseEverything);
 		screen.turnScreenOff();
 	}
 	var openNavInterior = function(selected) {
 		$('.selected').removeClass('selected');
 		screen.turnScreenOn('soft');
+		body.on('click',clickAnywhereToCloseEverything);
 		let selectedId = selected.attr('data-id');
 		$.ajax({
 			url: '/javascripts/data/interiorNavData_' + selectedId + '.json',
@@ -116,7 +118,6 @@ import Screen from 'modules/screen.js';
 	function clickAnywhereToCloseEverything(event) {
 		if (!$(event.target).closest('.primary-nav').length) {
 			closeNavInterior();
-
 		}
 	}
 
@@ -193,6 +194,6 @@ import Screen from 'modules/screen.js';
 	});
 	navScrollDependencies;
 	$(window).scroll(Throttled(navScrollDependencies, 100));
-	body.click(clickAnywhereToCloseEverything);
+	
 
 })();

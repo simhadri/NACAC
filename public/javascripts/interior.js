@@ -43,7 +43,6 @@ webpackJsonp([1],{
 			    asideNavigationHeight = asideNavigation.height(),
 			    asideNavigationLocation = asideNavigation.offset().top,
 			    offsetOfFirstArticle = $('.article__row:first-child').offset();
-			console.log(offsetOfFirstArticle);
 	
 			if (bottomOfNavigation > $(".interior-hero__wrapper").height()) {
 				$('.aside-navigation').addClass('aside-navigation--sticky');

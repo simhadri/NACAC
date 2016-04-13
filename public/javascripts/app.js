@@ -109,11 +109,13 @@ webpackJsonp([0],[
 		};
 		var closeNavInterior = function closeNavInterior() {
 			$('.selected').removeClass('selected');
+			body.off('click', clickAnywhereToCloseEverything);
 			screen.turnScreenOff();
 		};
 		var openNavInterior = function openNavInterior(selected) {
 			$('.selected').removeClass('selected');
 			screen.turnScreenOn('soft');
+			body.on('click', clickAnywhereToCloseEverything);
 			var selectedId = selected.attr('data-id');
 			$.ajax({
 				url: '/javascripts/data/interiorNavData_' + selectedId + '.json',
@@ -249,7 +251,6 @@ webpackJsonp([0],[
 		});
 		navScrollDependencies;
 		$(window).scroll((0, _modulesThrottledJs2['default'])(navScrollDependencies, 100));
-		body.click(clickAnywhereToCloseEverything);
 	})();
 
 /***/ },

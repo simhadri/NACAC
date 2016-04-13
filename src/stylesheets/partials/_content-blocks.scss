@@ -210,8 +210,9 @@
 	}
 	.color-block {
 		color: $white;
-		.color-block__image {
-			width: 100%;
+		img.color-block__image {
+			width: auto;
+    		height: 100%;
 			position: absolute;
 			@include zone-index(negative, 1);
 		}

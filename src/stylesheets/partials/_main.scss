@@ -45,6 +45,9 @@ main {
 	&.hero--none {
 		padding-top: 7rem;
 		margin-top: 5rem;
+		> .article__row:nth-child{
+			padding-top: 0;
+		}
 	}
 	&.interior__template {
 		padding-top: 7rem;
@@ -179,13 +182,13 @@ main {
 
 @include break(max, $screen-sm-max) {
 	html {
-		// font-size: 8px;
+		font-size: 9px;
 	}
 	.container {
 		padding-left: 4rem;
 		padding-right: 4rem;
 	}
-	main.main__interior {
+	main{
 		padding-top: 7rem;
 		margin-top: 1rem;
 	}

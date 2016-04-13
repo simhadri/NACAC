@@ -174,39 +174,43 @@
 }
 
 .morphsearch__close {
-	width: 3.6rem;
-	height: 3.6rem;
+	// width: 3.6rem;
+	// height: 3.6rem;
 	position: absolute;
 	right: 0.1em;
 	top: 0.1em;
-	overflow: hidden;
-	text-indent: 100%;
+	// overflow: hidden;
+	// text-indent: 100%;
 	cursor: pointer;
-	pointer-events: none;
+	// pointer-events: none;
 	opacity: 0;
-	@include prefix(transform, scale3d(0, 0, 1), webkit);
+	// @include prefix(transform, scale3d(0, 0, 1), webkit);
+	transition: $transition--all;
 }
 
 .morphsearch--open .morphsearch__close {
 	opacity: 1;
 	pointer-events: auto;
 	@include prefix(transform, scale3d(1, 1, 1), webkit);
-	@include prefix(transition, opacity 0.3s, webkit);
+	transition: $transition--all;
 	-webkit-transition-delay: 0.5s;
 	transition-delay: 0.5s;
 }
 
-.morphsearch__close::before,
-.morphsearch__close::after {
-	content: '';
-	position: absolute;
-	width: 0.2rem;
-	border-radius: 0.2rem;
-	height: 100%;
-	top: 0;
-	left: 50%;
-	opacity: 1;
-	background: $white;
+.morphsearch__close::before{
+// .morphsearch__close::after {
+	font-family: $icons;
+	    content: '\f00d';
+    position: absolute;
+    width: 3rem;
+    border-radius: 0.2rem;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: $white;
+    text-align: center;
+    font-size: 3rem;
 }
 
 .morphsearch__close:hover.morphsearch__close::before,
@@ -214,13 +218,13 @@
 	opacity: 1;
 }
 
-.morphsearch__close::before {
-	@include prefix(transform, rotate(45deg), webkit);
-}
+// .morphsearch__close::before {
+// 	@include prefix(transform, rotate(45deg), webkit);
+// }
 
-.morphsearch__close::after {
-	@include prefix(transform, rotate(-45deg), webkit);
-}
+// .morphsearch__close::after {
+// 	@include prefix(transform, rotate(-45deg), webkit);
+// }
 
 // Content
 .morphsearch__content {
@@ -284,18 +288,18 @@
 			width: 15rem;
 			fill: white;
 			color: white;
-			@include prefix(transition, 400ms all ease-in-out, webkit);
+			transition: $transition--all;
 			margin: 1rem;
 		}
 		&.utility-nav--scrolled {
 			height: 8rem;
 			.mobile-nav__logo img {
 				width: 13rem;
-				@include prefix(transition, 400ms all ease-in-out, webkit);
+				transition: $transition--all;
 			}
 			.utility-nav__list {
 				margin: 1rem 0;
-				@include prefix(transition, 400ms all ease-in-out, webkit);
+				transition: $transition--all;
 			}
 		}
 		ul {
@@ -311,7 +315,7 @@
 			width: calc(100% - 8rem);
 			height: auto;
 			margin: 1.4rem 0;
-			@include prefix(transition, 400ms all ease-in-out, webkit);
+			transition: $transition--all;
 		}
 		.utility-nav__social {
 			display: none;
@@ -332,8 +336,7 @@
 		right: 1rem;
 		border: none;
 		&:before {
-			width: 3rem;
-			height: 3rem;
+			font-size: 2.4rem;
 			display: block;
 			position: absolute;
 			right: 1.5rem;

@@ -242,6 +242,9 @@
 	}
 	.selected-filters {
 		padding: 1rem 0;
+		.btn__filter {
+			margin-bottom: 1rem;
+		}
 	}
 	.selected-filters p {
 		font-weight: bold;

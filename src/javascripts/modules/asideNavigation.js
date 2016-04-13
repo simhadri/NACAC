@@ -8,8 +8,7 @@ import Throttled from 'modules/throttled.js';
 			asideNavigationContainer = asideNavigation.parent().parent(),
 			asideNavigationHeight = asideNavigation.height(),
 			asideNavigationLocation = asideNavigation.offset().top,
-			offsetOfFirstArticle = $('.article__row:first-child').offset()
-			console.log(offsetOfFirstArticle)
+			offsetOfFirstArticle = $('.article__row:first-child').offset();
 
 
 		if (bottomOfNavigation > $(".interior-hero__wrapper").height()) {
