@@ -27,11 +27,6 @@ webpackJsonp([0],[
 	__webpack_require__(7);
 	
 	__webpack_require__(8);
-	
-	// SUPER LAME FADE IN
-	$(document).ready(function () {
-		$('main').addClass("fadeIn");
-	});
 
 /***/ },
 /* 2 */

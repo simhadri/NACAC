@@ -1799,17 +1799,17 @@ body.body--freeze {
 .screen__overlay--on {
   opacity: 1; }
 
-main {
-  visibility: hidden; }
-  main.hero--none {
-    padding-top: 7rem;
-    margin-top: 5rem; }
-    main.hero--none > .article__row:nth-child {
-      padding-top: 0; }
-  main.interior__template {
-    padding-top: 7rem; }
-  main.main--scrolled {
-    padding-top: 7rem; }
+main.hero--none {
+  padding-top: 7rem;
+  margin-top: 5rem; }
+  main.hero--none > .article__row:nth-child {
+    padding-top: 0; }
+
+main.interior__template {
+  padding-top: 7rem; }
+
+main.main--scrolled {
+  padding-top: 7rem; }
 
 .bounceIn,
 .fadeIn {
