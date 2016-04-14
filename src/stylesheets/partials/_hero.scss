@@ -87,13 +87,15 @@
 	&.hero__wrapper {
 		min-height: 30rem;
 		height: auto;
-		margin-bottom: 6rem;
+		margin-bottom: 5rem;
 		position: relative;
 	}
 	.hero__content {
 		margin: auto;
 		text-align: center;
 		color: $white;
+		padding: 8rem 0;
+		padding-bottom: 0;
 		.hero__byline {}
 		.hero__title {
 			font-size: 360%;
@@ -133,6 +135,16 @@
 	}
 	.hero__content {
 		width: 50%;
+	}
+	.hero__wrapper {
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+	.hero__wrapper{
+	    display: -webkit-flex;
+	    display: -ms-flexbox;
 	}
 }
 

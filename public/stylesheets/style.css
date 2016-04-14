@@ -18,10 +18,10 @@
 /*
 ████████╗██████╗  █████╗ ███╗   ██╗███████╗██╗████████╗██╗ ██████╗ ███╗   ██╗███████╗
 ╚══██╔══╝██╔══██╗██╔══██╗████╗  ██║██╔════╝██║╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
-	 ██║   ██████╔╝███████║██╔██╗ ██║███████╗██║   ██║   ██║██║   ██║██╔██╗ ██║███████╗
-	 ██║   ██╔══██╗██╔══██║██║╚██╗██║╚════██║██║   ██║   ██║██║   ██║██║╚██╗██║╚════██║
-	 ██║   ██║  ██║██║  ██║██║ ╚████║███████║██║   ██║   ██║╚██████╔╝██║ ╚████║███████║
-	 ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+   ██║   ██████╔╝███████║██╔██╗ ██║███████╗██║   ██║   ██║██║   ██║██╔██╗ ██║███████╗
+   ██║   ██╔══██╗██╔══██║██║╚██╗██║╚════██║██║   ██║   ██║██║   ██║██║╚██╗██║╚════██║
+   ██║   ██║  ██║██║  ██║██║ ╚████║███████║██║   ██║   ██║╚██████╔╝██║ ╚████║███████║
+   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 */
 /*
 @include transition(all 0.2s ease-in-out);
@@ -423,6 +423,7 @@ a.btn {
     .primary-nav__trigger {
       display: inline-block; } }
   .primary-nav__trigger span.menu-text {
+    line-height: 1.6;
     padding-right: 1rem; }
   .primary-nav__trigger .trigger__icon {
     width: 16px;
@@ -1018,6 +1019,163 @@ a.btn {
     max-width: 3rem;
     opacity: 1; }
 
+.morphsearch {
+  width: calc(100% - 2rem);
+  height: 3.2rem;
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  border: 1px solid;
+  border-color: #eee;
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+      transform-origin: 100% 0;
+  transition: all 300ms ease-in-out; }
+  .morphsearch:before {
+    font-family: FontAwesome;
+    content: "\f002";
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    opacity: 1;
+    transition: all 300ms ease-in-out; }
+  .morphsearch .morphsearch__submit, .morphsearch:after {
+    position: absolute;
+    text-indent: 10rem;
+    overflow: hidden;
+    right: 0;
+    color: white;
+    font-family: FontAwesome;
+    content: '\f002';
+    background-color: transparent;
+    border: none;
+    -ms-transform-origin: 50% 50%;
+    opacity: 0;
+    transition: all 300ms ease-in-out; }
+  .morphsearch .morphsearch__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+    height: 3rem;
+    width: 3rem; }
+    .morphsearch .morphsearch__close:before {
+      font-family: FontAwesome;
+      content: '\f00d';
+      position: absolute;
+      width: 3rem;
+      border-radius: 0.2rem;
+      height: 100%;
+      top: 0.4rem;
+      left: 0;
+      opacity: 1;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 2.2rem;
+      transition: all 300ms ease-in-out; }
+
+.morphsearch.morphsearch--open {
+  width: 400%;
+  height: 24rem;
+  top: 0;
+  right: 0;
+  border-color: transparent; }
+  .morphsearch.morphsearch--open .morphsearch__input {
+    font-size: 5em; }
+  .morphsearch.morphsearch--open .morphsearch__form {
+    width: 80%;
+    height: 12rem;
+    top: 7rem;
+    -webkit-transform: translate3d(0, 3em, 0);
+            transform: translate3d(0, 3em, 0); }
+  .morphsearch.morphsearch--open:before {
+    opacity: 0; }
+  .morphsearch.morphsearch--open .morphsearch__submit, .morphsearch.morphsearch--open:after {
+    pointer-events: auto;
+    opacity: 1;
+    transition: all 0.3s;
+    transition-delay: 0.5s;
+    font-size: 8rem; }
+  .morphsearch.morphsearch--open .morphsearch__close {
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    transition: all 300ms ease-in-out;
+    transition-delay: 0.5s; }
+
+.morphsearch__form {
+  width: 100%;
+  height: 4rem;
+  margin: 0 auto;
+  position: relative;
+  transition-property: "width, height, transform";
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
+
+.morphsearch__input {
+  width: 100%;
+  height: 100%;
+  padding: 0 10% 0 1rem;
+  font-weight: 700;
+  border: none;
+  background: transparent;
+  font-size: 0.8em;
+  font-family: "Istok Web", sans-serif;
+  transition: font-size 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+  border: none; }
+  .morphsearch__input::-ms-clear {
+    display: none; }
+  .morphsearch__input::-webkit-input-placeholder, .morphsearch__input:-moz-placeholder, .morphsearch__input::-moz-placeholder, .morphsearch__input:-ms-input-placeholder {
+    color: #c2c2c2; }
+  .morphsearch--hideInput .morphsearch__input {
+    color: transparent;
+    transition: color 0.3s; }
+
+.gn-search:focus::-webkit-input-placeholder {
+  color: transparent; }
+
+.morphsearch__input:focus,
+.morphsearch__submit:focus {
+  outline: none; }
+
+.morphsearch__close:hover.morphsearch__close::before,
+.morphsearch__close:hover.morphsearch__close::after {
+  opacity: 1; }
+
+.morphsearch__content {
+  margin-top: 4.5em;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding: 0 10.5%;
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  text-align: left; }
+
+.morphsearch--open .morphsearch__content {
+  opacity: 1;
+  height: auto;
+  overflow: visible;
+  pointer-events: auto;
+  transition: opacity 0.3s 0.5s;
+  transition: opacity 0.3s 0.5s; }
+
+.morphsearch--open .morphsearch__input {
+  font-size: 4em;
+  font-weight: 200; }
+
+.morphsearch--open .morphsearch__submit {
+  font-size: 4em;
+  width: 7rem;
+  height: 7rem; }
+
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
@@ -1089,7 +1247,46 @@ a.btn {
   .result-item .result-item__summary .result-item__image {
     float: none;
     width: auto;
-    margin: 1rem 0 0; } }
+    margin: 1rem 0 0; }
+  .morphsearch {
+    height: 4.2rem;
+    top: 0.2rem;
+    right: 1rem;
+    border: none;
+    position: relative; }
+    .morphsearch:before {
+      font-size: 2.4rem;
+      display: block;
+      position: absolute;
+      right: 1.5rem;
+      top: 0.5rem; }
+    .morphsearch.morphsearch--open {
+      width: 100%;
+      top: 3rem; }
+      .morphsearch.morphsearch--open .morphsearch__form {
+        width: auto;
+        height: 6rem;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0; }
+      .morphsearch.morphsearch--open .morphsearch__input {
+        font-size: 2em;
+        padding: 0;
+        margin: 0; }
+      .morphsearch.morphsearch--open .morphsearch__submit {
+        top: 0.5rem;
+        right: 0;
+        width: 5rem;
+        height: 5rem; }
+      .morphsearch.morphsearch--open .morphsearch__submit, .morphsearch.morphsearch--open:after {
+        font-size: 5rem;
+        width: 5rem;
+        height: 5rem;
+        position: absolute;
+        -webkit-transform: none;
+            -ms-transform: none;
+                transform: none; } }
 
 /*
 ██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
@@ -1142,185 +1339,106 @@ a.btn {
     .utility-nav .utility-nav__social li {
       float: right;
       opacity: 0.6; }
-  .utility-nav .utility-nav__search {
+  .utility-nav .utility-search {
     float: left;
     width: 25%;
     text-align: right;
     padding: 1rem;
-    position: relative; }
-
-.morphsearch {
-  width: calc(100% - 2rem);
-  height: 3.2rem;
-  position: absolute;
-  top: 0.8rem;
-  right: 1rem;
-  border: 1px solid;
-  border-color: #eee;
-  -webkit-transform-origin: 100% 0;
-  -ms-transform-origin: 100% 0;
-      transform-origin: 100% 0;
-  transition-property: "height, width, top, right, border-color";
-  transition-duration: 0.5s;
-  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
-
-.morphsearch--open {
-  width: 400%;
-  height: 24rem;
-  top: 0;
-  right: 0;
-  border-color: transparent; }
-  .morphsearch--open .morphsearch__input {
-    font-size: 5em; }
-
-.morphsearch__form {
-  width: 100%;
-  height: 4rem;
-  margin: 0 auto;
-  position: relative;
-  transition-property: "width, height, transform";
-  transition-duration: 0.5s;
-  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
-
-.morphsearch--open .morphsearch__form {
-  width: 80%;
-  height: 12rem;
-  top: 7rem;
-  -webkit-transform: translate3d(0, 3em, 0);
-          transform: translate3d(0, 3em, 0); }
-
-.morphsearch__input {
-  width: 100%;
-  height: 100%;
-  padding: 0 10% 0 1rem;
-  font-weight: 700;
-  border: none;
-  background: transparent;
-  font-size: 0.8em;
-  font-family: "Istok Web", sans-serif;
-  transition: font-size 0.5s cubic-bezier(0.7, 0, 0.3, 1);
-  border: none; }
-  .morphsearch__input::-ms-clear {
-    display: none; }
-  .morphsearch__input::-webkit-input-placeholder, .morphsearch__input:-moz-placeholder, .morphsearch__input::-moz-placeholder, .morphsearch__input:-ms-input-placeholder {
-    color: #c2c2c2; }
-  .morphsearch--hideInput .morphsearch__input {
-    color: transparent;
-    transition: color 0.3s; }
-
-.gn-search:focus::-webkit-input-placeholder {
-  color: transparent; }
-
-.morphsearch__input:focus,
-.morphsearch__submit:focus {
-  outline: none; }
-
-.morphsearch:before {
-  font-family: FontAwesome;
-  content: "\f002";
-  width: 2rem;
-  height: 2rem;
-  display: block;
-  position: absolute;
-  right: 0.5rem;
-  top: 0.5rem;
-  opacity: 1; }
-
-.morphsearch--open:before {
-  opacity: 0; }
-
-.morphsearch__submit,
-.morphsearch:after {
-  position: absolute;
-  width: 8rem;
-  height: 8rem;
-  text-indent: 10rem;
-  overflow: hidden;
-  right: 0;
-  top: 50%;
-  background: transparent url(../images/magnifier.svg) no-repeat center center;
-  background-size: 100%;
-  border: none;
-  pointer-events: none;
-  -webkit-transform-origin: 50% 50%;
-      -ms-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-  opacity: 0;
-  -webkit-transform: translate3d(-3rem, -50%, 0) scale3d(0, 0, 1);
-  transform: translate3d(-3rem, -50%, 0) scale3d(0, 0, 1);
-  -webkit-transform: translate3d(-3rem, -50%, 0) scale3d(0, 0, 1);
-          transform: translate3d(-3rem, -50%, 0) scale3d(0, 0, 1); }
-
-.morphsearch--open .morphsearch__submit {
-  pointer-events: auto;
-  opacity: 1;
-  -webkit-transform: translate3d(-3rem, -50%, 0) scale3d(1, 1, 1);
-  transform: translate3d(-3rem, -50%, 0) scale3d(1, 1, 1);
-  transition: opacity 0.3s;
-  transition-delay: 0.5s; }
-
-.morphsearch__close {
-  position: absolute;
-  right: 0.1em;
-  top: 0.1em;
-  cursor: pointer;
-  opacity: 0;
-  transition: all 300ms ease-in-out; }
-
-.morphsearch--open .morphsearch__close {
-  opacity: 1;
-  pointer-events: auto;
-  -webkit-transform: scale3d(1, 1, 1);
-  transform: scale3d(1, 1, 1);
-  transition: all 300ms ease-in-out;
-  transition-delay: 0.5s; }
-
-.morphsearch__close::before {
-  font-family: FontAwesome;
-  content: '\f00d';
-  position: absolute;
-  width: 3rem;
-  border-radius: 0.2rem;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 1;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 3rem; }
-
-.morphsearch__close:hover.morphsearch__close::before,
-.morphsearch__close:hover.morphsearch__close::after {
-  opacity: 1; }
-
-.morphsearch__content {
-  margin-top: 4.5em;
-  width: 100%;
-  height: 0;
-  overflow: hidden;
-  padding: 0 10.5%;
-  position: absolute;
-  pointer-events: none;
-  opacity: 0;
-  text-align: left; }
-
-.morphsearch--open .morphsearch__content {
-  opacity: 1;
-  height: auto;
-  overflow: visible;
-  /* this breaks the transition of the children in FF: https://bugzilla.mozilla.org/show_bug.cgi?id=625289 */
-  pointer-events: auto;
-  transition: opacity 0.3s 0.5s;
-  transition: opacity 0.3s 0.5s; }
-
-.morphsearch--open .morphsearch__input {
-  font-size: 4em;
-  font-weight: 200; }
-
-.morphsearch--open .morphsearch__submit {
-  font-size: 4em;
-  width: 7rem;
-  height: 7rem; }
+    position: relative;
+    height: 5rem; }
+    .utility-nav .utility-search .utility-search__trigger {
+      width: calc(100% - 2rem);
+      height: 3rem;
+      border: 1px solid white;
+      cursor: pointer;
+      transition: all 300ms ease-in-out;
+      display: block;
+      position: absolute;
+      top: 1rem;
+      right: 0;
+      margin: 0 1rem; }
+      .utility-nav .utility-search .utility-search__trigger:after {
+        font-family: FontAwesome;
+        content: "\f002";
+        width: 2rem;
+        height: 2rem;
+        display: block;
+        position: absolute;
+        right: 0.5rem;
+        top: 0.5rem;
+        opacity: 1;
+        transition: all 300ms ease-in-out; }
+    .utility-nav .utility-search .utility-search__close {
+      opacity: 0;
+      visibility: hidden; }
+  .utility-nav .utility-search__wrapper {
+    cursor: default;
+    position: fixed;
+    top: 15rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden; }
+    .utility-nav .utility-search__wrapper form.utility-search__form {
+      max-width: 700px;
+      margin: auto; }
+    .utility-nav .utility-search__wrapper input.utility-search__input {
+      background: transparent;
+      width: calc(100% - 7rem);
+      float: left;
+      border: none;
+      margin: 0;
+      padding: 0;
+      font-size: 5rem; }
+      .utility-nav .utility-search__wrapper input.utility-search__input::-ms-clear {
+        display: none; }
+      .utility-nav .utility-search__wrapper input.utility-search__input::-webkit-input-placeholder, .utility-nav .utility-search__wrapper input.utility-search__input:-moz-placeholder, .utility-nav .utility-search__wrapper input.utility-search__input::-moz-placeholder, .utility-nav .utility-search__wrapper input.utility-search__input:-ms-input-placeholder {
+        color: #c2c2c2; }
+    .utility-nav .utility-search__wrapper a.utility-search__submit {
+      float: left;
+      display: block;
+      width: 7rem;
+      height: 7rem;
+      cursor: pointer;
+      font-size: 7rem;
+      line-height: 7rem;
+      text-align: center;
+      pointer-events: none;
+      transition: all 300ms ease-in-out;
+      -webkit-transform: scale(0, 0);
+          -ms-transform: scale(0, 0);
+              transform: scale(0, 0); }
+  .utility-nav .utility-search__close {
+    width: 2rem;
+    height: 3rem;
+    font-size: 2.3rem;
+    display: block;
+    float: right;
+    text-align: center; }
+  .utility-nav .utility-search.utility-search--open .utility-search__wrapper {
+    visibility: visible; }
+  .utility-nav .utility-search.utility-search--open .utility-search__trigger {
+    opacity: 0;
+    width: 400%;
+    height: 400%;
+    border-color: transparent;
+    transition: all 300ms ease-in-out; }
+  .utility-nav .utility-search.utility-search--open .utility-search__close {
+    opacity: 1;
+    visibility: visible; }
+  .utility-nav .utility-search.utility-search--open a.utility-search__submit {
+    opacity: 1;
+    pointer-events: all;
+    transition: all 100ms;
+    transition-delay: 400ms;
+    -webkit-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+            transform: scale(1, 1); }
+  .utility-nav .gn-search:focus::-webkit-input-placeholder {
+    color: transparent; }
+  .utility-nav .utility-search__input:focus,
+  .utility-nav .utility-search__submit:focus {
+    outline: none; }
 
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
@@ -1371,36 +1489,24 @@ a.btn {
       transition: all 300ms ease-in-out; }
     .utility-nav .utility-nav__social {
       display: none; }
-    .utility-nav .utility-nav__search {
+    .utility-nav .utility-search {
       float: none;
-      width: 10rem;
       text-align: right;
       padding: 1rem;
+      float: right;
+      height: 5rem;
       position: absolute;
-      right: 9rem;
-      top: 0.8rem; }
-  .morphsearch {
-    height: 4.2rem;
-    top: 0.2rem;
-    right: 1rem;
-    border: none; }
-    .morphsearch:before {
-      font-size: 2.4rem;
-      display: block;
-      position: absolute;
-      right: 1.5rem;
-      top: 0.5rem; }
-  .morphsearch--open {
-    width: 24rem; }
-    .morphsearch--open .morphsearch__form {
-      width: 32rem;
-      -webkit-transform: translate3d(0, 3em, 0);
-      transform: translate3d(0, 3em, 0); }
-    .morphsearch--open .morphsearch__input {
-      font-size: 2em; }
-    .morphsearch--open .morphsearch__submit {
-      width: 5rem;
-      height: 5rem; } }
+      right: 9.8rem;
+      top: 0;
+      height: 6.3rem;
+      width: 7rem; }
+      .utility-nav .utility-search .utility-search__trigger {
+        border: none;
+        font-size: 3rem;
+        padding: 0;
+        margin: 0;
+        height: 4rem;
+        text-align: center; } }
 
 /*
 ██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
@@ -1688,13 +1794,15 @@ a.btn {
 .hero--interior.hero__wrapper {
   min-height: 30rem;
   height: auto;
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
   position: relative; }
 
 .hero--interior .hero__content {
   margin: auto;
   text-align: center;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  padding: 8rem 0;
+  padding-bottom: 0; }
   .hero--interior .hero__content .hero__title {
     font-size: 360%;
     position: relative;
@@ -1724,6 +1832,18 @@ a.btn {
 
 .flexbox .hero__content {
   width: 50%; }
+
+.flexbox .hero__wrapper {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.flexbox .hero__wrapper {
+  display: -webkit-flex;
+  display: -ms-flexbox; }
 
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
@@ -1799,17 +1919,17 @@ body.body--freeze {
 .screen__overlay--on {
   opacity: 1; }
 
-main {
-  visibility: hidden; }
-  main.hero--none {
-    padding-top: 7rem;
-    margin-top: 5rem; }
-    main.hero--none > .article__row:nth-child {
-      padding-top: 0; }
-  main.interior__template {
-    padding-top: 7rem; }
-  main.main--scrolled {
-    padding-top: 7rem; }
+main.hero--none {
+  padding-top: 7rem;
+  margin-top: 5rem; }
+  main.hero--none > .article__row:nth-child {
+    padding-top: 0; }
+
+main.interior__template {
+  padding-top: 7rem; }
+
+main.main--scrolled {
+  padding-top: 7rem; }
 
 .bounceIn,
 .fadeIn {
@@ -2134,7 +2254,11 @@ main {
     margin: auto;
     width: 28rem; }
   .testimonial-block {
-    padding-bottom: 2rem; }
+    padding-bottom: 2rem;
+    padding-top: 3.4rem; }
+    .testimonial-block p.testimonial-block__name {
+      font-size: 1.6rem;
+      font-weight: bold; }
   .focus-testimonial__content .article__header {
     text-align: center; } }
 
