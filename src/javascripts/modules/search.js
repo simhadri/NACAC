@@ -2,43 +2,32 @@ import Screen from 'modules/screen.js';
 (function() {
 	'use strict';
 	var screenOverlay = new Screen(),
-		morphSearch = $('.morphsearch'),
-		searchInput = $('input.morphsearch__input'),
+		morphSearch = $('.utility-search'),
+		searchInput = $('input.utility-search__input'),
 		seachInputWrapper = $('.utility-nav__search'),
-		ctrlClose = $('span.morphsearch__close'),
+		ctrlClose = $('span.utility-search__close'),
 		isOpen = false,
 		// show/hide search area
 		toggleSearch = function(evt) {
 			// return if open and the input gets focused
 			if (evt.type.toLowerCase() === 'focus' && isOpen) return false;
 
-			var offsets = morphsearch.getBoundingClientRect();
+			//var offsets = morphSearch.getBoundingClientRect();
 			if (isOpen) {
-				morphSearch.removeClass('morphsearch--open');
+				morphSearch.removeClass('utility-search--open');
 				seachInputWrapper.removeClass('utility-nav__search--on');
 				screenOverlay.turnScreenOff();
-				// trick to hide input text once the search overlay closes 
-				// todo: hardcoded times, should be done after transition ends
-				if (searchInput.value !== '') {
-					setTimeout(function() {
-						morphSearch.addClass('morphsearch--hideInput');
-						setTimeout(function() {
-							morphSearch.removeClass('morphsearch--hideInput');
-							searchInput.value = '';
-						}, 300);
-					}, 500);
-				}
 				searchInput.val('').blur();
 			} else {
-				morphSearch.addClass('morphsearch--open');
+				setTimeout(function(){searchInput.focus()}, 400);
+				morphSearch.addClass('utility-search--open');
 				seachInputWrapper.addClass('utility-nav__search--on');
 				screenOverlay.turnScreenOn('hard');
 			}
 			isOpen = !isOpen;
 		};
 	// events
-	searchInput.on('focus', toggleSearch);
-	ctrlClose.on('click', toggleSearch);
+	$('.utility-search__trigger').on('click', toggleSearch);
 	
 	// esc key closes search overlay
 	// keyboard navigation events
