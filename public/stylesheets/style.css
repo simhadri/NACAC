@@ -1794,13 +1794,15 @@ a.btn {
 .hero--interior.hero__wrapper {
   min-height: 30rem;
   height: auto;
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
   position: relative; }
 
 .hero--interior .hero__content {
   margin: auto;
   text-align: center;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  padding: 8rem 0;
+  padding-bottom: 0; }
   .hero--interior .hero__content .hero__title {
     font-size: 360%;
     position: relative;
@@ -1839,8 +1841,7 @@ a.btn {
   -ms-flex-align: center;
   align-items: center; }
 
-.flexbox .hero__wrapper,
-.flexbox .flexbox__row {
+.flexbox .hero__wrapper {
   display: -webkit-flex;
   display: -ms-flexbox; }
 
@@ -2253,7 +2254,11 @@ main.main--scrolled {
     margin: auto;
     width: 28rem; }
   .testimonial-block {
-    padding-bottom: 2rem; }
+    padding-bottom: 2rem;
+    padding-top: 3.4rem; }
+    .testimonial-block p.testimonial-block__name {
+      font-size: 1.6rem;
+      font-weight: bold; }
   .focus-testimonial__content .article__header {
     text-align: center; } }
 

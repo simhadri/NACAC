@@ -8,12 +8,11 @@
 	{% set navType = "primary-nav--inanimate" %}
 	{% include './_shared/navigation.html'%}
 
-	{% include './_components/breadcrumb.html' %}
-
 	{% include './_shared/interior-hero.html'%}
 	
 	<article class="article__row content__row article--white">
 		<div class="container">
+		{% include './_components/breadcrumb.html' %}
 			<div class="row">
 				<div class="col-lg-3 col-md-4 aside-navigation__column">
 					{% include './_shared/aside-navigation.html'%}
