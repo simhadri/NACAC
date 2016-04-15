@@ -25,9 +25,9 @@ webpackJsonp([1],{
 /***/ function(module, exports, __webpack_require__) {
 
 	// MODULES
-	'use strict';
+	"use strict";
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 	
 	var _modulesThrottledJs = __webpack_require__(5);
 	
@@ -39,25 +39,29 @@ webpackJsonp([1],{
 			   
 			// Includes 180px utility nav + breadcrumb height offset; These are fixed
 			bottomOfNavigation = $(window).scrollTop() + 180,
-			    asideNavigationContainer = asideNavigation.parent().parent(),
+			    asideNavigationContainerHeight = $(".aside-navigation__row").height(),
 			    asideNavigationHeight = asideNavigation.height(),
-			    asideNavigationLocation = asideNavigation.offset().top,
+			   
+			// 40 is for its margins
+			asideNavigationLocation = asideNavigation.offset().top - 40,
 			    offsetOfFirstArticle = $('.article__row:first-child').offset();
 	
-			if (bottomOfNavigation > $(".interior-hero__wrapper").height()) {
+			if (bottomOfNavigation > $(".interior-hero__wrapper").height() + $(".interior-hero__breadcrumb").height() + 70) {
 				$('.aside-navigation').addClass('aside-navigation--sticky');
 			}
 			if (bottomOfNavigation < 610) {
 				$('.aside-navigation').removeClass('aside-navigation--sticky');
 			}
-			// THIS IS DUMB!
-			if (asideNavigationContainer.height() < asideNavigationLocation) {
+			// if location of aside-nav less its size
+			// is greater than tge aside-navs container; hide
+			if (asideNavigationLocation > asideNavigationContainerHeight) {
 				$('.aside-navigation').addClass("aside-navigation--hide");
 			} else {
 				$('.aside-navigation').removeClass("aside-navigation--hide");
 			}
 		};
-		$(window).scroll((0, _modulesThrottledJs2['default'])(asideNavigation, 100));
+		asideNavigation();
+		$(window).scroll((0, _modulesThrottledJs2["default"])(asideNavigation, 20));
 	})();
 
 /***/ }

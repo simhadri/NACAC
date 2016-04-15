@@ -244,7 +244,7 @@ webpackJsonp([0],[
 				openNavInterior(selected);
 			}
 		});
-		navScrollDependencies;
+		navScrollDependencies();
 		$(window).scroll((0, _modulesThrottledJs2['default'])(navScrollDependencies, 100));
 	})();
 
