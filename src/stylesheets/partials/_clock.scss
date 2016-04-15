@@ -11,11 +11,13 @@
     background-color: $nacac_translucent-blue;
     padding: 0;
     border-radius: 50%;
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
     text-align: center;
     font-size: 4rem;
-    line-height: 10rem;
+    line-height: 8rem;
+    font-family: $sans;
+    margin-bottom: 2rem;
 }
 
 .segment__label{

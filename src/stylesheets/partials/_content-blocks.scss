@@ -194,6 +194,21 @@
 		line-height: 2.8rem;
 	}
 }
+
+.figure-block{
+	margin: 0;
+	margin-top: 2rem;
+}
+.figure-block__image{
+	width: 100%;
+}
+.figure-block__caption{
+	h3{
+		
+		font-size: 2rem;
+		font-weight:bold;
+	}
+}
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
