@@ -192,7 +192,7 @@ import Screen from 'modules/screen.js';
 			openNavInterior(selected);
 		}
 	});
-	navScrollDependencies;
+	navScrollDependencies();
 	$(window).scroll(Throttled(navScrollDependencies, 100));
 	
 
