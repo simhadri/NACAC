@@ -1,4 +1,5 @@
  {% extends '_layouts/main-application.html' %}
+ {% set pageLocation = "Membership" %}
  {% block content %}
 
 <main id="main" class="membership__template interior__template">
@@ -8,10 +9,12 @@
 	{% set navType = "primary-nav--inanimate" %}
 	{% include './_shared/navigation.html'%}
 
-	{% include './_shared/interior-hero.html'%}
+	{% include './_shared/interior-hero-membership.html'%}
 	
 	<article class="article__row content__row article--white">
 		<div class="container">
+
+
 		{% include './_components/breadcrumb.html' %}
 			<div class="row aside-navigation__row">
 				<div class="col-lg-3 col-md-4">

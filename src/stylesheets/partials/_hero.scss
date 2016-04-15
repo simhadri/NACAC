@@ -43,10 +43,21 @@
 	margin: auto;
 	text-align: center;
 	color: $white;
-	.hero__byline {}
+	.hero__byline {
+		text-transform: none;
+	}
 	.hero__title {
-		font-size: 360%;
+		font-size: 340%;
 		position: relative;
+	}
+	.hero__text {
+		font-weight: bold;
+	}
+	.hero__btn {
+		margin: 1.6rem;
+	}
+	.hero--underline{
+		position:relative;
 		&:after {
 			content: "";
 			width: calc(100% - 40rem);
@@ -58,10 +69,6 @@
 			display: block;
 			margin: auto;
 		}
-	}
-	.hero__text {}
-	.hero__btn {
-		margin: 1.6rem;
 	}
 }
 
@@ -91,33 +98,16 @@
 		position: relative;
 	}
 	.hero__content {
-		margin: auto;
-		text-align: center;
-		color: $white;
 		padding: 8rem 0;
 		padding-bottom: 0;
 		.hero__byline {}
 		.hero__title {
-			font-size: 360%;
-			position: relative;
 			margin: 0;
-			&:after {
-				content: "";
-				width: calc(100% - 40rem);
-				height: 0;
-				position: absolute;
-				bottom: -1.6rem;
-				left: 20rem;
-				border-top: 1px solid $white;
-				display: block;
-				margin: auto;
-			}
 		}
 		.hero__text {
 			font-size: 1.8rem;
 		}
 		.hero__btn {
-			margin: 1.6rem;
 		}
 	}
 }
@@ -137,14 +127,14 @@
 		width: 50%;
 	}
 	.hero__wrapper {
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-	.hero__wrapper{
-	    display: -webkit-flex;
-	    display: -ms-flexbox;
+		display: flex;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+	}
+	.hero__wrapper {
+		display: -webkit-flex;
+		display: -ms-flexbox;
 	}
 }
 
@@ -175,7 +165,7 @@
 		.hero__byline {
 			font-size: 2rem;
 		}
-		&.hero--interior{
+		&.hero--interior {
 			padding-top: 4rem;
 		}
 	}
@@ -183,14 +173,12 @@
 		margin-top: 4rem;
 	}
 	.flexbox .hero__wrapper,
-&.hero--interior {
-	.hero__content {
-		width: 100%;
+	&.hero--interior {
+		.hero__content {
+			width: 100%;
+		}
 	}
 }
-}
-
-
 
 
 /*
@@ -206,5 +194,21 @@
 @include break(min, $screen-md-min) {
 	.hero__content {
 		padding: 15rem 0;
+	}
+}
+
+@include break(min, $screen-md-min, max, $screen-lg) {
+	.hero__content {
+		width: 80vw;
+	}
+	.hero--interior {
+		.hero__content {
+			width: 80vw;
+		}
+	}
+	.flexbox {
+		.hero__content {
+			width: 80%;
+		}
 	}
 }

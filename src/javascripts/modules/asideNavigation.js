@@ -7,15 +7,16 @@ import Throttled from 'modules/throttled.js';
 			bottomOfNavigation = $(window).scrollTop() + 180,
 			asideNavigationContainerHeight = $(".aside-navigation__row").height(),
 			asideNavigationHeight = asideNavigation.height(),
+			// 170 off set
+			interiorHeroHeight = $(".hero__wrapper").height() +$(".interior-hero__breadcrumb").height() + 170,
 			// 40 is for its margins
 			asideNavigationLocation = asideNavigation.offset().top - 40,
 			offsetOfFirstArticle = $('.article__row:first-child').offset();
 
-
-		if (bottomOfNavigation > $(".interior-hero__wrapper").height() +$(".interior-hero__breadcrumb").height() + 70 ) {
+		if (bottomOfNavigation >  interiorHeroHeight) {
 			$('.aside-navigation').addClass('aside-navigation--sticky')
 		}
-		if (bottomOfNavigation < 610) {
+		if (bottomOfNavigation < interiorHeroHeight) {
 			$('.aside-navigation').removeClass('aside-navigation--sticky')
 		}
 		// if location of aside-nav less its size

@@ -18,6 +18,7 @@
       "entries": {
         "app": ["./app.js"],
         "interior": ["./interior.js"],
+        "countdownClock": ["./countdownClock.js"],
         "numberCount": ["./numberCount.js"]
       },
       "extensions": ["js"]

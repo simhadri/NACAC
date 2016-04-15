@@ -1,0 +1,89 @@
+ {% extends '_layouts/main-application.html' %}
+ {% set pageLocation = "Events" %}
+ {% block content %}
+<main id="main" class="membership__template interior__template">
+	{% include './_shared/utility.html'%}
+	{% set navType = "primary-nav--inanimate" %}
+	{% include './_shared/navigation.html'%}
+	{% include './_shared/interior-hero-events.html'%}
+	<article class="article__row content__row article--white">
+		<div class="container">
+			{% include './_components/breadcrumb.html' %}
+			<div class="row aside-navigation__row">
+				<div class="col-lg-3 col-md-4">
+					{% include './_shared/aside-navigation.html'%}
+				</div>
+				<div class="col-lg-9 col-md-8">
+					<section class="card-block__row section__row">
+						<div class="flexbox__row row">
+							<div class="flexbox__column card-block col-md-4">{% include './_components/card-block-no-button.html'%}</div>
+							<div class="flexbox__column card-block col-md-4">{% include './_components/card-block-no-button-alt.html'%}</div>
+							<div class="flexbox__column card-block col-md-4">{% include './_components/card-block-no-button.html'%}</div>
+						</div>
+					</section>
+					<section class="section__row free-text__content">
+						<h2>Member Stories</h2>
+						<p>Get involved in the counseling and admission community and stay up-to-date on the industry trends. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</p>
+						<h2>Member Stories</h2>
+						<p>Get involved in the counseling and admission community and stay up-to-date on the industry trends. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</p>
+						<h2>Member Stories</h2>
+						<p>Get involved in the counseling and admission community and stay up-to-date on the industry trends. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</p>
+						<a href="#" class="btn btn--nacac-blue">Become a Member</a>
+					</section>
+					<section class="section__row">
+						{% include './_components/focus-testimonial.html' %}
+					</section>
+					<section class="section__row">
+						<header class="section__header">
+							<h2>Sponsors</h2>
+							{% include './_components/slider.html' %}
+							<a href="#" class="btn btn--nacac-blue">View Sponsorship Opportunities</a>
+						</header>
+					</section>
+					<section class="section__row">
+						<header class="section__header">
+							<h2>Related Events &amp; Training</h2>
+						</header>
+						<div class="flexbox__row row">
+							<div class="flexbox__column col-md-4">{% include './_components/figure-block.html'%}</div>
+							<div class="flexbox__column col-md-4">{% include './_components/figure-block.html'%}</div>
+							<div class="flexbox__column col-md-4">{% include './_components/figure-block.html'%}</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</article>
+	{% include './_shared/footer.html'%}
+</main>
+{% endblock %}
+{% block javascript %}
+<script src="/javascripts/interior.js"></script>
+<script src="/javascripts/countdownClock.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js"></script>
+<script>
+$('#lightSlider').lightSlider({
+	item: 4,
+	loop: false,
+	slideMove: 4,
+	pager: false,
+	easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+	speed: 600,
+	responsive: [{
+		breakpoint: 800,
+		settings: {
+			item: 3,
+			slideMove: 1,
+			slideMargin: 6,
+		}
+	}, {
+		breakpoint: 480,
+		settings: {
+			item: 2,
+			slideMove: 1
+		}
+	}]
+});
+</script>
+
+{% endblock %}
