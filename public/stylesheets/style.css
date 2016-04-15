@@ -345,6 +345,9 @@ ul {
 .text--blue {
   color: #6AAEE6; }
 
+.text--orange {
+  color: #f28800; }
+
 a.btn {
   padding: 1.6rem 2.4rem;
   font-size: 1.4rem;
@@ -1796,10 +1799,18 @@ a.btn {
   margin: auto;
   text-align: center;
   color: #FFFFFF; }
+  .hero__content .hero__byline {
+    text-transform: none; }
   .hero__content .hero__title {
     font-size: 360%;
     position: relative; }
-    .hero__content .hero__title:after {
+  .hero__content .hero__text, .hero__content .segment__label {
+    font-weight: bold; }
+  .hero__content .hero__btn {
+    margin: 1.6rem; }
+  .hero__content .hero--underline {
+    position: relative; }
+    .hero__content .hero--underline:after {
       content: "";
       width: calc(100% - 40rem);
       height: 0;
@@ -1809,8 +1820,6 @@ a.btn {
       border-top: 1px solid #FFFFFF;
       display: block;
       margin: auto; }
-  .hero__content .hero__btn {
-    margin: 1.6rem; }
 
 .hero--interior .hero__breadcrumb {
   margin-top: 6rem;
@@ -1830,29 +1839,12 @@ a.btn {
   position: relative; }
 
 .hero--interior .hero__content {
-  margin: auto;
-  text-align: center;
-  color: #FFFFFF;
   padding: 8rem 0;
   padding-bottom: 0; }
   .hero--interior .hero__content .hero__title {
-    font-size: 360%;
-    position: relative;
     margin: 0; }
-    .hero--interior .hero__content .hero__title:after {
-      content: "";
-      width: calc(100% - 40rem);
-      height: 0;
-      position: absolute;
-      bottom: -1.6rem;
-      left: 20rem;
-      border-top: 1px solid #FFFFFF;
-      display: block;
-      margin: auto; }
-  .hero--interior .hero__content .hero__text {
+  .hero--interior .hero__content .hero__text, .hero--interior .hero__content .segment__label {
     font-size: 1.8rem; }
-  .hero--interior .hero__content .hero__btn {
-    margin: 1.6rem; }
 
 .flexbox .hero--interior.hero__wrapper {
   display: -webkit-flex;
@@ -1894,7 +1886,7 @@ a.btn {
     .hero__wrapper h1.hero__title {
       line-height: 1.2;
       font-size: 250%; }
-    .hero__wrapper .hero__text {
+    .hero__wrapper .hero__text, .hero__wrapper .segment__label {
       font-size: 2rem; }
     .hero__wrapper .hero__byline {
       font-size: 2rem; }
@@ -1918,6 +1910,14 @@ a.btn {
 @media (min-width: 992px) {
   .hero__content {
     padding: 15rem 0; } }
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .hero__content {
+    width: 80vw; }
+  .hero--interior .hero__content {
+    width: 80vw; }
+  .flexbox .hero__content {
+    width: 80%; } }
 
 /*
  * CSS Page Transitions
@@ -2409,6 +2409,46 @@ nav.tab__navigation {
       position: static;
       margin: 1rem auto; } }
 
+/*
+██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
+██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
+██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
+														  
+*/
+.clock__wrapper {
+  width: 100%;
+  margin: auto;
+  text-align: center; }
+
+.clock__segment {
+  display: inline-block;
+  padding: 2rem; }
+
+.segment__num {
+  background-color: rgba(36, 128, 196, 0.75);
+  padding: 0;
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  text-align: center;
+  font-size: 4rem;
+  line-height: 10rem; }
+
+.segment__label {
+  text-transform: capitalize;
+  font-weight: bold; }
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
 /*
 ██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
 ██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
