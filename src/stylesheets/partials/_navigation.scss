@@ -377,9 +377,10 @@
 				bottom:0;
 				width: 0; 
 				height: 0;
-				border-left: 50px solid transparent;
-				border-right: 50px solid transparent;
-				border-bottom: 1rem solid $white; 
+				margin-left: 40px;
+				border-left: 1rem solid transparent;
+				border-right: 1rem solid transparent;
+				border-bottom: 1rem solid #FFFFFF;
 			}
 		}
 		.primary-nav__interior {
@@ -487,5 +488,9 @@
 @include break(min, $screen-md-min, max, $screen-lg) {
 	.primary-nav .primary-nav__item {
 		font-size: 1.36rem;
+		&.selected:after{
+			border-left-width: 50px;
+			border-right-width: 50px;
+		}
 	}
 }

@@ -27,9 +27,18 @@
 							<p>Get involved in the counseling and admission community and stay up-to-date on the industry trends. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</p>
 						</header>
 						<div class="flexbox__row row">
-							<div class="flexbox__column card-block col-md-4">{% include './_components/card-block-no-button.html'%}</div>
-							<div class="flexbox__column card-block col-md-4">{% include './_components/card-block-no-button-alt.html'%}</div>
-							<div class="flexbox__column card-block col-md-4">{% include './_components/card-block-no-button.html'%}</div>
+							<div class="flexbox__column card-block col-md-4">
+							{% set button = false %}
+							{% include './_components/card-block.html'%}
+							</div>
+							<div class="flexbox__column card-block col-md-4">
+							{% set button = false %}
+							{% include './_components/card-block.html'%}
+							</div>
+							<div class="flexbox__column card-block col-md-4">
+							{% set button = false %}
+							{% include './_components/card-block.html'%}
+							</div>
 						</div>
 						<a href="#" class="btn btn--nacac-blue btn--centered">Become a Member</a>
 					</section>

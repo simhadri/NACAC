@@ -1,32 +1,33 @@
 // MODULES
 import Throttled from 'modules/throttled.js';
-(function() {
-	var asideNavigation = function() {
-		var asideNavigation = $(".aside-navigation"),
-			// Includes 180px utility nav + breadcrumb height offset; These are fixed
-			bottomOfNavigation = $(window).scrollTop() + 180,
-			asideNavigationContainerHeight = $(".aside-navigation__row").height(),
-			asideNavigationHeight = asideNavigation.height(),
-			// 170 off set
-			interiorHeroHeight = $(".hero__wrapper").height() +$(".interior-hero__breadcrumb").height() + 170,
-			// 40 is for its margins
-			asideNavigationLocation = asideNavigation.offset().top - 40,
-			offsetOfFirstArticle = $('.article__row:first-child').offset();
 
-		if (bottomOfNavigation >  interiorHeroHeight) {
-			$('.aside-navigation').addClass('aside-navigation--sticky')
-		}
-		if (bottomOfNavigation < interiorHeroHeight) {
-			$('.aside-navigation').removeClass('aside-navigation--sticky')
-		}
-		// if location of aside-nav less its size
-		// is greater than tge aside-navs container; hide
-		if( asideNavigationLocation  > asideNavigationContainerHeight){
-			$('.aside-navigation').addClass("aside-navigation--hide");
-		} else{
-			$('.aside-navigation').removeClass("aside-navigation--hide");
-		}
+// FUNCTION
+var asideNavigation = function() {
+	var asideNavigation = $(".aside-navigation"),
+		// Includes 180px utility nav + breadcrumb height offset; These are fixed
+		bottomOfNavigation = $(window).scrollTop() + 180,
+		asideNavigationContainerHeight = $(".aside-navigation__row").height(),
+		asideNavigationHeight = asideNavigation.height(),
+		// 170 off set
+		interiorHeroHeight = $(".hero__wrapper").height() +$(".interior-hero__breadcrumb").height() + 170,
+		// 40 is for its margins
+		asideNavigationLocation = asideNavigation.offset().top - 40,
+		offsetOfFirstArticle = $('.article__row:first-child').offset();
+
+	if (bottomOfNavigation >  interiorHeroHeight) {
+		$('.aside-navigation').addClass('aside-navigation--sticky')
 	}
-	asideNavigation();
-	$(window).scroll(Throttled(asideNavigation, 20));
-})();
+	if (bottomOfNavigation < interiorHeroHeight) {
+		$('.aside-navigation').removeClass('aside-navigation--sticky')
+	}
+	// if location of aside-nav less its size
+	// is greater than tge aside-navs container; hide
+	if( asideNavigationLocation  > asideNavigationContainerHeight){
+		console.log('why')
+		$('.aside-navigation').addClass("aside-navigation--hide");
+	} else{
+		$('.aside-navigation').removeClass("aside-navigation--hide");
+	}
+}
+asideNavigation();
+$(window).scroll(Throttled(asideNavigation, 20));
