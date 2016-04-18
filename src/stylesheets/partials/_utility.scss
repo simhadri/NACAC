@@ -53,7 +53,7 @@
 			width: calc(100% - 2rem);
 			height: 3rem;
 			border: 1px solid white;
-			cursor: pointer;
+			
 			transition: $transition--all;
 			display: block;
 			position: absolute;
@@ -64,6 +64,7 @@
 				font-family: FontAwesome;
 				content: "\f002";
 				width: 2rem;
+				cursor: pointer;
 				height: 2rem;
 				display: block;
 				position: absolute;
