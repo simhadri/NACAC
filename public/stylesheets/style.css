@@ -1649,7 +1649,7 @@ a.btn {
     color: #FFFFFF; }
 
 .hero--interior .hero__content {
-  width: 50vw; }
+  width: 80vw; }
 
 .hero--interior.hero__wrapper {
   min-height: 30rem;
@@ -1674,7 +1674,7 @@ a.btn {
   align-items: center; }
 
 .flexbox .hero__content {
-  width: 50%; }
+  width: 80%; }
 
 .flexbox .hero__wrapper {
   display: -webkit-flex;
