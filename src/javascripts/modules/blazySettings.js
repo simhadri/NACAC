@@ -1,5 +1,6 @@
 $(function() {
-	var bLazy = new Blazy({
+	$(window).load(function(){
+		var bLazy = new Blazy({
 		//breakpoints use max-width
 		//don't always trump other loading factors
 		breakpoints: [
@@ -16,4 +17,6 @@ $(function() {
 			}, 2000);
 		}
 	});
+	});
+	
 });
