@@ -3,6 +3,9 @@
 (-ms-high-contrast: active) {
 	.utility-nav {
 		background-color: $nacac_light-blue;
+		.utility-search__trigger {
+			cursor: pointer;
+		}
 	}
 	.primary-nav {
 		top: 5rem;
@@ -11,7 +14,41 @@
 			top: 12px;
 		}
 	}
-	.flexbox__column{
+	.flexbox__column {
 		display: block;
+	}
+	.color-block img.color-block__image {
+		width: 100%;
+		height: auto;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		object-fit: cover;
+	}
+	@include break(max, $screen-sm-max) {
+		.color-block img.color-block__image {
+			position: absolute;
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+// Edge 12+
+@supports (-ms-accelerator:true) {
+	.color-block img.color-block__image {
+		width: 100%;
+		height: auto;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		object-fit: cover;
+	}
+	@include break(max, $screen-sm-max) {
+		.color-block img.color-block__image {
+			position: absolute;
+			width: 100%;
+			height: auto;
+		}
 	}
 }

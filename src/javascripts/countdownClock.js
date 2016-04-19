@@ -47,5 +47,5 @@ var initializeClock = function(id, endtime) {
 	updateClock();
 	var timeinterval = setInterval(updateClock, 1000);
 }
-var setTime = document.getElementById('countdown-clock').dataset.deadline;
+var setTime = document.getElementById('countdown-clock').getAttribute('data-deadline');
 initializeClock('countdown-clock',setTime);

@@ -7,8 +7,11 @@
 	color: $white;
 	img.color-block__image {
 		width: 100%;
+		height: 100%;
 		position: absolute;
-		z-index: -1;
+		z-index: 1;
+		top:0;
+		object-fit: cover;
 	}
 	p.color-block__feature {
 		padding-left: 2rem;
@@ -40,9 +43,15 @@
 	min-height: 36rem;
 	overflow: hidden;
 	&:nth-child(odd) .color-block__content {
+		left:inherit;
+		right: 0;
 		float: right;
 	}
 	.color-block__content {
+		position:absolute;
+		z-index: 2;
+		left:0;
+		right: inherit;
 		padding: 3rem;
 		@include break(min, $screen-sm-min) {
 			width: $container-sm-half;
@@ -96,6 +105,9 @@
 	text-align: center;
 	width: 100%;
 	padding: 0 1rem;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-size: 100%;
 	h2 {
 		display: table-cell;
 		vertical-align: middle;
@@ -226,10 +238,7 @@
 	.color-block {
 		color: $white;
 		img.color-block__image {
-			width: auto;
-    		height: 100%;
 			position: absolute;
-			@include zone-index(negative, 1);
 		}
 	}
 }

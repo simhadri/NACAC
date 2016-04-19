@@ -135,7 +135,7 @@ import Screen from 'modules/screen.js';
 		// If past than util nav and animation NOT fired
 		if (bodyTop >= browserViewport - utilityHeight && !primaryNav.hasClass('primary-nav--up')) {
 			headStyle.removeRules();
-			primaryNav.addClass('primary-nav--up primary-nav--sticky no-transitions');
+			primaryNav.addClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
 			$('main').css({ 'padding-top': '7rem' })
 		}
 		//If NOT past util nav, unstick
