@@ -1,15 +1,3 @@
-.primary-nav__screen--off {
-	visibility: hidden;
-	opacity: 0;
-	transition: visibility 0s 0.3s, $transition--opacity;
-}
-
-.primary-nav__screen--on {
-	visibility: visible;
-	opacity: 0.8;
-	transition: $transition--opacity;
-}
-
 .primary-nav__trigger {
 	display: none;
 	cursor: pointer;
