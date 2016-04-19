@@ -32,13 +32,13 @@ import Screen from 'modules/screen.js';
 	}
 	var closeNavInterior = function() {
 		$('.selected').removeClass('selected');
-		body.off('click',clickAnywhereToCloseEverything);
+		body.off('click', clickAnywhereToCloseEverything);
 		screen.turnScreenOff();
 	}
 	var openNavInterior = function(selected) {
 		$('.selected').removeClass('selected');
 		screen.turnScreenOn('soft');
-		body.on('click',clickAnywhereToCloseEverything);
+		body.on('click', clickAnywhereToCloseEverything);
 		let selectedId = selected.attr('data-id');
 		$.ajax({
 			url: '/javascripts/data/interiorNavData_' + selectedId + '.json',
@@ -129,20 +129,29 @@ import Screen from 'modules/screen.js';
 		// If past than util nav and animation fired
 		if (bodyTop >= utilityHeight && primaryNav.hasClass('primary-nav--up')) {
 			headStyle.removeRules();
-			primaryNav.addClass('primary-nav--up primary-nav--sticky');
+			if (!primaryNav.hasClass('primary-nav--inanimate')) {
+				primaryNav.addClass('primary-nav--up primary-nav--sticky');
+			}
 			$('main').css({ 'padding-top': '7rem' })
 		}
 		// If past than util nav and animation NOT fired
 		if (bodyTop >= browserViewport - utilityHeight && !primaryNav.hasClass('primary-nav--up')) {
 			headStyle.removeRules();
-			primaryNav.addClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
+			if (!primaryNav.hasClass('primary-nav--inanimate')) {
+				primaryNav.addClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
+			}
+
 			$('main').css({ 'padding-top': '7rem' })
 		}
 		//If NOT past util nav, unstick
 		if (bodyTop >= 10) {
 			$('.utility-nav').addClass('utility-nav--scrolled');
+			if (!primaryNav.hasClass('primary-nav--blue')) {
+				primaryNav.addClass('primary-nav--grey');
+			}
 		} else {
 			$('.utility-nav').removeClass('utility-nav--scrolled');
+			primaryNav.removeClass('primary-nav--grey');
 		}
 	}
 
@@ -178,9 +187,10 @@ import Screen from 'modules/screen.js';
 		var selected = $(this);
 		if ($(window).scrollTop() > 0 && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')) {
 			var place = $(window).scrollTop() + 50 + 'px';
-			headStyle.addRules({'.primary-nav':'transform: translateY('+place+');transition: all 300ms ease-in-out'});
+			// have to wrtie to heade since jquery writes inline and it hard to override
+			headStyle.addRules({ '.primary-nav': 'transform: translateY(' + place + ');transition: all 300ms ease-in-out' });
 			setTimeout(function() {
-				headStyle.addRules({'.primary-nav':'position: fixed;transform: translateY(-2rem);transition: none'});
+				headStyle.addRules({ '.primary-nav': 'position: fixed;transform: translateY(-2rem);transition: none' });
 				$('main').css({ 'padding-top': '7rem' })
 			}, 360)
 			openNavInterior(selected);
@@ -194,6 +204,4 @@ import Screen from 'modules/screen.js';
 	});
 	navScrollDependencies();
 	$(window).scroll(Throttled(navScrollDependencies, 100));
-	
-
 })();
