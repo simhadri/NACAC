@@ -645,6 +645,8 @@ a.btn {
     width: 100%;
     overflow: visible;
     z-index: 10; }
+    .primary-nav.primary-nav--grey {
+      background: #5A5A5A; }
     .primary-nav.primary-nav--up {
       -webkit-transform: translateY(5rem);
           -ms-transform: translateY(5rem);
@@ -655,23 +657,14 @@ a.btn {
       top: 0;
       left: 0;
       overflow: visible;
-      z-index: 21;
-      background: #5A5A5A; }
+      z-index: 21; }
     .primary-nav.primary-nav--inanimate {
       -webkit-transform: translateY(5rem);
           -ms-transform: translateY(5rem);
               transform: translateY(5rem);
       transition: none; }
-    .primary-nav.primary-nav--inanimate-blue {
-      -webkit-transform: none;
-          -ms-transform: none;
-              transform: none;
-      background-color: #6AAEE6;
-      position: fixed;
-      top: 5rem;
-      left: 0;
-      overflow: visible;
-      z-index: 21; }
+    .primary-nav.primary-nav--blue {
+      background-color: #6AAEE6; }
     .primary-nav .primary-nav__interior {
       top: 7rem;
       bottom: inherit;
@@ -2364,7 +2357,7 @@ nav.tab__navigation {
   text-indent: -999em;
   width: 8px;
   position: relative;
-  z-index: 99;
+  z-index: 2;
   transition: all 0.5s linear 0s; }
 
 .lSSlideOuter .lSPager.lSpg > li:hover a, .lSSlideOuter .lSPager.lSpg > li.active a {
@@ -2426,7 +2419,7 @@ nav.tab__navigation {
   color: #9EA7AE;
   cursor: pointer;
   position: absolute;
-  z-index: 99;
+  z-index: 2;
   margin-top: -16px;
   opacity: 0.5;
   font-size: 3rem;

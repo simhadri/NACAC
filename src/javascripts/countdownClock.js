@@ -5,13 +5,13 @@ var initializeClock = function(id, endtime) {
 		var wrap  = document.createElement('div'),
 			div = document.createElement('div'),
 			span = document.createElement('span');
-		wrap.setAttribute('class', 'clock__segment');
-		div.setAttribute('class', 'segment__num '+seg[i]);
-		span.innerHTML = seg[i];
-		span.setAttribute('class', 'segment__label');
-		clock.appendChild(wrap);
-		wrap.appendChild(div);
-		wrap.appendChild(span)
+			wrap.setAttribute('class', 'clock__segment');
+			div.setAttribute('class', 'segment__num '+seg[i]);
+			span.innerHTML = seg[i];
+			span.setAttribute('class', 'segment__label');
+			clock.appendChild(wrap);
+			wrap.appendChild(div);
+			wrap.appendChild(span)
 	}
 
 	function getTimeRemaining(endtime) {

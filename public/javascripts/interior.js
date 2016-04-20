@@ -104,7 +104,6 @@ webpackJsonp([2,4],[
 		// if location of aside-nav less its size
 		// is greater than tge aside-navs container; hide
 		if (asideNavigationLocation > asideNavigationContainerHeight) {
-			console.log('why');
 			$('.aside-navigation').addClass("aside-navigation--hide");
 		} else {
 			$('.aside-navigation').removeClass("aside-navigation--hide");

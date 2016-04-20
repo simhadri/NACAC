@@ -298,6 +298,9 @@
 		width: 100%;
 		overflow: visible;
 		@include zone-index(base, 0);
+		&.primary-nav--grey{
+			background: $nacac_nav_only_grey;
+		}
 		&.primary-nav--up {
 			transform: translateY(5rem);
 			transition: $transition--all;
@@ -308,20 +311,19 @@
 			left: 0;
 			overflow: visible;
 			@include zone-index(page, 1);
-			background: $nacac_nav_only_grey;
 		}
 		&.primary-nav--inanimate{
 			transform: translateY(5rem);
 			transition:none;
 		}
-		&.primary-nav--inanimate-blue{
-			transform: none;
+		&.primary-nav--blue{
+			// transform: none;
 			background-color: $nacac_light-blue;
-			position: fixed;
-			top: 5rem;
-			left: 0;
-			overflow: visible;
-			@include zone-index(page, 1);
+			// position: fixed;
+			// top: 5rem;
+			// left: 0;
+			// overflow: visible;
+			// @include zone-index(page, 1);
 		}
 		.primary-nav__interior {
 			top: 7rem;
