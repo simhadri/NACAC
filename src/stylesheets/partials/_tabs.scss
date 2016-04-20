@@ -1,73 +1,69 @@
 nav.tab__navigation {
-	display:table;
+	display: table;
 	width: 100%;
 	overflow-x: auto;
-	 &::-webkit-scrollbar {
-	  -webkit-appearance: none;
-	  height: 3rem;
+	&::-webkit-scrollbar {
+		-webkit-appearance: none;
+		height: 3rem;
 	}
 	&::-webkit-scrollbar-thumb {
 		background-color: $lighter-orange;
 		// border-top:1.5rem solid $white;
-		border-bottom:.5rem solid $lighter-orange;
+		border-bottom: .5rem solid $lighter-orange;
 	}
 	&::-webkit-scrollbar-track {
-		background-color:$nacac_bg-blue-grey ;
+		background-color: $nacac_bg-blue-grey;
 		// border-top:1.5rem solid $white;
-	  	border-bottom:.5rem solid $nacac_bg-blue-grey ;
+		border-bottom: .5rem solid $nacac_bg-blue-grey;
 	}
-	&::-webkit-scrollbar-button:start:decrement, 
+	&::-webkit-scrollbar-button:start:decrement,
 	&::-webkit-scrollbar-button:end:increment {
 		display: block;
 		width: 2.4rem;
-		background-color:$nacac_bg-blue-grey ;
-		background-position:bottom;
+		background-color: $nacac_bg-blue-grey;
+		background-position: bottom;
 		background-repeat: no-repeat;
 		// border-top:1.5rem solid $white;
-		border-bottom:.5rem solid $nacac_bg-blue-grey ;
+		border-bottom: .5rem solid $nacac_bg-blue-grey;
 	}
 	&::-webkit-scrollbar-button {
-		&:start{
+		&:start {
 			&:decrement {
-				background-image:url(/images/icon_arrow_left_thin.svg);
+				background-image: url(/images/icon_arrow_left_thin.svg);
 			}
 		}
 		//doesn't want to allow a transform
 		&:end {
 			&:increment {
-				background-image:url(/images/icon_arrow_right_thin.svg);
-
+				background-image: url(/images/icon_arrow_right_thin.svg);
 			}
 		}
 	}
-	&::-webkit-scrollbar-track-piece {
-	
-	}
-}
-
-.tab__button {
-	cursor: pointer;
-	display: table-cell;
-	height: 6rem;
-	vertical-align: middle;
-	padding: 0 2rem;
-	margin: 0;
-	@include transition(all 300ms ease-in);
-	@include sans-uppercase-normal;
-	font-family: 'Istok Web', sans-serif;
-	font-weight: 700;
-	background-color: $nacac_light-blue;
-	color: $nacac_lighter-blue;
-	border-right: 0.1rem solid $white;
-	&:last-child{
-		border-right: none;
-	}
-	&.tab__button--active {
-		pointer-events: none;
-		background-color: $nacac_lighter-blue;
-		color: $nacac_light-blue;
-		border-top: 0.4rem solid rgba($white, 0.3);
-		transition: $transition--all;
+	&::-webkit-scrollbar-track-piece {}
+	.tab__button {
+		cursor: pointer;
+		display: table-cell;
+		height: 6rem;
+		vertical-align: middle;
+		padding: 0 2rem;
+		margin: 0;
+		@include transition(all 300ms ease-in);
+		@include sans-uppercase-normal;
+		font-family: 'Istok Web', sans-serif;
+		font-weight: 700;
+		background-color: $nacac_light-blue;
+		color: $nacac_lighter-blue;
+		border-right: 0.1rem solid $white;
+		&:last-child {
+			border-right: none;
+		}
+		&.tab__button--active {
+			pointer-events: none;
+			background-color: $nacac_lighter-blue;
+			color: $nacac_light-blue;
+			border-top: 0.4rem solid rgba($white, 0.3);
+			transition: $transition--all;
+		}
 	}
 }
 
@@ -81,24 +77,31 @@ nav.tab__navigation {
 		padding-left: 14rem;
 		background-color: $nacac_lighter-blue;
 		float: left;
-		display:none;
+		display: none;
 		min-height: 15rem;
 		transition: $transition--all;
 		&.tab__content--active {
-			display:block;
+			display: block;
 			transition: $transition--all;
 			transition-delay: 300ms;
 		}
-		aside{
+		&:before { 
+			display: block; 
+			content: " "; 
+			margin-top: -20rem; 
+			height: 20rem; 
+			visibility: hidden; 
+		}
+		aside {
 			position: absolute;
 			top: 2rem;
-			width:10rem;
-			left:2rem;
+			width: 10rem;
+			left: 2rem;
 			opacity: 0.8;
 		}
-		section{
-			ul{
-				padding-bottom:$p-spacing;
+		section {
+			ul {
+				padding-bottom: $p-spacing;
 				padding-left: 2rem;
 			}
 		}
@@ -117,22 +120,21 @@ nav.tab__navigation {
 
 @include break(max, $screen-sm-max) {
 	nav.tab__navigation {
-		display:block;
+		display: block;
 		width: 100%;
 		overflow-x: auto;
-		.tab__button{
+		.tab__button {
 			font-size: 1.4rem;
 		}
 	}
-	.tab__stage{
-		 .tab__content{
-		 	padding: 2rem;
-		 	aside {
-		 		position: static;
-		 		margin: 1rem auto;
-		 	}
-		 }
-
+	.tab__stage {
+		.tab__content {
+			padding: 2rem;
+			aside {
+				position: static;
+				margin: 1rem auto;
+			}
+		}
 	}
 }
 

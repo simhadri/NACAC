@@ -46,7 +46,6 @@ function update() {
 
 	var hash = window.location.hash;
 	if (targets.indexOf(hash) !== -1) {
-		$(window).scrollTop($('.tab__block').offset().top - 140);
 		$('.tab__button').removeClass('tab__button--active');
 		$('a[href*="'+hash+'"]').addClass('tab__button--active');
 		show(hash);
