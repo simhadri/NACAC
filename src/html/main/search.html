@@ -4,9 +4,10 @@
 {% block content %}
 <main>
 
+{% set className = "utility-nav--blue" %}
 {% include './_shared/utility.html'%}
 
-{% set navType = "primary-nav--inanimate primary-nav--blue" %}
+{% set className = "primary-nav--inanimate primary-nav--blue" %}
 {% include './_shared/navigation.html'%}
 
 <article class="article__row article--white hero--none">

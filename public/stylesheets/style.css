@@ -1124,7 +1124,7 @@ a.btn {
   top: 0;
   z-index: 31;
   transition: all 300ms ease-in-out; }
-  .utility-nav.utility-nav--scrolled {
+  .utility-nav.utility-nav--scrolled, .utility-nav.utility-nav--blue {
     background-color: #6AAEE6; }
   .hero--none .utility-nav {
     background-color: #6AAEE6; }

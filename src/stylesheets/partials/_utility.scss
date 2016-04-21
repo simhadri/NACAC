@@ -7,7 +7,7 @@
 	top: 0;
 	@include zone-index(overlay, 1);
 	transition: $transition--all;
-	&.utility-nav--scrolled {
+	&.utility-nav--scrolled, &.utility-nav--blue {
 		background-color: $nacac_light-blue;
 	}
 	.hero--none & {
