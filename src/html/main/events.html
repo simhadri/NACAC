@@ -2,10 +2,14 @@
  {% set pageLocation = "Events" %}
  {% block content %}
 <main id="main" class="membership__template interior__template">
+	
 	{% include './_shared/utility.html'%}
-	{% set navType = "primary-nav--inanimate" %}
+
+	{% set className = "primary-nav--inanimate" %}
 	{% include './_shared/navigation.html'%}
+
 	{% include './_shared/interior-hero-events.html'%}
+	
 	<article class="article__row content__row article--white">
 		<div class="container">
 			{% include './_components/breadcrumb.html' %}

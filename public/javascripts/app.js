@@ -176,6 +176,12 @@ webpackJsonp([0,4],[
 			}
 		}
 	
+		function addPaddingToMain() {
+			if (!$('.hero__wrapper').hasClass('hero--interior')) {
+				$('main').css({ 'padding-top': '7rem' });
+			}
+		}
+	
 		function navScrollDependencies(event) {
 			var utilityHeight = $('.utility-nav').height(),
 			    heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height(),
@@ -187,7 +193,8 @@ webpackJsonp([0,4],[
 				if (!primaryNav.hasClass('primary-nav--inanimate')) {
 					primaryNav.addClass('primary-nav--up primary-nav--sticky');
 				}
-				$('main').css({ 'padding-top': '7rem' });
+				// Offset Nav position change
+				addPaddingToMain();
 			}
 			// If past than util nav and animation NOT fired
 			if (bodyTop >= browserViewport - utilityHeight && !primaryNav.hasClass('primary-nav--up')) {
@@ -196,7 +203,8 @@ webpackJsonp([0,4],[
 					primaryNav.addClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
 				}
 	
-				$('main').css({ 'padding-top': '7rem' });
+				// Offset Nav position change
+				addPaddingToMain();
 			}
 			//If NOT past util nav, unstick
 			if (bodyTop >= 10) {
@@ -245,13 +253,15 @@ webpackJsonp([0,4],[
 				headStyle.addRules({ '.primary-nav': 'transform: translateY(' + place + ');transition: all 300ms ease-in-out' });
 				setTimeout(function () {
 					headStyle.addRules({ '.primary-nav': 'position: fixed;transform: translateY(-2rem);transition: none' });
-					$('main').css({ 'padding-top': '7rem' });
+					// Offset Nav position change
+					addPaddingToMain();
 				}, 360);
 				openNavInterior(selected);
 			} else if (selected.parent().hasClass('selected') === true) {
 				closeNavInterior();
 			} else {
-				$('main').css({ 'padding-top': '7rem' });
+				// Offset Nav position change
+				addPaddingToMain();
 				primaryNav.addClass('primary-nav--up primary-nav--sticky');
 				openNavInterior(selected);
 			}
@@ -480,7 +490,6 @@ webpackJsonp([0,4],[
 	
 		var hash = window.location.hash;
 		if (targets.indexOf(hash) !== -1) {
-			$(window).scrollTop($('.tab__block').offset().top - 140);
 			$('.tab__button').removeClass('tab__button--active');
 			$('a[href*="' + hash + '"]').addClass('tab__button--active');
 			show(hash);

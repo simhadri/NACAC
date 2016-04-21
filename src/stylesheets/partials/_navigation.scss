@@ -60,16 +60,14 @@
 		left: 50%;
 	}
 	.trigger__icon.trigger--x span:nth-child(2) {
-		-webkit-transform: rotate(45deg);
-		-moz-transform: rotate(45deg);
-		-o-transform: rotate(45deg);
 		transform: rotate(45deg);
+		transform-origin: 11px -1px;
+		height: 4px;
 	}
 	.trigger__icon.trigger--x span:nth-child(3) {
-		-webkit-transform: rotate(-45deg);
-		-moz-transform: rotate(-45deg);
-		-o-transform: rotate(-45deg);
 		transform: rotate(-45deg);
+		transform-origin: 4px 2px;
+		height: 4px;
 	}
 	.trigger__icon.trigger--x span:nth-child(4) {
 		top:1px;
@@ -142,7 +140,6 @@
 			font-weight: bold;
 			display: inline-block;
 			position: relative;
-			text-align: left;
 			&:hover {
 				color: $nacac_link_hover;
 			}
@@ -225,9 +222,9 @@
 						right: 1rem;
 						top: 2rem;
 						height: 2rem;
+						color: $nacac_blue;
 						width: 2rem;
-						font-family: $icons;
-						content: "\f067";
+						@include icon('fa-plus');
 						transition: $transition--all;
 						font-size: 2rem;
 						text-align: center;
@@ -243,8 +240,8 @@
 				&.selected {
 					a.primary-nav--children:after {
 						content: "\f068";
-						    transform: rotate(180deg);
-						    transition: $transition--all;
+						transform: rotate(180deg);
+						transition: $transition--all;
 					}
 					.primary-nav__interior {
 						max-height: 90rem;
@@ -367,7 +364,7 @@
 				bottom:0;
 				width: 0; 
 				height: 0;
-				margin-left: 40px;
+				margin-left: 5rem;
 				border-left: 1rem solid transparent;
 				border-right: 1rem solid transparent;
 				border-bottom: 1rem solid #FFFFFF;

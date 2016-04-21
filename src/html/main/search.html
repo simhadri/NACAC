@@ -2,14 +2,15 @@
 {% extends '_layouts/main-application.html' %}
 
 {% block content %}
-<main class="search__template hero--none" id="main">
+<main>
 
+{% set className = "utility-nav--blue" %}
 {% include './_shared/utility.html'%}
 
-{% set navType = "primary-nav--inanimate primary-nav--blue" %}
+{% set className = "primary-nav--inanimate primary-nav--blue" %}
 {% include './_shared/navigation.html'%}
 
-<article class="article__row article--white">
+<article class="article__row article--white hero--none">
 	<div class="container">
 		<ol class="breadcrumb">
 			<li><a href="#">Home</a></li>

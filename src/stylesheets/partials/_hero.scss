@@ -76,18 +76,6 @@
 // INTERIOR HERO
 // ---------------------------------------------
 .hero--interior {
-	.hero__breadcrumb {
-		margin-top: 6rem;
-		padding-top: 2rem;
-		.breadcrumb {
-			a {
-				color: $nacac_light-blue;
-			}
-			> .active {
-				color: $white;
-			}
-		}
-	}
 	.hero__content {
 		width: 80vw;
 	}
@@ -95,6 +83,7 @@
 		min-height: 30rem;
 		height: auto;
 		margin-bottom: 5rem;
+		padding-top: 12rem;
 		position: relative;
 	}
 	.hero__content {
