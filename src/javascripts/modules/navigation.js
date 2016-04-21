@@ -121,9 +121,10 @@ import Screen from 'modules/screen.js';
 		}
 	}
 
-	function addPaddingToMain() {
+	function addPaddingToHero() {
 		if (!$('.hero__wrapper').hasClass('hero--interior')){
-			$('main').css({ 'padding-top': '7rem' })
+			console.log($('.hero__wrapper').length);
+			$('.hero__wrapper').css({ 'margin-top': '7rem' })
 		}
 	}
 
@@ -139,7 +140,7 @@ import Screen from 'modules/screen.js';
 				primaryNav.addClass('primary-nav--up primary-nav--sticky');
 			}	
 			// Offset Nav position change
-			addPaddingToMain();
+			addPaddingToHero();
 		}
 		// If past than util nav and animation NOT fired
 		if (bodyTop >= browserViewport - utilityHeight && !primaryNav.hasClass('primary-nav--up')) {
@@ -149,7 +150,7 @@ import Screen from 'modules/screen.js';
 			}
 	
 			// Offset Nav position change
-			addPaddingToMain();
+			addPaddingToHero();
 		}
 		//If NOT past util nav, unstick
 		if (bodyTop >= 10) {
@@ -200,14 +201,14 @@ import Screen from 'modules/screen.js';
 			setTimeout(function() {
 				headStyle.addRules({ '.primary-nav': 'position: fixed;transform: translateY(-2rem);transition: none' });
 				// Offset Nav position change
-				addPaddingToMain();
+				addPaddingToHero();
 			}, 360)
 			openNavInterior(selected);
 		} else if (selected.parent().hasClass('selected') === true) {
 			closeNavInterior();
 		} else {
 			// Offset Nav position change
-			addPaddingToMain();
+			addPaddingToHero();
 			primaryNav.addClass('primary-nav--up primary-nav--sticky');
 			openNavInterior(selected);
 		}
