@@ -1,4 +1,4 @@
-webpackJsonp([0,4],[
+webpackJsonp([0],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -178,7 +178,6 @@ webpackJsonp([0,4],[
 	
 		function addPaddingToHero() {
 			if (!$('.hero__wrapper').hasClass('hero--interior')) {
-				console.log($('.hero__wrapper').length);
 				$('.hero__wrapper').css({ 'margin-top': '7rem' });
 			}
 		}
@@ -309,47 +308,7 @@ webpackJsonp([0,4],[
 	module.exports = headStyle;
 
 /***/ },
-/* 5 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	var Throttled = function Throttled(func, wait, options) {
-		var now = Date.now || function () {
-			return new Date().getTime();
-		};
-		var context, args, result;
-		var timeout = null;
-		var previous = 0;
-		if (!options) options = {};
-		var later = function later() {
-			previous = options.leading === false ? 0 : now();
-			timeout = null;
-			result = func.apply(context, args);
-			if (!timeout) context = args = null;
-		};
-		return function () {
-			if (!previous && options.leading === false) previous = now();
-			var remaining = wait - (now() - previous);
-			context = this;
-			args = arguments;
-			if (remaining <= 0 || remaining > wait) {
-				if (timeout) {
-					clearTimeout(timeout);
-					timeout = null;
-				}
-				previous = now();
-				result = func.apply(context, args);
-				if (!timeout) context = args = null;
-			} else if (!timeout && options.trailing !== false) {
-				timeout = setTimeout(later, remaining);
-			}
-			return result;
-		};
-	};
-	module.exports = Throttled;
-
-/***/ },
+/* 5 */,
 /* 6 */
 /***/ function(module, exports) {
 

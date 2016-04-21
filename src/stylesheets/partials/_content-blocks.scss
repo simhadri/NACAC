@@ -221,6 +221,20 @@
 		font-weight:bold;
 	}
 }
+.block--dynamic {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  float: left;
+}
+
+
+@for $i from 1 through 4 {
+  .block--dynamic:first-child:nth-last-child(#{$i}),
+  .block--dynamic:first-child:nth-last-child(#{$i}) ~ .block--dynamic {
+    width: 100% / $i;
+  }
+}
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
@@ -240,6 +254,12 @@
 		img.color-block__image {
 			position: absolute;
 		}
+	}
+	@for $i from 1 through 4 {
+	  .block--dynamic:first-child:nth-last-child(#{$i}),
+	  .block--dynamic:first-child:nth-last-child(#{$i}) ~ .block--dynamic {
+	    width: 100%;
+	  }
 	}
 }
 

@@ -123,7 +123,6 @@ import Screen from 'modules/screen.js';
 
 	function addPaddingToHero() {
 		if (!$('.hero__wrapper').hasClass('hero--interior')){
-			console.log($('.hero__wrapper').length);
 			$('.hero__wrapper').css({ 'margin-top': '7rem' })
 		}
 	}
