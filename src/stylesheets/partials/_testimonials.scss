@@ -17,6 +17,7 @@
 .testimonial-block__quote{
 	position:relative;
 	padding:0 3rem;
+	margin-bottom: 1.2rem;
 	&:before, &:after{
 		font-family: $icons;
 		position:absolute;
@@ -44,7 +45,7 @@
 .testimonial-block__name{
 	color: $nacac_purple;
 	font-size: 1.6rem;
-	margin-top: 2.4rem;
+	margin-top: 0.4rem;
 	margin-bottom: 0.8rem;
 }
 .testimonial-block__title{

@@ -701,7 +701,6 @@ a.btn {
       text-align: center;
       display: inline-block; }
     .primary-nav li.primary-nav__item.selected {
-      pointer-events: none;
       transition: all 300ms ease-in-out; }
       .primary-nav li.primary-nav__item.selected > a {
         color: #6AAEE6; }
@@ -1559,6 +1558,34 @@ a.btn {
   font-size: 2rem;
   font-weight: bold; }
 
+.block--dynamic {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  float: left; }
+
+.block--dynamic:first-child:nth-last-child(1),
+.block--dynamic:first-child:nth-last-child(1) ~ .block--dynamic {
+  width: 100%; }
+
+.block--dynamic:first-child:nth-last-child(2),
+.block--dynamic:first-child:nth-last-child(2) ~ .block--dynamic {
+  width: 50%; }
+
+.block--dynamic:first-child:nth-last-child(3),
+.block--dynamic:first-child:nth-last-child(3) ~ .block--dynamic {
+  width: 33.33333%; }
+
+.block--dynamic:first-child:nth-last-child(4),
+.block--dynamic:first-child:nth-last-child(4) ~ .block--dynamic {
+  width: 25%; }
+
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
@@ -1574,7 +1601,19 @@ a.btn {
   .color-block {
     color: #FFFFFF; }
     .color-block img.color-block__image {
-      position: absolute; } }
+      position: absolute; }
+  .block--dynamic:first-child:nth-last-child(1),
+  .block--dynamic:first-child:nth-last-child(1) ~ .block--dynamic {
+    width: 100%; }
+  .block--dynamic:first-child:nth-last-child(2),
+  .block--dynamic:first-child:nth-last-child(2) ~ .block--dynamic {
+    width: 100%; }
+  .block--dynamic:first-child:nth-last-child(3),
+  .block--dynamic:first-child:nth-last-child(3) ~ .block--dynamic {
+    width: 100%; }
+  .block--dynamic:first-child:nth-last-child(4),
+  .block--dynamic:first-child:nth-last-child(4) ~ .block--dynamic {
+    width: 100%; } }
 
 /*
 ██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
@@ -2055,7 +2094,8 @@ body.body--freeze {
 
 .testimonial-block__quote {
   position: relative;
-  padding: 0 3rem; }
+  padding: 0 3rem;
+  margin-bottom: 1.2rem; }
   .testimonial-block__quote:before, .testimonial-block__quote:after {
     font-family: FontAwesome;
     position: absolute;
@@ -2080,7 +2120,7 @@ body.body--freeze {
 .testimonial-block__name {
   color: #474280;
   font-size: 1.6rem;
-  margin-top: 2.4rem;
+  margin-top: 0.4rem;
   margin-bottom: 0.8rem; }
 
 .testimonial-block__title {

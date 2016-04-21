@@ -351,8 +351,6 @@
 			display: inline-block;
 		}
 		li.primary-nav__item.selected {
-			
-			pointer-events: none;
 			transition: $transition--all;
 			> a{
 				color: $nacac_light-blue;

@@ -2,7 +2,7 @@ var Screen = function() {
 	this.turnScreenOn = function(modifier) {
 		if (!document.getElementById('screen__overlay')) {
 			let screenOverlay = document.createElement('div'),
-				mainElement = document.getElementById('main');
+				mainElement = document.getElementsByTagName('main')[0];
 			mainElement.appendChild(screenOverlay)
 			screenOverlay.setAttribute('id', 'screen__overlay');
 			screenOverlay.setAttribute('class', 'screen__overlay');
