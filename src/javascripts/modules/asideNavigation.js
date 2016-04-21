@@ -5,13 +5,13 @@ import Throttled from 'modules/throttled.js';
 var asideNavigation = function() {
 	var asideNavigation = $(".aside-navigation"),
 		// Includes 180px utility nav + breadcrumb height offset; These are fixed
-		bottomOfNavigation = $(window).scrollTop() + 180,
+		bottomOfNavigation = $(window).scrollTop() + 120,
 		asideNavigationContainerHeight = $(".aside-navigation__row").height(),
 		asideNavigationHeight = asideNavigation.height(),
 		// 170 off set
-		interiorHeroHeight = $(".hero__wrapper").height() +$(".interior-hero__breadcrumb").height() + 170,
+		interiorHeroHeight = $(".hero__wrapper").height() +$(".interior-hero__breadcrumb").height() + 220,
 		// 40 is for its margins
-		asideNavigationLocation = asideNavigation.offset().top - 40,
+		asideNavigationLocation = asideNavigation.offset().top,
 		offsetOfFirstArticle = $('.article__row:first-child').offset();
 
 	if (bottomOfNavigation >  interiorHeroHeight) {
