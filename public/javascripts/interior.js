@@ -2,7 +2,7 @@ webpackJsonp([2],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(11);
+	module.exports = __webpack_require__(12);
 
 
 /***/ },
@@ -17,45 +17,6 @@ webpackJsonp([2],[
 /* 9 */,
 /* 10 */,
 /* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// *********************
-	//    Modules Scripts
-	// *********************
-	
-	'use strict';
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	__webpack_require__(12);
-	
-	var _modulesThrottledJs = __webpack_require__(5);
-	
-	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
-	
-	// *********************
-	//    Vendor Scirpts
-	// *********************
-	
-	var _vendorCountUpJs = __webpack_require__(13);
-	
-	var _vendorCountUpJs2 = _interopRequireDefault(_vendorCountUpJs);
-	
-	// *********************
-	//    Page Functions
-	// *********************
-	var countCard = function countCard() {
-		$('.number-block__numerals').each(function () {
-			if ($(this).text() == '0' && $(this).offset().top >= $(window).scrollTop()) {
-				var counter = new _vendorCountUpJs2['default']($(this).attr('id'), 0, $(this).attr('data-counter'), 0, 2.5);
-				counter.start();
-			}
-		});
-	};
-	$(window).scroll((0, _modulesThrottledJs2['default'])(countCard, 100));
-
-/***/ },
-/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// MODULES
@@ -99,6 +60,45 @@ webpackJsonp([2],[
 	};
 	asideNavigation();
 	$(window).scroll((0, _modulesThrottledJs2["default"])(asideNavigation, 20));
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// *********************
+	//    Modules Scripts
+	// *********************
+	
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	__webpack_require__(11);
+	
+	var _modulesThrottledJs = __webpack_require__(5);
+	
+	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
+	
+	// *********************
+	//    Vendor Scirpts
+	// *********************
+	
+	var _vendorCountUpJs = __webpack_require__(13);
+	
+	var _vendorCountUpJs2 = _interopRequireDefault(_vendorCountUpJs);
+	
+	// *********************
+	//    Page Functions
+	// *********************
+	var countCard = function countCard() {
+		$('.number-block__numerals').each(function () {
+			if ($(this).text() == '0' && $(this).offset().top >= $(window).scrollTop()) {
+				var counter = new _vendorCountUpJs2['default']($(this).attr('id'), 0, $(this).attr('data-counter'), 0, 2.5);
+				counter.start();
+			}
+		});
+	};
+	$(window).scroll((0, _modulesThrottledJs2['default'])(countCard, 100));
 
 /***/ },
 /* 13 */

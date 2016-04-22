@@ -1350,12 +1350,18 @@ a.btn {
 ██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
 ██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
 ██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
-╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
-														  
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝      
 */
 @media (min-width: 992px) {
-  .main__interior .utility-nav {
-    background-color: #6AAEE6; } }
+  .utility-nav .utility-search__wrapper input.utility-search__input {
+    border-bottom: 1px solid;
+    padding-bottom: 2rem;
+    opacity: 0;
+    transition: all 300ms ease-in-out; }
+  .utility-nav .utility-search.utility-search--open input.utility-search__input {
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+    transition-delay: 400ms; } }
 
 .content-block__row:before, .content-block__row:after {
   content: " ";

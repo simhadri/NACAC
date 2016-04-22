@@ -32,7 +32,7 @@ webpackJsonp([1],[
 	
 	var _modulesCountdownClock2 = _interopRequireDefault(_modulesCountdownClock);
 	
-	__webpack_require__(12);
+	__webpack_require__(11);
 	
 	var getClock = document.getElementById('countdown-clock');
 	if (getClock) {
@@ -98,8 +98,7 @@ webpackJsonp([1],[
 	module.exports = initializeClock;
 
 /***/ },
-/* 11 */,
-/* 12 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// MODULES

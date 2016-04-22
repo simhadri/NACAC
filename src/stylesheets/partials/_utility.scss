@@ -285,12 +285,21 @@
 ██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
 ██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
 ██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
-╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
-														  
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝      
 */
 
 @include break(min, $screen-md-min) {
-	.main__interior .utility-nav {
-		background-color: $nacac_light-blue;
+	.utility-nav {
+		.utility-search__wrapper input.utility-search__input {
+			border-bottom: 1px solid;
+			padding-bottom: 2rem;
+			opacity: 0;
+			transition: $transition--all;
+		}
+		.utility-search.utility-search--open input.utility-search__input {
+			opacity: 1;
+			transition: $transition--all;
+			transition-delay: 400ms;
+		}
 	}
 }
