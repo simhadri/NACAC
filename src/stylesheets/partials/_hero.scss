@@ -56,8 +56,8 @@
 	.hero__btn {
 		margin: 1.6rem;
 	}
-	.hero--underline{
-		position:relative;
+	.hero--underline {
+		position: relative;
 		&:after {
 			content: "";
 			width: calc(100% - 40rem);
@@ -96,8 +96,7 @@
 		.hero__text {
 			font-size: 1.8rem;
 		}
-		.hero__btn {
-		}
+		.hero__btn {}
 	}
 }
 
@@ -139,10 +138,17 @@
 
 @include break(max, $screen-sm-max) {
 	.hero__wrapper {
-		padding: 4.4rem 2rem;
-		padding-top: 8rem;
+		padding: 5rem 2rem;
+		padding-top: 0;
+		height: auto;
+		margin-top: 7rem;
 		.hero__content {
 			width: 100%;
+			.hero--underline:after {
+				width: 100%;
+				left: 0;
+				margin: 0;
+			}
 		}
 		h1.hero__title {
 			line-height: 1.2;
