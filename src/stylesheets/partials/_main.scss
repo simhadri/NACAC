@@ -8,7 +8,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	@include zone-index(base, 0);
+	z-index: 1;
 	width: 100%;
 	height: 100%;
 	opacity: 0;
@@ -16,11 +16,10 @@
 	transition: $transition--opacity;
 	@include prefix(transition-timing-function, cubic-bezier(0.7, 0, 0.3, 1), webkit);
 	&.screen__overlay--soft {
-		@include zone-index(base, 0);
 		background: rgba(0, 0, 0, 0.33);
 	}
 	&.screen__overlay--hard {
-		@include zone-index(overlay, 0);
+		z-index: 3;
 		background: rgba(0, 0, 0, 0.80);
 	}
 }
