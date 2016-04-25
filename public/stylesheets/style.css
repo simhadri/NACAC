@@ -1822,9 +1822,13 @@ body.body--freeze {
 .screen__overlay--on {
   opacity: 1; }
 
-.bounceIn,
-.fadeIn {
-  visibility: visible; }
+.b-lazy {
+  transition: opacity 200ms ease-in-out;
+  max-width: 100%;
+  opacity: 0; }
+
+.b-lazy.b-loaded {
+  opacity: 1; }
 
 .article__row {
   padding-top: 3.6rem;
@@ -2291,7 +2295,8 @@ nav.tab__navigation {
 .clock__wrapper {
   width: 100%;
   margin: auto;
-  text-align: center; }
+  text-align: center;
+  min-height: 16rem; }
 
 .clock__segment {
   display: inline-block;
