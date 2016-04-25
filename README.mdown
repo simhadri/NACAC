@@ -45,7 +45,7 @@ Welcome to the NACAC Repository! There are a total of 3 sites; Main, Conferences
 
 ### HTML Templates
 
-It caused quite a headache having 3 sites in one repo, and all 3 sites are very similar and share components, so it should save more headaches down the road; anyways here we are.
+All 3 sites are in one repo. All 3 sites are very similar and share components. The scaffolding had to be re imagined so here it is:
 
 High level pages are in ```_layouts/```; this includes:
 - Main Site ```/main-application.html```
@@ -71,7 +71,7 @@ Within the shared markup are components, this can include:
 
 > There is a blurred line between what is a component and what is shared.
 
-My logic; however flawed adheres to the following: 
+We should adhere to the following: 
 
 - Components are small; repeatable bits of HTML. They can be repeated multiple times in a page. They should not have *ANY* includes. This would include a card block or a search entry.
 - Shared includes repeated code but not more than once on a page. These are more unique at the page level, but not at the site level. For example navigation should only appear once per page, but on several pages within a site.
@@ -105,7 +105,7 @@ npm run gulp production
 ```
 
 ### Configuration
-Directory and top level settings are conveniently exposed in `gulpfile.js/config.json`. All task configuration objects have `src` and `dest` directories specfied. These are relative to `root.src` and `root.dest` respectively. Each configuration also has an extensions array. This is used for file watching, and file deleting/replacing. 
+Directory and top level settings are conveniently exposed in `gulpfile.js/config.json`. All task configuration objects have `src` and `dest` directories specified. These are relative to `root.src` and `root.dest` respectively. Each configuration also has an extensions array. This is used for file watching, and file deleting/replacing. 
 
 If there is a feature you do not wish to use on your project, simply delete the configuration, and the task will be skipped.
 
@@ -138,13 +138,13 @@ There are a couple of webpack options exposed in the top-level `gulpfile.js/conf
 
 `entries`: Discrete js bundle entry points. A js file will be bundled for each item. Paths are relative to the `javascripts` folder. This maps directly to `webpackConfig.entry`.
 
-`extractSharedJs`: Creates a `shared.js` file that contains any modules shared by multiple bundles. Useful on large sites with descrete js running on different pages that may share common modules or libraries. Not typically needed on smaller sites.
+`extractSharedJs`: Creates a `shared.js` file that contains any modules shared by multiple bundles. Useful on large sites with discrete js running on different pages that may share common modules or libraries. Not typically needed on smaller sites.
 
 If you want to mess with the specifics of the webpack config, check out `gulpfile.js/lib/webpack-multi-config.js`.
 
 Vendor script go in the ```javascript/vendor/``` folder and are bundled via webpack.
 
-Unbundled javascript files are for files what just need to be copied over, not bundled. This is used it bundling vendor scripts causes errors. On this project ```interdimentional.js``` is a vendor script, but when budled, it cause errors.
+Unbundled javascript files are for files what just need to be copied over, not bundled. This is used it bundling vendor scripts causes errors. On this project ```interdimentional.js``` is a vendor script, but when bundled, it cause errors.
 
 ### CSS
 ```
@@ -193,16 +193,44 @@ gulpfile.js/tasks/html
 Robust templating with [Nunjucks](https://mozilla.github.io/nunjucks/). Nunjucks is nearly identical in syntax to Twig (PHP), and replaces Swig (and Twig-like js templating language), which is no longer maintained. I have only a few times where I use variables for adding a class and not making a whole new component. Let say I need a top border on one component on a page but not on another, instead of making a new component i just pass a class of ```component--border-top``` to the include:
 
 ```
-{% set addedClassNames = 'article--top-border' %}
+{% set classNames = 'article--top-border' %}
 {% include './_components/full-block-row.html' %}
 ```
 
 In the component, I need to add:
 
 ```
-<article class="article__row article--white {{ addedClassNames }}">
+<article class="article__row article--white {{ classNames }}">
   ...
 </article>
 ```
+For class names I use the variable className. 
+
+> Nunjucks variable are scoped with in the document and it's children
+
+There is no way to pass an argument or variable directly to an include, and it will be available to all includes on the page. So if we have anything generic we need to set the variable to "" or null. This is probably it's greatest drawback, so if we set className = "block--red"; and have an include later that calls for className it will need to be set before the include. Here is an example:
+
+```
+-- index.html
+{% set classNames = 'article--top-border' %}
+{% include './_components/first-block.html' %}
+
+{% set classNames = '' %}
+{% include './_components/different-block.html' %}
+
+-- first-block.html
+<article class="article__row article--white {{ classNames }}">
+  ...
+</article>
+
+
+-- different-block.html
+<article class="article__row article--white {{ classNames }}">
+  ...
+</article>
+```
+
+If we don't unset the variable classNames it will be available in different-block.html which might be undesirable and worth noting. If the variable is not called on in any of the includes then all is well. We just have to be mindful; if you see a class where it shouldnt be this is probably the culprit.
+
 
 A global data file is set up at [src/html/data/global.json](src/html/data/global.json), is read in by the `html` task, and exposes the propertiesto your html templates. See [social-icons-font.html](src/html/shared/social-icons-font.

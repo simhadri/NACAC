@@ -37,26 +37,15 @@ body.body--freeze {
 .screen__overlay--on {
 	opacity: 1;
 }
-// Main Templates
-// main {
-// 	&.hero--none {
-// 		padding-top: 7rem;
-// 		margin-top: 5rem;
-// 		> .article__row:nth-child{
-// 			padding-top: 0;
-// 		}
-// 	}
-// 	&.interior__template {
-// 		padding-top: 7rem;
-// 	}
-// 	&.main--scrolled {
-// 		padding-top: 7rem;
-// 	}
-// }
 
-.bounceIn,
-.fadeIn {
-	visibility: visible;
+// B-lazy
+.b-lazy {
+	transition: opacity 200ms ease-in-out;
+	max-width: 100%;
+	opacity: 0;
+}
+.b-lazy.b-loaded {
+	opacity: 1;
 }
 
 // Articles
