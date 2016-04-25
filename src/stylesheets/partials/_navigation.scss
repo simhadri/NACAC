@@ -179,7 +179,7 @@
 		border-left: 1px solid $nacac_light-grey;
 		@include prefix(transform, translateZ(0) translateX(100%), webkit ms);
 		transition: $transition--all;
-		@include zone-index(base, 1);
+		@include zone-index(overlay, 1);
 		position: fixed;
 		top: 8rem;
 		right: 0;
