@@ -383,7 +383,7 @@
 				float: left;
 				width: 25%;
 				margin: 0;
-				padding: 0 2em;
+				padding: 0 2rem 0.8rem;
 				min-height: 4rem;
 				h4{
 					font-size: 1.8rem;
@@ -393,7 +393,7 @@
 				a {
 					color: $text_slate;
 					position: relative;
-					line-height: 1.4;
+					line-height: 1.2;
 					&:hover {
 						color: $nacac_blue;
 						&:after {

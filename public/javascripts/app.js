@@ -267,7 +267,7 @@ webpackJsonp([0],[
 			}
 		});
 		navScrollDependencies();
-		$(window).scroll((0, _modulesThrottledJs2['default'])(navScrollDependencies, 100));
+		$(window).scroll((0, _modulesThrottledJs2['default'])(navScrollDependencies, 50));
 	})();
 
 /***/ },
