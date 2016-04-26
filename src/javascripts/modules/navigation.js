@@ -213,5 +213,5 @@ import Screen from 'modules/screen.js';
 		}
 	});
 	navScrollDependencies();
-	$(window).scroll(Throttled(navScrollDependencies, 100));
+	$(window).scroll(Throttled(navScrollDependencies, 50));
 })();
