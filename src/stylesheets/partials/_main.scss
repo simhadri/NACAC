@@ -162,7 +162,18 @@ body.body--freeze {
 	background-color: $nacac_light-grey;
 }
 
-
+.col--border{
+	position:relative;
+	&:after{
+		border-right: 1px solid $nacac_border-lightgrey;
+		height: calc(100% - 9rem);
+		content: "";
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+	
+}
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝

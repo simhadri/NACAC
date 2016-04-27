@@ -28,17 +28,20 @@
 						</header>
 						<div class="flexbox__row row">
 						
-							{% set backgroundImage = '/images/main/color-block-bg-purple.jpg' %}
-							{% include './_components/color-block.html'%}
-
-							{% set backgroundImage = '/images/main/color-block-bg-purple.jpg' %}
-							{% include './_components/color-block.html'%}
-							
+								{% set button = true %}
+								{% include './_components/card-block.html'%}
+								
+								{% set button = true %}
+								{% include './_components/card-block.html'%}
+								
+								{% set button = true %}
+								{% include './_components/card-block.html'%}
+								
 						</div>
 					</section>
 					<section class="section__row">
 						<div class="row">
-							<div class="col-sm-6">
+							<div class="col-sm-6 col--border">
 								<header class="section__header">
 									<h2>Related Events &amp; Training</h2>
 								</header>
