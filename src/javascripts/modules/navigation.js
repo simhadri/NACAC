@@ -50,15 +50,15 @@ import Screen from 'modules/screen.js';
 					if (data[i].type !== null && data[i].type === 'link') {
 						selected.next().append(
 							'<li>' +
-							'<a href="' + data[i].content + '">' + data[i].name + '</a>' +
+								'<a href="' + data[i].content + '">' + data[i].name + '</a>' +
 							'</li>'
 						);
 					}
 					if (data[i].type !== null && data[i].type === 'link_set') {
 						selected.next().append(
 							'<li>' +
-							'<h4>' + data[i].name + '</h4>' +
-							'<ul id="interior__links_' + i + '" class="interior__links"></ul>' +
+								'<h4>' + data[i].name + '</h4>' +
+								'<ul id="interior__links_' + i + '" class="interior__links"></ul>' +
 							'</li>'
 						);
 						for (let n = 0; n < data[i].content.length; n++) {
@@ -71,9 +71,9 @@ import Screen from 'modules/screen.js';
 					if (data[i].type !== null && data[i].type === 'feature') {
 						selected.next().append(
 							'<li class="nav__feature">' +
-							'<h4>' + data[i].name + '</h4>' +
-							'<img src="' + data[i].content.url + '"/>' +
-							'<p>' + data[i].content.text + '</p>' +
+								'<h4>' + data[i].name + '</h4>' +
+								'<img src="' + data[i].content.url + '"/>' +
+								'<p>' + data[i].content.text + '</p>' +
 							'</li>'
 						);
 					}
@@ -201,6 +201,7 @@ import Screen from 'modules/screen.js';
 				headStyle.addRules({ '.primary-nav': 'position: fixed;transform: translateY(-2rem);transition: none' });
 				// Offset Nav position change
 				addPaddingToHero();
+				primaryNav.addClass('primary-nav--inanimate');
 			}, 360)
 			openNavInterior(selected);
 		} else if (selected.parent().hasClass('selected') === true) {
