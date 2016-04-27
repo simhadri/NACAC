@@ -10,7 +10,7 @@ gulp.task('rev-assets', function() {
   var ignoreThese = '!' + path.join(config.root.dest,'/**/*+(css|js|json|html)')
 
   return gulp.src([path.join(config.root.dest,'/**/*'), ignoreThese])
-    .pipe(rev())
+    //.pipe(rev())
     .pipe(gulp.dest(config.root.dest))
     .pipe(revNapkin({verbose: false}))
     .pipe(rev.manifest(path.join(config.root.dest, 'rev-manifest.json'), {merge: true}))

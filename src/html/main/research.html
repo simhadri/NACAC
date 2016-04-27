@@ -1,0 +1,79 @@
+ {% extends '_layouts/main-application.html' %}
+ {% set pageLocation = "News & Publications" %}
+ {% block content %}
+
+<main id="main" class="membership__template interior__template">
+	
+	{% include './_shared/utility.html'%}
+
+	{% set className = "primary-nav--inanimate" %}
+	{% include './_shared/navigation.html'%}
+
+	{% include './_shared/interior-hero-membership.html'%}
+	
+	<article class="article__row content__row article--white">
+		<div class="container">
+
+			{% include './_components/breadcrumb.html' %}
+			
+			<div class="row aside-navigation__row">
+				<div class="col-lg-3 col-md-4">
+					{% include './_shared/aside-navigation.html'%}
+				</div>
+				<div class="col-lg-9 col-md-8">
+					<section class="card-block__row section__row">
+						<header class="section__header">
+							<h2>Research &amp; Reports</h2>
+							<p>Get involved in the counseling and admission community and stay up-to-date on the industry trends. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</p>
+						</header>
+						<div class="flexbox__row row">
+						
+							{% set backgroundImage = '/images/main/color-block-bg-purple.jpg' %}
+							{% include './_components/color-block.html'%}
+
+							{% set backgroundImage = '/images/main/color-block-bg-purple.jpg' %}
+							{% include './_components/color-block.html'%}
+							
+						</div>
+					</section>
+					<section class="section__row">
+						<div class="row">
+							<div class="col-sm-6">
+								<header class="section__header">
+									<h2>Related Events &amp; Training</h2>
+								</header>
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-sm-6">
+								<header class="article__header">
+									<h2>Get Involved</h2>
+								</header>
+
+								{% include '_components/listing_entry.html'%}
+
+								{% include '_components/listing_entry.html'%}
+
+								{% include '_components/listing_entry.html'%}
+							</div>
+						</div>
+					</section>
+					<section class="section__row">
+						<header class="section__header">
+							<h2>Related Events &amp; Training</h2>
+						</header>
+						
+						{% include '_shared/accordian.html' %}
+
+					</section>
+				</div>
+			</div>
+		</div>
+	</article>
+	{% set addedClassNames = 'article--top-border' %}
+	{% include './_components/full-block-row.html' %}
+	{% include './_shared/footer.html'%}
+</main>
+{% endblock %}
+{% block javascript %}
+<script src="/javascripts/interior.js"></script>
+{% endblock %}

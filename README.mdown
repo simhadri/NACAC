@@ -122,6 +122,16 @@ npm run demo
 
 This will start a static server that serves your production files to http://localhost:5000. This is primarily meant as a way to preview your production build locally, not necessarily for use as a live production server.
 
+webpack-multi-config.js
+
+Line 12 | var filenamePattern = env === 'production' ? '[name]-[hash].js' : '[name].js'
+
+Remove: env === 'production' ? '[name]-[hash].js' : 
+
+Line 12 | var filenamePattern = '[name].js'
+
+Remove .pipe(rev()) from rev-css.js and rev-assets.js
+
 ## Task Details
 ### JS
 ```

@@ -10,7 +10,7 @@ var uglify = require('gulp-uglify')
 //    referenced asset hash changes, the parent hash will change as well
 gulp.task('rev-css', function(){
   return gulp.src(path.join(config.root.dest,'/**/*.css'))
-    .pipe(rev())
+    //.pipe(rev())
     .pipe(minify())
     .pipe(gulp.dest(config.root.dest))
     .pipe(revNapkin({verbose: false}))

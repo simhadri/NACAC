@@ -574,7 +574,8 @@ a.btn {
       transform: translateZ(0) translateX(0); }
     .primary-nav .container {
       padding-left: 0;
-      padding-right: 0; }
+      padding-right: 0;
+      width: 100%; }
     .primary-nav .primary-nav__logo {
       display: none; }
     .primary-nav ul {
@@ -1392,30 +1393,30 @@ a.btn {
   .color-block.color-block--grey {
     background-color: #c2cdd6; }
 
-.color-block--half {
+.color-block {
   width: 50%;
   float: left;
   position: relative;
   min-height: 36rem;
   overflow: hidden; }
-  .color-block--half:nth-child(odd) .color-block__content {
+  .color-block:nth-child(odd) .color-block__content {
     left: inherit;
     right: 0;
     float: right; }
-  .color-block--half .color-block__content {
+  .color-block .color-block__content {
     position: absolute;
     z-index: 1;
     left: 0;
     right: inherit;
     padding: 3rem; }
     @media (min-width: 768px) {
-      .color-block--half .color-block__content {
+      .color-block--wide .color-block .color-block__content {
         width: 37.5rem; } }
     @media (min-width: 992px) {
-      .color-block--half .color-block__content {
+      .color-block--wide .color-block .color-block__content {
         width: 48.5rem; } }
     @media (min-width: 1200px) {
-      .color-block--half .color-block__content {
+      .color-block--wide .color-block .color-block__content {
         width: 58.5rem; } }
 
 .card-block {
@@ -1601,7 +1602,7 @@ a.btn {
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 */
 @media (max-width: 991px) {
-  .color-block--half {
+  .color-block--wide {
     width: 100%;
     float: none; }
   .color-block {
@@ -1808,7 +1809,7 @@ a.btn {
   .screen__overlay.screen__overlay--soft {
     background: rgba(0, 0, 0, 0.33); }
   .screen__overlay.screen__overlay--hard {
-    z-index: 3;
+    z-index: 2;
     background: rgba(0, 0, 0, 0.8); }
 
 @media (min-width: 768px) {
