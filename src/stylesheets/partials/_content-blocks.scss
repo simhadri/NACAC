@@ -36,7 +36,7 @@
 	p.color-block__text {}
 }
 
-.color-block--half {
+.color-block {
 	width: 50%;
 	float: left;
 	position: relative;
@@ -53,7 +53,8 @@
 		left:0;
 		right: inherit;
 		padding: 3rem;
-		@include break(min, $screen-sm-min) {
+		.color-block--wide & {
+			@include break(min, $screen-sm-min) {
 			width: $container-sm-half;
 		}
 		@include break(min, $screen-md-min) {
@@ -62,6 +63,8 @@
 		@include break(min, $screen-lg-min) {
 			width: $container-lg-half;
 		}
+		}
+		
 	}
 }
 
@@ -245,7 +248,7 @@
 */
 
 @include break(max, $screen-sm-max) {
-	.color-block--half {
+	.color-block--wide {
 		width: 100%;
 		float: none;
 	}
