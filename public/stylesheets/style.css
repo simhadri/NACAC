@@ -1928,6 +1928,16 @@ body.body--freeze {
 .background--grey {
   background-color: #c2cdd6; }
 
+.col--border {
+  position: relative; }
+  .col--border:after {
+    border-right: 1px solid #D6D6D6;
+    height: calc(100% - 9rem);
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0; }
+
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
@@ -2659,6 +2669,78 @@ nav.tab__navigation {
     height: auto;
     max-width: 100%;
     margin: auto; }
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+/*
+██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
+██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
+██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
+														  
+*/
+.accordian {
+  list-style: none; }
+  .accordian .accordian__item {
+    position: relative;
+    display: block;
+    padding: 2rem;
+    border-bottom: 1px solid #D6D6D6; }
+    .accordian .accordian__item .accordian__header h3 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: bold; }
+    .accordian .accordian__item .accordian__article {
+      display: none; }
+      .accordian .accordian__item .accordian__article:before, .accordian .accordian__item .accordian__article:after {
+        content: " ";
+        display: table; }
+      .accordian .accordian__item .accordian__article:after {
+        clear: both; }
+      .accordian .accordian__item .accordian__article .accordian__aside {
+        float: left;
+        width: 20%;
+        border-radius: 50%;
+        overflow: hidden; }
+        .accordian .accordian__item .accordian__article .accordian__aside img {
+          width: 100%; }
+      .accordian .accordian__item .accordian__article .accordian__section {
+        float: left;
+        width: 60%;
+        padding-left: 2rem; }
+    .accordian .accordian__item .accordian__trigger {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      border: 2px solid #FFFFFF;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      color: #FFFFFF;
+      background-color: #6AAEE6;
+      text-align: center;
+      cursor: pointer; }
+      .accordian .accordian__item .accordian__trigger:after {
+        font-family: FontAwesome;
+        content: '\f067';
+        line-height: 3rem; }
+    .accordian .accordian__item.accordian__item--selected {
+      background-color: #6AAEE6;
+      color: #FFFFFF; }
+      .accordian .accordian__item.accordian__item--selected article {
+        display: block; }
+      .accordian .accordian__item.accordian__item--selected .accordian__trigger:after {
+        font-family: FontAwesome;
+        content: '\f068';
+        line-height: 3rem; }
 
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
