@@ -1409,15 +1409,15 @@ a.btn {
     left: 0;
     right: inherit;
     padding: 3rem; }
-    @media (min-width: 768px) {
-      .color-block--wide .color-block .color-block__content {
-        width: 37.5rem; } }
-    @media (min-width: 992px) {
-      .color-block--wide .color-block .color-block__content {
-        width: 48.5rem; } }
-    @media (min-width: 1200px) {
-      .color-block--wide .color-block .color-block__content {
-        width: 58.5rem; } }
+  @media (min-width: 768px) {
+    .color-block.color-block--wide .color-block__content {
+      width: 37.5rem; } }
+  @media (min-width: 992px) {
+    .color-block.color-block--wide .color-block__content {
+      width: 48.5rem; } }
+  @media (min-width: 1200px) {
+    .color-block.color-block--wide .color-block__content {
+      width: 58.5rem; } }
 
 .card-block {
   background-color: #9EA7AE;
