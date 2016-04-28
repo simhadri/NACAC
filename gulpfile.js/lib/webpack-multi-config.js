@@ -69,7 +69,7 @@ module.exports = function(env) {
 			webpackConfig.plugins.push(
 				new webpack.optimize.UglifyJsPlugin(),
 				new webpack.optimize.CommonsChunkPlugin({
-					name: 'brightfind_shared',
+					name: 'shared',
 					filename: filenamePattern,
 				})
 			)
