@@ -3,6 +3,7 @@
 // *********************
 
 import 'modules/asideNavigation';
+import 'modules/accordian';
 import Throttled from 'modules/throttled.js';
 
 // *********************

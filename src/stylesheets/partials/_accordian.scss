@@ -11,7 +11,9 @@
 			font-weight: bold;
 		}
 		.accordian__article {
-			display: none;
+			max-height: 0;
+			transition: max-height 300ms ease-in-out;
+			overflow: hidden;
 			@include clearfix;
 			.accordian__aside {
 				float: left;
@@ -49,7 +51,8 @@
 			background-color: $nacac_light-blue;
 			color: $white;
 			article {
-				display: block;
+				max-height: 90rem;
+				transition: max-height 300ms ease-in-out;
 			}
 			.accordian__trigger {
 				&:after {

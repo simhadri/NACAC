@@ -1,1 +1,146 @@
-webpackJsonp([1],[function(e,t,a){e.exports=a(9)},,,,,,,,,function(e,t,a){"use strict";function n(e){return e&&e.__esModule?e:{"default":e}}var i=a(10),o=n(i);a(11);var r=document.getElementById("countdown-clock");if(r){var s=r.getAttribute("data-deadline");(0,o["default"])("countdown-clock",s)}},function(e,t){"use strict";var a=function(e,t){function a(e){var t=Date.parse(e)-Date.parse(new Date),a=Math.floor(t/1e3/60%60),n=Math.floor(t/36e5%24),i=Math.floor(t/864e5);return{total:t,days:i,hours:n,minutes:a}}function n(){var e=a(t);l.innerHTML=e.days,c.innerHTML=("0"+e.hours).slice(-2),v.innerHTML=("0"+e.minutes).slice(-2),e.total<=0&&clearInterval(f)}for(var i=document.getElementById(e),o=["days","hours","minutes"],r=0;r<o.length;r++){var s=document.createElement("div"),d=document.createElement("div"),u=document.createElement("span");s.setAttribute("class","clock__segment"),d.setAttribute("class","segment__num "+o[r]),u.innerHTML=o[r],u.setAttribute("class","segment__label"),i.appendChild(s),s.appendChild(d),s.appendChild(u)}var l=i.querySelector(".days"),c=i.querySelector(".hours"),v=i.querySelector(".minutes");n();var f=setInterval(n,1e3)};e.exports=a},function(e,t,a){"use strict";function n(e){return e&&e.__esModule?e:{"default":e}}var i=a(5),o=n(i),r=function s(){var s=$(".aside-navigation"),e=$(window).scrollTop()+120,t=$(".aside-navigation__row").height(),a=$(".hero__wrapper").height()+$(".interior-hero__breadcrumb").height()+220,n=s.offset().top;e>a&&$(".aside-navigation").addClass("aside-navigation--sticky"),a>e&&$(".aside-navigation").removeClass("aside-navigation--sticky"),n>t?$(".aside-navigation").addClass("aside-navigation--hide"):$(".aside-navigation").removeClass("aside-navigation--hide")};r(),$(window).scroll((0,o["default"])(r,20))}]);
+webpackJsonp([1],[
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(10);
+
+
+/***/ },
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// *********************
+	//    Vendor scirpts
+	// *********************
+	
+	// *********************
+	//    Modules scripts
+	// *********************
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _modulesCountdownClock = __webpack_require__(11);
+	
+	var _modulesCountdownClock2 = _interopRequireDefault(_modulesCountdownClock);
+	
+	__webpack_require__(12);
+	
+	var getClock = document.getElementById('countdown-clock');
+	if (getClock) {
+		var setTime = getClock.getAttribute('data-deadline');
+		(0, _modulesCountdownClock2['default'])('countdown-clock', setTime);
+	}
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	var initializeClock = function initializeClock(id, endtime) {
+		var clock = document.getElementById(id),
+		    seg = ["days", "hours", "minutes"];
+		for (var i = 0; i < seg.length; i++) {
+			var wrap = document.createElement('div'),
+			    div = document.createElement('div'),
+			    span = document.createElement('span');
+			wrap.setAttribute('class', 'clock__segment');
+			div.setAttribute('class', 'segment__num ' + seg[i]);
+			span.innerHTML = seg[i];
+			span.setAttribute('class', 'segment__label');
+			clock.appendChild(wrap);
+			wrap.appendChild(div);
+			wrap.appendChild(span);
+		}
+	
+		function getTimeRemaining(endtime) {
+			var t = Date.parse(endtime) - Date.parse(new Date());
+			//var seconds = Math.floor((t / 1000) % 60);
+			var minutes = Math.floor(t / 1000 / 60 % 60);
+			var hours = Math.floor(t / (1000 * 60 * 60) % 24);
+			var days = Math.floor(t / (1000 * 60 * 60 * 24));
+			return {
+				'total': t,
+				'days': days,
+				'hours': hours,
+				'minutes': minutes
+				// ,
+				//'seconds': seconds
+			};
+		}
+		var daysSpan = clock.querySelector('.days');
+		var hoursSpan = clock.querySelector('.hours');
+		var minutesSpan = clock.querySelector('.minutes');
+		//var secondsSpan = clock.querySelector('.seconds');
+	
+		function updateClock() {
+			var t = getTimeRemaining(endtime);
+			daysSpan.innerHTML = t.days;
+			hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+			minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+			//secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+			if (t.total <= 0) {
+				clearInterval(timeinterval);
+			}
+		}
+		updateClock();
+		var timeinterval = setInterval(updateClock, 1000);
+	};
+	module.exports = initializeClock;
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// MODULES
+	"use strict";
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	var _modulesThrottledJs = __webpack_require__(5);
+	
+	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
+	
+	// FUNCTION
+	var asideNavigation = function asideNavigation() {
+		var asideNavigation = $(".aside-navigation"),
+		   
+		// Includes 180px utility nav + breadcrumb height offset; These are fixed
+		bottomOfNavigation = $(window).scrollTop() + 120,
+		    asideNavigationContainerHeight = $(".aside-navigation__row").height(),
+		   
+		// 170 off set
+		interiorHeroHeight = $(".hero__wrapper").height() + $(".interior-hero__breadcrumb").height() + 220,
+		   
+		// 40 is for its margins
+		asideNavigationLocation = asideNavigation.offset().top;
+		if (bottomOfNavigation > interiorHeroHeight) {
+			$('.aside-navigation').addClass('aside-navigation--sticky');
+		}
+		if (bottomOfNavigation < interiorHeroHeight) {
+			$('.aside-navigation').removeClass('aside-navigation--sticky');
+		}
+		// if location of aside-nav less its size
+		// is greater than tge aside-navs container; hide
+		if (asideNavigationLocation > asideNavigationContainerHeight) {
+			$('.aside-navigation').addClass("aside-navigation--hide");
+		} else {
+			$('.aside-navigation').removeClass("aside-navigation--hide");
+		}
+	};
+	asideNavigation();
+	$(window).scroll((0, _modulesThrottledJs2["default"])(asideNavigation, 20));
+
+/***/ }
+]);
+//# sourceMappingURL=events.js.map
