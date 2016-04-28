@@ -167,7 +167,7 @@
 		border-left: 1px solid $nacac_light-grey;
 		@include prefix(transform, translateZ(0) translateX(100%), webkit ms);
 		transition: $transition--all;
-		z-index:2;
+		z-index:3;
 		position: fixed;
 		top: 8rem;
 		right: 0;
@@ -303,13 +303,7 @@
 			transition:none;
 		}
 		&.primary-nav--blue{
-			// transform: none;
 			background-color: $nacac_light-blue;
-			// position: fixed;
-			// top: 5rem;
-			// left: 0;
-			// overflow: visible;
-			// @include zone-index(page, 1);
 		}
 		.primary-nav__interior {
 			top: 7rem;
