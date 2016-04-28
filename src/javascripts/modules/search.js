@@ -5,7 +5,6 @@ import Screen from 'modules/screen.js';
 		morphSearch = $('.utility-search'),
 		searchInput = $('input.utility-search__input'),
 		seachInputWrapper = $('.utility-nav__search'),
-		ctrlClose = $('span.utility-search__close'),
 		isOpen = false,
 		// show/hide search area
 		toggleSearch = function(evt) {

@@ -7,13 +7,10 @@ var asideNavigation = function() {
 		// Includes 180px utility nav + breadcrumb height offset; These are fixed
 		bottomOfNavigation = $(window).scrollTop() + 120,
 		asideNavigationContainerHeight = $(".aside-navigation__row").height(),
-		asideNavigationHeight = asideNavigation.height(),
 		// 170 off set
 		interiorHeroHeight = $(".hero__wrapper").height() +$(".interior-hero__breadcrumb").height() + 220,
 		// 40 is for its margins
-		asideNavigationLocation = asideNavigation.offset().top,
-		offsetOfFirstArticle = $('.article__row:first-child').offset();
-
+		asideNavigationLocation = asideNavigation.offset().top;
 	if (bottomOfNavigation >  interiorHeroHeight) {
 		$('.aside-navigation').addClass('aside-navigation--sticky')
 	}

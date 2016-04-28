@@ -165,7 +165,7 @@
 		height: auto;
 		background: rgba(255, 255, 255, 0.925);
 		border-left: 1px solid $nacac_light-grey;
-		@include prefix(transform, translateZ(0) translateX(100%), webkit ms);
+		transform: translateZ(0) translateX(100%);
 		transition: $transition--all;
 		z-index:3;
 		position: fixed;
@@ -173,8 +173,6 @@
 		right: 0;
 		margin: 0;
 		&.primary-nav--open {
-			-webkit-transform: translateZ(0) translateX(0);
-			-ms-transform: translateZ(0) translateX(0);
 			transform: translateZ(0) translateX(0);
 		}
 		.container {

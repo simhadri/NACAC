@@ -1,5 +1,4 @@
 var headStyle = function() {
-	var head = document.getElementsByTagName('head')[0];
 	this.addRules = function(rules) {
 		var css = '',
 			head = document.head || document.getElementsByTagName('head')[0],

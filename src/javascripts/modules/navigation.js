@@ -8,12 +8,8 @@ import Screen from 'modules/screen.js';
 		screen = new Screen(),
 		navTrigger = $('.primary-nav__trigger'),
 		primaryNav = $('.primary-nav'),
-		primaryNavItem = $('.primary-nav__item'),
 		body = $('body'),
-		toplevelChildrenOfPrimaryNav = primaryNav.children('li'),
-		goBackButton = $('.go-back'),
 		navItemLinks = $('.primary-nav--children'),
-		mobileUtilityBarButtons = $('.mobile-utility-bar-buttons'),
 		browserViewport = $(window).height() - 70,
 		filterOpen = $('.btn__filter-menu');
 
@@ -88,33 +84,6 @@ import Screen from 'modules/screen.js';
 		selected.next().addClass('nav__menu--visible');
 	}
 
-	function hasChildrenActions() {
-		if ($(this).attr('href') === "#") {
-			if (!$(this).parent().hasClass('selected')) {
-				bfSelect($(this));
-			} else {
-				removeSelected();
-			}
-		}
-	}
-
-	function restoreTopLevelVisibility() {
-		primaryNav.addClass('nav__menu--visible');
-	}
-
-	function removeVisibleMenuLevel() {
-		$('.nav__menu--visible').removeClass('nav__menu--visible');
-	}
-
-	function removeSelected() {
-		toplevelChildrenOfPrimaryNav.removeClass('selected');
-	}
-
-	function bfSelect(theSelection) {
-		removeSelected();
-		theSelection.parent('.primary-nav--children').addClass('selected').children('.nav-interior').addClass('nav__menu--visible');
-	}
-
 	function clickAnywhereToCloseEverything(event) {
 		if (!$(event.target).closest('.primary-nav').length) {
 			closeNavInterior();
@@ -129,9 +98,7 @@ import Screen from 'modules/screen.js';
 
 	function navScrollDependencies(event) {
 		var utilityHeight = $('.utility-nav').height(),
-			heroHeight = $('.hero__wrapper').height() + $('.utility-nav').height(),
-			bodyTop = $(window).scrollTop(),
-			navToTopOffset = $('.primary-nav__interior').offset().top - bodyTop;
+			bodyTop = $(window).scrollTop();
 		// If past than util nav and animation fired
 		if (bodyTop >= utilityHeight && primaryNav.hasClass('primary-nav--up')) {
 			headStyle.removeRules();
