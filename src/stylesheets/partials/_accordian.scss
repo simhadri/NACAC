@@ -5,14 +5,32 @@
 		display: block;
 		padding: 2rem;
 		border-bottom: 1px solid $nacac_border-lightgrey;
-		.accordian__header h3 {
-			margin: 0;
-			font-size: 2rem;
-			font-weight: bold;
+		cursor: pointer;
+		&.accordian__item--selected {
+			pointer-events: none;
+			background-color: $nacac_light-blue;
+			color: $white;
+			.accordian__article {
+				max-height: 20rem;
+				transition: max-height 400ms ease-in-out;
+			}
+			.accordian__trigger {
+				&:after {
+					@include icon('fa-minus');
+					line-height: 3rem;
+				}
+			}
+		}
+		.accordian__header{
+			 h3 {
+				margin: 0;
+				font-size: 2rem;
+				font-weight: bold;
+			}
 		}
 		.accordian__article {
 			max-height: 0;
-			transition: max-height 300ms ease-in-out;
+			//transition: max-height 400ms ease-in-out;
 			overflow: hidden;
 			@include clearfix;
 			.accordian__aside {
@@ -45,20 +63,6 @@
 			&:after {
 				@include icon('fa-plus');
 				line-height: 3rem;
-			}
-		}
-		&.accordian__item--selected {
-			background-color: $nacac_light-blue;
-			color: $white;
-			article {
-				max-height: 90rem;
-				transition: max-height 300ms ease-in-out;
-			}
-			.accordian__trigger {
-				&:after {
-					@include icon('fa-minus');
-					line-height: 3rem;
-				}
 			}
 		}
 	}

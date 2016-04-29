@@ -9,7 +9,7 @@
 	{% set className = "primary-nav--inanimate" %}
 	{% include './_shared/navigation.html'%}
 
-	{% include './_shared/interior-hero-membership.html'%}
+	{% include './_shared/interior-hero.html'%}
 	
 	<article class="article__row content__row article--white">
 		<div class="container">
@@ -46,17 +46,20 @@
 									<h2>Related Events &amp; Training</h2>
 								</header>
 								{% include './_components/figure-block.html'%}
+								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
 							</div>
 							<div class="col-sm-6">
 								<header class="article__header">
 									<h2>Get Involved</h2>
 								</header>
 
-								{% include '_components/listing_entry.html'%}
+								{% include '_components/resource-entry.html'%}
 
-								{% include '_components/listing_entry.html'%}
+								{% include '_components/resource-entry.html'%}
 
-								{% include '_components/listing_entry.html'%}
+								{% include '_components/resource-entry.html'%}
+
+								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
 							</div>
 						</div>
 					</section>
@@ -67,6 +70,16 @@
 						
 						{% include '_shared/accordian.html' %}
 
+					</section>
+					<section class="section__row">
+						<header class="section__header">
+							<h2>Related Events &amp; Training</h2>
+						</header>
+						<div class="flexbox__row row">
+							<div class="flexbox__column col-md-4">{% include './_components/figure-block.html'%}</div>
+							<div class="flexbox__column col-md-4">{% include './_components/figure-block.html'%}</div>
+							<div class="flexbox__column col-md-4">{% include './_components/figure-block.html'%}</div>
+						</div>
 					</section>
 				</div>
 			</div>

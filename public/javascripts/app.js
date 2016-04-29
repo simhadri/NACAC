@@ -24,9 +24,9 @@ webpackJsonp([0],[
 	
 	__webpack_require__(3);
 	
-	__webpack_require__(8);
+	__webpack_require__(7);
 	
-	__webpack_require__(9);
+	__webpack_require__(8);
 
 /***/ },
 /* 2 */
@@ -306,8 +306,7 @@ webpackJsonp([0],[
 	module.exports = Screen;
 
 /***/ },
-/* 7 */,
-/* 8 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -361,7 +360,7 @@ webpackJsonp([0],[
 	})();
 
 /***/ },
-/* 9 */
+/* 8 */
 /***/ function(module, exports) {
 
 	// var changeTab = function() {

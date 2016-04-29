@@ -10,11 +10,13 @@
 {% include './_shared/hero.html'%}
 
 <div class="content-block__row">
-	{% set backgroundColor = 'purple' %}
-	{% include './_components/color-block-half.html'%}
+	{% set backgroundImage = '/images/main/color-block-bg-purple.jpg' %}
+	{% set className = 'color-block--wide' %}
+	{% include './_components/color-block.html'%}
 	
-	{% set backgroundColor = 'green' %}
-	{% include './_components/color-block-half.html'%}
+	{% set backgroundImage = '/images/main/color-block-bg-green.jpg' %}
+	{% set className = 'color-block--wide' %}
+	{% include './_components/color-block.html'%}
 
 </div>
 
@@ -57,11 +59,11 @@
 					<h2>Get Involved</h2>
 				</header>
 
-				{% include '_components/listing_entry.html'%}
+				{% include '_components/listing-entry.html'%}
 
-				{% include '_components/listing_entry.html'%}
+				{% include '_components/listing-entry.html'%}
 
-				{% include '_components/listing_entry.html'%}
+				{% include '_components/listing-entry.html'%}
 
 			</div>
 			<div class="col-md-5 calendar__block">
@@ -69,11 +71,11 @@
 					<h2>Upcoming Training</h2>
 				</header>
 				
-				{% include '_components/calendar_entry.html'%}
+				{% include '_components/calendar-entry.html'%}
 
-				{% include '_components/calendar_entry.html'%}
+				{% include '_components/calendar-entry.html'%}
 
-				{% include '_components/calendar_entry.html'%}
+				{% include '_components/calendar-entry.html'%}
 				
 				<a href="#" class="btn btn--nacac-blue">View Full Calendar</a>
 			</div>
