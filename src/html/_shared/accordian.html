@@ -1,19 +1,11 @@
 <ul class="accordian">
+	
+{% for i in range(0, 8) %}
+	{% if loop.first %}
 	<li class="accordian__item accordian__item--selected">
-		<header class="accordian__header">
-			<h3>Title</h3>
-		</header>
-		<article class="accordian__article">
-			<aside class="accordian__aside">
-				<img src="/images/shared/square_image.jpg" alt="">
-			</aside>
-			<section class="accordian__section">
-				<p>Lorem ipsum Excepteur nisi laborum ad eiusmod minim proident voluptate in consectetur ea dolore Ut in nulla reprehenderit nulla cupidatat in.</p>
-			</section>
-		</article>
-		<span class="accordian__trigger"></span>
-	</li>
+	{% else %}
 	<li class="accordian__item">
+	{% endif %}
 		<header class="accordian__header">
 			<h3>Title</h3>
 		</header>
@@ -27,130 +19,5 @@
 		</article>
 		<span class="accordian__trigger"></span>
 	</li>
-	<li class="accordian__item">
-		<header class="accordian__header">
-			<h3>Title</h3>
-		</header>
-		<article class="accordian__article">
-			<aside class="accordian__aside">
-				<img src="/images/shared/square_image.jpg" alt="">
-			</aside>
-			<section class="accordian__section">
-				<p>Lorem ipsum Excepteur nisi laborum ad eiusmod minim proident voluptate in consectetur ea dolore Ut in nulla reprehenderit nulla cupidatat in.</p>
-			</section>
-		</article>
-		<span class="accordian__trigger"></span>
-	</li>
-	<li class="accordian__item">
-		<header class="accordian__header">
-			<h3>Title</h3>
-		</header>
-		<article class="accordian__article">
-			<aside class="accordian__aside">
-				<img src="/images/shared/square_image.jpg" alt="">
-			</aside>
-			<section class="accordian__section">
-				<p>Lorem ipsum Excepteur nisi laborum ad eiusmod minim proident voluptate in consectetur ea dolore Ut in nulla reprehenderit nulla cupidatat in.</p>
-			</section>
-		</article>
-		<span class="accordian__trigger"></span>
-	</li>
-	<li class="accordian__item">
-		<header class="accordian__header">
-			<h3>Title</h3>
-		</header>
-		<article class="accordian__article">
-			<aside class="accordian__aside">
-				<img src="/images/shared/square_image.jpg" alt="">
-			</aside>
-			<section class="accordian__section">
-				<p>Lorem ipsum Excepteur nisi laborum ad eiusmod minim proident voluptate in consectetur ea dolore Ut in nulla reprehenderit nulla cupidatat in.</p>
-			</section>
-		</article>
-		<span class="accordian__trigger"></span>
-	</li>
-	<li class="accordian__item">
-		<header class="accordian__header">
-			<h3>Title</h3>
-		</header>
-		<article class="accordian__article">
-			<aside class="accordian__aside">
-				<img src="/images/shared/square_image.jpg" alt="">
-			</aside>
-			<section class="accordian__section">
-				<p>Lorem ipsum Excepteur nisi laborum ad eiusmod minim proident voluptate in consectetur ea dolore Ut in nulla reprehenderit nulla cupidatat in.</p>
-			</section>
-		</article>
-		<span class="accordian__trigger"></span>
-	</li>
-	<li class="accordian__item">
-		<header class="accordian__header">
-			<h3>Title</h3>
-		</header>
-		<article class="accordian__article">
-			<aside class="accordian__aside">
-				<img src="/images/shared/square_image.jpg" alt="">
-			</aside>
-			<section class="accordian__section">
-				<p>Lorem ipsum Excepteur nisi laborum ad eiusmod minim proident voluptate in consectetur ea dolore Ut in nulla reprehenderit nulla cupidatat in.</p>
-			</section>
-		</article>
-		<span class="accordian__trigger"></span>
-	</li>
-	<li class="accordian__item">
-		<header class="accordian__header">
-			<h3>Title</h3>
-		</header>
-		<article class="accordian__article">
-			<aside class="accordian__aside">
-				<img src="/images/shared/square_image.jpg" alt="">
-			</aside>
-			<section class="accordian__section">
-				<p>Lorem ipsum Excepteur nisi laborum ad eiusmod minim proident voluptate in consectetur ea dolore Ut in nulla reprehenderit nulla cupidatat in.</p>
-			</section>
-		</article>
-		<span class="accordian__trigger"></span>
-	</li>
-	<li class="accordian__item">
-		<header class="accordian__header">
-			<h3>Title</h3>
-		</header>
-		<article class="accordian__article">
-			<aside class="accordian__aside">
-				<img src="/images/shared/square_image.jpg" alt="">
-			</aside>
-			<section class="accordian__section">
-				<p>Lorem ipsum Excepteur nisi laborum ad eiusmod minim proident voluptate in consectetur ea dolore Ut in nulla reprehenderit nulla cupidatat in.</p>
-			</section>
-		</article>
-		<span class="accordian__trigger"></span>
-	</li>
-	<li class="accordian__item">
-		<header class="accordian__header">
-			<h3>Title</h3>
-		</header>
-		<article class="accordian__article">
-			<aside class="accordian__aside">
-				<img src="/images/shared/square_image.jpg" alt="">
-			</aside>
-			<section class="accordian__section">
-				<p>Lorem ipsum Excepteur nisi laborum ad eiusmod minim proident voluptate in consectetur ea dolore Ut in nulla reprehenderit nulla cupidatat in.</p>
-			</section>
-		</article>
-		<span class="accordian__trigger"></span>
-	</li>
-	<li class="accordian__item">
-		<header class="accordian__header">
-			<h3>Title</h3>
-		</header>
-		<article class="accordian__article">
-			<aside class="accordian__aside">
-				<img src="/images/shared/square_image.jpg" alt="">
-			</aside>
-			<section class="accordian__section">
-				<p>Lorem ipsum Excepteur nisi laborum ad eiusmod minim proident voluptate in consectetur ea dolore Ut in nulla reprehenderit nulla cupidatat in.</p>
-			</section>
-		</article>
-		<span class="accordian__trigger"></span>
-	</li>
+{% endfor %}
 </ul>

@@ -1,5 +1,5 @@
  {% extends '_layouts/main-application.html' %}
- {% set pageLocation = "Membership" %}
+ {% set pageLocation = "Membership Overview" %}
  {% block content %}
 
 <main id="main" class="membership__template interior__template">
@@ -9,7 +9,8 @@
 	{% set className = "primary-nav--inanimate" %}
 	{% include './_shared/navigation.html'%}
 
-	{% include './_shared/interior-hero-membership.html'%}
+	{% set heroTitle = "Membership Overview" %}
+	{% include './_shared/interior-hero.html'%}
 	
 	<article class="article__row content__row article--white">
 		<div class="container">

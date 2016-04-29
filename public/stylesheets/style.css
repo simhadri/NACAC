@@ -282,8 +282,8 @@ h2 {
   text-transform: uppercase; }
 
 h3 {
-  font-family: "Istok Web", sans-serif;
-  font-size: 2.828rem;
+  font-size: 2rem;
+  font-size: 2.121rem;
   line-height: 3rem;
   margin-top: 3rem;
   font-weight: 700; }
@@ -308,7 +308,7 @@ h1, h2 {
 
 h3 {
   font-family: "Lato", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: inherit; }
 
@@ -806,25 +806,21 @@ a.btn {
       border-left-width: 50px;
       border-right-width: 50px; } }
 
-.aside-navigation__column:before, .aside-navigation__column:after {
-  content: " ";
-  display: table; }
-
-.aside-navigation__column:after {
-  clear: both; }
-
 .aside-navigation {
   width: 100%; }
-  .aside-navigation h2 {
+  .aside-navigation h3 {
     font-family: "Istok Web", sans-serif;
     text-transform: uppercase;
     font-weight: 700;
-    padding: 1rem;
-    color: #6AAEE6;
-    font-size: 2rem; }
+    color: #6AAEE6; }
+  .aside-navigation ul {
+    list-style: none; }
+    .aside-navigation ul li a {
+      padding: 1rem; }
+    .aside-navigation ul li > ul {
+      margin-left: 20px; }
   .aside-navigation .aside-navigation__button {
     display: block;
-    padding: 1rem;
     color: #374049;
     font-family: "Istok Web", sans-serif;
     font-weight: 400;
@@ -1555,13 +1551,8 @@ a.btn {
 .figure-block {
   margin: 0;
   margin-top: 2rem; }
-
-.figure-block__image {
-  width: 100%; }
-
-.figure-block__caption h3 {
-  font-size: 2rem;
-  font-weight: bold; }
+  .figure-block .figure-block__image {
+    width: 100%; }
 
 .block--dynamic {
   display: -webkit-flex;
@@ -1999,18 +1990,18 @@ body.body--freeze {
   text-align: left; }
 
 .listing__entry,
+.resource__entry,
 .calendar__content {
   margin-bottom: 3rem; }
-  .listing__entry h3,
-  .calendar__content h3 {
-    font-weight: bold; }
   .listing__entry a,
+  .resource__entry a,
   .calendar__content a {
     font-family: "Istok Web", sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     position: relative; }
     .listing__entry a:after,
+    .resource__entry a:after,
     .calendar__content a:after {
       content: "";
       position: absolute;
@@ -2692,14 +2683,25 @@ nav.tab__navigation {
     position: relative;
     display: block;
     padding: 2rem;
-    border-bottom: 1px solid #D6D6D6; }
+    border-bottom: 1px solid #D6D6D6;
+    cursor: pointer; }
+    .accordian .accordian__item.accordian__item--selected {
+      pointer-events: none;
+      background-color: #6AAEE6;
+      color: #FFFFFF; }
+      .accordian .accordian__item.accordian__item--selected .accordian__article {
+        max-height: 20rem;
+        transition: max-height 400ms ease-in-out; }
+      .accordian .accordian__item.accordian__item--selected .accordian__trigger:after {
+        font-family: FontAwesome;
+        content: '\f068';
+        line-height: 3rem; }
     .accordian .accordian__item .accordian__header h3 {
       margin: 0;
       font-size: 2rem;
       font-weight: bold; }
     .accordian .accordian__item .accordian__article {
       max-height: 0;
-      transition: max-height 300ms ease-in-out;
       overflow: hidden; }
       .accordian .accordian__item .accordian__article:before, .accordian .accordian__item .accordian__article:after {
         content: " ";
@@ -2732,16 +2734,6 @@ nav.tab__navigation {
       .accordian .accordian__item .accordian__trigger:after {
         font-family: FontAwesome;
         content: '\f067';
-        line-height: 3rem; }
-    .accordian .accordian__item.accordian__item--selected {
-      background-color: #6AAEE6;
-      color: #FFFFFF; }
-      .accordian .accordian__item.accordian__item--selected article {
-        max-height: 90rem;
-        transition: max-height 300ms ease-in-out; }
-      .accordian .accordian__item.accordian__item--selected .accordian__trigger:after {
-        font-family: FontAwesome;
-        content: '\f068';
         line-height: 3rem; }
 
 /*

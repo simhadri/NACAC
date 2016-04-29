@@ -2,7 +2,7 @@ webpackJsonp([2],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(13);
+	module.exports = __webpack_require__(12);
 
 
 /***/ },
@@ -12,32 +12,11 @@ webpackJsonp([2],[
 /* 4 */,
 /* 5 */,
 /* 6 */,
-/* 7 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	(function () {
-		'use strict';
-		var accordianItem = $('.accordian__item'),
-		   
-		//accordianArticle = $('.accordian__article'),
-		accordianTrigger = $('.accordian__trigger'),
-		    isOpen = false,
-		    openAccordian = function openAccordian() {
-			accordianItem.removeClass('accordian__item--selected');
-			$(this).parent().addClass('accordian__item--selected');
-		};
-		// events
-		accordianTrigger.on('click', openAccordian);
-	})();
-
-/***/ },
+/* 7 */,
 /* 8 */,
 /* 9 */,
 /* 10 */,
-/* 11 */,
-/* 12 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// MODULES
@@ -80,7 +59,7 @@ webpackJsonp([2],[
 	$(window).scroll((0, _modulesThrottledJs2["default"])(asideNavigation, 20));
 
 /***/ },
-/* 13 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// *********************
@@ -91,9 +70,9 @@ webpackJsonp([2],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	__webpack_require__(12);
+	__webpack_require__(11);
 	
-	__webpack_require__(7);
+	__webpack_require__(13);
 	
 	var _modulesThrottledJs = __webpack_require__(5);
 	
@@ -119,6 +98,24 @@ webpackJsonp([2],[
 		});
 	};
 	$(window).scroll((0, _modulesThrottledJs2['default'])(countCard, 100));
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	(function () {
+		'use strict';
+		var accordianItem = $('.accordian__item'),
+		    accordianTrigger = $('.accordian__header'),
+		    openAccordian = function openAccordian() {
+			accordianItem.removeClass('accordian__item--selected');
+			$(this).parent().addClass('accordian__item--selected');
+		};
+		// events
+		accordianTrigger.on('click', openAccordian);
+	})();
 
 /***/ },
 /* 14 */

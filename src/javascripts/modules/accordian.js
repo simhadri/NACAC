@@ -1,9 +1,7 @@
 (function() {
 	'use strict';
 	var accordianItem = $('.accordian__item'),
-		//accordianArticle = $('.accordian__article'),
-		accordianTrigger = $('.accordian__trigger'),
-		isOpen = false,
+		accordianTrigger = $('.accordian__header'),
 		openAccordian = function() {
 			accordianItem.removeClass('accordian__item--selected');
 			$(this).parent().addClass('accordian__item--selected');
