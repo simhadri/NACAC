@@ -97,6 +97,9 @@ body.body--freeze {
 	&:last-child {
 		border-bottom: none;
 	}
+	&.section__row--no-border{
+		border-bottom:none;
+	}
 }
 
 .flexbox__row {
