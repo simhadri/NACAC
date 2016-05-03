@@ -8,4 +8,5 @@
 		};
 	// events
 	accordianTrigger.on('click', openAccordian);
+	var useless = "v";
 })();
