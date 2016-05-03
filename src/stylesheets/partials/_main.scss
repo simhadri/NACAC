@@ -81,6 +81,9 @@ body.body--freeze {
 .article__header,
 .section__header {
 	text-align: center;
+	.section__row [class*="col-"] & {
+		text-align: left;
+	}
 	.btn {
 		margin: 2rem 0;
 	}

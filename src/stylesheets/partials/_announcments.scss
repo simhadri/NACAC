@@ -79,7 +79,28 @@
 	}
 }
 
+.press-release__footer{
+	border-top: 1px dotted;
+	.press-release__block{
+		float: left;
+		width: 50%;
+		padding: 0.8rem 0.8rem 0 0;
+		span{
+			display: inline-block;
+		}
+		.press-release__name{
+			font-weight: bold;
+		}
+		.press-release__title{
 
+		}
+		.press-release__number{
+
+		}
+
+	}
+	
+}
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
