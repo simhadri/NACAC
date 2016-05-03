@@ -91,6 +91,9 @@
 		}
 		order: $position;
 	}
+	[class*="col-sm"],[class*="col-md"],[class*="col-lg"]{
+		width: 100%;
+	}
 	.container-fluid {
 		margin-right: auto;
 		margin-left: auto;
