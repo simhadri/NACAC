@@ -8,12 +8,10 @@ nav.tab__navigation {
 	}
 	&::-webkit-scrollbar-thumb {
 		background-color: $lighter-orange;
-		// border-top:1.5rem solid $white;
 		border-bottom: .5rem solid $lighter-orange;
 	}
 	&::-webkit-scrollbar-track {
 		background-color: $nacac_bg-blue-grey;
-		// border-top:1.5rem solid $white;
 		border-bottom: .5rem solid $nacac_bg-blue-grey;
 	}
 	&::-webkit-scrollbar-button:start:decrement,
@@ -23,19 +21,18 @@ nav.tab__navigation {
 		background-color: $nacac_bg-blue-grey;
 		background-position: bottom;
 		background-repeat: no-repeat;
-		// border-top:1.5rem solid $white;
 		border-bottom: .5rem solid $nacac_bg-blue-grey;
 	}
 	&::-webkit-scrollbar-button {
 		&:start {
 			&:decrement {
-				background-image: url(/images/icon_arrow_left_thin.svg);
+				background-image: url(/images/icons/icon_arrow_left_thin.svg);
 			}
 		}
 		//doesn't want to allow a transform
 		&:end {
 			&:increment {
-				background-image: url(/images/icon_arrow_right_thin.svg);
+				background-image: url(/images/icons/icon_arrow_right_thin.svg);
 			}
 		}
 	}

@@ -339,7 +339,7 @@ webpackJsonp([0],[
 			} else {
 				setTimeout(function () {
 					searchInput.focus();
-				}, 400);
+				}, 800);
 				morphSearch.addClass('utility-search--open');
 				seachInputWrapper.addClass('utility-nav__search--on');
 				screenOverlay.turnScreenOn('hard');

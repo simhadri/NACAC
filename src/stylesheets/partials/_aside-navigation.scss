@@ -1,21 +1,24 @@
-.aside-navigation__column {
-	// height: 100%;
-	// float: none;
-	// display: block;
-	@include clearfix;
-}
-
 .aside-navigation {
 	width: 100%;
-	h2 {
+	h3 {
 		@include sans-uppercase-normal;
-		padding: 1rem;
+		// padding: 1rem;
 		color: $nacac_light-blue;
-		font-size: 2rem;
+		// font-size: 2rem;
+	}
+	ul{
+		list-style: none;
+		li{
+			a{
+				padding: 1rem;
+			}
+			> ul{
+				margin-left: 20px;
+			}
+		}
 	}
 	.aside-navigation__button {
 		display: block;
-		padding: 1rem;
 		color: $text_slate;
 		@include sans-light;
 		cursor: pointer;

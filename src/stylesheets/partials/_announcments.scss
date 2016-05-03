@@ -25,11 +25,9 @@
 }
 
 .listing__entry,
+.resource__entry,
 .calendar__content {
 	margin-bottom: 3rem;
-	h3 {
-		font-weight: bold;
-	}
 	a {
 		@include sans-uppercase-normal;
 		position: relative;
@@ -81,7 +79,32 @@
 	}
 }
 
+.press-release__footer{
+	border-top: 1px dotted;
+	margin-top: 2rem;
+	padding-top: 2rem;
+	@include clearfix;
+	.press-release__block{
+		float: left;
+		width: 50%;
+		padding-right: 0.8rem;
+		padding-bottom: 1.6rem;
+		span{
+			display: inline-block;
+		}
+		.press-release__name{
+			font-weight: bold;
+		}
+		.press-release__title{
 
+		}
+		.press-release__number{
+
+		}
+
+	}
+	
+}
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
