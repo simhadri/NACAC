@@ -1,41 +1,36 @@
+{% set templateName = 'template-fair' %}
 
 {% extends '_layouts/fair-application.html' %}
 
 {% block content %}
 <main>
-{% include './_shared/utility.html'%}
+{% set className = 'utility-nav-fair' %}
+{% include './_fair/utility.html'%}
 
-{% include './_shared/navigation.html'%}
-
-{% include './_shared/hero.html'%}
-
-<div class="content-block__row">
-	{% set backgroundColor = 'purple' %}
-	{% include './_components/color-block-half.html'%}
-	
-	{% set backgroundColor = 'green' %}
-	{% include './_components/color-block-half.html'%}
-
-</div>
+{% include './_fair/hero.html'%}
 
 <article class="article__row article--white">
 	<div class="container">
 		<header class="article__header">
-			<h2>Nacac Expertise</h2>
-			<p>Ad pro quidam virtute voluptaria. In eum propriae insolens nominati, sed te nihil affert doming, nulla melius praesent et mei. Ad essent quaeque periculis mea. No iuvaret torquatos conclusionemque vel.</p>
+			<h1>Fair Options Title Text</h1>
+			<p><span class="text-uppercase">Free</span> and <span class="text-uppercase">open</span> to the <span class="text-uppercase">public</span>, there are several types of fairs to help you find your perfect fit!</p>
 		</header>
 		<section class="card-block__row">
 			<div class="flexbox__row row">
 					
+				{% set cardFair = { heading: "National College Fairs", image: "card-national" } %}
 				{% set button = true %}
 				{% include './_components/card-block.html'%}
 				
+				{% set cardFair = { heading: "Performing and Visual Arts College Fairs", image: "card-performing" } %}
 				{% set button = true %}
 				{% include './_components/card-block.html'%}
 			
+				{% set cardFair = { heading: "Stem College and Career Fairs", image: "card-stem" } %}
 				{% set button = true %}
 				{% include './_components/card-block.html'%}
 				
+				{% set cardFair = { heading: "International Universities Fair", image: "card-international" } %}
 				{% set button = true %}
 				{% include './_components/card-block.html'%}
 			
@@ -44,10 +39,43 @@
 	</div>
 </article>
 
-<article class="article__row article--lightgrey announcements">
+<article class="article__row article--white announcements">
+	<div class="container">
+		<section class="announcement__row row">
+			<div class="col-md-6">
+				<header class="article__header">
+					<h2>Fairs <span class="orange">Near You</span></h2>
+					<ul class="event-listing">
+						<li class="media">
+						  <div class="media-left">
+						    <a href="#">
+						      <img class="media-object" src="/images/icons/states/pa.svg" alt="Pennsylvania">
+						    </a>
+						  </div>
+						  <div class="media-body">
+						    <h4 class="media-heading">Media heading</h4>
+						  </div>
+						</li>
+					</ul>
+				</header>
+			</div>
+			<div class="col-md-6">
+				<header class="article__header">
+					<h2>New: <span class="orange">Stem College and Career</span></h2>
+				</header>
+				<p><img src="/images/fair/feature-stem.jpg" alt="" class="img-responsive"></p>
+				<h3>Subtitle Text Placeholder</h3>
+				<p>This fall, NACAC will host three pilot STEM College and Career Fairs to augment its National College Fair programming for students interested in  pursuing college opportunities beyond high school. The new programs will concentrate on science-, technology-, engineering- and math-related educational and career opportunities.</p>
+				<p><a href="#">View All Stem Fairs <i class="fa fa-fw fa-caret-right"></i></a></p>
+			</div>
+		</section>
+	</div>
+</article>
+
+<article class="article__row article--white announcements">
 	<div class="announcement__header">
 			<div class="container">
-				<p><i class="fa fa-bullhorn"></i>Announcements</p>
+				<p><i class="fa fa-map-marker"></i>Fair Locator</p>
 			</div>
 		</div>
 	<div class="container">

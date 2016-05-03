@@ -1,0 +1,36 @@
+// calling all the stylesheets being using 
+
+// MODULES
+@import 'modules/variables';
+@import 'modules/breakpoints';
+@import 'modules/icons';
+@import 'modules/mixins';
+@import 'modules/normalize';
+
+// BOOTSTRAP
+//@import 'bootstrap/buttons';
+
+// PARTIALS
+@import 'partials/typography';
+@import 'partials/buttons';
+@import 'partials/navigation';
+@import 'partials/aside-navigation';
+@import 'partials/search';
+@import 'partials/utility';
+@import 'partials/content-blocks';
+@import 'partials/hero';
+@import 'partials/breadcrumb';
+@import 'partials/main';
+@import 'partials/announcments';
+@import 'partials/testimonials';
+@import 'partials/tabs';
+@import 'partials/clock';
+@import 'partials/slider';
+@import 'partials/accordian';
+@import 'partials/footer';
+
+@import 'partials/fair';
+
+
+// IE Fixes
+@import 'partials/internet-exploder'

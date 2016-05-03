@@ -1,0 +1,104 @@
+// I'm including all fair scss here for the time being. We should probably compartmentalize eventually, but I wanted to start with a simple include.
+
+// set variables
+$blue-light: #67aee7;
+$green: #007451;
+
+// basic styling
+.orange {
+  color: $nacac-orange;
+}
+.text-uppercase { // bootstrap class
+  text-transform: uppercase;
+}
+
+
+// utility nav
+.utility-nav.utility-nav-fair {
+	.utility-nav-register {
+		a {
+			font-weight: 700;
+			color: $nacac_orange;
+		}
+	}
+	&.utility-nav-fair {
+		.utility-nav__list {
+			width: 55%;
+		}
+		.utility-nav__social {
+			width: 20%;
+		}
+	}
+	&.utility-nav--scrolled {
+		background-color: rgba(0,0,0,0.8);
+	}
+}
+
+// hero element
+.hero-fair {
+	.hero__byline {
+		margin: 0 0 5rem 0;
+		font: {
+			family: $serif;
+			size: 2.4rem;
+			style: italic;
+		}
+	}
+	.hero-icon-block {
+		display: block;
+		font: {
+			size: 1.8rem;
+			weight: 700;
+		}
+		color: #fff;
+		svg {
+			display: block;
+			margin: 0 auto .8rem auto;
+			width: 7.2rem;
+			height: 7.2rem;
+			margin-bottom: .5rem;
+			opacity: 0.9;
+		}
+	}
+	.icon-info {fill: $blue-light;}
+	.icon-sign {fill: $green;}
+	.icon-flow-chart {fill: $nacac-orange;}
+}
+.hero-fair-nav-wrap {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 7.2rem;
+	background: rgba(255,255,255,0.8);
+	nav {
+		position: relative;
+	}
+	ul {
+		list-style: none;
+		li {
+			display: inline-block;
+			a {
+				display: inline-block;
+				padding: 0 2rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				line-height: 7.2rem;
+				color: #333;
+			}
+		}
+	}
+	.logo-ncf {
+		display: block;
+		position: absolute;
+		top: .2rem;
+		left: 1.5rem;
+		width: 124px;
+		height: 68px;
+	}
+}
+
+
+.event-listing {
+
+}
