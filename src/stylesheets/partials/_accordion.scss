@@ -19,9 +19,11 @@
 				transition: max-height 400ms ease-in-out;
 			}
 			.accordion-item__trigger {
+				pointer-events: all;
+				transform: rotate(180deg);
+				transition: $transition--all;
 				&:after {
 					@include icon('fa-minus');
-					line-height: 3rem;
 				}
 			}
 		}
@@ -56,6 +58,7 @@
 			position: absolute;
 			top: 2rem;
 			right: 2rem;
+			padding-top: 0.3rem;
 			border: 2px solid #FFFFFF;
 			width: 3rem;
 			height: 3rem;
@@ -64,10 +67,10 @@
 			background-color: $nacac_light-blue;
 			text-align: center;
 			cursor: pointer;
-			z-index: 0;
+			transform: rotate(0deg);
+			transition: $transition--all;
 			&:after {
 				@include icon('fa-plus');
-				line-height: 3rem;
 			}
 		}
 	}

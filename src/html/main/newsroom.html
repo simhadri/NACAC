@@ -1,5 +1,5 @@
  {% extends '_layouts/main-application.html' %}
- {% set pageLocation = "News & Publications" %}
+ {% set pageLocation = "Newsroom" %}
  {% block content %}
 
 <main id="main" class="membership__template interior__template">
@@ -21,20 +21,6 @@
 					{% include './_shared/aside-navigation.html'%}
 				</div>
 				<div class="col-lg-9 col-md-8">
-					<section class="card-block__row section__row">
-						<div class="row">
-						
-								{% set button = true %}
-								{% include './_components/card-block.html'%}
-								
-								{% set button = true %}
-								{% include './_components/card-block.html'%}
-								
-								{% set button = true %}
-								{% include './_components/card-block.html'%}
-								
-						</div>
-					</section>
 					<section class="section__row">
 						<div class="row">
 							<div class="col-sm-6 col--border">
@@ -46,7 +32,7 @@
 							</div>
 							<div class="col-sm-6">
 								<header class="article__header">
-									<h2>Get Involved</h2>
+									<h2>Press Releases</h2>
 								</header>
 
 								{% include '_components/resource-entry.html'%}
@@ -56,22 +42,30 @@
 								{% include '_components/resource-entry.html'%}
 
 								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
+								<footer class="press-release__footer">
+									<p>Please send any media inquiries to:</p>
+									<div class="press-release__block">
+										<span class="press-release__name">Shanda Ivory</span>
+										<span class="press-release__title">Director of Communications</span>
+										<span class="press-release__number">(703) 299-6803</span>
+									</div>
+									<div class="press-release__block">
+										<span class="press-release__name">Shanda Ivory</span>
+										<span class="press-release__title">Director of Communications</span>
+										<span class="press-release__number">(703) 299-6803</span>
+									</div>
+								</footer>
 							</div>
 						</div>
-					</section>
-					<section class="section__row section__row--no-border">
-						
-						{% include '_shared/accordion.html' %}
-
 					</section>
 					<section class="section__row">
 						<header class="section__header">
 							<h2>Related Events &amp; Training</h2>
 						</header>
 						<div class="row">
-							<div class="col-md-4">{% include './_components/figure-block.html'%}</div>
-							<div class="col-md-4">{% include './_components/figure-block.html'%}</div>
-							<div class="col-md-4">{% include './_components/figure-block.html'%}</div>
+							<div class="flexbox__column col-md-4">{% include './_components/figure-block.html'%}</div>
+							<div class="flexbox__column col-md-4">{% include './_components/figure-block.html'%}</div>
+							<div class="flexbox__column col-md-4">{% include './_components/figure-block.html'%}</div>
 						</div>
 					</section>
 				</div>

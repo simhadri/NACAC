@@ -58,7 +58,7 @@
  ╚═════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝
 */
 
-@mixin clearfix() {
+@mixin clearfix{
 		&:before,
 		&:after {
 				content: " "; // 1
