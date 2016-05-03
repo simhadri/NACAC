@@ -19,6 +19,7 @@
 				transition: max-height 400ms ease-in-out;
 			}
 			.accordion-item__trigger {
+				pointer-events: all;
 				&:after {
 					@include icon('fa-minus');
 					line-height: 3rem;
@@ -64,7 +65,6 @@
 			background-color: $nacac_light-blue;
 			text-align: center;
 			cursor: pointer;
-			z-index: 0;
 			&:after {
 				@include icon('fa-plus');
 				line-height: 3rem;
