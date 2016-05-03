@@ -107,14 +107,14 @@ webpackJsonp([2],[
 	
 	(function () {
 		'use strict';
-		var accordianItem = $('.accordian__item'),
-		    accordianTrigger = $('.accordian__header'),
-		    openAccordian = function openAccordian() {
-			accordianItem.removeClass('accordian__item--selected');
-			$(this).parent().addClass('accordian__item--selected');
+		var accordionItem = $('.accordion__item'),
+		    accordionTrigger = $('.accordion-item__header'),
+		    openaccordion = function openaccordion() {
+			accordionItem.removeClass('accordion__item--selected');
+			$(this).parent().addClass('accordion__item--selected');
 		};
 		// events
-		accordianTrigger.on('click', openAccordian);
+		accordionTrigger.on('click', openaccordion);
 	})();
 
 /***/ },

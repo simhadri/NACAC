@@ -18,7 +18,7 @@ import Screen from 'modules/screen.js';
 				screenOverlay.turnScreenOff();
 				searchInput.val('').blur();
 			} else {
-				setTimeout(function(){searchInput.focus()}, 400);
+				setTimeout(function(){searchInput.focus()}, 800);
 				morphSearch.addClass('utility-search--open');
 				seachInputWrapper.addClass('utility-nav__search--on');
 				screenOverlay.turnScreenOn('hard');

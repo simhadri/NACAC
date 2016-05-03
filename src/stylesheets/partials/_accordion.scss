@@ -1,39 +1,43 @@
-.accordian {
+.accordion {
 	list-style: none;
-	.accordian__item {
+	.accordion__header{
+		padding: 2rem;
+	}
+	.accordion__item {
 		position: relative;
 		display: block;
 		padding: 2rem;
 		border-bottom: 1px solid $nacac_border-lightgrey;
 		cursor: pointer;
-		&.accordian__item--selected {
+		&.accordion__item--selected {
 			pointer-events: none;
 			background-color: $nacac_light-blue;
+			transition: background-color 400ms ease-in-out;
 			color: $white;
-			.accordian__article {
+			.accordion-item__article {
 				max-height: 20rem;
 				transition: max-height 400ms ease-in-out;
 			}
-			.accordian__trigger {
+			.accordion-item__trigger {
 				&:after {
 					@include icon('fa-minus');
 					line-height: 3rem;
 				}
 			}
 		}
-		.accordian__header{
+		.accordion-item__header{
 			 h3 {
 				margin: 0;
 				font-size: 2rem;
 				font-weight: bold;
 			}
 		}
-		.accordian__article {
+		.accordion-item__article {
 			max-height: 0;
-			//transition: max-height 400ms ease-in-out;
+			transition: max-height 400ms ease-in-out;
 			overflow: hidden;
 			@include clearfix;
-			.accordian__aside {
+			.accordion-item__aside {
 				float: left;
 				width: 20%;
 				border-radius: 50%;
@@ -42,13 +46,13 @@
 					width: 100%;
 				}
 			}
-			.accordian__section {
+			.accordion-item__section {
 				float: left;
 				width: 60%;
 				padding-left: 2rem;
 			}
 		}
-		.accordian__trigger {
+		.accordion-item__trigger {
 			position: absolute;
 			top: 2rem;
 			right: 2rem;
@@ -60,6 +64,7 @@
 			background-color: $nacac_light-blue;
 			text-align: center;
 			cursor: pointer;
+			z-index: 0;
 			&:after {
 				@include icon('fa-plus');
 				line-height: 3rem;
