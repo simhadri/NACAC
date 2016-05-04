@@ -38,6 +38,9 @@ body.body--freeze {
 	opacity: 1;
 }
 
+.pointer--disabled{
+	pointer-events: none;
+}
 // B-lazy
 .b-lazy {
 	transition: opacity 200ms ease-in-out;

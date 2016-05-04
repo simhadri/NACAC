@@ -27,11 +27,13 @@ import Screen from 'modules/screen.js';
 		});
 	}
 	var closeNavInterior = function() {
+		$('.utility-search').removeClass('pointer--disabled');
 		$('.selected').removeClass('selected');
 		body.off('click', clickAnywhereToCloseEverything);
 		screen.turnScreenOff();
 	}
 	var openNavInterior = function(selected) {
+		$('.utility-search').addClass('pointer--disabled');
 		$('.selected').removeClass('selected');
 		screen.turnScreenOn('soft');
 		body.on('click', clickAnywhereToCloseEverything);
