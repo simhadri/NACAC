@@ -2,6 +2,8 @@ nav.tab__navigation {
 	display: table;
 	width: 100%;
 	overflow-x: auto;
+	position: relative;
+	z-index: 1;
 	&::-webkit-scrollbar {
 		-webkit-appearance: none;
 		height: 3rem;
@@ -77,17 +79,16 @@ nav.tab__navigation {
 		display: none;
 		min-height: 15rem;
 		transition: $transition--all;
+		span.tab__jump{
+			margin-top: -300px;        /* Size of fixed header */
+			padding-bottom: 300px; 
+			display: block; 
+			z-index: 0;
+		}
 		&.tab__content--active {
 			display: block;
 			transition: $transition--all;
 			transition-delay: 300ms;
-		}
-		&:before { 
-			display: block; 
-			content: " "; 
-			margin-top: -20rem; 
-			height: 20rem; 
-			visibility: hidden; 
 		}
 		aside {
 			position: absolute;

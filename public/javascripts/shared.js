@@ -96,6 +96,8 @@
 /***/ 5:
 /***/ function(module, exports) {
 
+	// Throttled is borrowed (stolen) from underscore. It thottles
+	// how many times a function can be fired. used mainly for scroll
 	"use strict";
 	
 	var Throttled = function Throttled(func, wait, options) {
