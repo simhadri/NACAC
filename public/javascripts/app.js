@@ -240,6 +240,8 @@ webpackJsonp([0],[
 /* 4 */
 /***/ function(module, exports) {
 
+	// Jquery adds inline styles and these need to be overwritten.
+	// HeadStyle writes styles to the head tag and destorys them as well
 	'use strict';
 	
 	var headStyle = function headStyle() {
@@ -277,6 +279,8 @@ webpackJsonp([0],[
 /* 6 */
 /***/ function(module, exports) {
 
+	// Just creates a screen element and fades it in, then destroys it.
+	// CSS for this resides in partials/_main.scss
 	'use strict';
 	
 	var Screen = function Screen() {

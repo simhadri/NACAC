@@ -2,6 +2,7 @@
 import HeadStyle from 'modules/headStyle.js';
 import Throttled from 'modules/throttled.js';
 import Screen from 'modules/screen.js';
+
 (function() {
 	'use strict';
 	var headStyle = new HeadStyle(),
