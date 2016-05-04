@@ -21,12 +21,6 @@ var targets = tabs.map(function() {
 	return this.hash;
 }).get();
 
-// use those ids to get a jQuery collection of panels
-var panels = $(targets.join(',')).each(function() {
-	// keep a copy of what the original el.id was
-	$(this).data('old-id', this.id);
-});
-
 function update() {
 
 	if (target) {
@@ -53,8 +47,6 @@ function show(id) {
 
 	// now hide all the panels, then filter to
 	// the one we're interested in, and show it
-	
-	//panels.hide();
 	$('.tab__content[data-tab="' + id + '"]').addClass('tab__content--active')
 }
 

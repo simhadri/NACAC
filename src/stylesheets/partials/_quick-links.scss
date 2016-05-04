@@ -1,7 +1,8 @@
 .quick-links{
-	background-color: $nacac_light-grey;
-	border:none;
-	padding:0 4rem;
+	background-color: #c2cdd6;
+	border: none;
+	padding: 4rem;
+	padding-top: 0;
 }
 .quick-links__list{
 	@include clearfix;

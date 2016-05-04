@@ -97,13 +97,13 @@ webpackJsonp([0],[
 			});
 		};
 		var closeNavInterior = function closeNavInterior() {
-			$('.utility-search').removeClass('pointer--disabled');
+			$('.utility-search__trigger').removeClass('pointer--disabled');
 			$('.selected').removeClass('selected');
 			body.off('click', clickAnywhereToCloseEverything);
 			screen.turnScreenOff();
 		};
 		var openNavInterior = function openNavInterior(selected) {
-			$('.utility-search').addClass('pointer--disabled');
+			$('.utility-search__trigger').addClass('pointer--disabled');
 			$('.selected').removeClass('selected');
 			screen.turnScreenOn('soft');
 			body.on('click', clickAnywhereToCloseEverything);
@@ -394,12 +394,6 @@ webpackJsonp([0],[
 		return this.hash;
 	}).get();
 	
-	// use those ids to get a jQuery collection of panels
-	var panels = $(targets.join(',')).each(function () {
-		// keep a copy of what the original el.id was
-		$(this).data('old-id', this.id);
-	});
-	
 	function update() {
 	
 		if (target) {
@@ -426,8 +420,6 @@ webpackJsonp([0],[
 	
 		// now hide all the panels, then filter to
 		// the one we're interested in, and show it
-	
-		//panels.hide();
 		$('.tab__content[data-tab="' + id + '"]').addClass('tab__content--active');
 	}
 	

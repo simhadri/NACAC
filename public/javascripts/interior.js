@@ -108,7 +108,6 @@ webpackJsonp([2],[
 	(function () {
 		'use strict';
 		var accordionItem = $('.accordion__item'),
-		    accordionTrigger = $('.accordion-item__trigger'),
 		    toggleAccordion = function toggleAccordion(evt) {
 			if ($(this).hasClass('accordion__item--selected')) {
 				$(this).removeClass('accordion__item--selected');
