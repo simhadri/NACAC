@@ -67,6 +67,13 @@ footer.footer {
 		.footer__logo {
 			margin: auto;
 		}
+		.footer__callout{
+			order: -1;
+			margin-bottom: 4rem;
+			h3{
+				margin-top: 0; 
+			}
+		}
 	}
 }
 
