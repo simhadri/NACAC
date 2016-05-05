@@ -146,6 +146,7 @@
 		margin-top: 7rem;
 		.hero__content {
 			width: 100%;
+			min-width: 0;
 			.hero--underline:after {
 				width: 100%;
 				left: 0;
