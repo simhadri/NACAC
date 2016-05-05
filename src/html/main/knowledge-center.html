@@ -14,7 +14,7 @@
 					{% include './_shared/aside-navigation.html'%}
 				</div>
 				<div class="col-lg-9 col-md-8">
-					<section class="section__row">
+					<section class="section__row section__no-border">
 						<div class="row">
 							<div class="col-sm-6 col--border">
 								<header class="section__header">
@@ -35,24 +35,24 @@
 						</div>
 					</section>
 					<section class="section__row knowledge-search">
-						<nav class="search-results__utility">
+						<nav class="knowledge-search__utility">
 							<h3>Filter By:</h3>
 							<div class="knowledge-search__filters">
-								<select class="form-control search-results__select">
+								<select class="form-control knowledge-search__select">
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
 									<option>4</option>
 									<option>5</option>
 								</select>
-								<select class="form-control search-results__select">
+								<select class="form-control knowledge-search__select">
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
 									<option>4</option>
 									<option>5</option>
 								</select>
-								<select class="form-control search-results__select">
+								<select class="form-control knowledge-search__select">
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
@@ -62,7 +62,7 @@
 							</div>
 							<h3>Sort By:</h3>
 							<div class="knowledge-search__filters">
-								<select class="form-control search-results__select">
+								<select class="form-control knowledge-search__select">
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
@@ -77,10 +77,10 @@
 							<a href="#" class="btn__filter background--orange">Search Term</a>
 							<a href="#" class="btn__filter background--green">Search Term</a>
 						</div>
-						<header class="search-results__header">
+						<header class="knowledge-search__header">
 							<h2>Search Results</h2>
 							<p>Showing 1-10 of 320 Results</p>
-							<ul class="pagination search-results__pagination pagination--top">
+							<ul class="pagination knowledge-search__pagination pagination--top">
 								<li>
 									<a href="#" aria-label="Previous">
 										<span aria-hidden="true"><i class="fa fa-chevron-left"></i> Previous</span>
@@ -97,7 +97,7 @@
 								</li>
 							</ul>
 						</header>
-						<div class="search-results__listings">
+						<div class="knowledge-search__listings">
 							{% set image = true %}
 							{% include './_components/search-result-item.html'%}
 							{% set image = false %}
@@ -111,7 +111,7 @@
 							{% set image = false %}
 							{% include './_components/search-result-item.html'%}
 						</div>
-						<ul class="pagination search-results__pagination pagination--bottom">
+						<ul class="pagination knowledge-search__pagination pagination--bottom">
 							<li>
 								<a href="#" aria-label="Previous">
 									<span aria-hidden="true"><i class="fa fa-chevron-left"></i> Previous</span>

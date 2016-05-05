@@ -15,7 +15,7 @@
 	}
 }
 
-.search-results__pagination {
+.search-results__pagination,.knowledge-search__pagination {
 	float: right;
 	.pagination--selected {
 		font-weight: bold;
@@ -188,6 +188,11 @@
 		max-width: 3rem;
 		opacity: 1;
 	}
+}
+
+.knowledge-search{
+	.knowledge-search__select{}
+	.knowledge-search__filters{}
 }
 
 
