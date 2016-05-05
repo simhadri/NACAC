@@ -1,3 +1,5 @@
+// Throttled is borrowed (stolen) from underscore. It thottles
+// how many times a function can be fired. used mainly for scroll
 var Throttled = function(func, wait, options) {
 		var now = Date.now || function() {
 		return new Date().getTime();

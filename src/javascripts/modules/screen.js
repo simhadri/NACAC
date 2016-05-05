@@ -1,3 +1,5 @@
+// Just creates a screen element and fades it in, then destroys it.
+// CSS for this resides in partials/_main.scss
 var Screen = function() {
 	this.turnScreenOn = function(modifier) {
 		if (!document.getElementById('screen__overlay')) {

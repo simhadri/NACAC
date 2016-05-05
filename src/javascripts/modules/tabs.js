@@ -1,13 +1,3 @@
-// var changeTab = function() {
-// 	var tab_selected = $(this).attr('data-tab-selected');
-// 	$('.tab__button').removeClass('tab__button--active');
-// 	$(this).addClass('tab__button--active');
-// 	$('.tab__content').removeClass('tab__content--active');
-// 	$('#' + tab_selected).addClass('tab__content--active');
-// }
-// $('.tab__button').on("click", changeTab);
-
-
 // a temp value to cache *what* we're about to show
 var target = null;
 
@@ -31,12 +21,6 @@ var targets = tabs.map(function() {
 	return this.hash;
 }).get();
 
-// use those ids to get a jQuery collection of panels
-var panels = $(targets.join(',')).each(function() {
-	// keep a copy of what the original el.id was
-	$(this).data('old-id', this.id);
-});
-
 function update() {
 
 	if (target) {
@@ -58,14 +42,12 @@ function show(id) {
 		id = targets[0];
 	}
 	// remove the tab__content--active class from the tabs,
-	// and add it back to the one the user tab__content--active
-	tabs.removeClass('tab__content--active').filter(function() {
-		return (this.hash === id);
-	}).addClass('tab__content--active');
+	// and add it back to the one the user selected
+	$('.tab__content').removeClass('tab__content--active');
 
 	// now hide all the panels, then filter to
 	// the one we're interested in, and show it
-	panels.hide().filter(id).show();
+	$('.tab__content[data-tab="' + id + '"]').addClass('tab__content--active')
 }
 
 $(window).on('hashchange', update);

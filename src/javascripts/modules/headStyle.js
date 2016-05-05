@@ -1,3 +1,5 @@
+// Jquery adds inline styles and these need to be overwritten. 
+// HeadStyle writes styles to the head tag and destorys them as well
 var headStyle = function() {
 	this.addRules = function(rules) {
 		var css = '',
