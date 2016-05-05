@@ -1,8 +1,8 @@
-webpackJsonp([1],[
+webpackJsonp([2],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(10);
+	module.exports = __webpack_require__(11);
 
 
 /***/ },
@@ -15,7 +15,8 @@ webpackJsonp([1],[
 /* 7 */,
 /* 8 */,
 /* 9 */,
-/* 10 */
+/* 10 */,
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// *********************
@@ -29,11 +30,11 @@ webpackJsonp([1],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _modulesCountdownClock = __webpack_require__(11);
+	var _modulesCountdownClock = __webpack_require__(12);
 	
 	var _modulesCountdownClock2 = _interopRequireDefault(_modulesCountdownClock);
 	
-	__webpack_require__(12);
+	__webpack_require__(13);
 	
 	var getClock = document.getElementById('countdown-clock');
 	if (getClock) {
@@ -42,7 +43,7 @@ webpackJsonp([1],[
 	}
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -99,7 +100,7 @@ webpackJsonp([1],[
 	module.exports = initializeClock;
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// MODULES

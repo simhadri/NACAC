@@ -17,6 +17,7 @@
       "extractSharedJs": true,
       "entries": {
         "app": ["./app.js"],
+        "app-fair": ["./app-fair.js"],
         "interior": ["./interior.js"],
         "events": ["./events.js"]
       },
@@ -42,7 +43,7 @@
         "collapseWhitespace": true
       },
       "extensions": ["html", "json"],
-      "excludeFolders": ["_layouts", "_shared", "_components", "_content", "macros", "data"]
+      "excludeFolders": ["_layouts", "_shared", "_components", "_fair", "_content", "macros", "data"]
     },
 
     "images": {
