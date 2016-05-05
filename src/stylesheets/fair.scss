@@ -1,5 +1,3 @@
-// calling all the stylesheets being using 
-
 // MODULES
 @import 'modules/variables';
 @import 'modules/breakpoints';
@@ -26,11 +24,10 @@
 @import 'partials/tabs';
 @import 'partials/clock';
 @import 'partials/slider';
-@import 'partials/accordian';
+@import 'partials/accordion';
 @import 'partials/footer';
 
 @import 'partials/fair';
-
 
 // IE Fixes
 @import 'partials/internet-exploder'

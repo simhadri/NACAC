@@ -2,7 +2,7 @@ webpackJsonp([2],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(12);
+	module.exports = __webpack_require__(13);
 
 
 /***/ },
@@ -16,7 +16,8 @@ webpackJsonp([2],[
 /* 8 */,
 /* 9 */,
 /* 10 */,
-/* 11 */
+/* 11 */,
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// MODULES
@@ -59,7 +60,7 @@ webpackJsonp([2],[
 	$(window).scroll((0, _modulesThrottledJs2["default"])(asideNavigation, 20));
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// *********************
@@ -70,9 +71,9 @@ webpackJsonp([2],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	__webpack_require__(11);
+	__webpack_require__(12);
 	
-	__webpack_require__(13);
+	__webpack_require__(14);
 	
 	var _modulesThrottledJs = __webpack_require__(5);
 	
@@ -82,7 +83,7 @@ webpackJsonp([2],[
 	//    Vendor Scirpts
 	// *********************
 	
-	var _vendorCountUpJs = __webpack_require__(14);
+	var _vendorCountUpJs = __webpack_require__(15);
 	
 	var _vendorCountUpJs2 = _interopRequireDefault(_vendorCountUpJs);
 	
@@ -100,28 +101,31 @@ webpackJsonp([2],[
 	$(window).scroll((0, _modulesThrottledJs2['default'])(countCard, 100));
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 	'use strict';
 	
 	(function () {
 		'use strict';
-		var accordianItem = $('.accordian__item'),
-		   
-		//accordianArticle = $('.accordian__article'),
-		accordianTrigger = $('.accordian__trigger'),
+		var accordionItem = $('.accordion__item'),
+		    accordionTrigger = $('.accordion-item__trigger'),
 		    isOpen = false,
-		    openAccordian = function openAccordian() {
-			accordianItem.removeClass('accordian__item--selected');
-			$(this).parent().addClass('accordian__item--selected');
+		    toggleAccordion = function toggleAccordion(evt) {
+			if ($(this).hasClass('accordion__item--selected')) {
+				$(this).removeClass('accordion__item--selected');
+				console.log('thing');
+			} else {
+				accordionItem.removeClass('accordion__item--selected');
+				$(this).addClass('accordion__item--selected');
+			}
 		};
 		// events
-		accordianTrigger.on('click', openAccordian);
+		accordionItem.on('click', toggleAccordion);
 	})();
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
 	/*

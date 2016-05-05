@@ -3,13 +3,24 @@
 // set variables
 $blue-light: #67aee7;
 $green: #007451;
+$gray: #333;
 
 // basic styling
+.bold {
+	font-weight: 700;
+}
 .orange {
   color: $nacac-orange;
 }
 .text-uppercase { // bootstrap class
   text-transform: uppercase;
+}
+.text-center { // bootstrap class
+  text-align: center;
+}
+
+.margin-bot-30 {
+	margin-bottom: 3rem;
 }
 
 
@@ -21,16 +32,25 @@ $green: #007451;
 			color: $nacac_orange;
 		}
 	}
-	&.utility-nav-fair {
-		.utility-nav__list {
-			width: 55%;
-		}
-		.utility-nav__social {
-			width: 20%;
+	// &.utility-nav-fair {
+	// 	.utility-nav__list {
+	// 		width: 55%;
+	// 	}
+	// 	.utility-nav__social {
+	// 		width: 20%;
+	// 	}
+	// }
+	@media screen and (max-width: 767px) {
+		.utility-nav-register a {
+			color: #fff;
 		}
 	}
 	&.utility-nav--scrolled {
-		background-color: rgba(0,0,0,0.8);
+		.utility-nav-register {
+			a {
+				color: #fff;
+			}
+		}
 	}
 }
 
@@ -58,11 +78,12 @@ $green: #007451;
 			height: 7.2rem;
 			margin-bottom: .5rem;
 			opacity: 0.9;
+			fill: $blue-light
 		}
 	}
-	.icon-info {fill: $blue-light;}
-	.icon-sign {fill: $green;}
-	.icon-flow-chart {fill: $nacac-orange;}
+	// .icon-info {fill: $blue-light;}
+	// .icon-sign {fill: $green;}
+	// .icon-flow-chart {fill: $nacac-orange;}
 }
 .hero-fair-nav-wrap {
 	position: absolute;
@@ -98,7 +119,248 @@ $green: #007451;
 	}
 }
 
-
-.event-listing {
-
+.logo-ncf-utility {
+	margin: 0 0 0 1rem;
+	width: 9rem;
+	height: 4.8rem;
 }
+
+
+// buttons
+.btn-simple {
+	color: #333333;
+	border: 1px solid #333333;
+	&:hover {
+		border-color: transparent;
+	}
+}
+.btn-simple-blue {
+	color: #fff;
+	border: 1px solid transparent;
+	background: $nacac-blue;
+}
+
+// fair events (I based this on .calendar__entry)
+.fair-events {
+	list-style: none;
+	padding-left: 0;
+	li {
+		margin-bottom: 3rem;
+		@include clearfix;
+	}
+	.fair-event-content {
+		float: right;
+		width: calc(100% - 9rem);
+	}
+	.fair-event-icon {
+		float: left;
+		width: 7rem;
+		height: 7rem;
+	}
+	h3 {
+		margin: 0;
+	}
+	.btn {
+		margin-bottom: 1.5rem;
+	}
+	@media screen and (max-width: 767px) {
+		// .btn + .btn {
+		// 	margin-top: 1.5rem;
+		// }
+		.fair-event-content {
+			width: 100%;
+		}
+		.fair-event-icon {
+			display: none;
+		}
+	}
+}
+
+// primary nav
+.primary-nav.primary-nav-fair {
+	> div > ul {
+		background: rgba(255,255,255,.8);
+		li {
+			background: none;
+		}
+	}
+	.primary-nav__logo {
+		svg {
+			width: 12.4rem;
+			height: 6.8rem;
+			margin: -3.4rem 0 0 -6.2rem;
+	  }
+	}
+}
+
+// twitter
+.twitter-list {
+	@media screen and (min-width: 992px) {
+		max-width: 80rem;
+		margin: 0 auto;
+	}
+}
+.tweet-wrap {
+	min-height: 26rem;
+	position: relative;
+	margin-bottom: 3rem;
+	background: #fff;
+	box-shadow: 0 0 25px rgba(0,0,0,0.25);
+	@include clearfix;
+	.tweet {
+		padding: 2rem 2.5rem 0 2.5rem;
+		font-size: 2rem;
+		line-height: 1.2;
+	}
+	.tweet-meta {
+		position: absolute;
+		left: 1.5rem;
+		bottom: 1rem;
+		width: 100%;
+		font-size: 1.2rem;
+		a {
+			color: $gray;
+		}
+		svg {
+			width: 5rem;
+			height: 2.7rem;
+			float: left;
+			margin-right: 1rem;
+		}
+	}
+	// this may not be possible
+	// &.tweet-double {
+	// 	.tweet {
+	// 		padding-left: calc(50% + 1.5rem);
+	// 	}
+	// 	.tweet-img {
+	// 		float: left;
+	// 		width: 49%;
+	// 		// height: 100%;
+	// 		margin-right: 2.5rem;
+	// 		// background-position: 50% 50%;
+	// 		// margin: -2rem 2.5rem -1rem -2.5rem;
+	// 	}
+	// 	.tweet-meta {
+	// 		left: calc(50% + 1.5rem);
+	// 	}
+	// }
+}
+@media screen and (max-width: 767px) {
+	.twitter-list {
+		max-width: 50rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.tweet-wrap {
+		min-height: 0;
+		padding-bottom: 7rem;
+	}
+}
+
+// footer
+.footer-fair {
+	h3 {
+		margin-top: 0;
+	}
+}
+
+// by the numbers infographic
+.article__row.article-infographic {
+	padding-top: 8rem;
+	padding-bottom: 8rem;
+	text-align: center;
+	color: #fff;
+	background: url(/images/fair/numbers-bg.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  [class*='info-'] {
+  	display: block;
+  }
+  .info-number-wrap {
+  	position: relative;
+  	margin: 2rem 0;
+  }
+  .info-circle {
+		width: 14rem;
+  	height: 14rem;
+  	margin: 0 auto;
+  	border: 2px dotted rgba(255,255,255,0.8);
+  	border-radius: 50%;
+  }
+  p {
+  	@media screen and (min-width: 992px) {
+  		max-width: 60%;
+			margin-left: auto;
+			margin-right: auto;
+  	}
+  }
+  .info-number {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+  	font: {
+  		family: $condensed;
+  		size: 7.2rem;
+  	}
+  	line-height: 14rem;
+  }
+  @media screen and (min-width: 992px) {
+  	h2 {
+	  	font-size: 4.8rem;
+  	}
+  }
+}
+
+.announcement__header.announcement__header-top-border {
+	border-top: 1px solid #bdbdbd;
+}
+
+// map 
+// .article-map {
+// 	.container {
+// 		text-align: center;
+// 	}
+// }
+
+
+#form {
+	padding: 1.5rem;
+	// text-align: left;
+	border: 1px solid #ddd;
+	h3 {
+		margin-top: 0;
+	}
+}
+	#map {
+		margin-bottom: 4rem;
+		overflow:hidden;
+		padding-bottom: 56.25%;
+		position: relative;
+		height: 0;
+		iframe{
+			left:0;
+			top:0;
+			height:100%;
+			width:100%;
+			position:absolute;
+		}
+	}
+	.checkbox-wrap {
+		position: relative;
+	  display: block;
+	  margin-top: 10px;
+	  margin-bottom: 10px;
+	}
+  .checkbox-wrap label {
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  .checkbox-wrap input {
+  	position: absolute;
+	  margin-left: -20px;
+	  margin-top: 4px \9;
+  }
