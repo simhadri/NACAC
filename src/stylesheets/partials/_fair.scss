@@ -2,8 +2,6 @@
 
 // set variables
 $blue-light: #67aee7;
-$green: #007451;
-$gray: #333;
 
 // basic styling
 .bold {
@@ -23,7 +21,6 @@ $gray: #333;
 	margin-bottom: 3rem;
 }
 
-
 // utility nav
 .utility-nav.utility-nav-fair {
 	.utility-nav-register {
@@ -32,14 +29,6 @@ $gray: #333;
 			color: $nacac_orange;
 		}
 	}
-	// &.utility-nav-fair {
-	// 	.utility-nav__list {
-	// 		width: 55%;
-	// 	}
-	// 	.utility-nav__social {
-	// 		width: 20%;
-	// 	}
-	// }
 	@media screen and (max-width: 767px) {
 		.utility-nav-register a {
 			color: #fff;
@@ -81,9 +70,6 @@ $gray: #333;
 			fill: $blue-light
 		}
 	}
-	// .icon-info {fill: $blue-light;}
-	// .icon-sign {fill: $green;}
-	// .icon-flow-chart {fill: $nacac-orange;}
 }
 .hero-fair-nav-wrap {
 	position: absolute;
@@ -125,7 +111,6 @@ $gray: #333;
 	height: 4.8rem;
 }
 
-
 // buttons
 .btn-simple {
 	color: #333333;
@@ -161,12 +146,9 @@ $gray: #333;
 		margin: 0;
 	}
 	.btn {
-		margin-bottom: 1.5rem;
+		margin-bottom: 1.5rem !important; // easier than dropping in a lot of dependent classes and media queries. maybe we can make the default margin-left: auto, margin-right: auto?
 	}
 	@media screen and (max-width: 767px) {
-		// .btn + .btn {
-		// 	margin-top: 1.5rem;
-		// }
 		.fair-event-content {
 			width: 100%;
 		}
@@ -193,75 +175,15 @@ $gray: #333;
 	}
 }
 
-// twitter
-.twitter-list {
-	@media screen and (min-width: 992px) {
-		max-width: 80rem;
-		margin: 0 auto;
-	}
-}
-.tweet-wrap {
-	min-height: 26rem;
-	position: relative;
-	margin-bottom: 3rem;
-	background: #fff;
-	box-shadow: 0 0 25px rgba(0,0,0,0.25);
-	@include clearfix;
-	.tweet {
-		padding: 2rem 2.5rem 0 2.5rem;
-		font-size: 2rem;
-		line-height: 1.2;
-	}
-	.tweet-meta {
-		position: absolute;
-		left: 1.5rem;
-		bottom: 1rem;
-		width: 100%;
-		font-size: 1.2rem;
-		a {
-			color: $gray;
-		}
-		svg {
-			width: 5rem;
-			height: 2.7rem;
-			float: left;
-			margin-right: 1rem;
-		}
-	}
-	// this may not be possible
-	// &.tweet-double {
-	// 	.tweet {
-	// 		padding-left: calc(50% + 1.5rem);
-	// 	}
-	// 	.tweet-img {
-	// 		float: left;
-	// 		width: 49%;
-	// 		// height: 100%;
-	// 		margin-right: 2.5rem;
-	// 		// background-position: 50% 50%;
-	// 		// margin: -2rem 2.5rem -1rem -2.5rem;
-	// 	}
-	// 	.tweet-meta {
-	// 		left: calc(50% + 1.5rem);
-	// 	}
-	// }
-}
-@media screen and (max-width: 767px) {
-	.twitter-list {
-		max-width: 50rem;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.tweet-wrap {
-		min-height: 0;
-		padding-bottom: 7rem;
-	}
-}
-
 // footer
 .footer-fair {
 	h3 {
 		margin-top: 0;
+	}
+	@media screen and (max-width: 767px) {
+		ul {
+			margin-bottom: 2rem;
+		}
 	}
 }
 
