@@ -21,15 +21,15 @@
 					<section class="card-block__row section__row">
 						<div class="flexbox__row row">
 						
-								{% set button = true %}
+								{% set cardBlock = { heading: "Calls for Proposals", image: "shared/card-national", button: true } %}
 								{% include './_components/card-block.html'%}
 								
-								{% set button = true %}
+								{% set cardBlock = { heading: "Exhibitor Information", image: "shared/card-performing", button: true } %}
 								{% include './_components/card-block.html'%}
 								
-								{% set button = true %}
+								{% set cardBlock = { heading: "Registration", image: "shared/card-stem", button: true } %}
 								{% include './_components/card-block.html'%}
-								
+
 						</div>
 					</section>
 					<section class="section__row free-text__content">
@@ -55,10 +55,19 @@
 						<header class="section__header">
 							<h2>Related Events &amp; Training</h2>
 						</header>
-						<div class="flexbox__row row">
-							<div class="flexbox__column col-md-4">{% include './_components/figure-block.html'%}</div>
-							<div class="flexbox__column col-md-4">{% include './_components/figure-block.html'%}</div>
-							<div class="flexbox__column col-md-4">{% include './_components/figure-block.html'%}</div>
+						<div class="row">
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Calls for Proposals", image: "shared/figure-speaker"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Training", image: "shared/figure-students"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
 						</div>
 					</section>
 				</div>

@@ -29,16 +29,16 @@
 			<section class="card-block__row">
 				<div class="row">
 						
-					{% set button = true %}
+					{% set cardBlock = { heading: "National College Fairs", image: "shared/card-national", button: true } %}
 					{% include './_components/card-block.html'%}
 					
-					{% set button = true %}
+					{% set cardBlock = { heading: "Performing and Visual Arts College Fairs", image: "shared/card-performing", button: true } %}
 					{% include './_components/card-block.html'%}
 				
-					{% set button = true %}
+					{% set cardBlock = { heading: "Stem College and Career Fairs", image: "shared/card-stem", button: true } %}
 					{% include './_components/card-block.html'%}
 					
-					{% set button = true %}
+					{% set cardBlock = { heading: "International Universities Fair", image: "shared/card-international", button: true } %}
 					{% include './_components/card-block.html'%}
 				
 				</div>
