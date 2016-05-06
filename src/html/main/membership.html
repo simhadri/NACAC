@@ -2,7 +2,7 @@
  {% set pageLocation = "Membership Overview" %}
  {% block content %}
 
-<main id="main" class="membership__template interior__template">
+<main>
 	
 	{% include './_shared/utility.html'%}
 
@@ -29,15 +29,14 @@
 						</header>
 						<div class="row">
 						
-							{% set button = false %}
+							{% set cardBlock = { heading: "National Conference", image: "shared/card-national", button: false } %}
 							{% include './_components/card-block.html'%}
 							
-							{% set button = false %}
+							{% set cardBlock = { heading: "Personal Developement", image: "shared/card-stem", button: false } %}
 							{% include './_components/card-block.html'%}
 							
-							{% set button = false %}
+							{% set cardBlock = { heading: "Publications", image: "shared/card-performing", button: false } %}
 							{% include './_components/card-block.html'%}
-							
 						</div>
 						<a href="#" class="btn btn--nacac-blue btn--centered">Become a Member</a>
 					</section>

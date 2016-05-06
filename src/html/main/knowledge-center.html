@@ -1,0 +1,170 @@
+ {% extends '_layouts/main-application.html' %}
+ {% set pageLocation = "Knowledge Center" %}
+ {% block content %}
+<main>
+	{% include './_shared/utility.html'%}
+	{% set className = "primary-nav--inanimate" %}
+	{% include './_shared/navigation.html'%}
+	{% include './_shared/interior-hero.html'%}
+	<article class="article__row content__row article--white">
+		<div class="container">
+			{% include './_components/breadcrumb.html' %}
+			<div class="row aside-navigation__row">
+				<div class="col-lg-3 col-md-4">
+					{% include './_shared/aside-navigation.html'%}
+				</div>
+				<div class="col-lg-9 col-md-8">
+					<section class="section__row section__no-border">
+						<div class="row">
+							<div class="col-sm-6 col--border">
+								<header class="section__header">
+									<h2>Related Events &amp; Training</h2>
+								</header>
+								{% include './_components/figure-block.html'%}
+								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
+							</div>
+							<div class="col-sm-6">
+								<header class="article__header">
+									<h2>Press Releases</h2>
+								</header>
+								{% include '_components/resource-entry.html'%}
+								{% include '_components/resource-entry.html'%}
+								{% include '_components/resource-entry.html'%}
+								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
+							</div>
+						</div>
+					</section>
+					<section class="section__row knowledge-search">
+						<nav class="knowledge-search__utility row">
+							<div class="knowledge-search__input">
+								<h3>Search Knowledge Center</h3>
+								<div class="input-group">
+									
+									<span class="input-group-btn">
+									<input type="text" class="form-control" placeholder="Search for...">
+									</span>
+								</div>
+							</div>
+							<div class="knowledge-search__filters col-sm-9">
+								<h3>Filter By:</h3>
+								<select class="form-control knowledge-search__select">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+								<select class="form-control knowledge-search__select">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+								<select class="form-control knowledge-search__select">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+							</div>
+							<div class="knowledge-search__filters col-sm-3">
+								<h3>Sort By:</h3>
+								<select class="form-control knowledge-search__select">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+							</div>
+						</nav>
+						<div class="selected-filters">
+							<p>Your Filters:</p>
+							<a href="#" class="btn__filter background--burgundy">Search Term</a>
+							<a href="#" class="btn__filter background--orange">Search Term</a>
+							<a href="#" class="btn__filter background--green">Search Term</a>
+						</div>
+						<header class="knowledge-search__header">
+							<h2>Search Results</h2>
+							<p>Showing 1-10 of 320 Results</p>
+							<ul class="pagination knowledge-search__pagination pagination--top">
+								<li>
+									<a href="#" aria-label="Previous">
+										<span aria-hidden="true"><i class="fa fa-chevron-left"></i> Previous</span>
+									</a>
+								</li>
+								<li><a class="pagination--selected" href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">...</a></li>
+								<li><a href="#">5</a></li>
+								<li>
+									<a href="#" aria-label="Next">
+										<span aria-hidden="true">Next <i class="fa fa-chevron-right"></i></span>
+									</a>
+								</li>
+							</ul>
+						</header>
+						<div class="knowledge-search__listings">
+							{% set image = true %}
+							{% include './_components/search-result-item.html'%}
+							{% set image = false %}
+							{% include './_components/search-result-item.html'%}
+							{% set image = true %}
+							{% include './_components/search-result-item.html'%}
+							{% set image = false %}
+							{% include './_components/search-result-item.html'%}
+							{% set image = true %}
+							{% include './_components/search-result-item.html'%}
+							{% set image = false %}
+							{% include './_components/search-result-item.html'%}
+						</div>
+						<ul class="pagination knowledge-search__pagination pagination--bottom">
+							<li>
+								<a href="#" aria-label="Previous">
+									<span aria-hidden="true"><i class="fa fa-chevron-left"></i> Previous</span>
+								</a>
+							</li>
+							<li><a class="pagination--selected" href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">...</a></li>
+							<li><a href="#">5</a></li>
+							<li>
+								<a href="#" aria-label="Next">
+									<span aria-hidden="true">Next <i class="fa fa-chevron-right"></i></span>
+								</a>
+							</li>
+						</ul>
+					</section>
+					<section class="section__row">
+						<header class="section__header">
+							<h2>Related Content</h2>
+						</header>
+						<div class="row">
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Calls for Proposals", image: "shared/figure-speaker"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Training", image: "shared/figure-students"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</article>
+	{% set addedClassNames = 'article--top-border' %}
+	{% include './_components/full-block-row.html' %}
+	{% include './_shared/footer.html'%}
+</main>
+{% endblock %}
+{% block javascript %}
+<script src="/javascripts/interior.js"></script>
+{% endblock %}
