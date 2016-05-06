@@ -146,7 +146,7 @@ $blue-light: #67aee7;
 		margin: 0;
 	}
 	.btn {
-		margin-bottom: 1.5rem;
+		margin-bottom: 1.5rem !important; // easier than dropping in a lot of dependent classes and media queries. maybe we can make the default margin-left: auto, margin-right: auto?
 	}
 	@media screen and (max-width: 767px) {
 		.fair-event-content {
@@ -179,6 +179,11 @@ $blue-light: #67aee7;
 .footer-fair {
 	h3 {
 		margin-top: 0;
+	}
+	@media screen and (max-width: 767px) {
+		ul {
+			margin-bottom: 2rem;
+		}
 	}
 }
 
