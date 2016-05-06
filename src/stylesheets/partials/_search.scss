@@ -191,8 +191,28 @@
 }
 
 .knowledge-search{
-	.knowledge-search__select{}
-	.knowledge-search__filters{}
+	border-bottom: none;
+	.knowledge-search__utility h3{
+		color: $nacac_light-blue;
+	}
+	.knowledge-search__select{
+		float: left;
+		width: calc(25% - 1rem);
+		min-width: 13rem;
+		margin-right: 1rem;
+	}
+	.knowledge-search__filters{
+		padding-bottom: 2rem;
+	}
+	.knowledge-search__header{
+		position: relative;
+		.knowledge-search__pagination.pagination--top{
+			float:none;
+			top:0;
+			right:0;
+			position:absolute;
+		}
+	}
 }
 
 
@@ -279,6 +299,13 @@
 			float: none;
 			width: auto;
 			margin: 1rem 0 0;
+		}
+	}
+	.knowledge-search{
+		.knowledge-search__header{
+			.knowledge-search__pagination.pagination--top{
+				position:static;
+			}
 		}
 	}
 }
