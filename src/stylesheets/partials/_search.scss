@@ -192,8 +192,11 @@
 
 .knowledge-search{
 	border-bottom: none;
-	.knowledge-search__utility h3{
-		color: $nacac_light-blue;
+	.knowledge-search__utility {
+		padding-bottom: 2rem;
+		h3{
+			color: $nacac_light-blue;
+		}
 	}
 	.knowledge-search__select{
 		float: left;
@@ -202,7 +205,6 @@
 		margin-right: 1rem;
 	}
 	.knowledge-search__filters{
-		padding-bottom: 2rem;
 	}
 	.knowledge-search__header{
 		position: relative;
