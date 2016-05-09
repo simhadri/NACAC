@@ -20,6 +20,7 @@
 								<header class="section__header">
 									<h2>Related Events &amp; Training</h2>
 								</header>
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %}
 								{% include './_components/figure-block.html'%}
 								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
 							</div>
@@ -36,14 +37,13 @@
 					</section>
 					<section class="section__row knowledge-search">
 						<nav class="knowledge-search__utility row">
-							<div class="knowledge-search__input">
+							<div class="knowledge-search__input col-sm-12">
 								<h3>Search Knowledge Center</h3>
 								<div class="input-group">
-									
-									<span class="input-group-btn">
-									<input type="text" class="form-control" placeholder="Search for...">
-									</span>
+									<input type="text" class="form-control input-group__input" placeholder="Search for...">
+									<a href="#" class="input-group__submit"><i class="fa fa-search"></i></a>
 								</div>
+
 							</div>
 							<div class="knowledge-search__filters col-sm-9">
 								<h3>Filter By:</h3>
