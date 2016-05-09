@@ -204,6 +204,29 @@
 		min-width: 13rem;
 		margin-right: 1rem;
 	}
+	.knowledge-search__input .input-group{
+		width: 66%;
+		max-width: 46rem;
+		position:relative;
+		.input-group__input{
+			padding: 1.6rem 0.8rem;
+			font-size: 1.4rem;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			width: 100%;
+		}
+		.input-group__submit{
+			border: none;
+			background-color: transparent;
+			position: absolute;
+			height: 3.4rem;
+			width: 3.4rem;
+			top: 0;
+			right: 0;
+			text-align: center;
+			line-height: 3.4rem;
+		}
+	}
 	.knowledge-search__filters{
 	}
 	.knowledge-search__header{
