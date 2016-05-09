@@ -76,7 +76,7 @@ webpackJsonp([3],[
 	
 	__webpack_require__(15);
 	
-	__webpack_require__(17);
+	__webpack_require__(16);
 	
 	var _modulesThrottledJs = __webpack_require__(5);
 	
@@ -86,7 +86,7 @@ webpackJsonp([3],[
 	//    Vendor Scirpts
 	// *********************
 	
-	var _vendorCountUpJs = __webpack_require__(16);
+	var _vendorCountUpJs = __webpack_require__(17);
 	
 	var _vendorCountUpJs2 = _interopRequireDefault(_vendorCountUpJs);
 	
@@ -126,6 +126,37 @@ webpackJsonp([3],[
 
 /***/ },
 /* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// MODULES
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _modulesThrottledJs = __webpack_require__(5);
+	
+	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
+	
+	// FUNCTION
+	var backTop = function backTop() {
+		var windowHeight = $('body').height(),
+		    oneThirdPage = windowHeight / 3,
+		    top = $(window).scrollTop();
+	
+		if (top > oneThirdPage) {
+			$('.back-top').addClass('back-top--scrolled');
+		} else {
+			$('.back-top').removeClass('back-top--scrolled');
+		}
+	};
+	backTop();
+	$(window).scroll((0, _modulesThrottledJs2['default'])(backTop, 100));
+	$('.back-top').on('click', function () {
+		$('html, body').animate({ scrollTop: 0 });
+	});
+
+/***/ },
+/* 17 */
 /***/ function(module, exports) {
 
 	/*
@@ -293,34 +324,6 @@ webpackJsonp([3],[
 	// numAnim.update(135);
 	// with optional callback:
 	// numAnim.start(someMethodToCallOnComplete);
-
-/***/ },
-/* 17 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// MODULES
-	'use strict';
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	var _modulesThrottledJs = __webpack_require__(5);
-	
-	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
-	
-	// FUNCTION
-	var backTop = function backTop() {
-		var windowHeight = $('body').height(),
-		    oneThirdPage = windowHeight / 3,
-		    top = $(window).scrollTop();
-	
-		if (top > oneThirdPage) {
-			$('.back-top').addClass('back-top--scrolled');
-		} else {
-			$('.back-top').removeClass('back-top--scrolled');
-		}
-	};
-	backTop();
-	$(window).scroll((0, _modulesThrottledJs2['default'])(backTop, 100));
 
 /***/ }
 ]);

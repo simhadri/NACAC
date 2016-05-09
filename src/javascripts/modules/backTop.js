@@ -15,3 +15,6 @@ var backTop = function() {
 }
 backTop();
 $(window).scroll(Throttled(backTop, 100));
+$('.back-top').on('click',function(){
+	$('html, body').animate({ scrollTop: 0});
+});
