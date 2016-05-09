@@ -41,6 +41,7 @@
 								<header class="section__header">
 									<h2>Related Events &amp; Training</h2>
 								</header>
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %}
 								{% include './_components/figure-block.html'%}
 								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
 							</div>
@@ -89,6 +90,7 @@
 	</article>
 	{% set addedClassNames = 'article--top-border' %}
 	{% include './_components/full-block-row.html' %}
+	
 	{% include './_shared/footer.html'%}
 </main>
 {% endblock %}
