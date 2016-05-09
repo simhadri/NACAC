@@ -33,16 +33,17 @@ webpackJsonp([3],[
 	// FUNCTION
 	var asideNavigation = function asideNavigation() {
 		var asideNavigation = $(".aside-navigation"),
-		   
-		// Includes 180px utility nav + breadcrumb height offset; These are fixed
-		bottomOfNavigation = $(window).scrollTop() + 120,
 		    asideNavigationContainerHeight = $(".aside-navigation__row").height(),
-		   
-		// 170 off set
-		interiorHeroHeight = $(".hero__wrapper").height() + $(".interior-hero__breadcrumb").height() + 220,
-		   
-		// 40 is for its margins
-		asideNavigationLocation = asideNavigation.offset().top;
+		    asideNavigationLocation = asideNavigation.offset().top;
+	
+		if ($('.hero__wrapper').length === 0) {
+			var interiorHeroHeight = 180,
+			    bottomOfNavigation = $(window).scrollTop() + 120;
+		} else {
+			var interiorHeroHeight = $(".hero__wrapper").height() + $(".interior-hero__breadcrumb").height() + 220,
+			    bottomOfNavigation = $(window).scrollTop() + 120;
+		}
+	
 		if (bottomOfNavigation > interiorHeroHeight) {
 			$('.aside-navigation').addClass('aside-navigation--sticky');
 		}
@@ -76,7 +77,7 @@ webpackJsonp([3],[
 	
 	__webpack_require__(15);
 	
-	__webpack_require__(17);
+	__webpack_require__(16);
 	
 	var _modulesThrottledJs = __webpack_require__(5);
 	
@@ -86,7 +87,7 @@ webpackJsonp([3],[
 	//    Vendor Scirpts
 	// *********************
 	
-	var _vendorCountUpJs = __webpack_require__(16);
+	var _vendorCountUpJs = __webpack_require__(17);
 	
 	var _vendorCountUpJs2 = _interopRequireDefault(_vendorCountUpJs);
 	
@@ -126,6 +127,63 @@ webpackJsonp([3],[
 
 /***/ },
 /* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// MODULES
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _modulesThrottledJs = __webpack_require__(5);
+	
+	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
+	
+	// FUNCTION
+	var backTop = function backTop() {
+		this.addBackTop = function () {
+			if (!document.getElementById('back-top')) {
+				(function () {
+					var backTop = document.createElement('div'),
+					    mainElement = document.getElementsByTagName('main')[0];
+					mainElement.appendChild(backTop);
+					backTop.setAttribute('id', 'back-top');
+					backTop.setAttribute('class', 'back-top');
+					backTop.innerHTML = '<i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i><span>Back to Top</span>';
+					setTimeout(function () {
+						backTop.classList.add('back-top--scrolled');
+						backTop.addEventListener('click', scrolltoTop);
+					}, 10);
+				})();
+			}
+		}, this.removeBackTop = function () {
+			if (document.getElementById('back-top')) {
+				document.getElementById('back-top').remove();
+			}
+		};
+	};
+	var scrolltoTop = function scrolltoTop() {
+		$('html, body').animate({ scrollTop: 0 });
+	};
+	
+	var backTopScroll = function backTopScroll() {
+		var bt = new backTop(),
+		    windowHeight = $('body').height(),
+		    oneThirdPage = windowHeight / 3,
+		    top = $(window).scrollTop();
+		if (top > oneThirdPage) {
+			bt.addBackTop();
+		} else {
+			bt.removeBackTop();
+		}
+	};
+	
+	$(window).scroll((0, _modulesThrottledJs2['default'])(backTopScroll, 100));
+	$('.back-top').on('click', function () {
+		$('html, body').animate({ scrollTop: 0 });
+	});
+
+/***/ },
+/* 17 */
 /***/ function(module, exports) {
 
 	/*
@@ -293,34 +351,6 @@ webpackJsonp([3],[
 	// numAnim.update(135);
 	// with optional callback:
 	// numAnim.start(someMethodToCallOnComplete);
-
-/***/ },
-/* 17 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// MODULES
-	'use strict';
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	var _modulesThrottledJs = __webpack_require__(5);
-	
-	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
-	
-	// FUNCTION
-	var backTop = function backTop() {
-		var windowHeight = $('body').height(),
-		    oneThirdPage = windowHeight / 3,
-		    top = $(window).scrollTop();
-	
-		if (top > oneThirdPage) {
-			$('.back-top').addClass('back-top--scrolled');
-		} else {
-			$('.back-top').removeClass('back-top--scrolled');
-		}
-	};
-	backTop();
-	$(window).scroll((0, _modulesThrottledJs2['default'])(backTop, 100));
 
 /***/ }
 ]);

@@ -1,0 +1,197 @@
+
+.content-detail__header {
+	span.content-detail__cite {
+		padding-bottom: 3rem;
+		display: inline-block;
+		p{
+			margin: 0;
+		}
+	}
+}
+.content-detail__block {
+	div[class*='video-iframe'] {
+		margin-bottom: 2.5rem;
+		margin-top: .2rem;
+		text-align: center;
+		max-width: 76.7rem;
+		@media (max-width: 99.1rem) {
+			width: 100%;
+			float: none !important;
+			position: relative;
+			padding-bottom: 56.25%;
+			padding-top: 2.5rem;
+			height: 0;
+			margin: 1.4rem 0;
+			iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	.video-iframe--center {
+		width: auto;
+		float: none;
+		margin: 2rem auto 0 auto;
+	}
+	.video-iframe--left {
+		width: auto;
+		float: left;
+		margin-right: 2rem;
+	}
+	.video-iframe--right {
+		width: auto;
+		float: right;
+		margin-left: 2rem;
+	}
+	.video-iframe--half {
+		float: left;
+		width: calc(50% - 1rem);
+		margin-right: 2rem;
+		&:nth-child(even) {
+			margin-right: 0;
+		}
+		> iframe {
+			width: 100%;
+		}
+	}
+	// Images
+	img[class*='image'] {
+		margin-top: 0.4rem;
+		margin-bottom: 1.4rem;
+		display: block;
+		@media (max-width: 76.7rem) {
+			float: none;
+			margin: 1.4rem auto;
+		}
+	}
+	.image--center {
+		float: none;
+		margin: 1.4rem auto;
+	}
+	.image--left {
+		float: left;
+		margin-right: 2.5rem;
+	}
+	.image--right {
+		float: right;
+		margin-left: 2.5rem;
+	}
+	.image-responsive {
+		display: block;
+		width: 100%;
+	}
+	// Other Embed Elements
+	div[class*='embed-'],
+	div[class*='twitter--'] {
+		margin-top: 2.5rem;
+		display: block;
+		text-align: center;
+		@media (max-width: 99.1rem) {
+			position: relative;
+			padding-bottom: 65%;
+			height: auto;
+			overflow: hidden;
+			iframe,
+			.twitter--timeline {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+	.embed--center,
+	.twitter--center {
+		float: none;
+		margin: 2.5rem auto;
+	}
+	.embed--left,
+	.twitter--left {
+		float: left;
+		margin-right: 2.5rem;
+	}
+	.embed--right,
+	.twitter--right {
+		float: right;
+		margin-left: 2.5rem;
+	}
+}
+
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+
+@include break(max, $screen-sm-max) {
+	.content-detail__block {
+		.embed--center,
+		.twitter--center {
+			float: none;
+			margin: 2.5rem auto;
+		}
+		.embed--left,
+		.twitter--left {
+			float: left;
+			margin-right: 2.5rem;
+		}
+		.embed--right,
+		.twitter--right {
+			float: right;
+			margin-left: 2.5rem;
+		}
+		div[class*='twitter--'] {
+			float: none;
+			padding-bottom: 0;
+		}
+		div[class*='embed--'] {
+			float: none;
+			margin: 2.5rem 0 1.4rem 0;
+		}
+	}
+}
+
+@include break(min, $screen-xs-min, max, $screen-sm-max) {
+	.embed--center,
+	.embed--right,
+	.embed--left,
+	.twitter--center {
+		float: none;
+		margin: 2.5rem auto;
+	}
+	.twitter--left {
+		float: left;
+		margin-right: 2.5rem;
+	}
+	.twitter--right {
+		float: right;
+		margin-left: 2.5rem;
+	}
+	div[class*='embed--'] {
+		padding-bottom: 70%;
+	}
+	div[class*='twitter--'] {
+		padding-bottom: 0;
+	}
+}
+
+
+/*
+██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
+██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
+██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
+														  
+*/
+
+@include break(min, $screen-md-min) {}
