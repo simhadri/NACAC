@@ -43,7 +43,6 @@ webpackJsonp([3],[
 			var interiorHeroHeight = $(".hero__wrapper").height() + $(".interior-hero__breadcrumb").height() + 220,
 			    bottomOfNavigation = $(window).scrollTop() + 120;
 		}
-		console.log(bottomOfNavigation, interiorHeroHeight);
 	
 		if (bottomOfNavigation > interiorHeroHeight) {
 			$('.aside-navigation').addClass('aside-navigation--sticky');
@@ -141,18 +140,44 @@ webpackJsonp([3],[
 	
 	// FUNCTION
 	var backTop = function backTop() {
-		var windowHeight = $('body').height(),
+		this.addBackTop = function () {
+			if (!document.getElementById('back-top')) {
+				(function () {
+					var backTop = document.createElement('div'),
+					    mainElement = document.getElementsByTagName('main')[0];
+					mainElement.appendChild(backTop);
+					backTop.setAttribute('id', 'back-top');
+					backTop.setAttribute('class', 'back-top');
+					backTop.innerHTML = '<i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i><span>Back to Top</span>';
+					setTimeout(function () {
+						backTop.classList.add('back-top--scrolled');
+						backTop.addEventListener('click', scrolltoTop);
+					}, 10);
+				})();
+			}
+		}, this.removeBackTop = function () {
+			if (document.getElementById('back-top')) {
+				document.getElementById('back-top').remove();
+			}
+		};
+	};
+	var scrolltoTop = function scrolltoTop() {
+		$('html, body').animate({ scrollTop: 0 });
+	};
+	
+	var backTopScroll = function backTopScroll() {
+		var bt = new backTop(),
+		    windowHeight = $('body').height(),
 		    oneThirdPage = windowHeight / 3,
 		    top = $(window).scrollTop();
-	
 		if (top > oneThirdPage) {
-			$('.back-top').addClass('back-top--scrolled');
+			bt.addBackTop();
 		} else {
-			$('.back-top').removeClass('back-top--scrolled');
+			bt.removeBackTop();
 		}
 	};
-	backTop();
-	$(window).scroll((0, _modulesThrottledJs2['default'])(backTop, 100));
+	
+	$(window).scroll((0, _modulesThrottledJs2['default'])(backTopScroll, 100));
 	$('.back-top').on('click', function () {
 		$('html, body').animate({ scrollTop: 0 });
 	});

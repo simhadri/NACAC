@@ -1,20 +1,45 @@
 // MODULES
 import Throttled from 'modules/throttled.js';
-
 // FUNCTION
-var backTop = function() {
-	var windowHeight = $('body').height(),
-		oneThirdPage = windowHeight / 3,
-		top = $(window).scrollTop();
-	
-	if( top > oneThirdPage){
-		$('.back-top').addClass('back-top--scrolled')
-	} else{
-		$('.back-top').removeClass('back-top--scrolled')
+const backTop = function() {
+	this.addBackTop = function(){
+		if (!document.getElementById('back-top')) {
+			let backTop = document.createElement('div'),
+				mainElement = document.getElementsByTagName('main')[0];
+				mainElement.appendChild(backTop)
+				backTop.setAttribute('id', 'back-top');
+				backTop.setAttribute('class', 'back-top');
+				backTop.innerHTML = '<i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i><span>Back to Top</span>';
+			setTimeout(function() {
+				backTop.classList.add('back-top--scrolled');
+				backTop.addEventListener('click', scrolltoTop);
+			}, 10);
+		}
+	},
+	this.removeBackTop = function(){
+		if (document.getElementById('back-top')) {
+			document.getElementById('back-top').remove();
+		}
 	}
 }
-backTop();
-$(window).scroll(Throttled(backTop, 100));
+const scrolltoTop = function(){
+	$('html, body').animate({ scrollTop: 0});
+}
+
+const backTopScroll = function(){
+	let bt = new backTop(),
+		windowHeight = $('body').height(),
+		oneThirdPage = windowHeight / 3,
+		top = $(window).scrollTop();
+	if( top > oneThirdPage){
+		bt.addBackTop();
+	} else{
+		bt.removeBackTop();
+	}
+}
+
+
+$(window).scroll(Throttled(backTopScroll, 100));
 $('.back-top').on('click',function(){
 	$('html, body').animate({ scrollTop: 0});
 });

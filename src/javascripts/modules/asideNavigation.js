@@ -14,8 +14,6 @@ var asideNavigation = function() {
 			var interiorHeroHeight = $(".hero__wrapper").height() +$(".interior-hero__breadcrumb").height() + 220,
 				bottomOfNavigation = $(window).scrollTop() + 120;
 		}
-		console.log(bottomOfNavigation, interiorHeroHeight);
-		
 
 	if (bottomOfNavigation > interiorHeroHeight) {
 		$('.aside-navigation').addClass('aside-navigation--sticky')
