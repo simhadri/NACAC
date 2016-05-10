@@ -14,22 +14,6 @@
 		margin-top: .2rem;
 		text-align: center;
 		max-width: 76.7rem;
-		@media (max-width: 99.1rem) {
-			width: 100%;
-			float: none !important;
-			position: relative;
-			padding-bottom: 56.25%;
-			padding-top: 2.5rem;
-			height: 0;
-			margin: 1.4rem 0;
-			iframe {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-			}
-		}
 	}
 	.video-iframe--center {
 		width: auto;
@@ -58,14 +42,10 @@
 		}
 	}
 	// Images
-	img[class*='image'] {
+	img[class*='image--'] {
 		margin-top: 0.4rem;
 		margin-bottom: 1.4rem;
 		display: block;
-		@media (max-width: 76.7rem) {
-			float: none;
-			margin: 1.4rem auto;
-		}
 	}
 	.image--center {
 		float: none;
@@ -76,46 +56,6 @@
 		margin-right: 2.5rem;
 	}
 	.image--right {
-		float: right;
-		margin-left: 2.5rem;
-	}
-	.image-responsive {
-		display: block;
-		width: 100%;
-	}
-	// Other Embed Elements
-	div[class*='embed-'],
-	div[class*='twitter--'] {
-		margin-top: 2.5rem;
-		display: block;
-		text-align: center;
-		@media (max-width: 99.1rem) {
-			position: relative;
-			padding-bottom: 65%;
-			height: auto;
-			overflow: hidden;
-			iframe,
-			.twitter--timeline {
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
-		}
-	}
-	.embed--center,
-	.twitter--center {
-		float: none;
-		margin: 2.5rem auto;
-	}
-	.embed--left,
-	.twitter--left {
-		float: left;
-		margin-right: 2.5rem;
-	}
-	.embed--right,
-	.twitter--right {
 		float: right;
 		margin-left: 2.5rem;
 	}
@@ -130,56 +70,19 @@
 ██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 */
-
-@include break(max, $screen-sm-max) {
+@include break(max, $screen-xs-max) {
 	.content-detail__block {
-		.embed--center,
-		.twitter--center {
+		img[class*='image--'] {
+			width: 100%;
 			float: none;
-			margin: 2.5rem auto;
-		}
-		.embed--left,
-		.twitter--left {
-			float: left;
-			margin-right: 2.5rem;
-		}
-		.embed--right,
-		.twitter--right {
-			float: right;
-			margin-left: 2.5rem;
-		}
-		div[class*='twitter--'] {
-			float: none;
-			padding-bottom: 0;
-		}
-		div[class*='embed--'] {
-			float: none;
-			margin: 2.5rem 0 1.4rem 0;
+			margin: 1.4rem auto;
 		}
 	}
 }
-
-@include break(min, $screen-xs-min, max, $screen-sm-max) {
-	.embed--center,
-	.embed--right,
-	.embed--left,
-	.twitter--center {
-		float: none;
-		margin: 2.5rem auto;
-	}
-	.twitter--left {
-		float: left;
-		margin-right: 2.5rem;
-	}
-	.twitter--right {
-		float: right;
-		margin-left: 2.5rem;
-	}
-	div[class*='embed--'] {
-		padding-bottom: 70%;
-	}
-	div[class*='twitter--'] {
-		padding-bottom: 0;
+@include break(max, $screen-sm-max) {
+	.content-detail__block {
+		img[class*='image--'] {
+		}
 	}
 }
 
