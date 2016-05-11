@@ -24,14 +24,17 @@
 					<section class="card-block__row section__row">
 						<div class="row">
 						
-								{% set cardBlock = { heading: "Calls for Proposals", image: "shared/card-national", button: true } %}
-								{% include './_components/card-block.html'%}
-								
-								{% set cardBlock = { heading: "Exhibitor Information", image: "shared/card-performing", button: true } %}
-								{% include './_components/card-block.html'%}
-								
-								{% set cardBlock = { heading: "Registration", image: "shared/card-stem", button: true } %}
-								{% include './_components/card-block.html'%}
+							{% set backgroundImage = '/images/main/color-block-bg-purple.jpg' %}
+							{% set className = '' %}
+							{% include './_components/color-block.html'%}
+					
+							{% set backgroundImage = '/images/main/color-block-bg-green.jpg' %}
+							{% set className = '' %}
+							{% include './_components/color-block.html'%}
+					
+							{% set backgroundImage = '/images/main/color-block-bg-purple.jpg' %}
+							{% set className = 'color-block--full' %}
+							{% include './_components/color-block.html'%}
 								
 						</div>
 					</section>
@@ -41,7 +44,7 @@
 								<header class="section__header">
 									<h2>Related Events &amp; Training</h2>
 								</header>
-								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %}
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career", member: true} %}
 								{% include './_components/figure-block.html'%}
 								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
 							</div>
