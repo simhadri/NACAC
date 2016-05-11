@@ -28,16 +28,14 @@ const scrolltoTop = function(){
 
 const backTopScroll = function(){
 	let bt = new backTop(),
-		windowHeight = $('body').height(),
-		oneThirdPage = windowHeight / 3,
+		windowHeight = $(window).height(),
 		top = $(window).scrollTop();
-	if( top > oneThirdPage){
+	if( top > windowHeight){
 		bt.addBackTop();
 	} else{
 		bt.removeBackTop();
 	}
 }
-
 
 $(window).scroll(Throttled(backTopScroll, 100));
 $('.back-top').on('click',function(){
