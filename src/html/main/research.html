@@ -17,21 +17,22 @@
 			{% include './_components/breadcrumb.html' %}
 			
 			<div class="row aside-navigation__row">
-				<div class="col-lg-3">
+				<div class="col-md-3">
 					{% include './_shared/aside-navigation.html'%}
 				</div>
-				<div class="col-lg-9">
+				<div class="col-md-9">
 					<section class="card-block__row section__row">
 						<div class="row">
 						
-								{% set cardBlock = { heading: "Calls for Proposals", image: "shared/card-national", button: true } %}
-								{% include './_components/card-block.html'%}
-								
-								{% set cardBlock = { heading: "Exhibitor Information", image: "shared/card-performing", button: true } %}
-								{% include './_components/card-block.html'%}
-								
-								{% set cardBlock = { heading: "Registration", image: "shared/card-stem", button: true } %}
-								{% include './_components/card-block.html'%}
+							
+							{% set colorBlock = { className: "color-block--half", heading: "Calls for Proposals", image: "shared/color-block-bg-orange.jpg"} %}
+							{% include './_components/color-block.html'%}
+					
+							{% set colorBlock = { className: "color-block--half", heading: "Calls for Proposals", image: "shared/color-block-bg-blue.jpg"} %}
+							{% include './_components/color-block.html'%}
+					
+							{% set colorBlock = { className: "color-block--full", heading: "Calls for Proposals", image: "shared/color-block-bg-green.jpg"} %}
+							{% include './_components/color-block.html'%}
 								
 						</div>
 					</section>
@@ -41,7 +42,7 @@
 								<header class="section__header">
 									<h2>Related Events &amp; Training</h2>
 								</header>
-								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %}
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career", member: true} %}
 								{% include './_components/figure-block.html'%}
 								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
 							</div>

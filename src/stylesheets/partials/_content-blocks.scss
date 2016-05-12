@@ -55,6 +55,19 @@
 		padding: 3rem;
 		
 	}
+	&.color-block--full{
+		width: 100%;
+		.color-block__content{
+			text-align: center;
+			.color-block__feature{
+				display:inline;
+			}
+			img.color-block__image{
+				left: 0;
+			}
+		}
+		
+	}
 	&.color-block--wide .color-block__content {
 			@include break(min, $screen-sm-min) {
 				width: $container-sm-half;
@@ -265,7 +278,7 @@
 */
 
 @include break(max, $screen-sm-max) {
-	.color-block--wide {
+	.color-block--wide, .color-block--half {
 		width: 100%;
 		float: none;
 	}
