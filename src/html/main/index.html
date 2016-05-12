@@ -10,12 +10,10 @@
 	{% include './_shared/hero.html'%}
 
 	<div class="content-block__row">
-		{% set backgroundImage = '/images/main/color-block-bg-purple.jpg' %}
-		{% set className = 'color-block--wide' %}
+		{% set colorBlock = { className: 'color-block--wide', heading: "College Fairs", image: "main/color-block-bg-purple.jpg"} %}
 		{% include './_components/color-block.html'%}
 		
-		{% set backgroundImage = '/images/main/color-block-bg-green.jpg' %}
-		{% set className = 'color-block--wide' %}
+		{% set colorBlock = { className: 'color-block--wide', heading: "National Conference", image: "main/color-block-bg-green.jpg"} %}
 		{% include './_components/color-block.html'%}
 
 	</div>
