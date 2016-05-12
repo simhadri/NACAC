@@ -17,18 +17,18 @@
 			{% include './_components/breadcrumb.html' %}
 			
 			<div class="row aside-navigation__row">
-				<div class="col-lg-3">
+				<div class="col-md-3">
 					{% include './_shared/aside-navigation.html'%}
 				</div>
-				<div class="col-lg-9">
+				<div class="col-md-9">
 					<section class="card-block__row section__row">
 						<div class="row">
 						
 							
-							{% set colorBlock = { heading: "Calls for Proposals", image: "shared/color-block-bg-orange.jpg"} %}
+							{% set colorBlock = { className: "color-block--half", heading: "Calls for Proposals", image: "shared/color-block-bg-orange.jpg"} %}
 							{% include './_components/color-block.html'%}
 					
-							{% set colorBlock = { heading: "Calls for Proposals", image: "shared/color-block-bg-blue.jpg"} %}
+							{% set colorBlock = { className: "color-block--half", heading: "Calls for Proposals", image: "shared/color-block-bg-blue.jpg"} %}
 							{% include './_components/color-block.html'%}
 					
 							{% set colorBlock = { className: "color-block--full", heading: "Calls for Proposals", image: "shared/color-block-bg-green.jpg"} %}
