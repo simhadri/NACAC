@@ -135,7 +135,16 @@ nav.tab__navigation {
 		}
 	}
 }
-
+@include break(max, $screen-xs-max) {
+	nav.tab__navigation .tab__button {
+		font-size: 1.4rem;
+		width: 100%;
+		padding: 2rem;
+		display: block;
+		border: none;
+		border-bottom: 1px solid $white;
+	}
+}
 
 /*
 ██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
