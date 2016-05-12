@@ -4,6 +4,7 @@ nav.tab__navigation {
 	overflow-x: auto;
 	position: relative;
 	z-index: 1;
+	background-color: $nacac_light-blue;
 	&::-webkit-scrollbar {
 		-webkit-appearance: none;
 		height: 3rem;
@@ -41,10 +42,13 @@ nav.tab__navigation {
 	&::-webkit-scrollbar-track-piece {}
 	.tab__button {
 		cursor: pointer;
-		display: table-cell;
+		display: block;
+		float: left;
+		max-width: 20rem;
 		height: 6rem;
-		vertical-align: middle;
-		padding: 0 2rem;
+		text-align: center;
+		line-height: 1em;
+		padding: 1.2rem 2rem;
 		margin: 0;
 		@include transition(all 300ms ease-in);
 		@include sans-uppercase-normal;
@@ -53,15 +57,21 @@ nav.tab__navigation {
 		background-color: $nacac_light-blue;
 		color: $nacac_lighter-blue;
 		border-right: 0.1rem solid $white;
-		&:last-child {
-			border-right: none;
-		}
 		&.tab__button--active {
 			pointer-events: none;
 			background-color: $nacac_lighter-blue;
 			color: $nacac_light-blue;
-			border-top: 0.4rem solid rgba($white, 0.3);
 			transition: $transition--all;
+			position: relative;
+			&:after{
+				background-color: $nacac_light-blue;
+				width: 100%;
+				left: 0;
+				height: 4px;
+				content: "";
+				position: absolute;
+				top: 0;
+			}
 		}
 	}
 }

@@ -58,10 +58,10 @@
 		line-height: 3rem;
 	}
 	.btn__filter {
-		padding: 0 1rem;
+		padding: 0 1.2rem;
+		padding-right: 2.4rem;
 		min-height: 3rem;
 		line-height: 3rem;
-		padding-right: 2rem;
 		margin: 0;
 		font-size: 1.2rem;
 		margin-right: 1rem;
@@ -70,7 +70,7 @@
 		display: inline-block;
 		&:after {
 			position: absolute;
-			right: 0.6rem;
+			right: 1rem;
 			@include icon('fa-times');
 			cursor: pointer;
 		}
