@@ -5,41 +5,6 @@ nav.tab__navigation {
 	position: relative;
 	z-index: 1;
 	background-color: $nacac_light-blue;
-	&::-webkit-scrollbar {
-		-webkit-appearance: none;
-		height: 3rem;
-	}
-	&::-webkit-scrollbar-thumb {
-		background-color: $lighter-orange;
-		border-bottom: .5rem solid $lighter-orange;
-	}
-	&::-webkit-scrollbar-track {
-		background-color: $nacac_bg-blue-grey;
-		border-bottom: .5rem solid $nacac_bg-blue-grey;
-	}
-	&::-webkit-scrollbar-button:start:decrement,
-	&::-webkit-scrollbar-button:end:increment {
-		display: block;
-		width: 2.4rem;
-		background-color: $nacac_bg-blue-grey;
-		background-position: bottom;
-		background-repeat: no-repeat;
-		border-bottom: .5rem solid $nacac_bg-blue-grey;
-	}
-	&::-webkit-scrollbar-button {
-		&:start {
-			&:decrement {
-				background-image: url(/images/icons/icon_arrow_left_thin.svg);
-			}
-		}
-		//doesn't want to allow a transform
-		&:end {
-			&:increment {
-				background-image: url(/images/icons/icon_arrow_right_thin.svg);
-			}
-		}
-	}
-	&::-webkit-scrollbar-track-piece {}
 	.tab__button {
 		cursor: pointer;
 		display: block;
@@ -64,7 +29,8 @@ nav.tab__navigation {
 			transition: $transition--all;
 			position: relative;
 			&:after{
-				background-color: $nacac_light-blue;
+				background-color: $white;
+				opacity: 0.5;
 				width: 100%;
 				left: 0;
 				height: 4px;
@@ -127,12 +93,35 @@ nav.tab__navigation {
 */
 
 @include break(max, $screen-sm-max) {
+
+}
+@include break(max, $screen-xs-max) {
+		.tab__block{
+		position: relative;
+		&:after{
+			content: "";
+			width: 20%;
+			top: 0;
+			right: 0;
+			z-index: 2;
+			height: 6rem;
+			position: absolute;
+			box-shadow: inset -3em 0 3em -3em rgba(0,0,0,0.5);
+		}
+	}
 	nav.tab__navigation {
 		display: block;
 		width: 100%;
+		height: 6rem;
 		overflow-x: auto;
+		overflow-y: hidden;
+		position: relative;
+		
 		.tab__button {
 			font-size: 1.4rem;
+			display: table-cell;
+			float: none;
+			vertical-align: middle;
 		}
 	}
 	.tab__stage {
@@ -143,16 +132,6 @@ nav.tab__navigation {
 				margin: 1rem auto;
 			}
 		}
-	}
-}
-@include break(max, $screen-xs-max) {
-	nav.tab__navigation .tab__button {
-		font-size: 1.4rem;
-		width: 100%;
-		padding: 2rem;
-		display: block;
-		border: none;
-		border-bottom: 1px solid $white;
 	}
 }
 
@@ -167,3 +146,43 @@ nav.tab__navigation {
 */
 
 @include break(min, $screen-md-min) {}
+
+
+
+
+// JUNK BIG SCROLL
+	// &::-webkit-scrollbar {
+	// 	-webkit-appearance: none;
+	// 	height: 3rem;
+	// }
+	// &::-webkit-scrollbar-thumb {
+	// 	background-color: $lighter-orange;
+	// 	border-bottom: .5rem solid $lighter-orange;
+	// }
+	// &::-webkit-scrollbar-track {
+	// 	background-color: $nacac_bg-blue-grey;
+	// 	border-bottom: .5rem solid $nacac_bg-blue-grey;
+	// }
+	// &::-webkit-scrollbar-button:start:decrement,
+	// &::-webkit-scrollbar-button:end:increment {
+	// 	display: block;
+	// 	width: 2.4rem;
+	// 	background-color: $nacac_bg-blue-grey;
+	// 	background-position: bottom;
+	// 	background-repeat: no-repeat;
+	// 	border-bottom: .5rem solid $nacac_bg-blue-grey;
+	// }
+	// &::-webkit-scrollbar-button {
+	// 	&:start {
+	// 		&:decrement {
+	// 			background-image: url(/images/icons/icon_arrow_left_thin.svg);
+	// 		}
+	// 	}
+	// 	//doesn't want to allow a transform
+	// 	&:end {
+	// 		&:increment {
+	// 			background-image: url(/images/icons/icon_arrow_right_thin.svg);
+	// 		}
+	// 	}
+	// }
+	// &::-webkit-scrollbar-track-piece {}
