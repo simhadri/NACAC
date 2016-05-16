@@ -58,3 +58,18 @@ if (targets.indexOf(window.location.hash) !== -1) {
 } else {
 	show();
 }
+// shadow animation
+$('.tab__navigation').scroll(
+
+	function() {
+		// var fullTabsWidth = 
+		var totalWidth = $('.tab__button').length * $('.tab__button').outerWidth(),
+			scrollLocation = $(this).scrollLeft() + $(this).width();
+		if (scrollLocation <= totalWidth - $('.tab__button').outerWidth()) {
+			$('.tab__block').removeClass('no--shadow');
+		} else {
+			$('.tab__block').addClass('no--shadow');
+		}
+	}
+);
+
