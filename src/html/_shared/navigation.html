@@ -10,19 +10,21 @@
 <nav class="primary-nav {{ className }}">
 	<div class="container">
 		<ul class="primary-nav__list">
+			{% if templateName == 'template-fair' %}
 			<li class="primary-nav__logo">
-				{% if templateName == 'template-fair' %}
-					<a href="/fair">
-						<svg class="logo-ncf">
-							<use xlink:href="#logo-ncf"></use>
-						</svg>
-					</a>
-				{% else %}
-					<a href="/main" class="primary-nav__link">
-						<img class="primary-nav__logo-image" src="../images/NACAC_logo-knockout.svg" alt="">
-					</a>
-				{% endif %}
+				<a href="/fair">
+					<svg class="logo-ncf">
+						<use xlink:href="#logo-ncf"></use>
+					</svg>
+				</a>
 			</li>
+			{% else %}
+			<li class="primary-nav__logo hidden-xs">
+				<a href="/main" class="primary-nav__link">
+					<img class="primary-nav__logo-image" src="../images/NACAC_logo-knockout.svg" alt="">
+				</a>
+			</li>
+			{% endif %}
 			{% if templateName == 'template-fair' %}
 				<li class="primary-nav__item">
 					<a href="#" class="primary-nav--children" data-id="1">Learn <i class="fa fa-caret-down"></i></a>
