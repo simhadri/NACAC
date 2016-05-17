@@ -209,7 +209,7 @@
 	</div>
 	<div class="hero__content">
 		<h1 class="hero__title hero">Find the College <span class="orange">that's Right for You</soan></h1>
-		<h3 class="hero__byline">Start your college search <span class="text-uppercase orange">for free</span> at a NACAC National College Fair near you. NACAC National College Fairs is a program of the National Association of College Admission Counseling.</h3>
+		<h3 class="hero__byline">Start your college search <span class="text-uppercase orange">for free</span> at a NACAC National College Fair near you. NACAC National College Fairs is a program for the National Association of College Admission Counseling.</h3>
 		<div class="row">
       <div class="col-xs-4">
         <a href="#" class="hero-icon-block">
@@ -352,7 +352,7 @@
 							<h3><a href="#">Rochester National College Fair</a></h3>
 							<p>March 13 &amp; 14, 2016 | Rochester, NY</p>
 							<p>
-								<a href="#" class="btn btn-simple">View Fair Details</a>
+								<a href="#" class="btn btn-simple">Fair Details</a>
 								<a href="#" class="btn btn-simple-blue">Register for Free</a>
 							</p>
 						</div>
@@ -363,7 +363,7 @@
 							<h3><a href="#">Rochester National College Fair</a></h3>
 							<p>March 13 &amp; 14, 2016 | Rochester, NY</p>
 							<p>
-								<a href="#" class="btn btn-simple">View Fair Details</a>
+								<a href="#" class="btn btn-simple">Fair Details</a>
 								<a href="#" class="btn btn-simple-blue">Register for Free</a>
 							</p>
 						</div>
@@ -374,7 +374,7 @@
 							<h3><a href="#">Rochester National College Fair</a></h3>
 							<p>March 13 &amp; 14, 2016 | Rochester, NY</p>
 							<p>
-								<a href="#" class="btn btn-simple">View Fair Details</a>
+								<a href="#" class="btn btn-simple">Fair Details</a>
 								<a href="#" class="btn btn-simple-blue">Register for Free</a>
 							</p>
 						</div>
@@ -399,97 +399,91 @@
 	</div>
 </article>
 
-
-
 <article class="article__row article--white article-map">
 	<div class="announcement__header announcement__header-top-border">
 		<div class="container">
 			<p><i class="fa fa-map-marker"></i>Fair Locator</p>
 		</div>
 	</div>
-
 	<header class="article__header margin-bot-30">
 		<h2>Our NACAC <span class="orange">College Fairs</span></h2>
 	</header>
-
-
-<div class="container">
-	<div class="row">
-		<div class="col-sm-9">
-			 <div id="map"></div>
-		</div>
-		<div class="col-sm-3">
-			
-			<div id="form">
-
-			<h3>Filter College Fairs</h3>
-			<div class="checkbox-wrap">
-				<label>
-					<input class="checkbox" id="National College Fairs" name="National College Fairs" type="checkbox" value="National College Fairs" />
-					National College Fairs
-				</label>
-			</div>
-			<div class="checkbox-wrap">
-				<label>
-					<input class="checkbox" id="STEM College and Career Fairs" name="STEM College and Career Fairs" type="checkbox" value="STEM College and Career Fairs" />
-					STEM College and Career Fairs
-				</label>
-			</div>
-			<div class="checkbox-wrap">
-				<label>
-					<input class="checkbox" id="Performing and Visual Arts College Fairs" name="Performing and Visual Arts College Fairs" type="checkbox" value="Performing and Visual Arts College Fairs" />
-					Performing and Visual Arts College Fairs
-				</label>
-			</div>
-
-		
-
-
-</div>
-		</div>
-	</div>
-
-<p class="text-center"><a href="" class="btn btn-simple">View All Fairs</a></p>
-
-</div>
-
-
-</article>
-
-
-
-
-
-
-<article class="article__row article-infographic">
 	<div class="container">
-		<h2>College Fairs by the Numbers</h2>
-		<div class="row">
-			<div class="col-xs-4">
-				<div class="info-number-wrap">
-					<span class="info-circle"></span>
-					<span class="info-number">8</span>
+		<div id="map-controls">
+			<div class="row">
+				<div class="col-sm-2 text-right hidden-xs">
+					<h3>Filter College Fairs</h3>
 				</div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-			</div>
-			<div class="col-xs-4">
-				<div class="info-number-wrap">
-					<span class="info-circle"></span>
-					<span class="info-number">25</span>
+				<div class="col-sm-10 col-xs-12 text-left">
+					<label class="switch-wrap check-fairs">
+						<div class="switch">
+							<input class="checkbox" id="National College Fairs" name="National College Fairs" type="checkbox" value="National College Fairs">
+							<span class="slider round"></span>
+						</div>
+						<span class="switch-text">National College Fairs</span>
+					</label>
+					<label class="switch-wrap check-stem">
+						<div class="switch">
+							<input class="checkbox" id="STEM College and Career Fairs" name="STEM College and Career Fairs" type="checkbox" value="STEM College and Career Fairs">
+							<span class="slider round"></span>
+						</div>
+						<span class="switch-text">STEM College and Career Fairs</span>
+					</label>
+					<label class="switch-wrap check-performing">
+						<div class="switch">
+							<input class="checkbox" id="Performing and Visual Arts College Fairs" name="Performing and Visual Arts College Fairs" type="checkbox" value="Performing and Visual Arts College Fairs">
+							<span class="slider round"></span>
+						</div>
+						<span class="switch-text">Performing and Visual Arts College Fairs</span>
+					</label>
 				</div>
-				<p>Fugiat perferendis at error quos, omnis numquam nemo.</p>
 			</div>
-			<div class="col-xs-4">
-				<div class="info-number-wrap">
-					<span class="info-circle"></span>
-					<span class="info-number">13,000</span>
-				</div>
-				<p>Obcaecati, asperiores, dicta veniam voluptatem deserunt.</p>
-			</div>
+		</div><!-- #map-controls -->
+		<div id="map"></div>
+		<p class="text-center"><a href="" class="btn btn-simple">View All Fairs</a></p>
+	</div>
+</article>
+
+<section class="section__row fairs-infographic">
+	<header class="section__header">
+		<h2>Membership Benefits</h2>
+	</header>
+	<div class="row">
+		<div class="col-md-4">
+			
+			
+			<div class="number-block">
+	<!-- <span class="number-block__numerals" data-counter="8" id="counter-1"></span> -->
+	<div class="number-block__numerals" id="counter-1" data-counter="8">0</div>
+	<div class="number-block-block__text">
+		<p>Pellentesque habitant morbi tortor quam.</p>
+	</div>
+</div>
+		</div>
+		<div class="col-md-4">
+			
+			
+			<div class="number-block">
+	<!-- <span class="number-block__numerals" data-counter="25" id="counter-1"></span> -->
+	<div class="number-block__numerals" id="counter-1" data-counter="25">0</div>
+	<div class="number-block-block__text">
+		<p>Pellentesque habitant morbi tortor quam.</p>
+	</div>
+</div>
+		</div>
+		<div class="col-md-4">
+			
+			
+			<div class="number-block">
+	<!-- <span class="number-block__numerals" data-counter="13000" id="counter-20"></span> -->
+	<div class="number-block__numerals" id="counter-20" data-counter="13000">0</div>
+	<div class="number-block-block__text">
+		<p>Pellentesque habitant morbi tortor quam.</p>
+	</div>
+</div>
 		</div>
 	</div>
-
-</article>
+</section>
 
 <article class="article__row article--bluegrey">
 	<div class="announcement__header">
@@ -730,6 +724,7 @@
 
 </main>
 
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<!--<script>window.jQuery || document.write('<script src="javascripts/jquery.js"><\/script>')</script>-->
 	<script src="/javascripts/shared.js"></script>
@@ -738,6 +733,7 @@
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgqZxGF9wxL5I0ITCpv8rqnuJqPMPOKCE" type="text/javascript"></script>
 	<script src="/javascripts/app-fair.js"></script>
 	
+<script src="/javascripts/interior.js"></script>
 
 </body>
 
