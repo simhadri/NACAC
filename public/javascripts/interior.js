@@ -85,6 +85,8 @@ webpackJsonp([3],[
 	
 	__webpack_require__(16);
 	
+	__webpack_require__(17);
+	
 	var _modulesThrottledJs = __webpack_require__(5);
 	
 	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
@@ -93,7 +95,7 @@ webpackJsonp([3],[
 	//    Vendor Scirpts
 	// *********************
 	
-	var _vendorCountUpJs = __webpack_require__(17);
+	var _vendorCountUpJs = __webpack_require__(18);
 	
 	var _vendorCountUpJs2 = _interopRequireDefault(_vendorCountUpJs);
 	
@@ -189,6 +191,41 @@ webpackJsonp([3],[
 
 /***/ },
 /* 17 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	var validator = new FormValidator('productForm', [{
+		name: 'email',
+		rules: 'valid_email'
+	}, {
+		names: ['firstName', 'lastName'],
+		rules: 'required|alpha'
+	}], function (errors, evt) {
+	
+		if (errors.length > 0) {
+	
+			// Show the errors
+			// console.log(this)
+	
+			for (var i = 0; i < this.form.length; i++) {
+	
+				if (this.form[i].classList.contains('required')) {
+					// let err = document.createElement('span');
+					// err.id = 'error-message_' + i;
+					// err.className = 'error-message';
+					// err.innerHTML = 'This field is required!';
+					console.log(this.form[i].nextSibling);
+					this.form[i].nextSibling.innerHTML = 'pr';
+					this.form[i].classList.add('error');
+				}
+			}
+			return false;
+		}
+	});
+
+/***/ },
+/* 18 */
 /***/ function(module, exports) {
 
 	/*
