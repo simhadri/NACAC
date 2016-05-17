@@ -226,6 +226,30 @@
 	}
 }
 
+// added for fairs homepage
+.section__row.fairs-infographic {
+	padding-top: 8rem;
+	padding-bottom: 10rem;
+	color: #fff;
+	background: url(/images/fair/numbers-bg.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  .number-block {
+  	.number-block__numerals {
+			color: #fff;
+			&:after {
+				border-color: #fff;
+			}
+  	}
+  	.number-block-block__text {
+  		p {
+				font-size: 1.8rem;
+				line-height: 1.5;
+  		}
+  	}
+  }
+}
+
+
 .figure-block {
 	margin: 0;
 	margin-top: 2rem;

@@ -62,8 +62,10 @@ webpackJsonp([3],[
 			$('.aside-navigation').removeClass("aside-navigation--hide");
 		}
 	};
-	asideNavigation();
-	$(window).scroll((0, _modulesThrottledJs2["default"])(asideNavigation, 20));
+	if ($(".aside-navigation").length !== 0) {
+		asideNavigation();
+		$(window).scroll((0, _modulesThrottledJs2["default"])(asideNavigation, 20));
+	}
 
 /***/ },
 /* 14 */
