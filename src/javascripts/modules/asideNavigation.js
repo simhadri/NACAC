@@ -32,5 +32,7 @@ const asideNavigation = function() {
 		$('.aside-navigation').removeClass("aside-navigation--hide");
 	}
 }
-asideNavigation();
-$(window).scroll(Throttled(asideNavigation, 20));
+if($(".aside-navigation").length !== 0){
+	asideNavigation();
+	$(window).scroll(Throttled(asideNavigation, 20));
+}
