@@ -1,385 +1,245 @@
 {% set templateName = 'template-fair' %}
-
 {% extends '_layouts/fair-application.html' %}
-
 {% block content %}
 <main>
 
-{% set className = 'utility-nav-fair' %}
-{% include './_fair/utility.html'%}
+  {% set className = 'utility-nav-fair' %}
+  {% include './_fair/utility.html'%}
+  {% set className = 'primary-nav-fair' %}
+  {% include './_shared/navigation.html'%}
+  {% include './_fair/hero.html'%}
+  <article class="article__row article--white">
+    <div class="container">
+      <header class="article__header">
+        <h1>Fair Options Title Text</h1>
+        <p><span class="text-uppercase">Free</span> and <span class="text-uppercase">open</span> to the <span class="text-uppercase">public</span>, there are several types of fairs to help you find your perfect fit!</p>
+      </header>
+      <section class="card-block__row">
+        <div class="flexbox__row row">
+          {% set cardBlock = { heading: "National College Fairs", image: "shared/card-national", button: true } %}
+          {% include './_components/card-block.html'%}
+          {% set cardBlock = { heading: "Performing and Visual Arts College Fairs", image: "shared/card-performing", button: true } %}
+          {% include './_components/card-block.html'%}
+          {% set cardBlock = { heading: "Stem College and Career Fairs", image: "shared/card-stem", button: true } %}
+          {% include './_components/card-block.html'%}
+          {% set cardBlock = { heading: "International Universities Fair", image: "shared/card-international", button: true } %}
+          {% include './_components/card-block.html'%}
+        </div>
+      </section>
+    </div>
+  </article>
+  <article class="article__row article--white announcements">
+    <div class="container">
+      <section class="announcement__row row">
+        <div class="col-md-6">
+          <header class="article__header margin-bot-30">
+            <h2>Fairs <span class="orange">Near You</span></h2>
+          </header>
+          <ul class="fair-events">
+            {# make these incudes #}
+            <li>
+              <img class="fair-event-icon" src="/images/icons/states/pa.svg" alt="Pennsylvania">
+              <div class="fair-event-content">
+                <h3><a href="#">Rochester National College Fair</a></h3>
+                <p>March 13 &amp; 14, 2016 | Rochester, NY</p>
+                <p>
+                  <a href="#" class="btn btn-simple">Fair Details</a>
+                  <a href="#" class="btn btn-simple-blue">Register for Free</a>
+                </p>
+              </div>
+            </li>
+            <li>
+              <img class="fair-event-icon" src="/images/icons/states/pa.svg" alt="Pennsylvania">
+              <div class="fair-event-content">
+                <h3><a href="#">Rochester National College Fair</a></h3>
+                <p>March 13 &amp; 14, 2016 | Rochester, NY</p>
+                <p>
+                  <a href="#" class="btn btn-simple">Fair Details</a>
+                  <a href="#" class="btn btn-simple-blue">Register for Free</a>
+                </p>
+              </div>
+            </li>
+            <li>
+              <img class="fair-event-icon" src="/images/icons/states/pa.svg" alt="Pennsylvania">
+              <div class="fair-event-content">
+                <h3><a href="#">Rochester National College Fair</a></h3>
+                <p>March 13 &amp; 14, 2016 | Rochester, NY</p>
+                <p>
+                  <a href="#" class="btn btn-simple">Fair Details</a>
+                  <a href="#" class="btn btn-simple-blue">Register for Free</a>
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="fair-event-content">
+                <a href="#" class="btn btn-simple-blue">View All Fairs Near You</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <header class="article__header margin-bot-30">
+            <h2>New: <span class="orange">Stem College and Career</span></h2>
+          </header>
+          <p><img src="/images/fair/feature-stem.jpg" alt="" class="img-responsive"></p>
+          <h3>Subtitle Text Placeholder</h3>
+          <p>This fall, NACAC will host three pilot STEM College and Career Fairs to augment its National College Fair programming for students interested in pursuing college opportunities beyond high school. The new programs will concentrate on science-, technology-, engineering- and math-related educational and career opportunities.</p>
+          <p class="text-uppercase bold"><a href="#">View All Stem Fairs <i class="fa fa-caret-right"></i></a></p>
+        </div>
+      </section>
+    </div>
+  </article>
+  <article class="article__row article--white article-map">
+    <div class="announcement__header announcement__header-top-border">
+      <div class="container">
+        <p><i class="fa fa-map-marker"></i>Fair Locator</p>
+      </div>
+    </div>
+    <header class="article__header margin-bot-30">
+      <h2>Our NACAC <span class="orange">College Fairs</span></h2>
+    </header>
+    <div class="container">
+      <div id="map-controls">
+        <div class="row">
+          <div class="col-sm-2 text-right hidden-xs">
+            <h3>Filter College Fairs</h3>
+          </div>
+          <div class="col-sm-10 col-xs-12 text-left">
+            <label class="switch-wrap check-fairs">
+              <div class="switch">
+                <input class="checkbox" id="National College Fairs" name="National College Fairs" type="checkbox" value="National College Fairs">
+                <span class="slider round"></span>
+              </div>
+              <span class="switch-text">National College Fairs</span>
+            </label>
+            <label class="switch-wrap check-stem">
+              <div class="switch">
+                <input class="checkbox" id="STEM College and Career Fairs" name="STEM College and Career Fairs" type="checkbox" value="STEM College and Career Fairs">
+                <span class="slider round"></span>
+              </div>
+              <span class="switch-text">STEM College and Career Fairs</span>
+            </label>
+            <label class="switch-wrap check-performing">
+              <div class="switch">
+                <input class="checkbox" id="Performing and Visual Arts College Fairs" name="Performing and Visual Arts College Fairs" type="checkbox" value="Performing and Visual Arts College Fairs">
+                <span class="slider round"></span>
+              </div>
+              <span class="switch-text">Performing and Visual Arts College Fairs</span>
+            </label>
+          </div>
+        </div>
+      </div><!-- #map-controls -->
+      <div id="map"></div>
+      <p class="text-center"><a href="" class="btn btn-simple">View All Fairs</a></p>
+    </div>
+  </article>
 
-{% set className = 'primary-nav-fair' %}
-{% include './_shared/navigation.html'%}
-
-{% include './_fair/hero.html'%}
-
-<article class="article__row article--white">
-	<div class="container">
-		<header class="article__header">
-			<h1>Fair Options Title Text</h1>
-			<p><span class="text-uppercase">Free</span> and <span class="text-uppercase">open</span> to the <span class="text-uppercase">public</span>, there are several types of fairs to help you find your perfect fit!</p>
+	<section class="section__row fairs-infographic">
+		<header class="section__header">
+			<h2>Membership Benefits</h2>
 		</header>
-		<section class="card-block__row">
-			<div class="flexbox__row row">
-					
-				{% set cardFair = { heading: "National College Fairs", image: "card-national" } %}
-				{% set button = true %}
-				{% include './_components/card-block.html'%}
-				
-				{% set cardFair = { heading: "Performing and Visual Arts College Fairs", image: "card-performing" } %}
-				{% set button = true %}
-				{% include './_components/card-block.html'%}
-			
-				{% set cardFair = { heading: "Stem College and Career Fairs", image: "card-stem" } %}
-				{% set button = true %}
-				{% include './_components/card-block.html'%}
-				
-				{% set cardFair = { heading: "International Universities Fair", image: "card-international" } %}
-				{% set button = true %}
-				{% include './_components/card-block.html'%}
-			
+		<div class="row">
+			<div class="col-md-4">
+				{% set number = 8 %}
+				{% set inc = 1 %}
+				{% include './_components/number-block.html' %}
 			</div>
-		</section>
-	</div>
-</article>
-
-<article class="article__row article--white announcements">
-	<div class="container">
-		<section class="announcement__row row">
-			<div class="col-md-6">
-				<header class="article__header margin-bot-30">
-					<h2>Fairs <span class="orange">Near You</span></h2>
-				</header>
-				<ul class="fair-events">
-					{# make these incudes #}
-					<li>
-						<img class="fair-event-icon" src="/images/icons/states/pa.svg" alt="Pennsylvania">
-						<div class="fair-event-content">
-							<h3><a href="#">Rochester National College Fair</a></h3>
-							<p>March 13 &amp; 14, 2016 | Rochester, NY</p>
-							<p>
-								<a href="#" class="btn btn-simple">Fair Details</a>
-								<a href="#" class="btn btn-simple-blue">Register for Free</a>
-							</p>
-						</div>
-					</li>
-					<li>
-						<img class="fair-event-icon" src="/images/icons/states/pa.svg" alt="Pennsylvania">
-						<div class="fair-event-content">
-							<h3><a href="#">Rochester National College Fair</a></h3>
-							<p>March 13 &amp; 14, 2016 | Rochester, NY</p>
-							<p>
-								<a href="#" class="btn btn-simple">Fair Details</a>
-								<a href="#" class="btn btn-simple-blue">Register for Free</a>
-							</p>
-						</div>
-					</li>
-					<li>
-						<img class="fair-event-icon" src="/images/icons/states/pa.svg" alt="Pennsylvania">
-						<div class="fair-event-content">
-							<h3><a href="#">Rochester National College Fair</a></h3>
-							<p>March 13 &amp; 14, 2016 | Rochester, NY</p>
-							<p>
-								<a href="#" class="btn btn-simple">Fair Details</a>
-								<a href="#" class="btn btn-simple-blue">Register for Free</a>
-							</p>
-						</div>
-					</li>
-					<li>
-						<div class="fair-event-content">
-							<a href="#" class="btn btn-simple-blue">View All Fairs Near You</a>
-						</div>
-					</li>
-				</ul>
+			<div class="col-md-4">
+				{% set number = 25 %}
+				{% set inc = 1 %}
+				{% include './_components/number-block.html' %}
 			</div>
-			<div class="col-md-6">
-				<header class="article__header margin-bot-30">
-					<h2>New: <span class="orange">Stem College and Career</span></h2>
-				</header>
-				<p><img src="/images/fair/feature-stem.jpg" alt="" class="img-responsive"></p>
-				<h3>Subtitle Text Placeholder</h3>
-				<p>This fall, NACAC will host three pilot STEM College and Career Fairs to augment its National College Fair programming for students interested in	pursuing college opportunities beyond high school. The new programs will concentrate on science-, technology-, engineering- and math-related educational and career opportunities.</p>
-				<p class="text-uppercase bold"><a href="#">View All Stem Fairs <i class="fa fa-caret-right"></i></a></p>
-			</div>
-		</section>
-	</div>
-</article>
-
-<article class="article__row article--white article-map">
-	<div class="announcement__header announcement__header-top-border">
-		<div class="container">
-			<p><i class="fa fa-map-marker"></i>Fair Locator</p>
-		</div>
-	</div>
-	<header class="article__header margin-bot-30">
-		<h2>Our NACAC <span class="orange">College Fairs</span></h2>
-	</header>
-	<div class="container">
-		<div id="map-controls">
-			<div class="row">
-				<div class="col-sm-2 text-right hidden-xs">
-					<h3>Filter College Fairs</h3>
-				</div>
-				<div class="col-sm-10 col-xs-12 text-left">
-					<label class="switch-wrap check-fairs">
-						<div class="switch">
-							<input class="checkbox" id="National College Fairs" name="National College Fairs" type="checkbox" value="National College Fairs">
-							<span class="slider round"></span>
-						</div>
-						<span class="switch-text">National College Fairs</span>
-					</label>
-					<label class="switch-wrap check-stem">
-						<div class="switch">
-							<input class="checkbox" id="STEM College and Career Fairs" name="STEM College and Career Fairs" type="checkbox" value="STEM College and Career Fairs">
-							<span class="slider round"></span>
-						</div>
-						<span class="switch-text">STEM College and Career Fairs</span>
-					</label>
-					<label class="switch-wrap check-performing">
-						<div class="switch">
-							<input class="checkbox" id="Performing and Visual Arts College Fairs" name="Performing and Visual Arts College Fairs" type="checkbox" value="Performing and Visual Arts College Fairs">
-							<span class="slider round"></span>
-						</div>
-						<span class="switch-text">Performing and Visual Arts College Fairs</span>
-					</label>
-				</div>
-			</div>
-		</div><!-- #map-controls -->
-		<div id="map"></div>
-		<p class="text-center"><a href="" class="btn btn-simple">View All Fairs</a></p>
-	</div>
-</article>
-
-<section class="section__row fairs-infographic">
-	<header class="section__header">
-		<h2>Membership Benefits</h2>
-	</header>
-	<div class="row">
-		<div class="col-md-4">
-			{% set number = 8 %}
-			{% set inc = 1 %}
-			{% include './_components/number-block.html' %}
-		</div>
-		<div class="col-md-4">
-			{% set number = 25 %}
-			{% set inc = 1 %}
-			{% include './_components/number-block.html' %}
-		</div>
-		<div class="col-md-4">
-			{% set number = 13000 %}
-			{% set inc = 20 %}
-			{% include './_components/number-block.html' %}
-		</div>
-	</div>
-</section>
-
-<article class="article__row article--bluegrey">
-	<div class="announcement__header">
-		<div class="container">
-			<p>#NACACFAIRS</p>
-		</div>
-	</div>
-	<div class="container">
-		<section>
-			<header class="article__header margin-bot-30">
-				<h2>NACAC College Fairs <span class="orange">Tweets</span></h2>
-			</header>
-			<div class="twitter-list">
-				<div class="row">
-
-					{# make these incudes #}
-					<div class="col-sm-4 col-xs-12">
-						<div class="tweet-wrap">
-							<div class="tweet">Will you be at the <a href="#">#Pittsburgh</a> NCF? Learn more and register now. <a href="#">#nacacfairs</a> <a href="#">#sschat</a> <a href="#">ow.ly/WO5jr</a></div>
-							<div class="tweet-meta">
-								<a href="#">
-									<svg class="logo-ncf">
-										<use xlink:href="#logo-ncf"></use>
-									</svg>
-								</a>
-								<a href="#">@NACACFairs</a><br>
-								<a href="#">12 minutes ago</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4 col-xs-12">
-						<div class="tweet-wrap">
-							<div class="tweet">Will you be at the <a href="#">#Pittsburgh</a> NCF? Learn more and register now. <a href="#">#nacacfairs</a> <a href="#">#sschat</a> <a href="#">ow.ly/WO5jr</a></div>
-							<div class="tweet-meta">
-								<a href="#">
-									<svg class="logo-ncf">
-										<use xlink:href="#logo-ncf"></use>
-									</svg>
-								</a>
-								<a href="#">@NACACFairs</a><br>
-								<a href="#">12 minutes ago</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4 col-xs-12">
-						<div class="tweet-wrap">
-							<div class="tweet">Will you be at the <a href="#">#Pittsburgh</a> NCF? Learn more and register now. <a href="#">#nacacfairs</a> <a href="#">#sschat</a> <a href="#">ow.ly/WO5jr</a></div>
-							<div class="tweet-meta">
-								<a href="#">
-									<svg class="logo-ncf">
-										<use xlink:href="#logo-ncf"></use>
-									</svg>
-								</a>
-								<a href="#">@NACACFairs</a><br>
-								<a href="#">12 minutes ago</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4 col-xs-12">
-						<div class="tweet-wrap">
-							<div class="tweet">Will you be at the <a href="#">#Pittsburgh</a> NCF? Learn more and register now. <a href="#">#nacacfairs</a> <a href="#">#sschat</a> <a href="#">ow.ly/WO5jr</a></div>
-							<div class="tweet-meta">
-								<a href="#">
-									<svg class="logo-ncf">
-										<use xlink:href="#logo-ncf"></use>
-									</svg>
-								</a>
-								<a href="#">@NACACFairs</a><br>
-								<a href="#">12 minutes ago</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4 col-xs-12">
-						<div class="tweet-wrap">
-							<div class="tweet">Will you be at the <a href="#">#Pittsburgh</a> NCF? Learn more and register now. <a href="#">#nacacfairs</a> <a href="#">#sschat</a> <a href="#">ow.ly/WO5jr</a></div>
-							<div class="tweet-meta">
-								<a href="#">
-									<svg class="logo-ncf">
-										<use xlink:href="#logo-ncf"></use>
-									</svg>
-								</a>
-								<a href="#">@NACACFairs</a><br>
-								<a href="#">12 minutes ago</a>
-							</div>
-						</div>
-					</div>
-
-					{# this might not be possible
-					<div class="col-sm-8 col-xs-12">
-						<div class="tweet-wrap tweet-double">
-							<div class="tweet-img">
-								<img src="/images/fair/tweet.png" alt="Tweet" class="img-responsive">
-							</div>
-							<div class="tweet">Will you be at the <a href="#">#Pittsburgh</a> NCF? Learn more and register now. <a href="#">#nacacfairs</a> <a href="#">#sschat</a> <a href="#">ow.ly/WO5jr</a></div>
-							<div class="tweet-meta">
-								<a href="#">
-									<svg class="logo-ncf">
-										<use xlink:href="#logo-ncf"></use>
-									</svg>
-								</a>
-								<a href="#">@NACACFairs</a><br>
-								<a href="#">12 minutes ago</a>
-							</div>
-						</div>
-					</div>
-					#}
-
-
-					<div class="col-sm-4 col-xs-12">
-						<div class="tweet-wrap">
-							<div class="tweet">Will you be at the <a href="#">#Pittsburgh</a> NCF? Learn more and register now. <a href="#">#nacacfairs</a> <a href="#">#sschat</a> <a href="#">ow.ly/WO5jr</a></div>
-							<div class="tweet-meta">
-								<a href="#">
-									<svg class="logo-ncf">
-										<use xlink:href="#logo-ncf"></use>
-									</svg>
-								</a>
-								<a href="#">@NACACFairs</a><br>
-								<a href="#">12 minutes ago</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div>
-</article>
-
-<article class="article__row article--white announcements">
-	<div class="container">
-		<div class="container">
-		<section>
-			<header class="article__header">
-				<h2>Counselors: Become A NACAC Member</h2>
-				<p>Your active participation in our association is welcomed. You are encouraged to take advantage of our many valuable membership benefits. NACAC proudly offers our members the training, networking opportunities and necessary information	needed to serve students and their parents to the best of their abilities.</p>
-				<a href="#" class="btn btn--nacac-blue">Become a Member</a>
-			</header>
-		</section>
-		
-	</div>
-</article>
-
-
-
-{# 
-
-<article class="article__row article--white announcements">
-	<div class="announcement__header">
-			<div class="container">
-				<p><i class="fa fa-map-marker"></i>Fair Locator</p>
+			<div class="col-md-4">
+				{% set number = 13000 %}
+				{% set inc = 20 %}
+				{% include './_components/number-block.html' %}
 			</div>
 		</div>
-	<div class="container">
-		<section class="announcement__row row">
-			<div class="col-md-7 listing__block">
-				<header class="article__header">
-					<h2>Get Involved</h2>
-				</header>
-
-				{% include '_components/listing-entry.html'%}
-
-				{% include '_components/listing-entry.html'%}
-
-				{% include '_components/listing-entry.html'%}
-
-			</div>
-			<div class="col-md-5 calendar__block">
-				<header class="article__header">
-					<h2>Upcoming Training</h2>
-				</header>
-				
-				{% include '_components/calendar-entry.html'%}
-
-				{% include '_components/calendar-entry.html'%}
-
-				{% include '_components/calendar-entry.html'%}
-				
-				<a href="#" class="btn btn--nacac-blue">View Full Calendar</a>
-			</div>
-		</section>
-	</div>
-</article>
-<article class="article__row article--white">
-	<div class="container">
-		{% include './_components/focus-testimonial.html' %}
-	</div>
-</article>
-<article class="article__row article--bluegrey">
-	<div class="container">
-		<div class="article__header">
-			<h2>Member Stories</h2>
-		</div>
-		<div class="article__row row">
-			{% include './_components/testimonial-block.html' %}
-
-			{% include './_components/testimonial-block.html' %}
-
-			{% include './_components/testimonial-block.html' %}
-		</div>
-	</div>
-</article>
-
-{% include './_components/full-block-row.html'%}
-#}
-
-
-
-{% include './_shared/footer.html'%}
+	</section>
+	<article class="article__row article--bluegrey">
+    <div class="announcement__header">
+      <div class="container">
+        <p>#NACACFAIRS</p>
+      </div>
+    </div>
+    <div class="container">
+      <section>
+        <header class="article__header margin-bot-30">
+          <h2>NACAC College Fairs <span class="orange">Tweets</span></h2>
+        </header>
+        <div class="tweet-deck">
+          <div class="row">
+            {% include './_components/tweet.html'%}
+            {% include './_components/tweet.html'%}
+            {% include './_components/tweet.html'%}
+            {% include './_components/tweet.html'%}
+            {% include './_components/tweet.html'%}
+            {% include './_components/tweet.html'%}
+          </div>
+        </div>
+        <!-- .tweet-deck -->
+      </section>
+    </div>
+  </article>
+  <article class="article__row article--white announcements">
+    <div class="container">
+      <div class="container">
+        <section>
+          <header class="article__header">
+            <h2>Counselors: Become A NACAC Member</h2>
+            <p>Your active participation in our association is welcomed. You are encouraged to take advantage of our many valuable membership benefits. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</p>
+            <a href="#" class="btn btn--nacac-blue">Become a Member</a>
+          </header>
+        </section>
+      </div>
+  </article>
+  {#
+  <article class="article__row article--white announcements">
+    <div class="announcement__header">
+      <div class="container">
+        <p><i class="fa fa-map-marker"></i>Fair Locator</p>
+      </div>
+    </div>
+    <div class="container">
+      <section class="announcement__row row">
+        <div class="col-md-7 listing__block">
+          <header class="article__header">
+            <h2>Get Involved</h2>
+          </header>
+          {% include '_components/listing-entry.html'%}
+          {% include '_components/listing-entry.html'%}
+          {% include '_components/listing-entry.html'%}
+        </div>
+        <div class="col-md-5 calendar__block">
+          <header class="article__header">
+            <h2>Upcoming Training</h2>
+          </header>
+          {% include '_components/calendar-entry.html'%}
+          {% include '_components/calendar-entry.html'%}
+          {% include '_components/calendar-entry.html'%}
+          <a href="#" class="btn btn--nacac-blue">View Full Calendar</a>
+        </div>
+      </section>
+    </div>
+  </article>
+  <article class="article__row article--white">
+    <div class="container">
+      {% include './_components/focus-testimonial.html' %}
+    </div>
+  </article>
+  <article class="article__row article--bluegrey">
+    <div class="container">
+      <div class="article__header">
+        <h2>Member Stories</h2>
+      </div>
+      <div class="article__row row">
+        {% include './_components/testimonial-block.html' %}
+        {% include './_components/testimonial-block.html' %}
+        {% include './_components/testimonial-block.html' %}
+      </div>
+    </div>
+  </article>
+  {% include './_components/full-block-row.html'%} #} {% include './_shared/footer.html'%}
 </main>
 
 {% endblock %}

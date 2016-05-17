@@ -41,6 +41,29 @@ webpackJsonp([2],[
 		var setTime = getClock.getAttribute('data-deadline');
 		(0, _modulesCountdownClock2['default'])('countdown-clock', setTime);
 	}
+	
+	$('#lightSlider').lightSlider({
+		item: 4,
+		loop: false,
+		slideMove: 4,
+		pager: false,
+		easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+		speed: 600,
+		responsive: [{
+			breakpoint: 800,
+			settings: {
+				item: 3,
+				slideMove: 1,
+				slideMargin: 6
+			}
+		}, {
+			breakpoint: 480,
+			settings: {
+				item: 2,
+				slideMove: 1
+			}
+		}]
+	});
 
 /***/ },
 /* 12 */
@@ -115,16 +138,21 @@ webpackJsonp([2],[
 	// FUNCTION
 	var asideNavigation = function asideNavigation() {
 		var asideNavigation = $(".aside-navigation"),
-		   
-		// Includes 180px utility nav + breadcrumb height offset; These are fixed
-		bottomOfNavigation = $(window).scrollTop() + 120,
-		    asideNavigationContainerHeight = $(".aside-navigation__row").height(),
-		   
-		// 170 off set
-		interiorHeroHeight = $(".hero__wrapper").height() + $(".interior-hero__breadcrumb").height() + 220,
-		   
-		// 40 is for its margins
-		asideNavigationLocation = asideNavigation.offset().top;
+		    asideNavigationHeight = $(".aside-navigation").height(),
+		    asideNavigationContainerHeight = $(".aside-navigation__row").height();
+	
+		if ($('.hero__wrapper').length === 0) {
+			var interiorHeroHeight = 180,
+			   
+			// 340 is 180px form top +
+			asideNavigationLocation = asideNavigation.offset().top + asideNavigationHeight,
+			    bottomOfNavigation = $(window).scrollTop() + 120;
+		} else {
+			var interiorHeroHeight = $(".hero__wrapper").height() + $(".interior-hero__breadcrumb").height() + 220,
+			    asideNavigationLocation = asideNavigation.offset().top,
+			    bottomOfNavigation = $(window).scrollTop() + 120;
+		}
+	
 		if (bottomOfNavigation > interiorHeroHeight) {
 			$('.aside-navigation').addClass('aside-navigation--sticky');
 		}

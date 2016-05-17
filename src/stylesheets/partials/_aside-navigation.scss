@@ -1,5 +1,4 @@
 .aside-navigation {
-	width: 100%;
 	h3 {
 		@include sans-uppercase-normal;
 		// padding: 1rem;
@@ -43,7 +42,12 @@
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 */
 
-@include break(max, $screen-sm-max) {}
+
+@include break(max, $screen-sm-max) {
+	.aside-navigation {
+		width: 100%;
+	}
+}
 
 
 /*
@@ -58,7 +62,7 @@
 
 @include break(min, $screen-md-min) {
 	.aside-navigation {
-		opacity:1;
+		opacity: 1;
 		transition: $transition--opacity;
 		&.aside-navigation--sticky {
 			position: fixed;
@@ -68,6 +72,13 @@
 		&.aside-navigation--hide {
 			opacity: 0;
 			transition: opacity 100ms ease;
-					}
+		}
 	}
 }
+
+@include break(min, $screen-md-min, max, $screen-md-max) {
+	.aside-navigation.aside-navigation--sticky {
+		width: 21.25rem;
+	}
+}
+

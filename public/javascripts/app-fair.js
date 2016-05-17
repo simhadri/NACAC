@@ -82,37 +82,41 @@ webpackJsonp([1],[
 		};
 		var openNavInterior = function openNavInterior(selected) {
 			$('.utility-search__trigger').addClass('pointer--disabled');
-			$('.selected').removeClass('selected');
 			screen.turnScreenOn('soft');
 			body.on('click', clickAnywhereToCloseEverything);
 			var selectedId = selected.attr('data-id');
-			$.ajax({
-				url: '/javascripts/data/interiorNavData_' + selectedId + '.json',
-				dataType: 'json',
-				cache: true,
-				success: function success(data) {
-					selected.next().empty();
-					for (var i = 0; i < data.length; i++) {
-						if (data[i].type !== null && data[i].type === 'link') {
-							selected.next().append('<li>' + '<a href="' + data[i].content + '">' + data[i].name + '</a>' + '</li>');
-						}
-						if (data[i].type !== null && data[i].type === 'link_set') {
-							selected.next().append('<li>' + '<h4>' + data[i].name + '</h4>' + '<ul id="interior__links_' + i + '" class="interior__links"></ul>' + '</li>');
-							for (var n = 0; n < data[i].content.length; n++) {
-								$('#interior__links_' + [i]).append('<li><a href=' + data[i].content[n].url + '>' + data[i].content[n].text + '</a></li>');
+			if (!selected.parent().hasClass('selected')) {
+				$.ajax({
+					url: '/javascripts/data/interiorNavData_' + selectedId + '.json',
+					dataType: 'json',
+					cache: true,
+					success: function success(data) {
+						selected.next().empty();
+						for (var i = 0; i < data.length; i++) {
+							if (data[i].type !== null && data[i].type === 'link') {
+								selected.next().append('<li>' + '<a href="' + data[i].content + '">' + data[i].name + '</a>' + '</li>');
+							}
+							if (data[i].type !== null && data[i].type === 'link_set') {
+								selected.next().append('<li>' + '<h4>' + data[i].name + '</h4>' + '<ul id="interior__links_' + i + '" class="interior__links"></ul>' + '</li>');
+								for (var n = 0; n < data[i].content.length; n++) {
+									$('#interior__links_' + [i]).append('<li><a href=' + data[i].content[n].url + '>' + data[i].content[n].text + '</a></li>');
+								}
+							}
+							if (data[i].type !== null && data[i].type === 'feature') {
+								selected.next().append('<li class="nav__feature">' + '<h4>' + data[i].name + '</h4>' + '<img src="' + data[i].content.url + '"/>' + '<p>' + data[i].content.text + '</p>' + '</li>');
 							}
 						}
-						if (data[i].type !== null && data[i].type === 'feature') {
-							selected.next().append('<li class="nav__feature">' + '<h4>' + data[i].name + '</h4>' + '<img src="' + data[i].content.url + '"/>' + '<p>' + data[i].content.text + '</p>' + '</li>');
-						}
 					}
-				}
-			});
-			setTimeout(function () {
-				selected.parent().addClass('selected');
-			}, 200);
+				});
+				$('.selected').removeClass('selected');
+				setTimeout(function () {
+					selected.parent().addClass('selected');
+				}, 200);
 	
-			selected.next().addClass('nav__menu--visible');
+				selected.next().addClass('nav__menu--visible');
+			} else {
+				$('.selected').removeClass('selected');
+			}
 		};
 	
 		function clickAnywhereToCloseEverything(event) {
@@ -409,6 +413,17 @@ webpackJsonp([1],[
 	} else {
 		show();
 	}
+	// shadow animation
+	$('.tab__navigation').scroll(function () {
+		// var fullTabsWidth =
+		var totalWidth = $('.tab__button').length * $('.tab__button').outerWidth(),
+		    scrollLocation = $(this).scrollLeft() + $(this).width();
+		if (scrollLocation <= totalWidth - $('.tab__button').outerWidth()) {
+			$('.tab__block').removeClass('no--shadow');
+		} else {
+			$('.tab__block').addClass('no--shadow');
+		}
+	});
 
 /***/ },
 /* 9 */

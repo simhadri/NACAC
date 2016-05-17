@@ -2,7 +2,7 @@
  {% set pageLocation = "Newsroom" %}
  {% block content %}
 
-<main id="main" class="membership__template interior__template">
+<main>
 	
 	{% include './_shared/utility.html'%}
 
@@ -17,16 +17,17 @@
 			{% include './_components/breadcrumb.html' %}
 			
 			<div class="row aside-navigation__row">
-				<div class="col-lg-3 col-md-4">
+				<div class="col-md-3">
 					{% include './_shared/aside-navigation.html'%}
 				</div>
-				<div class="col-lg-9 col-md-8">
+				<div class="col-md-9">
 					<section class="section__row">
 						<div class="row">
 							<div class="col-sm-6 col--border">
 								<header class="section__header">
 									<h2>Related Events &amp; Training</h2>
 								</header>
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %}
 								{% include './_components/figure-block.html'%}
 								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
 							</div>
@@ -97,14 +98,41 @@
 							</div>
 						</div>
 					</section>
+					<section class="section__row tweet-deck__row">
+						<header class="article__header">
+							<h2>#Nacac Fairs on <span>Twitter</span></h2>
+						</header>
+						<div class="tweet-deck">
+							{% include './_components/tweet.html'%}
+
+							{% include './_components/tweet.html'%}
+
+							{% include './_components/tweet.html'%}
+
+							{% include './_components/tweet.html'%}
+
+							{% include './_components/tweet.html'%}
+
+							{% include './_components/tweet.html'%}
+						</div>
+					</section>
 					<section class="section__row">
 						<header class="section__header">
 							<h2>Related Content</h2>
 						</header>
 						<div class="row">
-							<div class="flexbox__column col-md-4">{% include './_components/figure-block.html'%}</div>
-							<div class="flexbox__column col-md-4">{% include './_components/figure-block.html'%}</div>
-							<div class="flexbox__column col-md-4">{% include './_components/figure-block.html'%}</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Calls for Proposals", image: "shared/figure-speaker"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Training", image: "shared/figure-students"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
 						</div>
 					</section>
 				</div>

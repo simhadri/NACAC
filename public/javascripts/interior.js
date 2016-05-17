@@ -33,16 +33,21 @@ webpackJsonp([3],[
 	// FUNCTION
 	var asideNavigation = function asideNavigation() {
 		var asideNavigation = $(".aside-navigation"),
-		   
-		// Includes 180px utility nav + breadcrumb height offset; These are fixed
-		bottomOfNavigation = $(window).scrollTop() + 120,
-		    asideNavigationContainerHeight = $(".aside-navigation__row").height(),
-		   
-		// 170 off set
-		interiorHeroHeight = $(".hero__wrapper").height() + $(".interior-hero__breadcrumb").height() + 220,
-		   
-		// 40 is for its margins
-		asideNavigationLocation = asideNavigation.offset().top;
+		    asideNavigationHeight = $(".aside-navigation").height(),
+		    asideNavigationContainerHeight = $(".aside-navigation__row").height();
+	
+		if ($('.hero__wrapper').length === 0) {
+			var interiorHeroHeight = 180,
+			   
+			// 340 is 180px form top +
+			asideNavigationLocation = asideNavigation.offset().top + asideNavigationHeight,
+			    bottomOfNavigation = $(window).scrollTop() + 120;
+		} else {
+			var interiorHeroHeight = $(".hero__wrapper").height() + $(".interior-hero__breadcrumb").height() + 220,
+			    asideNavigationLocation = asideNavigation.offset().top,
+			    bottomOfNavigation = $(window).scrollTop() + 120;
+		}
+	
 		if (bottomOfNavigation > interiorHeroHeight) {
 			$('.aside-navigation').addClass('aside-navigation--sticky');
 		}
@@ -76,6 +81,8 @@ webpackJsonp([3],[
 	
 	__webpack_require__(15);
 	
+	__webpack_require__(16);
+	
 	var _modulesThrottledJs = __webpack_require__(5);
 	
 	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
@@ -84,7 +91,7 @@ webpackJsonp([3],[
 	//    Vendor Scirpts
 	// *********************
 	
-	var _vendorCountUpJs = __webpack_require__(16);
+	var _vendorCountUpJs = __webpack_require__(17);
 	
 	var _vendorCountUpJs2 = _interopRequireDefault(_vendorCountUpJs);
 	
@@ -124,16 +131,69 @@ webpackJsonp([3],[
 
 /***/ },
 /* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// MODULES
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _modulesThrottledJs = __webpack_require__(5);
+	
+	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
+	
+	// FUNCTION
+	var backTop = function backTop() {
+		this.addBackTop = function () {
+			if (!document.getElementById('back-top')) {
+				(function () {
+					var backTop = document.createElement('div'),
+					    mainElement = document.getElementsByTagName('main')[0];
+					mainElement.appendChild(backTop);
+					backTop.setAttribute('id', 'back-top');
+					backTop.setAttribute('class', 'back-top');
+					backTop.innerHTML = '<i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i><span>Back to Top</span>';
+					setTimeout(function () {
+						backTop.classList.add('back-top--scrolled');
+						backTop.addEventListener('click', scrolltoTop);
+					}, 10);
+				})();
+			}
+		}, this.removeBackTop = function () {
+			if (document.getElementById('back-top')) {
+				document.getElementById('back-top').remove();
+			}
+		};
+	};
+	var scrolltoTop = function scrolltoTop() {
+		$('html, body').animate({ scrollTop: 0 });
+	};
+	
+	var backTopScroll = function backTopScroll() {
+		var bt = new backTop(),
+		    windowHeight = $(window).height(),
+		    top = $(window).scrollTop();
+		if (top > windowHeight) {
+			bt.addBackTop();
+		} else {
+			bt.removeBackTop();
+		}
+	};
+	
+	$(window).scroll((0, _modulesThrottledJs2['default'])(backTopScroll, 100));
+	$('.back-top').on('click', function () {
+		$('html, body').animate({ scrollTop: 0 });
+	});
+
+/***/ },
+/* 17 */
 /***/ function(module, exports) {
 
 	/*
-	
 	    countUp.js
 	    (c) 2014-2015 @inorganik
 	    Licensed under the MIT license.
-	
 	*/
-	
 	// target = id of html element or var of previously selected html element where counting occurs
 	// startVal = the value you want to begin at
 	// endVal = the value you want to arrive at
@@ -144,7 +204,6 @@ webpackJsonp([3],[
 	'use strict';
 	
 	var CountUp = function CountUp(target, startVal, endVal, decimals, duration, options) {
-	
 	    // make sure requestAnimationFrame and cancelAnimationFrame are defined
 	    // polyfill for browsers without native support
 	    // by Opera engineer Erik Möller
@@ -267,37 +326,6 @@ webpackJsonp([3],[
 	        self.callback = callback;
 	        self.rAF = requestAnimationFrame(self.count);
 	        return false;
-	    };
-	    // toggles pause/resume animation
-	    this.pauseResume = function () {
-	        if (!self.paused) {
-	            self.paused = true;
-	            cancelAnimationFrame(self.rAF);
-	        } else {
-	            self.paused = false;
-	            delete self.startTime;
-	            self.duration = self.remaining;
-	            self.startVal = self.frameVal;
-	            requestAnimationFrame(self.count);
-	        }
-	    };
-	    // reset to startVal so animation can be run again
-	    this.reset = function () {
-	        self.paused = false;
-	        delete self.startTime;
-	        self.startVal = startVal;
-	        cancelAnimationFrame(self.rAF);
-	        self.printValue(self.startVal);
-	    };
-	    // pass a new endVal and start animation
-	    this.update = function (newEndVal) {
-	        cancelAnimationFrame(self.rAF);
-	        self.paused = false;
-	        delete self.startTime;
-	        self.startVal = self.frameVal;
-	        self.endVal = Number(newEndVal);
-	        self.countDown = self.startVal > self.endVal;
-	        self.rAF = requestAnimationFrame(self.count);
 	    };
 	    this.formatNumber = function (nStr) {
 	        nStr = nStr.toFixed(self.decimals);

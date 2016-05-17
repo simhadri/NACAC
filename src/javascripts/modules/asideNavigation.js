@@ -2,16 +2,23 @@
 import Throttled from 'modules/throttled.js';
 
 // FUNCTION
-var asideNavigation = function() {
+const asideNavigation = function() {
 	var asideNavigation = $(".aside-navigation"),
-		// Includes 180px utility nav + breadcrumb height offset; These are fixed
-		bottomOfNavigation = $(window).scrollTop() + 120,
-		asideNavigationContainerHeight = $(".aside-navigation__row").height(),
-		// 170 off set
-		interiorHeroHeight = $(".hero__wrapper").height() +$(".interior-hero__breadcrumb").height() + 220,
-		// 40 is for its margins
-		asideNavigationLocation = asideNavigation.offset().top;
-	if (bottomOfNavigation >  interiorHeroHeight) {
+		asideNavigationHeight = $(".aside-navigation").height(),
+		asideNavigationContainerHeight = $(".aside-navigation__row").height();
+
+		if ($('.hero__wrapper').length === 0){
+			var interiorHeroHeight = 180,
+			// 340 is 180px form top + 
+				asideNavigationLocation = asideNavigation.offset().top + asideNavigationHeight,
+				bottomOfNavigation = $(window).scrollTop() + 120;
+		} else{
+			var interiorHeroHeight = $(".hero__wrapper").height() +$(".interior-hero__breadcrumb").height() + 220,
+				asideNavigationLocation = asideNavigation.offset().top,
+				bottomOfNavigation = $(window).scrollTop() + 120;
+		}
+
+	if (bottomOfNavigation > interiorHeroHeight) {
 		$('.aside-navigation').addClass('aside-navigation--sticky')
 	}
 	if (bottomOfNavigation < interiorHeroHeight) {

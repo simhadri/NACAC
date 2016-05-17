@@ -1,11 +1,8 @@
 /*
-
     countUp.js
     (c) 2014-2015 @inorganik
     Licensed under the MIT license.
-
 */
-
 // target = id of html element or var of previously selected html element where counting occurs
 // startVal = the value you want to begin at
 // endVal = the value you want to arrive at
@@ -14,7 +11,6 @@
 // options = optional object of options (see below)
 
 var CountUp = function(target, startVal, endVal, decimals, duration, options) {
-
     // make sure requestAnimationFrame and cancelAnimationFrame are defined
     // polyfill for browsers without native support
     // by Opera engineer Erik Möller
@@ -137,37 +133,6 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
         self.callback = callback;
         self.rAF = requestAnimationFrame(self.count);
         return false;
-    };
-    // toggles pause/resume animation
-    this.pauseResume = function() {
-        if (!self.paused) {
-            self.paused = true;
-            cancelAnimationFrame(self.rAF);
-        } else {
-            self.paused = false;
-            delete self.startTime;
-            self.duration = self.remaining;
-            self.startVal = self.frameVal;
-            requestAnimationFrame(self.count);
-        }
-    };
-    // reset to startVal so animation can be run again
-    this.reset = function() {
-        self.paused = false;
-        delete self.startTime;
-        self.startVal = startVal;
-        cancelAnimationFrame(self.rAF);
-        self.printValue(self.startVal);
-    };
-    // pass a new endVal and start animation
-    this.update = function (newEndVal) {
-        cancelAnimationFrame(self.rAF);
-        self.paused = false;
-        delete self.startTime;
-        self.startVal = self.frameVal;
-        self.endVal = Number(newEndVal);
-        self.countDown = (self.startVal > self.endVal);
-        self.rAF = requestAnimationFrame(self.count);
     };
     this.formatNumber = function(nStr) {
         nStr = nStr.toFixed(self.decimals);

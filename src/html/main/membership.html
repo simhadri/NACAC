@@ -2,7 +2,7 @@
  {% set pageLocation = "Membership Overview" %}
  {% block content %}
 
-<main id="main" class="membership__template interior__template">
+<main>
 	
 	{% include './_shared/utility.html'%}
 
@@ -14,14 +14,12 @@
 	
 	<article class="article__row content__row article--white">
 		<div class="container">
-
-
-		{% include './_components/breadcrumb.html' %}
+			{% include './_components/breadcrumb.html' %}
 			<div class="row aside-navigation__row">
-				<div class="col-lg-3 col-md-4">
+				<div class="col-md-3">
 					{% include './_shared/aside-navigation.html'%}
 				</div>
-				<div class="col-lg-9 col-md-8">
+				<div class="col-md-9">
 					<section class="card-block__row section__row">
 						<header class="section__header">
 							<h2>Membership Benefits</h2>
@@ -29,15 +27,14 @@
 						</header>
 						<div class="row">
 						
-							{% set button = false %}
+							{% set cardBlock = { heading: "National Conference", image: "shared/card-national", button: false } %}
 							{% include './_components/card-block.html'%}
 							
-							{% set button = false %}
+							{% set cardBlock = { heading: "Personal Developement", image: "shared/card-stem", button: false } %}
 							{% include './_components/card-block.html'%}
 							
-							{% set button = false %}
+							{% set cardBlock = { heading: "Publications", image: "shared/card-performing", button: false } %}
 							{% include './_components/card-block.html'%}
-							
 						</div>
 						<a href="#" class="btn btn--nacac-blue btn--centered">Become a Member</a>
 					</section>

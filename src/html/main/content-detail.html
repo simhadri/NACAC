@@ -1,0 +1,68 @@
+ {% extends '_layouts/main-application.html' %}
+ {% set pageLocation = "Content Detail" %}
+ {% block content %}
+<main>
+	{% set className = "utility-nav--blue" %}
+	{% include './_shared/utility.html'%}
+	{% set className = "primary-nav--inanimate primary-nav--blue" %}
+	{% include './_shared/navigation.html'%}
+	<article class="article__row article--white hero--none aside-navigation__row">
+		<div class="container">
+			{% include './_components/breadcrumb.html' %}
+			<div class="row">
+				<div class="col-md-3">
+					{% include './_shared/aside-navigation.html'%}
+				</div>
+				<div class="col-md-9 content-detail">
+					<section class="section__row">
+						<header class="content-detail__header">
+							<h2>Sample Content Title</h2>
+							<span class="content-detail__cite">
+								<p>By Author Name</p>
+								<p>April 19, 2016</p>
+							</span>
+						</header>
+						<div class="content-detail__block">
+							<p>Lorem ipsum Ut elit et adipisicing ut ullamco deserunt irure id quis aliqua dolor minim proident exercitation ea adipisicing laboris consectetur ea sint sunt culpa adipisicing aliqua.</p>
+							<img src="/images/shared/figure-students.jpg" class="image--right" alt="">
+							<h3>Lorem ipsum Minim ullamco proident</h3>
+							<p>Lorem ipsum Sed quis irure quis fugiat sint et et culpa enim voluptate Excepteur eu dolor consectetur magna Excepteur quis elit consequat occaecat ullamco irure.</p>
+							<p>Lorem ipsum Reprehenderit non Ut ullamco labore in pariatur consectetur aute in do aute labore Duis aliqua occaecat sint aliqua ut esse aute non Duis dolor voluptate nulla sunt magna deserunt nulla occaecat adipisicing esse ad Ut reprehenderit irure dolore commodo dolor aliquip proident deserunt aute occaecat Duis dolore enim dolor qui ad aliquip consectetur adipisicing ea voluptate mollit nisi aliqua deserunt sed Excepteur irure proident ut occaecat dolor irure ea nulla aliqua dolore commodo quis laboris id magna ad proident culpa officia non consequat labore occaecat do mollit aute ut esse veniam anim ex dolore eu amet enim.</p>
+							<img src="/images/shared/figure-students.jpg" class="image--left" alt="">
+							<p>Id occaecat id irure est nulla adipisicing est commodo fugiat et ad veniam id enim nulla quis in aliqua consequat ullamco esse tempor voluptate amet commodo Duis nostrud qui dolor incididunt Duis proident deserunt qui anim consectetur Excepteur cupidatat Ut deserunt id aliquip aliquip occaecat Ut et aliqua anim mollit labore sunt velit ullamco nisi mollit dolor sit id in Duis nulla reprehenderit adipisicing dolore nulla Excepteur irure in do Ut in commodo laboris minim qui ea officia ex id proident quis anim Excepteur cupidatat fugiat in dolor velit ut in eu minim Ut deserunt sint nostrud elit eiusmod eu amet adipisicing ullamco velit dolor incididunt cillum anim tempor laborum nostrud cillum culpa ad minim pariatur Ut minim consectetur Excepteur in tempor non dolore consectetur dolor enim cillum ut magna aliqua amet voluptate ullamco occaecat cupidatat exercitation minim incididunt adipisicing sit ut ex occaecat occaecat consequat tempor magna ullamco enim dolor anim quis.</p>
+						</div>
+					</section>
+					<section class="section__row section__row--no-border">
+						
+						{% include '_shared/accordion.html' %}
+
+					</section>
+					<section class="section__row">
+						<header class="section__header">
+							<h2>Related Events &amp; Training</h2>
+						</header>
+						<div class="row">
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Calls for Proposals", image: "shared/figure-speaker"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Training", image: "shared/figure-students"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</article>
+	{% include './_shared/footer.html'%}
+</main>
+{% endblock %}
+{% block javascript %}
+<script src="/javascripts/interior.js"></script>
+{% endblock %}

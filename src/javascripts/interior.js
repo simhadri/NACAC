@@ -4,6 +4,7 @@
 
 import 'modules/asideNavigation';
 import 'modules/accordion';
+import 'modules/backTop';
 import Throttled from 'modules/throttled.js';
 
 // *********************

@@ -2,7 +2,7 @@
  {% set pageLocation = "News & Publications" %}
  {% block content %}
 
-<main id="main" class="membership__template interior__template">
+<main>
 	
 	{% include './_shared/utility.html'%}
 
@@ -17,21 +17,22 @@
 			{% include './_components/breadcrumb.html' %}
 			
 			<div class="row aside-navigation__row">
-				<div class="col-lg-3 col-md-4">
+				<div class="col-md-3">
 					{% include './_shared/aside-navigation.html'%}
 				</div>
-				<div class="col-lg-9 col-md-8">
+				<div class="col-md-9">
 					<section class="card-block__row section__row">
 						<div class="row">
 						
-								{% set button = true %}
-								{% include './_components/card-block.html'%}
-								
-								{% set button = true %}
-								{% include './_components/card-block.html'%}
-								
-								{% set button = true %}
-								{% include './_components/card-block.html'%}
+							
+							{% set colorBlock = { className: "color-block--half", heading: "Calls for Proposals", image: "shared/color-block-bg-orange.jpg"} %}
+							{% include './_components/color-block.html'%}
+					
+							{% set colorBlock = { className: "color-block--half", heading: "Calls for Proposals", image: "shared/color-block-bg-blue.jpg"} %}
+							{% include './_components/color-block.html'%}
+					
+							{% set colorBlock = { className: "color-block--full", heading: "Calls for Proposals", image: "shared/color-block-bg-green.jpg"} %}
+							{% include './_components/color-block.html'%}
 								
 						</div>
 					</section>
@@ -41,6 +42,7 @@
 								<header class="section__header">
 									<h2>Related Events &amp; Training</h2>
 								</header>
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career", member: true} %}
 								{% include './_components/figure-block.html'%}
 								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
 							</div>
@@ -69,9 +71,18 @@
 							<h2>Related Events &amp; Training</h2>
 						</header>
 						<div class="row">
-							<div class="col-md-4">{% include './_components/figure-block.html'%}</div>
-							<div class="col-md-4">{% include './_components/figure-block.html'%}</div>
-							<div class="col-md-4">{% include './_components/figure-block.html'%}</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Calls for Proposals", image: "shared/figure-speaker"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Training", image: "shared/figure-students"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
 						</div>
 					</section>
 				</div>
@@ -80,6 +91,7 @@
 	</article>
 	{% set addedClassNames = 'article--top-border' %}
 	{% include './_components/full-block-row.html' %}
+	
 	{% include './_shared/footer.html'%}
 </main>
 {% endblock %}
