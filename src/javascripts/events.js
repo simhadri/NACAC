@@ -5,7 +5,7 @@
 // *********************
 //    Modules scripts
 // *********************
-import initializeClock from 'modules/countdownClock';
+import initializeClock from 'lib/countdownClock';
 import 'modules/asideNavigation';
 
 var getClock = document.getElementById('countdown-clock');
