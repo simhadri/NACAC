@@ -53,32 +53,30 @@
 		left: 0;
 		right: inherit;
 		padding: 3rem;
-		
 	}
-	&.color-block--full{
+	&.color-block--full {
 		width: 100%;
-		.color-block__content{
+		.color-block__content {
 			text-align: center;
-			.color-block__feature{
-				display:inline;
+			.color-block__feature {
+				display: inline;
 			}
-			img.color-block__image{
+			img.color-block__image {
 				left: 0;
 			}
 		}
-		
 	}
 	&.color-block--wide .color-block__content {
-			@include break(min, $screen-sm-min) {
-				width: $container-sm-half;
-			}
-			@include break(min, $screen-md-min) {
-				width: $container-md-half;
-			}
-			@include break(min, $screen-lg-min) {
-				width: $container-lg-half;
-			}
+		@include break(min, $screen-sm-min) {
+			width: $container-sm-half;
 		}
+		@include break(min, $screen-md-min) {
+			width: $container-md-half;
+		}
+		@include break(min, $screen-lg-min) {
+			width: $container-lg-half;
+		}
+	}
 }
 
 // Card-block
@@ -157,7 +155,7 @@
 
 .card-block__footer {
 	padding: 0 2rem 2rem;
-	a.btn{
+	a.btn {
 		display: inline-block;
 	}
 }
@@ -227,28 +225,27 @@
 }
 
 // added for fairs homepage
-.section__row.fairs-infographic {
+.article__row.fairs-infographic {
 	padding-top: 8rem;
 	padding-bottom: 10rem;
 	color: #fff;
 	background: url(/images/fair/numbers-bg.jpg) no-repeat 50% 50%;
-  background-size: cover;
-  .number-block {
-  	.number-block__numerals {
+	background-size: cover;
+	.number-block {
+		.number-block__numerals {
 			color: #fff;
 			&:after {
 				border-color: #fff;
 			}
-  	}
-  	.number-block-block__text {
-  		p {
+		}
+		.number-block-block__text {
+			p {
 				font-size: 1.8rem;
 				line-height: 1.5;
-  		}
-  	}
-  }
+			}
+		}
+	}
 }
-
 
 .figure-block {
 	margin: 0;
@@ -276,7 +273,6 @@
 	}
 }
 
-
 .block--dynamic {
 	display: flex;
 	flex-direction: column;
@@ -302,7 +298,8 @@
 */
 
 @include break(max, $screen-sm-max) {
-	.color-block--wide, .color-block--half {
+	.color-block--wide,
+	.color-block--half {
 		width: 100%;
 		float: none;
 	}

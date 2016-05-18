@@ -26,7 +26,7 @@ webpackJsonp([3],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 	
-	var _libThrottledJs = __webpack_require__(21);
+	var _libThrottledJs = __webpack_require__(5);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
@@ -84,7 +84,7 @@ webpackJsonp([3],[
 	
 	__webpack_require__(17);
 	
-	__webpack_require__(19);
+	__webpack_require__(18);
 
 /***/ },
 /* 15 */
@@ -116,7 +116,7 @@ webpackJsonp([3],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libThrottledJs = __webpack_require__(21);
+	var _libThrottledJs = __webpack_require__(5);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
@@ -195,19 +195,18 @@ webpackJsonp([3],[
 	}
 
 /***/ },
-/* 18 */,
-/* 19 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libThrottledJs = __webpack_require__(21);
+	var _libThrottledJs = __webpack_require__(5);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
-	var _libCountUpJs = __webpack_require__(20);
+	var _libCountUpJs = __webpack_require__(19);
 	
 	var _libCountUpJs2 = _interopRequireDefault(_libCountUpJs);
 	
@@ -222,7 +221,7 @@ webpackJsonp([3],[
 	$(window).scroll((0, _libThrottledJs2['default'])(countCard, 100));
 
 /***/ },
-/* 20 */
+/* 19 */
 /***/ function(module, exports) {
 
 	/*

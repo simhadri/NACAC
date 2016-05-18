@@ -12,6 +12,7 @@ import Screen from 'lib/screen.js';
 		body = $('body'),
 		navItemLinks = $('.primary-nav--children'),
 		browserViewport = $(window).height() - 70,
+		isOpen = 0,
 		filterOpen = $('.btn__filter-menu');
 
 	var openMobileNav = function() {
@@ -149,10 +150,12 @@ import Screen from 'lib/screen.js';
 	}
 
 	navTrigger.on("click", function() {
-		if ($('.trigger__icon').hasClass('trigger--x')) {
+		if (isOpen === 1) {
 			closeMobileNav();
+			isOpen = 0;
 		} else {
 			openMobileNav();
+			isOpen = 1;
 		}
 
 	});

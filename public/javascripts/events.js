@@ -1,14 +1,22 @@
-webpackJsonp([2],{
-
-/***/ 0:
+webpackJsonp([2],[
+/* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__(11);
 
 
 /***/ },
-
-/***/ 11:
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// *********************
@@ -22,7 +30,7 @@ webpackJsonp([2],{
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libCountdownClock = __webpack_require__(22);
+	var _libCountdownClock = __webpack_require__(12);
 	
 	var _libCountdownClock2 = _interopRequireDefault(_libCountdownClock);
 	
@@ -58,59 +66,7 @@ webpackJsonp([2],{
 	});
 
 /***/ },
-
-/***/ 13:
-/***/ function(module, exports, __webpack_require__) {
-
-	// MODULES
-	"use strict";
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-	
-	var _libThrottledJs = __webpack_require__(21);
-	
-	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
-	
-	// FUNCTION
-	var asideNavigation = function asideNavigation() {
-		var asideNavigation = $(".aside-navigation"),
-		    asideNavigationHeight = $(".aside-navigation").height(),
-		    asideNavigationContainerHeight = $(".aside-navigation__row").height();
-	
-		if ($('.hero__wrapper').length === 0) {
-			var interiorHeroHeight = 180,
-			   
-			// 340 is 180px form top +
-			asideNavigationLocation = asideNavigation.offset().top + asideNavigationHeight,
-			    bottomOfNavigation = $(window).scrollTop() + 120;
-		} else {
-			var interiorHeroHeight = $(".hero__wrapper").height() + $(".interior-hero__breadcrumb").height() + 220,
-			    asideNavigationLocation = asideNavigation.offset().top,
-			    bottomOfNavigation = $(window).scrollTop() + 120;
-		}
-	
-		if (bottomOfNavigation > interiorHeroHeight) {
-			$('.aside-navigation').addClass('aside-navigation--sticky');
-		}
-		if (bottomOfNavigation < interiorHeroHeight) {
-			$('.aside-navigation').removeClass('aside-navigation--sticky');
-		}
-		// if location of aside-nav less its size
-		// is greater than tge aside-navs container; hide
-		if (asideNavigationLocation > asideNavigationContainerHeight) {
-			$('.aside-navigation').addClass("aside-navigation--hide");
-		} else {
-			$('.aside-navigation').removeClass("aside-navigation--hide");
-		}
-	};
-	if ($(".aside-navigation").length !== 0) {
-		asideNavigation();
-		$(window).scroll((0, _libThrottledJs2["default"])(asideNavigation, 20));
-	}
-
-/***/ },
-
-/***/ 22:
+/* 12 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -166,7 +122,56 @@ webpackJsonp([2],{
 	};
 	module.exports = initializeClock;
 
-/***/ }
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
 
-});
+	// MODULES
+	"use strict";
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	var _libThrottledJs = __webpack_require__(5);
+	
+	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
+	
+	// FUNCTION
+	var asideNavigation = function asideNavigation() {
+		var asideNavigation = $(".aside-navigation"),
+		    asideNavigationHeight = $(".aside-navigation").height(),
+		    asideNavigationContainerHeight = $(".aside-navigation__row").height();
+	
+		if ($('.hero__wrapper').length === 0) {
+			var interiorHeroHeight = 180,
+			   
+			// 340 is 180px form top +
+			asideNavigationLocation = asideNavigation.offset().top + asideNavigationHeight,
+			    bottomOfNavigation = $(window).scrollTop() + 120;
+		} else {
+			var interiorHeroHeight = $(".hero__wrapper").height() + $(".interior-hero__breadcrumb").height() + 220,
+			    asideNavigationLocation = asideNavigation.offset().top,
+			    bottomOfNavigation = $(window).scrollTop() + 120;
+		}
+	
+		if (bottomOfNavigation > interiorHeroHeight) {
+			$('.aside-navigation').addClass('aside-navigation--sticky');
+		}
+		if (bottomOfNavigation < interiorHeroHeight) {
+			$('.aside-navigation').removeClass('aside-navigation--sticky');
+		}
+		// if location of aside-nav less its size
+		// is greater than tge aside-navs container; hide
+		if (asideNavigationLocation > asideNavigationContainerHeight) {
+			$('.aside-navigation').addClass("aside-navigation--hide");
+		} else {
+			$('.aside-navigation').removeClass("aside-navigation--hide");
+		}
+	};
+	if ($(".aside-navigation").length !== 0) {
+		asideNavigation();
+		$(window).scroll((0, _libThrottledJs2["default"])(asideNavigation, 20));
+	}
+
+/***/ }
+]);
 //# sourceMappingURL=events.js.map
