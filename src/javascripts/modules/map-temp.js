@@ -27,6 +27,7 @@ $(window).load(function() {
     scrollwheel: false,
     // center: new google.maps.LatLng(39.8282, -98.5795),
     center: new google.maps.LatLng(41.345783, -114.352139),
+    scrollwheel: false,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
   var infowindow = new google.maps.InfoWindow();

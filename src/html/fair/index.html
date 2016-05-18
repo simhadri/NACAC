@@ -15,7 +15,7 @@
         <p><span class="text-uppercase">Free</span> and <span class="text-uppercase">open</span> to the <span class="text-uppercase">public</span>, there are several types of fairs to help you find your perfect fit!</p>
       </header>
       <section class="card-block__row">
-        <div class="flexbox__row row">
+        <div class="row">
           {% set cardBlock = { heading: "National College Fairs", image: "shared/card-national", button: true } %}
           {% include './_components/card-block.html'%}
           {% set cardBlock = { heading: "Performing and Visual Arts College Fairs", image: "shared/card-performing", button: true } %}
@@ -136,30 +136,22 @@
     </div>
   </article>
 
-	<section class="section__row fairs-infographic">
-		<header class="section__header">
+	<article class="article__row fairs-infographic">
+		<header class="article__header">
 			<h2>Membership Benefits</h2>
-		</header>
-    <div class="container">
-  		<div class="row">
-  			<div class="col-md-4">
-  				{% set number = 8 %}
-  				{% set inc = 1 %}
-  				{% include './_components/number-block.html' %}
-  			</div>
-  			<div class="col-md-4">
-  				{% set number = 25 %}
-  				{% set inc = 2 %}
-  				{% include './_components/number-block.html' %}
-  			</div>
-  			<div class="col-md-4">
-  				{% set number = 13000 %}
-  				{% set inc = 3 %}
-  				{% include './_components/number-block.html' %}
-  			</div>
+    </header>
+		<div class="container">
+      <div class="row">
+        {% set numbers = [8,35,13000] %}
+        {% for i in numbers %}
+        <div class="col-md">
+          {% set number = i %}
+          {% include './_components/number-block.html' %}
+        </div>
+        {% endfor %}
       </div>
-		</div>
-	</section>
+    </div>
+	</article>
 	<article class="article__row article--bluegrey">
     <div class="announcement__header">
       <div class="container">

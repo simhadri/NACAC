@@ -1,17 +1,12 @@
  {% extends '_layouts/main-application.html' %}
  {% set pageLocation = "Membership Overview" %}
  {% block content %}
-
 <main>
-	
 	{% include './_shared/utility.html'%}
-
 	{% set className = "primary-nav--inanimate" %}
 	{% include './_shared/navigation.html'%}
-
 	{% set heroTitle = "Membership Overview" %}
 	{% include './_shared/interior-hero.html'%}
-	
 	<article class="article__row content__row article--white">
 		<div class="container">
 			{% include './_components/breadcrumb.html' %}
@@ -26,13 +21,10 @@
 							<p>Get involved in the counseling and admission community and stay up-to-date on the industry trends. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</p>
 						</header>
 						<div class="row">
-						
 							{% set cardBlock = { heading: "National Conference", image: "shared/card-national", button: false } %}
 							{% include './_components/card-block.html'%}
-							
 							{% set cardBlock = { heading: "Personal Developement", image: "shared/card-stem", button: false } %}
 							{% include './_components/card-block.html'%}
-							
 							{% set cardBlock = { heading: "Publications", image: "shared/card-performing", button: false } %}
 							{% include './_components/card-block.html'%}
 						</div>
@@ -63,22 +55,13 @@
 							<h2>Membership Benefits</h2>
 						</header>
 						<div class="row">
-
-							<div class="col-md-4">
-								{% set number = 12000  %}
-								{% set inc = 1  %}
+							{% set numbers = [8,35,13000] %}
+							{% for i in numbers %}
+							<div class="col-md">
+								{% set number = i %}
 								{% include './_components/number-block.html' %}
 							</div>
-							<div class="col-md-4">
-								{% set number = 64  %}
-								{% set inc = 2  %}
-								{% include './_components/number-block.html' %}
-							</div>
-							<div class="col-md-4">
-								{% set number = 1138  %}
-								{% set inc = 3  %}
-								{% include './_components/number-block.html' %}
-							</div>
+							{% endfor %}
 						</div>
 					</section>
 					<section class="section__row">
@@ -88,9 +71,7 @@
 						</div>
 						<div class="row">
 							{% include './_components/testimonial-block.html' %}
-							
 							{% include './_components/testimonial-block.html' %}
-							
 							{% include './_components/testimonial-block.html' %}
 						</div>
 					</section>
