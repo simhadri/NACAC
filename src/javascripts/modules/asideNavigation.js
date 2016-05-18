@@ -1,5 +1,5 @@
 // MODULES
-import Throttled from 'modules/throttled.js';
+import Throttled from 'lib/throttled.js';
 
 // FUNCTION
 const asideNavigation = function() {
@@ -32,5 +32,7 @@ const asideNavigation = function() {
 		$('.aside-navigation').removeClass("aside-navigation--hide");
 	}
 }
-asideNavigation();
-$(window).scroll(Throttled(asideNavigation, 20));
+if($(".aside-navigation").length !== 0){
+	asideNavigation();
+	$(window).scroll(Throttled(asideNavigation, 20));
+}

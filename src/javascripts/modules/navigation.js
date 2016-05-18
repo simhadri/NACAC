@@ -1,7 +1,7 @@
 // MODULES
-import HeadStyle from 'modules/headStyle.js';
-import Throttled from 'modules/throttled.js';
-import Screen from 'modules/screen.js';
+import HeadStyle from 'lib/headStyle.js';
+import Throttled from 'lib/throttled.js';
+import Screen from 'lib/screen.js';
 
 (function() {
 	'use strict';
