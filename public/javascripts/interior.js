@@ -91,7 +91,7 @@ webpackJsonp([3],[
 	//    Vendor Scirpts
 	// *********************
 	
-	var _vendorCountUpJs = __webpack_require__(17);
+	var _vendorCountUpJs = __webpack_require__(18);
 	
 	var _vendorCountUpJs2 = _interopRequireDefault(_vendorCountUpJs);
 	
@@ -186,7 +186,8 @@ webpackJsonp([3],[
 	});
 
 /***/ },
-/* 17 */
+/* 17 */,
+/* 18 */
 /***/ function(module, exports) {
 
 	/*

@@ -24,6 +24,7 @@ $(window).load(function() {
   ];
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
+    scrollwheel: false,
     // center: new google.maps.LatLng(39.8282, -98.5795),
     center: new google.maps.LatLng(41.345783, -114.352139),
     mapTypeId: google.maps.MapTypeId.ROADMAP

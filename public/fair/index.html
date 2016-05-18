@@ -118,7 +118,7 @@
 			<li class="utility-nav__item utility-nav-register">
 				<a href="#">
 					<i class="fa fa-check-circle"></i>
-					<span class="hidden-xs">Students</span> Register <span class="hidden-xs">for <span class="text-uppercase">Free</span>
+					<span class="hidden-sm hidden-xs hidden-md">Students</span> Register <span class="hidden-sm hidden-xs hidden-md">for <span class="text-uppercase">Free</span>
 					<i class="fa fa-caret-right"></i></span>
 				</a>
 			</li>
@@ -381,37 +381,39 @@
       <h2>Our NACAC <span class="orange">College Fairs</span></h2>
     </header>
     <div class="container">
-      <div id="map-controls">
-        <div class="row">
-          <div class="col-sm-2 text-right hidden-xs">
-            <h3>Filter College Fairs</h3>
+      <div id="map-wrap">
+        <div id="map-controls">
+          <div class="row">
+            <div class="col-sm-2 text-right hidden-xs">
+              <h3>Filter College Fairs</h3>
+            </div>
+            <div class="col-sm-10 col-xs-12 text-left">
+              <label class="switch-wrap check-fairs">
+                <div class="switch">
+                  <input class="checkbox" id="National College Fairs" name="National College Fairs" type="checkbox" value="National College Fairs">
+                  <span class="slider round"></span>
+                </div>
+                <span class="switch-text">National College Fairs</span>
+              </label>
+              <label class="switch-wrap check-stem">
+                <div class="switch">
+                  <input class="checkbox" id="STEM College and Career Fairs" name="STEM College and Career Fairs" type="checkbox" value="STEM College and Career Fairs">
+                  <span class="slider round"></span>
+                </div>
+                <span class="switch-text">STEM College and Career Fairs</span>
+              </label>
+              <label class="switch-wrap check-performing">
+                <div class="switch">
+                  <input class="checkbox" id="Performing and Visual Arts College Fairs" name="Performing and Visual Arts College Fairs" type="checkbox" value="Performing and Visual Arts College Fairs">
+                  <span class="slider round"></span>
+                </div>
+                <span class="switch-text">Performing and Visual Arts College Fairs</span>
+              </label>
+            </div>
           </div>
-          <div class="col-sm-10 col-xs-12 text-left">
-            <label class="switch-wrap check-fairs">
-              <div class="switch">
-                <input class="checkbox" id="National College Fairs" name="National College Fairs" type="checkbox" value="National College Fairs">
-                <span class="slider round"></span>
-              </div>
-              <span class="switch-text">National College Fairs</span>
-            </label>
-            <label class="switch-wrap check-stem">
-              <div class="switch">
-                <input class="checkbox" id="STEM College and Career Fairs" name="STEM College and Career Fairs" type="checkbox" value="STEM College and Career Fairs">
-                <span class="slider round"></span>
-              </div>
-              <span class="switch-text">STEM College and Career Fairs</span>
-            </label>
-            <label class="switch-wrap check-performing">
-              <div class="switch">
-                <input class="checkbox" id="Performing and Visual Arts College Fairs" name="Performing and Visual Arts College Fairs" type="checkbox" value="Performing and Visual Arts College Fairs">
-                <span class="slider round"></span>
-              </div>
-              <span class="switch-text">Performing and Visual Arts College Fairs</span>
-            </label>
-          </div>
-        </div>
-      </div><!-- #map-controls -->
-      <div id="map"></div>
+        </div><!-- #map-controls -->
+        <div id="map"></div>
+      </div><!-- #map-wrap -->
       <p class="text-center"><a href="" class="btn btn-simple">View All Fairs</a></p>
     </div>
   </article>
@@ -420,40 +422,42 @@
 		<header class="section__header">
 			<h2>Membership Benefits</h2>
 		</header>
-		<div class="row">
-			<div class="col-md-4">
-				
-				
-				<div class="number-block">
+    <div class="container">
+  		<div class="row">
+  			<div class="col-md-4">
+  				
+  				
+  				<div class="number-block">
 	<!-- <span class="number-block__numerals" data-counter="8" id="counter-1"></span> -->
 	<div class="number-block__numerals" id="counter-1" data-counter="8">0</div>
 	<div class="number-block-block__text">
 		<p>Pellentesque habitant morbi tortor quam.</p>
 	</div>
 </div>
-			</div>
-			<div class="col-md-4">
-				
-				
-				<div class="number-block">
-	<!-- <span class="number-block__numerals" data-counter="25" id="counter-1"></span> -->
-	<div class="number-block__numerals" id="counter-1" data-counter="25">0</div>
+  			</div>
+  			<div class="col-md-4">
+  				
+  				
+  				<div class="number-block">
+	<!-- <span class="number-block__numerals" data-counter="25" id="counter-2"></span> -->
+	<div class="number-block__numerals" id="counter-2" data-counter="25">0</div>
 	<div class="number-block-block__text">
 		<p>Pellentesque habitant morbi tortor quam.</p>
 	</div>
 </div>
-			</div>
-			<div class="col-md-4">
-				
-				
-				<div class="number-block">
-	<!-- <span class="number-block__numerals" data-counter="13000" id="counter-20"></span> -->
-	<div class="number-block__numerals" id="counter-20" data-counter="13000">0</div>
+  			</div>
+  			<div class="col-md-4">
+  				
+  				
+  				<div class="number-block">
+	<!-- <span class="number-block__numerals" data-counter="13000" id="counter-3"></span> -->
+	<div class="number-block__numerals" id="counter-3" data-counter="13000">0</div>
 	<div class="number-block-block__text">
 		<p>Pellentesque habitant morbi tortor quam.</p>
 	</div>
 </div>
-			</div>
+  			</div>
+      </div>
 		</div>
 	</section>
 	<article class="article__row article--bluegrey">
