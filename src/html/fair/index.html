@@ -99,37 +99,39 @@
       <h2>Our NACAC <span class="orange">College Fairs</span></h2>
     </header>
     <div class="container">
-      <div id="map-controls">
-        <div class="row">
-          <div class="col-sm-2 text-right hidden-xs">
-            <h3>Filter College Fairs</h3>
+      <div id="map-wrap">
+        <div id="map-controls">
+          <div class="row">
+            <div class="col-sm-2 text-right hidden-xs">
+              <h3>Filter College Fairs</h3>
+            </div>
+            <div class="col-sm-10 col-xs-12 text-left">
+              <label class="switch-wrap check-fairs">
+                <div class="switch">
+                  <input class="checkbox" id="National College Fairs" name="National College Fairs" type="checkbox" value="National College Fairs">
+                  <span class="slider round"></span>
+                </div>
+                <span class="switch-text">National College Fairs</span>
+              </label>
+              <label class="switch-wrap check-stem">
+                <div class="switch">
+                  <input class="checkbox" id="STEM College and Career Fairs" name="STEM College and Career Fairs" type="checkbox" value="STEM College and Career Fairs">
+                  <span class="slider round"></span>
+                </div>
+                <span class="switch-text">STEM College and Career Fairs</span>
+              </label>
+              <label class="switch-wrap check-performing">
+                <div class="switch">
+                  <input class="checkbox" id="Performing and Visual Arts College Fairs" name="Performing and Visual Arts College Fairs" type="checkbox" value="Performing and Visual Arts College Fairs">
+                  <span class="slider round"></span>
+                </div>
+                <span class="switch-text">Performing and Visual Arts College Fairs</span>
+              </label>
+            </div>
           </div>
-          <div class="col-sm-10 col-xs-12 text-left">
-            <label class="switch-wrap check-fairs">
-              <div class="switch">
-                <input class="checkbox" id="National College Fairs" name="National College Fairs" type="checkbox" value="National College Fairs">
-                <span class="slider round"></span>
-              </div>
-              <span class="switch-text">National College Fairs</span>
-            </label>
-            <label class="switch-wrap check-stem">
-              <div class="switch">
-                <input class="checkbox" id="STEM College and Career Fairs" name="STEM College and Career Fairs" type="checkbox" value="STEM College and Career Fairs">
-                <span class="slider round"></span>
-              </div>
-              <span class="switch-text">STEM College and Career Fairs</span>
-            </label>
-            <label class="switch-wrap check-performing">
-              <div class="switch">
-                <input class="checkbox" id="Performing and Visual Arts College Fairs" name="Performing and Visual Arts College Fairs" type="checkbox" value="Performing and Visual Arts College Fairs">
-                <span class="slider round"></span>
-              </div>
-              <span class="switch-text">Performing and Visual Arts College Fairs</span>
-            </label>
-          </div>
-        </div>
-      </div><!-- #map-controls -->
-      <div id="map"></div>
+        </div><!-- #map-controls -->
+        <div id="map"></div>
+      </div><!-- #map-wrap -->
       <p class="text-center"><a href="" class="btn btn-simple">View All Fairs</a></p>
     </div>
   </article>
@@ -137,6 +139,7 @@
 	<article class="article__row fairs-infographic">
 		<header class="article__header">
 			<h2>Membership Benefits</h2>
+<<<<<<< HEAD
     </header>
 		<div class="container">
       <div class="row">
@@ -150,6 +153,29 @@
       </div>
     </div>
 	</article>
+=======
+		</header>
+    <div class="container">
+  		<div class="row">
+  			<div class="col-md-4">
+  				{% set number = 8 %}
+  				{% set inc = 1 %}
+  				{% include './_components/number-block.html' %}
+  			</div>
+  			<div class="col-md-4">
+  				{% set number = 25 %}
+  				{% set inc = 2 %}
+  				{% include './_components/number-block.html' %}
+  			</div>
+  			<div class="col-md-4">
+  				{% set number = 13000 %}
+  				{% set inc = 3 %}
+  				{% include './_components/number-block.html' %}
+  			</div>
+      </div>
+		</div>
+	</section>
+>>>>>>> develop
 	<article class="article__row article--bluegrey">
     <div class="announcement__header">
       <div class="container">

@@ -60,6 +60,7 @@ webpackJsonp([0],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
+<<<<<<< HEAD
 	var _libHeadStyleJs = __webpack_require__(4);
 	
 	var _libHeadStyleJs2 = _interopRequireDefault(_libHeadStyleJs);
@@ -69,6 +70,17 @@ webpackJsonp([0],[
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
 	var _libScreenJs = __webpack_require__(6);
+=======
+	var _libHeadStyleJs = __webpack_require__(19);
+	
+	var _libHeadStyleJs2 = _interopRequireDefault(_libHeadStyleJs);
+	
+	var _libThrottledJs = __webpack_require__(20);
+	
+	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
+	
+	var _libScreenJs = __webpack_require__(21);
+>>>>>>> develop
 	
 	var _libScreenJs2 = _interopRequireDefault(_libScreenJs);
 	
@@ -326,7 +338,11 @@ webpackJsonp([0],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
+<<<<<<< HEAD
 	var _libScreenJs = __webpack_require__(6);
+=======
+	var _libScreenJs = __webpack_require__(21);
+>>>>>>> develop
 	
 	var _libScreenJs2 = _interopRequireDefault(_libScreenJs);
 	
@@ -450,6 +466,94 @@ webpackJsonp([0],[
 		}
 	});
 
+<<<<<<< HEAD
+=======
+/***/ },
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */
+/***/ function(module, exports) {
+
+	// Jquery adds inline styles and these need to be overwritten.
+	// HeadStyle writes styles to the head tag and destorys them as well
+	'use strict';
+	
+	var headStyle = function headStyle() {
+		this.addRules = function (rules) {
+			var css = '',
+			    head = document.head || document.getElementsByTagName('head')[0],
+			    style = document.createElement('style');
+	
+			for (var property in rules) {
+				if (rules.hasOwnProperty(property)) {
+					var css = css + property + '{' + rules[property] + '}';
+				}
+			}
+			style.type = 'text/css';
+			style.setAttribute('class', 'customHeadStyle');
+			if (style.styleSheet) {
+				style.styleSheet.cssText = css;
+			} else {
+				style.appendChild(document.createTextNode(css));
+			}
+			head.appendChild(style);
+		}, this.removeRules = function () {
+			if (document.getElementsByClassName('customHeadStyle')) {
+				var customHeadStyle = document.getElementsByClassName('customHeadStyle');
+				for (var i = 0; i < customHeadStyle.length; i++) {
+					customHeadStyle[i].outerHTML = '';
+				}
+			}
+		};
+	};
+	module.exports = headStyle;
+
+/***/ },
+/* 20 */,
+/* 21 */
+/***/ function(module, exports) {
+
+	// Just creates a screen element and fades it in, then destroys it.
+	// CSS for this resides in partials/_main.scss
+	'use strict';
+	
+	var Screen = function Screen() {
+		this.turnScreenOn = function (modifier) {
+			if (!document.getElementById('screen__overlay')) {
+				(function () {
+					var screenOverlay = document.createElement('div'),
+					    mainElement = document.getElementsByTagName('main')[0];
+					mainElement.appendChild(screenOverlay);
+					screenOverlay.setAttribute('id', 'screen__overlay');
+					screenOverlay.setAttribute('class', 'screen__overlay');
+					setTimeout(function () {
+						screenOverlay.classList.add('screen__overlay--on');
+						if (modifier) {
+							screenOverlay.classList.add('screen__overlay--' + modifier);
+						}
+					}, 10);
+				})();
+			}
+		};
+		this.turnScreenOff = function () {
+			var screenOverlay = document.getElementById('screen__overlay');
+			screenOverlay.classList.remove('screen__overlay--on');
+			setTimeout(function () {
+				screenOverlay.outerHTML = '';
+			}, 400);
+		};
+	};
+	module.exports = Screen;
+
+>>>>>>> develop
 /***/ }
 ]);
 //# sourceMappingURL=app.js.map

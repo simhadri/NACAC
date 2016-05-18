@@ -93,7 +93,11 @@
 /************************************************************************/
 /******/ ({
 
+<<<<<<< HEAD
 /***/ 5:
+=======
+/***/ 20:
+>>>>>>> develop
 /***/ function(module, exports) {
 
 	// Throttled is borrowed (stolen) from underscore. It thottles
