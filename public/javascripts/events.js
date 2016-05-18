@@ -67,7 +67,7 @@ webpackJsonp([2],{
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 	
-	var _libThrottledJs = __webpack_require__(21);
+	var _libThrottledJs = __webpack_require__(20);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	

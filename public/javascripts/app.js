@@ -60,15 +60,15 @@ webpackJsonp([0],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libHeadStyleJs = __webpack_require__(23);
+	var _libHeadStyleJs = __webpack_require__(19);
 	
 	var _libHeadStyleJs2 = _interopRequireDefault(_libHeadStyleJs);
 	
-	var _libThrottledJs = __webpack_require__(21);
+	var _libThrottledJs = __webpack_require__(20);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
-	var _libScreenJs = __webpack_require__(24);
+	var _libScreenJs = __webpack_require__(21);
 	
 	var _libScreenJs2 = _interopRequireDefault(_libScreenJs);
 	
@@ -251,7 +251,7 @@ webpackJsonp([0],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libScreenJs = __webpack_require__(24);
+	var _libScreenJs = __webpack_require__(21);
 	
 	var _libScreenJs2 = _interopRequireDefault(_libScreenJs);
 	
@@ -386,11 +386,7 @@ webpackJsonp([0],[
 /* 16 */,
 /* 17 */,
 /* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */
+/* 19 */
 /***/ function(module, exports) {
 
 	// Jquery adds inline styles and these need to be overwritten.
@@ -428,7 +424,8 @@ webpackJsonp([0],[
 	module.exports = headStyle;
 
 /***/ },
-/* 24 */
+/* 20 */,
+/* 21 */
 /***/ function(module, exports) {
 
 	// Just creates a screen element and fades it in, then destroys it.

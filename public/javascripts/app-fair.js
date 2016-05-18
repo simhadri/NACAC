@@ -38,15 +38,15 @@ webpackJsonp([1],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libHeadStyleJs = __webpack_require__(23);
+	var _libHeadStyleJs = __webpack_require__(19);
 	
 	var _libHeadStyleJs2 = _interopRequireDefault(_libHeadStyleJs);
 	
-	var _libThrottledJs = __webpack_require__(21);
+	var _libThrottledJs = __webpack_require__(20);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
-	var _libScreenJs = __webpack_require__(24);
+	var _libScreenJs = __webpack_require__(21);
 	
 	var _libScreenJs2 = _interopRequireDefault(_libScreenJs);
 	
@@ -229,7 +229,7 @@ webpackJsonp([1],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libScreenJs = __webpack_require__(24);
+	var _libScreenJs = __webpack_require__(21);
 	
 	var _libScreenJs2 = _interopRequireDefault(_libScreenJs);
 	
@@ -395,6 +395,7 @@ webpackJsonp([1],[
 	  var locations = [['<a href="#"><strong>Dallas, TX</strong></a>', 'Loews Anatole', 'National College Fairs', 32.7766642, -96.79698789999998, 1], ['<a href="#"><strong>New York City</strong></a>', 'Hilton Times Square', 'STEM College and Career Fairs', 40.7127837, -74.00594130000002, 2], ['<a href="#"><strong>Anaheim, CA</strong></a>', 'Anaheim Convention Center', 'Performing and Visual Arts College Fairs', 33.8352932, -117.91450359999999, 3]];
 	  var map = new google.maps.Map(document.getElementById('map'), {
 	    zoom: 4,
+	    scrollwheel: false,
 	    // center: new google.maps.LatLng(39.8282, -98.5795),
 	    center: new google.maps.LatLng(41.345783, -114.352139),
 	    mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -456,11 +457,7 @@ webpackJsonp([1],[
 /* 16 */,
 /* 17 */,
 /* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */
+/* 19 */
 /***/ function(module, exports) {
 
 	// Jquery adds inline styles and these need to be overwritten.
@@ -498,7 +495,8 @@ webpackJsonp([1],[
 	module.exports = headStyle;
 
 /***/ },
-/* 24 */
+/* 20 */,
+/* 21 */
 /***/ function(module, exports) {
 
 	// Just creates a screen element and fades it in, then destroys it.
