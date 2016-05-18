@@ -1,4 +1,4 @@
-import Screen from 'modules/screen.js';
+import Screen from 'lib/screen.js';
 (function() {
 	'use strict';
 	var screenOverlay = new Screen(),

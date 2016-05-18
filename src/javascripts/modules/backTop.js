@@ -1,5 +1,5 @@
 // MODULES
-import Throttled from 'modules/throttled.js';
+import Throttled from 'lib/throttled.js';
 // FUNCTION
 const backTop = function() {
 	this.addBackTop = function(){
