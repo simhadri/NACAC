@@ -26,13 +26,9 @@ webpackJsonp([3],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 	
-<<<<<<< HEAD
 	var _libThrottledJs = __webpack_require__(5);
-=======
-	var _modulesThrottledJs = __webpack_require__(5);
->>>>>>> develop
 	
-	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
+	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
 	// FUNCTION
 	var asideNavigation = function asideNavigation() {
@@ -66,8 +62,10 @@ webpackJsonp([3],[
 			$('.aside-navigation').removeClass("aside-navigation--hide");
 		}
 	};
-	asideNavigation();
-	$(window).scroll((0, _modulesThrottledJs2["default"])(asideNavigation, 20));
+	if ($(".aside-navigation").length !== 0) {
+		asideNavigation();
+		$(window).scroll((0, _libThrottledJs2["default"])(asideNavigation, 20));
+	}
 
 /***/ },
 /* 14 */
@@ -76,10 +74,7 @@ webpackJsonp([3],[
 	// *********************
 	//    Modules Scripts
 	// *********************
-	
 	'use strict';
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
 	__webpack_require__(13);
 	
@@ -87,34 +82,9 @@ webpackJsonp([3],[
 	
 	__webpack_require__(16);
 	
-	var _modulesThrottledJs = __webpack_require__(5);
+	__webpack_require__(17);
 	
-	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
-	
-	// *********************
-	//    Vendor Scirpts
-	// *********************
-	
-	var _vendorCountUpJs = __webpack_require__(18);
-	
-	var _vendorCountUpJs2 = _interopRequireDefault(_vendorCountUpJs);
-	
-<<<<<<< HEAD
 	__webpack_require__(18);
-=======
-	// *********************
-	//    Page Functions
-	// *********************
-	var countCard = function countCard() {
-		$('.number-block__numerals').each(function () {
-			if ($(this).text() == '0' && $(this).offset().top >= $(window).scrollTop()) {
-				var counter = new _vendorCountUpJs2['default']($(this).attr('id'), 0, $(this).attr('data-counter'), 0, 2.5);
-				counter.start();
-			}
-		});
-	};
-	$(window).scroll((0, _modulesThrottledJs2['default'])(countCard, 100));
->>>>>>> develop
 
 /***/ },
 /* 15 */
@@ -146,13 +116,9 @@ webpackJsonp([3],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-<<<<<<< HEAD
 	var _libThrottledJs = __webpack_require__(5);
-=======
-	var _modulesThrottledJs = __webpack_require__(5);
->>>>>>> develop
 	
-	var _modulesThrottledJs2 = _interopRequireDefault(_modulesThrottledJs);
+	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
 	// FUNCTION
 	var backTop = function backTop() {
@@ -192,13 +158,12 @@ webpackJsonp([3],[
 		}
 	};
 	
-	$(window).scroll((0, _modulesThrottledJs2['default'])(backTopScroll, 100));
+	$(window).scroll((0, _libThrottledJs2['default'])(backTopScroll, 100));
 	$('.back-top').on('click', function () {
 		$('html, body').animate({ scrollTop: 0 });
 	});
 
 /***/ },
-<<<<<<< HEAD
 /* 17 */
 /***/ function(module, exports) {
 
@@ -257,10 +222,6 @@ webpackJsonp([3],[
 
 /***/ },
 /* 19 */
-=======
-/* 17 */,
-/* 18 */
->>>>>>> develop
 /***/ function(module, exports) {
 
 	/*
