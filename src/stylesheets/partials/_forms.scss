@@ -10,7 +10,7 @@ form.form{
 			border: 1px solid $error-red;
 		}
 	}
-	span.error-message{
+	.error-message{
 		font-weight: normal;
 		color: $error-red;
 	}

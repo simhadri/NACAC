@@ -1,4 +1,4 @@
-var initializeClock = function(id, endtime) {
+var countDown = function(id, endtime) {
 	var clock = document.getElementById(id),
 		seg = ["days","hours","minutes"];
 	for (var i = 0; i < seg.length; i++) {
@@ -25,7 +25,6 @@ var initializeClock = function(id, endtime) {
 			'days': days,
 			'hours': hours,
 			'minutes': minutes
-			// ,
 			//'seconds': seconds
 		};
 	}
@@ -47,4 +46,4 @@ var initializeClock = function(id, endtime) {
 	updateClock();
 	var timeinterval = setInterval(updateClock, 1000);
 }
-module.exports = initializeClock;
+module.exports = countDown;

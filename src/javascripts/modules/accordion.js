@@ -1,3 +1,4 @@
+// FUNCTION
 (function() {
 	'use strict';
 	var accordionItem = $('.accordion__item'),

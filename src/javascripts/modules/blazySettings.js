@@ -1,3 +1,4 @@
+// FUNCTION
 $(function() {
 	$(window).load(function(){
 		var bLazy = new Blazy({
@@ -13,6 +14,5 @@ $(function() {
 			}
 		});
 		setTimeout(bLazy.revalidate(), 200);
-	});
-	
+	});	
 });
