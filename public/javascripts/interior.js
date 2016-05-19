@@ -2,7 +2,7 @@ webpackJsonp([3],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(14);
+	module.exports = __webpack_require__(16);
 
 
 /***/ },
@@ -17,8 +17,7 @@ webpackJsonp([3],[
 /* 9 */,
 /* 10 */,
 /* 11 */,
-/* 12 */,
-/* 13 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -71,7 +70,10 @@ webpackJsonp([3],[
 	})();
 
 /***/ },
-/* 14 */
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// *********************
@@ -79,18 +81,18 @@ webpackJsonp([3],[
 	// *********************
 	'use strict';
 	
-	__webpack_require__(13);
-	
-	__webpack_require__(15);
-	
-	__webpack_require__(16);
+	__webpack_require__(12);
 	
 	__webpack_require__(17);
 	
 	__webpack_require__(18);
+	
+	__webpack_require__(19);
+	
+	__webpack_require__(20);
 
 /***/ },
-/* 15 */
+/* 17 */
 /***/ function(module, exports) {
 
 	// FUNCTION
@@ -112,7 +114,7 @@ webpackJsonp([3],[
 	})();
 
 /***/ },
-/* 16 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -171,7 +173,7 @@ webpackJsonp([3],[
 	})();
 
 /***/ },
-/* 17 */
+/* 19 */
 /***/ function(module, exports) {
 
 	// FUNCTION
@@ -182,20 +184,32 @@ webpackJsonp([3],[
 		if (document.getElementById('productForm')) {
 			var validator = new FormValidator('productForm', [{
 				name: 'firstName',
+				display: 'first name',
 				rules: 'required|alpha'
 			}, {
 				name: 'lastName',
+				display: 'last name',
 				rules: 'required|alpha'
 			}, {
 				name: 'email',
-				rules: 'valid_email'
+				display: 'email',
+				rules: 'required|valid_email'
 			}], function (errors, evt) {
 	
 				if (errors.length > 0) {
+					var errBox = document.getElementById('error-box');
+					errBox.innerHTML = '';
+					console.log(errors[0].messages);
+					for (var n = 0; n < errors[0].messages.length; n++) {
+						// errors[0].messages[n];
+						console.log(errBox);
+						errBox.innerHTML = errBox.innerHTML + errors[0].messages[n] + '<br>';
+					}
 					for (var i = 0; i < this.form.length; i++) {
+	
 						if (this.form[i].classList.contains('required')) {
-							var errMessage = this.form[i].nextSibling.nextSibling;
-							errMessage.innerHTML = 'This Field is Required';
+							// var errMessage = this.form[i].nextSibling.nextSibling;
+							// errMessage.innerHTML = 'This Field is Required';
 							this.form[i].classList.add('error');
 						}
 					}
@@ -206,7 +220,7 @@ webpackJsonp([3],[
 	})();
 
 /***/ },
-/* 18 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -218,7 +232,7 @@ webpackJsonp([3],[
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
-	var _libCountUpJs = __webpack_require__(19);
+	var _libCountUpJs = __webpack_require__(21);
 	
 	var _libCountUpJs2 = _interopRequireDefault(_libCountUpJs);
 	
@@ -237,7 +251,7 @@ webpackJsonp([3],[
 	})();
 
 /***/ },
-/* 19 */
+/* 21 */
 /***/ function(module, exports) {
 
 	/*

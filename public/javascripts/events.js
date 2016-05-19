@@ -1,14 +1,22 @@
-webpackJsonp([2],{
-
-/***/ 0:
+webpackJsonp([2],[
+/* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__(11);
 
 
 /***/ },
-
-/***/ 11:
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// *********************
@@ -16,15 +24,14 @@ webpackJsonp([2],{
 	// *********************
 	'use strict';
 	
+	__webpack_require__(12);
+	
 	__webpack_require__(13);
 	
-	__webpack_require__(20);
-	
-	__webpack_require__(22);
+	__webpack_require__(15);
 
 /***/ },
-
-/***/ 13:
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -77,8 +84,7 @@ webpackJsonp([2],{
 	})();
 
 /***/ },
-
-/***/ 20:
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -86,7 +92,7 @@ webpackJsonp([2],{
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libCountDown = __webpack_require__(21);
+	var _libCountDown = __webpack_require__(14);
 	
 	var _libCountDown2 = _interopRequireDefault(_libCountDown);
 	
@@ -101,8 +107,7 @@ webpackJsonp([2],{
 	})();
 
 /***/ },
-
-/***/ 21:
+/* 14 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -158,8 +163,7 @@ webpackJsonp([2],{
 	module.exports = countDown;
 
 /***/ },
-
-/***/ 22:
+/* 15 */
 /***/ function(module, exports) {
 
 	// FUNCTION
@@ -189,6 +193,5 @@ webpackJsonp([2],{
 	});
 
 /***/ }
-
-});
+]);
 //# sourceMappingURL=events.js.map
