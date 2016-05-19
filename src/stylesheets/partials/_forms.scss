@@ -8,11 +8,22 @@ form.form{
 		height: auto;
 		&.error{
 			border: 1px solid $error-red;
+			transition: $transition--all;
 		}
 	}
-	.error-message{
-		font-weight: normal;
+	.error-box{
+		background-color: $nacac-cloud-blue;
 		color: $error-red;
+		padding: 1rem;
+		margin: 2rem 0 0;
+		opacity: 0;
+		transition: $transition--all;
+		&.error-box--display{
+			opacity: 1;
+		}
+	}
+	.form-disclaimer__link{
+		padding-left: 2rem;
 	}
 
 }
