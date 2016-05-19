@@ -1,8 +1,9 @@
-// MODULES
+// IMPORTS
 import HeadStyle from 'lib/headStyle.js';
 import Throttled from 'lib/throttled.js';
 import Screen from 'lib/screen.js';
 
+// FUNCTION
 (function() {
 	'use strict';
 	var headStyle = new HeadStyle(),

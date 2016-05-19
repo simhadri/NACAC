@@ -10,6 +10,7 @@ webpackJsonp([1],[
 /* 2 */
 /***/ function(module, exports) {
 
+	// FUNCTION
 	'use strict';
 	
 	$(function () {
@@ -33,7 +34,7 @@ webpackJsonp([1],[
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// MODULES
+	// IMPORTS
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -50,6 +51,7 @@ webpackJsonp([1],[
 	
 	var _libScreenJs2 = _interopRequireDefault(_libScreenJs);
 	
+	// FUNCTION
 	(function () {
 		'use strict';
 		var headStyle = new _libHeadStyleJs2['default'](),
@@ -300,6 +302,7 @@ webpackJsonp([1],[
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// IMPORTS
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -308,6 +311,7 @@ webpackJsonp([1],[
 	
 	var _libScreenJs2 = _interopRequireDefault(_libScreenJs);
 	
+	// FUNCTION
 	(function () {
 		'use strict';
 		var screenOverlay = new _libScreenJs2['default'](),
@@ -354,90 +358,89 @@ webpackJsonp([1],[
 /* 8 */
 /***/ function(module, exports) {
 
-	// a temp value to cache *what* we're about to show
+	// FUNCTION
 	'use strict';
 	
-	var target = null;
+	(function () {
+		'use strict';
 	
-	// collect all the tabs
-	var tabs = $('.tab__button').on('click', function () {
-		target = $(this.hash).removeAttr('id');
+		// a temp value to cache *what* we're about to show
+		var target = null;
 	
-		$('.tab__button').removeClass('tab__button--active');
-		$(this).addClass('tab__button--active');
-		// if the URL isn't going to change, then hashchange
-		// event doesn't fire, so we trigger the update manually
-		if (location.hash === this.hash) {
-			// but this has to happen after the DOM update has
-			// completed, so we wrap it in a setTimeout 0
-			setTimeout(update, 0);
-		}
-	});
+		// collect all the tabs
+		var tabs = $('.tab__button').on('click', function () {
+			target = $(this.hash).removeAttr('id');
 	
-	// get an array of the panel ids (from the anchor hash)
-	var targets = tabs.map(function () {
-		return this.hash;
-	}).get();
-	
-	function update() {
-	
-		if (target) {
-			target.attr('id', target.data('old-id'));
-			target = null;
-		}
-	
-		var hash = window.location.hash;
-		if (targets.indexOf(hash) !== -1) {
 			$('.tab__button').removeClass('tab__button--active');
-			$('a[href*="' + hash + '"]').addClass('tab__button--active');
-			show(hash);
+			$(this).addClass('tab__button--active');
+			// if the URL isn't going to change, then hashchange
+			// event doesn't fire, so we trigger the update manually
+			if (location.hash === this.hash) {
+				// but this has to happen after the DOM update has
+				// completed, so we wrap it in a setTimeout 0
+				setTimeout(update, 0);
+			}
+		});
+	
+		// get an array of the panel ids (from the anchor hash)
+		var targets = tabs.map(function () {
+			return this.hash;
+		}).get();
+	
+		function update() {
+	
+			if (target) {
+				target.attr('id', target.data('old-id'));
+				target = null;
+			}
+	
+			var hash = window.location.hash;
+			if (targets.indexOf(hash) !== -1) {
+				$('.tab__button').removeClass('tab__button--active');
+				$('a[href*="' + hash + '"]').addClass('tab__button--active');
+				show(hash);
+			}
 		}
-	}
 	
-	function show(id) {
-		// if no value was given, let's take the first panel
-		if (!id) {
-			id = targets[0];
+		function show(id) {
+			// if no value was given, let's take the first panel
+			if (!id) {
+				id = targets[0];
+			}
+			// remove the tab__content--active class from the tabs,
+			// and add it back to the one the user selected
+			$('.tab__content').removeClass('tab__content--active');
+	
+			// now hide all the panels, then filter to
+			// the one we're interested in, and show it
+			$('.tab__content[data-tab="' + id + '"]').addClass('tab__content--active');
 		}
-		// remove the tab__content--active class from the tabs,
-		// and add it back to the one the user selected
-		$('.tab__content').removeClass('tab__content--active');
 	
-		// now hide all the panels, then filter to
-		// the one we're interested in, and show it
-		$('.tab__content[data-tab="' + id + '"]').addClass('tab__content--active');
-	}
+		$(window).on('hashchange', update);
 	
-	$(window).on('hashchange', update);
-	
-	// initialise
-	if (targets.indexOf(window.location.hash) !== -1) {
-		update();
-	} else {
-		show();
-	}
-	// shadow animation
-	$('.tab__navigation').scroll(function () {
-		// var fullTabsWidth =
-		var totalWidth = $('.tab__button').length * $('.tab__button').outerWidth(),
-		    scrollLocation = $(this).scrollLeft() + $(this).width();
-		if (scrollLocation <= totalWidth - $('.tab__button').outerWidth()) {
-			$('.tab__block').removeClass('no--shadow');
+		// initialise
+		if (targets.indexOf(window.location.hash) !== -1) {
+			update();
 		} else {
-			$('.tab__block').addClass('no--shadow');
+			show();
 		}
-	});
+		// shadow animation
+		$('.tab__navigation').scroll(function () {
+			// var fullTabsWidth =
+			var totalWidth = $('.tab__button').length * $('.tab__button').outerWidth(),
+			    scrollLocation = $(this).scrollLeft() + $(this).width();
+			if (scrollLocation <= totalWidth - $('.tab__button').outerWidth()) {
+				$('.tab__block').removeClass('no--shadow');
+			} else {
+				$('.tab__block').addClass('no--shadow');
+			}
+		});
+	})();
 
 /***/ },
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// *********************
-	//    Vendor scirpts
-	// *********************
-	// import $ from 'vendor/jquery-2.1.4.min.js';
-	// import CountUp from 'vendor/countUp.js';
-	
 	// *********************
 	//    Modules scripts
 	// *********************
@@ -460,68 +463,68 @@ webpackJsonp([1],[
 	'use strict';
 	
 	$(window).load(function () {
-	  var markers = new Array();
-	  var iconSrc = {};
-	  iconSrc['National College Fairs'] = '/images/icons/marker-blue.svg';
-	  iconSrc['STEM College and Career Fairs'] = '/images/icons/marker-green.svg';
-	  iconSrc['Performing and Visual Arts College Fairs'] = '/images/icons/marker-red.svg';
-	  //Further down, in new google.maps.Marker, the icon line becomes:
-	  // icon: iconSrc[locations[i][2]]
-	  var locations = [['<a href="#"><strong>Dallas, TX</strong></a>', 'Loews Anatole', 'National College Fairs', 32.7766642, -96.79698789999998, 1], ['<a href="#"><strong>New York City</strong></a>', 'Hilton Times Square', 'STEM College and Career Fairs', 40.7127837, -74.00594130000002, 2], ['<a href="#"><strong>Anaheim, CA</strong></a>', 'Anaheim Convention Center', 'Performing and Visual Arts College Fairs', 33.8352932, -117.91450359999999, 3]];
-	  var map = new google.maps.Map(document.getElementById('map'), {
-	    zoom: 4,
-	    scrollwheel: false,
-	    // center: new google.maps.LatLng(39.8282, -98.5795),
-	    center: new google.maps.LatLng(41.345783, -114.352139),
-	    scrollwheel: false,
-	    mapTypeId: google.maps.MapTypeId.ROADMAP
-	  });
-	  var infowindow = new google.maps.InfoWindow();
-	  var marker, i;
-	  for (i = 0; i < locations.length; i++) {
-	    marker = new google.maps.Marker({
-	      position: new google.maps.LatLng(locations[i][3], locations[i][4]),
-	      map: map,
-	      icon: iconSrc[locations[i][2]]
-	    });
-	    markers.push(marker);
-	    google.maps.event.addListener(marker, 'click', (function (marker, i) {
-	      return function () {
-	        infowindow.setContent(locations[i][0] + "<br>" + locations[i][2] + "<br>" + locations[i][1]);
-	        infowindow.open(map, marker);
-	      };
-	    })(marker, i));
-	  }
-	  // == shows all markers of a particular category, and ensures the checkbox is checked ==
-	  function show(category) {
-	    for (var i = 0; i < locations.length; i++) {
-	      if (locations[i][2] == category) {
-	        markers[i].setVisible(true);
-	      }
-	    }
-	  }
-	  // == hides all markers of a particular category, and ensures the checkbox is cleared ==
+		var markers = new Array();
+		var iconSrc = {};
+		iconSrc['National College Fairs'] = '/images/icons/marker-blue.svg';
+		iconSrc['STEM College and Career Fairs'] = '/images/icons/marker-green.svg';
+		iconSrc['Performing and Visual Arts College Fairs'] = '/images/icons/marker-red.svg';
+		//Further down, in new google.maps.Marker, the icon line becomes:
+		// icon: iconSrc[locations[i][2]]
+		var locations = [['<a href="#"><strong>Dallas, TX</strong></a>', 'Loews Anatole', 'National College Fairs', 32.7766642, -96.79698789999998, 1], ['<a href="#"><strong>New York City</strong></a>', 'Hilton Times Square', 'STEM College and Career Fairs', 40.7127837, -74.00594130000002, 2], ['<a href="#"><strong>Anaheim, CA</strong></a>', 'Anaheim Convention Center', 'Performing and Visual Arts College Fairs', 33.8352932, -117.91450359999999, 3]];
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 4,
+			scrollwheel: false,
+			// center: new google.maps.LatLng(39.8282, -98.5795),
+			center: new google.maps.LatLng(41.345783, -114.352139),
+			scrollwheel: false,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		});
+		var infowindow = new google.maps.InfoWindow();
+		var marker, i;
+		for (i = 0; i < locations.length; i++) {
+			marker = new google.maps.Marker({
+				position: new google.maps.LatLng(locations[i][3], locations[i][4]),
+				map: map,
+				icon: iconSrc[locations[i][2]]
+			});
+			markers.push(marker);
+			google.maps.event.addListener(marker, 'click', (function (marker, i) {
+				return function () {
+					infowindow.setContent(locations[i][0] + "<br>" + locations[i][2] + "<br>" + locations[i][1]);
+					infowindow.open(map, marker);
+				};
+			})(marker, i));
+		}
+		// == shows all markers of a particular category, and ensures the checkbox is checked ==
+		function show(category) {
+			for (var i = 0; i < locations.length; i++) {
+				if (locations[i][2] == category) {
+					markers[i].setVisible(true);
+				}
+			}
+		}
+		// == hides all markers of a particular category, and ensures the checkbox is cleared ==
 	
-	  function hide(category) {
-	    for (var i = 0; i < locations.length; i++) {
-	      if (locations[i][2] == category) {
-	        markers[i].setVisible(false);
-	      }
-	    }
-	  }
-	  // == show or hide the categories initially ==
-	  hide("National College Fairs");
-	  hide("STEM College and Career Fairs");
-	  hide("Performing and Visual Arts College Fairs");
-	  $(".checkbox").click(function () {
-	    var cat = $(this).attr("value");
-	    // If checked
-	    if ($(this).is(":checked")) {
-	      show(cat);
-	    } else {
-	      hide(cat);
-	    }
-	  });
+		function hide(category) {
+			for (var i = 0; i < locations.length; i++) {
+				if (locations[i][2] == category) {
+					markers[i].setVisible(false);
+				}
+			}
+		}
+		// == show or hide the categories initially ==
+		hide("National College Fairs");
+		hide("STEM College and Career Fairs");
+		hide("Performing and Visual Arts College Fairs");
+		$(".checkbox").click(function () {
+			var cat = $(this).attr("value");
+			// If checked
+			if ($(this).is(":checked")) {
+				show(cat);
+			} else {
+				hide(cat);
+			}
+		});
 	}); //]]>
 
 /***/ }

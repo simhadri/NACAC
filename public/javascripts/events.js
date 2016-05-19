@@ -12,13 +12,8 @@ webpackJsonp([2],{
 /***/ function(module, exports, __webpack_require__) {
 
 	// *********************
-	//    Vendor scirpts
-	// *********************
-	
-	// *********************
 	//    Modules scripts
 	// *********************
-	
 	'use strict';
 	
 	__webpack_require__(13);
@@ -32,57 +27,61 @@ webpackJsonp([2],{
 /***/ 13:
 /***/ function(module, exports, __webpack_require__) {
 
-	// MODULES
-	"use strict";
+	// IMPORTS
+	'use strict';
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
 	var _libThrottledJs = __webpack_require__(5);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
 	// FUNCTION
-	var asideNavigation = function asideNavigation() {
-		var asideNavigation = $(".aside-navigation"),
-		    asideNavigationHeight = $(".aside-navigation").height(),
-		    asideNavigationContainerHeight = $(".aside-navigation__row").height();
+	(function () {
+		'use strict';
+		var asideNavigation = function asideNavigation() {
+			var asideNavigation = $(".aside-navigation"),
+			    asideNavigationHeight = $(".aside-navigation").height(),
+			    asideNavigationContainerHeight = $(".aside-navigation__row").height();
 	
-		if ($('.hero__wrapper').length === 0) {
-			var interiorHeroHeight = 180,
-			   
-			// 340 is 180px form top +
-			asideNavigationLocation = asideNavigation.offset().top + asideNavigationHeight,
-			    bottomOfNavigation = $(window).scrollTop() + 120;
-		} else {
-			var interiorHeroHeight = $(".hero__wrapper").height() + $(".interior-hero__breadcrumb").height() + 220,
-			    asideNavigationLocation = asideNavigation.offset().top,
-			    bottomOfNavigation = $(window).scrollTop() + 120;
-		}
+			if ($('.hero__wrapper').length === 0) {
+				var interiorHeroHeight = 180,
+				   
+				// 340 is 180px form top +
+				asideNavigationLocation = asideNavigation.offset().top + asideNavigationHeight,
+				    bottomOfNavigation = $(window).scrollTop() + 120;
+			} else {
+				var interiorHeroHeight = $(".hero__wrapper").height() + $(".interior-hero__breadcrumb").height() + 220,
+				    asideNavigationLocation = asideNavigation.offset().top,
+				    bottomOfNavigation = $(window).scrollTop() + 120;
+			}
 	
-		if (bottomOfNavigation > interiorHeroHeight) {
-			$('.aside-navigation').addClass('aside-navigation--sticky');
+			if (bottomOfNavigation > interiorHeroHeight) {
+				$('.aside-navigation').addClass('aside-navigation--sticky');
+			}
+			if (bottomOfNavigation < interiorHeroHeight) {
+				$('.aside-navigation').removeClass('aside-navigation--sticky');
+			}
+			// if location of aside-nav less its size
+			// is greater than tge aside-navs container; hide
+			if (asideNavigationLocation > asideNavigationContainerHeight) {
+				$('.aside-navigation').addClass("aside-navigation--hide");
+			} else {
+				$('.aside-navigation').removeClass("aside-navigation--hide");
+			}
+		};
+		if ($(".aside-navigation").length !== 0) {
+			asideNavigation();
+			$(window).scroll((0, _libThrottledJs2['default'])(asideNavigation, 20));
 		}
-		if (bottomOfNavigation < interiorHeroHeight) {
-			$('.aside-navigation').removeClass('aside-navigation--sticky');
-		}
-		// if location of aside-nav less its size
-		// is greater than tge aside-navs container; hide
-		if (asideNavigationLocation > asideNavigationContainerHeight) {
-			$('.aside-navigation').addClass("aside-navigation--hide");
-		} else {
-			$('.aside-navigation').removeClass("aside-navigation--hide");
-		}
-	};
-	if ($(".aside-navigation").length !== 0) {
-		asideNavigation();
-		$(window).scroll((0, _libThrottledJs2["default"])(asideNavigation, 20));
-	}
+	})();
 
 /***/ },
 
 /***/ 20:
 /***/ function(module, exports, __webpack_require__) {
 
+	// IMPORTS
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -91,11 +90,15 @@ webpackJsonp([2],{
 	
 	var _libCountDown2 = _interopRequireDefault(_libCountDown);
 	
-	var getClock = document.getElementById('countdown-clock');
-	if (getClock) {
-		var setTime = getClock.getAttribute('data-deadline');
-		(0, _libCountDown2['default'])('countdown-clock', setTime);
-	}
+	// FUNCTION
+	(function () {
+		'use strict';
+		var getClock = document.getElementById('countdown-clock');
+		if (getClock) {
+			var setTime = getClock.getAttribute('data-deadline');
+			(0, _libCountDown2['default'])('countdown-clock', setTime);
+		}
+	})();
 
 /***/ },
 
@@ -159,6 +162,7 @@ webpackJsonp([2],{
 /***/ 22:
 /***/ function(module, exports) {
 
+	// FUNCTION
 	'use strict';
 	
 	$('#lightSlider').lightSlider({

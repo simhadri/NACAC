@@ -21,51 +21,54 @@ webpackJsonp([3],[
 /* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// MODULES
-	"use strict";
+	// IMPORTS
+	'use strict';
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
 	var _libThrottledJs = __webpack_require__(5);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
 	// FUNCTION
-	var asideNavigation = function asideNavigation() {
-		var asideNavigation = $(".aside-navigation"),
-		    asideNavigationHeight = $(".aside-navigation").height(),
-		    asideNavigationContainerHeight = $(".aside-navigation__row").height();
+	(function () {
+		'use strict';
+		var asideNavigation = function asideNavigation() {
+			var asideNavigation = $(".aside-navigation"),
+			    asideNavigationHeight = $(".aside-navigation").height(),
+			    asideNavigationContainerHeight = $(".aside-navigation__row").height();
 	
-		if ($('.hero__wrapper').length === 0) {
-			var interiorHeroHeight = 180,
-			   
-			// 340 is 180px form top +
-			asideNavigationLocation = asideNavigation.offset().top + asideNavigationHeight,
-			    bottomOfNavigation = $(window).scrollTop() + 120;
-		} else {
-			var interiorHeroHeight = $(".hero__wrapper").height() + $(".interior-hero__breadcrumb").height() + 220,
-			    asideNavigationLocation = asideNavigation.offset().top,
-			    bottomOfNavigation = $(window).scrollTop() + 120;
-		}
+			if ($('.hero__wrapper').length === 0) {
+				var interiorHeroHeight = 180,
+				   
+				// 340 is 180px form top +
+				asideNavigationLocation = asideNavigation.offset().top + asideNavigationHeight,
+				    bottomOfNavigation = $(window).scrollTop() + 120;
+			} else {
+				var interiorHeroHeight = $(".hero__wrapper").height() + $(".interior-hero__breadcrumb").height() + 220,
+				    asideNavigationLocation = asideNavigation.offset().top,
+				    bottomOfNavigation = $(window).scrollTop() + 120;
+			}
 	
-		if (bottomOfNavigation > interiorHeroHeight) {
-			$('.aside-navigation').addClass('aside-navigation--sticky');
+			if (bottomOfNavigation > interiorHeroHeight) {
+				$('.aside-navigation').addClass('aside-navigation--sticky');
+			}
+			if (bottomOfNavigation < interiorHeroHeight) {
+				$('.aside-navigation').removeClass('aside-navigation--sticky');
+			}
+			// if location of aside-nav less its size
+			// is greater than tge aside-navs container; hide
+			if (asideNavigationLocation > asideNavigationContainerHeight) {
+				$('.aside-navigation').addClass("aside-navigation--hide");
+			} else {
+				$('.aside-navigation').removeClass("aside-navigation--hide");
+			}
+		};
+		if ($(".aside-navigation").length !== 0) {
+			asideNavigation();
+			$(window).scroll((0, _libThrottledJs2['default'])(asideNavigation, 20));
 		}
-		if (bottomOfNavigation < interiorHeroHeight) {
-			$('.aside-navigation').removeClass('aside-navigation--sticky');
-		}
-		// if location of aside-nav less its size
-		// is greater than tge aside-navs container; hide
-		if (asideNavigationLocation > asideNavigationContainerHeight) {
-			$('.aside-navigation').addClass("aside-navigation--hide");
-		} else {
-			$('.aside-navigation').removeClass("aside-navigation--hide");
-		}
-	};
-	if ($(".aside-navigation").length !== 0) {
-		asideNavigation();
-		$(window).scroll((0, _libThrottledJs2["default"])(asideNavigation, 20));
-	}
+	})();
 
 /***/ },
 /* 14 */
@@ -90,6 +93,7 @@ webpackJsonp([3],[
 /* 15 */
 /***/ function(module, exports) {
 
+	// FUNCTION
 	'use strict';
 	
 	(function () {
@@ -111,7 +115,7 @@ webpackJsonp([3],[
 /* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// MODULES
+	// IMPORTS
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -121,83 +125,91 @@ webpackJsonp([3],[
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
 	// FUNCTION
-	var backTop = function backTop() {
-		this.addBackTop = function () {
-			if (!document.getElementById('back-top')) {
-				(function () {
-					var backTop = document.createElement('div'),
-					    mainElement = document.getElementsByTagName('main')[0];
-					mainElement.appendChild(backTop);
-					backTop.setAttribute('id', 'back-top');
-					backTop.setAttribute('class', 'back-top');
-					backTop.innerHTML = '<i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i><span>Back to Top</span>';
-					setTimeout(function () {
-						backTop.classList.add('back-top--scrolled');
-						backTop.addEventListener('click', scrolltoTop);
-					}, 10);
-				})();
-			}
-		}, this.removeBackTop = function () {
-			if (document.getElementById('back-top')) {
-				document.getElementById('back-top').remove();
+	(function () {
+		'use strict';
+		var backTop = function backTop() {
+			this.addBackTop = function () {
+				if (!document.getElementById('back-top')) {
+					(function () {
+						var backTop = document.createElement('div'),
+						    mainElement = document.getElementsByTagName('main')[0];
+						mainElement.appendChild(backTop);
+						backTop.setAttribute('id', 'back-top');
+						backTop.setAttribute('class', 'back-top');
+						backTop.innerHTML = '<i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i><span>Back to Top</span>';
+						setTimeout(function () {
+							backTop.classList.add('back-top--scrolled');
+							backTop.addEventListener('click', scrolltoTop);
+						}, 10);
+					})();
+				}
+			}, this.removeBackTop = function () {
+				if (document.getElementById('back-top')) {
+					document.getElementById('back-top').remove();
+				}
+			};
+		};
+		var scrolltoTop = function scrolltoTop() {
+			$('html, body').animate({ scrollTop: 0 });
+		};
+	
+		var backTopScroll = function backTopScroll() {
+			var bt = new backTop(),
+			    windowHeight = $(window).height(),
+			    top = $(window).scrollTop();
+			if (top > windowHeight) {
+				bt.addBackTop();
+			} else {
+				bt.removeBackTop();
 			}
 		};
-	};
-	var scrolltoTop = function scrolltoTop() {
-		$('html, body').animate({ scrollTop: 0 });
-	};
 	
-	var backTopScroll = function backTopScroll() {
-		var bt = new backTop(),
-		    windowHeight = $(window).height(),
-		    top = $(window).scrollTop();
-		if (top > windowHeight) {
-			bt.addBackTop();
-		} else {
-			bt.removeBackTop();
-		}
-	};
-	
-	$(window).scroll((0, _libThrottledJs2['default'])(backTopScroll, 100));
-	$('.back-top').on('click', function () {
-		$('html, body').animate({ scrollTop: 0 });
-	});
+		$(window).scroll((0, _libThrottledJs2['default'])(backTopScroll, 100));
+		$('.back-top').on('click', function () {
+			$('html, body').animate({ scrollTop: 0 });
+		});
+	})();
 
 /***/ },
 /* 17 */
 /***/ function(module, exports) {
 
+	// FUNCTION
 	'use strict';
 	
-	if (document.getElementById('productForm')) {
-	    var validator = new FormValidator('productForm', [{
-	        name: 'firstName',
-	        rules: 'required|alpha'
-	    }, {
-	        name: 'lastName',
-	        rules: 'required|alpha'
-	    }, {
-	        name: 'email',
-	        rules: 'valid_email'
-	    }], function (errors, evt) {
+	(function () {
+		'use strict';
+		if (document.getElementById('productForm')) {
+			var validator = new FormValidator('productForm', [{
+				name: 'firstName',
+				rules: 'required|alpha'
+			}, {
+				name: 'lastName',
+				rules: 'required|alpha'
+			}, {
+				name: 'email',
+				rules: 'valid_email'
+			}], function (errors, evt) {
 	
-	        if (errors.length > 0) {
-	            for (var i = 0; i < this.form.length; i++) {
-	                if (this.form[i].classList.contains('required')) {
-	                    var errMessage = this.form[i].nextSibling.nextSibling;
-	                    errMessage.innerHTML = 'This Field is Required';
-	                    this.form[i].classList.add('error');
-	                }
-	            }
-	            return false;
-	        }
-	    });
-	}
+				if (errors.length > 0) {
+					for (var i = 0; i < this.form.length; i++) {
+						if (this.form[i].classList.contains('required')) {
+							var errMessage = this.form[i].nextSibling.nextSibling;
+							errMessage.innerHTML = 'This Field is Required';
+							this.form[i].classList.add('error');
+						}
+					}
+					return false;
+				}
+			});
+		}
+	})();
 
 /***/ },
 /* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
+	// IMPORTS
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -210,15 +222,19 @@ webpackJsonp([3],[
 	
 	var _libCountUpJs2 = _interopRequireDefault(_libCountUpJs);
 	
-	var countCard = function countCard() {
-		$('.number-block__numerals').each(function () {
-			if ($(this).text() == '0' && $(this).offset().top >= $(window).scrollTop()) {
-				var counter = new _libCountUpJs2['default']($(this).attr('id'), 0, $(this).attr('data-counter'), 0, 2.5);
-				counter.start();
-			}
-		});
-	};
-	$(window).scroll((0, _libThrottledJs2['default'])(countCard, 100));
+	// FUNCTION
+	(function () {
+		'use strict';
+		var countCard = function countCard() {
+			$('.number-block__numerals').each(function () {
+				if ($(this).text() == '0' && $(this).offset().top >= $(window).scrollTop()) {
+					var counter = new _libCountUpJs2['default']($(this).attr('id'), 0, $(this).attr('data-counter'), 0, 2.5);
+					counter.start();
+				}
+			});
+		};
+		$(window).scroll((0, _libThrottledJs2['default'])(countCard, 100));
+	})();
 
 /***/ },
 /* 19 */

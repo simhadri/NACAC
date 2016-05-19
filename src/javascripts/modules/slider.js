@@ -1,3 +1,4 @@
+// FUNCTION
 $('#lightSlider').lightSlider({
 	item: 4,
 	loop: false,
