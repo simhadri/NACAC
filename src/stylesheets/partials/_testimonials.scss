@@ -65,14 +65,15 @@
 	.focus-testimonial__image{
 		margin: auto;
 		width: 28rem;
+		text-align: center;
 	}
 	.testimonial-block {
 	    padding-bottom: 2rem;
 	    padding-top: 3.4rem;
 	    p.testimonial-block__name {
-    font-size: 1.6rem;
-    font-weight: bold;
-}
+		    font-size: 1.6rem;
+		    font-weight: bold;
+		}
 	}
 	.focus-testimonial__content .article__header{
 		text-align: center;

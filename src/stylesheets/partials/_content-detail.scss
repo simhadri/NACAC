@@ -66,12 +66,13 @@
 	width: 25%;
 	img{
 		width: 100%;
+		border: 1px solid $nacac_border-lightgrey;
 	}
 }
 .product-detail__block{
 	float: left;
 	width: 75%;
-	padding: 2rem;
+	padding: 0 2rem;
 }
 
 /*
@@ -89,6 +90,20 @@
 			float: none;
 			margin: 1.4rem auto;
 		}
+	}
+	.product-detail__image{
+		float: none;
+		width: auto;
+		padding: 0 0 2rem;
+		img{
+			width: 100%;
+			max-width: 38rem;
+		}
+	}
+	.product-detail__block{
+		float: none;
+		width: auto;
+		padding: 0;
 	}
 }
 @include break(max, $screen-sm-max) {
