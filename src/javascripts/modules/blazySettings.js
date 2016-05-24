@@ -1,6 +1,7 @@
 // FUNCTION
-$(function() {
-	$(window).load(function(){
+(function() {
+	'use strict';
+	window.onload = function() {
 		var bLazy = new Blazy({
 			breakpoints: [
 				{ width: 640, src: 'data-src-sm' }
@@ -14,5 +15,5 @@ $(function() {
 			}
 		});
 		setTimeout(bLazy.revalidate(), 200);
-	});	
-});
+	}
+})();
