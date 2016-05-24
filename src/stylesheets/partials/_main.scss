@@ -89,6 +89,10 @@ body.body--freeze {
 	p {
 		padding-top: $p-spacing;
 		padding-bottom: $p-spacing;
+		& + p { // this isn't the most elegant solution, but I don't want to upset other templates
+			margin-top: -2rem;
+			padding-top: 0;
+		}
 	}
 }
 

@@ -28,67 +28,27 @@
       </section>
     </div>
   </article>
-  <article class="article__row article--white announcements">
-    <div class="container">
-      <section class="announcement__row row">
-        <div class="col-md-6">
-          <header class="article__header margin-bot-30">
-            <h2>Fairs <span class="orange">Near You</span></h2>
-          </header>
-          <ul class="fair-events">
-            {# make these incudes #}
-            <li>
-              <img class="fair-event-icon" src="/images/icons/states/pa.svg" alt="Pennsylvania">
-              <div class="fair-event-content">
-                <h3><a href="#">Rochester National College Fair</a></h3>
-                <p>March 13 &amp; 14, 2016 | Rochester, NY</p>
-                <p>
-                  <a href="#" class="btn btn-simple">Fair Details</a>
-                  <a href="#" class="btn btn-simple-blue">Register for Free</a>
-                </p>
-              </div>
-            </li>
-            <li>
-              <img class="fair-event-icon" src="/images/icons/states/pa.svg" alt="Pennsylvania">
-              <div class="fair-event-content">
-                <h3><a href="#">Rochester National College Fair</a></h3>
-                <p>March 13 &amp; 14, 2016 | Rochester, NY</p>
-                <p>
-                  <a href="#" class="btn btn-simple">Fair Details</a>
-                  <a href="#" class="btn btn-simple-blue">Register for Free</a>
-                </p>
-              </div>
-            </li>
-            <li>
-              <img class="fair-event-icon" src="/images/icons/states/pa.svg" alt="Pennsylvania">
-              <div class="fair-event-content">
-                <h3><a href="#">Rochester National College Fair</a></h3>
-                <p>March 13 &amp; 14, 2016 | Rochester, NY</p>
-                <p>
-                  <a href="#" class="btn btn-simple">Fair Details</a>
-                  <a href="#" class="btn btn-simple-blue">Register for Free</a>
-                </p>
-              </div>
-            </li>
-            <li>
-              <div class="fair-event-content">
-                <a href="#" class="btn btn-simple-blue">View All Fairs Near You</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-6">
-          <header class="article__header margin-bot-30">
-            <h2>New: <span class="orange">Stem College and Career</span></h2>
-          </header>
-          <p><img src="/images/fair/feature-stem.jpg" alt="" class="img-responsive"></p>
-          <h3>Subtitle Text Placeholder</h3>
-          <p>This fall, NACAC will host three pilot STEM College and Career Fairs to augment its National College Fair programming for students interested in pursuing college opportunities beyond high school. The new programs will concentrate on science-, technology-, engineering- and math-related educational and career opportunities.</p>
-          <p class="text-uppercase bold"><a href="#">View All Stem Fairs <i class="fa fa-caret-right"></i></a></p>
-        </div>
-      </section>
-    </div>
-  </article>
+
+<article class="article__row article--white announcements">
+  <div class="container">
+    <section class="announcement__row row">
+      <div class="col-md-6">
+        {% set eventList = { heading: 'Fairs <span class="orange">Near You</span>' } %}
+        {% include './_fair/event-list.html'%}
+      </div>
+      <div class="col-md-6">
+        <header class="article__header margin-bot-30">
+          <h2>New: <span class="orange">Stem College and Career</span></h2>
+        </header>
+        <p><img src="/images/fair/feature-stem.jpg" alt="" class="img-responsive"></p>
+        <h3>Subtitle Text Placeholder</h3>
+        <p>This fall, NACAC will host three pilot STEM College and Career Fairs to augment its National College Fair programming for students interested in pursuing college opportunities beyond high school. The new programs will concentrate on science-, technology-, engineering- and math-related educational and career opportunities.</p>
+        <p class="text-uppercase bold"><a href="#">View All Stem Fairs <i class="fa fa-caret-right"></i></a></p>
+      </div>
+    </section>
+  </div>
+</article>
+
   <article class="article__row article--white article-map">
     <div class="announcement__header announcement__header-top-border">
       <div class="container">
@@ -241,4 +201,5 @@
 {% endblock %}
 {% block javascript %}
 <script src="/javascripts/interior.js"></script>
+<script src="/javascripts/modules/map-temp.js"></script>
 {% endblock %}

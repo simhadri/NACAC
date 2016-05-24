@@ -336,3 +336,42 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+
+// form block (universal element or just for fairs?)
+.form-block {
+	padding: 3rem;
+	h3 {
+		margin: 0 0 4rem 0;
+	}
+	p {
+		margin: 0 0 4rem 0;
+	}
+	label {
+		font-weight: 400;
+	}
+}
+
+
+// icon list
+.icon-list {
+	.icon-item {
+		@include clearfix;
+		svg {
+			float: left;
+			width: 6rem;
+			height: 6rem;
+			fill: #fff;
+			opacity: 0.8;
+		}
+		span {
+			display: block;
+			padding-left: 7rem;
+			padding-top: 2.1rem;
+			line-height: 1.5rem;
+		}
+		& + .icon-item {
+			margin-top: 1.5rem;
+		}
+	}
+}

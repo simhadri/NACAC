@@ -22,6 +22,12 @@
 			position: absolute;
 			left: 0;
 		}
+		&.join:before {
+			content: "\f007";
+		}
+		&.help:before {
+			content: "\f1cd";
+		}
 	}
 	&.color-block--blue {
 		background-color: $nacac_light-blue;
