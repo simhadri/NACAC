@@ -76,6 +76,10 @@ body.body--freeze {
 .article--bluegrey {
 	background-color: $nacac_bg-blue-grey;
 }
+// needed for inverse breadcrumb wrapper
+.article--blue {
+	background-color: $nacac_light-blue;
+}
 
 .article__header,
 .section__header {

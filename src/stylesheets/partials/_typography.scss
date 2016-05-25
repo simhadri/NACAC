@@ -139,17 +139,23 @@ ul{
 }
 
 // large red numbers
-.styled-ol {
+.ol-styled,
+.ul-icons {
   list-style: none;
   margin-left: 0;
   padding-left: 0;
   li {
+    position: relative;
     margin-bottom: 2.4rem;
-    counter-increment: step-counter;
+    padding-left: 4.6rem;
+    // counter-increment: step-counter;
     &:before {
       display: block;
-      float: left;
-      content: counter(step-counter);
+      position: absolute;
+      top: 0;
+      left: 0;
+      // float: left;
+      // content: counter(step-counter);
       width: 3.6rem;
       height: 3.6rem;
       text-align: center;
@@ -162,11 +168,45 @@ ul{
       background-color: $nacac_burgundy;
       border-radius: 50%;
     }
-    span {
-      display: block;
-      padding: .6rem 0 0 4.6rem;
+    // span {
+    //   display: block;
+    //   // padding: .6rem 0 0 4.6rem;
+    // }
+  }
+}
+
+.ol-styled {
+  li {
+    padding-top: .6rem;
+    counter-increment: step-counter;
+    &:before {
+      content: counter(step-counter);
     }
   }
+}
 
+.ul-icons {
+  li {
+    &:before {
+      font: {
+        family: FontAwesome;
+        size: 2rem;
+      }
+      position: absolute;
+    }
+     &.icon-location:before {content: "\f041";}
+        &.icon-hours:before {content: "\f017";}  
+    &.icon-direction:before {content: "\f14e";}  
+      &.icon-contact:before {content: "\f1fa";}  
 
+  }
+  address {
+    font-style: normal;
+  }
+}
+
+.block-lg {
+  @media screen and (min-width: 1200px) {
+    display: block;
+  }
 }

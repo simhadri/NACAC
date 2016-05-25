@@ -16,11 +16,11 @@
       <div class="col-md-7">
         <h2>Registration Process</h2>
         <p>Student registration is an easier and much faster way for college representatives to follow up with you after the fair. You won't have to stand in line or fill out information cards, allowing you to focus on finding the right school for you!</p>
-        <ol class="styled-ol">
-          <li><span>Visit <a href="#">www.gotomyncf.com</a>.</span></li>
-          <li><span>Select the fair you wish to attend.</span></li>
-          <li><span>Complete all required fields and submit your information.</span></li>
-          <li><span>Print out your barcode and BRING it to the fair!</span></li>
+        <ol class="ol-styled">
+          <li>Visit <a href="#">www.gotomyncf.com</a>.</li>
+          <li>Select the fair you wish to attend.</li>
+          <li>Complete all required fields and submit your information.</li>
+          <li>Print out your barcode and BRING it to the fair!</li>
         </ol>
         <p>
           Once you register, there is no need to stand in the student registration line at the fair!
@@ -30,11 +30,68 @@
         </p>
       </div>
       <div class="col-md-5">
-        {% set eventList = { heading: 'Fairs <span class="orange">Near You</span>' } %}
-        {% include './_fair/event-list.html'%}
+        <header class="article__header margin-bot-30">
+          <h2>Fairs <span class="orange">Near You</span></h2>
+        </header>
+        <ul class="fair-events">
+          {# make these incudes #}
+          <li>
+            <img class="fair-event-icon" src="/images/icons/states/pa.svg" alt="Pennsylvania">
+            <div class="fair-event-content">
+              <h3><a href="#">Rochester National College Fair</a></h3>
+              <p>March 13 &amp; 14, 2016 | Rochester, NY</p>
+              <p>
+                <a href="#" class="btn btn-simple">Fair Details</a>
+                <a href="#" class="btn btn-simple-blue">Register for Free</a>
+              </p>
+            </div>
+          </li>
+          <li>
+            <img class="fair-event-icon" src="/images/icons/states/pa.svg" alt="Pennsylvania">
+            <div class="fair-event-content">
+              <h3><a href="#">Rochester National College Fair</a></h3>
+              <p>March 13 &amp; 14, 2016 | Rochester, NY</p>
+              <p>
+                <a href="#" class="btn btn-simple">Fair Details</a>
+                <a href="#" class="btn btn-simple-blue">Register for Free</a>
+              </p>
+            </div>
+          </li>
+          <li>
+            <img class="fair-event-icon" src="/images/icons/states/pa.svg" alt="Pennsylvania">
+            <div class="fair-event-content">
+              <h3><a href="#">Rochester National College Fair</a></h3>
+              <p>March 13 &amp; 14, 2016 | Rochester, NY</p>
+              <p>
+                <a href="#" class="btn btn-simple">Fair Details</a>
+                <a href="#" class="btn btn-simple-blue">Register for Free</a>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="fair-event-content">
+              <a href="#" class="btn btn-simple-blue">View All Fairs Near You</a>
+            </div>
+          </li>
+        </ul>
+
+
+
+
       </div>
     </div>
   </article>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -64,7 +121,7 @@
             To encourage your district to adopt this service, contact the Technology Resource Corporation.
           </p>
           <p>
-            <a href="#" class="btn btn--nacac-blue btn-wrap">Learn more about bulk registation</a>
+            <a href="#" class="btn btn--nacac-blue btn-wrap">Learn more about bulk registration</a>
           </p>
         </div>
         <div class="col-md-4">
