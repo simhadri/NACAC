@@ -76,6 +76,10 @@ body.body--freeze {
 .article--bluegrey {
 	background-color: $nacac_bg-blue-grey;
 }
+// needed for inverse breadcrumb wrapper
+.article--blue {
+	background-color: $nacac_light-blue;
+}
 
 .article__header,
 .section__header {
@@ -89,6 +93,10 @@ body.body--freeze {
 	p {
 		padding-top: $p-spacing;
 		padding-bottom: $p-spacing;
+		& + p { // this isn't the most elegant solution, but I don't want to upset other templates
+			margin-top: -2rem;
+			padding-top: 0;
+		}
 	}
 }
 
