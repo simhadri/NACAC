@@ -13,8 +13,9 @@ webpackJsonp([1],[
 	// FUNCTION
 	'use strict';
 	
-	$(function () {
-		$(window).load(function () {
+	(function () {
+		'use strict';
+		window.onload = function () {
 			var bLazy = new Blazy({
 				breakpoints: [{ width: 640, src: 'data-src-sm' }
 				//{width: 767, src: 'data-src-sm'}
@@ -27,8 +28,8 @@ webpackJsonp([1],[
 				}
 			});
 			setTimeout(bLazy.revalidate(), 200);
-		});
-	});
+		};
+	})();
 
 /***/ },
 /* 3 */
