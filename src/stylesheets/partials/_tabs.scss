@@ -4,7 +4,7 @@ nav.tab__navigation {
 	overflow-x: auto;
 	position: relative;
 	z-index: 1;
-	background-color: $nacac_light-blue;
+	// background-color: $nacac_light-blue;
 	.tab__button {
 		cursor: pointer;
 		display: block;
@@ -20,7 +20,7 @@ nav.tab__navigation {
 		@include sans-uppercase-normal;
 		font-family: 'Istok Web', sans-serif;
 		font-weight: 700;
-		background-color: $nacac_light-blue;
+		// background-color: $nacac_light-blue;
 		color: $nacac_lighter-blue;
 		border-right: 0.1rem solid $white;
 		&.tab__button--active {
@@ -47,11 +47,11 @@ nav.tab__navigation {
 	position: relative;
 	@include clearfix;
 	.tab__content {
-		border-top: 0.1rem solid $white;
+		// border-top: 0.1rem solid $white;
 		width: 100%;
 		padding: 2rem;
 		padding-left: 14rem;
-		background-color: $nacac_lighter-blue;
+		// background-color: $nacac_lighter-blue;
 		float: left;
 		display: none;
 		min-height: 15rem;
@@ -195,3 +195,43 @@ nav.tab__navigation {
 	// 	}
 	// }
 	// &::-webkit-scrollbar-track-piece {}
+
+
+
+// wide tabs
+.tab__stage-wrap {
+	background-color: $nacac_lighter-blue;
+	border-top: .1rem solid $white;
+}
+.tab__navigation-wrap {
+	background-color: $nacac_light-blue;
+	border-top: .1rem solid $white;
+}
+.tab__block-wide {
+	.tab__stage {
+		.tab__content {
+			padding: 0;
+		}
+	}
+	@media only screen and (min-width: 768px) {
+		.tab__stage,
+		.tab__navigation {
+		  width: 750px;
+		  margin: 0 auto;
+		}
+	}
+	@media only screen and (min-width: 992px) {
+		.tab__stage,
+		.tab__navigation {
+		  width: 970px;
+		  margin: 0 auto;
+		}
+	}
+	@media only screen and (min-width: 1200px) {
+		.tab__stage,
+		.tab__navigation {
+		  width: 1170px;
+		  margin: 0 auto;
+		}
+	}
+}
