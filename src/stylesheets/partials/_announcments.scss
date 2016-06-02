@@ -26,7 +26,8 @@
 
 .listing__entry,
 .resource__entry,
-.calendar__content {
+.calendar__content,
+.faq__entry {
 	margin-bottom: 3rem;
 	a {
 		@include sans-uppercase-normal;
@@ -42,6 +43,11 @@
 			border-bottom: 0.6rem solid transparent;
 			border-left: 0.6rem solid;
 		}
+	}
+}
+.faq__entry {
+	a {
+		color: $white;
 	}
 }
 
