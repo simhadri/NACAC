@@ -1,0 +1,272 @@
+{% set templateName = 'template-fair' %}
+{% extends '_layouts/fair-application.html' %}
+{% block content %}
+<main>
+
+  {% set className = 'utility-nav-fair' %}
+  {% include './_fair/utility.html'%}
+  {% set className = 'primary-nav-fair' %}
+  {% include './_shared/navigation.html'%}
+  {% include './_fair/hero-reg.html'%}
+
+
+  <article class="article__row content__row article--white">
+    <div class="container">
+      {% include './_components/breadcrumb.html' %}
+      <div class="col-md-7">
+        <h2>Registration Process</h2>
+        <p>Student registration is an easier and much faster way for college representatives to follow up with you after the fair. You won't have to stand in line or fill out information cards, allowing you to focus on finding the right school for you!</p>
+        <ol class="ol-styled">
+          <li>Visit <a href="#">www.gotomyncf.com</a>.</li>
+          <li>Select the fair you wish to attend.</li>
+          <li>Complete all required fields and submit your information.</li>
+          <li>Print out your barcode and BRING it to the fair!</li>
+        </ol>
+        <p>
+          Once you register, there is no need to stand in the student registration line at the fair!
+        </p>
+        <p class="small">
+          NACAC doesn not sell your information to third parties. NACAC is committed to maintaining high standards that foster ethical and social responsibility, as outlined in the <a href="#">NACAC Statement of Principles of Good Practice (SPGP)</a>.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <header class="article__header margin-bot-30">
+          <h2>Fairs <span class="orange">Near You</span></h2>
+        </header>
+        <ul class="fair-events">
+          {# make these incudes #}
+          <li>
+            <img class="fair-event-icon" src="/images/icons/states/pa.svg" alt="Pennsylvania">
+            <div class="fair-event-content">
+              <h3><a href="#">Rochester National College Fair</a></h3>
+              <p>March 13 &amp; 14, 2016 | Rochester, NY</p>
+              <p>
+                <a href="#" class="btn btn-simple">Fair Details</a>
+                <a href="#" class="btn btn-simple-blue">Register for Free</a>
+              </p>
+            </div>
+          </li>
+          <li>
+            <img class="fair-event-icon" src="/images/icons/states/pa.svg" alt="Pennsylvania">
+            <div class="fair-event-content">
+              <h3><a href="#">Rochester National College Fair</a></h3>
+              <p>March 13 &amp; 14, 2016 | Rochester, NY</p>
+              <p>
+                <a href="#" class="btn btn-simple">Fair Details</a>
+                <a href="#" class="btn btn-simple-blue">Register for Free</a>
+              </p>
+            </div>
+          </li>
+          <li>
+            <img class="fair-event-icon" src="/images/icons/states/pa.svg" alt="Pennsylvania">
+            <div class="fair-event-content">
+              <h3><a href="#">Rochester National College Fair</a></h3>
+              <p>March 13 &amp; 14, 2016 | Rochester, NY</p>
+              <p>
+                <a href="#" class="btn btn-simple">Fair Details</a>
+                <a href="#" class="btn btn-simple-blue">Register for Free</a>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="fair-event-content">
+              <a href="#" class="btn btn-simple-blue">View All Fairs Near You</a>
+            </div>
+          </li>
+        </ul>
+
+
+
+
+      </div>
+    </div>
+  </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <article class="article__row article--bluegrey">
+    <div class="container">
+      {% set testimonial = { heading: "Parents", layout: "right", copy: "<p>Parents can also register as a way to get the information to colleges and universities on behalf of their children.</p><p>This can be helpful if your children are not able to attend a college fair, or if they do come together, but split up during the fair as a way to talk to more colleges in the given time period.</p>" } %}
+      {% include './_components/focus-testimonial.html' %}
+    </div>
+  </article>
+
+
+
+  <article class="article__row article--white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h2>Counselors</h2>
+          <p>Counselors can register as a way for collegs and universities to send them more information that would be helpful for the students.</p>
+          <p>
+            <a href="#" class="btn btn--nacac-blue">Register for free</a>
+          </p>
+          <h3>Bulk Registration and Importing Student Data</h3>
+          <p>
+            At select college fairs, couselors have the option to import all student data to a single NCF database, making it easier for students and cousnelors to access their registration information. This step-by-step guide will walk you through the process if your school attends some of these fairs.
+          </p>
+          <p>
+            To encourage your district to adopt this service, contact the Technology Resource Corporation.
+          </p>
+          <p>
+            <a href="#" class="btn btn--nacac-blue btn-wrap">Learn more about bulk registration</a>
+          </p>
+        </div>
+        <div class="col-md-4">
+          <div class="form-block article--bluegrey">
+            <h3>Want information about College Fairs sent directly to your inbox?</h3>
+            <p>Sign up now for updates!</p>
+            <form action="#">
+              <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" class="form-control" id="first-name">
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" class="form-control" id="last-name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" id="email">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="article__row article--bluegrey">
+    <div class="container">
+      <header class="article__header">
+        <h1>Registration Information</h1>
+        <p>
+          Here to help you with the registration process lorem ipsum dolor site amet.
+        </p>
+      </header>
+      <section class="card-block__row">
+        <div class="row">
+          {% set cardBlock = { heading: "National College Fairs Registration FAQs", image: "shared/card-national", button: true } %}
+          {% include './_components/card-block.html'%}
+          {% set cardBlock = { heading: "College Fair Checklist", image: "shared/card-performing", button: true } %}
+          {% include './_components/card-block.html'%}
+          {% set cardBlock = { heading: "Registration Guide", image: "shared/card-stem", button: true } %}
+          {% include './_components/card-block.html'%}
+        </div>
+      </section>
+    </div>
+  </article>
+
+  <article class="article__row article--white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/166429528"></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h2>Video: NACAC 2015 Recap</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem neque sequi cupiditate eveniet temporibus dolores fuga, nisi molestiae cumque numquam vitae distinctio assumenda eum officiis quos quam non impedit praesentium.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi expedita animi nulla ducimus ratione doloremque illum magni esse perferendis voluptatum fuga nobis aperiam et distinctio facilis, omnis debitis enim non.
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+
+  <div class="content-block__row">
+    {% set colorBlock = { className: 'color-block--wide', heading: "Counselors: NACAC Value Proposition Text. Become a Member Today", copy: '<p><a href="#" class="btn btn--clear">Apply for Membership</a></p>', feature: 'Join NACAC', featureClass: 'join', image: "main/color-block-bg-purple.jpg"} %}
+    {% include './_components/color-block.html'%}
+    
+    {% set colorBlock = { className: 'color-block--wide', heading: "Trouble Registering?", copy: '
+    <div class="icon-list">
+      <div class="icon-item">
+        <svg class="icon-phone">
+          <use xlink:href="#icon-phone"></use>
+        </svg>
+        <span>1. Contact TRC at 1-800-922-8648.</span>
+      </div>
+      <div class="icon-item">
+        <svg class="icon-phone-tap">
+          <use xlink:href="#icon-phone-tap"></use>
+        </svg>
+        <span>2. Press item 2 for College Fair Automation</span>
+      </div>
+    </div>
+    ', feature: 'Get Help', featureClass: 'help', image: "main/color-block-bg-green.jpg"} %}
+    {% include './_components/color-block.html'%}
+
+  </div>
+
+
+  {#
+  <article class="article__row article--white announcements">
+    <div class="announcement__header">
+      <div class="container">
+        <p><i class="fa fa-map-marker"></i>Fair Locator</p>
+      </div>
+    </div>
+    <div class="container">
+      <section class="announcement__row row">
+        <div class="col-md-7 listing__block">
+          <header class="article__header">
+            <h2>Get Involved</h2>
+          </header>
+          {% include '_components/listing-entry.html'%}
+          {% include '_components/listing-entry.html'%}
+          {% include '_components/listing-entry.html'%}
+        </div>
+        <div class="col-md-5 calendar__block">
+          <header class="article__header">
+            <h2>Upcoming Training</h2>
+          </header>
+          {% include '_components/calendar-entry.html'%}
+          {% include '_components/calendar-entry.html'%}
+          {% include '_components/calendar-entry.html'%}
+          <a href="#" class="btn btn--nacac-blue">View Full Calendar</a>
+        </div>
+      </section>
+    </div>
+  </article>
+  <article class="article__row article--white">
+    <div class="container">
+      {% include './_components/focus-testimonial.html' %}
+    </div>
+  </article>
+  <article class="article__row article--bluegrey">
+    <div class="container">
+      <div class="article__header">
+        <h2>Member Stories</h2>
+      </div>
+      <div class="article__row row">
+        {% include './_components/testimonial-block.html' %}
+        {% include './_components/testimonial-block.html' %}
+        {% include './_components/testimonial-block.html' %}
+      </div>
+    </div>
+  </article>
+  {% include './_components/full-block-row.html'%} #} {% include './_shared/footer.html'%}
+</main>
+
+{% endblock %}
+{% block javascript %}
+<script src="/javascripts/interior.js"></script>
+{% endblock %}

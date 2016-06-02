@@ -25,4 +25,17 @@
   > .active {
     color: $breadcrumb-active-color;
   }
+  .article--blue & {
+    > li {
+      a {
+        color: #000;
+      }
+      & + li:before {
+        color: #000;
+      }
+    }
+    > .active {
+      color: #fff;
+    }
+  }
 }

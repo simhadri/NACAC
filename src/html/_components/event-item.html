@@ -1,0 +1,29 @@
+<li>
+  {% if eventItem.layout == 'wide' %}
+    <div class="row">
+      <div class="col-md-7">
+        {% endif %}
+        <img class="fair-event-icon" src="/images/icons/states/{% if event.state-short %}{{ event.state-short }}{% else %}pa{% endif %}.svg" alt="{% if event.state %}{{ event.state }}{% else %}Pennsylvania{% endif %}">  
+        <div class="fair-event-content">
+          <h3>
+            <a href="#">
+              {% if event.title %}{{ event.title }}{% else %}Rochester National College Fair{% endif %}
+            </a>
+          </h3>
+          <p>March 13 &amp; 14, 2016 | Rochester, NY</p>
+        </div>
+    {% if eventItem.layout == 'wide' %}
+      </div><!-- .col-md-7 -->
+      <div class="col-md-5">
+        <div class="text-right">
+          {% endif %}
+            <p>
+              <a href="#" class="btn btn-simple">Fair Details</a>
+              <a href="#" class="btn btn-simple-blue">Register for Free</a>
+            </p>
+          {% if eventItem.layout == 'wide' %}
+        </div><!-- .text-right -->
+      </div><!-- .col-md-5 -->
+    </div><!-- .row -->
+  {% endif %}
+</li>
