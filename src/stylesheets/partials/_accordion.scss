@@ -15,7 +15,7 @@
 			transition: background-color 400ms ease-in-out;
 			color: $white;
 			.accordion-item__article {
-				max-height: 20rem;
+				max-height: 200rem;
 				transition: max-height 400ms ease-in-out;
 			}
 			.accordion-item__trigger {
@@ -25,6 +25,9 @@
 				&:after {
 					@include icon('fa-minus');
 				}
+			}
+			a {
+				pointer-events: all;
 			}
 		}
 		.accordion-item__header{
@@ -41,7 +44,7 @@
 			@include clearfix;
 			.accordion-item__aside {
 				float: left;
-				width: 20%;
+				width: 13rem;
 				border-radius: 50%;
 				overflow: hidden;
 				img {
@@ -72,6 +75,11 @@
 			&:after {
 				@include icon('fa-plus');
 			}
+		}
+	}
+	&.accordion__faq {
+		article p:first-child {
+			margin-top: 2rem;
 		}
 	}
 }

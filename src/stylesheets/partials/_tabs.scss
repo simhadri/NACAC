@@ -67,7 +67,7 @@ nav.tab__navigation {
 			transition: $transition--all;
 			transition-delay: 300ms;
 		}
-		aside {
+		aside:not(.accordion-item__aside) {
 			position: absolute;
 			top: 2rem;
 			width: 10rem;

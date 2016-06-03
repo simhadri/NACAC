@@ -26,6 +26,16 @@ $green-dark: #0e6735;
 	margin-bottom: 3rem;
 }
 
+// images
+img.pull-right {
+	margin: 0 0 3rem 3rem;
+	@media screen and (max-width: 767px) {
+		display: block;
+		float: none !important;
+		margin: 0 auto 3rem auto;
+	}
+}
+
 // utility nav
 .utility-nav.utility-nav-fair {
 	.utility-nav-register {
@@ -43,6 +53,13 @@ $green-dark: #0e6735;
 		.utility-nav-register {
 			a {
 				color: #fff;
+			}
+		}
+	}
+	&.utility-nav--blue {
+		.utility-nav-register {
+			a {
+				color: $white;
 			}
 		}
 	}
@@ -128,6 +145,93 @@ $green-dark: #0e6735;
 	color: #fff;
 	border: 1px solid transparent;
 	background: $nacac-blue;
+}
+
+// global?
+.image-block-wrap {
+	padding-bottom: 6rem;
+	background: $white;
+	.image-block {
+		// background-color: $nacac_bg-blue-grey;
+		// @include clearfix;
+		width: 100%;
+		background-repeat: no-repeat;
+		background-position: 100% 50%;
+		background-size: cover;
+		.image-block-content {
+			// float: left;
+			width: 52%;
+			min-height: 50rem;
+			padding: 3rem;
+			background-color: $nacac_bg-blue-grey;
+			h2 {
+				margin: 0 0 2rem 0;
+			}
+		}
+		// .image-block-img {
+		// 	float: right;
+		// 	width: 48%
+		// }
+		ul.ul-icons {
+			margin-bottom: 5rem;
+			li {
+				padding-top: .5rem;
+			}
+			li:before {
+				content: "\f00c";
+			}
+		}
+		.btn {
+			margin-bottom: 1.5rem;
+		}
+	}
+	&.image-block-wrap-right {
+		.image-block {
+			background-position: 0 50%;
+		}
+		.image-block-content {
+			margin-left: 48%;
+		}
+	}
+}
+
+.content-aside {
+	@media screen and (max-width: 991px) {
+		margin-top: 4rem;
+	}
+}
+.share-link {
+	float: right;
+	padding-top: 3.6rem;
+	text-align: right;
+	a {
+		color: $black;
+		.fa {
+			color: $green;
+		}
+	}
+}
+.next-article {
+	margin-bottom: 6rem;
+	p {
+		margin: 0 0 1rem 0;
+	}
+	.next {
+		font-size: 2rem;
+		font-weight: 700;
+		color: $black;
+		&:after {
+			padding-left: .5rem;
+			content: '\f0da';
+			font-family: fontawesome;
+		}
+	}
+}
+.sidebar-ad {
+	margin-bottom: 4rem;
+	img {
+		margin: 0 auto;
+	}
 }
 
 // fair events (I based this on .calendar__entry)
