@@ -1,0 +1,92 @@
+{% set templateName = 'template-fair' %}
+{% set pageLocation = "Article" %}
+{% extends '_layouts/fair-application.html' %}
+{% block content %}
+<main>
+
+  {% set className = 'utility-nav--blue utility-nav-fair' %}
+  {% include './_fair/utility.html'%}
+  {% set className = "primary-nav--inanimate primary-nav--blue primary-nav-fair" %}
+  {% include './_shared/navigation.html'%}
+
+
+  <article class="article__row article--white hero--none">
+    <div class="container">
+      {% set share = 'true' %}
+      {% include './_components/breadcrumb.html' %}
+      <div class="row">
+        <div class="col-md-9 content-detail">
+          <header class="content-detail__header">
+            <h2>Sample Content Title</h2>
+            <span class="content-detail__cite">
+              <p>By Author Name</p>
+              <p>April 19, 2016</p>
+            </span>
+          </header>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in augue id erat aliquet sagittis vitae sed nulla. Aenean est turpis, cursus quis erat et, sollicitudin faucibus metus. Donec eget efficitur neque, non gravida risus. Sed magna est, dapibus vel justo ac, pulvinar eleifend tortor. In pellentesque dolor in metus egestas tincidunt. Aenean faucibus porttitor luctus. Mauris eget volutpat libero, et tempus sem. In sit amet varius purus. Phasellus mattis faucibus scelerisque. Aliquam hendrerit pharetra urna, rhoncus volutpat purus efficitur nec.</p>
+          <h3>Repudiandae Beatae Quisquam</h3>
+          <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Article+Image&w=500&h=300" alt="" class="pull-right img-responsive">
+          <p>Suspendisse vitae porttitor urna. Pellentesque ullamcorper gravida suscipit. Nullam ut odio maximus, accumsan justo nec, efficitur lorem. Aliquam pharetra nec risus id dignissim. Quisque quis justo sit amet odio molestie facilisis. Nunc nibh nunc, blandit a ultricies non, elementum et dui. Integer enim massa, porta ut nisi tempor, euismod condimentum metus. Aliquam eu nisl luctus, gravida massa ut, convallis nisi. Ut rutrum aliquet metus nec bibendum. Phasellus ipsum sem, bibendum ac nibh laoreet, pulvinar convallis ipsum.</p>
+          <p>Sed vel ex lectus. Pellentesque pretium dui quis diam aliquam dictum. Vivamus pharetra purus sed tincidunt venenatis. Sed euismod, ante non vehicula pharetra, quam ipsum rhoncus mi, ac viverra felis ligula ac risus. Sed volutpat urna lacus, sed vestibulum nulla convallis eu. Nullam aliquet blandit odio vel auctor. Donec a luctus enim. Nam enim massa, maximus id aliquam nec, posuere eu leo. Praesent luctus ante arcu, eget convallis velit viverra sit amet. Aliquam at varius tortor. Aliquam orci odio, accumsan at mauris eu, blandit placerat sem. Nulla consequat mi in mi bibendum pulvinar. Mauris in velit laoreet, molestie lorem vitae, tincidunt est. Sed tincidunt semper ex et iaculis. Sed sagittis, arcu eget hendrerit tempus, lorem mauris congue velit, et commodo neque elit vel risus.</p>
+          <h3>Repudiandae Beatae Quisquam</h3>
+          <p>Suspendisse vitae porttitor urna. Pellentesque ullamcorper gravida suscipit. Nullam ut odio maximus, accumsan justo nec, efficitur lorem. Aliquam pharetra nec risus id dignissim. Quisque quis justo sit amet odio molestie facilisis. Nunc nibh nunc, blandit a ultricies non, elementum et dui. Integer enim massa, porta ut nisi tempor, euismod condimentum metus. Aliquam eu nisl luctus, gravida massa ut, convallis nisi. Ut rutrum aliquet metus nec bibendum. Phasellus ipsum sem, bibendum ac nibh laoreet, pulvinar convallis ipsum.</p>
+        </div>
+        <div class="col-md-3 content-aside">
+          <div class="next-article">
+            <p><a href="#"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Article+Image&w=500&h=300" alt="" class="img-responsive"></a></p>
+            <p><a href="#" class="next">Next Article</a></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <div class="sidebar-ad">
+            <a href="#">
+              <img src="https://placeholdit.imgix.net/~text?txtsize=20&txt=Ad+Unit&w=150&h=250" alt="" class="img-responsive">
+            </a>
+          </div>
+          <div class="sidebar-ad">
+            <a href="#">
+              <img src="https://placeholdit.imgix.net/~text?txtsize=20&txt=Ad+Unit&w=150&h=250" alt="" class="img-responsive">
+            </a>
+          </div>
+          <div class="sidebar-ad">
+            <a href="#">
+              <img src="https://placeholdit.imgix.net/~text?txtsize=20&txt=Ad+Unit&w=150&h=250" alt="" class="img-responsive">
+            </a>
+          </div>
+          <div class="sidebar-ad">
+            <a href="#">
+              <img src="https://placeholdit.imgix.net/~text?txtsize=20&txt=Ad+Unit&w=150&h=250" alt="" class="img-responsive">
+            </a>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </article>
+
+
+  <article class="article__row article--lightgrey">
+      <div class="container">
+        <header class="article__header">
+          <h2>Related Content</h2>
+        </header>
+        <section class="card-block__row">
+          <div class="row">
+            {% set cardBlock = { heading: "National College Fairs Registration FAQs", image: "shared/card-national", button: true } %}
+            {% include './_components/card-block.html'%}
+            {% set cardBlock = { heading: "College Fair Checklist", image: "shared/card-performing", button: true } %}
+            {% include './_components/card-block.html'%}
+            {% set cardBlock = { heading: "Registration Guide", image: "shared/card-stem", button: true } %}
+            {% include './_components/card-block.html'%}
+          </div>
+        </section>
+      </div>
+    </article>
+
+ {% include './_shared/footer.html'%}
+</main>
+
+{% endblock %}
+{% block javascript %}
+<script src="/javascripts/interior.js"></script>
+{% endblock %}

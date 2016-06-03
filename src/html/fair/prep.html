@@ -1,0 +1,99 @@
+{% set templateName = 'template-fair' %}
+{% set pageLocation = "Preparing for a College Fair" %}
+{% extends '_layouts/fair-application.html' %}
+{% block content %}
+<main>
+
+  {% set className = 'utility-nav-fair' %}
+  {% include './_fair/utility.html'%}
+  {% set className = 'primary-nav-fair' %}
+  {% include './_shared/navigation.html'%}
+  {% include './_fair/hero-prep.html'%}
+
+
+  <article class="image-block-wrap">
+    <div class="image-block" style="background-image: url(/images/shared/color-block-bg-green.jpg);">
+      <div class="image-block-content">
+        <h2>Before the Fair:</h2>
+        <ul class="ul-icons">
+          <li>Discuss your college plans with your school counselor, family, teachers and friends</li>
+          <li>Download an print a College Fair Checklist to bring with you.</li>
+          <li>Research your colleges of interest on the internet and in your guidance office/library.</li>
+          <li>Check dates and registration deadlines for college entrance examinations.</li>
+          <li>Prepare a list of questions to ask college representatives.</li>
+          <li>Register for the Fair!</li>
+        </ul>
+        <p>
+          <a href="#" class="btn btn-simple">Register for Free</a>
+          <a href="#" class="btn btn-simple-blue">Download College Fair Checklist</a>
+        </p>
+      </div>
+      <!-- <div class="image-block-img">
+        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Prep+Image&w=900&h=900" alt="" class="img-responsive">
+      </div> -->
+    </div>
+  </article>
+
+  <article class="image-block-wrap image-block-wrap-right">
+    <div class="image-block" style="background-image: url(/images/shared/color-block-bg-orange.jpg);">
+      <div class="image-block-content">
+        <h2>At the Fair:</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, vero, officia. Possimus voluptatem aspernatur ex autem consequuntur distinctio, officiis, mollitia nesciunt ipsum dolores recusandae tenetur dicta corporis ratione, enim, esse?</p>
+        <ul class="ul-icons">
+          <li>Start by going to the tables inventore necessitatibus</li>
+          <li>Find our the cost of education quia vitae quos minus. Saepe, suscipit, incidunt.</li>
+          <li>Introduce yourself and provide your specific voluptatem ea, laborum nobis asperiores accusamus. Dolor, ullam.</li>
+          <li>Make sure your parents or guardians are listening in, especially when financial figures are discussed.</li>
+          <li>Attend a Workshop</li>
+        </ul>
+        <p>
+          <a href="#" class="btn btn-simple-blue">What Are Workshops?</a>
+        </p>
+      </div>
+      <!-- <div class="image-block-img">
+        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Prep+Image&w=900&h=900" alt="" class="img-responsive">
+      </div> -->
+    </div>
+  </article>
+
+  <article class="image-block-wrap">
+    <div class="image-block" style="background-image: url(/images/shared/color-block-bg-blue.jpg);">
+      <div class="image-block-content">
+        <h2>After the Fair:</h2>
+        <ul class="ul-icons">
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+          <li>Email the recruiters if you have follow-up questions.</li>
+        </ul>
+        <p>
+          <a href="#" class="btn btn-simple-blue">Lorem Impsum</a>
+        </p>
+      </div>
+      <!-- <div class="image-block-img">
+        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Prep+Image&w=900&h=900" alt="" class="img-responsive">
+      </div> -->
+    </div>
+  </article>
+
+  <article class="article__row article--bluegrey">
+    <div class="container">
+      <section class="card-block__row">
+        <div class="row">
+          {% set cardBlock = { heading: "Advice for Performing and Visual Arts Students", image: "shared/card-national", button: true } %}
+          {% include './_components/card-block.html'%}
+          {% set cardBlock = { heading: "Performing and Visual Arts Fairs FAQs", image: "shared/card-performing", button: true } %}
+          {% include './_components/card-block.html'%}
+          {% set cardBlock = { heading: "Counselor Information", image: "shared/card-stem", button: true } %}
+          {% include './_components/card-block.html'%}
+        </div>
+      </section>
+    </div>
+  </article>
+
+
+ {% include './_shared/footer.html'%}
+</main>
+
+{% endblock %}
+{% block javascript %}
+<script src="/javascripts/interior.js"></script>
+{% endblock %}
