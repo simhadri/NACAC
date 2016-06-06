@@ -29,7 +29,7 @@ webpackJsonp([2],[
 	
 	// import 'modules/slider';
 	
-	__webpack_require__(21);
+	__webpack_require__(14);
 
 /***/ },
 /* 11 */
@@ -164,14 +164,7 @@ webpackJsonp([2],[
 	module.exports = countDown;
 
 /***/ },
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */
+/* 14 */
 /***/ function(module, exports) {
 
 	/*!
