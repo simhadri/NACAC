@@ -314,6 +314,9 @@
 		img.color-block__image {
 			position: absolute;
 		}
+		&.color-block--full .color-block__content{
+			text-align: left;
+		}
 	}
 	@for $i from 1 through 4 {
 		.block--dynamic:first-child:nth-last-child(#{$i}),
