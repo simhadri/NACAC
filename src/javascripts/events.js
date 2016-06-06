@@ -3,4 +3,5 @@
 // *********************
 import 'modules/asideNavigation';
 import 'modules/clock';
-import 'modules/slider';
+// import 'modules/slider';
+import 'modules/carousel';
