@@ -6,4 +6,4 @@ import 'modules/accordion';
 import 'modules/backTop';
 import 'modules/formValidation';
 import 'modules/countCard';
-import 'modules/carousel';
+import 'modules/slider';
