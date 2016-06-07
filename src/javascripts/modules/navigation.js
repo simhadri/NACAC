@@ -39,49 +39,7 @@ import Screen from 'lib/screen.js';
 		$('.utility-search__trigger').addClass('pointer--disabled');
 		screen.turnScreenOn('soft');
 		body.on('click', clickAnywhereToCloseEverything);
-		var selectedId = selected.attr('data-id');
 		if (!selected.parent().hasClass('selected')) {
-			$.ajax({
-				url: '/javascripts/data/interiorNavData_' + selectedId + '.json',
-				dataType: 'json',
-				cache: true,
-				success: function(data) {
-					selected.next().empty();
-					for (let i = 0; i < data.length; i++) {
-						if (data[i].type !== null && data[i].type === 'link') {
-							selected.next().append(
-								'<li>' +
-								'<a href="' + data[i].content + '">' + data[i].name + '</a>' +
-								'</li>'
-							);
-						}
-						if (data[i].type !== null && data[i].type === 'link_set') {
-							selected.next().append(
-								'<li>' +
-								'<h4>' + data[i].name + '</h4>' +
-								'<ul id="interior__links_' + i + '" class="interior__links"></ul>' +
-								'</li>'
-							);
-							for (let n = 0; n < data[i].content.length; n++) {
-								$('#interior__links_' + [i]).append(
-									'<li><a href=' + data[i].content[n].url + '>' + data[i].content[n].text + '</a></li>'
-								);
-							}
-
-						}
-						if (data[i].type !== null && data[i].type === 'feature') {
-							selected.next().append(
-								'<li class="nav__feature">' +
-								'<h4>' + data[i].name + '</h4>' +
-								'<img src="' + data[i].content.url + '"/>' +
-								'<p>' + data[i].content.text + '</p>' +
-								'</li>'
-							);
-						}
-					}
-
-				}
-			});
 			$('.selected').removeClass('selected');
 			setTimeout(function() {
 				selected.parent().addClass('selected');
