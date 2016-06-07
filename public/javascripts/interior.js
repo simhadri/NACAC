@@ -2,7 +2,7 @@ webpackJsonp([3],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(15);
+	module.exports = __webpack_require__(17);
 
 
 /***/ },
@@ -16,7 +16,9 @@ webpackJsonp([3],[
 /* 8 */,
 /* 9 */,
 /* 10 */,
-/* 11 */
+/* 11 */,
+/* 12 */,
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -69,9 +71,9 @@ webpackJsonp([3],[
 	})();
 
 /***/ },
-/* 12 */,
-/* 13 */,
-/* 14 */
+/* 14 */,
+/* 15 */,
+/* 16 */
 /***/ function(module, exports) {
 
 	// FUNCTION
@@ -103,7 +105,7 @@ webpackJsonp([3],[
 	}
 
 /***/ },
-/* 15 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// *********************
@@ -111,20 +113,20 @@ webpackJsonp([3],[
 	// *********************
 	'use strict';
 	
-	__webpack_require__(11);
-	
-	__webpack_require__(16);
-	
-	__webpack_require__(17);
+	__webpack_require__(13);
 	
 	__webpack_require__(18);
 	
 	__webpack_require__(19);
 	
-	__webpack_require__(14);
+	__webpack_require__(20);
+	
+	__webpack_require__(21);
+	
+	__webpack_require__(16);
 
 /***/ },
-/* 16 */
+/* 18 */
 /***/ function(module, exports) {
 
 	// FUNCTION
@@ -146,7 +148,7 @@ webpackJsonp([3],[
 	})();
 
 /***/ },
-/* 17 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -205,7 +207,7 @@ webpackJsonp([3],[
 	})();
 
 /***/ },
-/* 18 */
+/* 20 */
 /***/ function(module, exports) {
 
 	// FUNCTION
@@ -253,7 +255,7 @@ webpackJsonp([3],[
 	})();
 
 /***/ },
-/* 19 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -265,7 +267,7 @@ webpackJsonp([3],[
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
-	var _libCountUpJs = __webpack_require__(20);
+	var _libCountUpJs = __webpack_require__(22);
 	
 	var _libCountUpJs2 = _interopRequireDefault(_libCountUpJs);
 	
@@ -284,7 +286,7 @@ webpackJsonp([3],[
 	})();
 
 /***/ },
-/* 20 */
+/* 22 */
 /***/ function(module, exports) {
 
 	/*

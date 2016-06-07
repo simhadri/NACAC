@@ -21,6 +21,8 @@ webpackJsonp([0],[
 	__webpack_require__(7);
 	
 	__webpack_require__(8);
+	
+	__webpack_require__(9);
 
 /***/ },
 /* 2 */
@@ -430,6 +432,118 @@ webpackJsonp([0],[
 			}
 		});
 	})();
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// IMPORTS
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _libParseJs = __webpack_require__(10);
+	
+	var _libParseJs2 = _interopRequireDefault(_libParseJs);
+	
+	// FUNCTION
+	(function () {
+	    'use strict';
+	    var parse = new _libParseJs2['default']();
+	    var TweetController = 'http://localhost:3000/javascripts/data/twitter-feed.json';
+	    $.ajax({
+	        url: TweetController,
+	        type: 'GET',
+	        dataType: 'json',
+	        success: function success(data) {
+	            var tweetDeck = document.getElementById('tweetDeck');
+	            for (var i = 0; i < data.length; i++) {
+	                var tweetText = data[i].text;
+	                // Clean up tweet, add links
+	                tweetText = parse.parseUrl(tweetText);
+	                tweetText = parse.parseUsername(tweetText);
+	                tweetText = parse.parseHashtag(tweetText);
+	                tweetDeck.innerHTML = tweetDeck.innerHTML + '<div class="col-sm-4 col-xs-12">' + '<div class="tweet-wrap">' + '<div class="tweet">' + tweetText + '</div>' + '<div class="tweet-meta">' + '<a href="http://twitter.com/NACACFairs"><img class="tweet__profile-pic" src="' + data[i].user.profile_image_url + '"></a>' + '<a href="http://twitter.com/NACACFairs">@NACACFairs</a><br>' + '<a href="#">' + parse.parseTimeAgo(data[i].utc_offset) + '</a>' + '</div>' + '</div>' + '</div>';
+	                tweetText;
+	            }
+	        }
+	    });
+	})();
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	// Tweet Parse!
+	// http://www.simonwhatley.co.uk/examples/twitter/prototype/
+	
+	'use strict';
+	
+	var TweetParse = function TweetParse() {
+		this.parseUrl = function (n_string) {
+			return n_string.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&~\?\/.=]+/g, function (url) {
+				return url.link(url);
+			});
+		}, this.parseUsername = function (n_string) {
+			return n_string.replace(/[@]+[A-Za-z0-9-_]+/g, function (u) {
+				var username = u.replace('@', '');
+				return u.link('http://twitter.com/' + username);
+			});
+		}, this.parseHashtag = function (n_string) {
+			return n_string.replace(/[#]+[A-Za-z0-9-_]+/g, function (t) {
+				var tag = t.replace('#', '%23');
+				return t.link('https://twitter.com/search?q=' + tag);
+			});
+		}, this.parseTimeAgo = function (n_string) {
+			var K = (function () {
+				var a = navigator.userAgent;
+				return {
+					ie: a.match(/MSIE\s([^;]*)/)
+				};
+			})();
+			var system_date = new Date(Date.parse(n_string));
+			var user_date = new Date();
+			if (K.ie) {
+				system_date = Date.parse(n_string.replace(/( \+)/, ' UTC$1'));
+			}
+			var diff = Math.floor((user_date - system_date) / 1000);
+			if (diff <= 1) {
+				return "just now";
+			}
+			if (diff < 20) {
+				return diff + " seconds ago";
+			}
+			if (diff < 40) {
+				return "half a minute ago";
+			}
+			if (diff < 60) {
+				return "less than a minute ago";
+			}
+			if (diff <= 90) {
+				return "one minute ago";
+			}
+			if (diff <= 3540) {
+				return Math.round(diff / 60) + " minutes ago";
+			}
+			if (diff <= 5400) {
+				return "1 hour ago";
+			}
+			if (diff <= 86400) {
+				return Math.round(diff / 3600) + " hours ago";
+			}
+			if (diff <= 129600) {
+				return "1 day ago";
+			}
+			if (diff < 604800) {
+				return Math.round(diff / 86400) + " days ago";
+			}
+			if (diff <= 777600) {
+				return "1 week ago";
+			}
+			return "on " + system_date;
+		};
+	};
+	module.exports = TweetParse;
 
 /***/ }
 ]);
