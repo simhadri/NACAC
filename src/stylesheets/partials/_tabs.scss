@@ -23,7 +23,7 @@ nav.tab__navigation {
 		// background-color: $nacac_light-blue;
 		color: $nacac_lighter-blue;
 		border-right: 0.1rem solid $white;
-		&.tab__button--active {
+		&.trigger__button--active {
 			pointer-events: none;
 			background-color: $nacac_lighter-blue;
 			color: $nacac_light-blue;
@@ -62,7 +62,7 @@ nav.tab__navigation {
 			display: block; 
 			z-index: 0;
 		}
-		&.tab__content--active {
+		&.trigger__content--active {
 			display: block;
 			transition: $transition--all;
 			transition-delay: 300ms;

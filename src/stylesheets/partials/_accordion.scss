@@ -9,7 +9,7 @@
 		padding: 2rem;
 		border-bottom: 1px solid $nacac_border-lightgrey;
 		cursor: pointer;
-		&.accordion__item--selected {
+		&.trigger__content--active {
 			pointer-events: none;
 			background-color: $nacac_light-blue;
 			transition: background-color 400ms ease-in-out;
