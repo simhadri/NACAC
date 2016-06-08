@@ -19,8 +19,11 @@
 	@include clearfix;
 	.tweet {
 		padding: 2rem 2.5rem 0 2.5rem;
-		font-size: 2rem;
+		font-size: 1.8rem;
 		line-height: 1.2;
+		a{
+			word-wrap: break-word;
+		}
 	}
 	.tweet-meta {
 		position: absolute;
@@ -36,6 +39,7 @@
 			height: 5rem;
 			float: left;
 			margin-right: 1rem;
+			margin-top: -1rem;
 		}
 	}
 	@media screen and (max-width: 767px) {
