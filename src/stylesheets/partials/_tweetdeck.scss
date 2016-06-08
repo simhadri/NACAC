@@ -19,7 +19,7 @@
 	@include clearfix;
 	.tweet {
 		padding: 2rem 2.5rem 0 2.5rem;
-		font-size: 1.8rem;
+		font-size: 1.6rem;
 		line-height: 1.2;
 		a{
 			word-wrap: break-word;
@@ -51,6 +51,7 @@
 .tweet-deck__row {
 	background-color: $nacac_grey;
 	border: none;
+	padding: 0 2rem;
 	header{
 		text-align: left;
 		color: $white;
