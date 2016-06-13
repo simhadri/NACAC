@@ -86,83 +86,82 @@
 }
 
 // Card-block
-.card-block {
-	background-color: $nacac_grey;
-	margin: 2rem 1rem;
-	padding: 0;
-	color: $white;
-	-webkit-transform: translateZ(0);
-	-webkit-transform: translateY(0);
-	transition: $transition--all;
-	cursor: pointer;
-	&:hover {
-		position: relative;
-		box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
-		@include prefix(animation-name, floating, webkit);
-		@include prefix(animation-duration, 3s, webkit);
-		@include prefix(animation-iteration-count, infinite, webkit);
-		@include prefix(animation-timing-function, ease-in-out, webkit);
-		@include keyframes(floating) {
-			from {
-				transform: translate(0, 0px);
-			}
-			65% {
-				transform: translate(0, -6px);
-			}
-			to {
-				transform: translate(0, 0px);
-			}
-		}
-		img {}
-	}
-}
-
-.card-block__header {
-	position: relative;
-	height: 18rem;
-	overflow: hidden;
-	display: table;
-	text-align: center;
-	width: 100%;
-	padding: 0 1rem;
-	background-color: transparent;
-	background-repeat: no-repeat;
-	background-size: 100%;
-	h2 {
-		display: table-cell;
-		vertical-align: middle;
-		height: 18rem;
-		margin: 0;
+.card-block__row {
+	.card-block {
+		background-color: $nacac_grey;
+		margin: 2rem 1rem;
+		padding: 0;
 		color: $white;
-		font-size: 1.5em;
-		line-height: 4.2rem;
-	}
-	img {
-		top: 0;
-		left: 0;
+		-webkit-transform: translateZ(0);
+		-webkit-transform: translateY(0);
 		transition: $transition--all;
-		position: absolute;
-		z-index: -1;
-		width: 100%;
-		@include prefix(filter, brightness(80%), webkit);
+		cursor: pointer;
 		&:hover {
-			@include prefix(filter, brightness(100%), webkit);
+			position: relative;
+			box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+			@include prefix(animation-name, floating, webkit);
+			@include prefix(animation-duration, 3s, webkit);
+			@include prefix(animation-iteration-count, infinite, webkit);
+			@include prefix(animation-timing-function, ease-in-out, webkit);
+			@include keyframes(floating) {
+				from {
+					transform: translate(0, 0px);
+				}
+				65% {
+					transform: translate(0, -6px);
+				}
+				to {
+					transform: translate(0, 0px);
+				}
+			}
+			img {}
 		}
-	}
-}
-
-.card-block__text {
-	flex: 1;
-	padding: 2rem;
-	p {
-		// font-weight: 100;
-	}
-}
-
-.card-block__footer {
-	padding: 0 2rem 2rem;
-	a.btn {
-		display: inline-block;
+		.card-block__header {
+			position: relative;
+			height: 18rem;
+			overflow: hidden;
+			display: table;
+			text-align: center;
+			width: 100%;
+			padding: 0 1rem;
+			background-color: transparent;
+			background-repeat: no-repeat;
+			background-size: 100%;
+			h2 {
+				display: table-cell;
+				vertical-align: middle;
+				height: 18rem;
+				margin: 0;
+				color: $white;
+				font-size: 1.5em;
+				line-height: 4.2rem;
+			}
+			img {
+				top: 0;
+				left: 0;
+				transition: $transition--all;
+				position: absolute;
+				z-index: -1;
+				width: 100%;
+				@include prefix(filter, brightness(80%), webkit);
+				&:hover {
+					@include prefix(filter, brightness(100%), webkit);
+				}
+			}
+		}
+		.card-block__text {
+			flex: 1;
+			padding: 2rem;
+			p {
+				// font-weight: 100;
+			}
+		}
+		.card-block__footer {
+			padding: 0 2rem 2rem;
+			a.btn {
+				display: inline-block;
+			}
+		}
 	}
 }
 
@@ -314,7 +313,7 @@
 		img.color-block__image {
 			position: absolute;
 		}
-		&.color-block--full .color-block__content{
+		&.color-block--full .color-block__content {
 			text-align: left;
 		}
 	}
