@@ -364,18 +364,8 @@ webpackJsonp([0],[
 		var target = null;
 	
 		// collect all the triggers
-		var triggers = $('.trigger__button').on('click', function () {
+		var triggers = $('.trigger__button').each(function () {
 			target = $(this.hash).removeAttr('id');
-	
-			$('.trigger__button').removeClass('trigger__button--active');
-			$(this).addClass('trigger__button--active');
-			// if the URL isn't going to change, then hashchange
-			// event doesn't fire, so we trigger the update manually
-			if (location.hash === this.hash) {
-				// but this has to happen after the DOM update has
-				// completed, so we wrap it in a setTimeout 0
-				setTimeout(update, 0);
-			}
 		});
 	
 		// get an array of the panel ids (from the anchor hash)
@@ -398,6 +388,23 @@ webpackJsonp([0],[
 			}
 		}
 	
+		function showFirstTab() {
+			// $('.trigger__button.tab__button:first').addClass('trigger__button--active');
+			// console.log($('.tab__button.trigger__button--active').length)
+			if ($('.tab__button.trigger__button--active').length === 0) {
+				console.log('b');
+				$('.trigger__button.tab__button:first').addClass('trigger__button--active');
+			}
+	
+			// for (var i = 0; i < document.getElementsByClassName('tab__button').length; i++) {
+			// 	var is_false = 0;
+			// 	if(document.getElementsByClassName('tab__button')[i].classList[2] == 'trigger__button--active' === false){
+			// 		is_false++
+			// 	}
+			// }
+			// console.log(is_false);
+		}
+	
 		function show(id) {
 			// if no value was given, let's take the first panel
 			if (!id) {
@@ -405,6 +412,7 @@ webpackJsonp([0],[
 			}
 			// remove the trigger__content--active class from the triggers,
 			// and add it back to the one the user selected
+			if (true) {}
 			$('.trigger__content').removeClass('trigger__content--active');
 	
 			// now hide all the panels, then filter to
@@ -412,14 +420,32 @@ webpackJsonp([0],[
 			$('.trigger__content[data-trigger="' + id + '"]').addClass('trigger__content--active');
 		}
 	
-		$(window).on('hashchange', update);
+		$(window).on('hashchange', update());
 	
 		// initialise
 		if (targets.indexOf(window.location.hash) !== -1) {
+			showFirstTab();
 			update();
 		} else {
+			showFirstTab();
 			show();
 		}
+		// button functions
+		$('.trigger__button').on('click', function () {
+			var id = $(this).attr('href');
+			if ($(this).hasClass('accordion-item__header')) {
+				$('.accordion-item__header').removeClass('trigger__button--active');
+				$(this).addClass('trigger__button--active');
+				$('.accordion__item.trigger__content').removeClass('trigger__content--active');
+				$('.accordion__item.trigger__content[data-trigger="' + id + '"]').addClass('trigger__content--active');
+			}
+			if ($(this).hasClass('tab__button')) {
+				$('.tab__button').removeClass('trigger__button--active');
+				$(this).addClass('trigger__button--active');
+				$('.tab__content.trigger__content').removeClass('trigger__content--active');
+				$('.tab__content.trigger__content[data-trigger="' + id + '"]').addClass('trigger__content--active');
+			}
+		});
 		// shadow animation
 		$('.trigger__navigation').scroll(function () {
 			var totalWidth = $('.trigger__button').length * $('.trigger__button').outerWidth(),
