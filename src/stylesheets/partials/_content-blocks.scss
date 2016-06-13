@@ -16,6 +16,7 @@
 	p.color-block__feature {
 		padding-left: 2rem;
 		position: relative;
+		top: 2rem;
 		&:before {
 			font-family: FontAwesome;
 			content: "\f073";
@@ -42,11 +43,52 @@
 	p.color-block__text {}
 }
 
+a.color-block {
+	background: $white;
+	color: $white;
+	img.color-block__image {
+		max-width: none;
+		opacity: 0.8;
+		width: calc(100% + 6rem);
+		transition: $transition--all;
+		transform: translate3d(-5rem, 0, 0);
+	}
+	.color-block__content:before {
+		position: absolute;
+		top: 2.5rem;
+		right: 2.5rem;
+		bottom: 2.5rem;
+		left: 2.5rem;
+		border: 1px solid #fff;
+		content: '';
+		opacity: 0;
+		transition: $transition--all;
+		transform: translate3d(-2rem, 0, 0);
+	}
+	p.color-block__text {
+		opacity: 0;
+		transition: $transition--all;
+		transform: translate3d(-1rem, 0, 0);
+	}
+	&:hover {
+		cursor: pointer;
+		img {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+		.color-block__content:before,
+		p.color-block__text {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+}
+
 .color-block {
 	width: 50%;
 	float: left;
 	position: relative;
-	min-height: 36rem;
+	min-height: 32rem;
 	overflow: hidden;
 	&:nth-child(odd) .color-block__content {
 		left: inherit;
@@ -55,15 +97,16 @@
 	}
 	.color-block__content {
 		position: absolute;
+		min-height: 32rem;
 		z-index: 1;
 		left: 0;
 		right: inherit;
-		padding: 3rem;
+		padding: 4rem;
 	}
 	&.color-block--full {
 		width: 100%;
 		.color-block__content {
-			text-align: center;
+			// text-align: center;
 			.color-block__feature {
 				display: inline;
 			}
@@ -108,7 +151,7 @@
 					transform: translate(0, 0px);
 				}
 				65% {
-					transform: translate(0, -6px);
+					transform: translate(0, -3px);
 				}
 				to {
 					transform: translate(0, 0px);
