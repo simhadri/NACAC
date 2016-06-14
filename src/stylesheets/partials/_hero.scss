@@ -26,7 +26,6 @@
 	background: radial-gradient(ellipse at center,rgba(0,0,0,.33) 0,rgba(0,0,0,.2) 40%,transparent 66%);
 	height: 100vh;
     position: relative;
-    margin-top: -70px;
     box-shadow: inset 0 10rem 10rem -10rem rgba(0,0,0,0.6);
 	.hero__breadcrumb {
 		position: absolute;
@@ -146,12 +145,12 @@
 @include break(max, $screen-sm-max) {
 	.hero__wrapper {
 		background: rgba(0,0,0,0.5);
-		padding: 5rem 2rem;
+		padding: 8rem 2rem 5rem;
 		height: auto;
 		.hero__content {
 			width: 100%;
 			min-width: 0;
-			padding-top: 2rem;
+			padding-top: 5rem;
 			.hero--underline:after {
 				width: 100%;
 				left: 0;
@@ -169,7 +168,8 @@
 			font-size: 2rem;
 		}
 		&.hero--interior {
-			padding-top: 4rem;
+			padding-top: 8rem;
+    		margin: 0;
 		}
 	}
 	.container.interior-hero__breadcrumb {

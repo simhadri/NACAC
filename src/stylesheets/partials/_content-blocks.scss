@@ -169,6 +169,7 @@ a.color-block {
 			padding: 0 1rem;
 			background-color: transparent;
 			background-repeat: no-repeat;
+			background-position-y: 50%;
 			background-size: 100%;
 			h2 {
 				display: table-cell;
@@ -360,10 +361,34 @@ a.color-block {
 			text-align: left;
 		}
 	}
-	@for $i from 1 through 4 {
-		.block--dynamic:first-child:nth-last-child(#{$i}),
-		.block--dynamic:first-child:nth-last-child(#{$i}) ~ .block--dynamic {
+	a.color-block {
+		background: $white;
+		color: $white;
+		img.color-block__image {
+			opacity: 1;
 			width: 100%;
+			transition: none;
+			transform: none;
+		}
+		.color-block__content:before {
+			display: none;
+		}
+		p.color-block__text {
+			opacity: 1;
+			transition: none;
+			transform: none;
+		}
+		&:hover {
+			cursor: pointer;
+			img {
+				opacity: 1;
+				transform: none;
+			}
+			.color-block__content:before,
+			p.color-block__text {
+				opacity: 1;
+				transform: none;
+			}
 		}
 	}
 }
