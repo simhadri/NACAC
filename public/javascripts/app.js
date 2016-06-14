@@ -390,19 +390,9 @@ webpackJsonp([0],[
 	
 		function showFirstTab() {
 			// $('.trigger__button.tab__button:first').addClass('trigger__button--active');
-			// console.log($('.tab__button.trigger__button--active').length)
 			if ($('.tab__button.trigger__button--active').length === 0) {
-				console.log('b');
 				$('.trigger__button.tab__button:first').addClass('trigger__button--active');
 			}
-	
-			// for (var i = 0; i < document.getElementsByClassName('tab__button').length; i++) {
-			// 	var is_false = 0;
-			// 	if(document.getElementsByClassName('tab__button')[i].classList[2] == 'trigger__button--active' === false){
-			// 		is_false++
-			// 	}
-			// }
-			// console.log(is_false);
 		}
 	
 		function show(id) {

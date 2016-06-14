@@ -236,7 +236,6 @@ webpackJsonp([3],[
 			}], function (errors, evt) {
 				// console.log(this.fields.lastName.element)
 				for (var field in this.fields) {
-					console.log("obj." + field, this.fields[field].element.validity.valid);
 					if (this.fields[field].element.validity.valid) {
 						this.fields[field].element.classList.remove('error');
 					} else {
