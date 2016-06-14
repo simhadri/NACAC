@@ -7,25 +7,23 @@
 		</header>
 	{% endif %}
 	<ul class="accordion__list">
-		{% for i in range(0, 8) %} {% if loop.first %}
-		<li class="accordion__item accordion__item--selected">
-			{% else %}
-			<li class="accordion__item">
-				{% endif %}
+		{% for i in range(0, 8) %}
+			<li data-trigger="#accordion_{{i}}" class="accordion__item trigger__content">
+				
 
 				{% if templateName == 'template-fair' %}
-					<header class="accordion-item__header">
+					<a href="#accordion_{{i}}" class="trigger__button accordion-item__header">
 						<h3>Lorem Ipsum Dolor Sit Amet</h3>
-					</header>
+					</a>
 					<article class="accordion-item__article">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium molestias quibusdam saepe necessitatibus voluptatem quisquam voluptate voluptatibus magnam commodi officia ipsam, maiores blanditiis vero porro voluptates repellendus atque nemo mollitia!</p>
 						<p>Tempora molestiae necessitatibus dignissimos porro dolore explicabo dolor, exercitationem neque qui ex, natus aspernatur quae tenetur ipsa! Dolor labore sed magni nemo!</p>
 						<p class="faq__entry"><a href="#">Call to Action</a></p>
 					</article>
 				{% else  %}
-					<header class="accordion-item__header">
+					<a href="#accordion_{{i}}" class="trigger__button accordion-item__header">
 						<h3>Title</h3>
-					</header>
+					</a>
 					<article class="accordion-item__article">
 						<aside class="accordion-item__aside">
 							<img src="/images/shared/square_image.jpg" alt="">

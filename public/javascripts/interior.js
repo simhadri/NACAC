@@ -129,23 +129,28 @@ webpackJsonp([3],[
 /* 18 */
 /***/ function(module, exports) {
 
-	// FUNCTION
-	'use strict';
-	
-	(function () {
-		'use strict';
-		var accordionItem = $('.accordion__item'),
-		    toggleAccordion = function toggleAccordion(evt) {
-			if ($(this).hasClass('accordion__item--selected')) {
-				$(this).removeClass('accordion__item--selected');
-			} else {
-				accordionItem.removeClass('accordion__item--selected');
-				$(this).addClass('accordion__item--selected');
-			}
-		};
-		// events
-		accordionItem.on('click', toggleAccordion);
-	})();
+	"use strict";
+
+	// // FUNCTION
+	// (function() {
+	// 	'use strict';
+	// 	var accordionItem = $('.accordion__item');
+	// 	if(window.location.hash){
+	// 		accordionItem.removeClass('accordion__item--selected');
+	// 		$(window.location.hash).parent().addClass('accordion__item--selected');
+	// 	}
+
+	// 	var	toggleAccordion = function(evt) {		
+	// 			if ($(this).hasClass('accordion__item--selected')) {
+	// 				$(this).removeClass('accordion__item--selected');
+	// 			} else {
+	// 				accordionItem.removeClass('accordion__item--selected');
+	// 				$(this).addClass('accordion__item--selected');
+	// 			}
+	// 		};
+	// 	// events
+	// 	accordionItem.on('click', toggleAccordion);
+	// })();
 
 /***/ },
 /* 19 */
@@ -231,7 +236,6 @@ webpackJsonp([3],[
 			}], function (errors, evt) {
 				// console.log(this.fields.lastName.element)
 				for (var field in this.fields) {
-					console.log("obj." + field, this.fields[field].element.validity.valid);
 					if (this.fields[field].element.validity.valid) {
 						this.fields[field].element.classList.remove('error');
 					} else {
