@@ -10,10 +10,10 @@
 	{% include './_shared/hero.html'%}
 
 	<div class="content-block__row">
-		{% set colorBlock = { className: 'color-block--wide', heading: "College Fairs", image: "main/color-block-bg-purple.jpg"} %}
+		{% set colorBlock = { className: 'color-block--wide', heading: "College Fairs", image: "main/color-block-bg-purple.jpg", link: false} %}
 		{% include './_components/color-block.html'%}
 		
-		{% set colorBlock = { className: 'color-block--wide', heading: "National Conference", image: "main/color-block-bg-green.jpg"} %}
+		{% set colorBlock = { className: 'color-block--wide', heading: "National Conference", image: "main/color-block-bg-green.jpg", link: false} %}
 		{% include './_components/color-block.html'%}
 
 	</div>
@@ -27,16 +27,19 @@
 			<section class="card-block__row">
 				<div class="row">
 						
-					{% set cardBlock = { heading: "National College Fairs", image: "shared/card-national", button: true } %}
+					{% set cardBlock = { heading: "International Universities Fair", image: "shared/card-international", button: true } %}
 					{% include './_components/card-block.html'%}
 					
+					{% set cardBlock = { heading: "Performing and Visual Arts College Fairs", image: "shared/card-performing", button: true } %}
+					{% include './_components/card-block.html'%}
+
 					{% set cardBlock = { heading: "Performing and Visual Arts College Fairs", image: "shared/card-performing", button: true } %}
 					{% include './_components/card-block.html'%}
 				
 					{% set cardBlock = { heading: "Stem College and Career Fairs", image: "shared/card-stem", button: true } %}
 					{% include './_components/card-block.html'%}
 					
-					{% set cardBlock = { heading: "International Universities Fair", image: "shared/card-international", button: true } %}
+					{% set cardBlock = { heading: "National College Fairs", image: "shared/card-handwriter", button: true } %}
 					{% include './_components/card-block.html'%}
 				
 				</div>

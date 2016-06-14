@@ -5,10 +5,6 @@
 	[class*="col-md"],
 	[class*="col-lg"] {
 		width: 100%;
-	}
-	.container-fluid {
-		margin-right: auto;
-		margin-left: auto;
 		padding-right: $half-gutter-width;
 		padding-left: $half-gutter-width;
 	}
@@ -63,8 +59,6 @@
 		-ms-flex: 0 0 auto;
 		-webkit-box-flex: 0;
 		flex: 0 0 auto;
-		padding-right: $half-gutter-width;
-		padding-left: $half-gutter-width;
 	}
 	.col-xs {
 		-webkit-flex-grow: 1;
@@ -267,13 +261,8 @@
 			flex: 0 0 auto;
 		}
 		.col-sm {
-			-webkit-flex-grow: 1;
-			-ms-flex-positive: 1;
-			-webkit-box-flex: 1;
 			flex-grow: 1;
-			-ms-flex-preferred-size: 0;
-			-webkit-flex-basis: 0;
-			flex-basis: 0;
+			flex-basis: calc(25% - #{$gutter-width});
 			max-width: 100%;
 		}
 		.col-sm-1 {
@@ -444,6 +433,15 @@
 			order: 1;
 		}
 	}
+	// MIN WIDTH FOR .col-sm
+	@media only screen and (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+		.col-sm {
+			flex-grow: 1;
+			flex-basis: calc(33% - #{$gutter-width});
+			max-width: 100%;
+		}
+	}
+	
 	@media only screen and (min-width: $screen-md-min) {
 		.container {
 			width: $container-md;
