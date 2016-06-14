@@ -29,26 +29,27 @@
 .calendar__content,
 .faq__entry {
 	margin-bottom: 3rem;
-	a {
-		@include sans-uppercase-normal;
-		position: relative;
-		&:after {
-			content: "";
-			position: absolute;
-			top: 0.5rem;
-			right: -1.4rem;
-			width: 0;
-			height: 0;
-			border-top: 0.6rem solid transparent;
-			border-bottom: 0.6rem solid transparent;
-			border-left: 0.6rem solid;
-		}
+}
+.listing__entry a,
+.resource__entry a,
+.calendar__content a,
+.faq__entrya a, a.arrow__link {
+	@include sans-uppercase-normal;
+	position: relative;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0.5rem;
+		right: -1.4rem;
+		width: 0;
+		height: 0;
+		border-top: 0.6rem solid transparent;
+		border-bottom: 0.6rem solid transparent;
+		border-left: 0.6rem solid;
 	}
 }
-.faq__entry {
-	a {
-		color: $white;
-	}
+a.arrow__link--white, .faq__entry a{
+	color: $white;
 }
 
 .calendar__entry {
