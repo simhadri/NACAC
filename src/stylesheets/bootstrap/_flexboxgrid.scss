@@ -261,13 +261,8 @@
 			flex: 0 0 auto;
 		}
 		.col-sm {
-			-webkit-flex-grow: 1;
-			-ms-flex-positive: 1;
-			-webkit-box-flex: 1;
 			flex-grow: 1;
-			-ms-flex-preferred-size: 0;
-			-webkit-flex-basis: 0;
-			flex-basis: 0;
+			flex-basis: calc(25% - #{$gutter-width});
 			max-width: 100%;
 		}
 		.col-sm-1 {
@@ -438,6 +433,15 @@
 			order: 1;
 		}
 	}
+	// MIN WIDTH FOR .col-sm
+	@media only screen and (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+		.col-sm {
+			flex-grow: 1;
+			flex-basis: calc(33% - #{$gutter-width});
+			max-width: 100%;
+		}
+	}
+	
 	@media only screen and (min-width: $screen-md-min) {
 		.container {
 			width: $container-md;
