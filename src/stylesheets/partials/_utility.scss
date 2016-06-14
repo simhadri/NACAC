@@ -7,11 +7,10 @@
 	top: 0;
 	z-index:4;
 	transition: $transition--all;
-	&.utility-nav--scrolled, &.utility-nav--blue {
+	box-shadow: inset 0 10rem 10rem -10rem rgba(0,0,0,.6);
+	&.utility-nav--scrolled, &.utility-nav--blue, .hero--none & {
 		background-color: $nacac_light-blue;
-	}
-	.hero--none & {
-		background-color: $nacac_light-blue;
+		box-shadow: none;
 	}
 	a {
 		color: $white;

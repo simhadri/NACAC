@@ -5,6 +5,17 @@
 	width: 200%;
 	height: 200%;
 	z-index: -1;
+	&:after{
+			content: "";
+			top:0;
+			left:0;
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			background-color: $black;
+			opacity: 0.2;
+		}
 	img {
 		position: absolute;
 		top: 0;
@@ -15,6 +26,7 @@
 		min-width: 50%;
 		min-height: 50%;
 		max-width: inherit;
+		
 	}
 }
 
@@ -23,10 +35,9 @@
 }
 
 .hero__wrapper {
-	background: radial-gradient(ellipse at center,rgba(0,0,0,.33) 0,rgba(0,0,0,.2) 40%,transparent 66%);
-	height: 100vh;
+	background: radial-gradient(ellipse at center,rgba(0,0,0,.33) 0,rgba(0,0,0,.2) 33%,transparent 66%);
+	height: calc(100vh - 7rem);
     position: relative;
-    box-shadow: inset 0 10rem 10rem -10rem rgba(0,0,0,0.6);
 	.hero__breadcrumb {
 		position: absolute;
 		top: 8rem;
@@ -89,7 +100,6 @@
 		margin-bottom: 5rem;
 		padding-top: 12rem;
 		position: relative;
-		box-shadow: inset 0 10rem 10rem -10rem rgba(0,0,0,0.6);
 	}
 	.hero__content {
 		padding: 6rem 0;

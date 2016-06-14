@@ -30,10 +30,10 @@
 .faq__entry {
 	margin-bottom: 3rem;
 }
-.listing__entry,
-.resource__entry,
-.calendar__content,
-.faq__entrya, a.arrow__link {
+.listing__entry a,
+.resource__entry a,
+.calendar__content a,
+.faq__entrya a, a.arrow__link {
 	@include sans-uppercase-normal;
 	position: relative;
 	&:after {
