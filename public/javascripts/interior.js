@@ -27,8 +27,6 @@ webpackJsonp([2],[
 	
 	__webpack_require__(13);
 	
-	__webpack_require__(14);
-	
 	__webpack_require__(15);
 	
 	__webpack_require__(16);
@@ -93,33 +91,7 @@ webpackJsonp([2],[
 	})();
 
 /***/ },
-/* 14 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	// // FUNCTION
-	// (function() {
-	// 	'use strict';
-	// 	var accordionItem = $('.accordion__item');
-	// 	if(window.location.hash){
-	// 		accordionItem.removeClass('accordion__item--selected');
-	// 		$(window.location.hash).parent().addClass('accordion__item--selected');
-	// 	}
-
-	// 	var	toggleAccordion = function(evt) {		
-	// 			if ($(this).hasClass('accordion__item--selected')) {
-	// 				$(this).removeClass('accordion__item--selected');
-	// 			} else {
-	// 				accordionItem.removeClass('accordion__item--selected');
-	// 				$(this).addClass('accordion__item--selected');
-	// 			}
-	// 		};
-	// 	// events
-	// 	accordionItem.on('click', toggleAccordion);
-	// })();
-
-/***/ },
+/* 14 */,
 /* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
