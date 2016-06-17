@@ -35,11 +35,8 @@ Welcome to the NACAC Repository! There are a total of 3 sites; Main, Conferences
   - All filneames are revisioned with an md5 hash, a `rev-manifest.json` file is generated and all asset references are updated in html, css, and js
   - File size reporting
   - Local production sever for testing
-- **Testing:**
-  - JS test examples with Karma, Mocha, Chai, Sinon
-  - Travis CI integration
 - **Deployment:**
-  - Quickly deploy `public` folder to gh-pages (`gulp deploy` task)
+  - Quickly deploy `public` folder
 
 ## Process and Conventions
 
@@ -203,14 +200,14 @@ gulpfile.js/tasks/html
 Robust templating with [Nunjucks](https://mozilla.github.io/nunjucks/). Nunjucks is nearly identical in syntax to Twig (PHP), and replaces Swig (and Twig-like js templating language), which is no longer maintained. I have only a few times where I use variables for adding a class and not making a whole new component. Let say I need a top border on one component on a page but not on another, instead of making a new component i just pass a class of ```component--border-top``` to the include:
 
 ```
-{% set classNames = 'article--top-border' %}
+{% set params = {classNames:'article--top-border', image:'images.png'} %}
 {% include './_components/full-block-row.html' %}
 ```
 
 In the component, I need to add:
 
 ```
-<article class="article__row article--white {{ classNames }}">
+<article class="article__row article--white {{ params.classNames }}">
   ...
 </article>
 ```
@@ -222,20 +219,20 @@ There is no way to pass an argument or variable directly to an include, and it w
 
 ```
 -- index.html
-{% set classNames = 'article--top-border' %}
+{% set params = {classNames:'article--top-border', image:'images.png'} %}
 {% include './_components/first-block.html' %}
 
-{% set classNames = '' %}
+{% set params = '' %}
 {% include './_components/different-block.html' %}
 
 -- first-block.html
-<article class="article__row article--white {{ classNames }}">
+<article class="article__row article--white {{ params.classNames }}">
   ...
 </article>
 
 
 -- different-block.html
-<article class="article__row article--white {{ classNames }}">
+<article class="article__row article--white {{ params.classNames }}">
   ...
 </article>
 ```
