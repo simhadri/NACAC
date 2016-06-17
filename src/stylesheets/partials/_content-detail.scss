@@ -7,6 +7,7 @@
 			margin: 0;
 		}
 	}
+
 }
 .content-detail__block {
 	div[class*='video-iframe'] {
@@ -14,6 +15,10 @@
 		margin-top: .2rem;
 		text-align: center;
 		max-width: 76.7rem;
+	}
+	ul, ol{
+		margin-left: 3rem;
+		padding: 0.8rem 0 1rem;
 	}
 	.video-iframe--center {
 		width: auto;
