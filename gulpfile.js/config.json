@@ -18,8 +18,7 @@
       "entries": {
         "app": ["./app.js"],
         "app-fair": ["./app-fair.js"],
-        "interior": ["./interior.js"],
-        "events": ["./events.js"]
+        "interior": ["./interior.js"]
       },
       "extensions": ["js"]
     },
