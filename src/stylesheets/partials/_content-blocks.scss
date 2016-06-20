@@ -1,5 +1,6 @@
 .content-block__row {
 	@include clearfix;
+	display: flex;
 }
 
 // Color Blocks
@@ -91,13 +92,16 @@ a.color-block {
 	position: relative;
 	min-height: 32rem;
 	overflow: hidden;
+	flex-basis: 50%;
+	max-width: 50%;
+	flex: 0 0 auto;
 	&:nth-child(odd) .color-block__content {
 		left: inherit;
 		right: 0;
 		float: right;
 	}
 	.color-block__content {
-		position: absolute;
+		position: relative;
 		min-height: 32rem;
 		z-index: 1;
 		left: 0;
