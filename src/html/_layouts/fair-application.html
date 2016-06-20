@@ -2,17 +2,17 @@
 <html>
 {% include "./_shared/head.html" %}
 <body>
-  {% include "_components/fair-svg-defs.svg" %}
-	{% block content %}{% endblock %}
-	<script src="/javascripts/vendor/modernizr-3.3.1.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-	<!--<script>window.jQuery || document.write('<script src="javascripts/jquery.js"><\/script>')</script>-->
-	<script src="/javascripts/shared.js"></script>
+	{% include "_components/fair-svg-defs.svg" %}
+	{% block content %}
+	{% endblock %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.5.2/blazy.min.js"></script>
-  <!-- NACAC needs to create an API key. This one is temporary only. -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgqZxGF9wxL5I0ITCpv8rqnuJqPMPOKCE" type="text/javascript"></script>
+	<script src="/javascripts/shared.js"></script>
+	<!-- NACAC needs to create an API key. This one is temporary only. -->
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgqZxGF9wxL5I0ITCpv8rqnuJqPMPOKCE" type="text/javascript"></script>
 	<script src="/javascripts/app-fair.js"></script>
-	{% block javascript %}{% endblock %}
+	{% block javascript %}
+	{% endblock %}
 </body>
 
 </html>
