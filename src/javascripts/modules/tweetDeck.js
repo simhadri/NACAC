@@ -14,7 +14,7 @@ import TweetParse from 'lib/tweetParse.js';
 	'use strict';
 	if(document.getElementById('tweetDeck')){
 		const tweetParse = new TweetParse;
-		let TweetController = 'http://localhost:3000/javascripts/data/twitter-feed.json';
+		let TweetController = '/javascripts/data/twitter-feed.json';
 		$.ajax({
 			url: TweetController,
 			type: 'GET',

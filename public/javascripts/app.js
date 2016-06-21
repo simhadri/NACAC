@@ -462,7 +462,7 @@ webpackJsonp([0],[
 		if (document.getElementById('tweetDeck')) {
 			(function () {
 				var tweetParse = new _libTweetParseJs2['default']();
-				var TweetController = 'http://localhost:3000/javascripts/data/twitter-feed.json';
+				var TweetController = '/javascripts/data/twitter-feed.json';
 				$.ajax({
 					url: TweetController,
 					type: 'GET',
