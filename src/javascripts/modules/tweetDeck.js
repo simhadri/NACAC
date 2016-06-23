@@ -30,8 +30,8 @@ import TweetParse from 'lib/tweetParse.js';
 							'<div class="tweet-wrap">' +
 								'<div class="tweet">' + tweetText +
 									'<div class="tweet-meta">' +
-										'<a href="http://twitter.com/NACACFairs"><img class="tweet__profile-pic" src="' + data[i].user.profile_image_url + '"></a>' +
-										'<a href="http://twitter.com/NACACFairs">@NACACFairs</a><br>' +
+										'<a href="'+data[i].user.url+'"><img class="tweet__profile-pic" src="' + data[i].user.profile_image_url + '"></a>' +
+										'<a href="'+data[i].user.url+'">'+data[i].user.screen_name+'</a><br>' +
 										'<a href="#">' + tweetParse.parseTimeAgo(data[i].created_at) + '</a>' +
 									'</div>' +
 								'</div>' +
