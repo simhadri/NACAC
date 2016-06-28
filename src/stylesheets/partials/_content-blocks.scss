@@ -68,9 +68,9 @@ a.color-block {
 		transform: translate3d(-2rem, 0, 0);
 	}
 	p.color-block__text {
-		opacity: 0;
-		transition: $transition--all;
-		transform: translate3d(-1rem, 0, 0);
+		// opacity: 0;
+		// transition: $transition--all;
+		// transform: translate3d(-1rem, 0, 0);
 	}
 	&:hover {
 		cursor: pointer;
@@ -78,8 +78,7 @@ a.color-block {
 			opacity: 1;
 			transform: translate3d(0, 0, 0);
 		}
-		.color-block__content:before,
-		p.color-block__text {
+		.color-block__content:before{
 			opacity: 1;
 			transform: translate3d(0, 0, 0);
 		}
@@ -110,6 +109,8 @@ a.color-block {
 	}
 	&.color-block--full {
 		width: 100%;
+		flex-basis: 100%;
+		max-width: 100%;
 		.color-block__content {
 			// text-align: center;
 			.color-block__feature {

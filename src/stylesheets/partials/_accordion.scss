@@ -14,6 +14,9 @@
 			background-color: $nacac_light-blue;
 			transition: background-color 400ms ease-in-out;
 			color: $white;
+			.accordion-item__header h3 {
+				color: $white;
+			}
 			.accordion-item__article {
 				max-height: 200rem;
 				transition: max-height 400ms ease-in-out;
@@ -31,7 +34,7 @@
 			}
 		}
 		.accordion-item__header{
-			 h3 {
+			h3 {
 				margin: 0;
 				font-size: 2rem;
 				font-weight: bold;
