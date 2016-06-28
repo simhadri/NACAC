@@ -2,7 +2,7 @@ webpackJsonp([2],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(12);
+	module.exports = __webpack_require__(13);
 
 
 /***/ },
@@ -17,7 +17,8 @@ webpackJsonp([2],[
 /* 9 */,
 /* 10 */,
 /* 11 */,
-/* 12 */
+/* 12 */,
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// *********************
@@ -25,20 +26,20 @@ webpackJsonp([2],[
 	// *********************
 	'use strict';
 	
-	__webpack_require__(13);
-	
 	__webpack_require__(14);
 	
 	__webpack_require__(15);
 	
 	__webpack_require__(16);
 	
-	__webpack_require__(18);
+	__webpack_require__(17);
 	
-	__webpack_require__(20);
+	__webpack_require__(19);
+	
+	__webpack_require__(21);
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -46,7 +47,7 @@ webpackJsonp([2],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libThrottledJs = __webpack_require__(5);
+	var _libThrottledJs = __webpack_require__(6);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
@@ -91,7 +92,7 @@ webpackJsonp([2],[
 	})();
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -99,7 +100,7 @@ webpackJsonp([2],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libThrottledJs = __webpack_require__(5);
+	var _libThrottledJs = __webpack_require__(6);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
@@ -150,7 +151,7 @@ webpackJsonp([2],[
 	})();
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports) {
 
 	// FUNCTION
@@ -197,7 +198,7 @@ webpackJsonp([2],[
 	})();
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -205,11 +206,11 @@ webpackJsonp([2],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libThrottledJs = __webpack_require__(5);
+	var _libThrottledJs = __webpack_require__(6);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
-	var _libCountUpJs = __webpack_require__(17);
+	var _libCountUpJs = __webpack_require__(18);
 	
 	var _libCountUpJs2 = _interopRequireDefault(_libCountUpJs);
 	
@@ -228,7 +229,7 @@ webpackJsonp([2],[
 	})();
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports) {
 
 	/*
@@ -398,7 +399,7 @@ webpackJsonp([2],[
 	// numAnim.start(someMethodToCallOnComplete);
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -406,7 +407,7 @@ webpackJsonp([2],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libCountDown = __webpack_require__(19);
+	var _libCountDown = __webpack_require__(20);
 	
 	var _libCountDown2 = _interopRequireDefault(_libCountDown);
 	
@@ -421,7 +422,7 @@ webpackJsonp([2],[
 	})();
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -477,7 +478,7 @@ webpackJsonp([2],[
 	module.exports = countDown;
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports) {
 
 	// FUNCTION

@@ -18,14 +18,36 @@ webpackJsonp([0],[
 	
 	__webpack_require__(3);
 	
-	__webpack_require__(7);
+	__webpack_require__(4);
 	
 	__webpack_require__(8);
 	
 	__webpack_require__(9);
+	
+	__webpack_require__(10);
 
 /***/ },
 /* 2 */
+/***/ function(module, exports) {
+
+	// Add Custom style for #EpiserverEditMode if use is in View Mode
+	
+	// FUNCTION
+	'use strict';
+	
+	(function () {
+		'use strict';
+		if (document.body.id === 'EpiserverEditMode') {
+			var head = document.head || document.getElementsByTagName('head')[0],
+			    style = document.createElement('link');
+			style.setAttribute('rel', 'stylesheet');
+			style.setAttribute('href', '/stylesheets/episerver-edit-mode.css');
+			head.appendChild(style);
+		}
+	})();
+
+/***/ },
+/* 3 */
 /***/ function(module, exports) {
 
 	// FUNCTION
@@ -50,7 +72,7 @@ webpackJsonp([0],[
 	})();
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -58,15 +80,15 @@ webpackJsonp([0],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libHeadStyleJs = __webpack_require__(4);
+	var _libHeadStyleJs = __webpack_require__(5);
 	
 	var _libHeadStyleJs2 = _interopRequireDefault(_libHeadStyleJs);
 	
-	var _libThrottledJs = __webpack_require__(5);
+	var _libThrottledJs = __webpack_require__(6);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
-	var _libScreenJs = __webpack_require__(6);
+	var _libScreenJs = __webpack_require__(7);
 	
 	var _libScreenJs2 = _interopRequireDefault(_libScreenJs);
 	
@@ -220,7 +242,7 @@ webpackJsonp([0],[
 	})();
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports) {
 
 	// Jquery adds inline styles and these need to be overwritten.
@@ -258,8 +280,8 @@ webpackJsonp([0],[
 	module.exports = headStyle;
 
 /***/ },
-/* 5 */,
-/* 6 */
+/* 6 */,
+/* 7 */
 /***/ function(module, exports) {
 
 	// Just creates a screen element and fades it in, then destroys it.
@@ -295,7 +317,7 @@ webpackJsonp([0],[
 	module.exports = Screen;
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -303,7 +325,7 @@ webpackJsonp([0],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libScreenJs = __webpack_require__(6);
+	var _libScreenJs = __webpack_require__(7);
 	
 	var _libScreenJs2 = _interopRequireDefault(_libScreenJs);
 	
@@ -351,7 +373,7 @@ webpackJsonp([0],[
 	})();
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports) {
 
 	// FUNCTION
@@ -436,7 +458,7 @@ webpackJsonp([0],[
 	})();
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// This is dummy Local Data
@@ -452,7 +474,7 @@ webpackJsonp([0],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libTweetParseJs = __webpack_require__(10);
+	var _libTweetParseJs = __webpack_require__(11);
 	
 	var _libTweetParseJs2 = _interopRequireDefault(_libTweetParseJs);
 	
@@ -482,7 +504,7 @@ webpackJsonp([0],[
 	})();
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 	// Tweet Parse!
