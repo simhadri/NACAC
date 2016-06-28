@@ -1,5 +1,4 @@
 // I'm including all fair scss here for the time being. We should probably compartmentalize eventually, but I wanted to start with a simple include.
-
 // set variables
 $blue-light: #67aee7;
 $green: #007451;
@@ -7,19 +6,23 @@ $gray: #333;
 $blue-dark: #2c2172;
 $red-dark: #ab3737;
 $green-dark: #0e6735;
-
 // basic styling
 .bold {
 	font-weight: 700;
 }
+
 .orange {
-  color: $nacac-orange;
+	color: $nacac-orange;
 }
-.text-uppercase { // bootstrap class
-  text-transform: uppercase;
+
+.text-uppercase {
+	// bootstrap class
+	text-transform: uppercase;
 }
-.text-center { // bootstrap class
-  text-align: center;
+
+.text-center {
+	// bootstrap class
+	text-align: center;
 }
 
 .margin-bot-30 {
@@ -93,13 +96,14 @@ img.pull-right {
 		}
 	}
 }
+
 .hero-fair-nav-wrap {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 7.2rem;
-	background: rgba(255,255,255,0.8);
+	background: rgba(255, 255, 255, 0.8);
 	nav {
 		position: relative;
 	}
@@ -141,6 +145,7 @@ img.pull-right {
 		border-color: transparent;
 	}
 }
+
 .btn-simple-blue {
 	color: #fff;
 	border: 1px solid transparent;
@@ -149,45 +154,42 @@ img.pull-right {
 
 // global?
 .image-block-wrap {
-	padding-bottom: 6rem;
-	background: $white;
-	.image-block {
-		// background-color: $nacac_bg-blue-grey;
-		// @include clearfix;
-		width: 100%;
-		background-repeat: no-repeat;
-		background-position: 100% 50%;
+	border-bottom: 6rem solid $white;
+	position: relative;
+	.image-block__image {
 		background-size: cover;
-		.image-block-content {
-			// float: left;
-			width: 52%;
-			min-height: 50rem;
-			padding: 3rem;
-			background-color: $nacac_bg-blue-grey;
-			h2 {
-				margin: 0 0 2rem 0;
-			}
-		}
-		// .image-block-img {
-		// 	float: right;
-		// 	width: 48%
-		// }
-		ul.ul-icons {
-			margin-bottom: 5rem;
-			li {
-				padding-top: .5rem;
-			}
-			li:before {
-				content: "\f00c";
-			}
-		}
-		.btn {
-			margin-bottom: 1.5rem;
+		position: absolute;
+		z-index: -1;
+		width: 50%;
+		height: 100%;
+		right: 0;
+		background-position-x: 50%;
+	}
+	.image-block-content {
+		width: 52%;
+		min-height: 50rem;
+		padding: 3rem;
+		background-color: $nacac_bg-blue-grey;
+		h2 {
+			margin: 0 0 2rem 0;
 		}
 	}
-	&.image-block-wrap-right {
-		.image-block {
-			background-position: 0 50%;
+	ul.ul-icons {
+		margin-bottom: 5rem;
+		li {
+			padding-top: .5rem;
+		}
+		li:before {
+			content: "\f00c";
+		}
+	}
+	.btn {
+		margin-bottom: 1.5rem;
+	}
+	&.image-block--right {
+		.image-block__image {
+			right: inherit;
+			left: 0;
 		}
 		.image-block-content {
 			margin-left: 48%;
@@ -200,6 +202,7 @@ img.pull-right {
 		margin-top: 4rem;
 	}
 }
+
 .share-link {
 	float: right;
 	padding-top: 3.6rem;
@@ -211,6 +214,7 @@ img.pull-right {
 		}
 	}
 }
+
 .next-article {
 	margin-bottom: 6rem;
 	p {
@@ -227,6 +231,7 @@ img.pull-right {
 		}
 	}
 }
+
 .sidebar-ad {
 	margin-bottom: 4rem;
 	img {
@@ -279,7 +284,7 @@ img.pull-right {
 // primary nav
 .primary-nav.primary-nav-fair {
 	> div > ul {
-		background: rgba(255,255,255,.8);
+		background: rgba(255, 255, 255, .8);
 		li {
 			background: none;
 		}
@@ -289,7 +294,7 @@ img.pull-right {
 			width: 12.4rem;
 			height: 6.8rem;
 			margin: -3.4rem 0 0 -6.2rem;
-	  }
+		}
 	}
 }
 
@@ -315,43 +320,41 @@ img.pull-right {
 // 		text-align: center;
 // 	}
 // }
-
-
-
 #map {
 	margin-bottom: 4rem;
-	overflow:hidden;
+	overflow: hidden;
 	padding-bottom: 56.25%;
 	// position: relative;
 	height: 0;
-	iframe{
-		left:0;
-		top:0;
-		height:100%;
-		width:100%;
-		position:absolute;
+	iframe {
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		position: absolute;
 	}
 }
+
 .checkbox-wrap {
 	position: relative;
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
+
 .checkbox-wrap label {
-  padding-left: 20px;
-  margin-bottom: 0;
-  font-weight: normal;
-  cursor: pointer;
-  font-size: 1.5rem;
+	padding-left: 20px;
+	margin-bottom: 0;
+	font-weight: normal;
+	cursor: pointer;
+	font-size: 1.5rem;
 }
+
 .checkbox-wrap input {
 	position: absolute;
-  margin-left: -20px;
-  margin-top: 4px \9;
+	margin-left: -20px;
+	margin-top: 4px \9;
 }
-
-
 
 #map-controls {
 	position: relative;
@@ -361,14 +364,16 @@ img.pull-right {
 	[class*='col-'] > * {
 		display: inline-block;
 		padding: .5rem 0;
-		font-size: 1.4rem; 
+		font-size: 1.4rem;
 		line-height: 1.5;
 	}
 	h3 {
 		margin: 0;
 	}
 }
-.switch-wrap { // label element
+
+.switch-wrap {
+	// label element
 	display: inline-block;
 	margin-right: 1rem;
 	font-weight: 400;
@@ -377,79 +382,84 @@ img.pull-right {
 		vertical-align: middle;
 	}
 }
+
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 4rem;
-  height: 2.4rem;
-  input { // hide the checkbox
-  	display :none;
-  }
+	position: relative;
+	display: inline-block;
+	width: 4rem;
+	height: 2.4rem;
+	input {
+		// hide the checkbox
+		display: none;
+	}
 }
+
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #d4d4d4;
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #d4d4d4;
+	-webkit-transition: .4s;
+	transition: .4s;
 	&:before {
-	  position: absolute;
-	  content: "";
-	  height: 2rem;
-	  width: 2rem;
-	  left: .2rem;
-	  bottom: .2rem;
-	  background-color: white;
-	  -webkit-transition: .2s;
-	  transition: .2s;
+		position: absolute;
+		content: "";
+		height: 2rem;
+		width: 2rem;
+		left: .2rem;
+		bottom: .2rem;
+		background-color: white;
+		-webkit-transition: .2s;
+		transition: .2s;
 	}
 }
 
 .check-fairs {
 	input:checked + .slider {
-	  background-color: $blue-dark;
+		background-color: $blue-dark;
 	}
 	input:focus + .slider {
-	  box-shadow: 0 0 .1rem $blue-dark;
+		box-shadow: 0 0 .1rem $blue-dark;
 	}
 }
+
 .check-stem {
 	input:checked + .slider {
-	  background-color: $green-dark;
+		background-color: $green-dark;
 	}
 	input:focus + .slider {
-	  box-shadow: 0 0 .1rem $green-dark;
+		box-shadow: 0 0 .1rem $green-dark;
 	}
 }
+
 .check-performing {
 	input:checked + .slider {
-	  background-color: $red-dark;
+		background-color: $red-dark;
 	}
 	input:focus + .slider {
-	  box-shadow: 0 0 .1rem $red-dark;
+		box-shadow: 0 0 .1rem $red-dark;
 	}
 }
 
-
 input:checked + .slider:before {
-  -webkit-transform: translateX(1.6rem);
-  -ms-transform: translateX(1.6rem);
-  transform: translateX(1.6rem);
+	-webkit-transform: translateX(1.6rem);
+	-ms-transform: translateX(1.6rem);
+	transform: translateX(1.6rem);
 }
 
+
 /* Rounded sliders */
+
 .slider.round {
-  border-radius: 2.4rem;
+	border-radius: 2.4rem;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+	border-radius: 50%;
 }
-
 
 // form block (universal element or just for fairs?)
 .form-block {
@@ -464,7 +474,6 @@ input:checked + .slider:before {
 		font-weight: 400;
 	}
 }
-
 
 // icon list
 .icon-list {
@@ -508,8 +517,8 @@ input:checked + .slider:before {
 		width: 5rem;
 		height: 5rem;
 		-webkit-transform: translateY(-50%);
-				-ms-transform: translateY(-50%);
-					 	transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
 	}
 }
 
@@ -556,8 +565,8 @@ input:checked + .slider:before {
 	}
 	.btn--nacac-blue {
 		padding: .6rem 1.2rem;
-	  border: 1px solid transparent;
-	  vertical-align: middle;
+		border: 1px solid transparent;
+		vertical-align: middle;
 	}
 	.filter-label {
 		margin: 1rem 0;
@@ -580,67 +589,118 @@ input:checked + .slider:before {
 		margin-left: 2rem;
 		cursor: pointer;
 	}
-
 	// bootstrap stuff
 	.form-control {
-	  display: block;
-	  width: 100%;
-	  height: 34px;
-	  padding: 6px 12px;
-	  font-size: 14px;
-	  line-height: 1.42857143;
-	  color: #555555;
-	  background-color: #ffffff;
-	  background-image: none;
-	  border: 1px solid #cccccc;
-	  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-	  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-	  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+		display: block;
+		width: 100%;
+		height: 34px;
+		padding: 6px 12px;
+		font-size: 14px;
+		line-height: 1.42857143;
+		color: #555555;
+		background-color: #ffffff;
+		background-image: none;
+		border: 1px solid #cccccc;
+		-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+		-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+		transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 	}
 	.form-control:focus {
-	  border-color: #66afe9;
-	  outline: 0;
-	  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-	  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+		border-color: #66afe9;
+		outline: 0;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
 	}
 	.form-control::-moz-placeholder {
-	  color: #999999;
-	  opacity: 1;
+		color: #999999;
+		opacity: 1;
 	}
 	.form-control:-ms-input-placeholder {
-	  color: #999999;
+		color: #999999;
 	}
 	.form-control::-webkit-input-placeholder {
-	  color: #999999;
+		color: #999999;
 	}
 	.form-control::-ms-expand {
-	  border: 0;
-	  background-color: transparent;
+		border: 0;
+		background-color: transparent;
 	}
+}
 
-	@media (min-width: 768px) {
-	  .form-inline .form-group {
-	    display: inline-block;
-	    margin-bottom: 0;
-	    vertical-align: middle;
-	  }
-	  .form-inline .form-control {
-	    display: inline-block;
-	    width: auto;
-	    vertical-align: middle;
-	  }
-	  .form-inline .input-group {
-	    display: inline-table;
-	    vertical-align: middle;
-	  }
-	  .form-inline .input-group .input-group-addon,
-	  .form-inline .input-group .input-group-btn,
-	  .form-inline .input-group .form-control {
-	    width: auto;
-	  }
-	  .form-inline .input-group > .form-control {
-	    width: 100%;
-	  }
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+
+@include break(max, $screen-sm-max) {
+	.image-block-wrap {
+		overflow: hidden;
+		.image-block__image {
+			height:calc(100% + 16px);
+			top: -8px;
+			right: -8px;
+			bottom: -8px;
+			filter: blur(0.6rem);
+		}
+		.image-block-content, &.image-block--right .image-block-content{
+			width: 80%;
+			margin-left: 0;
+			margin-right: 0;
+			min-height: 50rem;
+			padding: 3rem;
+			background-color: $nacac_bg-blue-grey;
+			h2 {
+				margin: 0 0 2rem 0;
+			}
+		}
+		&.image-block--right {
+			.image-block-content{
+				margin-left: 20%;
+			}
+			.image-block__image{
+				left: -8px;
+			}
+		}
 	}
+}
 
+
+/*
+██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
+██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
+██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
+														  
+*/
+
+@include break(min, $screen-md-min) {
+	.form-inline .form-group {
+		display: inline-block;
+		margin-bottom: 0;
+		vertical-align: middle;
+	}
+	.form-inline .form-control {
+		display: inline-block;
+		width: auto;
+		vertical-align: middle;
+	}
+	.form-inline .input-group {
+		display: inline-table;
+		vertical-align: middle;
+	}
+	.form-inline .input-group .input-group-addon,
+	.form-inline .input-group .input-group-btn,
+	.form-inline .input-group .form-control {
+		width: auto;
+	}
+	.form-inline .input-group > .form-control {
+		width: 100%;
+	}
 }
