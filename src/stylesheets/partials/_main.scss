@@ -186,6 +186,15 @@ body.body--freeze {
 		right: 0;
 	}
 }
+
+.anchor__jump{
+	margin-top: -30rem;
+    padding-bottom: 30rem;
+	display: block;
+	z-index: -1;
+	pointer-events: none;
+	cursor: default;
+}
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
