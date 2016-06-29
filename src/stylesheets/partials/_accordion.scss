@@ -4,9 +4,12 @@
 		padding: 2rem;
 	}
 	.accordion__item {
+		span.accordion__jump{
+			@extend .anchor__jump;
+		}
 		position: relative;
 		display: block;
-		padding: 2rem;
+		padding: 0.2rem;
 		border-bottom: 1px solid $nacac_border-lightgrey;
 		cursor: pointer;
 		&.trigger__content--active {
@@ -34,6 +37,8 @@
 			}
 		}
 		.accordion-item__header{
+			display: block;
+			padding: 2rem;
 			h3 {
 				margin: 0;
 				font-size: 2rem;
@@ -50,6 +55,7 @@
 				width: 13rem;
 				border-radius: 50%;
 				overflow: hidden;
+				    margin: 0 2rem 2rem;
 				img {
 					width: 100%;
 				}

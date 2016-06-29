@@ -9,7 +9,7 @@
 	<ul class="accordion__list">
 		{% for i in range(0, 8) %}
 			<li data-trigger="#accordion_{{i}}" class="accordion__item trigger__content">
-				
+				<span class="accordion__jump" id="accordion_{{i}}"></span>
 
 				{% if templateName == 'template-fair' %}
 					<a href="#accordion_{{i}}" class="trigger__button accordion-item__header">
