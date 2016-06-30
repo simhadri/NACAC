@@ -59,6 +59,9 @@ nav.tab__navigation {
 		span.tab__jump{
 			@extend .anchor__jump;
 		}
+		img.tab__image{
+			margin-top: 3rem;
+		}
 		&.trigger__content--active {
 			display: block;
 			transition: $transition--all;

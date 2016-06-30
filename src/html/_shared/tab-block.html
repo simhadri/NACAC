@@ -1,0 +1,37 @@
+<div class="tab__block">
+	<div class="tab__navigation-wrap">
+		<nav class="tab__navigation">
+			{% for tab in tabs %}
+			<a href="#tab_{{loop.index}}" class="trigger__button tab__button">{{tab.title}}</a>
+			{% endfor %}
+		</nav>
+	</div>
+	<div class="tab__stage-wrap">
+		<div class="tab__stage">
+			{% for tab in tabs %}
+			<article class="trigger__content tab__content" data-trigger="#tab_{{loop.index}}">
+				<span class="tab__jump" id="tab_{{tab.index}}"></span>
+				<aside>
+					<img src="/images/icons/user-chat.svg" alt="">
+				</aside>
+				<section>
+					<h2>{{tab.title}}</h2>
+					<p>For profit or non-profit organizations that provide products or services to counseling, admission or financial aid professionals or students.</p>
+					<p>Choose an organizational membership category that best fits you professional envirnonment.</p>
+					<a href="#"><i class="fa fa-file-pdf-o"></i> Voting Organization Membership</a>
+					<ul>
+						<li>Orgnaizations Eligible for Voting Membership<sup>*</sup></li>
+						<li>Community Based Organization <sup>*</sup></li>
+					</ul>
+					<a href="#"><i class="fa fa-file-pdf-o"></i> Voting Organization Membership</a>
+					<ul>
+						<li>Orgnaizations Eligible for Voting Membership<sup>*</sup></li>
+						<li>Community Based Organization <sup>*</sup></li>
+					</ul>
+					<a href="#readmore" class="arrow__link arrow__link--white">Read More</a>
+				</section>
+			</article>
+			{% endfor %}
+		</div>
+	</div>
+</div>
