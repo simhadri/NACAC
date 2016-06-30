@@ -1,0 +1,43 @@
+{% set templateName = 'template-fair' %}
+{% set pageLocation = "Frequently Asked Questions" %}
+{% extends '_layouts/fair-application.html' %}
+{% block content %}
+<main>
+
+  {% set className = 'utility-nav-fair' %}
+  {% include './_fair/utility.html'%}
+  {% set className = 'primary-nav-fair' %}
+  {% include './_shared/navigation.html'%}
+  {% include './_fair/hero-faq.html'%}
+
+
+  <article class="article__row content__row article--blue">
+    <div class="container">
+      {% include './_components/breadcrumb.html' %}
+    </div>
+  </article>
+
+  {% include './_components/tab-block-wide-fair-faq.html' %}
+
+  <article class="article__row article--white">
+      <div class="container">
+        <section class="card-block__row">
+          <div class="row">
+            {% set cardBlock = { heading: "National College Fairs Registration FAQs", image: "shared/card-national", button: true } %}
+            {% include './_components/card-block.html'%}
+            {% set cardBlock = { heading: "College Fair Checklist", image: "shared/card-performing", button: true } %}
+            {% include './_components/card-block.html'%}
+            {% set cardBlock = { heading: "Registration Guide", image: "shared/card-stem", button: true } %}
+            {% include './_components/card-block.html'%}
+          </div>
+        </section>
+      </div>
+    </article>
+
+ {% include './_shared/footer.html'%}
+</main>
+
+{% endblock %}
+{% block javascript %}
+<script src="/javascripts/interior.js"></script>
+{% endblock %}

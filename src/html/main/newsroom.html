@@ -1,0 +1,139 @@
+ {% extends '_layouts/main-application.html' %}
+ {% set pageLocation = "Newsroom" %}
+ {% block content %}
+
+<main>
+	
+	{% include './_shared/utility.html'%}
+
+	{% set className = "primary-nav--inanimate" %}
+	{% include './_shared/navigation.html'%}
+
+	{% include './_shared/interior-hero.html'%}
+	
+	<article class="article__row content__row article--white">
+		<div class="container">
+
+			{% include './_components/breadcrumb.html' %}
+			
+			<div class="row aside-navigation__row">
+				<div class="col-md-3">
+					{% include './_shared/aside-navigation.html'%}
+				</div>
+				<div class="col-md-9">
+					<section class="section__row">
+						<div class="row">
+							<div class="col-sm-6 col--border">
+								<header class="section__header">
+									<h2>Related Events &amp; Training</h2>
+								</header>
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %}
+								{% include './_components/figure-block.html'%}
+								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
+							</div>
+							<div class="col-sm-6">
+								<header class="article__header">
+									<h2>Press Releases</h2>
+								</header>
+
+								{% include '_components/resource-entry.html'%}
+
+								{% include '_components/resource-entry.html'%}
+
+								{% include '_components/resource-entry.html'%}
+
+								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
+								<footer class="press-release__footer">
+									<p>Please send any media inquiries to:</p>
+									<div class="press-release__block">
+										<span class="press-release__name">Shanda Ivory</span>
+										<span class="press-release__title">Director of Communications</span>
+										<span class="press-release__number">(703) 299-6803</span>
+									</div>
+									<div class="press-release__block">
+										<span class="press-release__name">Shanda Ivory</span>
+										<span class="press-release__title">Director of Communications</span>
+										<span class="press-release__number">(703) 299-6803</span>
+									</div>
+								</footer>
+							</div>
+						</div>
+					</section>
+					<section class="section__row quick-links">
+						<header class="section__header">
+							<h2>Industry Trends &amp; Tools</h2>
+							<p>Lorem ipsum Tempor ea Ut ea fugiat in culpa eiusmod aliqua minim ullamco dolore ad in in occaecat fugiat magna ut fugiat adipisicing Excepteur irure mollit cillum ad ex.</p>
+						</header>
+						<ul class="quick-links__list">
+							<li><a href="#">Common Core State Standards</a></li>
+							<li><a href="#">Education Statistics</a></li>
+							<li><a href="#">Higher Ed Savings Plan &amp; Tax Credits</a></li>
+							<li><a href="#">Income-Based Repayment</a></li>
+							<li><a href="#">International Recruitment</a></li>
+							<li><a href="#">Lead Generator</a></li>
+							<li><a href="#">Net Price Calculator</a></li>
+							<li><a href="#">Standardized Admission Testing</a></li>
+						</ul>
+					</section>
+					<section class="section__row">
+						<div class="row">
+							<div class="col-sm-6 col--border">
+								<header class="article__header">
+									<h2>Latest Admitted Blog Posts</h2>
+								</header>
+
+								{% include '_components/resource-entry.html'%}
+
+								{% include '_components/resource-entry.html'%}
+
+								{% include '_components/resource-entry.html'%}
+
+								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
+							</div>
+							<div class="col-sm-6">
+								<header class="section__header">
+									<h2>Related Events &amp; Training</h2>
+								</header>
+								{% include './_components/video-block.html'%}
+							</div>
+						</div>
+					</section>
+					<section class="section__row tweet-deck__row">
+						<header class="article__header">
+							<h2>#Nacac Fairs on <span>Twitter</span></h2>
+						</header>
+						
+						{% include './_shared/tweet-deck.html'%}
+						
+					</section>
+					<section class="section__row">
+						<header class="section__header">
+							<h2>Related Content</h2>
+						</header>
+						<div class="row">
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Calls for Proposals", image: "shared/figure-speaker"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Training", image: "shared/figure-students"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</article>
+	{% set addedClassNames = 'article--top-border' %}
+	{% include './_components/full-block-row.html' %}
+	{% include './_shared/footer.html'%}
+</main>
+{% endblock %}
+{% block javascript %}
+<script src="/javascripts/interior.js"></script>
+{% endblock %}

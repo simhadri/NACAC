@@ -1,0 +1,83 @@
+ {% extends '_layouts/main-application.html' %}
+ {% set pageLocation = "Events" %}
+ {% block content %}
+<main>
+	
+	{% include './_shared/utility.html'%}
+
+	{% set className = "primary-nav--inanimate" %}
+	{% include './_shared/navigation.html'%}
+
+	{% include './_shared/interior-hero-events.html'%}
+	
+	<article class="article__row content__row article--white">
+		<div class="container">
+			{% include './_components/breadcrumb.html' %}
+			<div class="row aside-navigation__row">
+				<div class="col-md-3">
+					{% include './_shared/aside-navigation.html'%}
+				</div>
+				<div class="col-md-9">
+					<section class="card-block__row section__row">
+						<div class="flexbox__row row">
+						
+								{% set cardBlock = { heading: "Calls for Proposals", image: "shared/card-national", button: true } %}
+								{% include './_components/card-block.html'%}
+								
+								{% set cardBlock = { heading: "Exhibitor Information", image: "shared/card-performing", button: true } %}
+								{% include './_components/card-block.html'%}
+								
+								{% set cardBlock = { heading: "Registration", image: "shared/card-stem", button: true } %}
+								{% include './_components/card-block.html'%}
+
+						</div>
+					</section>
+					<section class="section__row content-detail__block">
+						<h3>Fusce accumsan arcu quis libero tempor</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ligula mi, efficitur sit amet imperdiet nec, volutpat eget metus. Donec fermentum ut eros sit amet viverra. Morbi iaculis lacus ac venenatis viverra. Morbi in auctor erat. Nunc dignissim maximus est, a hendrerit sapien tincidunt a. Quisque nulla urna, ullamcorper mollis suscipit in, sagittis eget sapien.</p>
+						<p>Aenean porta lacus non sem tincidunt, faucibus porta massa mattis. Nullam congue semper tortor. Nulla facilisi. Fusce maximus urna a justo tincidunt, vitae tristique massa venenatis. Morbi gravida at felis eu lobortis. Nullam mollis vel justo non aliquet. Nullam quis ipsum eget odio pulvinar molestie.</p>
+						<p>Aenean porta lacus non sem tincidunt, faucibus porta massa mattis. Nullam congue semper tortor. Nulla facilisi. Fusce maximus urna a justo tincidunt, vitae tristique massa venenatis. Morbi gravida at felis eu lobortis. Nullam mollis vel justo non aliquet. Nullam quis ipsum eget odio pulvinar molestie.</p>
+						<h3>Fusce accumsan arcu quis libero tempor</h3>
+						<p>Phasellus a elit vitae leo lacinia varius. Etiam eu blandit ante. Proin dictum mollis nisi, eget dignissim diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per crispa greedo. Cras finibus libero nec urna rutrum elementum. In ultrices pulvinar magna id condimentum. Mauris id augue tellus. Sed porta nunc eu fringilla. Nullam in lectus a erat maximus ultrices in eget parsecs. Fusce dapibus neque et lorem placerat. Etiam sit amet dui nisl.</p>
+						<a href="#" class="btn btn--nacac-blue">Become a Member</a>
+					</section>
+					<section class="section__row">
+						{% include './_components/focus-testimonial.html' %}
+					</section>
+					<section class="section__row">
+						<header class="section__header">
+							<h2>Sponsors</h2>
+							{% include './_components/slider.html' %}
+							<a href="#" class="btn btn--nacac-blue">View Sponsorship Opportunities</a>
+						</header>
+					</section>
+					<section class="section__row">
+						<header class="section__header">
+							<h2>Related Events &amp; Training</h2>
+						</header>
+						<div class="row">
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Calls for Proposals", image: "shared/figure-speaker"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Training", image: "shared/figure-students"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</article>
+	{% include './_shared/footer.html'%}
+</main>
+{% endblock %}
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js"></script>
+<script src="/javascripts/interior.js"></script>
+{% endblock %}

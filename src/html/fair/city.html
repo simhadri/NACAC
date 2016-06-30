@@ -1,0 +1,58 @@
+{% set templateName = 'template-fair' %}
+{% set pageLocation = "Atlanta College Fairs" %}
+{% extends '_layouts/fair-application.html' %}
+{% block content %}
+<main>
+
+  {% set className = 'utility-nav-fair' %}
+  {% include './_fair/utility.html'%}
+  {% set className = 'primary-nav-fair' %}
+  {% include './_shared/navigation.html'%}
+  {% include './_fair/hero-city.html'%}
+
+
+  <article class="article__row content__row article--blue">
+    <div class="container">
+      {% include './_components/breadcrumb.html' %}
+    </div>
+  </article>
+
+    {% include './_components/tab-block-wide.html' %}
+
+  <article class="article__row article--white">
+    <header class="article__header">
+      <h2>This Fair <span class="orange">Sponsored By</span></h2>
+    </header>
+    {% include "./_components/slider.html" %}
+    <p class="text-center">
+      <a href="#" class="btn btn--nacac-blue">
+        Become a Sponsor
+      </a>
+    </p>
+
+  </article>
+
+  <article class="article__row article--bluegrey">
+    <div class="container">
+      <section class="card-block__row">
+        <div class="row">
+          {% set cardBlock = { heading: "Advice for Performing and Visual Arts Students", image: "shared/card-national", button: true } %}
+          {% include './_components/card-block.html'%}
+          {% set cardBlock = { heading: "Performing and Visual Arts Fairs FAQs", image: "shared/card-performing", button: true } %}
+          {% include './_components/card-block.html'%}
+          {% set cardBlock = { heading: "Counselor Information", image: "shared/card-stem", button: true } %}
+          {% include './_components/card-block.html'%}
+        </div>
+      </section>
+    </div>
+  </article>
+
+
+ {% include './_shared/footer.html'%}
+</main>
+
+{% endblock %}
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js"></script>
+<script src="/javascripts/interior.js"></script>
+{% endblock %}

@@ -1,0 +1,100 @@
+ {% extends '_layouts/main-application.html' %}
+ {% set pageLocation = "Research & Reports" %}
+ {% block content %}
+
+<main>
+	
+	{% include './_shared/utility.html'%}
+
+	{% set className = "primary-nav--inanimate" %}
+	{% include './_shared/navigation.html'%}
+
+	{% include './_shared/interior-hero.html'%}
+	
+	<article class="article__row content__row article--white">
+		<div class="container">
+
+			{% include './_components/breadcrumb.html' %}
+			
+			<div class="row aside-navigation__row">
+				<div class="col-md-3">
+					{% include './_shared/aside-navigation.html'%}
+				</div>
+				<div class="col-md-9">
+					<section class="card-block__row section__row">
+						<div class="row">
+						
+							
+							{% set colorBlock = { className: "color-block--half", heading: "Calls for Proposals", image: "shared/color-block-bg-orange.jpg", link: true} %}
+							{% include './_components/color-block.html'%}
+					
+							{% set colorBlock = { className: "color-block--half", heading: "Calls for Proposals", image: "shared/color-block-bg-blue.jpg", link: true} %}
+							{% include './_components/color-block.html'%}
+					
+							{% set colorBlock = { className: "color-block--full", heading: "Calls for Proposals", image: "shared/color-block-bg-green.jpg", link: true} %}
+							{% include './_components/color-block.html'%}
+								
+						</div>
+					</section>
+					<section class="section__row">
+						<div class="row">
+							<div class="col-sm-6 col--border">
+								<header class="section__header">
+									<h2>Related Events &amp; Training</h2>
+								</header>
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career", member: true} %}
+								{% include './_components/figure-block.html'%}
+								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
+							</div>
+							<div class="col-sm-6">
+								<header class="article__header">
+									<h2>Get Involved</h2>
+								</header>
+
+								{% include '_components/resource-entry.html'%}
+
+								{% include '_components/resource-entry.html'%}
+
+								{% include '_components/resource-entry.html'%}
+
+								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
+							</div>
+						</div>
+					</section>
+					<section class="section__row section__row--no-border">
+						
+						{% include '_shared/accordion.html' %}
+
+					</section>
+					<section class="section__row">
+						<header class="section__header">
+							<h2>Related Events &amp; Training</h2>
+						</header>
+						<div class="row">
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Calls for Proposals", image: "shared/figure-speaker"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+							<div class="col-md-4">
+								{% set figureBlock = { heading: "Training", image: "shared/figure-students"} %}
+								{% include './_components/figure-block.html'%}
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</article>
+	{% set addedClassNames = 'article--top-border' %}
+	{% include './_components/full-block-row.html' %}
+	
+	{% include './_shared/footer.html'%}
+</main>
+{% endblock %}
+{% block javascript %}
+<script src="/javascripts/interior.js"></script>
+{% endblock %}

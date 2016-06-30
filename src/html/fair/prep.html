@@ -1,0 +1,26 @@
+{% set templateName = 'template-fair' %} {% set pageLocation = "Preparing for a College Fair" %} {% extends '_layouts/fair-application.html' %} {% block content %}
+<main>
+	{% set className = 'utility-nav-fair' %} {% include './_fair/utility.html'%} {% set className = 'primary-nav-fair' %} {% include './_shared/navigation.html'%} {% include './_fair/hero-prep.html'%}
+	
+	{% set imageBlock = {class:'image-block--right', backgroundImage: '/images/shared/color-block-bg-green.jpg'} %}
+	{% include './_components/register-check-block.html' %}
+	
+	{% set imageBlock = {class:'', backgroundImage: '/images/shared/color-block-bg-blue.jpg'} %}
+	{% include './_components/register-check-block.html' %}
+	
+	{% set imageBlock = {class:'image-block--right', backgroundImage: '/images/shared/color-block-bg-orange.jpg'} %}
+	{% include './_components/register-check-block.html' %}
+	<article class="article__row article--bluegrey">
+		<div class="container">
+			<section class="card-block__row">
+				<div class="row">
+					{% set cardBlock = { heading: "Advice for Performing and Visual Arts Students", image: "shared/card-national", button: true } %} {% include './_components/card-block.html'%} {% set cardBlock = { heading: "Performing and Visual Arts Fairs FAQs", image: "shared/card-performing", button: true } %} {% include './_components/card-block.html'%} {% set cardBlock = { heading: "Counselor Information", image: "shared/card-stem", button: true } %} {% include './_components/card-block.html'%}
+				</div>
+			</section>
+		</div>
+	</article>
+	{% include './_shared/footer.html'%}
+</main>
+{% endblock %} {% block javascript %}
+<script src="/javascripts/interior.js"></script>
+{% endblock %}

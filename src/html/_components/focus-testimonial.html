@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="col-sm-3 focus-testimonial__image {% if testimonial.layout == 'right' %}col-md-push-9{% endif %}">
+		<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/shared/president_profile.jpg" data-src-sm="/images/shared/president_profile.jpg">
+	</div>
+	<div class="col-sm-9 focus-testimonial__content {% if testimonial.layout == 'right' %}col-md-pull-3{% endif %}">
+		<div class="article__header">
+			<h2>
+				{% if testimonial.heading %}
+					{{ testimonial.heading }}
+				{% else %}
+					Presidential Thoughts
+				{% endif %}
+			</h2>
+			{% if testimonial.copy %}
+				{{ testimonial.copy }}
+			{% else %}
+				<p>The word "access" has been in the news a lot lately. The big announcement in late September from the Obama Administration to change the policy on how students will file the FAFSA (beginning in fall 2016) by using prior-prior year tax information was motivated by a strong desire to increase access.</p>
+			{% endif %}
+			<a href="#" class="btn btn--nacac-blue">Read More</a>
+		</div>
+	</div>
+</div>

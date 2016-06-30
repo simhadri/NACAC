@@ -1,0 +1,89 @@
+ {% extends '_layouts/main-application.html' %}
+ {% set pageLocation = "Membership Overview" %}
+ {% block content %}
+<main>
+	{% include './_shared/utility.html'%}
+	{% set className = "primary-nav--inanimate" %}
+	{% include './_shared/navigation.html'%}
+	{% set heroTitle = "Membership Overview" %}
+	{% include './_shared/interior-hero.html'%}
+	<article class="article__row content__row article--white">
+		<div class="container">
+			{% include './_components/breadcrumb.html' %}
+			<div class="row aside-navigation__row">
+				<div class="col-md-3">
+					{% include './_shared/aside-navigation.html'%}
+				</div>
+				<div class="col-md-9">
+					<section class="card-block__row section__row">
+						<header class="section__header">
+							<h2>Membership Benefits</h2>
+							<p>Get involved in the counseling and admission community and stay up-to-date on the industry trends. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</p>
+						</header>
+						<div class="row">
+							{% set cardBlock = { heading: "National Conference", image: "shared/card-national", button: false } %}
+							{% include './_components/card-block.html'%}
+							{% set cardBlock = { heading: "Personal Developement", image: "shared/card-stem", button: false } %}
+							{% include './_components/card-block.html'%}
+							{% set cardBlock = { heading: "Publications", image: "shared/card-performing", button: false } %}
+							{% include './_components/card-block.html'%}
+						</div>
+						<a href="#" class="btn btn--nacac-blue btn--centered">Become a Member</a>
+					</section>
+					<section class="section__row">
+						<header class="section__header">
+							<h2>Membership Benefits</h2>
+							<p>Get involved in the counseling and admission community and stay up-to-date on the industry trends. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</p>
+						</header>
+						{% include './_components/tab-block.html' %}
+					</section>
+					<section class="section__row">
+						<div class="row">
+							<div class="col-sm">
+								{% set backgroundColor = 'background--grey' %}
+								{% include './_components/member-block.html' %}
+							</div>
+							<div class="col-sm">
+								{% set backgroundColor = '' %}
+								{% set hasIcon = true %}
+								{% include './_components/member-block.html' %}
+							</div>
+						</div>
+					</section>
+					<section class="section__row">
+						<header class="section__header">
+							<h2>Membership Benefits</h2>
+						</header>
+						<div class="row">
+							{% set numbers = [8,35,13000] %}
+							{% for i in numbers %}
+							<div class="col-md">
+								{% set number = i %}
+								{% include './_components/number-block.html' %}
+							</div>
+							{% endfor %}
+						</div>
+					</section>
+					<section class="section__row">
+						<div class="section__header">
+							<h2>Member Stories</h2>
+							<p>Get involved in the counseling and admission community and stay up-to-date on the industry trends. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</p>
+						</div>
+						<div class="row">
+							{% include './_components/testimonial-block.html' %}
+							{% include './_components/testimonial-block.html' %}
+							{% include './_components/testimonial-block.html' %}
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</article>
+	{% set addedClassNames = 'article--top-border' %}
+	{% include './_components/full-block-row.html' %}
+	{% include './_shared/footer.html'%}
+</main>
+{% endblock %}
+{% block javascript %}
+<script src="/javascripts/interior.js"></script>
+{% endblock %}
