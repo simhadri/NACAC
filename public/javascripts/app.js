@@ -485,6 +485,8 @@ webpackJsonp([0],[
 			(function () {
 				var tweetParse = new _libTweetParseJs2['default']();
 				var TweetController = '/javascripts/data/twitter-feed.json';
+				// URL for Production
+				// var TweetController = '/Static/JS/twitter-feed.json';
 				$.ajax({
 					url: TweetController,
 					type: 'GET',
