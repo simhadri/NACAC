@@ -2,7 +2,7 @@
 //    Modules scripts
 // *********************
 
-// USING production variables
+//USING production variables
 // if(process.env.NODE_ENV === 'development'){
 // 	var dev_var = 'url/to/dev';
 	

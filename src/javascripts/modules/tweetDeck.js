@@ -8,21 +8,22 @@
 
 // IMPORTS
 import TweetParse from 'lib/tweetParse.js';
+import EnvVar from 'lib/envVar.js';
 
 // FUNCTION
 (function() {
 	'use strict';
-	if(document.getElementById('tweetDeck')){
-		const tweetParse = new TweetParse;
-		let TweetController = '/javascripts/data/twitter-feed.json';
-		// URL for Production
-		// var TweetController = '/Static/JS/twitter-feed.json';
+	if (document.getElementById('tweetDeck')) {
+		var tweetParse = new TweetParse;
+		// DEV/PROD vars
+		var TweetController = EnvVar({development:'/javascripts/data/twitter-feed.json',production:'/Static/JS/twitter-feed.json'});
+		
 		$.ajax({
 			url: TweetController,
 			type: 'GET',
 			dataType: 'json',
 			success: function(data) {
-				let tweetDeck = document.getElementById('tweetDeck');
+				var tweetDeck = document.getElementById('tweetDeck');
 				for (let i = 0; i < data.length; i++) {
 					let tweetText = data[i].text;
 					// Clean up tweet, add links
