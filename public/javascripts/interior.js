@@ -1,1 +1,461 @@
-webpackJsonp([2],[function(t,e,a){t.exports=a(14)},,,,,,,,,,,,,,function(t,e,a){"use strict";a(15),a(16),a(17),a(18),a(20),a(22)},function(t,e,a){"use strict";function n(t){return t&&t.__esModule?t:{"default":t}}var i=a(6),o=n(i);!function(){var t=function e(){var e=$(".aside-navigation"),t=$(".aside-navigation").height(),a=$(".aside-navigation__row").height();if(0===$(".hero__wrapper").length)var n=180,i=e.offset().top+t,o=$(window).scrollTop()+120;else var n=$(".hero__wrapper").height()+$(".interior-hero__breadcrumb").height()+220,i=e.offset().top,o=$(window).scrollTop()+120;o>n&&$(".aside-navigation").addClass("aside-navigation--sticky"),n>o&&$(".aside-navigation").removeClass("aside-navigation--sticky"),i>a?$(".aside-navigation").addClass("aside-navigation--hide"):$(".aside-navigation").removeClass("aside-navigation--hide")};0!==$(".aside-navigation").length&&(t(),$(window).scroll((0,o["default"])(t,20)))}()},function(t,e,a){"use strict";function n(t){return t&&t.__esModule?t:{"default":t}}var i=a(6),o=n(i);!function(){var t=function(){this.addBackTop=function(){document.getElementById("back-top")||!function(){var t=document.createElement("div"),a=document.getElementsByTagName("main")[0];a.appendChild(t),t.setAttribute("id","back-top"),t.setAttribute("class","back-top"),t.innerHTML='<i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i><span>Back to Top</span>',setTimeout(function(){t.classList.add("back-top--scrolled"),t.addEventListener("click",e)},10)}()},this.removeBackTop=function(){document.getElementById("back-top")&&document.getElementById("back-top").remove()}},e=function(){$("html, body").animate({scrollTop:0})},a=function(){var e=new t,a=$(window).height(),n=$(window).scrollTop();n>a?e.addBackTop():e.removeBackTop()};$(window).scroll((0,o["default"])(a,100)),$(".back-top").on("click",function(){$("html, body").animate({scrollTop:0})})}()},function(t,e){"use strict";!function(){if(document.getElementById("productForm")){new FormValidator("productForm",[{name:"firstName",display:"first name",rules:"required|alpha"},{name:"lastName",display:"last name",rules:"required|alpha"},{name:"email",display:"email",rules:"required|valid_email"}],function(t,e){for(var a in this.fields)this.fields[a].element.validity.valid?this.fields[a].element.classList.remove("error"):this.fields[a].element.classList.add("error");if(t.length>0){var n=document.getElementById("error-box");n.innerHTML="";for(var i=0;i<t[0].messages.length;i++)n.innerHTML=n.innerHTML+t[0].messages[i]+"<br>";return n.classList.add("error-box--display"),!1}})}}()},function(t,e,a){"use strict";function n(t){return t&&t.__esModule?t:{"default":t}}var i=a(6),o=n(i),r=a(19),s=n(r);!function(){var t=function(){$(".number-block__numerals").each(function(){if("0"==$(this).text()&&$(this).offset().top-400<=$(window).scrollTop()){var t=new s["default"]($(this).attr("id"),0,$(this).attr("data-counter"),0,3.6);t.start()}})};$(window).scroll((0,o["default"])(t,100))}()},function(t,e){"use strict";var a=function(t,e,a,n,i,o){for(var r=0,s=["webkit","moz","ms","o"],l=0;l<s.length&&!window.requestAnimationFrame;++l)window.requestAnimationFrame=window[s[l]+"RequestAnimationFrame"],window.cancelAnimationFrame=window[s[l]+"CancelAnimationFrame"]||window[s[l]+"CancelRequestAnimationFrame"];window.requestAnimationFrame||(window.requestAnimationFrame=function(t,e){var a=(new Date).getTime(),n=Math.max(0,16-(a-r)),i=window.setTimeout(function(){t(a+n)},n);return r=a+n,i}),window.cancelAnimationFrame||(window.cancelAnimationFrame=function(t){clearTimeout(t)}),this.options={useEasing:!0,useGrouping:!0,separator:",",decimal:"."};for(var d in o)o.hasOwnProperty(d)&&(this.options[d]=o[d]);""===this.options.separator&&(this.options.useGrouping=!1),this.options.prefix||(this.options.prefix=""),this.options.suffix||(this.options.suffix=""),this.d="string"==typeof t?document.getElementById(t):t,this.startVal=Number(e),this.endVal=Number(a),this.countDown=this.startVal>this.endVal,this.frameVal=this.startVal,this.decimals=Math.max(0,n||0),this.dec=Math.pow(10,this.decimals),this.duration=1e3*Number(i)||2e3;var u=this;this.version=function(){return"1.6.0"},this.printValue=function(t){var e=isNaN(t)?"--":u.formatNumber(t);"INPUT"==u.d.tagName?this.d.value=e:"text"==u.d.tagName||"tspan"==u.d.tagName?this.d.textContent=e:this.d.innerHTML=e},this.easeOutExpo=function(t,e,a,n){return a*(-Math.pow(2,-10*t/n)+1)*1024/1023+e},this.count=function(t){u.startTime||(u.startTime=t),u.timestamp=t;var e=t-u.startTime;u.remaining=u.duration-e,u.options.useEasing?u.countDown?u.frameVal=u.startVal-u.easeOutExpo(e,0,u.startVal-u.endVal,u.duration):u.frameVal=u.easeOutExpo(e,u.startVal,u.endVal-u.startVal,u.duration):u.countDown?u.frameVal=u.startVal-(u.startVal-u.endVal)*(e/u.duration):u.frameVal=u.startVal+(u.endVal-u.startVal)*(e/u.duration),u.countDown?u.frameVal=u.frameVal<u.endVal?u.endVal:u.frameVal:u.frameVal=u.frameVal>u.endVal?u.endVal:u.frameVal,u.frameVal=Math.round(u.frameVal*u.dec)/u.dec,u.printValue(u.frameVal),e<u.duration?u.rAF=requestAnimationFrame(u.count):u.callback&&u.callback()},this.start=function(t){return u.callback=t,u.rAF=requestAnimationFrame(u.count),!1},this.formatNumber=function(t){t=t.toFixed(u.decimals),t+="";var e,a,n,i;if(e=t.split("."),a=e[0],n=e.length>1?u.options.decimal+e[1]:"",i=/(\d+)(\d{3})/,u.options.useGrouping)for(;i.test(a);)a=a.replace(i,"$1"+u.options.separator+"$2");return u.options.prefix+a+n+u.options.suffix},u.printValue(u.startVal)};t.exports=a},function(t,e,a){"use strict";function n(t){return t&&t.__esModule?t:{"default":t}}var i=a(21),o=n(i);!function(){var t=document.getElementById("countdown-clock");if(t){var e=t.getAttribute("data-deadline");(0,o["default"])("countdown-clock",e)}}()},function(t,e){"use strict";var a=function(t,e){function a(t){var e=Date.parse(t)-Date.parse(new Date),a=Math.floor(e/1e3/60%60),n=Math.floor(e/36e5%24),i=Math.floor(e/864e5);return{total:e,days:i,hours:n,minutes:a}}function n(){var t=a(e);u.innerHTML=t.days,c.innerHTML=("0"+t.hours).slice(-2),m.innerHTML=("0"+t.minutes).slice(-2),t.total<=0&&clearInterval(f)}for(var i=document.getElementById(t),o=["days","hours","minutes"],r=0;r<o.length;r++){var s=document.createElement("div"),l=document.createElement("div"),d=document.createElement("span");s.setAttribute("class","clock__segment"),l.setAttribute("class","segment__num "+o[r]),d.innerHTML=o[r],d.setAttribute("class","segment__label"),i.appendChild(s),s.appendChild(l),s.appendChild(d)}var u=i.querySelector(".days"),c=i.querySelector(".hours"),m=i.querySelector(".minutes");n();var f=setInterval(n,1e3)};t.exports=a},function(t,e){"use strict";document.getElementById("lightSlider")&&$("#lightSlider").lightSlider({item:4,loop:!1,slideMove:4,pager:!1,easing:"cubic-bezier(0.25, 0, 0.25, 1)",speed:600,responsive:[{breakpoint:800,settings:{item:3,slideMove:1,slideMargin:6}},{breakpoint:480,settings:{item:2,slideMove:1}}]})}]);
+webpackJsonp([2],[
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(14);
+
+
+/***/ },
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// *********************
+	//    Modules Scripts
+	// *********************
+	// import 'modules/asideNavigation';
+	'use strict';
+	
+	__webpack_require__(15);
+	
+	__webpack_require__(16);
+	
+	__webpack_require__(17);
+	
+	__webpack_require__(19);
+	
+	__webpack_require__(21);
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// IMPORTS
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _libThrottledJs = __webpack_require__(6);
+	
+	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
+	
+	// FUNCTION
+	(function () {
+		'use strict';
+		var backTop = function backTop() {
+			this.addBackTop = function () {
+				if (!document.getElementById('back-top')) {
+					(function () {
+						var backTop = document.createElement('div'),
+						    mainElement = document.getElementsByTagName('main')[0];
+						mainElement.appendChild(backTop);
+						backTop.setAttribute('id', 'back-top');
+						backTop.setAttribute('class', 'back-top');
+						backTop.innerHTML = '<i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i><span>Back to Top</span>';
+						setTimeout(function () {
+							backTop.classList.add('back-top--scrolled');
+							backTop.addEventListener('click', scrolltoTop);
+						}, 10);
+					})();
+				}
+			}, this.removeBackTop = function () {
+				if (document.getElementById('back-top')) {
+					document.getElementById('back-top').remove();
+				}
+			};
+		};
+		var scrolltoTop = function scrolltoTop() {
+			$('html, body').animate({ scrollTop: 0 });
+		};
+	
+		var backTopScroll = function backTopScroll() {
+			var bt = new backTop(),
+			    windowHeight = $(window).height(),
+			    top = $(window).scrollTop();
+			if (top > windowHeight) {
+				bt.addBackTop();
+			} else {
+				bt.removeBackTop();
+			}
+		};
+	
+		$(window).scroll((0, _libThrottledJs2['default'])(backTopScroll, 100));
+		$('.back-top').on('click', function () {
+			$('html, body').animate({ scrollTop: 0 });
+		});
+	})();
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+	// FUNCTION
+	'use strict';
+	
+	(function () {
+		'use strict';
+		if (document.getElementById('productForm')) {
+			var validator = new FormValidator('productForm', [{
+				name: 'firstName',
+				display: 'first name',
+				rules: 'required|alpha'
+			}, {
+				name: 'lastName',
+				display: 'last name',
+				rules: 'required|alpha'
+			}, {
+				name: 'email',
+				display: 'email',
+				rules: 'required|valid_email'
+			}], function (errors, evt) {
+				// console.log(this.fields.lastName.element)
+				for (var field in this.fields) {
+					if (this.fields[field].element.validity.valid) {
+						this.fields[field].element.classList.remove('error');
+					} else {
+						this.fields[field].element.classList.add('error');
+					}
+					// this.fields[field].isValid;
+				}
+				if (errors.length > 0) {
+					var errBox = document.getElementById('error-box');
+					errBox.innerHTML = '';
+	
+					for (var n = 0; n < errors[0].messages.length; n++) {
+						// errors[0].messages[n];
+						errBox.innerHTML = errBox.innerHTML + errors[0].messages[n] + '<br>';
+					}
+					errBox.classList.add('error-box--display');
+					return false;
+				}
+			});
+		}
+	})();
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// IMPORTS
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _libThrottledJs = __webpack_require__(6);
+	
+	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
+	
+	var _libCountUpJs = __webpack_require__(18);
+	
+	var _libCountUpJs2 = _interopRequireDefault(_libCountUpJs);
+	
+	// FUNCTION
+	(function () {
+		'use strict';
+		var countCard = function countCard() {
+			$('.number-block__numerals').each(function () {
+				if ($(this).text() == '0' && $(this).offset().top - 400 <= $(window).scrollTop()) {
+					var counter = new _libCountUpJs2['default']($(this).attr('id'), 0, $(this).attr('data-counter'), 0, 3.6);
+					counter.start();
+				}
+			});
+		};
+		$(window).scroll((0, _libThrottledJs2['default'])(countCard, 100));
+	})();
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	/*
+	    countUp.js
+	    (c) 2014-2015 @inorganik
+	    Licensed under the MIT license.
+	*/
+	// target = id of html element or var of previously selected html element where counting occurs
+	// startVal = the value you want to begin at
+	// endVal = the value you want to arrive at
+	// decimals = number of decimal places, default 0
+	// duration = duration of animation in seconds, default 2
+	// options = optional object of options (see below)
+	
+	'use strict';
+	
+	var CountUp = function CountUp(target, startVal, endVal, decimals, duration, options) {
+	    // make sure requestAnimationFrame and cancelAnimationFrame are defined
+	    // polyfill for browsers without native support
+	    // by Opera engineer Erik Möller
+	    var lastTime = 0;
+	    var vendors = ['webkit', 'moz', 'ms', 'o'];
+	    for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+	        window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+	        window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
+	    }
+	    if (!window.requestAnimationFrame) {
+	        window.requestAnimationFrame = function (callback, element) {
+	            var currTime = new Date().getTime();
+	            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+	            var id = window.setTimeout(function () {
+	                callback(currTime + timeToCall);
+	            }, timeToCall);
+	            lastTime = currTime + timeToCall;
+	            return id;
+	        };
+	    }
+	    if (!window.cancelAnimationFrame) {
+	        window.cancelAnimationFrame = function (id) {
+	            clearTimeout(id);
+	        };
+	    }
+	
+	    // default options
+	    this.options = {
+	        useEasing: true, // toggle easing
+	        useGrouping: true, // 1,000,000 vs 1000000
+	        separator: ',', // character to use as a separator
+	        decimal: '.' // character to use as a decimal
+	    };
+	    // extend default options with passed options object
+	    for (var key in options) {
+	        if (options.hasOwnProperty(key)) {
+	            this.options[key] = options[key];
+	        }
+	    }
+	    if (this.options.separator === '') this.options.useGrouping = false;
+	    if (!this.options.prefix) this.options.prefix = '';
+	    if (!this.options.suffix) this.options.suffix = '';
+	
+	    this.d = typeof target === 'string' ? document.getElementById(target) : target;
+	    this.startVal = Number(startVal);
+	    this.endVal = Number(endVal);
+	    this.countDown = this.startVal > this.endVal;
+	    this.frameVal = this.startVal;
+	    this.decimals = Math.max(0, decimals || 0);
+	    this.dec = Math.pow(10, this.decimals);
+	    this.duration = Number(duration) * 1000 || 2000;
+	    var self = this;
+	
+	    this.version = function () {
+	        return '1.6.0';
+	    };
+	
+	    // Print value to target
+	    this.printValue = function (value) {
+	        var result = !isNaN(value) ? self.formatNumber(value) : '--';
+	        if (self.d.tagName == 'INPUT') {
+	            this.d.value = result;
+	        } else if (self.d.tagName == 'text' || self.d.tagName == 'tspan') {
+	            this.d.textContent = result;
+	        } else {
+	            this.d.innerHTML = result;
+	        }
+	    };
+	
+	    // Robert Penner's easeOutExpo
+	    this.easeOutExpo = function (t, b, c, d) {
+	        return c * (-Math.pow(2, -10 * t / d) + 1) * 1024 / 1023 + b;
+	    };
+	    this.count = function (timestamp) {
+	
+	        if (!self.startTime) self.startTime = timestamp;
+	
+	        self.timestamp = timestamp;
+	
+	        var progress = timestamp - self.startTime;
+	        self.remaining = self.duration - progress;
+	
+	        // to ease or not to ease
+	        if (self.options.useEasing) {
+	            if (self.countDown) {
+	                self.frameVal = self.startVal - self.easeOutExpo(progress, 0, self.startVal - self.endVal, self.duration);
+	            } else {
+	                self.frameVal = self.easeOutExpo(progress, self.startVal, self.endVal - self.startVal, self.duration);
+	            }
+	        } else {
+	            if (self.countDown) {
+	                self.frameVal = self.startVal - (self.startVal - self.endVal) * (progress / self.duration);
+	            } else {
+	                self.frameVal = self.startVal + (self.endVal - self.startVal) * (progress / self.duration);
+	            }
+	        }
+	
+	        // don't go past endVal since progress can exceed duration in the last frame
+	        if (self.countDown) {
+	            self.frameVal = self.frameVal < self.endVal ? self.endVal : self.frameVal;
+	        } else {
+	            self.frameVal = self.frameVal > self.endVal ? self.endVal : self.frameVal;
+	        }
+	
+	        // decimal
+	        self.frameVal = Math.round(self.frameVal * self.dec) / self.dec;
+	
+	        // format and print value
+	        self.printValue(self.frameVal);
+	
+	        // whether to continue
+	        if (progress < self.duration) {
+	            self.rAF = requestAnimationFrame(self.count);
+	        } else {
+	            if (self.callback) self.callback();
+	        }
+	    };
+	    // start your animation
+	    this.start = function (callback) {
+	        self.callback = callback;
+	        self.rAF = requestAnimationFrame(self.count);
+	        return false;
+	    };
+	    this.formatNumber = function (nStr) {
+	        nStr = nStr.toFixed(self.decimals);
+	        nStr += '';
+	        var x, x1, x2, rgx;
+	        x = nStr.split('.');
+	        x1 = x[0];
+	        x2 = x.length > 1 ? self.options.decimal + x[1] : '';
+	        rgx = /(\d+)(\d{3})/;
+	        if (self.options.useGrouping) {
+	            while (rgx.test(x1)) {
+	                x1 = x1.replace(rgx, '$1' + self.options.separator + '$2');
+	            }
+	        }
+	        return self.options.prefix + x1 + x2 + self.options.suffix;
+	    };
+	
+	    // format startVal on initialization
+	    self.printValue(self.startVal);
+	};
+	
+	module.exports = CountUp;
+	// Example:
+	// var numAnim = new countUp("SomeElementYouWantToAnimate", 0, 99.99, 2, 2.5);
+	// numAnim.start();
+	// numAnim.update(135);
+	// with optional callback:
+	// numAnim.start(someMethodToCallOnComplete);
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// IMPORTS
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _libCountDown = __webpack_require__(20);
+	
+	var _libCountDown2 = _interopRequireDefault(_libCountDown);
+	
+	// FUNCTION
+	(function () {
+		'use strict';
+		var getClock = document.getElementById('countdown-clock');
+		if (getClock) {
+			var setTime = getClock.getAttribute('data-deadline');
+			(0, _libCountDown2['default'])('countdown-clock', setTime);
+		}
+	})();
+
+/***/ },
+/* 20 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	var countDown = function countDown(id, endtime) {
+		var clock = document.getElementById(id),
+		    seg = ["days", "hours", "minutes"];
+		for (var i = 0; i < seg.length; i++) {
+			var wrap = document.createElement('div'),
+			    div = document.createElement('div'),
+			    span = document.createElement('span');
+			wrap.setAttribute('class', 'clock__segment');
+			div.setAttribute('class', 'segment__num ' + seg[i]);
+			span.innerHTML = seg[i];
+			span.setAttribute('class', 'segment__label');
+			clock.appendChild(wrap);
+			wrap.appendChild(div);
+			wrap.appendChild(span);
+		}
+	
+		function getTimeRemaining(endtime) {
+			var t = Date.parse(endtime) - Date.parse(new Date());
+			//var seconds = Math.floor((t / 1000) % 60);
+			var minutes = Math.floor(t / 1000 / 60 % 60);
+			var hours = Math.floor(t / (1000 * 60 * 60) % 24);
+			var days = Math.floor(t / (1000 * 60 * 60 * 24));
+			return {
+				'total': t,
+				'days': days,
+				'hours': hours,
+				'minutes': minutes
+				//'seconds': seconds
+			};
+		}
+		var daysSpan = clock.querySelector('.days');
+		var hoursSpan = clock.querySelector('.hours');
+		var minutesSpan = clock.querySelector('.minutes');
+		//var secondsSpan = clock.querySelector('.seconds');
+	
+		function updateClock() {
+			var t = getTimeRemaining(endtime);
+			daysSpan.innerHTML = t.days;
+			hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+			minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+			//secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+			if (t.total <= 0) {
+				clearInterval(timeinterval);
+			}
+		}
+		updateClock();
+		var timeinterval = setInterval(updateClock, 1000);
+	};
+	module.exports = countDown;
+
+/***/ },
+/* 21 */
+/***/ function(module, exports) {
+
+	// FUNCTION
+	'use strict';
+	
+	if (document.getElementById('lightSlider')) {
+		$('#lightSlider').lightSlider({
+			item: 4,
+			loop: false,
+			slideMove: 4,
+			pager: false,
+			easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+			speed: 600,
+			responsive: [{
+				breakpoint: 800,
+				settings: {
+					item: 3,
+					slideMove: 1,
+					slideMargin: 6
+				}
+			}, {
+				breakpoint: 480,
+				settings: {
+					item: 2,
+					slideMove: 1
+				}
+			}]
+		});
+	}
+
+/***/ }
+]);
+//# sourceMappingURL=interior.js.map

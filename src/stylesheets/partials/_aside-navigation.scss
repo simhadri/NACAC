@@ -5,14 +5,34 @@
 		color: $nacac_light-blue;
 		// font-size: 2rem;
 	}
-	ul{
+	ul {
 		list-style: none;
-		li{
-			a{
+		li {
+			a {
 				padding: 1rem;
 			}
-			> ul{
-				margin-left: 20px;
+			> ul {
+				margin-left: 1.6rem;
+			}
+		}
+	}
+	.aside-navigation--sub {
+		position: relative;
+		&:before {
+			@include icon('fa-folder-open-o');
+			top: 1rem;
+			left: -1.4rem;
+			position: absolute;
+			color: $nacac_light-blue;
+		}
+		ul li:not(.aside-navigation--sub) {
+			position: relative;
+			&:before {
+				content: "-";
+				top: 1rem;
+				left: -1rem;
+				position: absolute;
+				color: $nacac_light-blue;
 			}
 		}
 	}
@@ -28,6 +48,9 @@
 			background-color: $nacac_light-blue;
 			color: $white;
 			border-radius: 0.4rem;
+			margin-left: -0.8rem;
+			margin-right: -0.8rem;
+			padding-left: 1.8rem;
 		}
 	}
 }
@@ -41,7 +64,6 @@
 ██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 */
-
 
 @include break(max, $screen-sm-max) {
 	.aside-navigation {
@@ -81,4 +103,3 @@
 		width: 21.25rem;
 	}
 }
-
