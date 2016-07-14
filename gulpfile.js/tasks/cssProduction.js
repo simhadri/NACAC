@@ -13,7 +13,6 @@ var paths = {
 }
 
 var cssProduction = function () {
-  console.log('cssProd')
   return gulp.src(paths.src)
     .pipe(sass(config.tasks.css.sass))
     .on('error', handleErrors)
