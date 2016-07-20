@@ -1,6 +1,3 @@
-// Jquery adds inline styles and these need to be overwritten. 
-// HeadStyle writes styles to the head tag and destorys them as well
-
 // Usage:
 // var dev_var = envVar({
 // 	production:'myProductionURL',
