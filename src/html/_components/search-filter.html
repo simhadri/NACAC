@@ -9,7 +9,7 @@
         	{% for i in range(0,4) %}
             <li>
                 <!-- <input type="checkbox" class="checkbox" name="check-1" id="check-1"> -->
-                <label for="check-1" {% if i == 3 %}class="label--checked"{% endif %}>
+                <label for="check-1" class="{% if i == 3 %}label--checked{% endif %}">
                     <a href="#">Subject {{i+1}}</a>
                     <span>(2)</span>
                 </label>
@@ -22,7 +22,7 @@
             {% for i in range(0,6) %}
             <li>
                 <!-- <input type="checkbox" class="checkbox" name="check-1" id="check-1"> -->
-                <label for="check-1" {% if i == 0 %}class="label--checked"{% endif %}>
+                <label for="check-1" class="{% if i == 0 %}label--checked{% endif %}">
                     <a href="#">Subject {{i+1}}</a>
                     <span>(2)</span>
                 </label>
@@ -35,7 +35,7 @@
             {% for i in range(0,3) %}
             <li>
                 <!-- <input type="checkbox" class="checkbox" name="check-1" id="check-1"> -->
-                <label for="check-1" {% if i == 0 %}class="label--checked"{% endif %}>
+                <label for="check-1" class="{% if i == 0 %}label--checked{% endif %}">
                     <a href="#">Subject {{i+1}}</a>
                     <span>(2)</span>
                 </label>
