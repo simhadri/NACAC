@@ -54,17 +54,9 @@
 						<a href="#" class="btn__filter background--green">Search Term</a>
 					</div>
 					<div class="search-results__listings">
-						{% set image = true %}
-						{% include './_components/search-result-item.html'%}
-						{% set image = false %}
-						{% include './_components/search-result-item.html'%}
-						{% set image = true %}
-						{% include './_components/search-result-item.html'%}
-						{% set image = false %}
-						{% include './_components/search-result-item.html'%}
-						{% set image = true %}
-						{% include './_components/search-result-item.html'%}
-						{% set image = false %}
+						{% set searchItemTypes = [
+							"suggested", "member", "standard", "standard", "member", "standard", "standard"
+						] %}
 						{% include './_components/search-result-item.html'%}
 					</div>
 					<ul class="pagination search-results__pagination pagination--bottom">
