@@ -106,17 +106,27 @@
 .result-item {
 	border-bottom: 1px solid $nacac_border-lightgrey;
 	padding: 2rem 0;
-	.result-item__member {
-		margin: 0.8rem 0;
-		color: $nacac_burgundy;
+	.result-item__member, .result-item__suggested {
+    	margin: 0.8rem 0;
 		@include serif-italic;
 		&:before {
-			font-family: $icons;
 			font-style: normal;
-			content: "\f023";
 			padding-right: 1rem;
 		}
 	}
+	.result-item__member{
+		color: $nacac_burgundy;
+		&:before{
+			@include icon(fa-lock);
+		}
+	}
+	.result-item__suggested{
+		color: $nacac_orange;
+		&:before{
+			@include icon(fa-star);
+		}
+	}
+	
 	.result-item__date {
 		margin: 0;
 	}
@@ -148,9 +158,9 @@
 }
 
 .checkbox-container {
-	input[type="checkbox"] {
-		display: none;
-	}
+	// input[type="checkbox"] {
+	// 	display: none;
+	// }
 	label {
 		position: relative;
 		padding-left: 3rem;
@@ -170,23 +180,12 @@
 		content: '\f096';
 		color: $nacac_light-blue;
 	}
-	input[type="checkbox"]:checked + label:before {
-		transition: all 300ms;
-		opacity: 0;
-	}
 	/*checked*/
-	label:after {
+	label.label--checked:after {
 		content: '\f046';
-		max-width: 0;
 		overflow: hidden;
-		opacity: 0.5;
 		color: #67D8A4;
-		/*CSS3 transitions for animated effect*/
-		transition: all 300ms;
-	}
-	input[type="checkbox"]:checked + label:after {
 		max-width: 3rem;
-		opacity: 1;
 	}
 }
 
