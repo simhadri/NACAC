@@ -9,23 +9,14 @@
 
 {% include './_shared/hero.html'%}
 
-<div class="content-block__row">
-	{% set backgroundImage = '/images/main/color-block-bg-purple.jpg' %}
-	{% set className = 'color-block--wide' %}
-	{% include './_components/color-block.html'%}
-	
-	{% set backgroundImage = '/images/main/color-block-bg-green.jpg' %}
-	{% set className = 'color-block--wide' %}
-	{% include './_components/color-block.html'%}
 
-</div>
 
 <article class="article__row article--white">
 	<div class="container">
-		<header class="article__header">
-			<h2>Nacac Expertise</h2>
-			<p>Ad pro quidam virtute voluptaria. In eum propriae insolens nominati, sed te nihil affert doming, nulla melius praesent et mei. Ad essent quaeque periculis mea. No iuvaret torquatos conclusionemque vel.</p>
-		</header>
+		<!--<header class="article__header">
+			<h2></h2>
+			<p></p>
+		</header>-->
 		<section class="card-block__row">
 			<div class="flexbox__row row">
 					
@@ -35,9 +26,6 @@
 				{% set button = true %}
 				{% include './_components/card-block.html'%}
 			
-				{% set button = true %}
-				{% include './_components/card-block.html'%}
-				
 				{% set button = true %}
 				{% include './_components/card-block.html'%}
 			
@@ -82,15 +70,10 @@
 		</section>
 	</div>
 </article>
-<article class="article__row article--white">
-	<div class="container">
-		{% include './_components/focus-testimonial.html' %}
-	</div>
-</article>
 <article class="article__row article--bluegrey">
 	<div class="container">
 		<div class="article__header">
-			<h2>Member Stories</h2>
+			<h2>Why Attend?</h2>
 		</div>
 		<div class="article__row row">
 			{% include './_components/testimonial-block.html' %}
