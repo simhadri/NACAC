@@ -7,29 +7,16 @@
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 
-// Reset and dependencies
-@import "bootstrap/normalize";
-// @import "bootstrap/print";
+//@import "bootstrap/normalize";
 
 // Core CSS
 @import "bootstrap/scaffolding";
-// @import "bootstrap/type";
-@import "bootstrap/code";
 @import "bootstrap/grid";
-@import "bootstrap/flexboxgrid";
-// @import "bootstrap/tables";
 @import "bootstrap/forms";
-// @import "bootstrap/buttons";
 
 // Components
-// @import "bootstrap/button-groups";
-// @import "bootstrap/input-groups";
 @import "bootstrap/breadcrumbs";
 @import "bootstrap/pagination";
-// @import "bootstrap/labels";
-// @import "bootstrap/badges";
-// @import "bootstrap/alerts";
-// @import "bootstrap/media";
 
 
 // Utility classes

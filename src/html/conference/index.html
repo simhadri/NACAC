@@ -4,28 +4,19 @@
 {% block content %}
 <main>
 {% include './_shared/utility.html'%}
-
+{% set className = "primary-nav--inanimate" %}
 {% include './_shared/navigation.html'%}
 
-{% include './_shared/hero.html'%}
+{% include './_shared/interior-hero-events.html'%}
 
-<div class="content-block__row">
-	{% set backgroundImage = '/images/main/color-block-bg-purple.jpg' %}
-	{% set className = 'color-block--wide' %}
-	{% include './_components/color-block.html'%}
-	
-	{% set backgroundImage = '/images/main/color-block-bg-green.jpg' %}
-	{% set className = 'color-block--wide' %}
-	{% include './_components/color-block.html'%}
 
-</div>
 
 <article class="article__row article--white">
 	<div class="container">
-		<header class="article__header">
-			<h2>Nacac Expertise</h2>
-			<p>Ad pro quidam virtute voluptaria. In eum propriae insolens nominati, sed te nihil affert doming, nulla melius praesent et mei. Ad essent quaeque periculis mea. No iuvaret torquatos conclusionemque vel.</p>
-		</header>
+		<!--<header class="article__header">
+			<h2></h2>
+			<p></p>
+		</header>-->
 		<section class="card-block__row">
 			<div class="flexbox__row row">
 					
@@ -37,60 +28,17 @@
 			
 				{% set button = true %}
 				{% include './_components/card-block.html'%}
-				
-				{% set button = true %}
-				{% include './_components/card-block.html'%}
 			
 			</div>
 		</section>
 	</div>
 </article>
 
-<article class="article__row article--lightgrey announcements">
-	<div class="announcement__header">
-			<div class="container">
-				<p><i class="fa fa-bullhorn"></i>Announcements</p>
-			</div>
-		</div>
-	<div class="container">
-		<section class="announcement__row row">
-			<div class="col-md-7 listing__block">
-				<header class="article__header">
-					<h2>Get Involved</h2>
-				</header>
 
-				{% include '_components/listing-entry.html'%}
-
-				{% include '_components/listing-entry.html'%}
-
-				{% include '_components/listing-entry.html'%}
-
-			</div>
-			<div class="col-md-5 calendar__block">
-				<header class="article__header">
-					<h2>Upcoming Training</h2>
-				</header>
-				
-				{% include '_components/calendar-entry.html'%}
-
-				{% include '_components/calendar-entry.html'%}
-
-				{% include '_components/calendar-entry.html'%}
-				
-				<a href="#" class="btn btn--nacac-blue">View Full Calendar</a>
-			</div>
-		</section>
-	</div>
-</article>
-<article class="article__row article--white">
-	<div class="container">
-		{% include './_components/focus-testimonial.html' %}
-	</div>
-</article>
 <article class="article__row article--bluegrey">
 	<div class="container">
 		<div class="article__header">
-			<h2>Member Stories</h2>
+			<h2>Why Attend?</h2>
 		</div>
 		<div class="article__row row">
 			{% include './_components/testimonial-block.html' %}
@@ -102,12 +50,26 @@
 	</div>
 </article>
 
-{% include './_components/full-block-row.html'%}
+<article class="article__row article--white">
+	<div class="container">
+		<section class="section__row">
+			<header class="section__header">
+				<h2>Thank You to Our Sponsors</h2>
+				{% include './_components/slider.html' %}
+				<a href="#" class="btn btn--nacac-blue">Become a Sponsor</a>
+			</header>
+		</section>
+	</div>
+</article>
 
 {% include './_shared/footer.html'%}
 </main>
 {% endblock %}
 
 {% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js"></script>
+<script src="/javascripts/interior.js"></script>
+
+
 {% endblock %}
 
