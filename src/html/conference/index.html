@@ -1,4 +1,3 @@
-
 {% extends '_layouts/conference-application.html' %}
 
 {% block content %}
@@ -13,20 +12,16 @@
 
 <article class="article__row article--white">
 	<div class="container">
-		<!--<header class="article__header">
-			<h2></h2>
-			<p></p>
-		</header>-->
 		<section class="card-block__row">
 			<div class="flexbox__row row">
 					
-				{% set button = true %}
+				{% set cardBlock = { heading: "Venue City", image: "shared/card-international", button: true } %}
 				{% include './_components/card-block.html'%}
-				
-				{% set button = true %}
+					
+				{% set cardBlock = { heading: "5K Race", image: "shared/card-performing", button: true } %}
 				{% include './_components/card-block.html'%}
-			
-				{% set button = true %}
+
+				{% set cardBlock = { heading: "Lists", image: "shared/card-performing", button: true } %}
 				{% include './_components/card-block.html'%}
 			
 			</div>
@@ -34,6 +29,21 @@
 	</div>
 </article>
 
+
+<article class="article__row article--white">
+	<div class="container">
+		<div class="article__header">
+			<h2>Feature Speakers</h2>
+		</div>
+		<div class="article__row row">
+			{% include './_components/speaker-block.html' %}
+
+			{% include './_components/speaker-block.html' %}
+
+			{% include './_components/speaker-block.html' %}
+		</div>
+	</div>
+</article>
 
 <article class="article__row article--bluegrey">
 	<div class="container">
@@ -69,7 +79,5 @@
 {% block javascript %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js"></script>
 <script src="/javascripts/interior.js"></script>
-
-
 {% endblock %}
 

@@ -1,4 +1,4 @@
-footer.footer {
+.footer {
 	background-color: $nacac_light-blue;
 	color: $white;
 	padding-top: 3rem;
@@ -45,6 +45,10 @@ footer.footer {
 			padding: 1rem;
 		}
 	}
+	.btn.btn--clear{
+		margin: 1rem 0;
+
+	}
 }
 
 
@@ -58,7 +62,7 @@ footer.footer {
 */
 
 @include break(max, $screen-sm-max) {
-	footer.footer {
+	.footer {
 		text-align: center;
 		.footer__legal li {
 			display: inherit;
@@ -85,20 +89,29 @@ footer.footer {
 ██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
 ██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
 ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
-														  
 */
 
 @include break(min, $screen-md-min) {
-	footer.footer {
+	.footer {
 		.footer__contact-list {
 			padding-right: 3.4rem;
 		}
-		.footer__callout {
+		.footer__callout, {
 			padding-left: 3.4rem;
 			border-left: 1px solid $nacac_border-blue;
 		}
 		.footer__logo {
 			margin-top: 3rem;
 		}
+		&.footer--conference{
+			.footer__contact-list{
+				padding-left: 3.4rem;
+				border-left: 1px solid $nacac_border-blue;
+			}
+			.footer__callout{
+				border:none;
+			}
+		}
 	}
+
 }
