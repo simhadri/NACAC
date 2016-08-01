@@ -107,17 +107,9 @@
 							</ul>
 						</header>
 						<div class="knowledge-search__listings">
-							{% set image = true %}
-							{% include './_components/search-result-item.html'%}
-							{% set image = false %}
-							{% include './_components/search-result-item.html'%}
-							{% set image = true %}
-							{% include './_components/search-result-item.html'%}
-							{% set image = false %}
-							{% include './_components/search-result-item.html'%}
-							{% set image = true %}
-							{% include './_components/search-result-item.html'%}
-							{% set image = false %}
+							{% set searchItemTypes = [
+							"suggested", "member", "standard", "standard", "member", "standard", "standard"
+							] %}
 							{% include './_components/search-result-item.html'%}
 						</div>
 						<ul class="pagination knowledge-search__pagination pagination--bottom">

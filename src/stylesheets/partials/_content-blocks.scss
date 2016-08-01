@@ -215,6 +215,7 @@ a.color-block {
 	}
 }
 
+// Member Block
 .member-block {
 	margin: 4rem 0;
 	> img {
@@ -251,6 +252,7 @@ a.color-block {
 	}
 }
 
+// Number Block
 .number-block {
 	text-align: center;
 	.number-block__numerals {
@@ -340,6 +342,18 @@ a.color-block {
 	.block--dynamic:first-child:nth-last-child(#{$i}),
 	.block--dynamic:first-child:nth-last-child(#{$i}) ~ .block--dynamic {
 		width: 100% / $i;
+	}
+}
+
+// Speaker Block
+
+.speaker-block {
+	text-align: center;
+	.speaker-block__image {
+		border-radius: 50%;
+		margin-bottom: 20px;
+		width: 100%;
+		max-width: 20rem;
 	}
 }
 
