@@ -1,99 +1,20 @@
-//-----IGNORE-----
-// Extra small screen / phone
-//** Deprecated `$screen-xs` as of v3.0.1
-$screen-xs: 480px !default;
-//** Deprecated `$screen-xs-min` as of v3.2.0
-$screen-xs-min: $screen-xs !default;
-//** Deprecated `$screen-phone` as of v3.0.1
-$screen-phone: $screen-xs-min !default;
-// Small screen / tablet
-//** Deprecated `$screen-sm` as of v3.0.1
-$screen-sm: 768px !default;
-$screen-sm-min: $screen-sm !default;
-//** Deprecated `$screen-tablet` as of v3.0.1
-$screen-tablet: $screen-sm-min !default;
-// Medium screen / desktop
-//** Deprecated `$screen-md` as of v3.0.1
-$screen-md: 992px !default;
-$screen-md-min: $screen-md !default;
-//** Deprecated `$screen-desktop` as of v3.0.1
-$screen-desktop: $screen-md-min !default;
-// Large screen / wide desktop
-//** Deprecated `$screen-lg` as of v3.0.1
-$screen-lg: 1200px !default;
-$screen-lg-min: $screen-lg !default;
-//** Deprecated `$screen-lg-desktop` as of v3.0.1
-$screen-lg-desktop: $screen-lg-min !default;
-// So media queries don't overlap when required, provide a maximum
-$screen-xs-max: ($screen-sm-min - 1) !default;
-$screen-sm-max: ($screen-md-min - 1) !default;
-$screen-md-max: ($screen-lg-min - 1) !default;
-// PointBreak Mixin
-@mixin break($var...) {
-	@if length($var)==4 {
-		@media (#{nth($var,1)}-width: (#{nth($var,2)})) and (#{nth($var,3)}-width: (#{nth($var,4)})) {
-			@content;
-		}
-	}
-	@if length($var)==2 {
-		@media (#{nth($var,1)}-width: (#{nth($var,2)})) {
-			@content;
-		}
-	}
-}
-
-//--------------------------------------------------------
-// Breakpoints
-$bp-xs: 15em;
-$bp-sm: 30em;
-$bp-md: 48em;
-$bp-lg: 62em;
-$bp-xl: 75em;
-// Color
-$blue: #1d96b2;
-$light-blue: #21a6bb;
-$dark-blue: #197f96;
 .responsive-table {
 	width: 100%;
 	margin-bottom: 1.5em;
 	.col__overview {
-		background-color: $dark-blue;
-	}
-	@media (min-width: $bp-md) {
-		font-size: .9em;
-	}
-	@media (min-width: $bp-lg) {
-		font-size: 1em;
+		background-color: $nacac_blue;
 	}
 	thead {
 		// Accessibly hide <thead> on narrow viewports
 		position: absolute;
 		clip: rect(1px 1px 1px 1px);
-		/* IE6, IE7 */
-		clip: rect(1px, 1px, 1px, 1px);
-		padding: 0;
-		border: 0;
-		height: 1px;
-		width: 1px;
-		overflow: hidden;
-		@media (min-width: $bp-md) {
-			// Unhide <thead> on wide viewports
-			position: relative;
-			clip: auto;
-			height: auto;
-			width: auto;
-			overflow: auto;
-		}
 		th {
 			position: relative;
-			background-color: $blue;
-			border: 1px solid $light-blue;
+			background-color: $nacac_light-blue;
+			border: 1px solid $nacac_lighter-blue;
 			font-weight: normal;
 			text-align: center;
 			color: white;
-			&:first-of-type {
-				text-align: left;
-			}
 		}
 	}
 	// Set these items to display: block for narrow viewports
@@ -106,106 +27,45 @@ $dark-blue: #197f96;
 		text-align: left;
 		white-space: normal;
 	}
-	tr {
-		@media (min-width: $bp-md) {
-			// Undo display: block 
-			display: table-row;
-		}
-	}
+	
 	th,
 	td {
 		padding: .5em;
 		vertical-align: middle;
-		@media (min-width: $bp-sm) {
-			padding: .75em .5em;
-		}
-		@media (min-width: $bp-md) {
-			// Undo display: block 
-			display: table-cell;
-			padding: .5em;
-		}
-		@media (min-width: $bp-lg) {
-			padding: .75em .5em;
-		}
-		@media (min-width: $bp-xl) {
-			padding: .75em;
-		}
 	}
 	caption {
 		margin-bottom: 1em;
 		font-size: 1em;
 		font-weight: bold;
 		text-align: center;
-		@media (min-width: $bp-md) {
-			font-size: 1.5em;
-		}
 	}
 	tfoot {
 		font-size: .8em;
 		font-style: italic;
-		@media (min-width: $bp-lg) {
-			font-size: .9em;
-		}
 	}
 	tbody {
-		@media (min-width: $bp-md) {
-			// Undo display: block 
-			display: table-row-group;
-		}
 		tr {
 			margin-bottom: 1em;
-			border: 2px solid $light-blue;
-			@media (min-width: $bp-md) {
-				// Undo display: block 
-				display: table-row;
-				border-width: 1px;
-			}
+			border: 2px solid $nacac_lighter-blue;
 			&:last-of-type {
 				margin-bottom: 0;
 			}
-			&:nth-of-type(even) {
-				@media (min-width: $bp-md) {
-					background-color: rgba(94, 93, 82, .1);
-				}
-			}
 		}
 		th[scope="row"] {
-			background-color: rgba(29, 150, 178, 1);
+			background-color: $nacac_blue;
 			color: white;
-			@media (min-width: $bp-md) {
-				background-color: transparent;
-				color: rgba(94, 93, 82, 1);
-				text-align: left;
-			}
 		}
 		td {
 			text-align: right;
-			@media (min-width: $bp-sm) {
-				border-bottom: 1px solid $light-blue;
-			}
-			@media (min-width: $bp-md) {
-				text-align: center;
-			}
 		}
 		td[data-type=currency] {
-			text-align: center;
-			@media (max-width: $bp-md) {
-				text-align: right;
-			}
+			text-align: right;
 		}
 		td[data-title]:before {
 			content: attr(data-title);
 			float: left;
-			font-size: .8em;
-			color: rgba(94, 93, 82, .75);
-			@media (min-width: $bp-sm) {
-				font-size: .9em;
-			}
-			@media (min-width: $bp-md) {
-				// Don’t show data-title labels 
-				content: none;
-			}
 		}
+		
 	}
 }
 
@@ -223,93 +83,68 @@ $dark-blue: #197f96;
 
 }
 @include break(min, $screen-sm-min) {
-
-}
-@include break(min, $screen-md-min) {
-	
-}
-
-tr {
-	@media (min-width: $bp-md) {
-		// Undo display: block 
-		display: table-row;
-	}
-}
-
-th,
-td {
-	@media (min-width: $bp-sm) {
-		padding: .75em .5em;
-	}
-	@media (min-width: $bp-md) {
-		// Undo display: block 
-		display: table-cell;
-		padding: .5em;
-	}
-	@media (min-width: $bp-lg) {
-		padding: .75em .5em;
-	}
-	@media (min-width: $bp-xl) {
-		padding: .75em;
-	}
-}
-
-caption {
-	@media (min-width: $bp-md) {
-		font-size: 1.5em;
-	}
-}
-
-tfoot {
-	@media (min-width: $bp-lg) {
-		font-size: .9em;
-	}
-}
-
-tbody {
-	@media (min-width: $bp-md) {
-		// Undo display: block 
-		display: table-row-group;
-	}
-	tr {
-		@media (min-width: $bp-md) {
-			// Undo display: block 
-			display: table-row;
-			border-width: 1px;
+	.reposnsive-table{
+		th,
+		td {
+			padding: .75em .5em;
 		}
-		&:nth-of-type(even) {
-			@media (min-width: $bp-md) {
-				background-color: rgba(94, 93, 82, .1);
+		tbody{
+			td {
+				border-bottom: 1px solid $nacac_lighter-blue;
+			}
+			td[data-title]:before {
+				font-size: .9em;
 			}
 		}
 	}
-	th[scope="row"] {
-		@media (min-width: $bp-md) {
-			background-color: transparent;
-			color: rgba(94, 93, 82, 1);
-			text-align: left;
+}
+@include break(min, $screen-md-min) {
+	.responsive-table{
+		font-size: .9em;
+		thead {
+			// Unhide <thead> on wide viewports
+			position: relative;
+			clip: auto;
+			height: auto;
+			width: auto;
+			overflow: auto;
 		}
-	}
-	td {
-		@media (min-width: $bp-sm) {
-			border-bottom: 1px solid $light-blue;
+		caption {
+			font-size: 1.5em;
 		}
-		@media (min-width: $bp-md) {
-			text-align: center;
+		tr {
+			// Undo display: block 
+			display: table-row;
 		}
-	}
-	td[data-type=currency] {
-		@media (max-width: $bp-md) {
-			text-align: right;
+		th,td {
+			display: table-cell;
+			padding: .5em;
 		}
-	}
-	td[data-title]:before {
-		@media (min-width: $bp-sm) {
-			font-size: .9em;
-		}
-		@media (min-width: $bp-md) {
-			// Don’t show data-title labels 
-			content: none;
+
+		tbody {
+			// Undo display: block 
+			display: table-row-group;
+			tr {
+				display: table-row;
+				border-width: 1px;
+				&:nth-of-type(even) {
+					background-color: rgba(94, 93, 82, .1);
+				}
+			}
+			th[scope="row"] {
+				background-color: transparent;
+				color: rgba(94, 93, 82, 1);
+				text-align: left;
+			}
+			td {
+				text-align: center;
+			}
+			td[data-type=currency] {
+				text-align: center;
+			}
+			td[data-title]:before {
+				content: none;
+			}
 		}
 	}
 }
@@ -325,4 +160,16 @@ tbody {
 														  
 */
 
-@include break(min, $screen-md-min) {}
+
+@include break(min, $screen-lg-min) {
+	.responsive-table {
+		font-size: 1em;
+		th,
+		td {
+			padding: .75em .5em;
+		}
+		tfoot {
+			font-size: .9em;
+		}
+	}
+}
