@@ -112,7 +112,7 @@ a.color-block {
 		flex-basis: 100%;
 		max-width: 100%;
 		.color-block__content {
-			// text-align: center;
+			float: none;
 			.color-block__feature {
 				display: inline;
 			}
