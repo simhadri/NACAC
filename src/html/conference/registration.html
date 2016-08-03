@@ -6,8 +6,25 @@
 {% set className = "primary-nav--inanimate" %}
 {% include './_shared/navigation.html'%}
 
-{% set buttons = ["Register Now", "Exhibitor Information", "Schedule At-A-Glance"] %}
+{% set buttons = ["Register to Attend", "Sponsor an Attendee"] %}
 {% include './_shared/interior-hero-events.html'%}
+
+<article class="article__row article--bluegrey">
+	<div class="container">
+		<div class="article__header">
+			<h2>Rate Elegebility</h2>
+		</div>
+		<h3>Memeber Rates</h3>
+		<p>You must be an individual member of NACAC and your membership must be current in order to receive the member registration rates for the 2016 National Conference.</p>
+		<p>Not a Member yet? Apply now to join NACAC and receive membership registration rates!</p>
+		<a href="#" class="btn btn--nacac-blue">Become a NACAC Member</a>
+		
+		<h3>Registration Criteria</h3>
+		<p>National Conference registration rates are based on eligibility criteria and NACAC membership categories.</p>
+		<p>You must meet the eligibility criteria required for the registration type you select. Should you not meet the eligibility criteria, you will be responsible for all fee changes associated with modifying your registration.</p>
+		<a href="#" class="btn btn--nacac-blue">View Eligibility Criteria</a>
+	</div>
+</article>
 
 <article class="article__row article--white">
 	<div class="container">
@@ -27,7 +44,6 @@
 		</section>
 	</div>
 </article>
-
 <article class="article__row article--white">
 	<div class="container">
 		<div class="article__header">
@@ -40,6 +56,14 @@
 
 			{% include './_components/speaker-block.html' %}
 		</div>
+	</div>
+</article>
+<article class="article__row article--white">
+	<div class="container">
+		<div class="article__header">
+			<h2>Registration Rates</h2>
+		</div>
+		{% include './_components/price-table.html' %}
 	</div>
 </article>
 <article class="article__row article--bluegrey">

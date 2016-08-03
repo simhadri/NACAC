@@ -28,6 +28,7 @@
 				pointer-events: all;
 				transform: rotate(180deg);
 				transition: $transition--all;
+
 				&:after {
 					@include icon('fa-minus');
 				}
@@ -39,6 +40,8 @@
 		.accordion-item__header{
 			display: block;
 			padding: 2rem;
+			position: relative;
+    		z-index: 1;
 			h3 {
 				margin: 0;
 				font-size: 2rem;
@@ -75,6 +78,7 @@
 			width: 3rem;
 			height: 3rem;
 			border-radius: 50%;
+			z-index: 0;
 			color: $white;
 			background-color: $nacac_light-blue;
 			text-align: center;
