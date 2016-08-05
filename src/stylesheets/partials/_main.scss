@@ -9,7 +9,6 @@
 	opacity: 0;
 	pointer-events: none;
 	transition: $transition--opacity;
-	@include prefix(transition-timing-function, cubic-bezier(0.7, 0, 0.3, 1), webkit);
 	&.screen__overlay--soft {
 		background: rgba(0, 0, 0, 0.33);
 	}

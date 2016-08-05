@@ -169,7 +169,6 @@
 	}
 	label:before,
 	label:after {
-		font-family: $icons;
 		font-size: 2rem;
 		position: absolute;
 		top: 0;
@@ -177,13 +176,12 @@
 	}
 	/*unchecked*/
 	label:before {
-		content: '\f096';
+		@include icon('fa-square-o');
 		color: $nacac_light-blue;
 	}
 	/*checked*/
-	label.label--checked:after {
-		content: '\f046';
-		overflow: hidden;
+	label.label--checked:before {
+		@include icon('fa-check-square-o');
 		color: #67D8A4;
 		max-width: 3rem;
 	}
@@ -262,9 +260,9 @@
 		height: auto;
 		background: rgba(255, 255, 255, 0.925);
 		border-right: 1px solid $nacac_border-lightgrey;
-		@include prefix(transform, translateZ(0) translateX(-100%), webkit ms);
+		transform: translateZ(0) translateX(-100%);
 		transition: all 0.33s cubic-bezier(0, 0.68, 0.44, 0.99);
-		@include zone-index(base, 0);
+		z-index:1;
 		position: fixed;
 		top: 8rem;
 		right: 0;
