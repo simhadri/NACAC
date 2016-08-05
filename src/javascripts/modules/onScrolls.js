@@ -61,13 +61,10 @@ import CountUp from 'lib/countUp.js';
 			// add animation loop
 			function tick() {
 				currentTime += 1 / 60;
-
 				var p = currentTime / time;
 				var t = easing(p);
-
 				if (p < 1) {
 					requestAnimFrame(tick);
-
 					window.scrollTo(0, scrollY + ((scrollTargetY - scrollY) * t));
 				} else {
 					window.scrollTo(0, scrollTargetY);
@@ -80,27 +77,25 @@ import CountUp from 'lib/countUp.js';
 		// INITIATE BT
 		// bodyTop is goofy due to IE document.body.scrollTop bug
 	const btInit = function() {
-		var bt = new btElement,
-			bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+		var bt = new btElement;
+		var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+		var countCards = document.querySelectorAll('.number-block__numerals');
+		var bumper = 600;
 		if (bodyTop > 200) {
 			bt.addBackToTop();
 		} else {
 			bt.removeBackToTop();
 			return false;
 		}
-		var countCards = document.querySelectorAll('.number-block__numerals');
-		var bumper = 600;
-		var countInit = function() {
-			var docScroll = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-			if (countCards[0].innerHTML == '0' && countCards[0].offsetTop - bumper <= docScroll) {
-				for (var i = 0; i < countCards.length; i++) {
-					var counter = new CountUp(countCards[i].getAttribute('id'), 0, countCards[i].getAttribute('data-counter'), 0, 3.6);
-					counter.start();
-				}
+
+		const countInit = function() {
+			for (let i = 0; i < countCards.length; i++) {
+				var counter = new CountUp(countCards[i].getAttribute('id'), 0, countCards[i].getAttribute('data-counter'), 0, 3.6);
+				counter.start();
 			}
 		}
-		if (countCards.length) {
-			window.onscroll = function() { Throttled(countInit(), 800) };
+		if (countCards.length && countCards[0].innerHTML == '0' && countCards[0].offsetTop - bumper <= bodyTop) {
+			countInit();
 		}
 	}
 	const bodyElm = document.body;
