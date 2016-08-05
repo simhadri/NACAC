@@ -148,10 +148,10 @@ a.color-block {
 		&:hover {
 			position: relative;
 			box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
-			@include prefix(animation-name, floating, webkit);
-			@include prefix(animation-duration, 3s, webkit);
-			@include prefix(animation-iteration-count, infinite, webkit);
-			@include prefix(animation-timing-function, ease-in-out, webkit);
+			animation-name: floating;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+			animation-timing-function: ease-in-out;
 			@include keyframes(floating) {
 				from {
 					transform: translate(0, 0px);
@@ -193,9 +193,9 @@ a.color-block {
 				position: absolute;
 				z-index: -1;
 				width: 100%;
-				@include prefix(filter, brightness(80%), webkit);
+				filter: brightness(80%);
 				&:hover {
-					@include prefix(filter, brightness(100%), webkit);
+					filter: brightness(100%);
 				}
 			}
 		}
