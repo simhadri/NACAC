@@ -17,18 +17,11 @@
 	<link rel="stylesheet" href="/stylesheets/all-nacac-sites.css">
 	{% if templateName == 'template-fair' %}
 		<link rel="stylesheet" href="/stylesheets/fair.css">
-	{% endif %}
-	{% if templateName == 'template-conference' %}
+	{% elif templateName == 'template-conference' %}
 		<link rel="stylesheet" href="/stylesheets/conference.css">
+	{% elif templateName == 'template-main' %}
+		<!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
 	{% endif %}
-	
-	{#
-		{% if templateName == 'template-main' %}
-			<link rel="stylesheet" href="/stylesheets/main.css">
-		{% endif %}
-	#}
-
-
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
 	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
