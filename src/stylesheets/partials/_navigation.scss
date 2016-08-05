@@ -317,10 +317,10 @@
 		.primary-nav__interior {
 			top: 7rem;
 			bottom: inherit;
-			@include prefix(transform-origin, top, webkit moz ms o);
+			transform-origin: top;
 		}
 		.selected > .primary-nav__interior {
-			@include prefix(transform, scale(1, 1), webkit moz ms o);
+			transform: scale(1, 1);
 		}
 		&:after {
 			clear: both;
@@ -371,7 +371,7 @@
 			color: #333;
 			overflow: hidden;
 			z-index: 1;
-			@include prefix(transform, scale(1, 0), webkit moz ms o);
+			transform: scale(1, 0);
 			transition: $transition--all;
 			&:after {
 				clear: both;
