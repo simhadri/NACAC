@@ -12,7 +12,6 @@ import EnvVar from 'lib/envVar.js';
 
 // FUNCTION
 (function() {
-	'use strict';
 	if (document.getElementById('tweetDeck')) {
 		var tweetParse = new TweetParse;
 		// DEV/PROD vars

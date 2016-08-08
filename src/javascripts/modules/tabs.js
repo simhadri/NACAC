@@ -1,7 +1,5 @@
 // FUNCTION
 (function tabsAndAccordions() {
-	'use strict';
-	
 	// a temp value to cache *what* we're about to show
 	var target = null;
 
