@@ -6,8 +6,9 @@ form.form{
 		font-size: 1.4rem;
 		padding: 0.6rem;
 		height: auto;
-		&.error{
+		&.input--error{
 			border: 1px solid $error-red;
+			background-color: $error-bg;
 			transition: $transition--all;
 		}
 	}
