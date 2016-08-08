@@ -2,7 +2,6 @@
 
 // FUNCTION
 (function() {
-	'use strict';
 	if(document.body.id === 'EpiserverEditMode'){
 		let head = document.head || document.getElementsByTagName('head')[0],
 			style = document.createElement('link');

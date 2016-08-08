@@ -5,7 +5,6 @@ import Screen from 'lib/screen.js';
 
 // FUNCTION
 (function() {
-	'use strict';
 	var headStyle = new HeadStyle(),
 		screen = new Screen(),
 		navTrigger = $('.primary-nav__trigger'),

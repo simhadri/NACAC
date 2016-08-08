@@ -3,7 +3,6 @@ import Throttled from 'lib/throttled.js';
 import CountUp from 'lib/countUp.js';
 // FUNCTION
 (function() {
-	'use strict';
 	// RAF SHIM
 	// https://gist.github.com/paulirish/1579671
 	window.requestAnimFrame = (function() {
