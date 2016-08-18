@@ -202,15 +202,9 @@ a.color-block {
 		.card-block__text {
 			flex: 1;
 			padding: 2rem;
-			p {
-				// font-weight: 100;
-			}
 		}
 		.card-block__footer {
-			padding: 0 2rem 2rem;
-			a.btn {
-				display: inline-block;
-			}
+			padding: 0 2rem 4rem;
 		}
 	}
 }
@@ -234,6 +228,7 @@ a.color-block {
 			border-right: 1px solid $nacac_border-lightgrey;
 			display: inline-block;
 			padding: 1rem;
+			text-transform: uppercase;
 		}
 	}
 	.member-block__title {
@@ -251,6 +246,31 @@ a.color-block {
 		padding-top:0;
 	}
 }
+
+// Event Block
+.row {
+	.event-block{
+		background-color: $nacac_purple;
+		margin: 2rem 1rem;
+		padding: 0;
+		color: $white;
+		.event-block__header {
+			border-bottom: 1px solid $nacac_border-lightgrey;
+			padding: 2rem;
+		}
+		.event-block__content{
+			padding: 2rem;
+		}
+		.event-block__title{
+			margin: 1rem 0;
+			text-align: center;
+		}
+		.event-block__footer {
+			padding: 0 2rem 4rem;
+		}
+	}
+}
+
 
 // Number Block
 .number-block {
@@ -355,6 +375,12 @@ a.color-block {
 		width: 100%;
 		max-width: 20rem;
 	}
+	.speaker-block__name{
+		color: $nacac_purple;
+		font-size: 2rem;
+		margin-top: 0.4rem;
+		margin-bottom: 0.8rem;
+	}
 }
 
 
@@ -425,4 +451,12 @@ a.color-block {
 														  
 */
 
-@include break(min, $screen-md-min) {}
+@include break(min, $screen-md-min) {
+	.flexbox__row{
+		.event-block{
+			flex-grow: 1;
+			flex-basis: calc(33% - 30px);
+			max-width: 100%;
+		}
+	}
+}

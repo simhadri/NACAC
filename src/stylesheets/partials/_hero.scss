@@ -190,11 +190,9 @@
 	.container.interior-hero__breadcrumb {
 		margin-top: 4rem;
 	}
-	.flexbox .hero__wrapper,
-	&.hero--interior {
-		.hero__content {
-			width: 100%;
-		}
+	.flexbox .hero__wrapper.hero--interior .hero__content {
+		width: 100%;
+		min-width: 0;
 	}
 }
 

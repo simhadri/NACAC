@@ -3,7 +3,6 @@ import Throttled from 'lib/throttled.js';
 
 // FUNCTION
 (function() {
-	'use strict';
 	const asideNavigation = function() {
 		var asideNavigation = $(".aside-navigation"),
 			asideNavigationHeight = $(".aside-navigation").height(),
