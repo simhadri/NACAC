@@ -6,7 +6,7 @@
 {% set className = "primary-nav--inanimate" %}
 {% include './_shared/navigation.html'%}
 
-{% set buttons = ["Register Now", "Exhibitor Information", "Schedule At-A-Glance"] %}
+{% set conferenceHero = {buttons: ["Register Now", "Exhibitor Information", "Schedule At-A-Glance"]} %}
 {% include './_shared/interior-hero-events.html'%}
 
 <article class="article__row article--white">
@@ -14,13 +14,13 @@
 		<section class="card-block__row">
 			<div class="flexbox__row row">
 					
-				{% set cardBlock = { heading: "Venue City", image: "shared/card-international", button: true } %}
+				{% set cardBlock = { heading: "Venue City", image: "shared/card-international", button: centered } %}
 				{% include './_components/card-block.html'%}
 					
-				{% set cardBlock = { heading: "5K Race", image: "shared/card-performing", button: true } %}
+				{% set cardBlock = { heading: "5K Race", image: "shared/card-performing", button: centered } %}
 				{% include './_components/card-block.html'%}
 
-				{% set cardBlock = { heading: "Lists", image: "shared/card-performing", button: true } %}
+				{% set cardBlock = { heading: "Lists", image: "shared/card-performing", button: centered } %}
 				{% include './_components/card-block.html'%}
 			
 			</div>
@@ -28,7 +28,7 @@
 	</div>
 </article>
 
-<article class="article__row article--white">
+<article class="article__row article--lightgrey">
 	<div class="container">
 		<div class="article__header">
 			<h2>Feature Speakers</h2>
@@ -42,7 +42,7 @@
 		</div>
 	</div>
 </article>
-<article class="article__row article--bluegrey">
+<article class="article__row article--white">
 	<div class="container">
 		<div class="article__header">
 			<h2>Why Attend?</h2>
@@ -54,6 +54,29 @@
 
 			{% include './_components/testimonial-block.html' %}
 		</div>
+	</div>
+</article>
+
+<article class="article__row article--bluegrey">
+	<div class="container">
+		<header class="section__header">
+			<h2>Feature Events</h2>
+		</header>
+		<section class="flexbox__row row">
+					
+				{% set eventBlocks = [
+					"College Tours",
+					"Access College Fairs",
+					"Counselors' College Fair",
+					"National College Fairs",
+					"Preconference Workshops &amp; Seminars",
+					"Counselors' College Fair"
+				] %}
+				{% for eventsBlock in eventBlocks %}
+					{% include './_components/event-block.html'%}
+				{% endfor %}
+			
+		</section>
 	</div>
 </article>
 
