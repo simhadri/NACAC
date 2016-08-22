@@ -5,8 +5,10 @@ html {
 }
 
 body {
+	EditMenuName: Body;
 	color: $text_slate;
 	font-size: 1.6rem;
+	font-family: "Istok Web", sans-serif;
 }
 
 p {
@@ -15,15 +17,38 @@ p {
 	margin-bottom: 1.6rem;
 }
 
+a {
+	color: #337ab7;
+	text-decoration: none;
+	outline: none;
+	font-size: 1.6rem;
+	font-family: "Istok Web", sans-serif;
+	EditMenuName: Link;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #23527c;
+	text-decoration: none;
+	outline: none;
+}
+
 
 /* Headings */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.headline1,
+.h1,
+.headline2,
+.h2,
+.headline3,
+.h3,
+.headline4,
+.h4,
+.headline5,
+.h5,
+.headline6,
+.h6 {
 	font-family: $condensed;
 	font-weight: 400;
 	margin-top: 1.5rem;
@@ -31,21 +56,27 @@ h6 {
 	line-height: 1.5rem;
 }
 
-h1 {
+.headline1,
+.h1 {
+	EditMenuName: Header 1;
 	font-size: 4.242rem;
 	line-height: 4.4rem;
 	margin-top: 3rem;
 	text-transform: uppercase;
 }
 
-h2 {
+.headline2,
+.h2 {
+	EditMenuName: Header 2;
 	font-size: 3.2rem;
 	line-height: 4rem;
 	margin-top: 3rem;
 	text-transform: uppercase;
 }
 
-h3 {
+.headline3,
+.h3 {
+	EditMenuName: Header 3;
 	font-size: 2rem;
 	font-size: 2.121rem;
 	line-height: 3rem;
@@ -53,51 +84,47 @@ h3 {
 	font-weight: 700;
 }
 
-h4 {
+.headline4,
+.h4 {
+	EditMenuName: Header 4;
 	font-size: 1.414rem;
 	font-family: $sans;
 	font-weight: 700;
 }
 
-h5 {
+.headline5,
+.h5 {
+	EditMenuName: Header 5;
 	font-size: 0.707rem;
 	font-family: $sans;
 	font-weight: 700;
 }
 
-h6 {
+.headline6,
+.h6 {
+	EditMenuName: Header 6;
 	font-size: 0.4713333333333333rem;
 	font-family: $sans;
 	font-weight: 700;
 }
 
-// h1{
-// 	// letter-spacing: 1px;
-// 	font-size: 260%;
-// }
-// h2 {
-// 	// letter-spacing: 1px;
-// 	font-size: 200%;
-// }
 
-h3 {
-	font-family: "Lato", sans-serif;
-	font-weight: 700;
-	letter-spacing: 0;
-	text-transform: inherit;
+/* Image Floats */
+
+.image-float-left {
+	EditMenuName: Image Left;
+	float: left;
+	margin-right: 25px;
+	margin-top: 4px;
+	margin-bottom: 15px;
 }
 
-[class*="__byline"] {
-	font-family: $serif;
-	font-size: 2rem;
-}
-
-.hero__byline {
-	font-size: 2.75rem;
-}
-
-[class*="__byline"] + h1 {
-	margin-top: 0;
+.image-float-right {
+	EditMenuName: Image Right;
+	float: right;
+	margin-left: 25px;
+	margin-top: 4px;
+	margin-bottom: 15px;
 }
 
 
@@ -113,13 +140,6 @@ table td,
 table th {
 	padding: 0;
 	line-height: 33px;
-}
-
-
-/* Code blocks */
-
-code {
-	vertical-align: bottom;
 }
 
 
@@ -194,38 +214,5 @@ ul {
 		&:before {
 			content: counter(step-counter);
 		}
-	}
-}
-
-.ul-icons {
-	li {
-		&:before {
-			font: {
-				family: FontAwesome;
-				size: 2rem;
-			}
-			position: absolute;
-		}
-		&.icon-location:before {
-			content: "\f041";
-		}
-		&.icon-hours:before {
-			content: "\f017";
-		}
-		&.icon-direction:before {
-			content: "\f14e";
-		}
-		&.icon-contact:before {
-			content: "\f1fa";
-		}
-	}
-	address {
-		font-style: normal;
-	}
-}
-
-.block-lg {
-	@media screen and (min-width: 1200px) {
-		display: block;
 	}
 }
