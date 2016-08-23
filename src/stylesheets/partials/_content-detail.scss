@@ -20,6 +20,10 @@
 		margin-left: 3rem;
 		padding: 0.8rem 0 1rem;
 	}
+	.btn{
+		margin-right: 2rem;
+		margin-bottom: 1rem;
+	}
 	.video-iframe--center {
 		width: auto;
 		float: none;
@@ -63,6 +67,10 @@
 	.image--right {
 		float: right;
 		margin-left: 2.5rem;
+	}
+	.image--full {
+		float: none;
+		width: 100%;
 	}
 }
 

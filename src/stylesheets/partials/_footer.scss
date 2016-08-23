@@ -13,7 +13,6 @@
 		img{
 			width: 18rem;
 			margin:0 auto;
-			// margin-top: 3rem;
 		}
 	}
 	.footer__contact-list {
@@ -107,11 +106,37 @@
 			.footer__contact-list{
 				padding-left: 3.4rem;
 				border-left: 1px solid $nacac_border-blue;
+				i{
+					color:$nacac_border-blue;
+				}
 			}
 			.footer__callout{
 				border:none;
 			}
+			.footer__legal{
+				ul{
+					display: block;
+					float: left;
+					width: 66%;
+					margin-top: 4rem;
+					li{
+						padding-left:0;
+					}
+					
+				}
+				.footer__social {
+					float: right;
+					width: 33%;
+					font-weight: bold;
+					li{
+						display: inline;
+						i{
+							font-size: 2.4rem;	
+						}
+						padding: 1rem;
+					}
+				}
+			}
 		}
 	}
-
 }
