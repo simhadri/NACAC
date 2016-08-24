@@ -1,12 +1,12 @@
 {% extends '_layouts/conference-application.html' %}
-{% set pageLocation = "Registraition Overview" %}
+{% set pageLocation = "Exhibitor Overview" %}
 {% block content %}
 <main>
 	{% include './_shared/utility.html'%}
 	{% set className = "primary-nav--inanimate" %}
 	{% include './_shared/navigation.html'%}
-	{% set buttons = ["Register to Attend", "Sponsor an Attendee"] %}
-	{% include './_shared/interior-hero-events.html'%}
+	{% set conferenceHero = {buttons: ["Register to Attend", "Sponsor an Attendee"], scroll:true} %}
+	{% include './_shared/interior-hero.html'%}
 	<article class="article__row article--bluegrey">
 		<div class="container">
 			<div class="article__header">

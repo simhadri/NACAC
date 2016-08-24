@@ -78,7 +78,9 @@
 			content: attr(data-label)":\00a0" ;
 			float: left;
 		}
-		
+		th:not([data-label]) {
+				display: none;
+			}
 	}
 }
 // .responsive-table tbody 
@@ -166,6 +168,7 @@
 				border-right: 1px solid $nacac_lighter-blue;
 			}
 			th:not([data-label]) {
+				display: table-cell;
 				border-right: 1px solid $nacac_lighter-blue;
 				background-color: $white;
 			}
