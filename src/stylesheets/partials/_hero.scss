@@ -115,7 +115,12 @@
 		.hero__btn {}
 	}
 }
-
+.hero__scroll{
+	.scroll__icon{
+		font-size: 5.6rem;
+		opacity: 0.7;
+	}
+}
 .flexbox {
 	.hero--interior.hero__wrapper {
 		display: -webkit-box;

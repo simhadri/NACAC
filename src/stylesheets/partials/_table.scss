@@ -2,7 +2,7 @@
 	width: 100%;
 	margin-bottom: 1.5em;
 	.col__overview {
-		background-color: $nacac_blue;
+		background-color: $nacac-cloud-blue;
 	}
 	thead {
 		// Accessibly hide <thead> on narrow viewports
@@ -10,11 +10,10 @@
 		clip: rect(1px 1px 1px 1px);
 		th {
 			position: relative;
-			background-color: $nacac_light-blue;
+			background-color: $nacac-cloud-blue;
 			border: 1px solid $nacac_lighter-blue;
-			font-weight: normal;
 			text-align: center;
-			color: white;
+			// color: white;
 		}
 	}
 	// Set these items to display: block for narrow viewports
@@ -32,6 +31,12 @@
 	td {
 		padding: .5em;
 		vertical-align: middle;
+		span {
+			font-size: 86%;
+			display: block;
+			line-height: 1;
+			font-weight: normal;
+		}
 	}
 	caption {
 		margin-bottom: 1em;
@@ -51,6 +56,7 @@
 				margin-bottom: 0;
 			}
 		}
+
 		th[rowspan="2"]{
 			display: none;
 		}
@@ -58,25 +64,26 @@
 			background-color: $nacac_blue;
 			color: white;
 		}
-		
 		td {
 			text-align: right;
 		}
 		td[data-type=currency] {
 			text-align: right;
 		}
-		td[data-title]:before {
+		td[data-title]:before,th[data-label]:before  {
 			content: attr(data-title);
 			float: left;
 		}
 		th[data-label]:before {
-			content: attr(data-label);
+			content: attr(data-label)":\00a0" ;
 			float: left;
 		}
-		
+		th:not([data-label]) {
+				display: none;
+			}
 	}
 }
-
+// .responsive-table tbody 
 
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
@@ -139,7 +146,7 @@
 				display: table-row;
 				border-width: 1px;
 				&:nth-of-type(even) {
-					background-color: rgba(94, 93, 82, .1);
+					background-color: rgba(94, 93, 82, .06);
 				}
 			}
 			th[scope="row"] {
@@ -153,10 +160,20 @@
 			td[data-type=currency] {
 				text-align: center;
 			}
-			td[data-title]:before {
+			td[data-title]:before,th[data-label]:before  {
 				content: none;
 			}
+			th[rowspan="2"]{
+				display: table-cell;
+				border-right: 1px solid $nacac_lighter-blue;
+			}
+			th:not([data-label]) {
+				display: table-cell;
+				border-right: 1px solid $nacac_lighter-blue;
+				background-color: $white;
+			}
 		}
+
 	}
 }
 
@@ -179,12 +196,9 @@
 		td {
 			padding: .75em .5em;
 		}
-		tbody th[rowspan="2"]{
-			display: table-cell;
-			border-right: 1px solid #ccc;
-		}
 		tfoot {
 			font-size: .9em;
 		}
 	}
+
 }
