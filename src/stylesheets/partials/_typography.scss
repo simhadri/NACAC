@@ -128,6 +128,7 @@ code {
 ul {
 	padding: 0;
 	margin: 0;
+	text-align: left;
 }
 
 .text--blue {
@@ -152,7 +153,8 @@ ul {
 
 // large red numbers
 .ol-styled,
-.ul-icons {
+.ul-icons,
+.ul--checkmark {
 	list-style: none;
 	margin-left: 0;
 	padding-left: 0;
@@ -160,14 +162,11 @@ ul {
 		position: relative;
 		margin-bottom: 2.4rem;
 		padding-left: 4.6rem;
-		// counter-increment: step-counter;
 		&:before {
 			display: block;
 			position: absolute;
 			top: 0;
 			left: 0;
-			// float: left;
-			// content: counter(step-counter);
 			width: 3.6rem;
 			height: 3.6rem;
 			text-align: center;
@@ -180,10 +179,6 @@ ul {
 			background-color: $nacac_burgundy;
 			border-radius: 50%;
 		}
-		// span {
-		//   display: block;
-		//   // padding: .6rem 0 0 4.6rem;
-		// }
 	}
 }
 
@@ -223,9 +218,28 @@ ul {
 		font-style: normal;
 	}
 }
-
+.ul--checkmark{
+	li{
+		padding-top: 1rem;
+		&:before {
+			font-size: 2rem;
+			position: absolute;
+			@include icon('fa-check');
+		}	
+	}
+}
 .block-lg {
 	@media screen and (min-width: 1200px) {
 		display: block;
+	}
+}
+.ul--split{
+	max-width: 64rem;
+	display: block;
+	margin: auto;
+	@include clearfix;
+	li{
+		float: left;
+		width: 50%;
 	}
 }

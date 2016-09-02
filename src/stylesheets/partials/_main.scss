@@ -80,6 +80,9 @@ body.body--freeze {
 	background-color: $nacac_light-blue;
 	color: $white;
 }
+.article--tall {
+    padding: 6rem 0;
+}
 .article__number{
 	display: inline-block;
 	background-color: #f28800;
@@ -253,7 +256,7 @@ body.body--freeze {
 			white-space: normal;
 		}
 	}
-	.number--circle{
+	.article__number{
 		display: block;
 		margin: 0;
 		float: none;
