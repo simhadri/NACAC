@@ -241,3 +241,8 @@ If we don't unset the variable classNames it will be available in different-bloc
 
 
 A global data file is set up at [src/html/data/global.json](src/html/data/global.json), is read in by the `html` task, and exposes the propertiesto your html templates. See [social-icons-font.html](src/html/shared/social-icons-font.
+
+
+``` bash
+git checkout production && git pull origin/develop && gulp production && git commit -am 'Gulp DATE' && git push -u origin/prodution
+```
