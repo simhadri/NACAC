@@ -244,5 +244,10 @@ A global data file is set up at [src/html/data/global.json](src/html/data/global
 
 
 ``` bash
-git checkout production && git pull origin/develop && gulp production && git commit -am 'Gulp DATE' && git push -u origin/prodution
+git checkout production 
+git merge --no-ff -m "Update from develop branch" develop
+gulp production 
+git add -A
+git commit -m "Gulp Compiled for Backend: `date +'%m-%d-%Y'`" 
+git push -u origin production
 ```
