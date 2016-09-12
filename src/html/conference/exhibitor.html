@@ -7,61 +7,75 @@
 	{% include './_shared/navigation.html'%}
 	{% set conferenceHero = {buttons: ["Register to Attend", "Sponsor an Attendee"], scroll:true} %}
 	{% include './_shared/interior-hero.html'%}
-	<article class="article__row article--bluegrey">
-		<div class="container">
-			<div class="article__header">
-				<h2>Rate Elegebility</h2>
-			</div>
-			<h3>Memeber Rates</h3>
-			<p>You must be an individual member of NACAC and your membership must be current in order to receive the member registration rates for the 2016 National Conference.</p>
-			<p>Not a Member yet? Apply now to join NACAC and receive membership registration rates!</p>
-			<a href="#" class="btn btn--nacac-blue">Become a NACAC Member</a>
-			<h3>Registration Criteria</h3>
-			<p>National Conference registration rates are based on eligibility criteria and NACAC membership categories.</p>
-			<p>You must meet the eligibility criteria required for the registration type you select. Should you not meet the eligibility criteria, you will be responsible for all fee changes associated with modifying your registration.</p>
-			<a href="#" class="btn btn--nacac-blue">View Eligibility Criteria</a>
-		</div>
-	</article>
+
 	<article class="article__row article--white">
 		<div class="container">
-			<div class="article__header">
-				<h2>Registration Rates</h2>
-			</div>
-			{% include './_components/price-table.html' %}
-		</div>
-	</article>
-	<!-- <article class="article__row article--bluegrey">
-	<div class="container">
-		<div class="article__header">
-			<h2>Why Attend?</h2>
-		</div>
-		<div class="article__row row">
-			{% include './_components/testimonial-block.html' %}
+			{% include './_components/breadcrumb.html' %}
+			<section class="card-block__row">
+				<div class="row">
+						
+					{% set cardBlock = { heading: "", image: "shared/card-national", button: true } %}
+					{% include './_components/card-block.html'%}
+					
+					{% set cardBlock = { heading: "", image: "shared/card-stem", button: true } %}
+					{% include './_components/card-block.html'%}
 
-			{% include './_components/testimonial-block.html' %}
-
-			{% include './_components/testimonial-block.html' %}
-		</div>
-	</div>
-</article> -->
-	<article class="article__row article--white">
-		<div class="container">
-			<section class="section__row">
-				<header class="section__header">
-					<h2>Before You Register</h2>
-				</header>
-				<div class="section__content">
-					<h2>At the Fair:</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, vero, officia. Possimus voluptatem aspernatur ex autem consequuntur distinctio, officiis, mollitia nesciunt ipsum dolores recusandae tenetur dicta corporis ratione, enim, esse?</p>
-					<ul class="ul--checkmarks">
-						<li>Start by going to the tables inventore necessitatibus</li>
-						<li>Find our the cost of education quia vitae quos minus. Saepe, suscipit, incidunt.</li>
-						<li>Introduce yourself and provide your specific voluptatem ea, laborum nobis asperiores accusamus. Dolor, ullam.</li>
-						<li>Make sure your parents or guardians are listening in, especially when financial figures are discussed.</li>
-						<li>Attend a Workshop</li>
-					</ul>
+					{% set cardBlock = { heading: "", image: "shared/card-performing", button: true } %}
+					{% include './_components/card-block.html'%}
+				
 				</div>
 			</section>
+		</div>
+	</article>
+	<article class="article__row article--blue article--tall">
+		<div class="article__header">
+			<h2>Steps to Become an Exhibitor</h2>
+		</div>
+		<div class="container">
+			<span class="article__number">1</span>
+			<h2>Apply to Exhibit</h2>
+			<div class="row">
+				<div class="col-sm-6">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, vero, officia. Possimus voluptatem aspernatur ex autem consequuntur distinctio, officiis, mollitia nesciunt ipsum dolores recusandae tenetur dicta corporis ratione, enim, esse?</p>
+					<div class="btn btn--clear">Housing Information</div>
+				</div>
+				<div class="col-sm-6">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, vero, officia. Possimus voluptatem aspernatur ex autem consequuntur distinctio, officiis, mollitia nesciunt ipsum dolores recusandae tenetur dicta corporis ratione, enim, esse?</p>
+					<div class="btn btn--clear">Housing Information</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<article class="article__row article--lightgrey article--tall">
+		<div class="container">
+			<span class="article__number">3</span>
+			<h2>Reserve a Booth</h2>
+			<div class="row">
+				<div class="col-sm-6">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, vero, officia. Possimus voluptatem aspernatur ex autem consequuntur distinctio, officiis, mollitia nesciunt ipsum dolores recusandae tenetur dicta corporis ratione, enim, esse?</p>
+					<div class="btn btn--nacac-blue">Housing Information</div>
+				</div>
+				<div class="col-sm-6">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, vero, officia. Possimus voluptatem aspernatur ex autem consequuntur distinctio, officiis, mollitia nesciunt ipsum dolores recusandae tenetur dicta corporis ratione, enim, esse?</p>
+					<div class="btn btn--nacac-blue">Housing Information</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<article class="article__row article--blue article--tall">
+		<div class="container">
+			<span class="article__number">4</span>
+			<h2>Apply to Exhibit</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, vero, officia. Possimus voluptatem aspernatur ex autem consequuntur distinctio, officiis, mollitia nesciunt ipsum dolores recusandae tenetur dicta corporis ratione, enim, esse?</p>
+			<div class="btn btn--clear">Housing Information</div>
+		</div>
+	</article>
+	<article class="article__row article--lightgrey article--tall">
+		<div class="container">
+			<span class="article__number">5</span>
+			<h2>Register Exhibit Space at Other Fairs (Optional)</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, vero, officia. Possimus voluptatem aspernatur ex autem consequuntur distinctio, officiis, mollitia nesciunt ipsum dolores recusandae tenetur dicta corporis ratione, enim, esse?</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, vero, officia. Possimus voluptatem aspernatur ex autem consequuntur distinctio, officiis, mollitia nesciunt ipsum dolores recusandae tenetur dicta corporis ratione, enim, esse?</p>
 		</div>
 	</article>
 	<article class="article__row article--white">

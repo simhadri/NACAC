@@ -78,8 +78,26 @@ body.body--freeze {
 // needed for inverse breadcrumb wrapper
 .article--blue {
 	background-color: $nacac_light-blue;
+	color: $white;
 }
-
+.article--tall {
+    padding: 6rem 0;
+}
+.article__number{
+	display: inline-block;
+	background-color: #f28800;
+	padding-top: 1.4rem;
+	margin-left: -8rem;
+	float: left;
+	margin-top: 2.4rem;
+	width: 6rem;
+	height: 6rem;
+	text-align: center;
+	border-radius: 100%;
+	font-size: 2.4rem;
+	font-weight: bold;
+	color: $white;
+}
 .article__header,
 .section__header {
 	text-align: center;
@@ -237,6 +255,11 @@ body.body--freeze {
 			display: block;
 			white-space: normal;
 		}
+	}
+	.article__number{
+		display: block;
+		margin: 0;
+		float: none;
 	}
 }
 
