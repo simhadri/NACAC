@@ -97,8 +97,7 @@ import CountUp from 'lib/countUp.js';
 			countInit();
 		}
 	}
-	const bodyElm = document.body;
 
 	// Throttle btInit on scroll
-	window.onscroll = function() { Throttled(btInit(), 400) };
+	window.addEventListener('scroll',function() { Throttled(btInit(), 400) });
 })();
