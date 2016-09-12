@@ -150,5 +150,5 @@ import Screen from 'lib/screen.js';
 		}
 	});
 	navScrollDependencies();
-	$(window).scroll(Throttled(navScrollDependencies, 50));
+	window.addEventListener('scroll', function(){Throttled(navScrollDependencies(), 50)});
 })();
