@@ -78,13 +78,21 @@ img.pull-right {
 			style: italic;
 		}
 	}
-	.hero-icon-block {
+	.hero-icon-block,.hero-image-block {
 		display: block;
 		font: {
 			size: 1.8rem;
 			weight: 700;
 		}
 		color: #fff;
+		img{
+			display: block;
+			margin: 0 auto .8rem auto;
+			width: 7.2rem;
+			height: 7.2rem;
+			margin-bottom: .5rem;
+			border-radius: 100%;
+		}
 		svg {
 			display: block;
 			margin: 0 auto .8rem auto;
