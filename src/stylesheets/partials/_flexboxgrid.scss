@@ -847,9 +847,9 @@
 }
 // SAFARI HACK
 @media only screen and (min-width: $screen-md-min) {
-	[class*="col-sm"],
-	[class*="col-md"],
-	[class*="col-lg"] {
+	[class*="col-sm-"],
+	[class*="col-md-"],
+	[class*="col-lg-"] {
 	    &:not(:root:root) {
 	        flex: 1 0 !important;
 	    }

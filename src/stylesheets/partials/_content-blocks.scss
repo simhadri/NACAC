@@ -254,6 +254,8 @@ a.color-block {
 		margin: 2rem 1rem;
 		padding: 0;
 		color: $white;
+		box-shadow: inset 0px -30rem 30rem -16rem $nacac_dark-grey;
+
 		.event-block__header {
 			border-bottom: 1px solid $nacac_border-lightgrey;
 			padding: 2rem;

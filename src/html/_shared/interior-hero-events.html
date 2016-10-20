@@ -2,7 +2,7 @@
 	<div class="hero__background-image">
 		<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/main/events_hero_banner.jpg" alt="">
 	</div>
-	<div class="hero__content">
+	<div class="hero__content{% if templateName == 'template-conference' %} hero__content--conference{% endif %}">
 		<h1 class="hero__title">NACAC <span class="text--orange">72nd National Conference</span></h1>
 		{% if conferenceHero %}
 		<h2 class="hero__byline">September 22-24, 2016 | Columbus, Ohio</h2>
