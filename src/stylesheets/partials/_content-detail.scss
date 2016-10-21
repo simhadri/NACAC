@@ -9,6 +9,12 @@
 	}
 
 }
+.content-detail{
+	hr{
+		margin-top: 4rem;
+		margin-bottom: 4rem;
+	}
+}
 .content-detail__block {
 	div[class*='video-iframe'] {
 		margin-bottom: 2.5rem;
@@ -48,6 +54,31 @@
 		}
 		> iframe {
 			width: 100%;
+		}
+	}
+	hr{
+		margin-top: 4rem;
+		margin-bottom: 4rem;
+	}
+}
+.conference-detail__block{
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	margin-left: auto;
+	margin-right: auto;
+	.heading__icon{
+		position: relative;
+		&:before{
+			position: absolute;
+			color: $nacac_light-blue;
+			font-size: 4rem;
+			left: -6rem;
+		}
+		&.heading__icon--ticket:before{
+			@include icon('fa-ticket');
+		}
+		&.heading__icon--badge:before{
+			@include icon('fa-book');
 		}
 	}
 }

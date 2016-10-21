@@ -1,6 +1,6 @@
 <div class="event-block col-sm b-lazy" data-src="/images/event-block-{{loop.index % 2 }}.jpg">
 	<header class="event-block__header">
-		<i class="fa fa-calendar"></i> Featured Event
+		<i class="fa {{eventBlockIcon | default("fa-calendar")}}"></i> Featured Event
 	</header>
 	<div class="event-block__content">
 		<h2 class="event-block__title">{{eventBlock}}</h2>

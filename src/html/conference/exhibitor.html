@@ -5,7 +5,7 @@
 	{% include './_shared/utility.html'%}
 	{% set className = "primary-nav--inanimate" %}
 	{% include './_shared/navigation.html'%}
-	{% set conferenceHero = {buttons: ["Register to Attend", "Sponsor an Attendee"], scroll:true} %}
+	{% set conferenceHero = {buttons: ["First Time Exhibitors","Register to Attend", "Current 2016 Exhibitors"], scroll:true} %}
 	{% include './_shared/interior-hero.html'%}
 
 	<article class="article__row article--white">
@@ -14,13 +14,13 @@
 			<section class="card-block__row">
 				<div class="row">
 						
-					{% set cardBlock = { heading: "", image: "shared/card-national", button: true } %}
+					{% set cardBlock = { heading: "Top 10 Reasons to Exhibit", image: "shared/card-national", button: centered } %}
 					{% include './_components/card-block.html'%}
 					
-					{% set cardBlock = { heading: "", image: "shared/card-stem", button: true } %}
+					{% set cardBlock = { heading: "Who'll Be There", image: "shared/card-stem", button: centered } %}
 					{% include './_components/card-block.html'%}
 
-					{% set cardBlock = { heading: "", image: "shared/card-performing", button: true } %}
+					{% set cardBlock = { heading: "Purchase List", image: "shared/card-performing", button: centered } %}
 					{% include './_components/card-block.html'%}
 				
 				</div>
@@ -31,7 +31,7 @@
 		<div class="article__header">
 			<h2>Steps to Become an Exhibitor</h2>
 		</div>
-		<div class="container">
+		<div class="container container--narrow">
 			<span class="article__number">1</span>
 			<h2>Apply to Exhibit</h2>
 			<div class="row">
@@ -47,7 +47,7 @@
 		</div>
 	</article>
 	<article class="article__row article--lightgrey article--tall">
-		<div class="container">
+		<div class="container container--narrow">
 			<span class="article__number">3</span>
 			<h2>Reserve a Booth</h2>
 			<div class="row">
@@ -63,7 +63,7 @@
 		</div>
 	</article>
 	<article class="article__row article--blue article--tall">
-		<div class="container">
+		<div class="container container--narrow">
 			<span class="article__number">4</span>
 			<h2>Apply to Exhibit</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, vero, officia. Possimus voluptatem aspernatur ex autem consequuntur distinctio, officiis, mollitia nesciunt ipsum dolores recusandae tenetur dicta corporis ratione, enim, esse?</p>
@@ -71,21 +71,62 @@
 		</div>
 	</article>
 	<article class="article__row article--lightgrey article--tall">
-		<div class="container">
+		<div class="container container--narrow">
 			<span class="article__number">5</span>
 			<h2>Register Exhibit Space at Other Fairs (Optional)</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, vero, officia. Possimus voluptatem aspernatur ex autem consequuntur distinctio, officiis, mollitia nesciunt ipsum dolores recusandae tenetur dicta corporis ratione, enim, esse?</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, vero, officia. Possimus voluptatem aspernatur ex autem consequuntur distinctio, officiis, mollitia nesciunt ipsum dolores recusandae tenetur dicta corporis ratione, enim, esse?</p>
 		</div>
-	</article>
-	<article class="article__row article--white">
 		<div class="container">
-			<section class="section__row">
-				<header class="section__header">
-					<h2>Register Now</h2>
-					<a href="#" class="btn btn--nacac-blue">Become a Sponsor</a>
-				</header>
+			<section class="card-block__row">
+				<div class="row">
+
+					{% set eventBlocks = [
+						"Attend College Fairs",
+						"Councelors College Fairs"
+					] %}
+					{% set eventBlockIcon = "fa-certificate" %}
+					{% for eventBlock in eventBlocks %}
+						{% include './_components/event-block.html'%}
+					{% endfor %}
+				
+				</div>
+				<div class="row">
+
+					{% set eventBlocks = [
+						"Columbus National College Fair",
+						"Columbus Performing and Visual Arts College Fair"
+					] %}
+					{% set eventBlockIcon = "fa-certificate" %}
+					{% for eventBlock in eventBlocks %}
+						{% include './_components/event-block.html'%}
+					{% endfor %}
+				
+				</div>
 			</section>
+		</div>
+	</article>
+	<article class="article__row article--white article--tall">
+		<div class="container container--narrow">
+			<span class="article__number">6</span>
+			<h2>Be Perpared</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, vero, officia. Possimus voluptatem aspernatur ex autem consequuntur distinctio, officiis, mollitia nesciunt ipsum dolores recusandae tenetur dicta corporis ratione, enim, esse?</p>
+		</div>
+		<div class="container">
+			<section class="card-block__row">
+				<div class="row">
+						
+					{% set cardBlock = { heading: "Exhibitor Faqs", image: "shared/card-performing", button: centered } %}
+					{% include './_components/card-block.html'%}
+					
+					{% set cardBlock = { heading: "Exhibit Schedule", image: "shared/card-performing", button: centered } %}
+					{% include './_components/card-block.html'%}
+
+					{% set cardBlock = { heading: "2017 Exhibitor Rules & Regulations", image: "shared/card-performing", button: centered } %}
+					{% include './_components/card-block.html'%}
+				
+				</div>
+			</section>	
 		</div>
 	</article>
 	{% include './_shared/footer.html'%}

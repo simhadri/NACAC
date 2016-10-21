@@ -31,7 +31,9 @@ body.body--freeze {
 .screen__overlay--on {
 	opacity: 1;
 }
-
+.container--narrow{
+	max-width: 99rem;
+}
 .pointer--disabled{
 	pointer-events: none;
 }
@@ -98,6 +100,7 @@ body.body--freeze {
 	font-weight: bold;
 	color: $white;
 }
+
 .article__header,
 .section__header {
 	text-align: center;
