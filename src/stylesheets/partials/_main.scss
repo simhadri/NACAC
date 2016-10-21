@@ -105,7 +105,7 @@ body.body--freeze {
 		text-align: left;
 	}
 	.btn {
-		margin: 2rem 0;
+		margin: 2rem;
 	}
 	p {
 		padding-top: $p-spacing;
@@ -116,7 +116,11 @@ body.body--freeze {
 		}
 	}
 }
-
+.article__content, .section__content{
+	img.aside__image{
+		margin-top: 4rem;
+	}
+}
 .section__row {
 	@include clearfix;
 	border-bottom: 1px solid $nacac_border-lightgrey;

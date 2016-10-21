@@ -2,7 +2,7 @@
 	width: 100%;
 	margin-bottom: 1.5em;
 	.col__overview {
-		background-color: $nacac-cloud-blue;
+		background-color: $nacac-blue;
 	}
 	thead {
 		// Accessibly hide <thead> on narrow viewports
@@ -10,10 +10,10 @@
 		clip: rect(1px 1px 1px 1px);
 		th {
 			position: relative;
-			background-color: $nacac-cloud-blue;
+			background-color: $nacac_light-blue;
 			border: 1px solid $nacac_lighter-blue;
 			text-align: center;
-			// color: white;
+			color: white;
 		}
 	}
 	// Set these items to display: block for narrow viewports

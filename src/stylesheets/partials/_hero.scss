@@ -105,7 +105,10 @@
 	.hero__content {
 		padding: 6rem 0;
 		padding-bottom: 0;
-		.hero__byline {}
+		.hero__byline--conference{
+			margin-top: 0;
+			margin-bottom: 2rem;
+		}
 		.hero__title {
 			margin: 0;
 		}

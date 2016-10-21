@@ -154,10 +154,12 @@ ul {
 // large red numbers
 .ol-styled,
 .ul-icons,
-.ul--checkmark {
+.ul--checkmark,
+.ul--checkmark-green {
 	list-style: none;
 	margin-left: 0;
 	padding-left: 0;
+	margin-top: 2rem;
 	li {
 		position: relative;
 		margin-bottom: 2.4rem;
@@ -225,6 +227,25 @@ ul {
 			font-size: 2rem;
 			position: absolute;
 			@include icon('fa-check');
+		}	
+	}
+}
+.ul--checkmark-green{
+	li{
+		padding-top: 1rem;
+		&:before {
+			@include icon('fa-certificate');
+			color: $nacac_green;
+			font-size: 4rem;
+			background-color: transparent;
+		}
+		&:after {
+			font-size: 2rem;
+			position: absolute;
+			@include icon('fa-check');
+			left: 7px;
+			top: 8px;
+			color: $white;
 		}	
 	}
 }

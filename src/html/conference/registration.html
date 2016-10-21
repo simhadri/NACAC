@@ -3,12 +3,16 @@
 {% block content %}
 <main>
 	{% include './_shared/utility.html'%}
+	
 	{% set className = "primary-nav--inanimate" %}
 	{% include './_shared/navigation.html'%}
-	{% set buttons = ["Register to Attend", "Sponsor an Attendee"] %}
+
+	{% set conferenceHero = {buttons: ["Register Now", "Schedule At-A-Glance"], byline: "Until Early Registration"} %}
 	{% include './_shared/interior-hero-events.html'%}
+
 	<article class="article__row article--bluegrey">
 		<div class="container">
+			{% include './_components/breadcrumb.html' %}
 			<div class="article__header">
 				<h2>Rate Elegebility</h2>
 			</div>
@@ -30,24 +34,21 @@
 			{% include './_components/price-table.html' %}
 		</div>
 	</article>
-	<article class="article__row article--white">
+	<article class="article__row article--lightgrey">
 		<div class="container">
 			<section class="section__row">
-				<header class="section__header">
-					<h2>Before You Register</h2>
-				</header>
 				<div class="section__content">
-					<h2>Before You Register</h2>
 					<div class="row">
 						<div class="col-sm-6">
-							<ul class="ul--checkmark">
+							<h2>Before You Register</h2>
+							<ul class="ul--checkmark-green">
 								<li>Start by going to the tables inventore necessitatibus</li>
 								<li>Find our the cost of education quia vitae quos minus. Saepe, suscipit, incidunt.</li>
 								<li>Introduce yourself and provide your specific voluptatem ea, laborum nobis asperiores accusamus. Dolor, ullam.</li>
 							</ul>
 						</div>
 						<div class="col-sm-6">
-							<img src="/images/shared/content-medium.jpg" class="image--center" alt="">
+							<img src="/images/shared/content-medium.jpg" class="image--center aside__image" alt="">
 						</div>
 					</div>
 				</div>
@@ -71,22 +72,20 @@
 			</section>
 		</div>
 	</article>
-	<article class="article__row article--white">
+	<article class="article__row article--lightgrey">
 		<div class="container">
 			<section class="section__row">
-				<header class="section__header">
-					<h2>Before You Register</h2>
-				</header>
 				<div class="section__content">
-					<h2>Before You Register</h2>
+					
 					<div class="row">
 						<div class="col-sm-6">
+							<h2>Educational Sessions</h2>
 							<p>Lorem ipsum Ad culpa proident elit eiusmod laboris ad culpa aliqua ea id officia aliqua nisi quis mollit ut Excepteur magna do ut reprehenderit cupidatat exercitation commodo fugiat sunt in in qui adipisicing aliquip sit labore voluptate laboris.</p>
 							<p>Lorem ipsum Ad culpa proident elit eiusmod laboris ad culpa aliqua ea id officia aliqua nisi quis mollit ut Excepteur magna do ut reprehenderit cupidatat exercitation commodo fugiat sunt in in qui adipisicing aliquip sit labore voluptate laboris.</p>
 							<div class="btn btn--nacac-blue">View Sessions</div>
 						</div>
 						<div class="col-sm-6">
-							<img src="/images/shared/content-medium.jpg" class="image--center" alt="">
+							<img src="/images/shared/content-medium.jpg" class="image--center aside__image" alt="">
 						</div>
 					</div>
 				</div>
@@ -96,11 +95,11 @@
 	<article class="article__row article--white">
 		<div class="container">
 			<section class="section__row">
-				<div class="section__content section--centered">
+				<div class="section__header">
 					<h2>Before You Register</h2>
 					<p>Lorem ipsum Ad culpa proident elit eiusmod laboris ad culpa aliqua ea id officia aliqua nisi quis mollit ut Excepteur magna do ut reprehenderit cupidatat exercitation commodo fugiat sunt in in qui adipisicing aliquip sit labore voluptate laboris.</p>
-					<p>Lorem ipsum Ad culpa proident elit eiusmod laboris ad culpa aliqua ea id officia aliqua nisi quis mollit ut Excepteur magna do ut reprehenderit cupidatat exercitation commodo fugiat sunt in in qui adipisicing aliquip sit labore voluptate laboris.</p>
-					<div class="btn btn--nacac-blue">View Sessions</div>
+					<div class="btn btn--nacac-blue">Register to Attend</div>
+					<div class="btn btn--nacac-blue">Sponsor an Attendee</div>
 				</div>
 			</section>
 		</div>
