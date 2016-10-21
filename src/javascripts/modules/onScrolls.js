@@ -99,5 +99,5 @@ import CountUp from 'lib/countUp.js';
 	}
 
 	// Throttle btInit on scroll
-	window.addEventListener('scroll',function() { Throttled(btInit(), 400) });
+	window.addEventListener('scroll', function() { Throttled(btInit(), 400) });
 })();

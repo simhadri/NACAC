@@ -44,6 +44,6 @@ var countDown = function(id, endtime) {
 		}
 	}
 	updateClock();
-	var timeinterval = setInterval(updateClock, 1000);
+	var timeinterval = setInterval(updateClock, 60000);
 }
 module.exports = countDown;

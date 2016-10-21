@@ -27,6 +27,26 @@
 	font-weight: bold;
 }
 
+.hero__content--conference{
+    .clock__segment{
+        border: 2px dotted;
+        border-radius: 100%;
+        height: 16rem;
+        width: 16rem;
+        margin: 4rem 2rem;
+    }
+    .segment__num{
+        background: transparent;
+        font-size: 6rem;
+        font-family: $condensed;
+        margin:auto;
+    }
+    .segment__label{
+        font-family: $serif;
+        font-variant: italic;
+    }
+}
+
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
 ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝

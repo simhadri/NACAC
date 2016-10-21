@@ -31,7 +31,9 @@ body.body--freeze {
 .screen__overlay--on {
 	opacity: 1;
 }
-
+.container--narrow{
+	max-width: 99rem;
+}
 .pointer--disabled{
 	pointer-events: none;
 }
@@ -98,6 +100,7 @@ body.body--freeze {
 	font-weight: bold;
 	color: $white;
 }
+
 .article__header,
 .section__header {
 	text-align: center;
@@ -105,7 +108,7 @@ body.body--freeze {
 		text-align: left;
 	}
 	.btn {
-		margin: 2rem 0;
+		margin: 2rem;
 	}
 	p {
 		padding-top: $p-spacing;
@@ -116,7 +119,11 @@ body.body--freeze {
 		}
 	}
 }
-
+.article__content, .section__content{
+	img.aside__image{
+		margin-top: 4rem;
+	}
+}
 .section__row {
 	@include clearfix;
 	border-bottom: 1px solid $nacac_border-lightgrey;
