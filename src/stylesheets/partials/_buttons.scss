@@ -8,7 +8,8 @@
 	font-weight: 700;
 	display: inline-block;
 	text-align: center;
-	&:hover {
+	margin-right: 2rem;
+	&:hover, &:focus, &:active {
 		border-color: $nacac-orange;
 		background-color: $nacac-orange;
 		color: #fff;
@@ -24,8 +25,7 @@
 	display: inline-block;
 	text-decoration: none;
 	padding: 1em 2em;
-	&:hover {
-		// gradient transtitions dont work well 
+	&:hover, &:focus, &:active {
 		border-color: $nacac-orange;
 		background-color: $nacac-orange;
 	}
@@ -43,7 +43,7 @@
 	color: white;
 	border-radius: 0;
 	background-color: transparent;
-	&:hover {
+	&:hover, &:focus, &:active {
 		border-color: $nacac-orange;
 		background-color: $nacac-orange;
 		color: white;
@@ -57,7 +57,7 @@
 	display: inline-block;
 	text-decoration: none;
 	border: 2px solid $nacac_blue;
-	&:hover {
+	&:hover, &:focus, &:active {
 		color: white;
 	}
 }
