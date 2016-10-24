@@ -19,6 +19,8 @@
 			color: $white;
 			.accordion-item__header h3 {
 				color: $white;
+				display: inline-block;
+				padding-right: 4rem;
 			}
 			.accordion-item__article {
 				max-height: 200rem;
