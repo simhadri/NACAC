@@ -48,6 +48,7 @@
 				$('.trigger__button.tab__button:first').addClass('trigger__button--active');
 				
 			}
+		
 		}
 		// remove the trigger__content--active class from the triggers,
 		// and add it back to the one the user selected
@@ -55,6 +56,7 @@
 
 		// now hide all the panels, then filter to
 		// the one we're interested in, and show it
+
 		$('.trigger__content[data-trigger="' + id + '"]').addClass('trigger__content--active')
 	}
 

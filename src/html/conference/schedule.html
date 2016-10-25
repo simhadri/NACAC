@@ -1,9 +1,11 @@
- {% extends '_layouts/conference-application.html' %}
- {% set pageLocation = "Schedule" %}
- {% block content %}
+{% extends '_layouts/conference-application.html' %}
+{% set pageLocation = "Schedule" %}
+
+{% block content %}
 <main>
 	{% set className = "utility-nav--blue" %}
 	{% include './_shared/utility.html'%}
+	
 	{% set className = "primary-nav--inanimate primary-nav--blue" %}
 	{% include './_shared/navigation.html'%}
 	<article class="article__row article--white hero--none aside-navigation__row">
@@ -12,28 +14,50 @@
 			{% include './_components/breadcrumb.html' %}
 			<div class="row">
 				<div class="col-xs-12 content-detail">
-					<section class="section__row">
-						<header class="content-detail__header">
-							<h2>Schedule At-A-Glance</h2>
-						</header>
-					</section>
-					<nav class="schedule__navigation"></nav>
-					{% set schedules = ["Attendee and Exhibitor Registration","Future Leaders Breakfast","NACAC Standing Committee Chairs Meeting","Keynote Presentation","Main Exhibit Hall Open"] %}
-					{% for schedule in schedules %}
-						{% include './_components/schedule-entry.html'%}
-					{% endfor %}
-					<section class="card-block__row">
-						<div class="row">
+					<header class="section__header">
+						<h1>Schedule At-A-Glance</h1>
+					</header>
+					<div class="tab__block schedule__block">
+						<nav class="schedule__navigation tab__navigation">
+							<a class="trigger__button tab__button" href="#day_1">Day 1 - September 20</a>
+							<a class="trigger__button tab__button" href="#day_2">Day 2 - September 21</a>
+							<a class="trigger__button tab__button" href="#day_3">Day 3 - September 22</a>
+							<a class="trigger__button tab__button" href="#day_4">Day 4 - September 23</a>
+							<a class="trigger__button tab__button" href="#day_5">Day 5 - September 24</a>
+						</nav>
+						<article class="tab__stage">
+							
+							{% for day in ["Tuesday","Wednesday","Thursday","Friday","Saturday"] %}
+							<section class="trigger__content tab__content" data-trigger="#day_{{loop.index}}">
+								<span class="tab__jump" id="day_{{loop.index}}"></span>
+								<h2 class="schedule__h2">Day {{loop.index}} Schedule</h2>
+								<h3 class="schedule__h3"><strong>{{day}},</strong> September 23, 2017 - Councelors</h3>
 								
-							{% set cardBlock = { heading: "", image: "shared/card-national", button: true } %}
+								{% set schedules = ["Attendee and Exhibitor Registration","Future Leaders Breakfast","NACAC Standing Committee Chairs Meeting","Keynote Presentation","Lunch On Your Own","Main Exhibit Hall Open"] %}
+
+								<div class="schedule__set">
+									{% for schedule in schedules %}
+									{% include './_components/schedule-entry.html'%}
+									{% endfor %}
+								</div>
+
+							</section>
+							{% endfor %}
+						</article>
+					</div>
+					<section class="card-block__row">
+						<header class="section__header">
+							<h2>Related Events</h2>
+						</header>
+						<div class="row">
+							{% set cardBlock = { heading: "Lorem Ipsum", image: "shared/card-national", button: center } %}
 							{% include './_components/card-block.html'%}
 							
-							{% set cardBlock = { heading: "", image: "shared/card-stem", button: true } %}
+							{% set cardBlock = { heading: "Lorem Ipsum", image: "shared/card-stem", button: center } %}
 							{% include './_components/card-block.html'%}
-
-							{% set cardBlock = { heading: "", image: "shared/card-performing", button: true } %}
+							
+							{% set cardBlock = { heading: "Lorem Ipsum", image: "shared/card-performing", button: center } %}
 							{% include './_components/card-block.html'%}
-						
 						</div>
 					</section>
 				</div>
