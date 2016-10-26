@@ -12,6 +12,9 @@
 	@if $iconName == 'fa-envelope-o' {
 		content: '\f003';
 	}
+	@if $iconName == 'fa-id-card-o'{
+		content: '\f2c3';
+	}
 	@if $iconName == 'fa-heart' {
 		content: '\f004';
 	}

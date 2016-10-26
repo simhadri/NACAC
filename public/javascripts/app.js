@@ -86,6 +86,18 @@ webpackJsonp([0,3],[
 			};
 		})();
 	
+		// For Hero Jump link
+		var scrollToButton = document.getElementById('js_scroll-to');
+		if (scrollToButton) {
+			(function () {
+				var jumpLink = document.getElementById('js_jump');
+				var jumpLocation = jumpLink.offsetTop;
+				scrollToButton.addEventListener('click', function () {
+					btAnimateTo(jumpLocation, 2500);
+				});
+			})();
+		}
+	
 		// add or remove BackToTop (bt) Element
 		var btElement = function btElement() {
 			this.addBackToTop = function () {
@@ -100,7 +112,7 @@ webpackJsonp([0,3],[
 					setTimeout(function () {
 						backToTop.classList.add('back-top--scrolled');
 						backToTop.addEventListener('click', function () {
-							btAnimateToTop(0, 2500);
+							btAnimateTo(0, 2500);
 						});
 					}, 5);
 				}
@@ -114,7 +126,7 @@ webpackJsonp([0,3],[
 		// function scrollToY(scrollTargetY, speed) {...}
 		// scrollTargetY: the target scrollY property of the window
 		// speed: time in pixels per second
-		var btAnimateToTop = function btAnimateToTop(scrollTargetY, speed) {
+		var btAnimateTo = function btAnimateTo(scrollTargetY, speed) {
 			var scrollY = window.scrollY || document.documentElement.scrollTop,
 			    scrollTargetY = scrollTargetY || 0,
 			    speed = speed || 2000,
