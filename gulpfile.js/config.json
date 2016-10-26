@@ -22,7 +22,10 @@
       },
       "extensions": ["js"]
     },
-
+    "patternlib": {
+      "src": "html",
+      "dest": "html"
+    },
     "css": {
       "src": "stylesheets",
       "dest": "stylesheets",
