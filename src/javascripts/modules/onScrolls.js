@@ -14,6 +14,7 @@ import CountUp from 'lib/countUp.js';
 			};
 	})();
 
+	// For Hero Jump link
 	const scrollToButton = document.getElementById('js_scroll-to');
 	if(scrollToButton){
 		let jumpLink = document.getElementById('js_jump');
@@ -22,6 +23,7 @@ import CountUp from 'lib/countUp.js';
 			 btAnimateTo(jumpLocation, 2500)
 		});
 	}
+
 	// add or remove BackToTop (bt) Element
 	const btElement = function() {
 			this.addBackToTop = function() {

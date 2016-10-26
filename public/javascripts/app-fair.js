@@ -34,6 +34,7 @@ webpackJsonp([1,3],[
 			};
 		})();
 	
+		// For Hero Jump link
 		var scrollToButton = document.getElementById('js_scroll-to');
 		if (scrollToButton) {
 			(function () {
@@ -44,6 +45,7 @@ webpackJsonp([1,3],[
 				});
 			})();
 		}
+	
 		// add or remove BackToTop (bt) Element
 		var btElement = function btElement() {
 			this.addBackToTop = function () {
