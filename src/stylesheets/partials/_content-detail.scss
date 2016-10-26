@@ -74,11 +74,11 @@
 			font-size: 4rem;
 			left: -6rem;
 		}
-		&.heading__icon--ticket:before{
+		&.heading__icon--attend:before{
 			@include icon('fa-ticket');
 		}
-		&.heading__icon--badge:before{
-			@include icon('fa-book');
+		&.heading__icon--exhibit:before{
+			@include icon('fa-id-card-o');
 		}
 	}
 }

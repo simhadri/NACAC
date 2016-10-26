@@ -86,6 +86,21 @@ webpackJsonp([0,3],[
 			};
 		})();
 	
+<<<<<<< HEAD
+=======
+		// For Hero Jump link
+		var scrollToButton = document.getElementById('js_scroll-to');
+		if (scrollToButton) {
+			(function () {
+				var jumpLink = document.getElementById('js_jump');
+				var jumpLocation = jumpLink.offsetTop;
+				scrollToButton.addEventListener('click', function () {
+					btAnimateTo(jumpLocation, 2500);
+				});
+			})();
+		}
+	
+>>>>>>> develop
 		// add or remove BackToTop (bt) Element
 		var btElement = function btElement() {
 			this.addBackToTop = function () {
@@ -100,7 +115,11 @@ webpackJsonp([0,3],[
 					setTimeout(function () {
 						backToTop.classList.add('back-top--scrolled');
 						backToTop.addEventListener('click', function () {
+<<<<<<< HEAD
 							btAnimateToTop(0, 2500);
+=======
+							btAnimateTo(0, 2500);
+>>>>>>> develop
 						});
 					}, 5);
 				}
@@ -114,7 +133,11 @@ webpackJsonp([0,3],[
 		// function scrollToY(scrollTargetY, speed) {...}
 		// scrollTargetY: the target scrollY property of the window
 		// speed: time in pixels per second
+<<<<<<< HEAD
 		var btAnimateToTop = function btAnimateToTop(scrollTargetY, speed) {
+=======
+		var btAnimateTo = function btAnimateTo(scrollTargetY, speed) {
+>>>>>>> develop
 			var scrollY = window.scrollY || document.documentElement.scrollTop,
 			    scrollTargetY = scrollTargetY || 0,
 			    speed = speed || 2000,
@@ -775,6 +798,10 @@ webpackJsonp([0,3],[
 	
 			// now hide all the panels, then filter to
 			// the one we're interested in, and show it
+<<<<<<< HEAD
+=======
+	
+>>>>>>> develop
 			$('.trigger__content[data-trigger="' + id + '"]').addClass('trigger__content--active');
 		}
 	

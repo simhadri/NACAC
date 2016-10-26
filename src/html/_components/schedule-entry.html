@@ -1,15 +1,25 @@
-<div class="schedule-entry row">
+<div class="schedule__entry row">
+	<i class="fa fa-clock-o schedule-entry__icon"></i>
 	<div class="schedule__time col-sm-4">
-		<h3>7:00am - 8:00am</h3>
+	{% set scheduleTime = loop.index+7 %}
+	{% if scheduleTime < 12 %}
+		<h3>{{ scheduleTime }}:00am - {{ scheduleTime }}:45am</h3>
+	{% else %}
+		<h3>{{ scheduleTime-11 }}:00pm - {{ scheduleTime-11 }}:45pm</h3>
+	{% endif %}
 	</div>
 	<div class="schedule__content col-sm-8">
 		<h3 class="schedule__heading">{{ schedule }}</h3>
-		<p class="schedule__description">Exhibit Hall {{ loop.index }}</p>
-		{% if loop.index == 1 %}
-		<span class="schedule__message message--invitation"><i class="fa fa-envelope"></i> By Invitation Only</span>
+		<p>Room #{{ loop.index }}</p>
+		{% if schedule == "Lunch On Your Own" %}
+		<p><a href="#">Where to Eat</a></p>
+		{% else %}
+		{% if loop.index % 2 == 0 %}
+		<p>Speaker Name</p>
+		<p>Founder & CEO</p>
+		{% else %}
+		<p><em>By Invitation Only</em></p>
 		{% endif %}
-		{% if loop.index == 2 %}
-		<span class="schedule__message message--timechange"><i class="fa fa-exclamation-triangle"></i>  New Time/Date</span>
 		{% endif %}
 	</div>
 </div>
