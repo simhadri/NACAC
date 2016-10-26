@@ -142,13 +142,12 @@
 		margin-right: auto; 
 		width: 100px;
 		top: 3rem;
-		// animation-play-state: paused; 
-		
 		transition: $transition--all;
 	}
 	&:hover{
 		.scroll__icon{
-			animation: flashdown 1200ms linear infinite;
+			animation: flashdown 1.3s cubic-bezier(0.58, 1.16, 1, 1);
+			animation-iteration-count: 5;
 			transition: $transition--all;
 		}
 	}
@@ -156,8 +155,11 @@
 
 @keyframes flashdown {
     0%,{
-    	opacity: 0.7;
+    	opacity: 0;
     	top: 3rem;
+    }
+    20%,{
+    	opacity: 0.7;
     }
     100%{
     	opacity: 0;
