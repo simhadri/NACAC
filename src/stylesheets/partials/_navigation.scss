@@ -396,34 +396,16 @@
 				}
 				a {
 					color: $text_slate;
-					// position: relative;
 					line-height: 1.2;
-					// test
 					transition: all .2s ease-in-out;
 					background-size: 0 1px;
 					background-image: none;
 					background-position: 0 1.1em;
 					background-repeat: no-repeat;
-					// Test
 					&:hover {
 						color: $nacac_blue;
 						background-image: linear-gradient(to bottom,$nacac_blue 100%,$nacac_blue 100%);
 						background-size: 100% 1px;
-						&:after {
-							// width: 100%;
-
-						}
-					}
-					&:after {
-						// content: '';
-						// display: inline;
-						// position: absolute;
-						// bottom: 0;
-						// width: 0%;
-						// left: 0px;
-						// height: 1px;
-						// transition: 0.35s ease;
-						// background: $nacac_blue;
 					}
 				}
 				img {
