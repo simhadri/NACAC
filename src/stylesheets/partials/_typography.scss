@@ -198,22 +198,24 @@ ul {
 	li {
 		&:before {
 			font: {
-				family: FontAwesome;
 				size: 2rem;
 			}
 			position: absolute;
 		}
 		&.icon-location:before {
-			content: "\f041";
+			@include icon('fa-map-marker');
 		}
 		&.icon-hours:before {
-			content: "\f017";
+			@include icon('fa-clock-o');
 		}
 		&.icon-direction:before {
-			content: "\f14e";
+			@include icon('fa-compass');
 		}
 		&.icon-contact:before {
-			content: "\f1fa";
+			@include icon('fa-at');
+		}
+		&.icon-info:before {
+			@include icon('fa-info');
 		}
 	}
 	address {
