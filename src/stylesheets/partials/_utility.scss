@@ -182,8 +182,7 @@
 		height: 9rem;
 		font-size: 1.4rem;
 		z-index:3;
-		border-bottom: none;
-		box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+		border-bottom: 1px solid $nacac_light-blue;
 		.container {
 			padding-left: 15px;
 			padding-right: 15px;
