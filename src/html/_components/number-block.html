@@ -1,6 +1,12 @@
+{% if loop.index == 2 %}
+{% set numberClass = "number-block--image" %}
+{% endif %}
 <div class="number-block">
 	<!-- <span class="number-block__numerals" data-counter="{{ number }}" id="counter-{{ inc }}"></span> -->
-	<div class="number-block__numerals" id="counter-{{ loop.index }}" data-counter="{{ number }}">0</div>
+	<div class="number-block__numerals {{numberClass}}" id="counter-{{ loop.index }}" data-counter="{{ number }}">0</div>
+	{% if numberClass %}
+	<img class="number-block__background" src="/images/shared/square_image.jpg">
+	{% endif %}
 	<div class="number-block-block__text">
 		<p>Pellentesque habitant morbi tortor quam. </p>
 	</div>
