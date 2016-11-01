@@ -392,10 +392,16 @@ a.color-block {
 */
 
 @include break(max, $screen-sm-max) {
+	.content-block__row{
+		flex-direction: column;
+	}
+
 	.color-block--wide,
 	.color-block--half {
 		width: 100%;
+		flex-basis: 100%;
 		float: none;
+		max-width: 100%;
 	}
 	.color-block {
 		color: $white;
