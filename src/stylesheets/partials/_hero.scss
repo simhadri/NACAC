@@ -98,7 +98,7 @@
 	&.hero__wrapper {
 		margin-top: 0;
 		min-height: 48rem;
-		height: 38vw;
+		height: 36vw;
 		margin-bottom: 5rem;
 		padding-top: 12rem;
 		position: relative;
@@ -200,12 +200,12 @@
 		align-items: center;
 		.hero__content {
 			width: 70%;
-			min-width: 90rem;
+			max-width: 99rem;
 		}
 	}
 	.hero__content {
 		width: 50%;
-		min-width: 90rem;
+		max-width: 99rem;
 	}
 	.hero__wrapper {
 		display: flex;
