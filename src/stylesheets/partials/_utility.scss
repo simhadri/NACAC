@@ -179,7 +179,7 @@
 		background-color: $nacac_blue;
 		position: fixed;
 		width: 100%;
-		height: 9rem;
+		height: 9.2rem;
 		font-size: 1.4rem;
 		z-index:3;
 		border-bottom: 1px solid $nacac_light-blue;
@@ -188,7 +188,7 @@
 			padding-right: 15px;
 		}
 		.mobile-nav__logo img {
-			width: 15rem;
+			height: 5rem;
 			fill: white;
 			color: white;
 			transition: $transition--all;
@@ -197,7 +197,7 @@
 		&.utility-nav--scrolled {
 			height: 8rem;
 			.mobile-nav__logo img {
-				width: 13rem;
+				height: 3.8rem;
 				transition: $transition--all;
 			}
 			.utility-nav__list {
@@ -217,7 +217,7 @@
 		.utility-nav__list {
 			width: calc(100% - 8rem);
 			height: auto;
-			margin: 1.4rem 0;
+			margin: 1rem 0;
 			transition: $transition--all;
 		}
 		.utility-nav__social {
