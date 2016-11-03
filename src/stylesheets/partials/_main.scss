@@ -85,6 +85,27 @@ body.body--freeze {
 .article--tall {
     padding: 6rem 0;
 }
+.article--background-image ,.section--background-image{
+	color: $white;
+	background-color: $nacac-orange;
+	background-position:50% 50%;
+	background-repeat: no-repeat;
+	transition:none !important;
+	.number-block {
+		.number-block__numerals {
+			color: #fff;
+			&:after {
+				border-color: #fff;
+			}
+		}
+		.number-block-block__text {
+			p {
+				font-size: 1.8rem;
+				line-height: 1.5;
+			}
+		}
+	}
+}
 .article__number{
 	display: inline-block;
 	background-color: #f28800;

@@ -46,6 +46,18 @@
 							<p>Id occaecat id irure est nulla adipisicing est commodo fugiat et ad veniam id enim nulla quis in aliqua consequat ullamco esse tempor voluptate amet commodo Duis nostrud qui dolor incididunt Duis proident deserunt qui anim consectetur Excepteur cupidatat Ut deserunt id aliquip aliquip occaecat Ut et aliqua anim mollit labore sunt velit ullamco nisi mollit dolor sit id in Duis nulla reprehenderit adipisicing dolore nulla Excepteur irure in do Ut in commodo laboris minim qui ea officia ex id proident quis anim Excepteur cupidatat fugiat in dolor velit ut in eu minim Ut deserunt sint nostrud elit eiusmod eu amet adipisicing ullamco velit dolor incididunt cillum anim tempor laborum nostrud cillum culpa ad minim pariatur Ut minim consectetur Excepteur in tempor non dolore consectetur dolor enim cillum ut magna aliqua amet voluptate ullamco occaecat cupidatat exercitation minim incididunt adipisicing sit ut ex occaecat occaecat consequat tempor magna ullamco enim dolor anim quis.</p>
 						</div>
 					</section>
+					<section class="section__row section--background-image b-lazy" data-src="/images/fair/numbers-bg.jpg">
+						<header class="section__header">
+							<h2>Membership Benefits</h2>
+						</header>
+						<div class="row">
+							{% set numbers = [8,35,13000] %} {% for i in numbers %}
+							<div class="col-md">
+								{% set number = i %} {% include './_components/number-block.html' %}
+							</div>
+							{% endfor %}
+						</div>
+					</section>
 					<section class="section__row section__row--no-border">
 						
 						{% include '_shared/accordion.html' %}

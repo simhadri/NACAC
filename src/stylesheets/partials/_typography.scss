@@ -222,6 +222,7 @@ ul {
 		font-style: normal;
 	}
 }
+
 .ul--checkmark{
 	li{
 		padding-top: 1rem;
@@ -268,4 +269,7 @@ ul {
 		padding-left: 0;
 		padding-right: 3rem;
 	}
+}
+ul > ul, ol > ol{
+	list-style: none;
 }
