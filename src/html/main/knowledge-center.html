@@ -1,11 +1,6 @@
- {% extends '_layouts/main-application.html' %}
- {% set pageLocation = "Knowledge Center" %}
- {% block content %}
+ {% extends '_layouts/main-application.html' %} {% set pageLocation = "Knowledge Center" %} {% block content %}
 <main>
-	{% include './_shared/utility.html'%}
-	{% set className = "primary-nav--inanimate" %}
-	{% include './_shared/navigation.html'%}
-	{% include './_shared/interior-hero.html'%}
+	{% include './_shared/utility.html'%} {% set className = "primary-nav--inanimate" %} {% include './_shared/navigation.html'%} {% include './_shared/interior-hero.html'%}
 	<article class="article__row content__row article--white">
 		<div class="container">
 			{% include './_components/breadcrumb.html' %}
@@ -20,17 +15,14 @@
 								<header class="section__header">
 									<h2>Related Events &amp; Training</h2>
 								</header>
-								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %}
-								{% include './_components/figure-block.html'%}
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %} {% include './_components/figure-block.html'%}
 								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
 							</div>
 							<div class="col-sm-6">
 								<header class="article__header">
 									<h2>Press Releases</h2>
 								</header>
-								{% include '_components/resource-entry.html'%}
-								{% include '_components/resource-entry.html'%}
-								{% include '_components/resource-entry.html'%}
+								{% include '_components/resource-entry.html'%} {% include '_components/resource-entry.html'%} {% include '_components/resource-entry.html'%}
 								<a href="#" class="btn btn--nacac-blue">Read Full Article</a>
 							</div>
 						</div>
@@ -43,7 +35,6 @@
 									<input type="text" class="form-control input-group__input" placeholder="Search for...">
 									<a href="#" class="input-group__submit"><i class="fa fa-search"></i></a>
 								</div>
-
 							</div>
 							<div class="knowledge-search__filters col-sm-9">
 								<h3>Filter By:</h3>
@@ -107,10 +98,7 @@
 							</ul>
 						</header>
 						<div class="knowledge-search__listings">
-							{% set searchItemTypes = [
-							"suggested", "member", "standard", "standard", "member", "standard", "standard"
-							] %}
-							{% include './_components/search-result-item.html'%}
+							{% set searchItemTypes = [ "suggested", "member", "standard", "standard", "member", "standard", "standard" ] %} {% include './_components/search-result-item.html'%}
 						</div>
 						<ul class="pagination knowledge-search__pagination pagination--bottom">
 							<li>
@@ -135,16 +123,13 @@
 						</header>
 						<div class="row">
 							<div class="col-md-4">
-								{% set figureBlock = { heading: "Calls for Proposals", image: "shared/figure-speaker"} %}
-								{% include './_components/figure-block.html'%}
+								{% set figureBlock = { heading: "Calls for Proposals", image: "shared/figure-speaker"} %} {% include './_components/figure-block.html'%}
 							</div>
 							<div class="col-md-4">
-								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %}
-								{% include './_components/figure-block.html'%}
+								{% set figureBlock = { heading: "Events", image: "shared/figure-career"} %} {% include './_components/figure-block.html'%}
 							</div>
 							<div class="col-md-4">
-								{% set figureBlock = { heading: "Training", image: "shared/figure-students"} %}
-								{% include './_components/figure-block.html'%}
+								{% set figureBlock = { heading: "Training", image: "shared/figure-students"} %} {% include './_components/figure-block.html'%}
 							</div>
 						</div>
 					</section>
@@ -152,11 +137,8 @@
 			</div>
 		</div>
 	</article>
-	{% set addedClassNames = 'article--top-border' %}
-	{% include './_components/full-block-row.html' %}
-	{% include './_shared/footer.html'%}
+	{% set addedClassNames = 'article--top-border' %} {% include './_components/full-block-row.html' %} {% include './_shared/footer.html'%}
 </main>
-{% endblock %}
-{% block javascript %}
+{% endblock %} {% block javascript %}
 <script src="/javascripts/interior.js"></script>
 {% endblock %}
