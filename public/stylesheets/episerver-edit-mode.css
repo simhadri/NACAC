@@ -1,1 +1,1 @@
-body#EpiserverEditMode .hero__wrapper{height:800px}body#EpiserverEditMode .primary-nav{position:fixed;top:0;left:0;overflow:visible;z-index:2;-webkit-transform:translateY(calc(5rem));-ms-transform:translateY(calc(5rem));transform:translateY(calc(5rem))}
+body#EpiserverEditMode .hero__wrapper{height:800px}body#EpiserverEditMode .primary-nav{position:fixed;top:0;left:0;overflow:visible;z-index:2;-ms-transform:translateY(calc(5rem));transform:translateY(calc(5rem))}
