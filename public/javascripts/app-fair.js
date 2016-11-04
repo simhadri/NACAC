@@ -932,15 +932,10 @@ webpackJsonp([1,3],[
 	
 	__webpack_require__(12);
 	
-	__webpack_require__(21);
+	__webpack_require__(16);
 
 /***/ },
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */
+/* 16 */
 /***/ function(module, exports) {
 
 	'use strict';
