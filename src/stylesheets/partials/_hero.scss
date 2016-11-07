@@ -97,8 +97,8 @@
 	}
 	&.hero__wrapper {
 		margin-top: 0;
-		min-height: 64rem;
-		height: 36vw;
+		min-height: 70vh;
+		height: auto;
 		margin-bottom: 5rem;
 		padding-top: 12rem;
 		position: relative;
@@ -120,20 +120,20 @@
 		.hero__btn {}
 	}
 	.hero__background-image{
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: auto;
-		z-index: -1;
-		overflow: hidden;
-		img{
-			position: static;
-			margin-left: auto;
-			margin-right: auto;
-			width: 100%;
-			min-width: 1100px;
-		}
+		// position: fixed;
+		// top: 0;
+		// left: 0;
+		// width: 100%;
+		// height: auto;
+		// z-index: -1;
+		// overflow: hidden;
+		// img{
+		// 	position: static;
+		// 	margin-left: auto;
+		// 	margin-right: auto;
+		// 	width: 100%;
+		// 	min-width: 1100px;
+		// }
 	}
 }
 .hero__scroll{
