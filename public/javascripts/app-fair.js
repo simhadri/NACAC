@@ -782,25 +782,28 @@ webpackJsonp([1,3],[
 	
 	// FUNCTION
 	(function () {
+		var tweetDeck = document.getElementById('tweetDeck');
 		if (document.getElementById('tweetDeck')) {
-			var tweetParse = new _libTweetParseJs2['default']();
-			// DEV/PROD vars
-			var TweetController = (0, _libEnvVarJs2['default'])({ development: '/javascripts/data/twitter-feed.json', production: '/Static/JS/twitter-feed.json' });
+			(function () {
+				var handle = tweetDeck.dataset.feed;
+				var tweetParse = new _libTweetParseJs2['default']();
+				// DEV/PROD consts
+				var TweetController = (0, _libEnvVarJs2['default'])({ development: '/javascripts/data/twitter-' + handle + '.json', production: '/Static/JS/twitter-' + handle + '.json' });
 	
-			$.ajax({
-				url: TweetController,
-				type: 'GET',
-				dataType: 'json',
-				success: function success(data) {
-					var tweetDeck = document.getElementById('tweetDeck');
-					for (var i = 0; i < data.length; i++) {
-						var tweetText = data[i].text;
-						// Clean up tweet, add links
-						tweetText = tweetParse.UrlUserHashtag(tweetText);
-						tweetDeck.innerHTML = tweetDeck.innerHTML + '<div class="col-sm col-xs-12">' + '<div class="tweet-wrap">' + '<div class="tweet">' + tweetText + '<div class="tweet-meta">' + '<a href="' + data[i].user.url + '"><img class="tweet__profile-pic" src="' + data[i].user.profile_image_url + '"></a>' + '<a href="' + data[i].user.url + '">' + data[i].user.screen_name + '</a><br>' + '<a href="#">' + tweetParse.parseTimeAgo(data[i].created_at) + '</a>' + '</div>' + '</div>' + '</div>' + '</div>';
+				$.ajax({
+					url: TweetController,
+					type: 'GET',
+					dataType: 'json',
+					success: function success(data) {
+						for (var i = 0; i < data.length; i++) {
+							var tweetText = data[i].text;
+							// Clean up tweet, add links
+							tweetText = tweetParse.UrlUserHashtag(tweetText);
+							tweetDeck.innerHTML = tweetDeck.innerHTML + '<div class="col-sm col-xs-12">' + '<div class="tweet-wrap">' + '<div class="tweet">' + tweetText + '<div class="tweet-meta">' + '<a href="' + data[i].user.url + '"><img class="tweet__profile-pic" src="' + data[i].user.profile_image_url + '"></a>' + '<a href="' + data[i].user.url + '">' + data[i].user.screen_name + '</a><br>' + '<a href="#">' + tweetParse.parseTimeAgo(data[i].created_at) + '</a>' + '</div>' + '</div>' + '</div>' + '</div>';
+						}
 					}
-				}
-			});
+				});
+			})();
 		}
 	})();
 
