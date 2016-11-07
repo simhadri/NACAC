@@ -12,17 +12,18 @@ import EnvVar from 'lib/envVar.js';
 
 // FUNCTION
 (function() {
+	const tweetDeck = document.getElementById('tweetDeck');
 	if (document.getElementById('tweetDeck')) {
-		var tweetParse = new TweetParse;
-		// DEV/PROD vars
-		var TweetController = EnvVar({development:'/javascripts/data/twitter-feed.json',production:'/Static/JS/twitter-feed.json'});
+		const handle = tweetDeck.dataset.feed;
+		const tweetParse = new TweetParse;
+		// DEV/PROD consts
+		const TweetController = EnvVar({development:`/javascripts/data/twitter-${handle}.json`,production:`/Static/JS/twitter-${handle}.json`});
 		
 		$.ajax({
 			url: TweetController,
 			type: 'GET',
 			dataType: 'json',
 			success: function(data) {
-				var tweetDeck = document.getElementById('tweetDeck');
 				for (let i = 0; i < data.length; i++) {
 					let tweetText = data[i].text;
 					// Clean up tweet, add links
