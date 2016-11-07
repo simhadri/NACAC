@@ -1,0 +1,146 @@
+.schedule__navigation.tab__navigation {
+	.tab__button {
+		display: table-cell;
+		float: none;
+		max-width: 24rem;
+		color: inherit;
+		border: none;
+		border-bottom: 3px solid transparent;
+		background-color: $nacac_bg-light-grey;
+		position: relative;
+		&:before {
+			content: "";
+			background-color: $nacac_border-lightgrey;
+			height: 3rem;
+			position: absolute;
+			width: 1px;
+			left: -1px;
+			top: 1.5rem;
+		}
+		&.trigger__button--active {
+			border-bottom: 3px solid $nacac_light-blue;
+			color: inherit;
+			background-color: $white;
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
+.schedule__block {
+	border: 1px solid $nacac_border-lightgrey;
+	margin-top: 4rem;
+	.schedule__h2{
+		color: $nacac_light-blue;
+		font-family: $sans;
+		font-weight: bold;
+		margin-bottom: 0;
+
+	}
+	.schedule__h3{
+		font-family: $sans;
+		font-weight: normal;
+		margin-top: 1rem;
+	}
+}
+.schedule__set{
+	margin-top: 4rem;
+}
+.schedule__entry {
+	position: relative;
+	overflow: hidden;
+	// Vertical Time Line
+	&:after {
+		content: "";
+		background-color: $timeline-grey;
+		position: absolute;
+		height: 60rem;
+		width: 4px;
+		left: 3.6rem;
+		top: 0;
+		bottom: 0;
+	}
+	// Border
+	&:before {
+		content: "";
+		background-color: $nacac_border-lightgrey;
+		position: absolute;
+		height: 1px;
+		width: calc(100% - 16rem);
+		left: 8rem;
+		top: 0;
+	}
+	&:first-child:after {
+		box-shadow: inset 0px 24px 24px -12px $white;
+	}
+	&:first-child:before {
+		display: none;
+	}
+	&:last-child:after{
+		top: initial;
+		bottom: 0;
+		box-shadow: inset 0px -24px 24px -12px $white;
+	}
+	// Clock
+	.schedule-entry__icon {
+		position: absolute;
+		left: 2rem;
+		font-size: 4rem;
+		top: 2rem;
+		height: 5rem;
+		padding-top: 0.5rem;
+		text-align: center;
+		color: $nacac_light-blue;
+		z-index: 1;
+		background-color: $white;
+	}
+	.schedule__time {
+		h3 {
+			font-weight: normal;
+			text-align: left;
+			padding-left: 6.5rem;
+		}
+	}
+	.schedule__content {
+		margin-bottom: 2rem;
+		p{
+			margin: 0;
+		}
+	}
+}
+
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+
+@include break(max, $screen-sm-max) {
+	.schedule__entry {
+		.schedule__content,.schedule__time{
+		    z-index: 1;
+		}
+		// Vertical Time Line
+		&:after{
+			display: none;
+		}
+	}
+}
+
+
+/*
+██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
+██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
+██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
+														  
+*/
+
+@include break(min, $screen-md-min) {}
