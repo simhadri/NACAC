@@ -38,6 +38,7 @@
 .hero__wrapper {
 	background: radial-gradient(ellipse at center,rgba(0,0,0,.33) 0,rgba(0,0,0,.2) 33%,transparent 66%);
 	height: calc(100vh - 7rem);
+	min-height: 70rem;
     position: relative;
 	.hero__breadcrumb {
 		position: absolute;
