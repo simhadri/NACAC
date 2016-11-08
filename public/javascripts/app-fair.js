@@ -506,6 +506,17 @@ webpackJsonp([1,3],[
 			closeSearchFilterNav();
 		});
 	
+		// This is weird but there is a min-height to the hero
+		// we need to redraw the floating nav
+		var placeNavWhenShortWindow = function placeNavWhenShortWindow() {
+			var windowHeight = window.innerHeight;
+			if (windowHeight < 770 && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')) {
+				headStyle.addRules({ '.primary-nav': 'transform: translateY(700px);transition: none' });
+			} else {
+				headStyle.removeRules();
+			}
+		};
+	
 		navItemLinks.on("click", function (event) {
 			event.preventDefault();
 			var selected = $(this);
@@ -530,6 +541,9 @@ webpackJsonp([1,3],[
 			}
 		});
 		navScrollDependencies();
+		placeNavWhenShortWindow();
+	
+		window.addEventListener('resize', placeNavWhenShortWindow);
 		window.addEventListener('scroll', function () {
 			(0, _libThrottledJs2['default'])(navScrollDependencies(), 50);
 		});
@@ -786,9 +800,10 @@ webpackJsonp([1,3],[
 		if (document.getElementById('tweetDeck')) {
 			(function () {
 				var handle = tweetDeck.dataset.feed;
+				var cleanHandle = handle.replace('@', '');
 				var tweetParse = new _libTweetParseJs2['default']();
 				// DEV/PROD consts
-				var TweetController = (0, _libEnvVarJs2['default'])({ development: '/javascripts/data/twitter-' + handle + '.json', production: '/Static/JS/twitter-' + handle + '.json' });
+				var TweetController = (0, _libEnvVarJs2['default'])({ development: '/javascripts/data/twitter-' + cleanHandle + '.json', production: '/Static/JS/twitter-' + cleanHandle + '.json' });
 	
 				$.ajax({
 					url: TweetController,
