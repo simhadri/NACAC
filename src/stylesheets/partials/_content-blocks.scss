@@ -44,13 +44,21 @@
 	p.color-block__info {}
 	p.color-block__text {}
 }
-
+.color-block:nth-child(1n){
+	background-color: $nacac_purple;
+}
+.color-block:nth-child(2n){
+	background-color: $nacac_green;
+}
+.color-block:nth-child(3n){
+	background-color: $nacac_light-orange;
+}
 a.color-block {
-	background: $white;
+	// background: $white;
 	color: $white;
 	img.color-block__image {
 		max-width: none;
-		opacity: 0.8;
+		// opacity: 0.8;
 		width: calc(100% + 6rem);
 		transition: $transition--all;
 		transform: translate3d(-5rem, 0, 0);
@@ -414,8 +422,9 @@ a.color-block {
 			text-align: left;
 		}
 	}
+
 	a.color-block {
-		background: $white;
+		// background: $white;
 		color: $white;
 		img.color-block__image {
 			opacity: 1;
