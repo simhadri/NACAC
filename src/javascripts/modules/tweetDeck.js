@@ -15,9 +15,10 @@ import EnvVar from 'lib/envVar.js';
 	const tweetDeck = document.getElementById('tweetDeck');
 	if (document.getElementById('tweetDeck')) {
 		const handle = tweetDeck.dataset.feed;
+		const cleanHandle = handle.replace('@', '');
 		const tweetParse = new TweetParse;
 		// DEV/PROD consts
-		const TweetController = EnvVar({development:`/javascripts/data/twitter-${handle}.json`,production:`/Static/JS/twitter-${handle}.json`});
+		const TweetController = EnvVar({development:`/javascripts/data/twitter-${cleanHandle}.json`,production:`/Static/JS/twitter-${cleanHandle}.json`});
 		
 		$.ajax({
 			url: TweetController,

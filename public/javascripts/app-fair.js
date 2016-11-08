@@ -800,9 +800,10 @@ webpackJsonp([1,3],[
 		if (document.getElementById('tweetDeck')) {
 			(function () {
 				var handle = tweetDeck.dataset.feed;
+				var cleanHandle = handle.replace('@', '');
 				var tweetParse = new _libTweetParseJs2['default']();
 				// DEV/PROD consts
-				var TweetController = (0, _libEnvVarJs2['default'])({ development: '/javascripts/data/twitter-' + handle + '.json', production: '/Static/JS/twitter-' + handle + '.json' });
+				var TweetController = (0, _libEnvVarJs2['default'])({ development: '/javascripts/data/twitter-' + cleanHandle + '.json', production: '/Static/JS/twitter-' + cleanHandle + '.json' });
 	
 				$.ajax({
 					url: TweetController,
