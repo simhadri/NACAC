@@ -458,8 +458,13 @@
 		.primary-nav .primary-nav__interior{
 			display: flex;
 			flex-wrap: wrap;
+			// Masonry
+			// flex-direction: column;
+			// height: 70vh;	
 			> li{
 				flex-basis: 25%;
+				// Masonry Might fix Odd layout
+				// flex: 1 0 auto;
 			}
 		}
 	}
