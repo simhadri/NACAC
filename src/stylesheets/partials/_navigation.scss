@@ -454,6 +454,15 @@
 		overflow: visible;
 		z-index: 2;
 	}
+	.flexbox{
+		.primary-nav .primary-nav__interior{
+			display: flex;
+			flex-wrap: wrap;
+			> li{
+				flex-basis: 25%;
+			}
+		}
+	}
 }
 @include break(min, $screen-md-min, max, $screen-lg) {
 	.primary-nav .primary-nav__item {

@@ -25,9 +25,13 @@
 }
 
 
-// body {
-//     -webkit-font-smoothing: subpixel-antialiased;
-// }
+body {
+@media 
+	(-webkit-min-device-pixel-ratio: 2),
+	(min-resolution: 192dpi) {
+		-webkit-font-smoothing: subpixel-antialiased;
+	}
+}
 
 body.body--freeze {
 	overflow: hidden;
