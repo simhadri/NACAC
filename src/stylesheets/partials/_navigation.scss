@@ -454,6 +454,20 @@
 		overflow: visible;
 		z-index: 2;
 	}
+	.flexbox{
+		.primary-nav .primary-nav__interior{
+			display: flex;
+			flex-wrap: wrap;
+			// Masonry
+			// flex-direction: column;
+			// height: 70vh;	
+			> li{
+				flex-basis: 25%;
+				// Masonry Might fix Odd layout
+				// flex: 1 0 auto;
+			}
+		}
+	}
 }
 @include break(min, $screen-md-min, max, $screen-lg) {
 	.primary-nav .primary-nav__item {

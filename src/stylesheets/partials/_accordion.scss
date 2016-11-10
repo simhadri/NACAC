@@ -1,5 +1,8 @@
 .accordion {
 	list-style: none;
+	.accordion__list{
+		padding: 0;
+	}
 	.accordion__header{
 		padding: 2rem;
 	}
@@ -74,7 +77,7 @@
 			.accordion-item__section {
 				float: left;
 				width: 60%;
-				padding-left: 2rem;
+				padding: 2rem;
 			}
 		}
 		.accordion-item__trigger {
