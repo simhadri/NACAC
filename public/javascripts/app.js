@@ -40,7 +40,7 @@ webpackJsonp([0,3],[
 	
 	__webpack_require__(12);
 	
-	__webpack_require__(22);
+	__webpack_require__(15);
 
 /***/ },
 /* 2 */
@@ -984,14 +984,7 @@ webpackJsonp([0,3],[
 	module.exports = envVar;
 
 /***/ },
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */
+/* 15 */
 /***/ function(module, exports) {
 
 	// FUNCTION
