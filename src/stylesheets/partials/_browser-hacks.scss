@@ -3,6 +3,7 @@
 (-ms-high-contrast: active) {
     .utility-nav {
         background-color: $nacac_light-blue;
+        box-shadow: none;
         .utility-search__trigger {
             cursor: pointer;
         }

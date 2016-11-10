@@ -122,8 +122,7 @@
 		list-style: none;
 		position: relative;
 		height: 7rem;
-		box-shadow: 780px 0 0 0px $white_translucent,
-		-780px 0 0 0px $white_translucent;
+		// box-shadow: 780px 0 0 0px $white_translucent,-780px 0 0 0px $white_translucent;
 		.primary-nav__interior {
 			h3 {
 				@include sans-uppercase-normal;
@@ -131,7 +130,7 @@
 		}
 	}
 	.primary-nav__item {
-		background-color: $white_translucent;
+		// background-color: $white_translucent;
 		line-height: 1;
 		height: 7rem;
 		text-align: center;
@@ -293,8 +292,11 @@
 		width: 100%;
 		overflow: visible;
 		z-index: 2;
+		background-color: $white_translucent;
+		transition: $transition--all;
 		&.primary-nav--grey{
-			background: $nacac_nav_only_grey;
+			background: $nacac_nav-mixed-grey;
+			transition: $transition--all;
 		}
 		&.primary-nav--up {
 			transform: translateY(5rem);
@@ -361,7 +363,7 @@
 			}
 		}
 		.primary-nav__interior {
-			box-shadow: 780px 0 0 0px $white, -780px 0 0 0px $white;
+			// box-shadow: 780px 0 0 0px $white, -780px 0 0 0px $white;
 			position: absolute;
 			width: 100%;
 			left: 0;
@@ -459,12 +461,12 @@
 			display: flex;
 			flex-wrap: wrap;
 			// Masonry
-			// flex-direction: column;
-			// height: 70vh;	
+			flex-direction: column;
+			height: 70vh;	
 			> li{
 				flex-basis: 25%;
 				// Masonry Might fix Odd layout
-				// flex: 1 0 auto;
+				flex: 1 0 auto;
 			}
 		}
 	}
