@@ -39,6 +39,8 @@ webpackJsonp([0,3],[
 	__webpack_require__(11);
 	
 	__webpack_require__(12);
+	
+	__webpack_require__(22);
 
 /***/ },
 /* 2 */
@@ -980,6 +982,43 @@ webpackJsonp([0,3],[
 		}
 	};
 	module.exports = envVar;
+
+/***/ },
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */
+/***/ function(module, exports) {
+
+	// FUNCTION
+	'use strict';
+	
+	var resizeAccordionImages = function resizeAccordionImages() {
+		var accordion = document.querySelector('.accordion');
+		if (accordion) {
+			var accordionItemAsideSet = document.querySelectorAll('.accordion-item__aside img');
+			for (var i = 0; i < accordionItemAsideSet.length; i++) {
+				var imageElement = accordionItemAsideSet[i];
+				var imageElementWidth = imageElement.offsetWidth;
+				var imageElementHeight = imageElement.offsetHeight;
+				var imageRatio = imageElementWidth / imageElementHeight;
+				var n = imageElementWidth / 2 - imageElementHeight / 2;
+				if (imageRatio > 1) {
+					imageElement.style.marginLeft = '-' + n + 'px';
+				}
+				if (imageRatio < 1) {
+					imageElement.style.marginTop = n + 'px';
+					imageElement.style.height = 'auto';
+					imageElement.style.width = imageElementHeight + 'px';
+				}
+			}
+		}
+	};
+	window.addEventListener('onload', resizeAccordionImages());
 
 /***/ }
 ]);
