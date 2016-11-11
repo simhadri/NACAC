@@ -405,6 +405,8 @@
 					background-position: 0 1.1em;
 					background-repeat: no-repeat;
 					-webkit-font-smoothing: subpixel-antialiased;
+					font-size: 1.6rem;
+					font-weight: bold;
 					&:hover {
 						color: $nacac_blue;
 						background-image: linear-gradient(to bottom,$nacac_blue 100%,$nacac_blue 100%);
