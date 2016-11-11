@@ -363,7 +363,7 @@
 			}
 		}
 		.primary-nav__interior {
-			// box-shadow: 780px 0 0 0px $white, -780px 0 0 0px $white;
+			box-shadow: 780px 0 0 0px $white, -780px 0 0 0px $white;
 			position: absolute;
 			width: 100%;
 			left: 0;
@@ -461,12 +461,12 @@
 			display: flex;
 			flex-wrap: wrap;
 			// Masonry
-			flex-direction: column;
-			height: 70vh;	
+			// flex-direction: column;
+			// height: 70vh;	
 			> li{
 				flex-basis: 25%;
 				// Masonry Might fix Odd layout
-				flex: 1 0 auto;
+				// flex: 1 0 auto;
 			}
 		}
 	}
