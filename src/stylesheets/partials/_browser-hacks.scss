@@ -46,7 +46,17 @@
 }
 
 // Edge 12+
-@supports (-ms-accelerator:true) {
+html.Edge-14{
+    // .hero__wrapper{
+    //     top: -7rem;
+    //     padding-bottom: -7rem;
+    //     overflow-x: hidden;
+    // }
+    // .hero__background-image{
+    //     position: absolute;
+    //     z-index: 1;
+    // }
+
     .color-block img.color-block__image {
         width: 100%;
         height: auto;
