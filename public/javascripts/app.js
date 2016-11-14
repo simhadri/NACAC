@@ -38,11 +38,11 @@ webpackJsonp([0,3],[
 	
 	__webpack_require__(11);
 	
-	__webpack_require__(22);
-	
 	__webpack_require__(12);
 	
-	__webpack_require__(15);
+	__webpack_require__(13);
+	
+	__webpack_require__(16);
 
 /***/ },
 /* 2 */
@@ -826,6 +826,70 @@ webpackJsonp([0,3],[
 
 /***/ },
 /* 12 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	navigator.sayswho = function () {
+		var ua = navigator.userAgent,
+		    tem,
+		    M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+		if (/trident/i.test(M[1])) {
+			tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+			return 'IE-' + (tem[1] || '');
+		}
+		if (M[1] === 'Chrome') {
+			tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
+			if (tem != null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+		}
+		M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+		if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
+		return M.join('-');
+	};
+	document.querySelector('html').className += ' ' + navigator.sayswho().replace(' ', '-');
+	
+	var pomp = function pomp() {
+	
+		var imgCont = document.createElement('div');
+		imgCont.setAttribute('id', 'imgCont');
+		imgCont.style.width = '100%';
+		imgCont.style.height = '100%';
+		imgCont.style.position = 'fixed';
+		imgCont.style.top = 0;
+		imgCont.style.zIndex = 99;
+	
+		var imgElm = document.createElement('img');
+		var i = 1;
+		imgElm.src = 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Graduation_hat.svg';
+		imgElm.style.position = 'absolute';
+		imgElm.style.bottom = '-10%';
+		imgElm.style.zIndex = 8;
+		imgElm.style.width = 100 * i / 0.4 + 'px';
+		imgElm.style.transition = 'all 600ms ease-out';
+		var mainElement = document.querySelector('body').appendChild(imgCont);
+		var mainElement = document.querySelector('#imgCont').appendChild(imgElm);
+	
+		setTimeout(function () {
+			animation();
+		}, 400);
+		setTimeout(function () {
+			animationDown();
+		}, 900);
+		function animation() {
+			imgElm.style.bottom = '80%';
+			imgElm.style.transform = 'rotate(90deg)';
+		}
+		function animationDown() {
+			imgElm.style.transition = 'all 600ms ease-in';
+			imgElm.style.bottom = '-10%';
+			imgElm.style.transform = 'rotate(180deg)';
+		}
+	};
+	
+	document.addEventListener('onload', pomp());
+
+/***/ },
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// This is dummy Local Data
@@ -841,11 +905,11 @@ webpackJsonp([0,3],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libTweetParseJs = __webpack_require__(13);
+	var _libTweetParseJs = __webpack_require__(14);
 	
 	var _libTweetParseJs2 = _interopRequireDefault(_libTweetParseJs);
 	
-	var _libEnvVarJs = __webpack_require__(14);
+	var _libEnvVarJs = __webpack_require__(15);
 	
 	var _libEnvVarJs2 = _interopRequireDefault(_libEnvVarJs);
 	
@@ -878,7 +942,7 @@ webpackJsonp([0,3],[
 	})();
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 	// Tweet Parse!
@@ -965,7 +1029,7 @@ webpackJsonp([0,3],[
 	module.exports = TweetParse;
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Usage:
@@ -985,7 +1049,7 @@ webpackJsonp([0,3],[
 	module.exports = envVar;
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports) {
 
 	// FUNCTION
@@ -1013,36 +1077,6 @@ webpackJsonp([0,3],[
 		}
 	};
 	window.addEventListener('onload', resizeAccordionImages());
-
-/***/ },
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	navigator.sayswho = function () {
-	    var ua = navigator.userAgent,
-	        tem,
-	        M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-	    if (/trident/i.test(M[1])) {
-	        tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
-	        return 'IE-' + (tem[1] || '');
-	    }
-	    if (M[1] === 'Chrome') {
-	        tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
-	        if (tem != null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
-	    }
-	    M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
-	    if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
-	    return M.join('-');
-	};
-	document.querySelector('html').className += ' ' + navigator.sayswho().replace(' ', '-');
 
 /***/ }
 ]);

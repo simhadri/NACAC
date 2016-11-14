@@ -2,7 +2,7 @@ webpackJsonp([1,3],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(16);
+	module.exports = __webpack_require__(17);
 
 
 /***/ },
@@ -769,7 +769,8 @@ webpackJsonp([1,3],[
 	})();
 
 /***/ },
-/* 12 */
+/* 12 */,
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// This is dummy Local Data
@@ -785,11 +786,11 @@ webpackJsonp([1,3],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libTweetParseJs = __webpack_require__(13);
+	var _libTweetParseJs = __webpack_require__(14);
 	
 	var _libTweetParseJs2 = _interopRequireDefault(_libTweetParseJs);
 	
-	var _libEnvVarJs = __webpack_require__(14);
+	var _libEnvVarJs = __webpack_require__(15);
 	
 	var _libEnvVarJs2 = _interopRequireDefault(_libEnvVarJs);
 	
@@ -822,7 +823,7 @@ webpackJsonp([1,3],[
 	})();
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 	// Tweet Parse!
@@ -909,7 +910,7 @@ webpackJsonp([1,3],[
 	module.exports = TweetParse;
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Usage:
@@ -929,8 +930,8 @@ webpackJsonp([1,3],[
 	module.exports = envVar;
 
 /***/ },
-/* 15 */,
-/* 16 */
+/* 16 */,
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// *********************
@@ -948,7 +949,7 @@ webpackJsonp([1,3],[
 	
 	__webpack_require__(11);
 	
-	__webpack_require__(12);
+	__webpack_require__(13);
 	
 	// import 'modules/map-temp';
 
