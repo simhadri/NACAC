@@ -1,4 +1,46 @@
-webpackJsonp([0,3],[
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+/******/
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "javascripts/";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -868,7 +910,7 @@ webpackJsonp([0,3],[
 							var tweetText = data[i].text;
 							// Clean up tweet, add links
 							tweetText = tweetParse.UrlUserHashtag(tweetText);
-							tweetDeck.innerHTML = tweetDeck.innerHTML + '<div class="col-sm col-xs-12">' + '<div class="tweet-wrap">' + '<div class="tweet">' + tweetText + '<div class="tweet-meta">' + '<a href="' + data[i].user.url + '"><img class="tweet__profile-pic" src="' + data[i].user.profile_image_url + '"></a>' + '<a href="' + data[i].user.url + '">' + data[i].user.screen_name + '</a><br>' + '<a href="#">' + tweetParse.parseTimeAgo(data[i].created_at) + '</a>' + '</div>' + '</div>' + '</div>' + '</div>';
+							tweetDeck.innerHTML = tweetDeck.innerHTML + ('<div class="col-sm col-xs-12">\n\t\t\t\t\t\t\t<div class="tweet-wrap">\n\t\t\t\t\t\t\t\t<div class="tweet"> \n\t\t\t\t\t\t\t\t\t' + tweetText + ' \n\t\t\t\t\t\t\t\t\t<div class="tweet-meta">\n\t\t\t\t\t\t\t\t\t\t<a href="' + data[i].user.url + '"><img class="tweet__profile-pic" src="' + data[i].user.profile_image_url_https + '"></a>\n\t\t\t\t\t\t\t\t\t\t<a href="' + data[i].user.url + '">' + data[i].user.screen_name + '</a><br>\n\t\t\t\t\t\t\t\t\t\t<a href="#">' + tweetParse.parseTimeAgo(data[i].created_at) + '</a>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>');
 						}
 					}
 				});
@@ -1014,5 +1056,5 @@ webpackJsonp([0,3],[
 	window.addEventListener('onload', resizeAccordionImages());
 
 /***/ }
-]);
+/******/ ]);
 //# sourceMappingURL=app.js.map

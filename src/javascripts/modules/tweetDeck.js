@@ -30,17 +30,18 @@ import EnvVar from 'lib/envVar.js';
 					// Clean up tweet, add links
 					tweetText = tweetParse.UrlUserHashtag(tweetText);
 					tweetDeck.innerHTML = tweetDeck.innerHTML +
-						'<div class="col-sm col-xs-12">' +
-							'<div class="tweet-wrap">' +
-								'<div class="tweet">' + tweetText +
-									'<div class="tweet-meta">' +
-										'<a href="'+data[i].user.url+'"><img class="tweet__profile-pic" src="' + data[i].user.profile_image_url + '"></a>' +
-										'<a href="'+data[i].user.url+'">'+data[i].user.screen_name+'</a><br>' +
-										'<a href="#">' + tweetParse.parseTimeAgo(data[i].created_at) + '</a>' +
-									'</div>' +
-								'</div>' +
-							'</div>' +
-						'</div>'
+						`<div class="col-sm col-xs-12">
+							<div class="tweet-wrap">
+								<div class="tweet"> 
+									${tweetText} 
+									<div class="tweet-meta">
+										<a href="${data[i].user.url}"><img class="tweet__profile-pic" src="${data[i].user.profile_image_url_https}"></a>
+										<a href="${data[i].user.url}">${data[i].user.screen_name}</a><br>
+										<a href="#">${tweetParse.parseTimeAgo(data[i].created_at)}</a>
+									</div>
+								</div>
+							</div>
+						</div>`
 				}
 			}
 		})
