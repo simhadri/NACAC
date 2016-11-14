@@ -210,7 +210,6 @@ webpackJsonp([1,3],[
 	        window.requestAnimationFrame = function (callback, element) {
 	
 	            var currTime = new Date().getTime();
-	            console.log(currTime);
 	            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
 	            var id = window.setTimeout(function () {
 	                callback(currTime + timeToCall);
