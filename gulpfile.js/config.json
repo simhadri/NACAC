@@ -14,7 +14,7 @@
     "js": {
       "src": "javascripts",
       "dest": "javascripts",
-      "extractSharedJs": false,
+      "extractSharedJs": true,
       "entries": {
         "app": ["./app.js"],
         "app-fair": ["./app-fair.js"],

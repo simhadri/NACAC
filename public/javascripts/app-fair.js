@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -41,6 +42,9 @@
 /******/ })
 /************************************************************************/
 /******/ ([
+=======
+webpackJsonp([1,3],[
+>>>>>>> develop
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -996,4 +1000,9 @@
 	// import 'modules/map-temp';
 
 /***/ }
+<<<<<<< HEAD
 /******/ ]);
+=======
+]);
+//# sourceMappingURL=app-fair.js.map
+>>>>>>> develop

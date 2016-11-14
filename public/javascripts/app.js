@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -41,6 +42,9 @@
 /******/ })
 /************************************************************************/
 /******/ ([
+=======
+webpackJsonp([0,3],[
+>>>>>>> develop
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1056,4 +1060,9 @@
 	window.addEventListener('onload', resizeAccordionImages());
 
 /***/ }
+<<<<<<< HEAD
 /******/ ]);
+=======
+]);
+//# sourceMappingURL=app.js.map
+>>>>>>> develop
