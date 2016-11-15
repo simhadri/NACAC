@@ -849,7 +849,6 @@ webpackJsonp([0,3],[
 	document.querySelector('html').className += ' ' + navigator.sayswho().replace(' ', '-');
 	
 	var animateCaps = function animateCaps(element, factor) {
-		console.log(factor * 30);
 		setTimeout(function () {
 			animation();
 		}, 600 + factor * 30);
@@ -897,6 +896,9 @@ webpackJsonp([0,3],[
 			imgElm.style.left = 20 + Math.floor(Math.random() * 60 + 1) + '%';
 			imgElm.style.width = 90 + n + 'px';
 			imgElm.style.transition = 'all 600ms ease-out';
+			imgElm.style['-webkit-user-select'] = 'none';
+			imgElm.style['-moz-user-select'] = 'none';
+			imgElm.style['-ms-user-select'] = 'none';
 			var mainElement = document.querySelector('body').appendChild(imgCont);
 			var mainElement = document.querySelector('#imgCont').appendChild(imgElm);
 		}
@@ -926,8 +928,6 @@ webpackJsonp([0,3],[
 		var elm = document.querySelector('.breadcrumb');
 		elm.addEventListener('click', onClick);
 	}
-	
-	// document.addEventListener('onload', pomp());
 
 /***/ },
 /* 13 */

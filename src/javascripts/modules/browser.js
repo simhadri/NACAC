@@ -17,7 +17,6 @@ navigator.sayswho = function() {
 document.querySelector('html').className += ' ' + navigator.sayswho().replace(' ', '-');
 
 const animateCaps = function(element, factor) {
-	console.log(factor * 30)
 	setTimeout(function() { animation() }, 600+ factor*30);
 	setTimeout(function() { animationDown() }, 1200 + factor*30);
 	setTimeout(function() { removeCaps() }, 2600);
@@ -59,6 +58,9 @@ const pomp = function() {
 		imgElm.style.left = `${20+Math.floor((Math.random() * 60) + 1)}%`;
 		imgElm.style.width = `${(90)+n}px`;
 		imgElm.style.transition = 'all 600ms ease-out';
+		imgElm.style['-webkit-user-select'] = 'none';
+		imgElm.style['-moz-user-select'] = 'none';
+		imgElm.style['-ms-user-select'] = 'none';
 		var mainElement = document.querySelector('body').appendChild(imgCont);
 		var mainElement = document.querySelector('#imgCont').appendChild(imgElm);
 	}
@@ -89,5 +91,3 @@ if (document.querySelector('.breadcrumb')) {
 	var elm = document.querySelector('.breadcrumb');
 	elm.addEventListener('click', onClick);
 }
-
-// document.addEventListener('onload', pomp());
