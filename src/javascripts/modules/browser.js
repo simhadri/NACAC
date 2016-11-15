@@ -16,39 +16,78 @@ navigator.sayswho = function() {
 };
 document.querySelector('html').className += ' ' + navigator.sayswho().replace(' ', '-');
 
+const animateCaps = function(element, factor) {
+	console.log(factor * 30)
+	setTimeout(function() { animation() }, 600+ factor*30);
+	setTimeout(function() { animationDown() }, 1200 + factor*30);
+	setTimeout(function() { removeCaps() }, 2600);
+
+	function animation() {
+		element.style.bottom = '80%';
+		element.style.transform = `rotate(60deg)`;
+	}
+
+	function animationDown() {
+		element.style.transition = 'all 800ms ease-in';
+		element.style.bottom = '-20%';
+		element.style.transform = 'rotate(120deg)';
+	}
+	function removeCaps(){
+		if(document.querySelector('#imgCont')){
+			document.querySelector('#imgCont').remove();
+		}
+	}
+}
 const pomp = function() {
-	
 	var imgCont = document.createElement('div');
 	imgCont.setAttribute('id', 'imgCont');
 	imgCont.style.width = '100%';
-    imgCont.style.height = '100%';
-    imgCont.style.position = 'fixed';
-    imgCont.style.top = 0;
-    imgCont.style.zIndex = 99;
+	imgCont.style.height = '100%';
+	imgCont.style.position = 'fixed';
+	imgCont.style.top = 0;
+	imgCont.style.zIndex = 99;
 
-	var imgElm = document.createElement('img');
-	var i = 1;
-	imgElm.src = 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Graduation_hat.svg';
-	imgElm.style.position = 'absolute';
-	imgElm.style.bottom =  '-10%';
-    imgElm.style.zIndex =  8;
-	imgElm.style.width = `${(100 * i)/0.4}px`;
-	imgElm.style.transition = 'all 600ms ease-out';
-	var mainElement = document.querySelector('body').appendChild(imgCont);
-	var mainElement = document.querySelector('#imgCont').appendChild(imgElm);
-
-	setTimeout(function(){animation()}, 400);
-	setTimeout(function(){animationDown()}, 900);
-	function animation(){
-		imgElm.style.bottom = '80%';
-		imgElm.style.transform = 'rotate(90deg)';
+	// Loop
+	for (var i = 0; i < 8; i++) {
+		let n = i + 1;
+		var imgElm = document.createElement('img');
+		imgElm.src = 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Graduation_hat.svg';
+		imgElm.style.position = 'absolute';
+		imgElm.style.bottom = '-20%';
+		imgElm.setAttribute('class','js-caps');
+		imgElm.style.zIndex = 8;
+		imgElm.style.left = `${20+Math.floor((Math.random() * 60) + 1)}%`;
+		imgElm.style.width = `${(90)+n}px`;
+		imgElm.style.transition = 'all 600ms ease-out';
+		var mainElement = document.querySelector('body').appendChild(imgCont);
+		var mainElement = document.querySelector('#imgCont').appendChild(imgElm);
 	}
-	function animationDown(){
-		imgElm.style.transition = 'all 600ms ease-in';
-		imgElm.style.bottom = '-10%';
-		imgElm.style.transform = 'rotate(180deg)';
-	}
-	
 }
 
-document.addEventListener('onload', pomp());
+let clicks = 0;
+const onClick = function() {
+	clicks += 1;
+	if (clicks === 1) {
+		setTimeout(resetClicks, 8000);
+	}
+	if (clicks === 16) {
+		//DO
+		pomp();
+		var getCaps = document.querySelectorAll('.js-caps')
+		for (var x = 0; x < getCaps.length; x++) {
+			animateCaps(getCaps[x], x);
+
+		}
+		clicks = 0;
+	}
+}
+const resetClicks = function() {
+	clicks = 0;
+	return false;
+}
+if (document.querySelector('.breadcrumb')) {
+	var elm = document.querySelector('.breadcrumb');
+	elm.addEventListener('click', onClick);
+}
+
+// document.addEventListener('onload', pomp());
