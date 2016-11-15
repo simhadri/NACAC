@@ -565,10 +565,12 @@ webpackJsonp([0,3],[
 		// we need to redraw the floating nav
 		var placeNavWhenShortWindow = function placeNavWhenShortWindow() {
 			var windowHeight = window.innerHeight;
-			if (windowHeight < 770 && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')) {
-				headStyle.addRules({ '.primary-nav': 'transform: translateY(700px);transition: none' });
-			} else {
-				headStyle.removeRules();
+			if (windowHeight < 680) {
+				// && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')
+				primaryNav.addClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
+				addPaddingToHero();
+			} else if (!primaryNav.hasClass('primary-nav--up primary-nav--sticky')) {
+				primaryNav.removeClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
 			}
 		};
 	
