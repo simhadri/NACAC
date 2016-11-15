@@ -1,10 +1,8 @@
 .tweet-deck {
 	@media screen and (min-width: 992px) {
-		max-width: 80rem;
 		margin: 0 auto;
 	}
 	@media screen and (max-width: 767px) {
-		max-width: 50rem;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -86,9 +84,9 @@
 */
 
 @include break(min, $screen-md-min) {
-	.tweet-deck__row {
+	.tweet-deck {
 		.col-sm {
-			flex-basis: calc(33% - 20px);
+			flex-basis: 33%;
 		}
 	}
 }
