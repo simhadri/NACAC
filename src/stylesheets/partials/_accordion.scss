@@ -119,6 +119,10 @@
 */
 
 @include break(max, $screen-sm-max) {
+	.accordion {
+		margin-right: -2rem;
+		margin-left: -2rem;
+	}
 	.accordion .accordion__item .accordion-item__article .accordion-item__section {
 		float: left;
 		width: auto;
