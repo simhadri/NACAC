@@ -11,7 +11,7 @@
 }
 
 .tweet-wrap {
-	min-height: 26rem;
+	min-height: 28rem;
 	position: relative;
 	margin-bottom: 3rem;
 	background: #fff;
@@ -21,7 +21,7 @@
 		padding: 2rem 2.5rem 0 2.5rem;
 		font-size: 1.6rem;
 		line-height: 1.2;
-		a{
+		a {
 			word-wrap: break-word;
 		}
 	}
@@ -34,7 +34,8 @@
 		a {
 			color: #555;
 		}
-		svg, img {
+		svg,
+		img {
 			width: 5rem;
 			height: 5rem;
 			float: left;
@@ -52,30 +53,42 @@
 	background-color: $nacac_grey;
 	border: none;
 	padding: 0 2rem;
-	header{
+	header {
 		text-align: left;
 		color: $white;
 		padding: 2rem;
-		span{
+		span {
 			color: $nacac_light-orange;
 		}
 	}
 }
 
-// this may not be possible so we're hiding for now
-// &.tweet-double {
-//  .tweet {
-//    padding-left: calc(50% + 1.5rem);
-//  }
-//  .tweet-img {
-//    float: left;
-//    width: 49%;
-//    // height: 100%;
-//    margin-right: 2.5rem;
-//    // background-position: 50% 50%;
-//    // margin: -2rem 2.5rem -1rem -2.5rem;
-//  }
-//  .tweet-meta {
-//    left: calc(50% + 1.5rem);
-//  }
-// }
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+
+@include break(max, $screen-sm-max) {}
+
+
+/*
+██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
+██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
+██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
+*/
+
+@include break(min, $screen-md-min) {
+	.tweet-deck__row {
+		.col-sm {
+			flex-basis: calc(33% - 20px);
+		}
+	}
+}

@@ -442,6 +442,11 @@ webpackJsonp([1,3],[
 				$('.hero__wrapper').css({ 'margin-top': '7rem' });
 			}
 		}
+		function removePaddingToHero() {
+			if (!$('.hero__wrapper').hasClass('hero--interior')) {
+				$('.hero__wrapper').css({ 'margin-top': '0' });
+			}
+		}
 	
 		function navScrollDependencies(event) {
 			var utilityHeight = $('.utility-nav').height(),
@@ -509,12 +514,14 @@ webpackJsonp([1,3],[
 		// we need to redraw the floating nav
 		var placeNavWhenShortWindow = function placeNavWhenShortWindow() {
 			var windowHeight = window.innerHeight;
-			if (windowHeight < 680) {
+			if (windowHeight < 680 && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')) {
 				// && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')
 				primaryNav.addClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
 				addPaddingToHero();
-			} else if (!primaryNav.hasClass('primary-nav--up primary-nav--sticky')) {
+			}
+			if (windowHeight > 680 && primaryNav.hasClass('primary-nav--up primary-nav--sticky')) {
 				primaryNav.removeClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
+				removePaddingToHero();
 			}
 		};
 	
