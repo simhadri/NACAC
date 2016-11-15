@@ -18,12 +18,12 @@ p {
 
 /* Headings */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,.h1,.headline1,
+h2,.h2,.headline2,
+h3,.h3,.headline3,
+h4,.h4,.headline4,
+h5,.h5,.headline5,
+h6,.h6,.headline6{
 	font-family: $condensed;
 	font-weight: 400;
 	margin-top: 1.5rem;
@@ -31,21 +31,21 @@ h6 {
 	line-height: 1.5rem;
 }
 
-h1 {
-	font-size: 5.656rem;
+h1,.h1,.headline1 {
+	font-size: 4.242rem;
 	line-height: 7rem;
 	margin-top: 3rem;
 	text-transform: uppercase;
 }
 
-h2 {
-	font-size: 4.242rem;
-	line-height: 4.5rem;
+h2,.h2,.headline2 {
+	font-size: 3.2rem;
+	line-height: 5rem;
 	margin-top: 3rem;
 	text-transform: uppercase;
 }
 
-h3 {
+h3,.h3,.headline3 {
 	font-size: 2rem;
 	font-size: 2.121rem;
 	line-height: 3rem;
@@ -53,31 +53,34 @@ h3 {
 	font-weight: 700;
 }
 
-h4 {
+h4,.h4,.headline4 {
 	font-size: 1.414rem;
 	font-family: $sans;
 	font-weight: 700;
 }
 
-h5 {
+h5,.h5,.headline5 {
 	font-size: 0.707rem;
 	font-family: $sans;
 	font-weight: 700;
 }
 
-h6 {
+h6,.h6,.headline6 {
 	font-size: 0.4713333333333333rem;
 	font-family: $sans;
 	font-weight: 700;
 }
 
-h1,
-h2 {
-	// letter-spacing: 1px;
-	font-size: 200%;
-}
+// h1{
+// 	// letter-spacing: 1px;
+// 	font-size: 260%;
+// }
+// h2 {
+// 	// letter-spacing: 1px;
+// 	font-size: 200%;
+// }
 
-h3 {
+h3,.h3,.headline3 {
 	font-family: "Lato", sans-serif;
 	font-weight: 700;
 	letter-spacing: 0;
@@ -125,6 +128,7 @@ code {
 ul {
 	padding: 0;
 	margin: 0;
+	text-align: left;
 }
 
 .text--blue {
@@ -149,22 +153,22 @@ ul {
 
 // large red numbers
 .ol-styled,
-.ul-icons {
+.ul-icons,
+.ul--checkmark,
+.ul--checkmark-green {
 	list-style: none;
 	margin-left: 0;
 	padding-left: 0;
+	margin-top: 2rem;
 	li {
 		position: relative;
 		margin-bottom: 2.4rem;
 		padding-left: 4.6rem;
-		// counter-increment: step-counter;
 		&:before {
 			display: block;
 			position: absolute;
 			top: 0;
 			left: 0;
-			// float: left;
-			// content: counter(step-counter);
 			width: 3.6rem;
 			height: 3.6rem;
 			text-align: center;
@@ -177,10 +181,6 @@ ul {
 			background-color: $nacac_burgundy;
 			border-radius: 50%;
 		}
-		// span {
-		//   display: block;
-		//   // padding: .6rem 0 0 4.6rem;
-		// }
 	}
 }
 
@@ -198,22 +198,24 @@ ul {
 	li {
 		&:before {
 			font: {
-				family: FontAwesome;
 				size: 2rem;
 			}
 			position: absolute;
 		}
 		&.icon-location:before {
-			content: "\f041";
+			@include icon('fa-map-marker');
 		}
 		&.icon-hours:before {
-			content: "\f017";
+			@include icon('fa-clock-o');
 		}
 		&.icon-direction:before {
-			content: "\f14e";
+			@include icon('fa-compass');
 		}
 		&.icon-contact:before {
-			content: "\f1fa";
+			@include icon('fa-at');
+		}
+		&.icon-info:before {
+			@include icon('fa-info');
 		}
 	}
 	address {
@@ -221,8 +223,53 @@ ul {
 	}
 }
 
+.ul--checkmark{
+	li{
+		padding-top: 1rem;
+		&:before {
+			font-size: 2rem;
+			position: absolute;
+			@include icon('fa-check');
+		}	
+	}
+}
+.ul--checkmark-green{
+	li{
+		padding-top: 1rem;
+		&:before {
+			@include icon('fa-certificate');
+			color: $nacac_green;
+			font-size: 4rem;
+			background-color: transparent;
+		}
+		&:after {
+			font-size: 2rem;
+			position: absolute;
+			@include icon('fa-check');
+			left: 7px;
+			top: 8px;
+			color: $white;
+		}	
+	}
+}
 .block-lg {
 	@media screen and (min-width: 1200px) {
 		display: block;
 	}
+}
+.ul--split{
+	max-width: 64rem;
+	display: block;
+	margin: auto;
+	margin-bottom: 2rem;
+	@include clearfix;
+	li{
+		float: left;
+		width: 50%;
+		padding-left: 0;
+		padding-right: 3rem;
+	}
+}
+ul > ul, ol > ol{
+	list-style: none;
 }

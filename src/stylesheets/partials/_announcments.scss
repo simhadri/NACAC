@@ -1,7 +1,7 @@
 .announcement__header {
 	border-bottom: 1px solid $nacac_border-grey;
 	color: $nacac_medium_grey;
-	margin-top: -3rem;
+	margin-top: -3.6rem;
 	p {
 		display: inline-block;
 		padding: 1.8rem 2rem;
@@ -14,7 +14,7 @@
 	i {
 		margin-left: -0.4rem;
 		margin-right: 0.4rem;
-		@include prefix(transform, rotate(-20deg), webkit);
+		transform: rotate(-20deg);
 	}
 }
 

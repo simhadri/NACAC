@@ -1,206 +1,179 @@
-{% set templateName = 'template-fair' %}
 {% extends '_layouts/fair-application.html' %}
 {% block content %}
 <main>
-
-  {% set className = 'utility-nav-fair' %}
-  {% include './_fair/utility.html'%}
-  {% set className = 'primary-nav-fair' %}
-  {% include './_shared/navigation.html'%}
-  {% include './_fair/hero-type.html'%}
-
-
-  <article class="article__row article--white">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h2>Find the Right Fit for You</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem neque sequi cupiditate eveniet temporibus dolores fuga, nisi molestiae cumque numquam vitae distinctio assumenda eum officiis quos quam non impedit praesentium.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi expedita animi nulla ducimus ratione doloremque illum magni esse perferendis voluptatum fuga nobis aperiam et distinctio facilis, omnis debitis enim non.
-          </p>
-        </div>
-        <div class="col-md-6">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/166429528"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <article class="article__row article--bluegrey">
-    <div class="container">
-      <section class="card-block__row">
-        <div class="row">
-          {% set cardBlock = { heading: "Advice for Performing and Visual Arts Students", image: "shared/card-national", button: true } %}
-          {% include './_components/card-block.html'%}
-          {% set cardBlock = { heading: "Performing and Visual Arts Fairs FAQs", image: "shared/card-performing", button: true } %}
-          {% include './_components/card-block.html'%}
-          {% set cardBlock = { heading: "Counselor Information", image: "shared/card-stem", button: true } %}
-          {% include './_components/card-block.html'%}
-        </div>
-      </section>
-    </div>
-  </article>
-
-  <article class="article__row article--white">
-    <div class="container">
-      <div class="form-filters">
-        <div class="row">
-          <div class="col-sm-2">
-            <h4>Sort by:</h4>
-            <div class="form-group">
-              <label for="exampleInputName2" class="sr-only">Sort by</label>
-              <select class="form-control">
-                <option>Date</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-                <option>Option 4</option>
-                <option>Option 5</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-sm-10">
-            <h4>Filter by:</h4>
-            <div class="form-inline">
-              <div class="form-group">
-                <label for="fair-type" class="sr-only">Name</label>
-                <select class="form-control" id="fair-type">
-                  <option>Performing and Visual Arts Fairs</option>
-                  <option>Option 2</option>
-                  <option>Option 3</option>
-                  <option>Option 4</option>
-                  <option>Option 5</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="fair-city" class="sr-only">Cities</label>
-                <select class="form-control" id="fair-city">
-                  <option>All Cities</option>
-                  <option>Option 2</option>
-                  <option>Option 3</option>
-                  <option>Option 4</option>
-                  <option>Option 5</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="fair-state" class="sr-only">States</label>
-                <select class="form-control" id="fair-state">
-                  <option>All States</option>
-                  <option>Option 2</option>
-                  <option>Option 3</option>
-                  <option>Option 4</option>
-                  <option>Option 5</option>
-                </select>
-              </div>
-              <span class="or">
-                or
-              </span>
-              <div class="form-group">
-                <label for="fair-zip" class="sr-only">Zip Code</label>
-                <input type="text" class="form-control" id="fair-zip" placeholder="Enter Zip Code">
-              </div>
-              <div class="form-group">
-                <label for="distance" class="sr-only">Distance</label>
-                <select class="form-control" id="distance">
-                  <option>Within 5 miles</option>
-                  <option>Option 2</option>
-                  <option>Option 3</option>
-                  <option>Option 4</option>
-                  <option>Option 5</option>
-                </select>
-              </div>
-              <button type="submit" class="btn btn--nacac-blue">Filter Results</button>
-            </div><!-- .form-inline -->
-          </div><!-- .col-sm-10 -->
-        </div><!-- .row -->
-        <div class="row">
-          <div class="col-sm-2">
-            <h4 class="filter-label">Your Filters:</h4>
-          </div>
-          <div class="col-sm-7">
-            <span class="filter">
-              <span class="filter-close"><span class="sr-only">Close</span> &times;</span>
-              Performing and Visual Arts College Fairs
-            </span>
-          </div>
-          <div class="col-sm-3">
-            <a href="#" class="filter-reset">Reset Filters <i class="fa fa-refresh"></i></a>
-          </div>
-        </div>
-      </div><!-- .form-filters -->
-
-      <div class="filter-paging">
-        <div class="row">
-          <div class="col-xs-6">
-            Showing <strong>1-10</strong> of <strong>28</strong> fairs
-          </div>
-          <div class="col-xs-6">
-            <nav>
-              <ul class="pagination">
-                <li class="disabled"><a href="#">&laquo; Previous</a></li>
-                <li class="disabled"><a href="#">1 </a></li>
-                <li class="active"><a href="#">2 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li class="skip"><span>...</span></li>
-                <li><a href="#">20</a></li>
-                <li><a href="#">&raquo; Next</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        
-      </div>
-
-      <div class="row">
-        <div class="col-xs-12">
-          <ul class="fair-events fair-events-bordered">
-            {% set eventItem = { heading: 'City Performing and Visual Arts College Fair', layout: 'wide' } %}
-            {% include './_components/event-item.html'%}
-            {% set eventItem = { heading: 'City Performing and Visual Arts College Fair', layout: 'wide' } %}
-            {% include './_components/event-item.html'%}
-            {% set eventItem = { heading: 'City Performing and Visual Arts College Fair', layout: 'wide' } %}
-            {% include './_components/event-item.html'%}
-            {% set eventItem = { heading: 'City Performing and Visual Arts College Fair', layout: 'wide' } %}
-            {% include './_components/event-item.html'%}
-            {% set eventItem = { heading: 'City Performing and Visual Arts College Fair', layout: 'wide' } %}
-            {% include './_components/event-item.html'%}
-            {% set eventItem = { heading: 'City Performing and Visual Arts College Fair', layout: 'wide' } %}
-            {% include './_components/event-item.html'%}
-            {% set eventItem = { heading: 'City Performing and Visual Arts College Fair', layout: 'wide' } %}
-            {% include './_components/event-item.html'%}
-          </ul>
-        </div>
-
-
-
-      </div>
-
-    </div>
-  </article>
-
-  <article class="article__row article--bluegrey announcements">
-    <div class="container">
-      <div class="container">
-        <section>
-          <header class="article__header">
-            <h2>Counselors: Become A NACAC Member</h2>
-            <p>Your active participation in our association is welcomed. You are encouraged to take advantage of our many valuable membership benefits. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</p>
-            <a href="#" class="btn btn--nacac-blue">Become a Member</a>
-          </header>
-        </section>
-      </div>
-  </article>
-
-
- {% include './_shared/footer.html'%}
+	{% set className = 'utility-nav-fair' %}
+	{% include './_fair/utility.html'%}
+	{% set className = 'primary-nav-fair' %}
+	{% include './_shared/navigation.html'%}
+	{% include './_fair/hero-type.html'%}
+	<article class="article__row article--white">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h2>Find the Right Fit for You</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem neque sequi cupiditate eveniet temporibus dolores fuga, nisi molestiae cumque numquam vitae distinctio assumenda eum officiis quos quam non impedit praesentium.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi expedita animi nulla ducimus ratione doloremque illum magni esse perferendis voluptatum fuga nobis aperiam et distinctio facilis, omnis debitis enim non.</p>
+				</div>
+				<div class="col-md-6">
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe class="embed-responsive-item" src="https://player.vimeo.com/video/166429528"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<article class="article__row article--bluegrey">
+		<div class="container">
+			<section class="card-block__row">
+				<div class="row">
+					{% set cardBlock = { heading: "Advice for Performing and Visual Arts Students", image: "shared/card-national", button: true } %}
+					{% include './_components/card-block.html'%}
+					{% set cardBlock = { heading: "Performing and Visual Arts Fairs FAQs", image: "shared/card-performing", button: true } %}
+					{% include './_components/card-block.html'%}
+					{% set cardBlock = { heading: "Counselor Information", image: "shared/card-stem", button: true } %}
+					{% include './_components/card-block.html'%}
+				</div>
+			</section>
+		</div>
+	</article>
+	<article class="article__row article--white">
+		<div class="container">
+			<div class="form-filters">
+				<div class="row">
+					<div class="col-sm-2">
+						<h4>Sort by:</h4>
+						<div class="form-group">
+							<label for="exampleInputName2" class="sr-only">Sort by</label>
+							<select class="form-control">
+								<option>Date</option>
+								<option>Option 2</option>
+								<option>Option 3</option>
+								<option>Option 4</option>
+								<option>Option 5</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-sm-10">
+						<h4>Filter by:</h4>
+						<div class="form-inline">
+							<div class="form-group">
+								<label for="fair-type" class="sr-only">Name</label>
+								<select class="form-control" id="fair-type">
+									<option>Performing and Visual Arts Fairs</option>
+									<option>Option 2</option>
+									<option>Option 3</option>
+									<option>Option 4</option>
+									<option>Option 5</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="fair-city" class="sr-only">Cities</label>
+								<select class="form-control" id="fair-city">
+									<option>All Cities</option>
+									<option>Option 2</option>
+									<option>Option 3</option>
+									<option>Option 4</option>
+									<option>Option 5</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="fair-state" class="sr-only">States</label>
+								<select class="form-control" id="fair-state">
+									<option>All States</option>
+									<option>Option 2</option>
+									<option>Option 3</option>
+									<option>Option 4</option>
+									<option>Option 5</option>
+								</select>
+							</div>
+							<span class="or">
+								or
+							</span>
+							<div class="form-group">
+								<label for="fair-zip" class="sr-only">Zip Code</label>
+								<input type="text" class="form-control" id="fair-zip" placeholder="Enter Zip Code">
+							</div>
+							<div class="form-group">
+								<label for="distance" class="sr-only">Distance</label>
+								<select class="form-control" id="distance">
+									<option>Within 5 miles</option>
+									<option>Option 2</option>
+									<option>Option 3</option>
+									<option>Option 4</option>
+									<option>Option 5</option>
+								</select>
+							</div>
+							<button type="submit" class="btn btn--nacac-blue">Filter Results</button>
+						</div>
+						<!-- .form-inline -->
+					</div>
+					<!-- .col-sm-10 -->
+				</div>
+				<!-- .row -->
+				<div class="row">
+					<div class="col-sm-2">
+						<h4 class="filter-label">Your Filters:</h4>
+					</div>
+					<div class="col-sm-7">
+						<span class="filter">
+							<span class="filter-close"><span class="sr-only">Close</span> &times;</span>
+						Performing and Visual Arts College Fairs
+						</span>
+					</div>
+					<div class="col-sm-3">
+						<a href="#" class="filter-reset">Reset Filters <i class="fa fa-refresh"></i></a>
+					</div>
+				</div>
+			</div>
+			<!-- .form-filters -->
+			<div class="filter-paging">
+				<div class="row">
+					<div class="col-xs-6">
+						Showing <strong>1-10</strong> of <strong>28</strong> fairs
+					</div>
+					<div class="col-xs-6">
+						<nav>
+							<ul class="pagination">
+								<li class="disabled"><a href="#">&laquo; Previous</a></li>
+								<li class="disabled"><a href="#">1 </a></li>
+								<li class="active"><a href="#">2 <span class="sr-only">(current)</span></a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li class="skip"><span>...</span></li>
+								<li><a href="#">20</a></li>
+								<li><a href="#">&raquo; Next</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<ul class="fair-events fair-events-bordered">
+						{% for i in range(0,8) %}
+						{% set eventItem = { heading: 'City Performing and Visual Arts College Fair', layout: 'wide' } %}
+						{% include './_components/event-item.html'%}
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</article>
+	<article class="article__row article--bluegrey announcements">
+		<div class="container">
+			<div class="container">
+				<section>
+					<header class="article__header">
+						<h2>Counselors: Become A NACAC Member</h2>
+						<p>Your active participation in our association is welcomed. You are encouraged to take advantage of our many valuable membership benefits. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</p>
+						<a href="#" class="btn btn--nacac-blue">Become a Member</a>
+					</header>
+				</section>
+			</div>
+	</article>
+	{% include './_shared/footer.html'%}
 </main>
-
 {% endblock %}
 {% block javascript %}
-<script src="/javascripts/interior.js"></script>
+<script src="../javascripts/interior.js"></script>
 {% endblock %}

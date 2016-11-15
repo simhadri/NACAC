@@ -1,0 +1,204 @@
+.responsive-table {
+	width: 100%;
+	margin-bottom: 1.5em;
+	.col__overview {
+		background-color: $nacac-blue;
+	}
+	thead {
+		// Accessibly hide <thead> on narrow viewports
+		position: absolute;
+		clip: rect(1px 1px 1px 1px);
+		th {
+			position: relative;
+			background-color: $nacac_light-blue;
+			border: 1px solid $nacac_lighter-blue;
+			text-align: center;
+			color: white;
+		}
+	}
+	// Set these items to display: block for narrow viewports
+	tbody,
+	tr,
+	th,
+	td {
+		display: block;
+		padding: 0;
+		text-align: left;
+		white-space: normal;
+	}
+	
+	th,
+	td {
+		padding: .5em;
+		vertical-align: middle;
+		span {
+			font-size: 86%;
+			display: block;
+			line-height: 1;
+			font-weight: normal;
+		}
+	}
+	caption {
+		margin-bottom: 1em;
+		font-size: 1em;
+		font-weight: bold;
+		text-align: center;
+	}
+	tfoot {
+		font-size: .8em;
+		font-style: italic;
+	}
+	tbody {
+		tr {
+			margin-bottom: 1em;
+			border: 2px solid $nacac_lighter-blue;
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+
+		th[rowspan="2"]{
+			display: none;
+		}
+		th[scope="row"] {
+			background-color: $nacac_blue;
+			color: white;
+		}
+		td {
+			text-align: right;
+		}
+		td[data-type=currency] {
+			text-align: right;
+		}
+		td[data-title]:before,th[data-label]:before  {
+			content: attr(data-title);
+			float: left;
+		}
+		th[data-label]:before {
+			content: attr(data-label)":\00a0" ;
+			float: left;
+		}
+		th:not([data-label]) {
+				display: none;
+			}
+	}
+}
+// .responsive-table tbody 
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+
+@include break(min, $screen-xs-min) {
+
+}
+@include break(min, $screen-sm-min) {
+	.reposnsive-table{
+		th,
+		td {
+			padding: .75em .5em;
+		}
+		tbody{
+			td {
+				border-bottom: 1px solid $nacac_lighter-blue;
+			}
+			td[data-title]:before {
+				font-size: .9em;
+			}
+			th[rowspan="2"]{
+				display:none;
+			}
+		}
+	}
+}
+@include break(min, $screen-md-min) {
+	.responsive-table{
+		font-size: .9em;
+		thead {
+			// Unhide <thead> on wide viewports
+			position: relative;
+			clip: auto;
+			height: auto;
+			width: auto;
+			overflow: auto;
+		}
+		caption {
+			font-size: 1.5em;
+		}
+		tr {
+			// Undo display: block 
+			display: table-row;
+		}
+		th,td {
+			display: table-cell;
+			padding: .5em;
+		}
+
+		tbody {
+			// Undo display: block 
+			display: table-row-group;
+			tr {
+				display: table-row;
+				border-width: 1px;
+				&:nth-of-type(even) {
+					background-color: rgba(94, 93, 82, .06);
+				}
+			}
+			th[scope="row"] {
+				background-color: transparent;
+				color: rgba(94, 93, 82, 1);
+				text-align: left;
+			}
+			td {
+				text-align: center;
+			}
+			td[data-type=currency] {
+				text-align: center;
+			}
+			td[data-title]:before,th[data-label]:before  {
+				content: none;
+			}
+			th[rowspan="2"]{
+				display: table-cell;
+				border-right: 1px solid $nacac_lighter-blue;
+			}
+			th:not([data-label]) {
+				display: table-cell;
+				border-right: 1px solid $nacac_lighter-blue;
+				background-color: $white;
+			}
+		}
+
+	}
+}
+
+
+/*
+██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
+██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
+██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
+														  
+*/
+
+
+@include break(min, $screen-lg-min) {
+	.responsive-table {
+		font-size: 1em;
+		th,
+		td {
+			padding: .75em .5em;
+		}
+		tfoot {
+			font-size: .9em;
+		}
+	}
+
+}

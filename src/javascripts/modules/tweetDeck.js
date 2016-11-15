@@ -12,34 +12,36 @@ import EnvVar from 'lib/envVar.js';
 
 // FUNCTION
 (function() {
-	'use strict';
+	const tweetDeck = document.getElementById('tweetDeck');
 	if (document.getElementById('tweetDeck')) {
-		var tweetParse = new TweetParse;
-		// DEV/PROD vars
-		var TweetController = EnvVar({development:'/javascripts/data/twitter-feed.json',production:'/Static/JS/twitter-feed.json'});
+		const handle = tweetDeck.dataset.feed;
+		const cleanHandle = handle.replace('@', '');
+		const tweetParse = new TweetParse;
+		// DEV/PROD consts
+		const TweetController = EnvVar({development:`/javascripts/data/twitter-${cleanHandle}.json`,production:`/Static/JS/twitter-${cleanHandle}.json`});
 		
 		$.ajax({
 			url: TweetController,
 			type: 'GET',
 			dataType: 'json',
 			success: function(data) {
-				var tweetDeck = document.getElementById('tweetDeck');
 				for (let i = 0; i < data.length; i++) {
 					let tweetText = data[i].text;
 					// Clean up tweet, add links
 					tweetText = tweetParse.UrlUserHashtag(tweetText);
 					tweetDeck.innerHTML = tweetDeck.innerHTML +
-						'<div class="col-sm col-xs-12">' +
-							'<div class="tweet-wrap">' +
-								'<div class="tweet">' + tweetText +
-									'<div class="tweet-meta">' +
-										'<a href="'+data[i].user.url+'"><img class="tweet__profile-pic" src="' + data[i].user.profile_image_url + '"></a>' +
-										'<a href="'+data[i].user.url+'">'+data[i].user.screen_name+'</a><br>' +
-										'<a href="#">' + tweetParse.parseTimeAgo(data[i].created_at) + '</a>' +
-									'</div>' +
-								'</div>' +
-							'</div>' +
-						'</div>'
+						`<div class="col-sm col-xs-12">
+							<div class="tweet-wrap">
+								<div class="tweet"> 
+									${tweetText} 
+									<div class="tweet-meta">
+										<a href="${data[i].user.url}"><img class="tweet__profile-pic" src="${data[i].user.profile_image_url_https}"></a>
+										<a href="${data[i].user.url}">${data[i].user.screen_name}</a><br>
+										<a href="#">${tweetParse.parseTimeAgo(data[i].created_at)}</a>
+									</div>
+								</div>
+							</div>
+						</div>`
 				}
 			}
 		})

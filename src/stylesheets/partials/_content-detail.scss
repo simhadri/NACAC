@@ -9,6 +9,12 @@
 	}
 
 }
+.content-detail{
+	hr{
+		margin-top: 4rem;
+		margin-bottom: 4rem;
+	}
+}
 .content-detail__block {
 	div[class*='video-iframe'] {
 		margin-bottom: 2.5rem;
@@ -19,6 +25,10 @@
 	ul, ol{
 		margin-left: 3rem;
 		padding: 0.8rem 0 1rem;
+	}
+	.btn{
+		margin-right: 2rem;
+		margin-bottom: 1rem;
 	}
 	.video-iframe--center {
 		width: auto;
@@ -46,26 +56,54 @@
 			width: 100%;
 		}
 	}
-	// Images
-	img[class*='image--'] {
-		margin-top: 0.4rem;
-		margin-bottom: 1.4rem;
-		display: block;
-	}
-	.image--center {
-		float: none;
-		margin: 1.4rem auto;
-	}
-	.image--left {
-		float: left;
-		margin-right: 2.5rem;
-	}
-	.image--right {
-		float: right;
-		margin-left: 2.5rem;
+	hr{
+		margin-top: 4rem;
+		margin-bottom: 4rem;
 	}
 }
-
+.conference-detail__block{
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	margin-left: auto;
+	margin-right: auto;
+	.heading__icon{
+		position: relative;
+		&:before{
+			position: absolute;
+			color: $nacac_light-blue;
+			font-size: 4rem;
+			left: -6rem;
+		}
+		&.heading__icon--attend:before{
+			@include icon('fa-ticket');
+		}
+		&.heading__icon--exhibit:before{
+			@include icon('fa-id-card-o');
+		}
+	}
+}
+// Images
+img[class*='image--'] {
+	margin-top: 0.4rem;
+	margin-bottom: 1.4rem;
+	display: block;
+}
+.image--center {
+	float: none;
+	margin: 1.4rem auto;
+}
+.image--left {
+	float: left;
+	margin-right: 2.5rem;
+}
+.image--right {
+	float: right;
+	margin-left: 2.5rem;
+}
+.image--full {
+	float: none;
+	width: 100%;
+}
 .product-detail__image{
 	float: left;
 	width: 25%;

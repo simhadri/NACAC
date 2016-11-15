@@ -1,13 +1,16 @@
+{% set templateName = 'template-conference' %}
+
 <!doctype html>
 <html>
 {% include "./_shared/head.html" %}
 <body>
 	{% include "_components/fair-svg-defs.svg" %}
-	{% block content %}{% endblock %}
+	{% block content %}
+	{% endblock %}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.5.2/blazy.min.js"></script>
-	<script src="/javascripts/shared.js"></script>
-	<script src="/javascripts/app.js"></script>
+	<script src="../javascripts/shared.js"></script>
+	<script src="../javascripts/app.js"></script>
 	{% block javascript %}{% endblock %}
 </body>
 </html>

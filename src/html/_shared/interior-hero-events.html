@@ -1,12 +1,37 @@
 <div class="hero--interior hero__wrapper">
 	<div class="hero__background-image">
-		<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/main/events_hero_banner.jpg" alt="">
+		<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="../images/main/events_hero_banner.jpg" alt="">
 	</div>
-	<div class="hero__content">
+	<div class="hero__content{% if templateName == 'template-conference' %} hero__content--conference{% endif %}">
+		
+		{% if conferenceHero %}
+		<h1 class="hero__title">{{pageLocation | default("2017 Nacac National Conference") }}</span></h1>
+		{% else %}
 		<h1 class="hero__title">NACAC <span class="text--orange">72nd National Conference</span></h1>
-		<h2 class="hero__byline hero--underline">Bringing together professionals from both sides of the college admission desk</h2>
-		<h3 class="hero__text">September 22-24, 2016 | Columbus, Ohio</h3>
-		{% include './_components/countdown-clock.html'%}
+		{% endif %}
+		
+		{% if not conferenceHero.byline %}
+			{% if conferenceHero %}
+			<h2 class="hero__byline">September 22-24, 2017 | Columbus, Ohio</h2>
+			{% else %}
+			<h2 class="hero__byline hero--underline">Bringing together professionals from both sides of the college admission desk</h2>
+			<h3 class="hero__text">September 22-24, 2017 | Columbus, Ohio</h3>
+			{% endif %}
+			{% include './_components/countdown-clock.html'%}
+		{% else %}
+			{% include './_components/countdown-clock.html'%}
+			<h2 class="hero__byline hero__byline--conference">{{conferenceHero.byline}}</h2>
+		{% endif %}
+		
+		
+		
+		{% if conferenceHero %}
+			{% for button in conferenceHero.buttons %}
+			<a href="#" class="hero__btn btn btn-default btn--mega">{{button}}</a>
+			{% endfor%}
+		{% else %}
 		<a href="#" class="hero__btn btn btn-default btn--mega">Register Now</a>
+		{% endif %}
+	
 	</div>
 </div>

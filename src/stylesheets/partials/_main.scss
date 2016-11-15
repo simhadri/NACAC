@@ -9,7 +9,6 @@
 	opacity: 0;
 	pointer-events: none;
 	transition: $transition--opacity;
-	@include prefix(transition-timing-function, cubic-bezier(0.7, 0, 0.3, 1), webkit);
 	&.screen__overlay--soft {
 		background: rgba(0, 0, 0, 0.33);
 	}
@@ -25,6 +24,15 @@
 	}
 }
 
+
+body {
+@media 
+	(-webkit-min-device-pixel-ratio: 2),
+	(min-resolution: 192dpi) {
+		-webkit-font-smoothing: subpixel-antialiased;
+	}
+}
+
 body.body--freeze {
 	overflow: hidden;
 }
@@ -32,7 +40,9 @@ body.body--freeze {
 .screen__overlay--on {
 	opacity: 1;
 }
-
+.container--narrow{
+	max-width: 99rem;
+}
 .pointer--disabled{
 	pointer-events: none;
 }
@@ -79,6 +89,46 @@ body.body--freeze {
 // needed for inverse breadcrumb wrapper
 .article--blue {
 	background-color: $nacac_light-blue;
+	color: $white;
+}
+.article--tall {
+    padding: 6rem 0;
+}
+.article--background-image ,.section--background-image{
+	color: $white;
+	background-color: $nacac-orange;
+	background-position:50% 50%;
+	background-repeat: no-repeat;
+	transition:none !important;
+	.number-block {
+		.number-block__numerals {
+			color: #fff;
+			&:after {
+				border-color: #fff;
+			}
+		}
+		.number-block-block__text {
+			p {
+				font-size: 1.8rem;
+				line-height: 1.5;
+			}
+		}
+	}
+}
+.article__number{
+	display: inline-block;
+	background-color: #f28800;
+	padding-top: 1.4rem;
+	margin-left: -8rem;
+	float: left;
+	margin-top: 2.4rem;
+	width: 6rem;
+	height: 6rem;
+	text-align: center;
+	border-radius: 100%;
+	font-size: 2.4rem;
+	font-weight: bold;
+	color: $white;
 }
 
 .article__header,
@@ -88,7 +138,7 @@ body.body--freeze {
 		text-align: left;
 	}
 	.btn {
-		margin: 2rem 0;
+		margin: 2rem;
 	}
 	p {
 		padding-top: $p-spacing;
@@ -99,7 +149,11 @@ body.body--freeze {
 		}
 	}
 }
-
+.article__content, .section__content{
+	img.aside__image{
+		margin-top: 4rem;
+	}
+}
 .section__row {
 	@include clearfix;
 	border-bottom: 1px solid $nacac_border-lightgrey;
@@ -111,7 +165,11 @@ body.body--freeze {
 		border-bottom:none;
 	}
 }
-
+.content__row{
+	ol, ul{
+    	padding-left: 3rem;
+	}
+}
 .flexbox__row {
 	display: flex;
 }
@@ -217,7 +275,7 @@ body.body--freeze {
 	}
 	.article__row.hero--none {
 		padding-top: 0;
-		margin-top: 4rem;
+		margin-top: 7rem;
 	}
 	.flexbox__row {
 		display: block;
@@ -238,6 +296,11 @@ body.body--freeze {
 			display: block;
 			white-space: normal;
 		}
+	}
+	.article__number{
+		display: block;
+		margin: 0;
+		float: none;
 	}
 }
 

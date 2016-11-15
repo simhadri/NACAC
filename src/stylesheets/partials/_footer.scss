@@ -1,19 +1,19 @@
-footer.footer {
+.footer {
 	background-color: $nacac_light-blue;
 	color: $white;
 	padding-top: 3rem;
 	padding-bottom: 2rem;
 	ul {
 		list-style: none;
+		padding: 0;
 		a {
 			color: $white;
 		}
 	}
 	.footer__logo {
-		img{
+		img {
 			width: 18rem;
-			margin:0 auto;
-			// margin-top: 3rem;
+			margin: 0 auto;
 		}
 	}
 	.footer__contact-list {
@@ -45,6 +45,10 @@ footer.footer {
 			padding: 1rem;
 		}
 	}
+	.btn.btn--clear {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
 }
 
 
@@ -58,7 +62,7 @@ footer.footer {
 */
 
 @include break(max, $screen-sm-max) {
-	footer.footer {
+	.footer {
 		text-align: center;
 		.footer__legal li {
 			display: inherit;
@@ -67,11 +71,11 @@ footer.footer {
 		.footer__logo {
 			margin: auto;
 		}
-		.footer__callout{
+		.footer__callout {
 			order: -1;
 			margin-bottom: 4rem;
-			h3{
-				margin-top: 0; 
+			h3 {
+				margin-top: 0;
 			}
 		}
 	}
@@ -85,11 +89,10 @@ footer.footer {
 ██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
 ██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
 ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
-														  
 */
 
 @include break(min, $screen-md-min) {
-	footer.footer {
+	.footer {
 		.footer__contact-list {
 			padding-right: 3.4rem;
 		}
@@ -99,6 +102,41 @@ footer.footer {
 		}
 		.footer__logo {
 			margin-top: 3rem;
+		}
+		.footer--conference {
+			.footer__contact-list {
+				padding-left: 3.4rem;
+				border-left: 1px solid $nacac_border-blue;
+				i {
+					color: $nacac_border-blue;
+				}
+			}
+			.footer__callout {
+				border: none;
+			}
+			.footer__legal {
+				ul {
+					display: block;
+					float: left;
+					width: 66%;
+					margin-top: 4rem;
+					li {
+						padding-left: 0;
+					}
+				}
+				.footer__social {
+					float: right;
+					width: 33%;
+					font-weight: bold;
+					li {
+						display: inline;
+						i {
+							font-size: 2.4rem;
+						}
+						padding: 1rem;
+					}
+				}
+			}
 		}
 	}
 }

@@ -1,0 +1,51 @@
+.component-container {
+	max-width: 48rem;
+	margin: auto;
+}
+
+.pattern-header {
+	display: block;
+	width: 100%;
+	clear: both;
+	margin: 0;
+	padding: 2rem;
+	border-bottom: 1px solid lightgrey;
+	border-top: 1px solid lightgrey;
+	background: whitesmoke;
+}
+
+.primary-nav,
+.utility {
+	position: static;
+}
+
+[data-include="utility.html"] + pre {
+	left: 0;
+	position: relative;
+	width: 100%;
+}
+[data-include="carousel.html"]{
+	max-width: 100%;
+}
+
+pre {
+	font-size: 13px;
+	padding: 26px 0 6px 0;
+	background: #f3f3ff;
+	color: #2b2e54;
+	position: relative;
+	margin: 0;
+}
+
+pre:after {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "HTML";
+	font-size: 16px;
+	padding: 0 14px;
+	border-radius: 0 0 8px 0;
+	background: aquamarine;
+	height: 24px;
+}

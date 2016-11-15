@@ -23,6 +23,7 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
     }
     if (!window.requestAnimationFrame) {
         window.requestAnimationFrame = function(callback, element) {
+
             var currTime = new Date().getTime();
             var timeToCall = Math.max(0, 16 - (currTime - lastTime));
             var id = window.setTimeout(function() { callback(currTime + timeToCall); },
@@ -80,9 +81,10 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
         }
     };
 
-    // Robert Penner's easeOutExpo
-    this.easeOutExpo = function(t, b, c, d) {
-        return c * (-Math.pow(2, -10 * t / d) + 1) * 1024 / 1023 + b;
+    // easeOutQuint
+    this.easeOutQuint = function(t, b, c, d) {
+        // return c * (-Math.pow(2, -10 * t / d) + 1) * 1024 / 1023 + b;
+        return c*((t=t/d-1)*t*t*t*t + 1) + b;
     };
     this.count = function(timestamp) {
 
@@ -93,20 +95,8 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
         var progress = timestamp - self.startTime;
         self.remaining = self.duration - progress;
 
-        // to ease or not to ease
-        if (self.options.useEasing) {
-            if (self.countDown) {
-                self.frameVal = self.startVal - self.easeOutExpo(progress, 0, self.startVal - self.endVal, self.duration);
-            } else {
-                self.frameVal = self.easeOutExpo(progress, self.startVal, self.endVal - self.startVal, self.duration);
-            }
-        } else {
-            if (self.countDown) {
-                self.frameVal = self.startVal - ((self.startVal - self.endVal) * (progress / self.duration));
-            } else {
-                self.frameVal = self.startVal + (self.endVal - self.startVal) * (progress / self.duration);
-            }
-        }
+        // easeOutQuint
+        self.frameVal = self.startVal - self.easeOutQuint(progress, 0, self.startVal - self.endVal, self.duration);
 
         // don't go past endVal since progress can exceed duration in the last frame
         if (self.countDown) {

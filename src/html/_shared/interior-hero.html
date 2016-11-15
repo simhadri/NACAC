@@ -1,11 +1,29 @@
 <div class="hero--interior hero__wrapper">
 	<div class="hero__background-image">
 		<img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-         data-src="/images/main/interior_hero_banner_alt.jpg" alt="">
+         data-src="../images/main/interior_hero_banner_alt.jpg" alt="">
 	</div>
 	<div class="hero__content">
+		
+		{% if conferenceHero %}
+			<h1 class="hero__title">{{ pageLocation }}</h1>	
+			<p class="hero__byline hero__byline--conference">Value Proposition: Get involved in the counseling and admission community and stay up-to-date on the industry trends.</p>
+			{% for button in conferenceHero.buttons %}
+			<a href="#" class="hero__btn btn btn-default btn--mega">{{button}}</a>
+			{% endfor%}
+		{% else %}
+		
 		<h1 class="hero__title hero--underline">{{ pageLocation }}</h1>
 		<h3 class="hero__text">Get involved in the counseling and admission community and stay up-to-date on the industry trends. NACAC proudly offers our members the training, networking opportunities and necessary information needed to serve students and their parents to the best of their abilities.</h3>
 		<a href="#" class="hero__btn btn btn-default btn--mega">Apply Now</a>
+		{% endif %}
+		
+		{% if conferenceHero.scroll == true %}
+		<div class="hero__scroll" id="js_scroll-to">
+			<h3>Become an Exhibitor</h3>
+			<div class="scroll__icon"><i class="fa fa-chevron-circle-down"></i></div>
+		</div>
+		{% endif %}
+
 	</div>
 </div>

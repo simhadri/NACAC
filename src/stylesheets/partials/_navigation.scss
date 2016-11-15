@@ -122,8 +122,7 @@
 		list-style: none;
 		position: relative;
 		height: 7rem;
-		box-shadow: 780px 0 0 0px $white_translucent,
-		-780px 0 0 0px $white_translucent;
+		// box-shadow: 780px 0 0 0px $white_translucent,-780px 0 0 0px $white_translucent;
 		.primary-nav__interior {
 			h3 {
 				@include sans-uppercase-normal;
@@ -131,7 +130,7 @@
 		}
 	}
 	.primary-nav__item {
-		background-color: $white_translucent;
+		// background-color: $white_translucent;
 		line-height: 1;
 		height: 7rem;
 		text-align: center;
@@ -293,8 +292,11 @@
 		width: 100%;
 		overflow: visible;
 		z-index: 2;
+		background-color: $white_translucent;
+		transition: $transition--all;
 		&.primary-nav--grey{
-			background: $nacac_nav_only_grey;
+			background: $nacac_nav-mixed-grey;
+			transition: $transition--all;
 		}
 		&.primary-nav--up {
 			transform: translateY(5rem);
@@ -312,15 +314,15 @@
 			transition:none;
 		}
 		&.primary-nav--blue{
-			background-color: $nacac_light-blue;
+			background-color: $nacac_nav_only_blue;
 		}
 		.primary-nav__interior {
 			top: 7rem;
 			bottom: inherit;
-			@include prefix(transform-origin, top, webkit moz ms o);
+			transform-origin: top;
 		}
 		.selected > .primary-nav__interior {
-			@include prefix(transform, scale(1, 1), webkit moz ms o);
+			transform: scale(1, 1);
 		}
 		&:after {
 			clear: both;
@@ -371,7 +373,7 @@
 			color: #333;
 			overflow: hidden;
 			z-index: 1;
-			@include prefix(transform, scale(1, 0), webkit moz ms o);
+			transform: scale(1, 0);
 			transition: $transition--all;
 			&:after {
 				clear: both;
@@ -381,6 +383,9 @@
 			.interior__links{
 				li{
 					margin-bottom: 1rem;
+					a{
+						font-size: 1.6rem;
+					}
 				}
 			}
 			> li {
@@ -396,24 +401,18 @@
 				}
 				a {
 					color: $text_slate;
-					position: relative;
 					line-height: 1.2;
+					transition: all .2s ease-in-out;
+					background-size: 0 1px;
+					background-image: none;
+					background-position: 0 1.1em;
+					background-repeat: no-repeat;
+					-webkit-font-smoothing: subpixel-antialiased;
+					
 					&:hover {
 						color: $nacac_blue;
-						&:after {
-							width: 100%;
-						}
-					}
-					&:after {
-						content: '';
-						display: block;
-						position: absolute;
-						bottom: 0;
-						width: 0%;
-						left: 0px;
-						height: 1px;
-						transition: 0.35s ease;
-						background: $nacac_blue;
+						background-image: linear-gradient(to bottom,$nacac_blue 100%,$nacac_blue 100%);
+						background-size: 100% 1px;
 					}
 				}
 				img {
@@ -460,6 +459,20 @@
 		left: 0;
 		overflow: visible;
 		z-index: 2;
+	}
+	.flexbox{
+		.primary-nav .primary-nav__interior{
+			display: flex;
+			flex-wrap: wrap;
+			// Masonry
+			// flex-direction: column;
+			// height: 70vh;	
+			> li{
+				flex-basis: 25%;
+				// Masonry Might fix Odd layout
+				// flex: 1 0 auto;
+			}
+		}
 	}
 }
 @include break(min, $screen-md-min, max, $screen-lg) {

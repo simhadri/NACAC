@@ -44,13 +44,21 @@
 	p.color-block__info {}
 	p.color-block__text {}
 }
-
+.color-block:nth-child(1n){
+	background-color: $nacac_purple;
+}
+.color-block:nth-child(2n){
+	background-color: $nacac_green;
+}
+.color-block:nth-child(3n){
+	background-color: $nacac_burgundy;
+}
 a.color-block {
-	background: $white;
+	// background: $white;
 	color: $white;
 	img.color-block__image {
 		max-width: none;
-		opacity: 0.8;
+		// opacity: 0.8;
 		width: calc(100% + 6rem);
 		transition: $transition--all;
 		transform: translate3d(-5rem, 0, 0);
@@ -66,11 +74,6 @@ a.color-block {
 		opacity: 0;
 		transition: $transition--all;
 		transform: translate3d(-2rem, 0, 0);
-	}
-	p.color-block__text {
-		// opacity: 0;
-		// transition: $transition--all;
-		// transform: translate3d(-1rem, 0, 0);
 	}
 	&:hover {
 		cursor: pointer;
@@ -112,7 +115,7 @@ a.color-block {
 		flex-basis: 100%;
 		max-width: 100%;
 		.color-block__content {
-			// text-align: center;
+			float: none;
 			.color-block__feature {
 				display: inline;
 			}
@@ -148,10 +151,10 @@ a.color-block {
 		&:hover {
 			position: relative;
 			box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
-			@include prefix(animation-name, floating, webkit);
-			@include prefix(animation-duration, 3s, webkit);
-			@include prefix(animation-iteration-count, infinite, webkit);
-			@include prefix(animation-timing-function, ease-in-out, webkit);
+			animation-name: floating;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+			animation-timing-function: ease-in-out;
 			@include keyframes(floating) {
 				from {
 					transform: translate(0, 0px);
@@ -173,10 +176,10 @@ a.color-block {
 			text-align: center;
 			width: 100%;
 			padding: 0 1rem;
-			background-color: transparent;
 			background-repeat: no-repeat;
 			background-position-y: 50%;
 			background-size: 100%;
+			box-shadow: inset 0 -25rem 15rem -10rem rgba(35, 39, 35, 0.6);
 			h2 {
 				display: table-cell;
 				vertical-align: middle;
@@ -193,28 +196,23 @@ a.color-block {
 				position: absolute;
 				z-index: -1;
 				width: 100%;
-				@include prefix(filter, brightness(80%), webkit);
+				filter: brightness(80%);
 				&:hover {
-					@include prefix(filter, brightness(100%), webkit);
+					filter: brightness(100%);
 				}
 			}
 		}
 		.card-block__text {
 			flex: 1;
 			padding: 2rem;
-			p {
-				// font-weight: 100;
-			}
 		}
 		.card-block__footer {
-			padding: 0 2rem 2rem;
-			a.btn {
-				display: inline-block;
-			}
+			padding: 0 2rem 4rem;
 		}
 	}
 }
 
+// Member Block
 .member-block {
 	margin: 4rem 0;
 	> img {
@@ -233,6 +231,7 @@ a.color-block {
 			border-right: 1px solid $nacac_border-lightgrey;
 			display: inline-block;
 			padding: 1rem;
+			text-transform: uppercase;
 		}
 	}
 	.member-block__title {
@@ -251,14 +250,45 @@ a.color-block {
 	}
 }
 
+// Event Block
+.row {
+	.event-block{
+		background-color: $nacac_purple;
+		margin: 2rem 1rem;
+		padding: 0;
+		color: $white;
+		box-shadow: inset 0 -34rem 26rem -10rem $nacac_dark-grey;
+	    background-position: 50% 50%;
+	    background-size: cover;
+		.event-block__header {
+			border-bottom: 1px solid $nacac_border-lightgrey;
+			padding: 2rem;
+		}
+		.event-block__content{
+			padding: 2rem;
+		}
+		.event-block__title{
+			margin: 1rem 0;
+			text-align: center;
+		}
+		.event-block__footer {
+			padding: 0 2rem 4rem;
+		}
+	}
+}
+
+
+// Number Block
 .number-block {
 	text-align: center;
+	position: relative;
 	.number-block__numerals {
 		color: $nacac_orange;
 		font-size: 7rem;
 		margin: 3rem;
 		font-family: $condensed;
 		position: relative;
+		z-index: 1;
 		&:after {
 			content: "";
 			width: 12rem;
@@ -273,6 +303,28 @@ a.color-block {
 			margin-left: -6rem;
 			margin-top: -6rem;
 		}
+		&.number-block--image{
+			&:after{
+				display: none;
+			}
+			
+		}
+	}
+	.number-block__background{
+		background-size: cover;
+		overflow: hidden;
+		width: 12rem;
+		height: 12rem;
+		border: 2px dotted $lighter-orange;
+		position: absolute;
+		margin: 0 auto;
+		display: block;
+		border-radius: 50%;
+		top: 50%;
+		left: 50%;
+		margin-left: -6rem;
+		margin-top: -6rem;
+		z-index: 0;
 	}
 	.number-block-block__text p {
 		font-size: 2.4rem;
@@ -280,28 +332,6 @@ a.color-block {
 	}
 }
 
-// added for fairs homepage
-.article__row.fairs-infographic {
-	padding-top: 8rem;
-	padding-bottom: 10rem;
-	color: #fff;
-	background: url(/images/fair/numbers-bg.jpg) no-repeat 50% 50%;
-	background-size: cover;
-	.number-block {
-		.number-block__numerals {
-			color: #fff;
-			&:after {
-				border-color: #fff;
-			}
-		}
-		.number-block-block__text {
-			p {
-				font-size: 1.8rem;
-				line-height: 1.5;
-			}
-		}
-	}
-}
 
 .figure-block {
 	margin: 0;
@@ -343,6 +373,24 @@ a.color-block {
 	}
 }
 
+// Speaker Block
+
+.speaker-block {
+	text-align: center;
+	.speaker-block__image {
+		border-radius: 50%;
+		margin-bottom: 20px;
+		width: 100%;
+		max-width: 20rem;
+	}
+	.speaker-block__name{
+		color: $nacac_purple;
+		font-size: 2rem;
+		margin-top: 0.4rem;
+		margin-bottom: 0.8rem;
+	}
+}
+
 
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
@@ -354,10 +402,16 @@ a.color-block {
 */
 
 @include break(max, $screen-sm-max) {
+	.content-block__row{
+		flex-direction: column;
+	}
+
 	.color-block--wide,
 	.color-block--half {
 		width: 100%;
+		flex-basis: 100%;
 		float: none;
+		max-width: 100%;
 	}
 	.color-block {
 		color: $white;
@@ -368,8 +422,9 @@ a.color-block {
 			text-align: left;
 		}
 	}
+
 	a.color-block {
-		background: $white;
+		// background: $white;
 		color: $white;
 		img.color-block__image {
 			opacity: 1;
@@ -411,4 +466,12 @@ a.color-block {
 														  
 */
 
-@include break(min, $screen-md-min) {}
+@include break(min, $screen-md-min) {
+	.flexbox__row{
+		.event-block{
+			flex-grow: 1;
+			flex-basis: calc(33% - 30px);
+			max-width: 100%;
+		}
+	}
+}

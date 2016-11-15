@@ -1,4 +1,6 @@
-{% set templateName = 'template-fair' %} {% set pageLocation = "Preparing for a College Fair" %} {% extends '_layouts/fair-application.html' %} {% block content %}
+{% set pageLocation = "Preparing for a College Fair" %}
+{% extends '_layouts/fair-application.html' %}
+{% block content %}
 <main>
 	{% set className = 'utility-nav-fair' %} {% include './_fair/utility.html'%} {% set className = 'primary-nav-fair' %} {% include './_shared/navigation.html'%} {% include './_fair/hero-prep.html'%}
 	
@@ -22,5 +24,5 @@
 	{% include './_shared/footer.html'%}
 </main>
 {% endblock %} {% block javascript %}
-<script src="/javascripts/interior.js"></script>
+<script src="../javascripts/interior.js"></script>
 {% endblock %}

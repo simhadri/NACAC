@@ -5,7 +5,6 @@ import Screen from 'lib/screen.js';
 
 // FUNCTION
 (function() {
-	'use strict';
 	var headStyle = new HeadStyle(),
 		screen = new Screen(),
 		navTrigger = $('.primary-nav__trigger'),
@@ -127,6 +126,17 @@ import Screen from 'lib/screen.js';
 		closeSearchFilterNav();
 	});
 
+	// This is weird but there is a min-height to the hero
+	// we need to redraw the floating nav 
+	var placeNavWhenShortWindow = function(){
+		let windowHeight = window.innerHeight;
+		if( windowHeight< 770 && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')){
+			headStyle.addRules({ '.primary-nav': 'transform: translateY(700px);transition: none' });
+		} else {
+			headStyle.removeRules();
+		}
+	}
+	
 	navItemLinks.on("click", function(event) {
 		event.preventDefault();
 		var selected = $(this);
@@ -151,5 +161,8 @@ import Screen from 'lib/screen.js';
 		}
 	});
 	navScrollDependencies();
-	$(window).scroll(Throttled(navScrollDependencies, 50));
+	placeNavWhenShortWindow();
+
+	window.addEventListener('resize', placeNavWhenShortWindow);
+	window.addEventListener('scroll', function(){Throttled(navScrollDependencies(), 50)});
 })();

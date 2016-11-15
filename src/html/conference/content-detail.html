@@ -1,0 +1,79 @@
+ {% extends '_layouts/conference-application.html' %}
+ {% set pageLocation = "Content Detail" %}
+ {% block content %}
+<main>
+	{% set className = "utility-nav--blue" %}
+	{% include './_shared/utility.html'%}
+	{% set className = "primary-nav--inanimate primary-nav--blue" %}
+	{% include './_shared/navigation.html'%}
+	<article class="article__row article--white hero--none aside-navigation__row">
+		<div class="container">
+			{% set share = 'true' %}
+			{% include './_components/breadcrumb.html' %}
+			<div class="row">
+				<div class="col-xs-12 content-detail">
+					<section class="section__row">
+						<header class="content-detail__header">
+							<h2>Session or Content Title</h2>
+						</header>
+						<div class="content-detail__block">
+							<img src="../images/conference-detail.jpg" class="image--right" alt="">
+							<p>Lorem ipsum Sed quis irure quis fugiat sint et et culpa enim voluptate Excepteur eu dolor consectetur magna Excepteur quis elit consequat occaecat ullamco irure.</p>
+							<h3>Lorem ipsum Minim ullamco proident</h3>
+							<ul>
+								<li>Unordered List</li>
+								<li>Unordered List</li>
+								<li>Unordered List</li>
+								<li>Unordered List</li>
+								<li>Unordered List</li>
+							</ul>
+							<p>Lorem ipsum Reprehenderit non Ut ullamco labore in pariatur consectetur aute in do aute labore Duis aliqua occaecat sint aliqua ut esse aute non Duis dolor voluptate nulla sunt magna</p>
+							<div class="btn btn--nacac-blue">Call to Action</div>
+							<hr>
+							<img src="../images/shared/content-full-width.jpg" class="image--full" alt="">
+							<h3>Lorem ipsum Minim ullamco proident</h3>
+							<p>Lorem ipsum Reprehenderit non Ut ullamco labore in pariatur consectetur aute in do aute labore Duis aliqua occaecat sint aliqua ut esse aute non Duis dolor voluptate nulla sunt magna</p>
+							<ul>
+								<li>Unordered List</li>
+								<li>Unordered List</li>
+								<li>Unordered List</li>
+								<li>Unordered List</li>
+								<li>Unordered List</li>
+							</ul>
+							<p>Lorem ipsum Duis sed dolore labore irure laborum sint velit esse commodo laboris Excepteur aliquip ea id do nulla esse enim qui non exercitation in reprehenderit quis. Lorem ipsum Duis sed dolore labore irure laborum sint velit esse commodo laboris Excepteur aliquip ea id do nulla esse enim qui non exercitation in reprehenderit quis.</p>
+							<div class="btn btn--nacac-blue">Call to Action</div>
+							<div class="btn btn--nacac-blue">Call to Action</div>
+						</div>
+					</section>
+					<section class="section__row section__row--no-border">
+						
+						{% include '_shared/accordion.html' %}
+
+					</section>
+					<section class="card-block__row">
+						<header class="section__header">
+							<h2>More From Nacac</h2>
+						</header>
+						<div class="row">
+								
+							{% set cardBlock = { heading: "", image: "shared/card-performing", button: true } %}
+							{% include './_components/card-block.html'%}
+							
+							{% set cardBlock = { heading: "", image: "shared/card-performing", button: true } %}
+							{% include './_components/card-block.html'%}
+
+							{% set cardBlock = { heading: "", image: "shared/card-performing", button: true } %}
+							{% include './_components/card-block.html'%}
+						
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</article>
+	{% include './_shared/footer.html'%}
+</main>
+{% endblock %}
+{% block javascript %}
+<script src="../javascripts/interior.js"></script>
+{% endblock %}

@@ -42,9 +42,6 @@
 	img {
 		page-break-inside: avoid;
 	}
-	img {
-		max-width: 100% !important;
-	}
 	p,
 	h2,
 	h3 {
@@ -101,7 +98,18 @@
 	.hero__content{
 		width: 100% !important;
 	}
-
+	.number-block .number-block__numerals{
+		margin-left: -1000px;
+		&:after {
+			content: attr(data-counter);
+			left: 1000px;
+			margin: 0;
+			border: none;
+			height: auto;
+			width: auto;
+			top: 0;
+		}
+	}
 	.accordion .accordion__item .accordion-item__article {
 		max-height: 200rem;
 	}
@@ -126,5 +134,8 @@
 		td {
 			border: 1px solid #ddd !important;
 		}
+	}
+	.btn{
+		display: none !important;
 	}
 }

@@ -1,0 +1,224 @@
+html {
+	font-family: $sans;
+	font-size: 10px;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	EditMenuName: Body;
+	color: $text_slate;
+	font-size: 1.6rem;
+	font-family: "Istok Web", sans-serif;
+}
+
+p {
+	line-height: 2.3rem;
+	margin-top: 0;
+	margin-bottom: 1.6rem;
+}
+
+a {
+	color: #337ab7;
+	text-decoration: none;
+	outline: none;
+	font-size: 1.6rem;
+	font-family: "Istok Web", sans-serif;
+	EditMenuName: Link;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #23527c;
+	text-decoration: none;
+	outline: none;
+}
+
+
+/* Headings */
+
+.headline1,
+.h1,
+.headline2,
+.h2,
+.headline3,
+.h3,
+.headline4,
+.h4,
+.headline5,
+.h5,
+.headline6,
+.h6 {
+	font-weight: 400;
+	margin-top: 1.5rem;
+	margin-bottom: 0.8rem;
+	line-height: 1.5rem;
+}
+
+.headline1,
+.h1 {
+	EditMenuName: Header 1;
+	font-family: $condensed;
+	font-size: 4.242rem;
+	line-height: 4.4rem;
+	margin-top: 3rem;
+	text-transform: uppercase;
+}
+
+.headline2,
+.h2 {
+	EditMenuName: Header 2;
+	font-family: $condensed;
+	font-size: 3.2rem;
+	line-height: 4rem;
+	margin-top: 3rem;
+	text-transform: uppercase;
+}
+
+.headline3,
+.h3 {
+	EditMenuName: Header 3;
+	font-family: $sans;
+	font-size: 2rem;
+	font-size: 2.121rem;
+	line-height: 3rem;
+	margin-top: 3rem;
+	font-weight: 700;
+	text-transform: none;
+}
+
+.headline4,
+.h4 {
+	EditMenuName: Header 4;
+	font-size: 1.414rem;
+	font-family: $sans;
+	font-weight: 700;
+	text-transform: none;
+}
+
+.headline5,
+.h5 {
+	EditMenuName: Header 5;
+	font-size: 0.707rem;
+	font-family: $sans;
+	font-weight: 700;
+	text-transform: none;
+}
+
+.headline6,
+.h6 {
+	EditMenuName: Header 6;
+	font-size: 0.4713333333333333rem;
+	font-family: $sans;
+	font-weight: 700;
+	text-transform: none;
+}
+
+
+/* Image Floats */
+
+.image-float-left {
+	EditMenuName: Image Left;
+	float: left;
+	margin-right: 25px;
+	margin-top: 4px;
+	margin-bottom: 15px;
+}
+
+.image-float-right {
+	EditMenuName: Image Right;
+	float: right;
+	margin-left: 25px;
+	margin-top: 4px;
+	margin-bottom: 15px;
+}
+
+
+/* Tables */
+
+table {
+	margin-top: 1.5rem;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+table td,
+table th {
+	padding: 0;
+	line-height: 33px;
+}
+
+
+/* ul and ol */
+
+ul, ol {
+    margin-left: 3rem;
+    padding: .8rem 0 1rem;
+}
+
+.text--blue {
+	color: $nacac_light-blue;
+}
+
+.text--orange {
+	color: $nacac_orange;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.small {
+	font-size: 85%;
+}
+
+// large red numbers
+.ol-styled,
+.ul-icons {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+	li {
+		position: relative;
+		margin-bottom: 2.4rem;
+		padding-left: 4.6rem;
+		// counter-increment: step-counter;
+		&:before {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			// float: left;
+			// content: counter(step-counter);
+			width: 3.6rem;
+			height: 3.6rem;
+			text-align: center;
+			font: {
+				size: 2.4rem;
+				weight: 700;
+			}
+			line-height: 3.6rem;
+			color: #fff;
+			background-color: $nacac_burgundy;
+			border-radius: 50%;
+		}
+		// span {
+		//   display: block;
+		//   // padding: .6rem 0 0 4.6rem;
+		// }
+	}
+}
+
+.ol-styled {
+	li {
+		padding-top: .6rem;
+		counter-increment: step-counter;
+		&:before {
+			content: counter(step-counter);
+		}
+	}
+}
