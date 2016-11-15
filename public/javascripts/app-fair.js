@@ -519,10 +519,6 @@ webpackJsonp([1,3],[
 				primaryNav.addClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
 				addPaddingToHero();
 			}
-			if (windowHeight > 680 && primaryNav.hasClass('primary-nav--up primary-nav--sticky')) {
-				primaryNav.removeClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
-				removePaddingToHero();
-			}
 		};
 	
 		navItemLinks.on("click", function (event) {
