@@ -292,7 +292,8 @@
 
 @include break(min, $screen-md-min) {
 	.hero__content {
-		padding: 7rem 0;
+		padding: 0;
+		padding-bottom: 7rem;
 	}
 }
 
