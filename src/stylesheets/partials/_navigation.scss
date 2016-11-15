@@ -190,7 +190,7 @@
 			padding-right: 0;
 			width: 100%;
 		}
-		.primary-nav__logo {
+		.primary-nav ul.primary-nav__list>li.primary-nav__logo {
 			display: none;
 		}
 		ul{
@@ -267,8 +267,11 @@
 		}
 	}
 }
-
-
+@include break(min, $screen-sm-min, max, $screen-sm-max) {
+	.primary-nav ul.primary-nav__list>li.primary-nav__logo {
+		display: none;
+	}
+}
 /*
 ██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
 ██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
