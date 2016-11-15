@@ -127,7 +127,7 @@ img[class*='image--'] {
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 */
 @include break(max, $screen-xs-max) {
-	.content-detail__block {
+	.content-detail {
 		img[class*='image--'] {
 			width: 100%;
 			float: none;
@@ -150,7 +150,7 @@ img[class*='image--'] {
 	}
 }
 @include break(max, $screen-sm-max) {
-	.content-detail__block {
+	.content-detail {
 		img[class*='image--'] {
 		}
 	}
