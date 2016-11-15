@@ -62,6 +62,11 @@ import Screen from 'lib/screen.js';
 			$('.hero__wrapper').css({ 'margin-top': '7rem' })
 		}
 	}
+	function removePaddingToHero() {
+		if (!$('.hero__wrapper').hasClass('hero--interior')) {
+			$('.hero__wrapper').css({ 'margin-top': '0' })
+		}
+	}
 
 	function navScrollDependencies(event) {
 		var utilityHeight = $('.utility-nav').height(),
@@ -130,12 +135,14 @@ import Screen from 'lib/screen.js';
 	// we need to redraw the floating nav 
 	var placeNavWhenShortWindow = function(){
 		let windowHeight = window.innerHeight;
-		if( windowHeight< 680){
+		if( windowHeight < 680 && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')){
 			 // && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')
 			primaryNav.addClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
 			addPaddingToHero();
-		} else if (!primaryNav.hasClass('primary-nav--up primary-nav--sticky')) {
+		}
+		if(windowHeight > 680 && primaryNav.hasClass('primary-nav--up primary-nav--sticky')){
 			primaryNav.removeClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
+			removePaddingToHero();
 		}
 	}
 	
