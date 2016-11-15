@@ -118,7 +118,12 @@
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 */
 
-@include break(max, $screen-sm-max) {}
+@include break(max, $screen-sm-max) {
+	.accordion .accordion__item .accordion-item__article .accordion-item__section {
+		float: left;
+		width: auto;
+	}
+}
 
 
 /*
