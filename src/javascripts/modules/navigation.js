@@ -135,7 +135,7 @@ import Screen from 'lib/screen.js';
 	// we need to redraw the floating nav 
 	var placeNavWhenShortWindow = function(){
 		let windowHeight = window.innerHeight;
-		if( windowHeight < 680 && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')){
+		if( windowHeight < 500 && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')){
 			 // && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')
 			primaryNav.addClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
 			addPaddingToHero();

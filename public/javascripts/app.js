@@ -162,11 +162,12 @@ webpackJsonp([0,3],[
 		};
 		// INITIATE BT
 		// bodyTop is goofy due to IE document.body.scrollTop bug
-		var btInit = function btInit() {
+		var onScrollInit = function onScrollInit() {
 			var bt = new btElement();
 			var bodyTop = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop;
 			var countCards = document.querySelectorAll('.number-block__numerals');
-			var bumper = 600;
+			var countStart = false;
+	
 			if (bodyTop > 200) {
 				bt.addBackToTop();
 			} else {
@@ -175,19 +176,26 @@ webpackJsonp([0,3],[
 			}
 	
 			var countInit = function countInit() {
-				for (var i = 0; i < countCards.length; i++) {
-					var counter = new _libCountUpJs2['default'](countCards[i].getAttribute('id'), 0, countCards[i].getAttribute('data-counter'), 0, 3.6);
-					counter.start();
+				if (countStart === false) {
+					for (var i = 0; i < countCards.length; i++) {
+						var counter = new _libCountUpJs2['default'](countCards[i].getAttribute('id'), 0, countCards[i].getAttribute('data-counter'), 0, 3.6);
+						counter.start();
+					}
+					countStart = true;
 				}
 			};
-			if (countCards.length && countCards[0].innerHTML == '0' && countCards[0].offsetTop - bumper <= bodyTop) {
-				countInit();
+			if (countCards.length && countCards[0].innerHTML == '0') {
+				var absTop = countCards[0].getBoundingClientRect().top;
+				var bumper = 600;
+				if (absTop <= bumper) {
+					countInit();
+				}
 			}
 		};
 	
-		// Throttle btInit on scroll
+		// Throttle onScrollInit on scroll
 		window.addEventListener('scroll', function () {
-			(0, _libThrottledJs2['default'])(btInit(), 400);
+			(0, _libThrottledJs2['default'])(onScrollInit(), 400);
 		});
 	})();
 
@@ -570,7 +578,7 @@ webpackJsonp([0,3],[
 		// we need to redraw the floating nav
 		var placeNavWhenShortWindow = function placeNavWhenShortWindow() {
 			var windowHeight = window.innerHeight;
-			if (windowHeight < 680 && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')) {
+			if (windowHeight < 500 && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')) {
 				// && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')
 				primaryNav.addClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
 				addPaddingToHero();
@@ -1107,14 +1115,14 @@ webpackJsonp([0,3],[
 			var accordionItemAsideSet = document.querySelectorAll('.accordion-item__aside img');
 			for (var i = 0; i < accordionItemAsideSet.length; i++) {
 				var imageElement = accordionItemAsideSet[i];
-				var imageElementWidth = imageElement.offsetWidth;
-				var imageElementHeight = imageElement.offsetHeight;
+				var imageElementWidth = imageElement.getBoundingClientRect().width;
+				var imageElementHeight = imageElement.getBoundingClientRect().height;
 				var imageRatio = imageElementWidth / imageElementHeight;
 				var n = imageElementWidth / 2 - imageElementHeight / 2;
 				if (imageRatio > 1) {
 					imageElement.style.marginLeft = '-' + n + 'px';
 				}
-				if (imageRatio < 1) {
+				if (imageRatio < 1 && imageRatio !== 0) {
 					imageElement.style.marginTop = n + 'px';
 					imageElement.style.height = 'auto';
 					imageElement.style.width = imageElementHeight + 'px';
@@ -1122,7 +1130,9 @@ webpackJsonp([0,3],[
 			}
 		}
 	};
-	window.addEventListener('onload', resizeAccordionImages());
+	window.onload = function () {
+		resizeAccordionImages();
+	};
 
 /***/ }
 ]);
