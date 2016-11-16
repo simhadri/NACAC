@@ -106,11 +106,12 @@ webpackJsonp([1,3],[
 		};
 		// INITIATE BT
 		// bodyTop is goofy due to IE document.body.scrollTop bug
-		var btInit = function btInit() {
+		var onScrollInit = function onScrollInit() {
 			var bt = new btElement();
 			var bodyTop = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop;
 			var countCards = document.querySelectorAll('.number-block__numerals');
-			var bumper = 600;
+			var countStart = false;
+	
 			if (bodyTop > 200) {
 				bt.addBackToTop();
 			} else {
@@ -119,19 +120,26 @@ webpackJsonp([1,3],[
 			}
 	
 			var countInit = function countInit() {
-				for (var i = 0; i < countCards.length; i++) {
-					var counter = new _libCountUpJs2['default'](countCards[i].getAttribute('id'), 0, countCards[i].getAttribute('data-counter'), 0, 3.6);
-					counter.start();
+				if (countStart === false) {
+					for (var i = 0; i < countCards.length; i++) {
+						var counter = new _libCountUpJs2['default'](countCards[i].getAttribute('id'), 0, countCards[i].getAttribute('data-counter'), 0, 3.6);
+						counter.start();
+					}
+					countStart = true;
 				}
 			};
-			if (countCards.length && countCards[0].innerHTML == '0' && countCards[0].offsetTop - bumper <= bodyTop) {
-				countInit();
+			if (countCards.length && countCards[0].innerHTML == '0') {
+				var absTop = countCards[0].getBoundingClientRect().top;
+				var bumper = 600;
+				if (absTop <= bumper) {
+					countInit();
+				}
 			}
 		};
 	
-		// Throttle btInit on scroll
+		// Throttle onScrollInit on scroll
 		window.addEventListener('scroll', function () {
-			(0, _libThrottledJs2['default'])(btInit(), 400);
+			(0, _libThrottledJs2['default'])(onScrollInit(), 400);
 		});
 	})();
 

@@ -9,8 +9,6 @@ var resizeAccordionImages = function(){
 			const imageElementHeight = imageElement.getBoundingClientRect().height;
 			const imageRatio = imageElementWidth / imageElementHeight;
 			const n = (imageElementWidth/2) - (imageElementHeight/2);
-
-			console.log(imageRatio)
 			if (imageRatio > 1){
 				imageElement.style.marginLeft = `-${n}px`;
 			}
@@ -18,9 +16,6 @@ var resizeAccordionImages = function(){
 				imageElement.style.marginTop = `${n}px`;
 				imageElement.style.height = 'auto';
 				imageElement.style.width= `${imageElementHeight}px`;
-			}
-			if (imageRatio === 0){
-				console.log(imageElement.getBoundingClientRect())
 			}
 		}
 	}
