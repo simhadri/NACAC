@@ -49,3 +49,15 @@ $screen-md-max:              ($screen-lg-min - 1) !default;
 		}
 	}
 }
+@mixin breakmix($var...){	
+	@if length($var) == 4{
+		@media (#{nth($var,1)} : (#{nth($var,2)})) and (#{nth($var,3)} : (#{nth($var,4)})){
+			@content;
+		}
+	}
+	@if length($var) == 2{
+		@media (#{nth($var,1)} : (#{nth($var,2)})){
+			@content;
+		}
+	}
+}

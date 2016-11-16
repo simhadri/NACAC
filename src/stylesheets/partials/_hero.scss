@@ -312,3 +312,9 @@
 		}
 	}
 }
+@include breakmix(max-height, 580px, min-width, $screen-md-min) {
+	.hero__content{
+		margin-top: 6rem;
+		font-size: 90%;
+	}
+}
