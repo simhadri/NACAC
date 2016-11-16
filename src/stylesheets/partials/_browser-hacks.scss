@@ -1,6 +1,5 @@
 // IE 10 & 11
-@media (-ms-high-contrast: none),
-(-ms-high-contrast: active) {
+html.IE-11 {
     .utility-nav {
         background-color: $nacac_light-blue;
         box-shadow: none;
@@ -32,6 +31,9 @@
             width: 100%;
             height: auto;
         }
+        .primary-nav {
+        top: 7rem;
+        }
     }
     .flexbox {
         .col-sm,
@@ -47,16 +49,6 @@
 
 // Edge 12+
 html.Edge-14{
-    // .hero__wrapper{
-    //     top: -7rem;
-    //     padding-bottom: -7rem;
-    //     overflow-x: hidden;
-    // }
-    // .hero__background-image{
-    //     position: absolute;
-    //     z-index: 1;
-    // }
-
     .color-block img.color-block__image {
         width: 100%;
         height: auto;
@@ -75,8 +67,39 @@ html.Edge-14{
 }
 
 // Safari 9+
-@supports (overflow:-webkit-marquee) and (justify-content:inherit) {
-    .color-block {
-    	left: -1px;
+html.Safari-9,
+html.Safari-10 {
+    .color-block.color-block--half {
+        -webkit-flex: 1 0 !important;
+        -ms-flex: 1 0 !important;
+        flex: 1 0 !important;
     }
+}
+
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+
+@include break(max, $screen-sm-max) {
+    
+}
+
+
+/*
+██████╗ ███████╗███████╗██╗  ██╗████████╗ ██████╗ ██████╗ 
+██╔══██╗██╔════╝██╔════╝██║ ██╔╝╚══██╔══╝██╔═══██╗██╔══██╗
+██║  ██║█████╗  ███████╗█████╔╝    ██║   ██║   ██║██████╔╝
+██║  ██║██╔══╝  ╚════██║██╔═██╗    ██║   ██║   ██║██╔═══╝ 
+██████╔╝███████╗███████║██║  ██╗   ██║   ╚██████╔╝██║     
+╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     
+*/
+
+@include break(min, $screen-md-min) {
+    
 }
