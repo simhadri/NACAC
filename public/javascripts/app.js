@@ -1107,22 +1107,29 @@ webpackJsonp([0,3],[
 			var accordionItemAsideSet = document.querySelectorAll('.accordion-item__aside img');
 			for (var i = 0; i < accordionItemAsideSet.length; i++) {
 				var imageElement = accordionItemAsideSet[i];
-				var imageElementWidth = imageElement.offsetWidth;
-				var imageElementHeight = imageElement.offsetHeight;
+				var imageElementWidth = imageElement.getBoundingClientRect().width;
+				var imageElementHeight = imageElement.getBoundingClientRect().height;
 				var imageRatio = imageElementWidth / imageElementHeight;
 				var n = imageElementWidth / 2 - imageElementHeight / 2;
+	
+				console.log(imageRatio);
 				if (imageRatio > 1) {
 					imageElement.style.marginLeft = '-' + n + 'px';
 				}
-				if (imageRatio < 1) {
+				if (imageRatio < 1 && imageRatio !== 0) {
 					imageElement.style.marginTop = n + 'px';
 					imageElement.style.height = 'auto';
 					imageElement.style.width = imageElementHeight + 'px';
 				}
+				if (imageRatio === 0) {
+					console.log(imageElement.getBoundingClientRect());
+				}
 			}
 		}
 	};
-	window.addEventListener('onload', resizeAccordionImages());
+	window.onload = function () {
+		resizeAccordionImages();
+	};
 
 /***/ }
 ]);
