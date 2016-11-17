@@ -33,5 +33,4 @@ import Screen from 'lib/screen.js';
 	searchClose.addEventListener('click', function(event){
 		closeSearch();
 	}, false);
-	// searchInput.addEventListener('blur', closeSearch, false);
 })();

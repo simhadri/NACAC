@@ -136,7 +136,6 @@ import Screen from 'lib/screen.js';
 	var placeNavWhenShortWindow = function(){
 		let windowHeight = window.innerHeight;
 		if( windowHeight < 560 && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')){
-			 // && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')
 			primaryNav.addClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
 			addPaddingToHero();
 		}
