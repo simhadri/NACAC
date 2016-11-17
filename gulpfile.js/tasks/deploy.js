@@ -36,5 +36,5 @@ var deployTask = function() {
   });
 }
 
-gulp.task('deploy', ['production'], deployTask)
+gulp.task('deploy', ['default'], deployTask)
 module.exports = deployTask

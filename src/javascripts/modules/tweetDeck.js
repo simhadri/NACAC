@@ -18,7 +18,7 @@ import EnvVar from 'lib/envVar.js';
 		const cleanHandle = handle.replace('@', '');
 		const tweetParse = new TweetParse;
 		// DEV/PROD consts
-		const TweetController = EnvVar({development:`/javascripts/data/twitter-${cleanHandle}.json`,production:`/Static/JS/twitter-${cleanHandle}.json`});
+		const TweetController = EnvVar({development:`../javascripts/data/twitter-${cleanHandle}.json`,production:`/Static/JS/twitter-${cleanHandle}.json`});
 		
 		$.ajax({
 			url: TweetController,

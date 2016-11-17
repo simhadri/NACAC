@@ -582,7 +582,6 @@ webpackJsonp([0,3],[
 		var placeNavWhenShortWindow = function placeNavWhenShortWindow() {
 			var windowHeight = window.innerHeight;
 			if (windowHeight < 560 && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')) {
-				// && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')
 				primaryNav.addClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
 				addPaddingToHero();
 			}
@@ -741,7 +740,6 @@ webpackJsonp([0,3],[
 		searchClose.addEventListener('click', function (event) {
 			closeSearch();
 		}, false);
-		// searchInput.addEventListener('blur', closeSearch, false);
 	})();
 
 /***/ },
@@ -974,7 +972,7 @@ webpackJsonp([0,3],[
 				var cleanHandle = handle.replace('@', '');
 				var tweetParse = new _libTweetParseJs2['default']();
 				// DEV/PROD consts
-				var TweetController = (0, _libEnvVarJs2['default'])({ development: '/javascripts/data/twitter-' + cleanHandle + '.json', production: '/Static/JS/twitter-' + cleanHandle + '.json' });
+				var TweetController = (0, _libEnvVarJs2['default'])({ development: '../javascripts/data/twitter-' + cleanHandle + '.json', production: '/Static/JS/twitter-' + cleanHandle + '.json' });
 	
 				$.ajax({
 					url: TweetController,
