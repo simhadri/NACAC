@@ -1,5 +1,5 @@
 // FUNCTION
-if(document.getElementById('lightSlider')){
+if(document.getElementById('lightSlider').childElementCount !== 0){
 	$('#lightSlider').lightSlider({
 		item: 4,
 		loop: false,
