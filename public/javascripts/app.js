@@ -578,7 +578,7 @@ webpackJsonp([0,3],[
 		// we need to redraw the floating nav
 		var placeNavWhenShortWindow = function placeNavWhenShortWindow() {
 			var windowHeight = window.innerHeight;
-			if (windowHeight < 500 && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')) {
+			if (windowHeight < 560 && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')) {
 				// && !primaryNav.hasClass('primary-nav--up primary-nav--sticky')
 				primaryNav.addClass('primary-nav--up primary-nav--sticky primary-nav--inanimate');
 				addPaddingToHero();
@@ -706,44 +706,39 @@ webpackJsonp([0,3],[
 	
 	// FUNCTION
 	(function () {
-		var screenOverlay = new _libScreenJs2['default'](),
-		    morphSearch = $('.utility-search'),
-		    searchInput = $('input.utility-search__input'),
-		    seachInputWrapper = $('.utility-nav__search'),
-		    isOpen = false,
-		   
+		var screenOverlay = new _libScreenJs2['default']();
+		var morphSearch = document.querySelector('.utility-search');
+		var searchInput = document.querySelector('.utility-search__input');
+		var searchTrigger = document.querySelector('.utility-search__trigger');
+		var searchClose = document.querySelector('.utility-search__close');
 		// show/hide search area
-		toggleSearch = function toggleSearch(evt) {
-			// return if open and the input gets focused
-			if (evt.type.toLowerCase() === 'focus' && isOpen) return false;
-	
-			//var offsets = morphSearch.getBoundingClientRect();
-			if (isOpen) {
-				morphSearch.removeClass('utility-search--open');
-				seachInputWrapper.removeClass('utility-nav__search--on');
-				screenOverlay.turnScreenOff();
-				searchInput.val('').blur();
-			} else {
-				setTimeout(function () {
-					searchInput.focus();
-				}, 800);
-				morphSearch.addClass('utility-search--open');
-				seachInputWrapper.addClass('utility-nav__search--on');
-				screenOverlay.turnScreenOn('hard');
-			}
-			isOpen = !isOpen;
+		var closeSearch = function closeSearch() {
+			morphSearch.classList.remove('utility-search--open');
+			searchTrigger.classList.remove('trigger--open');
+			screenOverlay.turnScreenOff();
+			searchInput.value = '';
+			searchInput.blur();
+		};
+		var openSearch = function openSearch() {
+			setTimeout(function () {
+				searchInput.focus();
+			}, 800);
+			morphSearch.classList.add('utility-search--open');
+			searchTrigger.classList.add('trigger--open');
+			screenOverlay.turnScreenOn('hard');
 		};
 		// events
-		$('.utility-search__trigger').on('click', toggleSearch);
-	
-		// esc key closes search overlay
-		// keyboard navigation events
-		document.addEventListener('keydown', function (ev) {
-			var keyCode = ev.keyCode || ev.which;
-			if (keyCode === 27 && isOpen) {
-				toggleSearch(ev);
+		searchTrigger.addEventListener('click', function (event) {
+			if (!event.target.classList.contains('trigger--open')) {
+				openSearch();
+			} else {
+				closeSearch();
 			}
-		});
+		}, false);
+		searchClose.addEventListener('click', function (event) {
+			closeSearch();
+		}, false);
+		// searchInput.addEventListener('blur', closeSearch, false);
 	})();
 
 /***/ },
