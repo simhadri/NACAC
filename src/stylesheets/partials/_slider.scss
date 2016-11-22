@@ -15,6 +15,10 @@
 	&.lsGrabbing > * {
 		cursor: grabbing;
 	}
+	.lslide img {
+		margin: auto;
+		display: block;
+	}
 }
 
 .lSSlideWrapper {

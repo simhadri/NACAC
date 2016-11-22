@@ -1,31 +1,9 @@
 <div class="slider__wrapper">
 	<ul id="lightSlider">
+		{% for i in range(0,12) %}
 		<li>
-			<img class="slider__image" src="../images/logos/microsoft.png" alt="Microsoft">
+			<img src="https://placehold.it/150x100?text=Sponsor+{{loop.index}}" alt="">
 		</li>
-		<li>
-			<img class="slider__image" src="../images/logos/amazon.png" alt="Amazon">
-		</li>
-		<li>
-			<img class="slider__image" src="../images/logos/google.png" alt="Google">
-		</li>
-		<li>
-			<img class="slider__image" src="../images/logos/microsoft.png" alt="Microsoft">
-		</li>
-		<li>
-			<img class="slider__image" src="../images/logos/amazon.png" alt="Amazon">
-		</li>
-		<li>
-			<img class="slider__image" src="../images/logos/google.png" alt="Google">
-		</li>
-		<li>
-			<img class="slider__image" src="../images/logos/microsoft.png" alt="Microsoft">
-		</li>
-		<li>
-			<img class="slider__image" src="../images/logos/amazon.png" alt="Amazon">
-		</li>
-		<li>
-			<img class="slider__image" src="../images/logos/google.png" alt="Google">
-		</li>
+		{% endfor %}
 	</ul>
 </div>
