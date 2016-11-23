@@ -94,8 +94,10 @@
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 */
 
-@include break(min, $screen-xs-min) {
-
+@include break(max, $screen-sm-max) {
+	.responsive-table td:nth-child(even) {
+		background: $nacac_bg-light-grey;
+	}
 }
 @include break(min, $screen-sm-min) {
 	.reposnsive-table{
@@ -103,10 +105,12 @@
 		td {
 			padding: .75em .5em;
 		}
+
 		tbody{
 			td {
 				border-bottom: 1px solid $nacac_lighter-blue;
 			}
+
 			td[data-title]:before {
 				font-size: .9em;
 			}
