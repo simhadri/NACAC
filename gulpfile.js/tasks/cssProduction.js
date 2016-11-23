@@ -22,5 +22,5 @@ var cssProduction = function () {
     .pipe(browserSync.stream())
 }
 
-gulp.task('css', cssProduction)
+gulp.task('cssProduction', cssProduction)
 module.exports = cssProduction
