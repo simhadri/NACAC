@@ -143,4 +143,8 @@
 														  
 */
 
-@include break(min, $screen-md-min) {}
+@include break(min, $screen-sm-min, max, $screen-sm-max) {
+	.schedule__navigation.tab__navigation .tab__button {
+		font-size: 1.4rem;
+	}
+}
