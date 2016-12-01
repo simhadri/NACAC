@@ -5,3 +5,4 @@
 import 'modules/formValidation';
 import 'modules/clock';
 import 'modules/slider';
+import 'modules/charts';

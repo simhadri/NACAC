@@ -1,4 +1,12 @@
 .accordion {
+	.accordion__toggle {
+	    text-align: right;
+	    cursor: pointer;
+	    color: $nacac_blue;
+	    &:hover,&:focus{
+	    	color: $nacac_light-blue;
+	    }
+	}
 	list-style: none;
 	.accordion__list{
 		padding: 0;

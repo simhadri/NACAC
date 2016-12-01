@@ -60,7 +60,15 @@
 		$('.trigger__content[data-trigger="' + id + '"]').addClass('trigger__content--active')
 	}
 
-	
+	// Toggle All
+	const toggleAll = (io) => {
+		history.pushState('', document.title, window.location.pathname);
+		if (io === 'collapse'){
+			$('.trigger__content').removeClass('trigger__content--active');
+		} else{
+			$('.trigger__content').addClass('trigger__content--active');
+		}
+	}
 
 	// initialise
 	if (targets.indexOf(window.location.hash) !== -1) {
@@ -86,6 +94,13 @@
 	}
 
 	$(window).on('hashchange', update);
+	var toggleButton = document.querySelectorAll('.js-accordion--toggle');
+	for (var i = 0; i < toggleButton.length; i++) {
+		// Should be expand/collapse
+		toggleButton[i].addEventListener('click',(event) => {
+			toggleAll(event.target.dataset.toggle);
+		});
+	}
 	$('.tab__navigation').on('scroll', shadowAnimation);
 	triggers.on('click', triggerClickHandler);
 })();
