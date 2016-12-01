@@ -1,14 +1,26 @@
-webpackJsonp([2,3],{
-
-/***/ 0:
+webpackJsonp([2,3],[
+/* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(18);
+	module.exports = __webpack_require__(15);
 
 
 /***/ },
-
-/***/ 18:
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// *********************
@@ -17,15 +29,16 @@ webpackJsonp([2,3],{
 	// import 'modules/asideNavigation';
 	'use strict';
 	
+	__webpack_require__(16);
+	
+	__webpack_require__(17);
+	
 	__webpack_require__(19);
 	
 	__webpack_require__(20);
-	
-	__webpack_require__(22);
 
 /***/ },
-
-/***/ 19:
+/* 16 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -87,8 +100,7 @@ webpackJsonp([2,3],{
 	})();
 
 /***/ },
-
-/***/ 20:
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -96,7 +108,7 @@ webpackJsonp([2,3],{
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libCountDown = __webpack_require__(21);
+	var _libCountDown = __webpack_require__(18);
 	
 	var _libCountDown2 = _interopRequireDefault(_libCountDown);
 	
@@ -110,8 +122,7 @@ webpackJsonp([2,3],{
 	})();
 
 /***/ },
-
-/***/ 21:
+/* 18 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -167,8 +178,7 @@ webpackJsonp([2,3],{
 	module.exports = countDown;
 
 /***/ },
-
-/***/ 22:
+/* 19 */
 /***/ function(module, exports) {
 
 	// FUNCTION
@@ -199,7 +209,173 @@ webpackJsonp([2,3],{
 		});
 	}
 
-/***/ }
+/***/ },
+/* 20 */
+/***/ function(module, exports) {
 
-});
+	'use strict';
+	
+	var initChart = function initChart() {
+		var circleSet = document.querySelectorAll('.js_circle');
+		var chartSet = document.querySelectorAll('.js_bars');
+	
+		// Toggle Canvas Bar Colors
+		var toggleColor = function toggleColor(toggle) {
+			if (toggle === 0) {
+				var color = '#3B488C';
+				return color;
+			} else {
+				var color = '#00ACAD';
+				return color;
+			}
+		};
+	
+		// Redraw (x2) for Retina Display
+		var retinaResize = function retinaResize(canvas, ctx, canvasWidth, canvasHeight) {
+			if (window.devicePixelRatio > 1) {
+				canvas.width = canvasWidth * window.devicePixelRatio;
+				canvas.height = canvasHeight * window.devicePixelRatio;
+				canvas.setAttribute("style", 'width:' + canvasWidth + 'px;height:' + canvasHeight + 'px');
+				ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+			}
+		};
+	
+		// For Circle Charts
+		if (circleSet) {
+			//Will Need for More than one!
+			for (var i = 0; i < circleSet.length; i++) {
+				// get Params for Circle
+				var percent = circleSet[i].dataset.percent;
+				var circleSize = circleSet[i].offsetWidth;
+				var circleRad = circleSize / 2;
+				var circleLineWidth = circleRad / 4;
+	
+				// Create Canvas
+				var canvas = document.createElement('canvas');
+	
+				// Get Chart Metrics, Dictated at charts.scss
+				canvas.width = circleSize;
+				canvas.height = circleSize;
+				circleSet[i].appendChild(canvas);
+	
+				// ctx is Canvas Context
+				var ctx = canvas.getContext('2d');
+	
+				// For Retina
+				retinaResize(canvas, ctx, canvas.width, canvas.height);
+	
+				// Draw Underlying Full Circle
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				ctx.beginPath();
+				ctx.arc(circleRad, circleRad, circleRad - circleLineWidth, 0, 2 * Math.PI);
+				ctx.strokeStyle = '#00ACAD';
+				ctx.lineWidth = circleLineWidth;
+				ctx.stroke();
+				ctx.closePath();
+	
+				// Draw Percentage of Total Circle
+				ctx.beginPath();
+	
+				// Starting point is the Bottom
+				// A full Circle is Pi * 2
+				// ----------------------
+				// 0 || Pi*2: 3 o'clock; Start/End
+				// Pi/2:      6 o'clock 
+				// Pi:        9 o'clock
+				// Pi*1.5:    12 o'clock
+				var startingPoint = Math.PI / 2;
+	
+				// Get the entered amount and convert to real percent 42 -> 0.42
+				var percentPoint = percent / 100;
+	
+				// Percent of Pi; Pi*2 == Full Circle
+				// Let's say you want 25% of a full Circle
+				// (Pi*2) * 0.25 = 1.570...
+				var step = Math.PI * 2 * percentPoint;
+				ctx.arc(circleRad, circleRad, circleRad - circleLineWidth, startingPoint, startingPoint + step, false);
+				ctx.strokeStyle = '#F28700';
+				ctx.lineWidth = circleLineWidth;
+				ctx.stroke();
+	
+				// Add Percent Symbol
+				var percentText = document.createElement('div');
+				percentText.className = 'circle__text';
+				percentText.innerHTML = percent + '<sup>%</sup>';
+				circleSet[i].appendChild(percentText);
+			}
+		}
+	
+		// For Bars
+		if (chartSet) {
+			//Will Need for More than one!
+			for (var i = 0; i < chartSet.length; i++) {
+				// get Params for bars
+				// barset String to Object
+				var barSet = chartSet[i].dataset.bars.split(',');
+				var barSetLength = barSet.length;
+	
+				// Get Chart Metrics, Dictated at charts.scss
+				var chartWidth = chartSet[i].offsetWidth;
+				var chartHeight = chartSet[i].offsetHeight;
+	
+				// Create Canvas
+				var canvas = document.createElement('canvas');
+	
+				canvas.width = chartWidth;
+				canvas.height = chartHeight;
+				chartSet[i].appendChild(canvas);
+	
+				// ctx is Canvas Context
+				var ctx = canvas.getContext('2d');
+	
+				// For Retina
+				retinaResize(canvas, ctx, canvas.width, canvas.height);
+	
+				// Draw Underlying bar
+				for (var _i = 0; _i < barSet.length; _i++) {
+					var barDatum = barSet[_i] / 100;
+	
+					// canvas width / number of bars
+					var blockWidth = parseInt(chartWidth / barSetLength);
+					var blockHeight = parseInt(barDatum * chartHeight);
+	
+					var blockX = blockWidth * _i;
+					var blockY = chartHeight - blockHeight;
+	
+					ctx.fillStyle = toggleColor(_i % 2);
+					ctx.fillRect(blockX, blockY, blockWidth, blockHeight);
+					ctx.fillStyle = 'white';
+					ctx.font = '16px sans-serif';
+	
+					// Place the font 20px below top of bar
+					var fontY = blockY + 20;
+	
+					// If the bar is too small (blockY), place it above
+					if (barSet[_i] <= 15) {
+						fontY = blockY - 10;
+					}
+	
+					// Add Number to Bar
+					ctx.fillText(barSet[_i], blockX + blockWidth / 2 - 8, fontY);
+				}
+			}
+		}
+	
+		// If more than one Chart, Run Slider
+		var cardSlider = document.querySelector('.chartSlider');
+		if (cardSlider.childElementCount !== 0) {
+			$('.chartSlider').lightSlider({
+				item: 1,
+				loop: false,
+				slideMove: 1,
+				pager: true,
+				easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+				speed: 600
+			});
+		}
+	};
+	document.addEventListener('DOMContentLoaded', initChart());
+
+/***/ }
+]);
 //# sourceMappingURL=interior.js.map

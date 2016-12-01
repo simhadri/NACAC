@@ -1,81 +1,67 @@
-// IE 10 & 11
-html.IE-11 {
-    .utility-nav {
-        background-color: $nacac_light-blue;
-        box-shadow: none;
-        .utility-search__trigger {
-            cursor: pointer;
-        }
-    }
-    .primary-nav {
-        top: 5rem;
-        position: fixed;
-        .primary-nav__logo svg {
-            top: 12px;
-        }
-    }
-    .flexbox__column {
-        display: block;
-    }
-    .color-block img.color-block__image {
-        width: 100%;
-        height: auto;
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        object-fit: cover;
-    }
-    @include break(max, $screen-sm-max) {
-        .color-block img.color-block__image {
-            position: absolute;
-            width: 100%;
-            height: auto;
-        }
-        .primary-nav {
-        top: 7rem;
-        }
-    }
-    .flexbox {
-        .col-sm,
-        .col-md,
-        .col-lg {
-            flex-grow: 1;
-            flex: calc(30% - 2rem);
-            flex-basis: 1 1 0%;
-            min-width: 0;
-        }
-    }
+// Tied to JS /javascripts/charts.js
+// Height and WIdth mst be Identical
+$ChartSize: 200px;
+
+.card-chart{
+	padding: 0;
+	margin: 2rem;
+	width: calc(50% - 4rem);
+	float: left;
+	.slider__wrapper{
+		margin: 0 auto;
+		padding: 1rem;
+		.lSAction > a {
+			color: $white;
+		}
+	}
+	.card-chart__content{
+		max-width: 30rem;
+		text-align: center;
+		margin: 0 auto;
+		font-size: 2rem;
+	}
+	.card-chart__image{
+		height: 30rem;
+		padding: 0;
+		background-position: 50% 50%;
+		background-size: cover;
+		text-align: center;
+	}
 }
 
-// Edge 12+
-html.Edge-14{
-    .color-block img.color-block__image {
-        width: 100%;
-        height: auto;
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        object-fit: cover;
-    }
-    @include break(max, $screen-sm-max) {
-        .color-block img.color-block__image {
-            position: absolute;
-            width: 100%;
-            height: auto;
-        }
-    }
+.chart__circle{
+	width: $ChartSize;
+	height: $ChartSize;
+	position: relative;
+	margin: auto;
+	@include sans-uppercase-normal;
+	.circle__text{
+		display: block;
+		margin: auto;
+		width: 100%;
+		height: 4rem;
+		line-height: 4rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		font-size: 4rem;
+		// color: $text-slate;
+		right: 0;
+		text-align: center;
+		
+		sup{
+			font-size: 2rem;
+		}
+	}
 }
 
-// Safari 9+
-html.Safari-9,
-html.Safari-10 {
-    .color-block.color-block--half, .card-chart {
-        -webkit-flex: 1 0 !important;
-        -ms-flex: 1 0 !important;
-        flex: 1 0 !important;
-    }
+.chart__bars{
+	width: #{ $ChartSize *1.6};
+	height: $ChartSize;
+	position: relative;
+	margin: auto;
 }
-
 
 /*
 ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
@@ -87,7 +73,9 @@ html.Safari-10 {
 */
 
 @include break(max, $screen-sm-max) {
-    
+	.card-chart{
+		width: 100%;
+	}
 }
 
 
@@ -101,5 +89,5 @@ html.Safari-10 {
 */
 
 @include break(min, $screen-md-min) {
-    
+	
 }

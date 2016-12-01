@@ -1,0 +1,15 @@
+{% extends '_layouts/main-application.html' %}
+{% set pageLocation = "Events" %}
+{% block content %}
+<main style="background-color: lightgreen;">
+    <article class="article__row content__row ">
+        <div class="container">
+            {% include './_components/chart-circle.html' %}
+        </div>
+    </article>
+</main>
+{% endblock %}
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/js/lightslider.min.js"></script>
+<script src="../javascripts/interior.js"></script>
+{% endblock %}

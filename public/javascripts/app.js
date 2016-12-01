@@ -26,11 +26,11 @@ webpackJsonp([0,3],[
 	
 	'use strict';
 	
+	__webpack_require__(21);
+	
+	__webpack_require__(4);
+	
 	__webpack_require__(2);
-	
-	__webpack_require__(3);
-	
-	__webpack_require__(6);
 	
 	__webpack_require__(7);
 	
@@ -38,33 +38,40 @@ webpackJsonp([0,3],[
 	
 	__webpack_require__(11);
 	
+	__webpack_require__(22);
+	
 	__webpack_require__(12);
 	
-	__webpack_require__(13);
-	
-	__webpack_require__(16);
+	__webpack_require__(23);
 
 /***/ },
 /* 2 */
 /***/ function(module, exports) {
 
-	// Add Custom style for #EpiserverEditMode if use is in View Mode
-	
 	// FUNCTION
 	'use strict';
 	
-	(function () {
-		if (document.body.id === 'EpiserverEditMode') {
-			var head = document.head || document.getElementsByTagName('head')[0],
-			    style = document.createElement('link');
-			style.setAttribute('rel', 'stylesheet');
-			style.setAttribute('href', '/stylesheets/episerver-edit-mode.css');
-			head.appendChild(style);
-		}
+	;(function () {
+		var initBlazy = function initBlazy() {
+			var bLazy = new Blazy({
+				breakpoints: [{ width: 640, src: 'data-src-sm' }
+				//{width: 767, src: 'data-src-sm'}
+				],
+				success: function success(element) {
+					setTimeout(function () {
+						var parent = element.parentNode;
+						parent.className = parent.className.replace(/\bloading\b/, '');
+					}, 2000);
+				}
+			});
+			setTimeout(bLazy.revalidate(), 200);
+		};
+		document.addEventListener('load', initBlazy());
 	})();
 
 /***/ },
-/* 3 */
+/* 3 */,
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -72,11 +79,11 @@ webpackJsonp([0,3],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libThrottledJs = __webpack_require__(4);
+	var _libThrottledJs = __webpack_require__(5);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
-	var _libCountUpJs = __webpack_require__(5);
+	var _libCountUpJs = __webpack_require__(6);
 	
 	var _libCountUpJs2 = _interopRequireDefault(_libCountUpJs);
 	
@@ -200,7 +207,7 @@ webpackJsonp([0,3],[
 	})();
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports) {
 
 	// Throttled is borrowed (stolen) from underscore. It thottles
@@ -243,7 +250,7 @@ webpackJsonp([0,3],[
 	module.exports = Throttled;
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports) {
 
 	/*
@@ -403,31 +410,6 @@ webpackJsonp([0,3],[
 	// numAnim.start(someMethodToCallOnComplete);
 
 /***/ },
-/* 6 */
-/***/ function(module, exports) {
-
-	// FUNCTION
-	'use strict';
-	
-	;(function () {
-		var initBlazy = function initBlazy() {
-			var bLazy = new Blazy({
-				breakpoints: [{ width: 640, src: 'data-src-sm' }
-				//{width: 767, src: 'data-src-sm'}
-				],
-				success: function success(element) {
-					setTimeout(function () {
-						var parent = element.parentNode;
-						parent.className = parent.className.replace(/\bloading\b/, '');
-					}, 2000);
-				}
-			});
-			setTimeout(bLazy.revalidate(), 200);
-		};
-		document.addEventListener('load', initBlazy());
-	})();
-
-/***/ },
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -440,7 +422,7 @@ webpackJsonp([0,3],[
 	
 	var _libHeadStyleJs2 = _interopRequireDefault(_libHeadStyleJs);
 	
-	var _libThrottledJs = __webpack_require__(4);
+	var _libThrottledJs = __webpack_require__(5);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
@@ -805,6 +787,16 @@ webpackJsonp([0,3],[
 			$('.trigger__content[data-trigger="' + id + '"]').addClass('trigger__content--active');
 		}
 	
+		// Toggle All
+		var toggleAll = function toggleAll(io) {
+			history.pushState('', document.title, window.location.pathname);
+			if (io === 'collapse') {
+				$('.trigger__content').removeClass('trigger__content--active');
+			} else {
+				$('.trigger__content').addClass('trigger__content--active');
+			}
+		};
+	
 		// initialise
 		if (targets.indexOf(window.location.hash) !== -1) {
 			update();
@@ -826,12 +818,204 @@ webpackJsonp([0,3],[
 		}
 	
 		$(window).on('hashchange', update);
+		var toggleButton = document.querySelectorAll('.js-accordion--toggle');
+		for (var i = 0; i < toggleButton.length; i++) {
+			// Should be expand/collapse
+			toggleButton[i].addEventListener('click', function (event) {
+				toggleAll(event.target.dataset.toggle);
+			});
+		}
 		$('.tab__navigation').on('scroll', shadowAnimation);
 		triggers.on('click', triggerClickHandler);
 	})();
 
 /***/ },
 /* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// This is dummy Local Data
+	// will look something like:
+	// https://api.twitter.com/1.1/statuses/user_timeline.json? <- queries
+	// screen_name=NACACFairs&count=6
+	// Note count is completed first, if we filter out replies/rt
+	// our for loop will have to accomidate for i ... if i > 6 etc
+	// More info at https://dev.twitter.com/rest/reference/get/statuses/user_timeline
+	
+	// IMPORTS
+	'use strict';
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _libTweetParseJs = __webpack_require__(13);
+	
+	var _libTweetParseJs2 = _interopRequireDefault(_libTweetParseJs);
+	
+	var _libEnvVarJs = __webpack_require__(14);
+	
+	var _libEnvVarJs2 = _interopRequireDefault(_libEnvVarJs);
+	
+	// FUNCTION
+	(function () {
+		var tweetDeck = document.getElementById('tweetDeck');
+		if (document.getElementById('tweetDeck')) {
+			(function () {
+				var handle = tweetDeck.dataset.feed;
+				var cleanHandle = handle.replace('@', '');
+				var tweetParse = new _libTweetParseJs2['default']();
+				// DEV/PROD consts
+				var TweetController = (0, _libEnvVarJs2['default'])({ development: '../javascripts/data/twitter-' + cleanHandle + '.json', production: '/Static/JS/twitter-' + cleanHandle + '.json' });
+	
+				$.ajax({
+					url: TweetController,
+					type: 'GET',
+					dataType: 'json',
+					success: function success(data) {
+						for (var i = 0; i < data.length; i++) {
+							var tweetText = data[i].text;
+							// Clean up tweet, add links
+							tweetText = tweetParse.UrlUserHashtag(tweetText);
+							tweetDeck.innerHTML = tweetDeck.innerHTML + ('<div class="col-sm col-xs-12">\n\t\t\t\t\t\t\t<div class="tweet-wrap">\n\t\t\t\t\t\t\t\t<div class="tweet"> \n\t\t\t\t\t\t\t\t\t' + tweetText + ' \n\t\t\t\t\t\t\t\t\t<div class="tweet-meta">\n\t\t\t\t\t\t\t\t\t\t<a href="' + data[i].user.url + '"><img class="tweet__profile-pic" src="' + data[i].user.profile_image_url_https + '"></a>\n\t\t\t\t\t\t\t\t\t\t<a href="' + data[i].user.url + '">' + data[i].user.screen_name + '</a><br>\n\t\t\t\t\t\t\t\t\t\t<a href="#">' + tweetParse.parseTimeAgo(data[i].created_at) + '</a>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>');
+						}
+					}
+				});
+			})();
+		}
+	})();
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	// Tweet Parse!
+	// 'Borrowed' and tweeked from:
+	// http://www.simonwhatley.co.uk/examples/twitter/prototype/
+	// http://stackoverflow.com/questions/6549223/javascript-code-to-display-twitter-created-at-as-xxxx-ago
+	"use strict";
+	
+	var TweetParse = function TweetParse() {
+	    this.UrlUserHashtag = function (n_string) {
+	        String.prototype.parseURL = function () {
+	            return this.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&~\?\/.=]+/g, function (url) {
+	                return url.link(url);
+	            });
+	        };
+	        String.prototype.parseUsername = function () {
+	            return this.replace(/[@]+[A-Za-z0-9-_]+/g, function (u) {
+	                var username = u.replace("@", "");
+	                return u.link("http://twitter.com/" + username);
+	            });
+	        };
+	
+	        String.prototype.parseHashtag = function () {
+	            return this.replace(/[#]+[A-Za-z0-9-_]+/g, function (t) {
+	                var tag = t.replace("#", "%23");
+	                return t.link("https://twitter.com/search?q=" + tag);
+	            });
+	        };
+	        return n_string.parseURL().parseUsername().parseHashtag();
+	    }, this.parseTimeAgo = function (n_string) {
+	        var K = (function () {
+	            var a = navigator.userAgent;
+	            return {
+	                ie: a.match(/MSIE\s([^;]*)/)
+	            };
+	        })();
+	        var user_date = new Date(),
+	            system_date = new Date(Date.parse(n_string));
+	        if (K.ie) {
+	            system_date = Date.parse(n_string.replace(/( \+)/, ' UTC$1'));
+	        }
+	        var diff = Math.abs((user_date - system_date) / 1000);
+	        if (diff <= 1) {
+	            return "just now";
+	        }
+	        if (diff < 20) {
+	            return diff + " seconds ago";
+	        }
+	        if (diff < 40) {
+	            return "half a minute ago";
+	        }
+	        if (diff < 60) {
+	            return "less than a minute ago";
+	        }
+	        if (diff <= 90) {
+	            return "one minute ago";
+	        }
+	        if (diff <= 3540) {
+	            return Math.round(diff / 60) + " minutes ago";
+	        }
+	        if (diff <= 5400) {
+	            return "1 hour ago";
+	        }
+	        if (diff <= 86400) {
+	            return Math.round(diff / 3600) + " hours ago";
+	        }
+	        if (diff <= 129600) {
+	            return "1 day ago";
+	        }
+	        if (diff < 604800) {
+	            return Math.round(diff / 86400) + " days ago";
+	        }
+	        if (diff <= 777600) {
+	            return "1 week ago";
+	        }
+	        var t_month = system_date.getUTCMonth() + 1,
+	            t_day = system_date.getUTCDate(),
+	            t_year = system_date.getUTCFullYear(),
+	            newdate = t_month + "/" + t_day + "/" + t_year;
+	
+	        return "on " + newdate;
+	    };
+	};
+	module.exports = TweetParse;
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Usage:
+	// var dev_var = envVar({
+	// 	production:'myProductionURL',
+	// 	development: 'myDevelopmentURL'
+	// });
+	"use strict";
+	
+	var envVar = function envVar(obj) {
+		for (var prop in obj) {
+			if (obj.hasOwnProperty(prop) && ("development") === prop) {
+				return obj[prop];
+			}
+		}
+	};
+	module.exports = envVar;
+
+/***/ },
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */
+/***/ function(module, exports) {
+
+	// Add Custom style for #EpiserverEditMode if use is in View Mode
+	
+	// FUNCTION
+	'use strict';
+	
+	(function () {
+		if (document.body.id === 'EpiserverEditMode') {
+			var head = document.head || document.getElementsByTagName('head')[0],
+			    style = document.createElement('link');
+			style.setAttribute('rel', 'stylesheet');
+			style.setAttribute('href', '/stylesheets/episerver-edit-mode.css');
+			head.appendChild(style);
+		}
+	})();
+
+/***/ },
+/* 22 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -936,167 +1120,7 @@ webpackJsonp([0,3],[
 	}
 
 /***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// This is dummy Local Data
-	// will look something like:
-	// https://api.twitter.com/1.1/statuses/user_timeline.json? <- queries
-	// screen_name=NACACFairs&count=6
-	// Note count is completed first, if we filter out replies/rt
-	// our for loop will have to accomidate for i ... if i > 6 etc
-	// More info at https://dev.twitter.com/rest/reference/get/statuses/user_timeline
-	
-	// IMPORTS
-	'use strict';
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	var _libTweetParseJs = __webpack_require__(14);
-	
-	var _libTweetParseJs2 = _interopRequireDefault(_libTweetParseJs);
-	
-	var _libEnvVarJs = __webpack_require__(15);
-	
-	var _libEnvVarJs2 = _interopRequireDefault(_libEnvVarJs);
-	
-	// FUNCTION
-	(function () {
-		var tweetDeck = document.getElementById('tweetDeck');
-		if (document.getElementById('tweetDeck')) {
-			(function () {
-				var handle = tweetDeck.dataset.feed;
-				var cleanHandle = handle.replace('@', '');
-				var tweetParse = new _libTweetParseJs2['default']();
-				// DEV/PROD consts
-				var TweetController = (0, _libEnvVarJs2['default'])({ development: '../javascripts/data/twitter-' + cleanHandle + '.json', production: '/Static/JS/twitter-' + cleanHandle + '.json' });
-	
-				$.ajax({
-					url: TweetController,
-					type: 'GET',
-					dataType: 'json',
-					success: function success(data) {
-						for (var i = 0; i < data.length; i++) {
-							var tweetText = data[i].text;
-							// Clean up tweet, add links
-							tweetText = tweetParse.UrlUserHashtag(tweetText);
-							tweetDeck.innerHTML = tweetDeck.innerHTML + ('<div class="col-sm col-xs-12">\n\t\t\t\t\t\t\t<div class="tweet-wrap">\n\t\t\t\t\t\t\t\t<div class="tweet"> \n\t\t\t\t\t\t\t\t\t' + tweetText + ' \n\t\t\t\t\t\t\t\t\t<div class="tweet-meta">\n\t\t\t\t\t\t\t\t\t\t<a href="' + data[i].user.url + '"><img class="tweet__profile-pic" src="' + data[i].user.profile_image_url_https + '"></a>\n\t\t\t\t\t\t\t\t\t\t<a href="' + data[i].user.url + '">' + data[i].user.screen_name + '</a><br>\n\t\t\t\t\t\t\t\t\t\t<a href="#">' + tweetParse.parseTimeAgo(data[i].created_at) + '</a>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>');
-						}
-					}
-				});
-			})();
-		}
-	})();
-
-/***/ },
-/* 14 */
-/***/ function(module, exports) {
-
-	// Tweet Parse!
-	// 'Borrowed' and tweeked from:
-	// http://www.simonwhatley.co.uk/examples/twitter/prototype/
-	// http://stackoverflow.com/questions/6549223/javascript-code-to-display-twitter-created-at-as-xxxx-ago
-	"use strict";
-	
-	var TweetParse = function TweetParse() {
-	    this.UrlUserHashtag = function (n_string) {
-	        String.prototype.parseURL = function () {
-	            return this.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&~\?\/.=]+/g, function (url) {
-	                return url.link(url);
-	            });
-	        };
-	        String.prototype.parseUsername = function () {
-	            return this.replace(/[@]+[A-Za-z0-9-_]+/g, function (u) {
-	                var username = u.replace("@", "");
-	                return u.link("http://twitter.com/" + username);
-	            });
-	        };
-	
-	        String.prototype.parseHashtag = function () {
-	            return this.replace(/[#]+[A-Za-z0-9-_]+/g, function (t) {
-	                var tag = t.replace("#", "%23");
-	                return t.link("https://twitter.com/search?q=" + tag);
-	            });
-	        };
-	        return n_string.parseURL().parseUsername().parseHashtag();
-	    }, this.parseTimeAgo = function (n_string) {
-	        var K = (function () {
-	            var a = navigator.userAgent;
-	            return {
-	                ie: a.match(/MSIE\s([^;]*)/)
-	            };
-	        })();
-	        var user_date = new Date(),
-	            system_date = new Date(Date.parse(n_string));
-	        if (K.ie) {
-	            system_date = Date.parse(n_string.replace(/( \+)/, ' UTC$1'));
-	        }
-	        var diff = Math.abs((user_date - system_date) / 1000);
-	        if (diff <= 1) {
-	            return "just now";
-	        }
-	        if (diff < 20) {
-	            return diff + " seconds ago";
-	        }
-	        if (diff < 40) {
-	            return "half a minute ago";
-	        }
-	        if (diff < 60) {
-	            return "less than a minute ago";
-	        }
-	        if (diff <= 90) {
-	            return "one minute ago";
-	        }
-	        if (diff <= 3540) {
-	            return Math.round(diff / 60) + " minutes ago";
-	        }
-	        if (diff <= 5400) {
-	            return "1 hour ago";
-	        }
-	        if (diff <= 86400) {
-	            return Math.round(diff / 3600) + " hours ago";
-	        }
-	        if (diff <= 129600) {
-	            return "1 day ago";
-	        }
-	        if (diff < 604800) {
-	            return Math.round(diff / 86400) + " days ago";
-	        }
-	        if (diff <= 777600) {
-	            return "1 week ago";
-	        }
-	        var t_month = system_date.getUTCMonth() + 1,
-	            t_day = system_date.getUTCDate(),
-	            t_year = system_date.getUTCFullYear(),
-	            newdate = t_month + "/" + t_day + "/" + t_year;
-	
-	        return "on " + newdate;
-	    };
-	};
-	module.exports = TweetParse;
-
-/***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// Usage:
-	// var dev_var = envVar({
-	// 	production:'myProductionURL',
-	// 	development: 'myDevelopmentURL'
-	// });
-	"use strict";
-	
-	var envVar = function envVar(obj) {
-		for (var prop in obj) {
-			if (obj.hasOwnProperty(prop) && ("development") === prop) {
-				return obj[prop];
-			}
-		}
-	};
-	module.exports = envVar;
-
-/***/ },
-/* 16 */
+/* 23 */
 /***/ function(module, exports) {
 
 	// FUNCTION
