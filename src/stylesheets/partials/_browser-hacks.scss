@@ -69,7 +69,7 @@ html.Edge-14{
 // Safari 9+
 html.Safari-9,
 html.Safari-10 {
-    .color-block.color-block--half {
+    .color-block.color-block--half, .card-chart {
         -webkit-flex: 1 0 !important;
         -ms-flex: 1 0 !important;
         flex: 1 0 !important;

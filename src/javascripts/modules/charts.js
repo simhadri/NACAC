@@ -1,10 +1,8 @@
-// import raf from 'lib/raf';
-
 const initChart = function() {
 	const circleSet = document.querySelectorAll('.js_circle');
 	const chartSet = document.querySelectorAll('.js_bars');
 
-
+	// Toggle Canvas Bar Colors
 	const toggleColor = function(toggle) {
 		if (toggle === 0) {
 			let color = '#3B488C';
@@ -15,6 +13,7 @@ const initChart = function() {
 		}
 	}
 
+	// Redraw (x2) for Retina Display
 	const retinaResize = function(canvas, ctx, canvasWidth, canvasHeight) {
 		if (window.devicePixelRatio > 1) {
 			canvas.width = canvasWidth * window.devicePixelRatio;
@@ -48,7 +47,7 @@ const initChart = function() {
 			// For Retina
 			retinaResize(canvas, ctx, canvas.width, canvas.height);
 
-			// Draw Underlying Circle
+			// Draw Underlying Full Circle
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 			ctx.beginPath();
 			ctx.arc(circleRad, circleRad, circleRad - circleLineWidth, 0, 2 * Math.PI);
@@ -57,23 +56,36 @@ const initChart = function() {
 			ctx.stroke();
 			ctx.closePath();
 
-			// Draw Circle Percentage
+			// Draw Percentage of Total Circle
 			ctx.beginPath();
-			let startingPoint = Math.PI / 2;
+
+			// Starting point is the Bottom
+			// A full Circle is Pi * 2
+			// ----------------------
+			// 0 || Pi*2: 3 o'clock; Start/End
+			// Pi/2:      6 o'clock  
+			// Pi:        9 o'clock
+			// Pi*1.5:    12 o'clock
+			let startingPoint = Math.PI/2;
+
+			// Get the entered amount and convert to real percent 42 -> 0.42
 			let percentPoint = percent / 100;
-			let step = (Math.PI * percentPoint) * 2;
+
+			// Percent of Pi; Pi*2 == Full Circle
+			// Let's say you want 25% of a full Circle
+			// (Pi*2) * 0.25 = 1.570...
+			let step = (Math.PI * 2) * percentPoint;
 			ctx.arc(circleRad, circleRad, circleRad - circleLineWidth, startingPoint, startingPoint + step, false);
 			ctx.strokeStyle = '#F28700';
 			ctx.lineWidth = circleLineWidth;
 			ctx.stroke();
 
-			// Add Percent
+			// Add Percent Symbol
 			let percentText = document.createElement('div');
 			percentText.className = 'circle__text';
 			percentText.innerHTML = `${percent}<sup>%</sup>`;
 			circleSet[i].appendChild(percentText);
 		}
-		// Add Slider
 	}
 
 	// For Bars
@@ -126,13 +138,15 @@ const initChart = function() {
 					fontY = blockY - 10;
 				}
 				
+				// Add Number to Bar
 				ctx.fillText(barSet[i], blockX + (blockWidth / 2) - 8, fontY);
 			}
 		}
 	}
 
+	// If more than one Chart, Run Slider
 	var cardSlider = document.querySelector('.chartSlider');
-	if (cardSlider.childElementCount > 1) {
+	if (cardSlider.childElementCount !== 0) {
 		$('.chartSlider').lightSlider({
 			item: 1,
 			loop: false,
@@ -143,4 +157,4 @@ const initChart = function() {
 		});
 	}
 };
-document.addEventListener('DOMContentLoaded', initChart);
+document.addEventListener('DOMContentLoaded', initChart());
