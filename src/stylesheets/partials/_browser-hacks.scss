@@ -13,11 +13,14 @@ html.IE-11 {
         .primary-nav__logo svg {
             top: 12px;
         }
-        &.primary-nav-fair {
-             top: 0rem;
+        &.primary-nav-fair{
+            &.primary-nav--up {
+                top: 0rem;
+            }
             .primary-nav__logo svg {
                 top: 30px;
             }
+            
         }
     }
     .hero__wrapper.hero-fair{
