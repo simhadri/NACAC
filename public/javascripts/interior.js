@@ -2,7 +2,7 @@ webpackJsonp([2,3],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(15);
+	module.exports = __webpack_require__(18);
 
 
 /***/ },
@@ -20,7 +20,10 @@ webpackJsonp([2,3],[
 /* 12 */,
 /* 13 */,
 /* 14 */,
-/* 15 */
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// *********************
@@ -29,16 +32,16 @@ webpackJsonp([2,3],[
 	// import 'modules/asideNavigation';
 	'use strict';
 	
-	__webpack_require__(16);
-	
-	__webpack_require__(17);
-	
 	__webpack_require__(19);
 	
 	__webpack_require__(20);
+	
+	__webpack_require__(22);
+	
+	__webpack_require__(23);
 
 /***/ },
-/* 16 */
+/* 19 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -100,7 +103,7 @@ webpackJsonp([2,3],[
 	})();
 
 /***/ },
-/* 17 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -108,7 +111,7 @@ webpackJsonp([2,3],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libCountDown = __webpack_require__(18);
+	var _libCountDown = __webpack_require__(21);
 	
 	var _libCountDown2 = _interopRequireDefault(_libCountDown);
 	
@@ -122,7 +125,7 @@ webpackJsonp([2,3],[
 	})();
 
 /***/ },
-/* 18 */
+/* 21 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -178,7 +181,7 @@ webpackJsonp([2,3],[
 	module.exports = countDown;
 
 /***/ },
-/* 19 */
+/* 22 */
 /***/ function(module, exports) {
 
 	// FUNCTION
@@ -210,7 +213,7 @@ webpackJsonp([2,3],[
 	}
 
 /***/ },
-/* 20 */
+/* 23 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -363,15 +366,17 @@ webpackJsonp([2,3],[
 	
 		// If more than one Chart, Run Slider
 		var cardSlider = document.querySelector('.chartSlider');
-		if (cardSlider.childElementCount !== 0) {
-			$('.chartSlider').lightSlider({
-				item: 1,
-				loop: false,
-				slideMove: 1,
-				pager: true,
-				easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-				speed: 600
-			});
+		if (cardSlider) {
+			if (cardSlider.childElementCount !== 0) {
+				$('.chartSlider').lightSlider({
+					item: 1,
+					loop: false,
+					slideMove: 1,
+					pager: true,
+					easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+					speed: 600
+				});
+			}
 		}
 	};
 	document.addEventListener('DOMContentLoaded', initChart());

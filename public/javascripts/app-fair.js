@@ -2,7 +2,7 @@ webpackJsonp([1,3],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(3);
+	module.exports = __webpack_require__(17);
 
 
 /***/ },
@@ -11,64 +11,16 @@ webpackJsonp([1,3],[
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// *********************
-	//    Modules scripts
-	// *********************
-	'use strict';
-	
-	__webpack_require__(4);
-	
-	__webpack_require__(5);
-	
-	__webpack_require__(8);
-	
-	__webpack_require__(11);
-	
-	__webpack_require__(12);
-	
-	__webpack_require__(13);
-	
-	// import 'modules/map-temp';
-
-/***/ },
-/* 4 */
-/***/ function(module, exports) {
-
-	// FUNCTION
-	'use strict';
-	
-	;(function () {
-		var initBlazy = function initBlazy() {
-			var bLazy = new Blazy({
-				breakpoints: [{ width: 640, src: 'data-src-sm' }
-				//{width: 767, src: 'data-src-sm'}
-				],
-				success: function success(element) {
-					setTimeout(function () {
-						var parent = element.parentNode;
-						parent.className = parent.className.replace(/\bloading\b/, '');
-					}, 2000);
-				}
-			});
-			setTimeout(bLazy.revalidate(), 200);
-		};
-		document.addEventListener('load', initBlazy());
-	})();
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
 	// IMPORTS
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libThrottledJs = __webpack_require__(6);
+	var _libThrottledJs = __webpack_require__(4);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
-	var _libCountUpJs = __webpack_require__(7);
+	var _libCountUpJs = __webpack_require__(5);
 	
 	var _libCountUpJs2 = _interopRequireDefault(_libCountUpJs);
 	
@@ -192,7 +144,7 @@ webpackJsonp([1,3],[
 	})();
 
 /***/ },
-/* 6 */
+/* 4 */
 /***/ function(module, exports) {
 
 	// Throttled is borrowed (stolen) from underscore. It thottles
@@ -235,7 +187,7 @@ webpackJsonp([1,3],[
 	module.exports = Throttled;
 
 /***/ },
-/* 7 */
+/* 5 */
 /***/ function(module, exports) {
 
 	/*
@@ -395,7 +347,32 @@ webpackJsonp([1,3],[
 	// numAnim.start(someMethodToCallOnComplete);
 
 /***/ },
-/* 8 */
+/* 6 */
+/***/ function(module, exports) {
+
+	// FUNCTION
+	'use strict';
+	
+	;(function () {
+		var initBlazy = function initBlazy() {
+			var bLazy = new Blazy({
+				breakpoints: [{ width: 640, src: 'data-src-sm' }
+				//{width: 767, src: 'data-src-sm'}
+				],
+				success: function success(element) {
+					setTimeout(function () {
+						var parent = element.parentNode;
+						parent.className = parent.className.replace(/\bloading\b/, '');
+					}, 2000);
+				}
+			});
+			setTimeout(bLazy.revalidate(), 200);
+		};
+		document.addEventListener('load', initBlazy());
+	})();
+
+/***/ },
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -403,15 +380,15 @@ webpackJsonp([1,3],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libHeadStyleJs = __webpack_require__(9);
+	var _libHeadStyleJs = __webpack_require__(8);
 	
 	var _libHeadStyleJs2 = _interopRequireDefault(_libHeadStyleJs);
 	
-	var _libThrottledJs = __webpack_require__(6);
+	var _libThrottledJs = __webpack_require__(4);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
-	var _libScreenJs = __webpack_require__(10);
+	var _libScreenJs = __webpack_require__(9);
 	
 	var _libScreenJs2 = _interopRequireDefault(_libScreenJs);
 	
@@ -584,7 +561,7 @@ webpackJsonp([1,3],[
 	})();
 
 /***/ },
-/* 9 */
+/* 8 */
 /***/ function(module, exports) {
 
 	// Jquery adds inline styles and these need to be overwritten.
@@ -622,7 +599,7 @@ webpackJsonp([1,3],[
 	module.exports = headStyle;
 
 /***/ },
-/* 10 */
+/* 9 */
 /***/ function(module, exports) {
 
 	// Just creates a screen element and fades it in, then destroys it.
@@ -658,7 +635,7 @@ webpackJsonp([1,3],[
 	module.exports = Screen;
 
 /***/ },
-/* 11 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -666,7 +643,7 @@ webpackJsonp([1,3],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libScreenJs = __webpack_require__(10);
+	var _libScreenJs = __webpack_require__(9);
 	
 	var _libScreenJs2 = _interopRequireDefault(_libScreenJs);
 	
@@ -707,7 +684,7 @@ webpackJsonp([1,3],[
 	})();
 
 /***/ },
-/* 12 */
+/* 11 */
 /***/ function(module, exports) {
 
 	// FUNCTION
@@ -813,6 +790,113 @@ webpackJsonp([1,3],[
 		$('.tab__navigation').on('scroll', shadowAnimation);
 		triggers.on('click', triggerClickHandler);
 	})();
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	(function () {
+		navigator.sayswho = function () {
+			var ua = navigator.userAgent,
+			    tem,
+			    M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+			if (/trident/i.test(M[1])) {
+				tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+				return 'IE-' + (tem[1] || '');
+			}
+			if (M[1] === 'Chrome') {
+				tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
+				if (tem != null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+			}
+			M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+			if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
+			return M.join('-');
+		};
+		document.querySelector('html').classList.add(navigator.sayswho());
+	})();
+	
+	var animateCaps = function animateCaps(element, factor) {
+		setTimeout(function () {
+			animation();
+		}, 600 + factor * 30);
+		setTimeout(function () {
+			animationDown();
+		}, 1200 + factor * 30);
+		setTimeout(function () {
+			removeCaps();
+		}, 2600);
+	
+		function animation() {
+			element.style.bottom = '80%';
+			element.style.transform = 'rotate(60deg)';
+		}
+	
+		function animationDown() {
+			element.style.transition = 'all 800ms ease-in';
+			element.style.bottom = '-20%';
+			element.style.transform = 'rotate(120deg)';
+		}
+		function removeCaps() {
+			if (document.querySelector('#imgCont')) {
+				document.querySelector('#imgCont').remove();
+			}
+		}
+	};
+	var pomp = function pomp() {
+		var imgCont = document.createElement('div');
+		imgCont.setAttribute('id', 'imgCont');
+		imgCont.style.width = '100%';
+		imgCont.style.height = '100%';
+		imgCont.style.position = 'fixed';
+		imgCont.style.top = 0;
+		imgCont.style.zIndex = 99;
+	
+		// Loop
+		for (var i = 0; i < 8; i++) {
+			var n = i + 1;
+			var imgElm = document.createElement('img');
+			imgElm.src = 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Graduation_hat.svg';
+			imgElm.style.position = 'absolute';
+			imgElm.style.bottom = '-20%';
+			imgElm.setAttribute('class', 'js-caps');
+			imgElm.style.zIndex = 8;
+			imgElm.style.left = 20 + Math.floor(Math.random() * 60 + 1) + '%';
+			imgElm.style.width = 90 + n + 'px';
+			imgElm.style.transition = 'all 600ms ease-out';
+			imgElm.style['-webkit-user-select'] = 'none';
+			imgElm.style['-moz-user-select'] = 'none';
+			imgElm.style['-ms-user-select'] = 'none';
+			var mainElement = document.querySelector('body').appendChild(imgCont);
+			var mainElement = document.querySelector('#imgCont').appendChild(imgElm);
+		}
+	};
+	
+	var clicks = 0;
+	var onClick = function onClick() {
+		clicks += 1;
+		if (clicks === 1) {
+			setTimeout(resetClicks, 8000);
+		}
+		if (clicks === 16) {
+			//DO
+			pomp();
+			var getCaps = document.querySelectorAll('.js-caps');
+			for (var x = 0; x < getCaps.length; x++) {
+				animateCaps(getCaps[x], x);
+			}
+			clicks = 0;
+		}
+	};
+	var resetClicks = function resetClicks() {
+		clicks = 0;
+		return false;
+	};
+	if (document.querySelector('.breadcrumb')) {
+		var elm = document.querySelector('.breadcrumb');
+		elm.addEventListener('click', onClick);
+	}
 
 /***/ },
 /* 13 */
@@ -973,6 +1057,32 @@ webpackJsonp([1,3],[
 		}
 	};
 	module.exports = envVar;
+
+/***/ },
+/* 16 */,
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// *********************
+	//    Modules scripts
+	// *********************
+	'use strict';
+	
+	__webpack_require__(12);
+	
+	__webpack_require__(6);
+	
+	__webpack_require__(3);
+	
+	__webpack_require__(7);
+	
+	__webpack_require__(10);
+	
+	__webpack_require__(11);
+	
+	__webpack_require__(13);
+	
+	// import 'modules/map-temp';
 
 /***/ }
 ]);
