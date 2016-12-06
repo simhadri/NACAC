@@ -1,4 +1,6 @@
-navigator.sayswho = function() {
+
+(function(){
+	navigator.sayswho = function() {
 	var ua = navigator.userAgent,
 		tem,
 		M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
@@ -14,7 +16,8 @@ navigator.sayswho = function() {
 	if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
 	return M.join('-');
 };
-document.querySelector('html').className += ' ' + navigator.sayswho().replace(' ', '-');
+document.querySelector('html').classList.add(navigator.sayswho());
+})()
 
 const animateCaps = function(element, factor) {
 	setTimeout(function() { animation() }, 600+ factor*30);

@@ -1,6 +1,7 @@
 // *********************
 //    Modules scripts
 // *********************
+import 'modules/browser';
 import 'modules/blazySettings';
 import 'modules/onScrolls';
 import 'modules/navigation';
