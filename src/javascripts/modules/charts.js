@@ -146,15 +146,17 @@ const initChart = function() {
 
 	// If more than one Chart, Run Slider
 	var cardSlider = document.querySelector('.chartSlider');
-	if (cardSlider.childElementCount !== 0) {
-		$('.chartSlider').lightSlider({
-			item: 1,
-			loop: false,
-			slideMove: 1,
-			pager: true,
-			easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-			speed: 600
-		});
+	if (cardSlider){
+		if(cardSlider.childElementCount !== 0) {
+			$('.chartSlider').lightSlider({
+				item: 1,
+				loop: false,
+				slideMove: 1,
+				pager: true,
+				easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+				speed: 600
+			});
+		}
 	}
 };
 document.addEventListener('DOMContentLoaded', initChart());

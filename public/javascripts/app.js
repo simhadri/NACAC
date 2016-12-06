@@ -26,11 +26,11 @@ webpackJsonp([0,3],[
 	
 	'use strict';
 	
-	__webpack_require__(21);
-	
-	__webpack_require__(4);
-	
 	__webpack_require__(2);
+	
+	__webpack_require__(3);
+	
+	__webpack_require__(6);
 	
 	__webpack_require__(7);
 	
@@ -38,40 +38,33 @@ webpackJsonp([0,3],[
 	
 	__webpack_require__(11);
 	
-	__webpack_require__(22);
-	
 	__webpack_require__(12);
 	
-	__webpack_require__(23);
+	__webpack_require__(13);
+	
+	__webpack_require__(16);
 
 /***/ },
 /* 2 */
 /***/ function(module, exports) {
 
+	// Add Custom style for #EpiserverEditMode if use is in View Mode
+	
 	// FUNCTION
 	'use strict';
 	
-	;(function () {
-		var initBlazy = function initBlazy() {
-			var bLazy = new Blazy({
-				breakpoints: [{ width: 640, src: 'data-src-sm' }
-				//{width: 767, src: 'data-src-sm'}
-				],
-				success: function success(element) {
-					setTimeout(function () {
-						var parent = element.parentNode;
-						parent.className = parent.className.replace(/\bloading\b/, '');
-					}, 2000);
-				}
-			});
-			setTimeout(bLazy.revalidate(), 200);
-		};
-		document.addEventListener('load', initBlazy());
+	(function () {
+		if (document.body.id === 'EpiserverEditMode') {
+			var head = document.head || document.getElementsByTagName('head')[0],
+			    style = document.createElement('link');
+			style.setAttribute('rel', 'stylesheet');
+			style.setAttribute('href', '/stylesheets/episerver-edit-mode.css');
+			head.appendChild(style);
+		}
 	})();
 
 /***/ },
-/* 3 */,
-/* 4 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -79,11 +72,11 @@ webpackJsonp([0,3],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libThrottledJs = __webpack_require__(5);
+	var _libThrottledJs = __webpack_require__(4);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
-	var _libCountUpJs = __webpack_require__(6);
+	var _libCountUpJs = __webpack_require__(5);
 	
 	var _libCountUpJs2 = _interopRequireDefault(_libCountUpJs);
 	
@@ -207,7 +200,7 @@ webpackJsonp([0,3],[
 	})();
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports) {
 
 	// Throttled is borrowed (stolen) from underscore. It thottles
@@ -250,7 +243,7 @@ webpackJsonp([0,3],[
 	module.exports = Throttled;
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports) {
 
 	/*
@@ -410,6 +403,31 @@ webpackJsonp([0,3],[
 	// numAnim.start(someMethodToCallOnComplete);
 
 /***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	// FUNCTION
+	'use strict';
+	
+	;(function () {
+		var initBlazy = function initBlazy() {
+			var bLazy = new Blazy({
+				breakpoints: [{ width: 640, src: 'data-src-sm' }
+				//{width: 767, src: 'data-src-sm'}
+				],
+				success: function success(element) {
+					setTimeout(function () {
+						var parent = element.parentNode;
+						parent.className = parent.className.replace(/\bloading\b/, '');
+					}, 2000);
+				}
+			});
+			setTimeout(bLazy.revalidate(), 200);
+		};
+		document.addEventListener('load', initBlazy());
+	})();
+
+/***/ },
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -422,7 +440,7 @@ webpackJsonp([0,3],[
 	
 	var _libHeadStyleJs2 = _interopRequireDefault(_libHeadStyleJs);
 	
-	var _libThrottledJs = __webpack_require__(5);
+	var _libThrottledJs = __webpack_require__(4);
 	
 	var _libThrottledJs2 = _interopRequireDefault(_libThrottledJs);
 	
@@ -831,6 +849,113 @@ webpackJsonp([0,3],[
 
 /***/ },
 /* 12 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	(function () {
+		navigator.sayswho = function () {
+			var ua = navigator.userAgent,
+			    tem,
+			    M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+			if (/trident/i.test(M[1])) {
+				tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+				return 'IE-' + (tem[1] || '');
+			}
+			if (M[1] === 'Chrome') {
+				tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
+				if (tem != null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+			}
+			M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+			if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
+			return M.join('-');
+		};
+		document.querySelector('html').classList.add(navigator.sayswho());
+	})();
+	
+	var animateCaps = function animateCaps(element, factor) {
+		setTimeout(function () {
+			animation();
+		}, 600 + factor * 30);
+		setTimeout(function () {
+			animationDown();
+		}, 1200 + factor * 30);
+		setTimeout(function () {
+			removeCaps();
+		}, 2600);
+	
+		function animation() {
+			element.style.bottom = '80%';
+			element.style.transform = 'rotate(60deg)';
+		}
+	
+		function animationDown() {
+			element.style.transition = 'all 800ms ease-in';
+			element.style.bottom = '-20%';
+			element.style.transform = 'rotate(120deg)';
+		}
+		function removeCaps() {
+			if (document.querySelector('#imgCont')) {
+				document.querySelector('#imgCont').remove();
+			}
+		}
+	};
+	var pomp = function pomp() {
+		var imgCont = document.createElement('div');
+		imgCont.setAttribute('id', 'imgCont');
+		imgCont.style.width = '100%';
+		imgCont.style.height = '100%';
+		imgCont.style.position = 'fixed';
+		imgCont.style.top = 0;
+		imgCont.style.zIndex = 99;
+	
+		// Loop
+		for (var i = 0; i < 8; i++) {
+			var n = i + 1;
+			var imgElm = document.createElement('img');
+			imgElm.src = 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Graduation_hat.svg';
+			imgElm.style.position = 'absolute';
+			imgElm.style.bottom = '-20%';
+			imgElm.setAttribute('class', 'js-caps');
+			imgElm.style.zIndex = 8;
+			imgElm.style.left = 20 + Math.floor(Math.random() * 60 + 1) + '%';
+			imgElm.style.width = 90 + n + 'px';
+			imgElm.style.transition = 'all 600ms ease-out';
+			imgElm.style['-webkit-user-select'] = 'none';
+			imgElm.style['-moz-user-select'] = 'none';
+			imgElm.style['-ms-user-select'] = 'none';
+			var mainElement = document.querySelector('body').appendChild(imgCont);
+			var mainElement = document.querySelector('#imgCont').appendChild(imgElm);
+		}
+	};
+	
+	var clicks = 0;
+	var onClick = function onClick() {
+		clicks += 1;
+		if (clicks === 1) {
+			setTimeout(resetClicks, 8000);
+		}
+		if (clicks === 16) {
+			//DO
+			pomp();
+			var getCaps = document.querySelectorAll('.js-caps');
+			for (var x = 0; x < getCaps.length; x++) {
+				animateCaps(getCaps[x], x);
+			}
+			clicks = 0;
+		}
+	};
+	var resetClicks = function resetClicks() {
+		clicks = 0;
+		return false;
+	};
+	if (document.querySelector('.breadcrumb')) {
+		var elm = document.querySelector('.breadcrumb');
+		elm.addEventListener('click', onClick);
+	}
+
+/***/ },
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// This is dummy Local Data
@@ -846,11 +971,11 @@ webpackJsonp([0,3],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libTweetParseJs = __webpack_require__(13);
+	var _libTweetParseJs = __webpack_require__(14);
 	
 	var _libTweetParseJs2 = _interopRequireDefault(_libTweetParseJs);
 	
-	var _libEnvVarJs = __webpack_require__(14);
+	var _libEnvVarJs = __webpack_require__(15);
 	
 	var _libEnvVarJs2 = _interopRequireDefault(_libEnvVarJs);
 	
@@ -883,7 +1008,7 @@ webpackJsonp([0,3],[
 	})();
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 	// Tweet Parse!
@@ -970,7 +1095,7 @@ webpackJsonp([0,3],[
 	module.exports = TweetParse;
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Usage:
@@ -990,137 +1115,7 @@ webpackJsonp([0,3],[
 	module.exports = envVar;
 
 /***/ },
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */
-/***/ function(module, exports) {
-
-	// Add Custom style for #EpiserverEditMode if use is in View Mode
-	
-	// FUNCTION
-	'use strict';
-	
-	(function () {
-		if (document.body.id === 'EpiserverEditMode') {
-			var head = document.head || document.getElementsByTagName('head')[0],
-			    style = document.createElement('link');
-			style.setAttribute('rel', 'stylesheet');
-			style.setAttribute('href', '/stylesheets/episerver-edit-mode.css');
-			head.appendChild(style);
-		}
-	})();
-
-/***/ },
-/* 22 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	navigator.sayswho = function () {
-		var ua = navigator.userAgent,
-		    tem,
-		    M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-		if (/trident/i.test(M[1])) {
-			tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
-			return 'IE-' + (tem[1] || '');
-		}
-		if (M[1] === 'Chrome') {
-			tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
-			if (tem != null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
-		}
-		M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
-		if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
-		return M.join('-');
-	};
-	document.querySelector('html').className += ' ' + navigator.sayswho().replace(' ', '-');
-	
-	var animateCaps = function animateCaps(element, factor) {
-		setTimeout(function () {
-			animation();
-		}, 600 + factor * 30);
-		setTimeout(function () {
-			animationDown();
-		}, 1200 + factor * 30);
-		setTimeout(function () {
-			removeCaps();
-		}, 2600);
-	
-		function animation() {
-			element.style.bottom = '80%';
-			element.style.transform = 'rotate(60deg)';
-		}
-	
-		function animationDown() {
-			element.style.transition = 'all 800ms ease-in';
-			element.style.bottom = '-20%';
-			element.style.transform = 'rotate(120deg)';
-		}
-		function removeCaps() {
-			if (document.querySelector('#imgCont')) {
-				document.querySelector('#imgCont').remove();
-			}
-		}
-	};
-	var pomp = function pomp() {
-		var imgCont = document.createElement('div');
-		imgCont.setAttribute('id', 'imgCont');
-		imgCont.style.width = '100%';
-		imgCont.style.height = '100%';
-		imgCont.style.position = 'fixed';
-		imgCont.style.top = 0;
-		imgCont.style.zIndex = 99;
-	
-		// Loop
-		for (var i = 0; i < 8; i++) {
-			var n = i + 1;
-			var imgElm = document.createElement('img');
-			imgElm.src = 'https://upload.wikimedia.org/wikipedia/commons/c/c9/Graduation_hat.svg';
-			imgElm.style.position = 'absolute';
-			imgElm.style.bottom = '-20%';
-			imgElm.setAttribute('class', 'js-caps');
-			imgElm.style.zIndex = 8;
-			imgElm.style.left = 20 + Math.floor(Math.random() * 60 + 1) + '%';
-			imgElm.style.width = 90 + n + 'px';
-			imgElm.style.transition = 'all 600ms ease-out';
-			imgElm.style['-webkit-user-select'] = 'none';
-			imgElm.style['-moz-user-select'] = 'none';
-			imgElm.style['-ms-user-select'] = 'none';
-			var mainElement = document.querySelector('body').appendChild(imgCont);
-			var mainElement = document.querySelector('#imgCont').appendChild(imgElm);
-		}
-	};
-	
-	var clicks = 0;
-	var onClick = function onClick() {
-		clicks += 1;
-		if (clicks === 1) {
-			setTimeout(resetClicks, 8000);
-		}
-		if (clicks === 16) {
-			//DO
-			pomp();
-			var getCaps = document.querySelectorAll('.js-caps');
-			for (var x = 0; x < getCaps.length; x++) {
-				animateCaps(getCaps[x], x);
-			}
-			clicks = 0;
-		}
-	};
-	var resetClicks = function resetClicks() {
-		clicks = 0;
-		return false;
-	};
-	if (document.querySelector('.breadcrumb')) {
-		var elm = document.querySelector('.breadcrumb');
-		elm.addEventListener('click', onClick);
-	}
-
-/***/ },
-/* 23 */
+/* 16 */
 /***/ function(module, exports) {
 
 	// FUNCTION
