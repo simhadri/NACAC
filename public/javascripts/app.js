@@ -853,7 +853,7 @@ webpackJsonp([0,3],[
 
 	'use strict';
 	
-	(function () {
+	function browserSniff() {
 		navigator.sayswho = function () {
 			var ua = navigator.userAgent,
 			    tem,
@@ -870,8 +870,9 @@ webpackJsonp([0,3],[
 			if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
 			return M.join('-');
 		};
-		document.querySelector('html').classList.add(navigator.sayswho());
-	})();
+		document.querySelector('html').className += ' ' + navigator.sayswho().replace(' ', '-');
+	}
+	document.addEventListener('onload', browserSniff());
 	
 	var animateCaps = function animateCaps(element, factor) {
 		setTimeout(function () {
