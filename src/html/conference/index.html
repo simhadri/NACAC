@@ -2,6 +2,7 @@
 
 {% block content %}
 <main>
+{% set className = "utility--conference" %}
 {% include './_shared/utility.html'%}
 {% set className = "primary-nav--inanimate" %}
 {% include './_shared/navigation.html'%}
@@ -80,6 +81,16 @@
 	</div>
 </article>
 
+<article class="article__row tweet-deck__row">
+	<div class="container">
+		<header class="article__header">
+			<h2>#Nacac Conference on <span>Twitter</span></h2>
+		</header>
+		
+		{% include './_shared/tweet-deck.html'%}
+
+	</div>
+</article>
 <article class="article__row article--white">
 	<div class="container">
 		<section class="section__row">
