@@ -18,6 +18,7 @@
       "entries": {
         "app": ["./app.js"],
         "app-fair": ["./app-fair.js"],
+        "app-conference": ["./app-conference.js"],
         "interior": ["./interior.js"]
       },
       "extensions": ["js"]
