@@ -29,17 +29,27 @@
 			display: table;
 		}
 	}
+	&.utility--conference .utility-nav__list {
+		width: 40%;
+	}
+	&.utility--conference .utility-nav__social {
+		width: 35%;
+	}
 	.utility-nav__list {
 		width: 60%;
 	}
 	.utility-nav__social {
 		width: 15%;
-		font-size: 2rem;
 		border-right: 1px solid $nacac_nav-mixed-grey;
-		li {
+		.utility-nav__social-item {
 			float: right;
 			opacity: 0.6;
+			font-size: 1.6rem;
+			i{
+				font-size: 2rem;
+			}
 		}
+
 	}
 	.utility-search {
 		float: left;
