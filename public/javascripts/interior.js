@@ -1,8 +1,8 @@
-webpackJsonp([2,3],[
+webpackJsonp([3,4],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(18);
+	module.exports = __webpack_require__(19);
 
 
 /***/ },
@@ -23,7 +23,8 @@ webpackJsonp([2,3],[
 /* 15 */,
 /* 16 */,
 /* 17 */,
-/* 18 */
+/* 18 */,
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// *********************
@@ -32,16 +33,16 @@ webpackJsonp([2,3],[
 	// import 'modules/asideNavigation';
 	'use strict';
 	
-	__webpack_require__(19);
-	
 	__webpack_require__(20);
 	
-	__webpack_require__(22);
+	__webpack_require__(21);
 	
 	__webpack_require__(23);
+	
+	__webpack_require__(24);
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -103,7 +104,7 @@ webpackJsonp([2,3],[
 	})();
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// IMPORTS
@@ -111,7 +112,7 @@ webpackJsonp([2,3],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _libCountDown = __webpack_require__(21);
+	var _libCountDown = __webpack_require__(22);
 	
 	var _libCountDown2 = _interopRequireDefault(_libCountDown);
 	
@@ -125,7 +126,7 @@ webpackJsonp([2,3],[
 	})();
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -181,7 +182,7 @@ webpackJsonp([2,3],[
 	module.exports = countDown;
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports) {
 
 	// FUNCTION
@@ -213,7 +214,7 @@ webpackJsonp([2,3],[
 	}
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports) {
 
 	'use strict';

@@ -1,13 +1,31 @@
-webpackJsonp([2,4],[
+webpackJsonp([1,4],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(18);
+	module.exports = __webpack_require__(17);
 
 
 /***/ },
 /* 1 */,
-/* 2 */,
+/* 2 */
+/***/ function(module, exports) {
+
+	// Add Custom style for #EpiserverEditMode if use is in View Mode
+	
+	// FUNCTION
+	'use strict';
+	
+	(function () {
+		if (document.body.id === 'EpiserverEditMode') {
+			var head = document.head || document.getElementsByTagName('head')[0],
+			    style = document.createElement('link');
+			style.setAttribute('rel', 'stylesheet');
+			style.setAttribute('href', '/stylesheets/episerver-edit-mode.css');
+			head.appendChild(style);
+		}
+	})();
+
+/***/ },
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1060,21 +1078,63 @@ webpackJsonp([2,4],[
 	module.exports = envVar;
 
 /***/ },
-/* 16 */,
-/* 17 */,
-/* 18 */
+/* 16 */
+/***/ function(module, exports) {
+
+	// FUNCTION
+	'use strict';
+	
+	var resizeAccordionImages = function resizeAccordionImages() {
+		var accordion = document.querySelector('.accordion');
+		if (accordion) {
+			var accordionItemAsideSet = document.querySelectorAll('.accordion-item__aside img');
+			for (var i = 0; i < accordionItemAsideSet.length; i++) {
+				var imageElement = accordionItemAsideSet[i];
+				var imageElementWidth = imageElement.getBoundingClientRect().width;
+				var imageElementHeight = imageElement.getBoundingClientRect().height;
+				var imageRatio = imageElementWidth / imageElementHeight;
+				var n = imageElementWidth / 2 - imageElementHeight / 2;
+				if (imageRatio > 1) {
+					imageElement.style.marginLeft = '-' + n + 'px';
+				}
+				if (imageRatio < 1 && imageRatio !== 0) {
+					imageElement.style.marginTop = n + 'px';
+					imageElement.style.height = 'auto';
+					imageElement.style.width = imageElementHeight + 'px';
+				}
+			}
+		}
+	};
+	window.onload = function () {
+		resizeAccordionImages();
+	};
+
+/***/ },
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// *********************
 	//    Modules scripts
 	// *********************
+	
+	//USING production variables
+	// if(process.env.NODE_ENV === 'development'){
+	// 	var dev_var = 'url/to/dev';
+	
+	// }
+	// if(process.env.NODE_ENV === 'production'){
+	// 	var dev_var = 'url/to/prod';
+	
+	// }
+	// console.log(dev_var)
+	
 	'use strict';
 	
-	__webpack_require__(12);
-	
-	__webpack_require__(6);
+	__webpack_require__(2);
 	
 	__webpack_require__(3);
+	
+	__webpack_require__(6);
 	
 	__webpack_require__(7);
 	
@@ -1082,10 +1142,12 @@ webpackJsonp([2,4],[
 	
 	__webpack_require__(11);
 	
+	__webpack_require__(12);
+	
 	__webpack_require__(13);
 	
-	// import 'modules/map-temp';
+	__webpack_require__(16);
 
 /***/ }
 ]);
-//# sourceMappingURL=app-fair.js.map
+//# sourceMappingURL=app-conference.js.map
