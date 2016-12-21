@@ -1,0 +1,60 @@
+ {% extends '_layouts/conference-application.html' %}
+ {% set pageLocation = "Speaker Detail" %}
+ {% block content %}
+<main>
+	{% set className = "utility-nav--blue utility--conference" %}
+	{% include './_shared/utility.html'%}
+	{% set className = "primary-nav--inanimate primary-nav--blue" %}
+	{% include './_shared/navigation.html'%}
+	<article class="article__row article--white hero--none aside-navigation__row">
+		<div class="container">
+			{% set share = 'true' %}
+			{% include './_components/breadcrumb.html' %}
+			<div class="row">
+				<div class="col-xs-12 content-detail speaker__section">
+					<section class="section__row">
+						<header class="content-detail__header">
+							<h2>Speaker Name</h2>
+						</header>
+						<div class="content-detail__block">
+							<img class="speaker-block__image image--right" src="../images/speaker-2.jpg">
+							<h3>Job Title, Company Name</h3>
+							<p><a href="#"><i class="fa fa-twitter"></i> @Speaker_Name</a></p>
+							<p>Lorem ipsum Labore in aute ex consequat laboris proident ea consectetur non dolore labore non minim ullamco tempor amet dolore magna ex nostrud reprehenderit velit sit in laboris do aliquip doing officia Duis est nisi deserunt sed veniam eu dolor incididunt anim incididunt ut magna reprehenderit Duis eu dolor mollit dolore laborum adipisicing cillum Duis pariatur Ut elit exercitation adipisicing ut magna cupidatat sunt deserunt officia ad sunt ut laborum Duis sit do incididunt.</p>
+							<p>ariatur magna consequat non elit est deserunt aute non laboris nisi Excepteur occaecat eiusmod sed officia ea deseriatur aute amet Excepteur ad fugiat eu in sit fugiat sit do ut in aliquip et ea est consectetur esse voluptate veniam est nostrud amet laborum amet occaecat voluptate est est dolor ea reprehenderit veniam velit aliquip dolore deserunt consequat.</p>
+						</div>
+					</section>
+					<section class="section__row section__row--no-border">
+						<h3>Speaker Name's Sessions</h3>
+						{% include '_shared/accordion.html' %}
+					</section>
+					<section class="card-block__row">
+						<header class="section__header">
+							<h2>More From Nacac</h2>
+						</header>
+						<div class="row">
+								
+							{% set cardBlock = { heading: "", image: "shared/card-performing", button: true } %}
+							{% include './_components/card-block.html'%}
+							
+							{% set cardBlock = { heading: "", image: "shared/card-performing", button: true } %}
+							{% include './_components/card-block.html'%}
+
+							{% set cardBlock = { heading: "", image: "shared/card-performing", button: true } %}
+							{% include './_components/card-block.html'%}
+						
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</article>
+	
+	{% include './_components/ad-row.html' %}
+
+	{% include './_shared/footer.html'%}
+</main>
+{% endblock %}
+{% block javascript %}
+<script src="../javascripts/interior.js"></script>
+{% endblock %}
