@@ -170,6 +170,13 @@ body.body--freeze {
     	padding-left: 3rem;
 	}
 }
+.ad__item{
+	img, iframe{
+		margin: auto;
+		max-width: 35rem;
+		display:block;
+	}
+}
 .flexbox__row {
 	display: flex;
 }

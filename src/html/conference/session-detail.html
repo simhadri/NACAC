@@ -14,39 +14,24 @@
 				<div class="col-xs-12 content-detail">
 					<section class="section__row">
 						<header class="content-detail__header">
-							<h2>Session or Content Title</h2>
+							<h2>Session Title:  Lorem Ipsum Dolor Sit Amet</h2>
 						</header>
 						<div class="content-detail__block">
+							<h3>Friday, September 15, 2017</h3>
+							<h3>3:00pm - 4:15pm</h3>
+							<p><i class="fa fa-map-marker"></i> Exhibit Hall 2, Room 1138</p>
 							<img src="../images/conference-detail.jpg" class="image--right" alt="">
 							<p>Lorem ipsum Sed quis irure quis fugiat sint et et culpa enim voluptate Excepteur eu dolor consectetur magna Excepteur quis elit consequat occaecat ullamco irure.</p>
-							<h3>Lorem ipsum Minim ullamco proident</h3>
-							<ul>
-								<li>Unordered List</li>
-								<li>Unordered List</li>
-								<li>Unordered List</li>
-								<li>Unordered List</li>
-								<li>Unordered List</li>
-							</ul>
-							<p>Lorem ipsum Reprehenderit non Ut ullamco labore in pariatur consectetur aute in do aute labore Duis aliqua occaecat sint aliqua ut esse aute non Duis dolor voluptate nulla sunt magna</p>
-							<div class="btn btn--nacac-blue">Call to Action</div>
-							<hr>
-							<img src="../images/shared/content-full-width.jpg" class="image--full" alt="">
-							<h3>Lorem ipsum Minim ullamco proident</h3>
-							<p>Lorem ipsum Reprehenderit non Ut ullamco labore in pariatur consectetur aute in do aute labore Duis aliqua occaecat sint aliqua ut esse aute non Duis dolor voluptate nulla sunt magna</p>
-							<ul>
-								<li>Unordered List</li>
-								<li>Unordered List</li>
-								<li>Unordered List</li>
-								<li>Unordered List</li>
-								<li>Unordered List</li>
-							</ul>
 							<p>Lorem ipsum Duis sed dolore labore irure laborum sint velit esse commodo laboris Excepteur aliquip ea id do nulla esse enim qui non exercitation in reprehenderit quis. Lorem ipsum Duis sed dolore labore irure laborum sint velit esse commodo laboris Excepteur aliquip ea id do nulla esse enim qui non exercitation in reprehenderit quis.</p>
-							<div class="btn btn--nacac-blue">Call to Action</div>
-							<div class="btn btn--nacac-blue">Call to Action</div>
+							<p>Lorem ipsum Duis sed dolore labore irure laborum sint velit esse commodo laboris Excepteur aliquip ea id do nulla esse enim qui non exercitation in reprehenderit quis. Lorem ipsum Duis sed dolore labore irure laborum sint velit esse commodo laboris Excepteur aliquip ea id do nulla esse enim qui non exercitation in reprehenderit quis.</p>
 						</div>
 					</section>
+					<section class="section__row">
+						{% set testimonial = {layout: "speaker", heading:"Ann Dameron"} %}
+						{% include './_components/focus-testimonial.html' %}
+					</section>
 					<section class="section__row section__row--no-border">
-						
+						<h2>Session Components</h2>
 						{% include '_shared/accordion.html' %}
 
 					</section>

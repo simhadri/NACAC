@@ -20,33 +20,10 @@
 					{% include './_components/search-filter.html'%}
 				</div>
 				<div class="col-md-9">
-					<nav class="search-results__utility">
-						<span>Sort By:
-							<select class="form-control search-results__select">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</span>
-						<ul class="pagination search-results__pagination pagination--top">
-							<li>
-								<a href="#" aria-label="Previous">
-									<span aria-hidden="true"><i class="fa fa-chevron-left"></i> Previous</span>
-								</a>
-							</li>
-							<li><a class="pagination--selected" href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">...</a></li>
-							<li><a href="#">5</a></li>
-							<li>
-								<a href="#" aria-label="Next">
-									<span aria-hidden="true">Next <i class="fa fa-chevron-right"></i></span>
-								</a>
-							</li>
-						</ul>
-					</nav>
+					
+					{% set pagination = true %}
+					{% include './_components/search-ui.html' %}
+
 					<div class="selected-filters">
 						<p>Your Filters:</p>
 						<a href="#" class="btn__filter background--burgundy">Search Term</a>
