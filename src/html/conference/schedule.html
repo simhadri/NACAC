@@ -17,6 +17,7 @@
 					<header class="section__header">
 						<h1>Schedule At-A-Glance</h1>
 					</header>
+					{% include './_components/search-ui.html'%}
 					<div class="tab__block schedule__block">
 						<nav class="schedule__navigation tab__navigation">
 							<a class="trigger__button tab__button" href="#day_1">Day 1 - September 20</a>
@@ -64,6 +65,9 @@
 			</div>
 		</div>
 	</article>
+	
+	{% include './_components/ad-row.html' %}
+
 	{% include './_shared/footer.html'%}
 </main>
 {% endblock %}

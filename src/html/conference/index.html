@@ -1,113 +1,104 @@
-{% extends '_layouts/conference-application.html' %}
-
+{% extends '_layouts/conference-application.html' %} 
 {% block content %}
 <main>
-{% set className = "utility--conference" %}
-{% include './_shared/utility.html'%}
-{% set className = "primary-nav--inanimate" %}
-{% include './_shared/navigation.html'%}
-
-{% set conferenceHero = {buttons: ["Register Now", "Exhibitor Information", "Schedule At-A-Glance"]} %}
-{% include './_shared/interior-hero-events.html'%}
-
-<article class="article__row article--white">
-	<div class="container">
-		<section class="card-block__row">
-			<div class="flexbox__row row">
-					
-				{% set cardBlock = { heading: "Venue City", image: "shared/card-event", button: centered } %}
-				{% include './_components/card-block.html'%}
-					
-				{% set cardBlock = { heading: "5K Race", image: "shared/card-running", button: centered } %}
-				{% include './_components/card-block.html'%}
-
-				{% set cardBlock = { heading: "Lists", image: "shared/card-focus", button: centered } %}
-				{% include './_components/card-block.html'%}
-			
+	{% set className = "utility--conference" %} 
+	{% include './_shared/utility.html'%} 
+	{% set className = "primary-nav--inanimate" %} 
+	{% include './_shared/navigation.html'%} 
+	{% set conferenceHero = {buttons: ["Register Now", "Exhibitor Information", "Schedule At-A-Glance"]} %} 
+	{% include './_shared/interior-hero-events.html'%}
+	<article class="article__row article--white">
+		<div class="container">
+			<section class="card-block__row">
+				<div class="flexbox__row row">
+					{% set cardBlock = { heading: "Venue City", image: "shared/card-event", button: centered } %} 
+					{% include './_components/card-block.html'%} 
+					{% set cardBlock = { heading: "5K Race", image: "shared/card-running", button: centered } %} 
+					{% include './_components/card-block.html'%} 
+					{% set cardBlock = { heading: "Lists", image: "shared/card-focus", button: centered } %} 
+					{% include './_components/card-block.html'%}
+				</div>
+			</section>
+		</div>
+	</article>
+	<article class="article__row article--lightgrey">
+		<div class="container">
+			<div class="article__header">
+				<h2>Feature Speakers</h2>
 			</div>
-		</section>
-	</div>
-</article>
-
-<article class="article__row article--lightgrey">
-	<div class="container">
-		<div class="article__header">
-			<h2>Feature Speakers</h2>
+			<div class="article__row row">
+				{% include './_components/speaker-block.html' %} 
+				{% include './_components/speaker-block.html' %} 
+				{% include './_components/speaker-block.html' %}
+			</div>
 		</div>
-		<div class="article__row row">
-			{% include './_components/speaker-block.html' %}
-
-			{% include './_components/speaker-block.html' %}
-
-			{% include './_components/speaker-block.html' %}
+	</article>
+	<article class="article__row article--white">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h2>Video: NACAC 2015 Recap</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem neque sequi cupiditate eveniet temporibus dolores fuga, nisi molestiae cumque numquam vitae distinctio assumenda eum officiis quos quam non impedit praesentium.
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi expedita animi nulla ducimus ratione doloremque illum magni esse perferendis voluptatum fuga nobis aperiam et distinctio facilis, omnis debitis enim non.
+					</p>
+				</div>
+				<div class="col-md-6">
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe class="embed-responsive-item" src="https://player.vimeo.com/video/166429528"></iframe>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-</article>
-<article class="article__row article--white">
-	<div class="container">
-		<div class="article__header">
-			<h2>Why Attend?</h2>
+	</article>
+	<article class="article__row article--bluegrey">
+		<div class="container">
+			<div class="article__header">
+				<h2>Why Attend?</h2>
+			</div>
+			<div class="article__row row">
+				{% include './_components/testimonial-block.html' %} 
+				{% include './_components/testimonial-block.html' %} 
+				{% include './_components/testimonial-block.html' %}
+			</div>
 		</div>
-		<div class="article__row row">
-			{% include './_components/testimonial-block.html' %}
-
-			{% include './_components/testimonial-block.html' %}
-
-			{% include './_components/testimonial-block.html' %}
-		</div>
-	</div>
-</article>
-
-<article class="article__row article--bluegrey">
-	<div class="container">
-		<header class="section__header">
-			<h2>Feature Events</h2>
-		</header>
-		<section class="flexbox__row row">
-					
-				{% set eventBlocks = [
-					"College Tours",
-					"Access College Fairs",
-					"Counselors' College Fair",
-					"National College Fairs",
-					"Workshops &amp; Seminars",
-					"Counselors' College Fair"
-				] %}
-				{% for eventsBlock in eventBlocks %}
-					{% include './_components/event-block.html'%}
-				{% endfor %}
-			
-		</section>
-	</div>
-</article>
-
-<article class="article__row tweet-deck__row">
-	<div class="container">
-		<header class="article__header">
-			<h2>#Nacac Conference on <span>Twitter</span></h2>
-		</header>
-		
-		{% include './_shared/tweet-deck.html'%}
-
-	</div>
-</article>
-<article class="article__row article--white">
-	<div class="container">
-		<section class="section__row">
+	</article>
+	<article class="article__row article--white">
+		<div class="container">
 			<header class="section__header">
-				<h2>Thank You to Our Sponsors</h2>
-				{% include './_components/slider.html' %}
-				<a href="#" class="btn btn--nacac-blue">Become a Sponsor</a>
+				<h2>Feature Events</h2>
 			</header>
-		</section>
-	</div>
-</article>
-
-{% include './_shared/footer.html'%}
+			<section class="flexbox__row row">
+				{% set eventBlocks = [ "College Tours", "Access College Fairs", "Counselors' College Fair", "National College Fairs", "Workshops &amp; Seminars", "Counselors' College Fair" ] %} 
+				{% for eventsBlock in eventBlocks %} 
+				{% include './_components/event-block.html'%} 
+				{% endfor %}
+			</section>
+		</div>
+	</article>
+	<article class="article__row article--white">
+		<div class="container">
+			<section class="section__row">
+				<header class="section__header">
+					<h2>Thank You to Our Sponsors</h2> {% include './_components/slider.html' %}
+					<a href="#" class="btn btn--nacac-blue">Become a Sponsor</a>
+				</header>
+			</section>
+		</div>
+	</article>
+	<article class="article__row tweet-deck__row">
+		<div class="container">
+			<header class="article__header">
+				<h2>#Nacac Conference on <span>Twitter</span></h2>
+			</header>
+			{% include './_shared/tweet-deck.html'%}
+		</div>
+	</article>
+	{% include './_shared/footer.html'%}
 </main>
-{% endblock %}
-
+{% endblock %} 
 {% block javascript %}
 <script src="../javascripts/interior.js"></script>
 {% endblock %}
-
