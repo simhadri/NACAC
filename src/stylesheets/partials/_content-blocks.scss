@@ -383,18 +383,18 @@ a.color-block {
 
 .speaker-block {
 	text-align: center;
-	.speaker-block__image {
-		border-radius: 50%;
-		margin-bottom: 20px;
-		width: 100%;
-		max-width: 20rem;
-	}
-	.speaker-block__name{
-		color: $nacac_purple;
-		font-size: 2rem;
-		margin-top: 0.4rem;
-		margin-bottom: 0.8rem;
-	}
+}
+.speaker-block__image {
+	border-radius: 50%;
+	margin-bottom: 20px;
+	width: 100%;
+	max-width: 20rem;
+}
+.speaker-block__name{
+	color: $nacac_purple;
+	font-size: 2rem;
+	margin-top: 0.4rem;
+	margin-bottom: 0.8rem;
 }
 
 
