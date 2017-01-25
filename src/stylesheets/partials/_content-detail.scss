@@ -80,6 +80,12 @@
 		&.heading__icon--exhibit:before{
 			@include icon('fa-id-card-o');
 		}
+		img{
+			position: absolute;
+			color: $nacac_light-blue;
+			width: 4rem;
+			left: -6rem;
+		}
 	}
 }
 // Images
